@@ -60,6 +60,7 @@ Hrvatski CIUS 2025 dodaje vlastita pravila (HR-BR-2, HR-BR-40, HR-BR-48...) i HR
 
 ## Doprinos i rasprava
 
+- [Što je GitHub i kako sudjelovati](https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md) — za početnike, besplatno
 - [GitHub Discussions](https://github.com/dageci/eracun-fiskalizacija-datumi/discussions) — pitanja, prijedlozi, iskustva
 - [Issues](https://github.com/dageci/eracun-fiskalizacija-datumi/issues) — prijava grešaka
 - [Pull Requests](https://github.com/dageci/eracun-fiskalizacija-datumi/pulls) — doprinosi
