@@ -4,11 +4,28 @@ Dokumentacija o datumskim poljima u hrvatskom eRačunu (HR CIUS 2025 / EN16931) 
 
 ## Zašto ovo postoji?
 
-Datumi na eRačunu su jedno od najčešćih područja zabune kod ERP programera i knjigovođa u Hrvatskoj. Europska norma EN16931 definira više datumskih polja (BT-2, BT-7, BT-8, BT-72, BT-73, BT-74) koja se međusobno isključuju, nadopunjuju ili ignoriraju — ovisno o poslovnom scenariju.
+Od 01.01.2026. Hrvatska je prešla na obvezni eRačun (Fiskalizacija 2.0). Prijelaz je bio nagao — svi smo odjednom počeli i slati i primati XML račune u EN16931 formatu s hrvatskim proširenjima (HR CIUS 2025).
 
-Hrvatski CIUS 2025 dodaje vlastita pravila (HR-BR-2, HR-BR-40, HR-BR-48...) i HR ekstenzije (HR-BT-2, HR-BT-15) koje dalje kompliciraju situaciju.
+**Problem koji je odmah isplivao**: ulazni eRačuni od različitih izdavatelja dolaze s različitim postavkama datumskih polja. Jedni koriste BT-7, drugi BT-8, treći ni jedno. Neki stavljaju BT-72, neki ne. Neki imaju InvoicePeriod, neki nemaju. A svi ti datumi utječu na to **u koje porezno razdoblje ulazi PDV** — što je kritično za ispravnu PDV prijavu.
 
-Ovaj dokument nastoji sve to objasniti na jednom mjestu, s primjerima iz prakse.
+U Facebook grupama, na forumima i u razgovorima između ERP programera i knjigovođa otvaraju se **beskonačna pitanja i rasprave** o istim temama:
+- *"Koji datum određuje PDV — datum računa ili datum isporuke?"*
+- *"Što je BT-7, a što BT-8 i mogu li oba biti u XML-u?"*
+- *"Kako funkcionira obračun po naplati u eRačunu?"*
+- *"Zašto mi validator odbija račun s TaxPointDate?"*
+- *"Što znači DescriptionCode 432?"*
+
+**Cilj ovog repozitorija** je da sva ta znanja i odgovori budu **na jednom mjestu** — strukturirano, s primjerima, zakonskim temeljem i XML isječcima. Umjesto da se ista pitanja ponavljaju u 10 različitih grupa, možemo ih ovdje jednom riješiti i svi koristiti.
+
+Ovo nije zatvoreni dokument jedne osobe — **svatko može doprinijeti**: ispraviti grešku, dodati primjer koji nedostaje, ukazati na slučaj koji nismo pokrili. Što više nas sudjeluje, to će dokumentacija biti potpunija i pouzdanija.
+
+### Konkretno, dokumentacija pokriva:
+
+- **Datumska polja** u eRačunu (BT-2, BT-7, BT-8, BT-72, BT-73, BT-74, HR-BT-2, HR-BT-15) — što je što, kada se koristi, kako se međusobno isključuju
+- **Schematron validacijska pravila** — koja kombinacija prolazi validator, a koja ne (sva su `flag="fatal"`)
+- **Primjeri iz prakse** — konkretni scenariji s XML isječcima (isporuka u drugom mjesecu, predujam, odobrenje, kontinuirana usluga, obračun po naplati...)
+- **Razliku između datuma za PDV i datuma u knjigovodstvu** — jer to nije isto i često se miješa
+- **Zakonski temelj** — članci iz Zakona o PDV-u i Zakona o fiskalizaciji na koje se sve oslanja
 
 ## Sadržaj
 

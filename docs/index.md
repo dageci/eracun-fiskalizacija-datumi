@@ -9,9 +9,11 @@ Dokumentacija o datumskim poljima u hrvatskom eRačunu (HR CIUS 2025 / EN16931) 
 
 ## Zašto ovo postoji?
 
-Datumi na eRačunu su jedno od najčešćih područja zabune kod ERP programera i knjigovođa u Hrvatskoj. Europska norma EN16931 definira više datumskih polja (BT-2, BT-7, BT-8, BT-72, BT-73, BT-74) koja se međusobno isključuju, nadopunjuju ili ignoriraju — ovisno o poslovnom scenariju.
+Od 01.01.2026. Hrvatska je prešla na obvezni eRačun (Fiskalizacija 2.0). Prijelaz je bio nagao — svi smo odjednom počeli i slati i primati XML račune u EN16931 formatu s hrvatskim proširenjima (HR CIUS 2025).
 
-Hrvatski CIUS 2025 dodaje vlastita pravila (HR-BR-2, HR-BR-40, HR-BR-48...) i HR ekstenzije (HR-BT-2, HR-BT-15) koje dalje kompliciraju situaciju.
+**Problem**: ulazni eRačuni od različitih izdavatelja dolaze s različitim postavkama datumskih polja. Jedni koriste BT-7, drugi BT-8, treći ni jedno. A svi ti datumi utječu na to **u koje porezno razdoblje ulazi PDV**.
+
+U grupama i forumima se otvaraju beskonačna pitanja o istim temama. Cilj ovog repozitorija je da sva ta znanja budu **na jednom mjestu** — strukturirano, s primjerima i zakonskim temeljem. **Svatko može doprinijeti**: ispraviti grešku, dodati primjer, ukazati na slučaj koji nedostaje.
 
 ## Dokumentacija
 
