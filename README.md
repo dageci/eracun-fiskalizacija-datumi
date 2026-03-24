@@ -10,7 +10,7 @@
 >
 > Cilj nije imati savršen dokument od prvog dana, nego imati **jedno mjesto** gdje možemo zajedno doći do ispravnih odgovora.
 >
-> *Prva inicijalna verzija objavljena: 24.03.2026.*
+> *Prva inicijalna verzija objavljena: 24.03.2026. — Davor Geci*
 
 Dokumentacija o datumskim poljima u hrvatskom eRačunu (HR CIUS 2025 / EN16931) i njihovom utjecaju na nastanak obveze PDV-a.
 
