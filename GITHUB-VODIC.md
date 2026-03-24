@@ -17,7 +17,7 @@ Ovaj projekt koristi GitHub jer:
 
 **Ništa.** GitHub je besplatan za javne projekte. Čitanje dokumentacije, pregled povijesti izmjena i pristup web stranici ne zahtijeva ni registraciju.
 
-Za aktivno sudjelovanje (komentare, rasprave, prijedloge) potreban je **besplatni GitHub račun** — registracija traje 2 minute na [github.com](https://github.com/signup).
+Za aktivno sudjelovanje (komentare, rasprave, prijedloge) potrebna je **besplatna prijava koja kreira korisnički račun** — traje 2 minute na [github.com](https://github.com/signup).
 
 ## Kako čitati dokumentaciju?
 
@@ -38,7 +38,7 @@ Najbolje mjesto za početak. Otvorite [Discussions](https://github.com/dageci/er
 - **Podijelite iskustvo** — kako vaš ERP rješava ove scenarije
 - **Glasajte** — koristite emoji reakcije (👍 👎 🤔) na postojećim prijedlozima
 
-Za ovo trebate besplatni GitHub račun.
+Za ovo trebate besplatnu prijavu na GitHub (kreira korisnički račun).
 
 ### 2. Prijava greške (Issues) — za konkretne probleme
 
