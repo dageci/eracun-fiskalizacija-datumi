@@ -89,6 +89,22 @@
     .sidebar a:hover { background: #e2e8f0; color: var(--primary); }
     .sidebar a.active { background: var(--primary-light); color: white; }
 
+    /* Search */
+    .search-box {
+      width: 100%;
+      padding: 0.45rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      outline: none;
+    }
+    .search-box:focus { border-color: var(--primary-light); box-shadow: 0 0 0 2px rgba(41,128,185,0.15); }
+    .search-results { font-size: 0.82rem; margin-bottom: 1rem; }
+    .search-results li { margin-bottom: 0.3rem; }
+    .search-results .highlight { background: #fff3cd; padding: 0.1rem 0.2rem; border-radius: 2px; }
+    .search-no-results { color: var(--text-light); font-size: 0.82rem; font-style: italic; }
+
     /* Main content */
     .main-content {
       flex: 1;
@@ -254,6 +270,9 @@
 
   <div class="page-body">
     <nav class="sidebar">
+      <input type="text" class="search-box" id="searchBox" placeholder="Pretraži (npr. BT-7, naplata...)">
+      <div id="searchResults"></div>
+
       <h3>Dokumentacija</h3>
       <ul>
         <li><a href="{{ site.baseurl }}/">Početna</a></li>
@@ -294,6 +313,61 @@
     </p>
     <p>Licenca: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · Autor: Davor Geci</p>
   </footer>
+
+  <script>
+  (function() {
+    var searchBox = document.getElementById('searchBox');
+    var searchResults = document.getElementById('searchResults');
+    if (!searchBox || !searchResults) return;
+
+    // Build search index from headings and paragraphs
+    var content = document.querySelector('.main-content');
+    if (!content) return;
+
+    var sections = [];
+    var headings = content.querySelectorAll('h1, h2, h3, h4');
+    headings.forEach(function(h) {
+      var text = '';
+      var el = h.nextElementSibling;
+      while (el && !el.matches('h1, h2, h3, h4')) {
+        text += ' ' + el.textContent;
+        el = el.nextElementSibling;
+      }
+      sections.push({
+        title: h.textContent,
+        text: text.toLowerCase(),
+        id: h.id || '',
+        level: h.tagName
+      });
+    });
+
+    var debounce;
+    searchBox.addEventListener('input', function() {
+      clearTimeout(debounce);
+      debounce = setTimeout(function() {
+        var q = searchBox.value.trim().toLowerCase();
+        if (q.length < 2) { searchResults.innerHTML = ''; return; }
+
+        var matches = sections.filter(function(s) {
+          return s.title.toLowerCase().indexOf(q) !== -1 || s.text.indexOf(q) !== -1;
+        });
+
+        if (matches.length === 0) {
+          searchResults.innerHTML = '<p class="search-no-results">Nema rezultata za "' + searchBox.value + '"</p>';
+          return;
+        }
+
+        var html = '<ul class="search-results">';
+        matches.forEach(function(m) {
+          var link = m.id ? ('#' + m.id) : '#';
+          html += '<li><a href="' + link + '">' + m.title + '</a></li>';
+        });
+        html += '</ul>';
+        searchResults.innerHTML = html;
+      }, 200);
+    });
+  })();
+  </script>
 
 </body>
 </html>
