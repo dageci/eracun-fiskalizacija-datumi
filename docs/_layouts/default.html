@@ -241,6 +241,59 @@
       border: 1px solid var(--border);
     }
 
+    /* Page actions bar (edit, issue) */
+    .page-actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .page-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      font-size: 0.82rem;
+      color: var(--text);
+      background: var(--bg-alt);
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .page-actions a:hover { border-color: var(--primary-light); color: var(--primary-light); background: #eef6fc; }
+    .page-actions .icon { font-size: 1rem; }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary-light);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      z-index: 100;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; }
+    .back-to-top:hover { background: var(--primary); }
+
+    /* Section anchor links */
+    .main-content h2, .main-content h3, .main-content h4 { position: relative; }
+    .main-content h2:hover .heading-link,
+    .main-content h3:hover .heading-link,
+    .main-content h4:hover .heading-link { opacity: 1; }
+
     /* Footer */
     .site-footer {
       border-top: 1px solid var(--border);
@@ -352,9 +405,25 @@
     </nav>
 
     <main class="main-content">
+      {% if page.url != "/" %}
+      <div class="page-actions">
+        <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/edit/master/docs{{ page.url | replace: '.html', '.md' }}.md" target="_blank">
+          <span class="icon">✏️</span> Uredi ovu stranicu na GitHubu
+        </a>
+        <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues/new?title=Greška na stranici: {{ page.title | url_encode }}&body=Stranica: {{ page.url }}%0A%0AOpis greške:%0A" target="_blank">
+          <span class="icon">🐛</span> Prijavi grešku na ovoj stranici
+        </a>
+        <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions/new?category=pitanja-i-odgovori" target="_blank">
+          <span class="icon">💬</span> Postavi pitanje
+        </a>
+      </div>
+      {% endif %}
+
       {{ content }}
     </main>
   </div>
+
+  <button class="back-to-top" id="backToTop" title="Natrag na vrh">↑</button>
 
   <footer class="site-footer">
     <p>
@@ -416,6 +485,24 @@
         html += '</ul>';
         searchResults.innerHTML = html;
       }, 200);
+    });
+  })();
+  </script>
+
+  <script>
+  // Back to top button
+  (function() {
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 400) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    });
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   })();
   </script>
