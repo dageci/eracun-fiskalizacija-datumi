@@ -1,5 +1,7 @@
 # eRačun Hrvatska — Datumi i porezna obveza
 
+**Web stranica**: [dageci.github.io/eracun-fiskalizacija-datumi](https://dageci.github.io/eracun-fiskalizacija-datumi/) — formatirani prikaz s dijagramima i navigacijom, ne zahtijeva registraciju
+
 > **Ovo je inicijalni prijedlog dokumentacije** — morali smo od nečeg početi.
 >
 > Nismo stručnjaci sveznalice, niti se itko od nas rodio s ovim znanjem. Svima nam je ovo novo — eRačuni su obvezni od 01.01.2026. i svi učimo u hodu. Upravo zato je ova dokumentacija otvorena: da zajedno kao zajednica razradimo i posložimo ove teme na jednom mjestu.
