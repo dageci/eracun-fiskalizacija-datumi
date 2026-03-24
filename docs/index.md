@@ -62,10 +62,30 @@ U grupama i forumima se otvaraju beskonačna pitanja o istim temama. Cilj ovog r
 
 ## Doprinos i rasprava
 
-- [Što je GitHub i kako sudjelovati](https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md) — za početnike, besplatno
-- [GitHub Discussions](https://github.com/dageci/eracun-fiskalizacija-datumi/discussions) — pitanja, prijedlozi, iskustva
-- [Issues](https://github.com/dageci/eracun-fiskalizacija-datumi/issues) — prijava grešaka
-- [Pull Requests](https://github.com/dageci/eracun-fiskalizacija-datumi/pulls) — doprinosi
-- [CONTRIBUTING.md](https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/CONTRIBUTING.md) — upute za doprinos
+Ova dokumentacija je otvorena za sve — **svatko može komentirati, predložiti ispravku ili dodati primjer**. Upravo zato koristimo GitHub.
 
-Licenca: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) — slobodno koristite, dijelite i prilagođavajte uz navođenje autora.
+### Zašto GitHub?
+
+- **Besplatan** — za čitanje ne treba ni registracija, za komentiranje treba samo besplatni račun (2 min registracije)
+- **Transparentan** — svaka promjena je vidljiva s autorom i datumom, ništa se ne može tiho promijeniti
+- **Verzioniran** — svaka izmjena je trajno sačuvana, moguće je vidjeti cijelu povijest dokumenta
+- **Rasprave i glasanje** — [Discussions](https://github.com/dageci/eracun-fiskalizacija-datumi/discussions) omogućuju strukturirane rasprave s emoji glasanjem (👍 👎 🤔)
+- **Koristi ga i Europska komisija** — EN16931 specifikacije i schematron validatori se razvijaju na GitHubu
+
+Ako niste sigurni kako GitHub funkcionira, pogledajte **[Vodič za GitHub](https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md)** — objašnjeno je korak po korak, za potpune početnike.
+
+### Kako sudjelovati?
+
+| Što želite? | Gdje? |
+|-------------|-------|
+| Postaviti pitanje ili pokrenuti raspravu | [Discussions](https://github.com/dageci/eracun-fiskalizacija-datumi/discussions) |
+| Prijaviti grešku u dokumentaciji | [Issues](https://github.com/dageci/eracun-fiskalizacija-datumi/issues) |
+| Predložiti izmjenu teksta | [Pull Requests](https://github.com/dageci/eracun-fiskalizacija-datumi/pulls) |
+| Glasati za prijedlog | Emoji reakcije (👍 👎) na postojećim raspravama |
+| Samo čitati | Upravo ste na pravom mjestu — registracija nije potrebna |
+
+Detaljne upute: [CONTRIBUTING.md](https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/CONTRIBUTING.md)
+
+## Licenca
+
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) — slobodno koristite, dijelite i prilagođavajte uz navođenje autora i dijeljenje pod istim uvjetima.
