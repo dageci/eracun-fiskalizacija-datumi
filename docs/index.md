@@ -21,7 +21,7 @@ title: "eRačun Hrvatska — Datumi i porezna obveza"
 
 Od 01.01.2026. Hrvatska je prešla na obvezni eRačun (Fiskalizacija 2.0). Prijelaz je bio nagao — svi smo odjednom počeli i slati i primati XML račune u EN16931 formatu s hrvatskim proširenjima (HR CIUS 2025).
 
-**Problem**: ulazni eRačuni od različitih izdavatelja dolaze s različitim postavkama datumskih polja. Jedni koriste BT-7, drugi BT-8, treći ni jedno. A svi ti datumi utječu na to **u koje porezno razdoblje ulazi PDV**.
+**Problem**: ulazni eRačuni od različitih izdavatelja dolaze s različitim postavkama datumskih polja. Jedni koriste BT-7, drugi BT-8, treći ni jedno. A svi ti datumi utječu na to **u koje porezno razdoblje ulazi PDV**. Ali nije samo problem ulaznih računa — ni mi koji kreiramo izlazne eRačune nismo sigurni da ih ispravno generiramo. Uključujući i mene — i zato sam pokrenuo ovaj repozitorij.
 
 U grupama i forumima se otvaraju beskonačna pitanja o istim temama. Cilj ovog repozitorija je da sva ta znanja budu **na jednom mjestu** — strukturirano, s primjerima i zakonskim temeljem. **Svatko može doprinijeti**: ispraviti grešku, dodati primjer, ukazati na slučaj koji nedostaje.
 

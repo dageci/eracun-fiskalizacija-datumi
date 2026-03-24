@@ -20,6 +20,8 @@ Od 01.01.2026. Hrvatska je prešla na obvezni eRačun (Fiskalizacija 2.0). Prije
 
 **Problem koji je odmah isplivao**: ulazni eRačuni od različitih izdavatelja dolaze s različitim postavkama datumskih polja. Jedni koriste BT-7, drugi BT-8, treći ni jedno. Neki stavljaju BT-72, neki ne. Neki imaju InvoicePeriod, neki nemaju. A svi ti datumi utječu na to **u koje porezno razdoblje ulazi PDV** — što je kritično za ispravnu PDV prijavu.
 
+Ali nije samo problem ulaznih računa — **ni mi koji kreiramo izlazne eRačune nismo sigurni da ih ispravno generiramo**. Koji datum staviti u BT-7? Treba li BT-8? Kada koristiti 432, a kada 35? Prolazi li to validator? Je li to u skladu sa zakonom? Uključujući i mene — i zato sam pokrenuo ovaj repozitorij.
+
 U Facebook grupama, na forumima i u razgovorima između ERP programera i knjigovođa otvaraju se **beskonačna pitanja i rasprave** o istim temama:
 - *"Koji datum određuje PDV — datum računa ili datum isporuke?"*
 - *"Što je BT-7, a što BT-8 i mogu li oba biti u XML-u?"*
