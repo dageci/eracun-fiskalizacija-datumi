@@ -11,6 +11,8 @@ title: "eRačun Hrvatska — Datumi i porezna obveza"
 >
 > **Ako primijetite grešku — ukažite na nju.** Ako imate bolji primjer — predložite ga. Ako se ne slažete s nečim — pokrenite raspravu. Ostali neka glasaju i komentiraju. Možda se javi i netko iz Porezne uprave ili informacijskih posrednika da potvrdi ili ispravi — svaki takav doprinos je dragocjen.
 >
+> Ako je nešto krivo napisano — nemojte napadati, jednostavno ukažite na grešku, predložite ispravak i neka ostali glasaju ili komentiraju da li je ispravak valjan. Tako zajedno dolazimo do točnih odgovora.
+>
 > Cilj nije imati savršen dokument od prvog dana, nego imati **jedno mjesto** gdje možemo zajedno doći do ispravnih odgovora.
 
 ## Zašto ovo postoji?
