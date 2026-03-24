@@ -78,6 +78,21 @@ Svi koji rade s hrvatskim eRačunima:
 - **Porezni savjetnici** — koji poznaju zakonski okvir
 - **Studenti** — koji uče o e-fakturiranju
 
+## GitHub pojmovi na hrvatskom
+
+Ako vam je GitHub sučelje na engleskom, evo što znače ključni pojmovi:
+
+| GitHub pojam | Hrvatski | Što znači |
+|---|---|---|
+| **Star** | Zvjezdica | Označite projekt kao koristan — kao "sviđa mi se". Pomaže da projekt bude vidljiviji drugima. |
+| **Watch** | Pratite | Pratite promjene — dobivate obavijesti o novim raspravama i izmjenama dokumentacije. |
+| **Fork** | Kopija | Napravite svoju kopiju projekta na vašem računu, za predlaganje izmjena. |
+| **Issue** | Prijava | Prijavite grešku ili problem u dokumentaciji. |
+| **Pull Request** | Prijedlog izmjene | Predložite konkretnu izmjenu teksta koju autor pregledava i prihvaća ili odbija. |
+| **Discussion** | Rasprava | Otvorena rasprava — pitanja, prijedlozi, iskustva. |
+| **New Issue** | Nova prijava | Gumb za kreiranje nove prijave greške. |
+| **Propose changes** | Predloži izmjene | Gumb koji se pojavi kad editirate datoteku na GitHubu. |
+
 ## Što je Markdown?
 
 Dokumentacija je napisana u **Markdown** formatu — jednostavan tekstualni format koji GitHub automatski prikazuje s formatiranjem (naslovi, tablice, linkovi, code blokovi). Ne trebate nikakav poseban softver — možete editirati u bilo kojem text editoru.
