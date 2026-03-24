@@ -17,6 +17,7 @@
       --warning: #e67e22;
       --danger: #c0392b;
       --code-bg: #f4f6f8;
+      --sidebar-width: 260px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,33 +31,94 @@
 
     /* Header */
     .page-header {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      background: linear-gradient(135deg, #2471a3 0%, #5dade2 100%);
       color: white;
-      padding: 2.5rem 2rem;
+      padding: 2rem 2rem;
       text-align: center;
     }
-    .page-header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .page-header p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
-    .page-header a { color: white; }
+    .page-header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: white;
+      border: none;
+    }
+    .page-header p { font-size: 1rem; opacity: 0.92; max-width: 700px; margin: 0 auto; }
+    .page-header a { color: #eaf2f8; text-decoration: none; font-weight: 500; }
+    .page-header a:hover { color: white; text-decoration: underline; }
+    .page-header .nav-links { margin-top: 0.75rem; font-size: 0.9rem; }
+
+    /* Layout: sidebar + content */
+    .page-body {
+      display: flex;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      min-width: var(--sidebar-width);
+      padding: 1.5rem 1rem 2rem 1.5rem;
+      border-right: 1px solid var(--border);
+      background: var(--bg-alt);
+      font-size: 0.88rem;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .sidebar h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin: 1.25rem 0 0.4rem;
+      border: none;
+    }
+    .sidebar h3:first-child { margin-top: 0; }
+    .sidebar ul { list-style: none; margin: 0; padding: 0; }
+    .sidebar li { margin-bottom: 0.2rem; }
+    .sidebar a {
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .sidebar a:hover { background: #e2e8f0; color: var(--primary); }
+    .sidebar a.active { background: var(--primary-light); color: white; }
 
     /* Main content */
     .main-content {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
+      flex: 1;
+      min-width: 0;
+      padding: 2rem 2rem 4rem;
     }
 
     /* Typography */
-    h1, h2, h3, h4 { color: var(--primary); margin-top: 2rem; margin-bottom: 0.75rem; }
-    h1 { font-size: 1.8rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.3rem; }
-    h2 { font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
-    h3 { font-size: 1.25rem; }
-    h4 { font-size: 1.1rem; color: var(--primary-light); }
+    .main-content h1, .main-content h2, .main-content h3, .main-content h4 {
+      color: var(--primary);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .main-content h1 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.3rem;
+    }
+    .main-content h2 {
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.3rem;
+    }
+    .main-content h3 { font-size: 1.25rem; border: none; }
+    .main-content h4 { font-size: 1.1rem; color: var(--primary-light); }
     p { margin-bottom: 1rem; }
 
     /* Links */
-    a { color: var(--primary-light); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    .main-content a { color: var(--primary-light); text-decoration: none; }
+    .main-content a:hover { text-decoration: underline; }
 
     /* Tables */
     table {
@@ -144,12 +206,21 @@
       color: var(--text-light);
       font-size: 0.85rem;
     }
-    .site-footer a { color: var(--primary-light); }
+    .site-footer a { color: var(--primary-light); text-decoration: none; }
+    .site-footer a:hover { text-decoration: underline; }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .page-header { padding: 1.5rem 1rem; }
-      .page-header h1 { font-size: 1.5rem; }
+    /* Mobile: hide sidebar */
+    @media (max-width: 900px) {
+      .page-body { flex-direction: column; }
+      .sidebar {
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1rem;
+      }
       .main-content { padding: 1rem; }
       table { font-size: 0.82rem; }
       th, td { padding: 0.35rem 0.5rem; }
@@ -158,7 +229,9 @@
     /* Print */
     @media print {
       .page-header { background: none; color: var(--text); padding: 1rem 0; }
-      .main-content { max-width: none; }
+      .page-header h1 { color: var(--text); }
+      .sidebar { display: none; }
+      .main-content { max-width: none; padding: 0; }
       pre { background: var(--bg-alt); color: var(--text); border: 1px solid var(--border); }
     }
   </style>
@@ -171,16 +244,47 @@
   <header class="page-header">
     <h1>{{ site.title }}</h1>
     <p>{{ site.description }}</p>
-    <p style="margin-top: 0.75rem; font-size: 0.9rem;">
+    <p class="nav-links">
       <a href="{{ site.baseurl }}/">Početna</a> ·
       <a href="https://github.com/dageci/eracun-fiskalizacija-datumi">GitHub</a> ·
-      <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions">Rasprave</a>
+      <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions">Rasprave</a> ·
+      <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues">Prijavi grešku</a>
     </p>
   </header>
 
-  <main class="main-content">
-    {{ content }}
-  </main>
+  <div class="page-body">
+    <nav class="sidebar">
+      <h3>Dokumentacija</h3>
+      <ul>
+        <li><a href="{{ site.baseurl }}/">Početna</a></li>
+        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow">Datumi i porezna obveza</a></li>
+      </ul>
+
+      <h3>Sadržaj dokumenta</h3>
+      <ul>
+        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#1-pregled-polja">1. Pregled polja</a></li>
+        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#2-ključno-pravilo-br-co-03">2. BR-CO-03 pravilo</a></li>
+        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#3-mogući-kodovi-za-bt-8">3. Kodovi za BT-8</a></li>
+        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#4-primjeri-iz-prakse">4. Primjeri iz prakse</a></li>
+        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#5-datumi-na-eračunu-vs-datumi-u-knjigovodstvu">5. PDV vs. knjigovodstvo</a></li>
+        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#6-xml-struktura--pozicija-elemenata">6. XML struktura</a></li>
+        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#7-validacijska-pravila-za-datume-schematron">7. Validacijska pravila</a></li>
+        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#8-zakonski-temelj">8. Zakonski temelj</a></li>
+      </ul>
+
+      <h3>Sudjelovanje</h3>
+      <ul>
+        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions">Rasprave</a></li>
+        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues">Prijavi grešku</a></li>
+        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md">Vodič za GitHub</a></li>
+        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/CONTRIBUTING.md">Kako doprinijeti</a></li>
+      </ul>
+    </nav>
+
+    <main class="main-content">
+      {{ content }}
+    </main>
+  </div>
 
   <footer class="site-footer">
     <p>
