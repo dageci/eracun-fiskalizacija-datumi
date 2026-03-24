@@ -87,7 +87,7 @@ Dokument koristi [Mermaid](https://mermaid.js.org/) dijagrame. Za prikaz:
 
 ## Licenca
 
-[CC BY-SA 4.0](LICENSE) — slobodno koristite, dijelite i prilagođavajte uz navođenje autora i dijeljenje pod istim uvjetima.
+[EUPL 1.2](LICENSE) — slobodno koristite, dijelite i prilagođavajte — ista licenca koju koristi i EU za EN16931 ekosustav.
 
 ## Doprinos
 

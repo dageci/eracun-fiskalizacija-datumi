@@ -96,11 +96,11 @@ Dokumentacija koristi [Mermaid](https://mermaid.js.org/) dijagrame za vizualizac
 
 ## Licenca
 
-Projekt koristi **CC BY-SA 4.0** licencu — slobodno koristite, dijelite i prilagođavajte uz:
+Projekt koristi **EUPL 1.2** licencu — slobodno koristite, dijelite i prilagođavajte uz:
 - Navođenje autora
 - Dijeljenje pod istim uvjetima
 
-Puni tekst: [creativecommons.org/licenses/by-sa/4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+Puni tekst: [joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12)
 
 ---
 

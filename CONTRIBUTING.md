@@ -35,4 +35,4 @@ Za prijedloge koji zahtijevaju konsenzus zajednice koristite emoji reakcije:
 - Budite konstruktivni i profesionalni
 - Navodite izvore za tvrdnje o zakonima i propisima
 - Hrvatski jezik je preferirani, ali engleski je također prihvatljiv
-- Ovaj projekt je licenciran pod CC BY-SA 4.0
+- Ovaj projekt je licenciran pod EUPL 1.2
