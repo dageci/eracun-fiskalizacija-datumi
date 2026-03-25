@@ -80,9 +80,13 @@ Ova dokumentacija je otvorena za sve — **svatko može komentirati, predložiti
 - **Transparentan** — svaka promjena je vidljiva s autorom i datumom, ništa se ne može tiho promijeniti
 - **Verzioniran** — svaka izmjena je trajno sačuvana, moguće je vidjeti cijelu povijest dokumenta
 - **Rasprave i glasanje** — <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Discussions</a> omogućuju strukturirane rasprave s emoji glasanjem (👍 👎 🤔)
-- **Koristi ga i Europska komisija** — EN16931 specifikacije i schematron validatori se razvijaju na GitHubu
+- **Koriste ga institucije i zakonodavci diljem svijeta**:
+  - <a href="https://github.com/ConnectingEurope/eInvoicing-EN16931" target="_blank">EU / EN16931</a> — specifikacije i schematron validatori za europski eRačun koje i mi koristimo
+  - <a href="https://github.com/IRS-Public/direct-file" target="_blank">IRS (američka porezna uprava)</a> — porezni softver i <a href="https://github.com/IRS-Public/fact-graph" target="_blank">strojno čitljivi porezni zakoni</a> na GitHubu
+  - <a href="https://github.com/DCCouncil/law-xml" target="_blank">Washington DC</a> — prvi zakonodavac koji je prihvatio izmjenu zakona od građanina kroz Pull Request
+  - <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" target="_blank">EU Digital Identity Wallet</a> — arhitektura europskog digitalnog identiteta razvija se otvoreno na GitHubu
 
-Ako niste sigurni kako GitHub funkcionira, pogledajte **<a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md" target="_blank">Vodič za GitHub</a>** — objašnjeno je korak po korak, za potpune početnike.
+Ako niste sigurni kako GitHub funkcionira, pogledajte **<a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md" target="_blank">Vodič za GitHub</a>** — objašnjeno je korak po korak, za potpune početnike. Tu se nalaze i <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md#tko-još-koristi-github-za-zakone-i-propise" target="_blank">dodatni primjeri institucija</a> koje koriste GitHub.
 
 ### Kako sudjelovati?
 

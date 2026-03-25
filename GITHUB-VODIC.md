@@ -19,6 +19,38 @@ Ovaj projekt koristi GitHub jer:
 
 Za aktivno sudjelovanje (komentare, rasprave, prijedloge) potrebna je **besplatna prijava koja kreira korisnički račun** — traje 2 minute na [github.com](https://github.com/signup).
 
+## Tko još koristi GitHub za zakone i propise?
+
+GitHub nije samo za programere — koriste ga državne institucije, porezne uprave i zakonodavci diljem svijeta za otvorenu suradnju na propisima i dokumentaciji.
+
+### Europska unija
+
+| Projekt | Opis | Link |
+|---------|------|------|
+| **EN16931 eInvoicing** | Specifikacije i schematron validatori za europski eRačun — isti standard koji i mi koristimo. Issues i rasprave su otvorene za sve. | [ConnectingEurope/eInvoicing-EN16931](https://github.com/ConnectingEurope/eInvoicing-EN16931) |
+| **CEN/TC 434** | Tehnički odbor za elektroničko fakturiranje koji održava EN16931 normu. | [CenPC434](https://github.com/CenPC434) |
+| **EU Digital Identity Wallet** | Arhitektura i referentni okvir za europski digitalni identitet — razvija se potpuno otvoreno. | [eu-digital-identity-wallet](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework) |
+| **EU Open Source Strategy** | Strategija EU za otvoreni kod — "Towards European Open Digital Ecosystems". | [GitHub Blog](https://github.blog/news-insights/policy-news-and-insights/help-shape-the-future-of-open-source-in-europe/) |
+
+### Porezne uprave
+
+| Projekt | Opis | Link |
+|---------|------|------|
+| **IRS Direct File** | Američka porezna uprava (IRS) objavila besplatni softver za podnošenje poreznih prijava kao open source. | [IRS-Public/direct-file](https://github.com/IRS-Public/direct-file) |
+| **IRS Fact Graph** | Američki porezni zakoni u strojno čitljivom formatu — deklarativni okvir za interpretaciju poreznih pravila. | [IRS-Public/fact-graph](https://github.com/IRS-Public/fact-graph) |
+
+### Zakonodavci
+
+| Projekt | Opis | Link |
+|---------|------|------|
+| **Washington DC** | Prvi zakonodavac na svijetu koji je objavio zakone na GitHubu i prihvatio izmjenu od građanina kroz Pull Request. | [DCCouncil/law-xml](https://github.com/DCCouncil/law-xml) |
+| **Francuska (Legifrance)** | Francuski zakoni dostupni u strojno čitljivom formatu. | [Legifrance projekti](https://github.com/topics/legifrance) |
+| **Government Open Source Policies** | Zbirka pristupa vlada diljem svijeta prema open source softveru. | [github/government-open-source-policies](https://github.com/github/government-open-source-policies) |
+
+> **Poanta**: Ako američka porezna uprava koristi GitHub za porezne zakone,
+> a Europska komisija za eRačun specifikacije — onda je GitHub apsolutno
+> prikladno mjesto za zajedničku dokumentaciju o hrvatskim eRačunima.
+
 ## Kako čitati dokumentaciju?
 
 ### Na web stranici (najjednostavnije)
