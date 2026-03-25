@@ -4,6 +4,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
+  syntax_highlighter: rouge
 
 url: "https://dageci.github.io"
 baseurl: "/eracun-fiskalizacija-datumi"
