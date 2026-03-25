@@ -1,8 +1,6 @@
 # eRačun — Datumi i porezna obveza (BT-2, BT-7, BT-8, BT-72)
 
 > **HR CIUS 2025 / EN16931 — Specifikacija osnovne uporabe eRačuna s proširenjima**
->
-> Zadnja izmjena: 2026-03-24
 
 ### Sadržaj
 {: .no_toc }
@@ -897,4 +895,4 @@ Redoslijed elemenata u UBL Invoice XML-u je strogo definiran shemom:
 
 ---
 
-*Dokument kreiran: 2026-03-24. Svi izvori navedeni u sekciji [8. Zakonski temelj](#8-zakonski-temelj).*
+*Svi izvori navedeni u sekciji [8. Zakonski temelj](#8-zakonski-temelj).*

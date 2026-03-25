@@ -154,6 +154,26 @@
     .bt-tip .bt-xml { color: #6a9955; font-family: "Fira Code", "Consolas", monospace; font-size: 0.74rem; }
     .bt-tip .bt-req { color: #e67e22; }
 
+    /* Page meta bar (reading time, last updated) */
+    .page-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.8rem; color: var(--text-light); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .page-meta span { display: inline-flex; align-items: center; gap: 0.3rem; }
+
+    /* Copy button on code blocks */
+    .code-copy { position: absolute; top: 0.4rem; right: 0.5rem; font-size: 0.7rem; background: #f0f0f0; color: #333; padding: 0.2rem 0.6rem; border-radius: 3px; border: none; cursor: pointer; z-index: 2; transition: all 0.15s; font-weight: 500; font-family: inherit; }
+    .code-copy:hover { background: #fff; color: #1a5276; }
+    .code-copy.copied { background: #27ae60; color: white; }
+
+    /* Feedback bar */
+    .page-feedback { margin-top: 2rem; padding: 1.25rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-alt); text-align: center; }
+    .page-feedback p { margin-bottom: 0.5rem; font-weight: 500; }
+    .page-feedback a { display: inline-block; padding: 0.4rem 1rem; margin: 0 0.3rem; border-radius: 5px; text-decoration: none; font-size: 0.85rem; transition: all 0.15s; }
+    .page-feedback .fb-yes { background: #e8f5e9; color: #27ae60; border: 1px solid #27ae60; }
+    .page-feedback .fb-yes:hover { background: #27ae60; color: white; }
+    .page-feedback .fb-no { background: #ffebee; color: #c0392b; border: 1px solid #c0392b; }
+    .page-feedback .fb-no:hover { background: #c0392b; color: white; }
+    .page-feedback .fb-discuss { background: #e3f2fd; color: var(--primary-light); border: 1px solid var(--primary-light); }
+    .page-feedback .fb-discuss:hover { background: var(--primary-light); color: white; }
+
     /* Code block wrapper with badge */
     .code-wrapper { position: relative; }
     .code-badge { position: absolute; top: 0.4rem; right: 0.5rem; font-size: 0.7rem; background: #f0f0f0; color: #333; padding: 0.2rem 0.6rem; border-radius: 3px; text-decoration: none; z-index: 1; transition: all 0.15s; font-weight: 500; }
@@ -301,9 +321,22 @@
           💬 Postavi pitanje
         </a>
       </div>
+      <div class="page-meta" id="pageMeta">
+        <span id="readingTime"></span>
+        <span id="lastUpdated"></span>
+      </div>
       {% endif %}
 
       {{ content }}
+
+      {% if page.url != "/" %}
+      <div class="page-feedback">
+        <p>Je li ova stranica bila korisna?</p>
+        <a class="fb-yes" href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions/new?category=općenito&title=Korisna stranica: {{ page.title | url_encode }}" target="_blank">👍 Da, korisno</a>
+        <a class="fb-no" href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues/new?title=Poboljšanje: {{ page.title | url_encode }}&body=Stranica: {{ page.url }}%0A%0AŠto bi moglo biti bolje:%0A" target="_blank">👎 Može bolje</a>
+        <a class="fb-discuss" href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">💬 Imam pitanje</a>
+      </div>
+      {% endif %}
     </main>
 
     <aside class="right-toc" id="rightToc">
@@ -339,25 +372,52 @@
   })();
 
   // ============================================================
-  // Add XML code badge with link to explanation
+  // Copy button on all code blocks + XML badge
   (function() {
-    document.querySelectorAll('.main-content .highlight').forEach(function(block) {
+    document.querySelectorAll('.main-content .highlight, .main-content pre').forEach(function(block) {
       var code = block.querySelector('code');
       if (!code) return;
-      var text = code.textContent;
-      if (text.indexOf('<cbc:') !== -1 || text.indexOf('<cac:') !== -1 || text.indexOf('<ext:') !== -1 || text.indexOf('CreditNote') !== -1) {
-        var wrapper = document.createElement('div');
-        wrapper.classList.add('code-wrapper');
-        block.parentNode.insertBefore(wrapper, block);
-        wrapper.appendChild(block);
-        var badge = document.createElement('a');
-        badge.classList.add('code-badge');
-        badge.href = '#kako-citati-xml';
-        badge.textContent = 'XML · Kako čitati?';
-        badge.title = 'Objašnjenje boja i komentara u XML kodu';
-        wrapper.appendChild(badge);
-      }
+
+      var wrapper = document.createElement('div');
+      wrapper.classList.add('code-wrapper');
+      block.parentNode.insertBefore(wrapper, block);
+      wrapper.appendChild(block);
+
+      // Copy button
+      var btn = document.createElement('button');
+      btn.classList.add('code-copy');
+      btn.textContent = 'Kopiraj';
+      btn.title = 'Kopiraj kod u clipboard';
+      btn.addEventListener('click', function() {
+        // Copy only non-comment lines (skip <!-- ... -->)
+        var lines = code.textContent.split('\n');
+        var clean = lines.filter(function(l) { return !l.trim().match(/^<!--.*-->$/); });
+        navigator.clipboard.writeText(clean.join('\n').trim());
+        btn.textContent = 'Kopirano!';
+        btn.classList.add('copied');
+        setTimeout(function() { btn.textContent = 'Kopiraj'; btn.classList.remove('copied'); }, 2000);
+      });
+      wrapper.appendChild(btn);
     });
+  })();
+
+  // Reading time + last updated
+  (function() {
+    var content = document.querySelector('.main-content');
+    var readingEl = document.getElementById('readingTime');
+    var updatedEl = document.getElementById('lastUpdated');
+    if (!content || !readingEl) return;
+
+    // Reading time
+    var text = content.textContent || '';
+    var words = text.trim().split(/\s+/).length;
+    var minutes = Math.ceil(words / 200);
+    readingEl.textContent = 'Čitanje: ~' + minutes + ' min';
+
+    // Last updated from git (via page build date)
+    if (updatedEl) {
+      updatedEl.textContent = 'Zadnja izmjena: {{ site.time | date: "%d.%m.%Y." }}';
+    }
   })();
 
   // Add anchor links to headings (entire heading is clickable)
