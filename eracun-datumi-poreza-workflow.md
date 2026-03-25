@@ -367,8 +367,9 @@ flowchart TD
 > *ili usluge sa stalnim računima, smatra se da su isporučeni po isteku razdoblja*
 > *na koje se računi odnose."*
 >
-> Ovdje **obračunsko razdoblje (BT-73/BT-74) određuje datum porezne obveze**:
-> porez ne nastaje isporukom (nema jednog datuma isporuke), nego istekom razdoblja.
+> Kod kontinuiranih usluga nema jednog datuma isporuke — porezna obveza nastaje istekom
+> razdoblja (čl. 30 st. 2). BT-73/BT-74 opisuju to razdoblje, ali **datum poreza i dalje
+> određuje BT-7** koji se postavlja na kraj razdoblja (= BT-74).
 
 | Podatak | BT polje | XML element | Vrijednost |
 |---------|----------|-------------|-----------|
