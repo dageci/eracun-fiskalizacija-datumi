@@ -62,8 +62,12 @@ has_toc: true
 > **BT-73 / Početak obračunskog razdoblja (`cbc:StartDate`) i BT-74 / Kraj obračunskog
 > razdoblja (`cbc:EndDate`) NIKADA ne utječu na datum nastanka porezne obveze.**
 > Oni su uvijek isključivo informativni — govore primatelju računa za koje vremensko
-> razdoblje se račun odnosi (npr. "najam za siječanj–ožujak"). Sustav ih ne koristi
-> za izračun datuma PDV-a ni u jednom scenariju. Mogu se dodati u bilo koji račun
+> razdoblje se račun odnosi (npr. "najam za siječanj–ožujak").
+>
+> Razlog: datum porezne obveze se **uvijek** određuje kroz gornja tri polja — ako postoji
+> BT-7, on određuje datum; ako postoji BT-8, kod određuje mehanizam; ako nema ni jednog
+> ni drugog, datum poreza je automatski BT-2 (datum izdavanja). BT-73/BT-74 nisu dio te
+> hijerarhije — sustav ih ignorira pri izračunu PDV-a. Mogu se dodati u bilo koji račun
 > bez ikakve promjene u PDV tretmanu.
 
 ### Brojčanik računa i BT-2 (IssueDate)
