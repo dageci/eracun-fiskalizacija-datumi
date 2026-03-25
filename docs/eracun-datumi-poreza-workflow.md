@@ -8,9 +8,7 @@ title: "Datumi i porezna obveza — kompletni workflow"
 
 
 > **HR CIUS 2025 / EN16931 — Specifikacija osnovne uporabe eRačuna s proširenjima**
-
 >
-
 > Zadnja izmjena: 2026-03-24
 
 
@@ -46,19 +44,12 @@ title: "Datumi i porezna obveza — kompletni workflow"
 
 
 > **BR-CO-03**: Europska norma EN16931 propisuje da se **BT-7** i **BT-8** **međusobno isključuju**.
-
 >
-
 > - **BT-7** / Datum nastanka obveze PDV-a (`cbc:TaxPointDate`) — eksplicitni datum
-
 > - **BT-8** / Kod datuma PDV obveze (`cac:InvoicePeriod/cbc:DescriptionCode`) — kod koji upućuje na drugi podatak
-
 >
-
 > Oba služe istoj svrsi: definiranju kada nastaje obveza PDV-a. Ako bi oba bila prisutna,
-
 > sustav ne bi znao koji ima prednost. Ovo pravilo je **`flag="fatal"`** u Schematron validatoru
-
 > — račun koji sadrži oba polja bit će **odbijen**.
 
 
@@ -81,25 +72,15 @@ title: "Datumi i porezna obveza — kompletni workflow"
 
 
 > **Datum nastanka porezne obveze** uvijek određuje isključivo:
-
 > 1. **BT-7** (`cbc:TaxPointDate`) — eksplicitni datum, ili
-
 > 2. **BT-8** (`cbc:DescriptionCode`) — kod koji upućuje na drugi datum, ili
-
 > 3. **BT-2** (`cbc:IssueDate`) — default ako nema ni BT-7 ni BT-8
-
 >
-
 > **BT-73 / Početak obračunskog razdoblja (`cbc:StartDate`) i BT-74 / Kraj obračunskog
-
 > razdoblja (`cbc:EndDate`) NIKADA ne utječu na datum nastanka porezne obveze.**
-
 > Oni su uvijek isključivo informativni — govore primatelju računa za koje vremensko
-
 > razdoblje se račun odnosi (npr. "najam za siječanj–ožujak"). Sustav ih ne koristi
-
 > za izračun datuma PDV-a ni u jednom scenariju. Mogu se dodati u bilo koji račun
-
 > bez ikakve promjene u PDV tretmanu.
 
 
@@ -109,25 +90,15 @@ title: "Datumi i porezna obveza — kompletni workflow"
 
 
 > Redni broj računa (brojčanik) uvijek se vrti prema **BT-2 / Datum izdavanja računa
-
 > (`cbc:IssueDate`)**, bez obzira na koje se porezno razdoblje račun odnosi.
-
 >
-
 > Primjer: IT podrška obavljena u prosincu 2025., račun izdan 10.01.2026.
-
 > - Broj računa: **1/1/1** (prvi račun u 2026. godini)
-
 > - BT-2 (`cbc:IssueDate`): 2026-01-10
-
 > - Datum nastanka porezne obveze: 2025-12-31 (određen kroz BT-7 ili BT-8, ovisno o situaciji)
-
 >
-
 > Brojčanik pripada **2026.** (po datumu izdavanja), iako PDV ide u **2025.**
-
 > (po datumu nastanka porezne obveze). Ovo je u skladu sa Zakonom o fiskalizaciji
-
 > (čl. 8 i 9) — broj računa prati kronološki redoslijed izdavanja, ne porezno razdoblje.
 
 
@@ -141,11 +112,8 @@ title: "Datumi i porezna obveza — kompletni workflow"
 
 
 > *"Oporezivi događaj i obveza obračuna PDV-a nastaju kada su dobra isporučena ili usluge obavljene."*
-
 > — Čl. 30, st. 1 Zakona o PDV-u
-
 >
-
 > Datum poreza je poznat u trenutku izdavanja računa i jednak je **datumu isporuke**.
 
 
@@ -217,11 +185,8 @@ flowchart TD
 
 
 > **Primjer**: Roba isporučena 28.03., račun izdan 05.04.
-
 > BT-7 (`cbc:TaxPointDate`) = 2026-03-28 → PDV ulazi u **ožujak**, ne u travanj.
-
 >
-
 > XML primjeri za ovaj slučaj: [4.1.1 Isti dan](#411-isporuka-i-račun-isti-dan), [4.1.2 Drugi mjesec](#412-isporuka-u-drugom-mjesecu-od-računa), [4.1.3 Račun prije isporuke](#413-račun-izdan-prije-isporuke-čl-30-st-2), [4.1.4 Predujam](#414-predujam--avansni-račun-čl-30-st-5), [4.1.5 Kontinuirana](#415-kontinuirana-usluga--obračunsko-razdoblje-bt-73-bt-74)
 
 
@@ -235,13 +200,9 @@ flowchart TD
 
 
 > *"Porezni obveznik koji primjenjuje postupak oporezivanja prema naplaćenim naknadama,*
-
 > *obvezu obračuna PDV-a ima u trenutku primitka plaćanja."*
-
 > — Čl. 125.i Zakona o PDV-u
-
 >
-
 > Datum poreza u trenutku izdavanja računa **nije poznat** — ovisi o tome kada će kupac platiti.
 
 
@@ -305,23 +266,14 @@ flowchart TD
 
 
 > **Primjer**: Račun izdan 15.03., roba isporučena 10.03., kupac plaća 20.05.
-
 > PDV obveza nastaje tek **20.05.** kada kupac plati.
-
 > Na ispisu računa polje "Datum poreza" je **skriveno** jer datum još nije poznat.
-
 >
-
 > **HR-BT-15 napomena**: Posrednik iz elementa `hrextac:HRObracunPDVPoNaplati`
-
 > (s tekstom *"Obračun prema naplaćenoj naknadi"*) generira SOAP poruku za
-
 > `EvidentirajERacun` prema Poreznoj upravi, koja označava da se za ovaj račun
-
 > primjenjuje postupak oporezivanja prema naplaćenim naknadama (čl. 125.i Zakona o PDV-u).
-
 >
-
 > XML primjeri za ovaj slučaj: [4.2.1 Isti mjesec](#421-isporuka-i-račun-isti-mjesec), [4.2.2 Drugi mjesec](#422-isporuka-u-drugom-mjesecu-od-računa), [4.2.3 Račun prije isporuke](#423-račun-izdan-prije-isporuke), [4.2.4 Predujam](#424-predujam--avansni-račun), [4.2.5 Kontinuirana](#425-kontinuirana-usluga-s-obračunskim-razdobljem)
 
 
@@ -422,7 +374,6 @@ flowchart TD
 ```
 
 > Porezna obveza: **28.03.2026** — PDV ulazi u **ožujak**, ne u travanj!
-
 > Razlog: po čl. 30 st. 1 Zakona o PDV-u, obveza nastaje kad su dobra isporučena.
 
 
@@ -436,15 +387,10 @@ flowchart TD
 
 
 > *"Ako je račun izdan prije nego su dobra isporučena ili usluge obavljene,*
-
 > *obveza obračuna PDV-a nastaje na dan izdavanja računa."*
-
 > — Čl. 30, st. 2 Zakona o PDV-u
-
 >
-
 > Ovo je **obrnuta situacija** od Primjera B — račun prethodi isporuci.
-
 > Porezna obveza nastaje **danom izdavanja računa**, ne danom isporuke.
 
 
@@ -477,17 +423,11 @@ flowchart TD
 ```
 
 > PDV ide u **ožujak** — ali po datumu računa (05.03.), ne po datumu isporuke (20.03.).
-
 > Ne trebamo ni BT-7 ni BT-8 jer default (BT-2) je upravo ono što zakon traži.
-
 > BT-72 je informativan — govori kupcu kad će roba biti isporučena.
-
 >
-
 > **Pozor**: Ako su račun i isporuka u **različitim mjesecima** (npr. račun 28.03., isporuka 05.04.),
-
 > PDV i dalje ide u ožujak (datum računa). Ovo je jedini slučaj gdje datum izdavanja
-
 > ima prednost nad datumom isporuke.
 
 
@@ -501,13 +441,9 @@ flowchart TD
 
 
 > *"Za primljene predujmove obveza obračuna PDV-a na primljeni iznos*
-
 > *nastaje u trenutku primitka predujma."*
-
 > — Čl. 30, st. 5 Zakona o PDV-u
-
 >
-
 > Kupac plaća unaprijed. Isporuke još nema. Račun za predujam se izdaje nakon primitka uplate.
 
 
@@ -540,17 +476,11 @@ flowchart TD
 ```
 
 > PDV ide u **veljaču** — po datumu primitka predujma (05.02.), ne po datumu računa (10.02.).
-
 > BT-72 se ne koristi jer roba/usluga još nije isporučena.
-
 > Vrsta dokumenta je **386** (predujam), ne 380 (standardni račun).
-
 >
-
 > **Važno**: Kod predujma, BT-7 je **datum primitka uplate**, ne datum isporuke.
-
 > Ovo je poseban slučaj čl. 30 st. 5 gdje porezna obveza nastaje
-
 > primanjem novca, a ne isporukom dobara.
 
 
@@ -564,19 +494,12 @@ flowchart TD
 
 
 > IT podrška za razdoblje siječanj–ožujak 2026. Račun izdan u travnju.
-
 > Ovo je primjer iz čl. 30 st. 2 Zakona o PDV-u: *"Za kontinuirane isporuke dobara*
-
 > *ili usluge sa stalnim računima, smatra se da su isporučeni po isteku razdoblja*
-
 > *na koje se računi odnose."*
-
 >
-
 > Kod kontinuiranih usluga nema jednog datuma isporuke — porezna obveza nastaje istekom
-
 > razdoblja (čl. 30 st. 2). BT-73/BT-74 opisuju to razdoblje, ali **datum poreza i dalje
-
 > određuje BT-7** koji se postavlja na kraj razdoblja (= BT-74).
 
 
@@ -617,19 +540,12 @@ flowchart TD
 ```
 
 > PDV ide u **ožujak** — kraj obračunskog razdoblja (čl. 30 st. 2).
-
 > BT-73/BT-74 opisuju razdoblje usluge (siječanj–ožujak).
-
 > BT-7 je eksplicitno postavljen na kraj razdoblja (31.03.) jer tada nastaje porezna obveza.
-
 > BT-72 se ne koristi jer nema jednog datuma isporuke — usluga je kontinuirana.
-
 >
-
 > **Važno**: BT-73 i BT-74 sami po sebi NE određuju datum poreza — oni su informativni.
-
 > Datum poreza i dalje određuje BT-7 (ili BT-8). Ali za kontinuirane usluge, BT-7
-
 > se postavlja na datum koji proizlazi iz čl. 30 st. 2 — kraj razdoblja.
 
 
@@ -665,23 +581,14 @@ flowchart TD
 ```
 
 > Bez BT-7 i BT-8, porezna obveza = BT-2 (datum izdavanja) = **travanj**.
-
 > Ali po čl. 30 st. 2, obveza je nastala istekom razdoblja = **ožujak**.
-
 > **PDV završava u krivom mjesecu!**
-
 >
-
 > BT-73/BT-74 su samo informativni — govore primatelju da se račun odnosi
-
 > na razdoblje sij–ožu, ali sustav ih **ne koristi za određivanje datuma poreza**.
-
 > Bez BT-7 ili BT-8, sustav uvijek uzima BT-2 kao datum porezne obveze.
-
 >
-
 > **Zaključak**: Za kontinuirane usluge BT-7 je **nužan** — bez njega PDV
-
 > ide u mjesec izdavanja računa umjesto u mjesec završetka usluge.
 
 
@@ -720,25 +627,15 @@ flowchart TD
 ```
 
 > **Schematron validator**: prolazi — HR-BR-48 samo provjerava raspon datuma (1900–2100),
-
 > ne provjerava logičku vezu između BT-7 i BT-73/BT-74.
-
 >
-
 > **Zakonski**: **neispravno** — po čl. 30 st. 2, za kontinuirane usluge porezna obveza
-
 > nastaje istekom razdoblja (ožujak), ne u nekom proizvoljnom mjesecu unutar razdoblja.
-
 > Porezna uprava bi mogla osporiti PDV prijavu jer je PDV prikazan u veljači
-
 > umjesto u ožujku.
-
 >
-
 > **Zaključak**: Validator ne hvata sve zakonske nepravilnosti. Činjenica da XML prolazi
-
 > validaciju ne znači da je porezno ispravan. BT-7 kod kontinuiranih usluga **mora biti
-
 > jednak BT-74** (kraj obračunskog razdoblja) da bi bio usklađen s čl. 30 st. 2.
 
 
@@ -748,9 +645,7 @@ flowchart TD
 
 
 > Umjesto da eksplicitno upišemo datum u BT-7, kažemo sustavu:
-
 > "datum porezne obveze = datum isporuke (BT-72)".
-
 > Rezultat je isti kao D.1, ali mehanizam je drugačiji.
 
 
@@ -784,11 +679,8 @@ flowchart TD
 ```
 
 > PDV ide u **siječanj** — isti rezultat kao D.1.
-
 > Razlika: BT-7 eksplicitno piše datum, BT-8=35 govori sustavu "pogledaj BT-72".
-
 > Prednost BT-8=35: garantira konzistentnost — nema rizika da BT-7 i BT-72 budu različiti.
-
 > Nedostatak: ne možemo odvojiti datum poreza od datuma isporuke (vidi D.4).
 
 
@@ -798,7 +690,6 @@ flowchart TD
 
 
 > Odobrenje (knjižno odobrenje) umanjuje iznos prethodno izdanog računa.
-
 > U UBL CreditNote shemi **BT-7 (`cbc:TaxPointDate`) ne postoji**.
 
 
@@ -846,17 +737,11 @@ flowchart TD
 ```
 
 > PDV korekcija ide u **travanj** (datum izdavanja odobrenja).
-
 > BT-7 ne postoji u UBL CreditNote shemi — nema mogućnosti eksplicitnog datuma poreza.
-
 > BT-8 se također ne koristi za odobrenja.
-
 > Referenca na izvorni račun (BT-25/BT-26) povezuje odobrenje s originalnim računom.
-
 >
-
 > **Napomena**: U praksi, knjigovođa odlučuje u koje porezno razdoblje ulazi
-
 > korekcija PDV-a — to ovisi o internim pravilima i nije definirano XML-om.
 
 
@@ -872,7 +757,6 @@ flowchart TD
 
 
 > Isporuka je bila u siječnju → porezna obveza nastala u siječnju.
-
 > BT-7 eksplicitno upisuje datum isporuke kao datum porezne obveze.
 
 
@@ -902,7 +786,6 @@ flowchart TD
 ```
 
 > PDV ide u **siječanj**. BT-7 i BT-72 imaju isti datum jer je
-
 > porezna obveza vezana za isporuku (čl. 30 st. 1).
 
 
@@ -989,7 +872,6 @@ flowchart TD
 
 
 > Isti podaci, ali obveznik koristi obračun po naplaćenoj naknadi.
-
 > Ni isporuka ni izdavanje ne određuju datum poreza — samo plaćanje.
 
 
@@ -1023,11 +905,8 @@ flowchart TD
 ```
 
 > PDV ide u **travanj** — obveza nastaje tek plaćanjem 15.04.
-
 > BT-72 (siječanj) je samo informativan za kupca.
-
 > BT-2 (ožujak) je samo administrativni datum izdavanja.
-
 > Ni jedan ni drugi ne utječe na poreznu obvezu.
 
 
@@ -1037,7 +916,6 @@ flowchart TD
 
 
 > Račun izdan 05.03., isporuka planirana 20.03., kupac plaća 10.04.
-
 > Kod obračuna po naplati, niti datum računa niti datum isporuke ne igraju ulogu — PDV nastaje isključivo plaćanjem.
 
 
@@ -1079,9 +957,7 @@ flowchart TD
 ```
 
 > PDV ide u **travanj** — obveza nastaje plaćanjem 10.04. (čl. 125.i).
-
 > Za razliku od obračuna po izdavanju (4.1.3) gdje bi PDV išao u ožujak po datumu računa,
-
 > ovdje čak i datum računa ne igra ulogu.
 
 
@@ -1091,7 +967,6 @@ flowchart TD
 
 
 > Kupac plaća unaprijed 05.02., račun za predujam izdan 10.02., isporuke još nema.
-
 > Kod obračuna po naplati, predujam je poseban slučaj: kupac je **već platio** — dakle PDV obveza nastaje **odmah** pri primitku predujma, jednako kao kod obračuna po izdavanju (čl. 30 st. 5).
 
 
@@ -1124,11 +999,8 @@ flowchart TD
 ```
 
 > PDV ide u **veljaču** — predujam je primljen 05.02. (čl. 30 st. 5).
-
 > Ovo je jedini slučaj kod obračuna po naplati gdje koristimo **BT-7 umjesto BT-8** — jer je datum plaćanja poznat (kupac je već platio), pa nema smisla stavljati BT-8=432 ("datum plaćanja će se odrediti u budućnosti").
-
 >
-
 > **Zaključak**: Predujam se tretira identično bez obzira na način obračuna — jer je po definiciji već plaćen.
 
 
@@ -1138,7 +1010,6 @@ flowchart TD
 
 
 > IT podrška za razdoblje siječanj–ožujak, račun u travnju, kupac plaća u lipnju.
-
 > Obveznik koristi obračun po naplaćenoj naknadi (čl. 125.i).
 
 
@@ -1168,19 +1039,12 @@ flowchart TD
 ```
 
 > PDV ide u **lipanj** — obveza nastaje tek plaćanjem (čl. 125.i).
-
 > BT-73/BT-74 (sij–ožu) govore kupcu za koje razdoblje je račun.
-
 > BT-8=432 govori sustavu da datum poreza ovisi o plaćanju.
-
 > Sve tri informacije (razdoblje, način obračuna, datum plaćanja) su neovisne.
-
 >
-
 > **Važno**: BT-8 (DescriptionCode) i BT-73/BT-74 (StartDate/EndDate) mogu
-
 > koegzistirati unutar istog `cac:InvoicePeriod` elementa — nisu međusobno isključivi.
-
 > Međusobno isključivi su samo BT-7 i BT-8 (pravilo BR-CO-03).
 
 
@@ -1204,11 +1068,8 @@ flowchart TD
 
 
 > Ista roba, isti datumi — pet različitih PDV tretmana ovisno o odabiru BT-7/BT-8.
-
 > U praksi se za jednokratne isporuke koristi BT-7 (eksplicitno), a BT-8=432 za obračun po naplati.
-
 > BT-8=35 je alternativa BT-7 koja garantira konzistentnost s BT-72.
-
 > BT-8=3 je redundantan (isto kao default) i u praksi se ne koristi.
 
 
@@ -1222,9 +1083,7 @@ flowchart TD
 
 
 > **Česta zabuna**: Datumi na eRačunu (BT-2, BT-7, BT-8, BT-72) služe **isključivo za PDV**.
-
 > Oni NE određuju kada se nešto priznaje kao rashod/trošak u poslovnim knjigama.
-
 > To su dva odvojena pitanja koja se rješavaju po različitim propisima.
 
 
@@ -1260,27 +1119,18 @@ Primjer: IT podrška obavljena u prosincu 2025., račun izdan u siječnju 2026.,
 
 
 > **Ključna razlika**: Kad prodavatelj koristi obračun po naplati, kupac **ne smije odbiti
-
 > pretporez pri primitku računa** — mora čekati do plaćanja. PDV obveza prodavatelja i
-
 > pravo na pretporez kupca nastaju u istom trenutku: danom plaćanja.
 
 
 
 > Sve pet stavki mogu biti u **različitim mjesecima ili čak godinama** za isti poslovni događaj.
-
 >
-
 > Kad knjigovođa kaže *"ide u trošak za prošlu godinu"* — misli da je usluga obavljena u
-
 > prošloj godini pa rashod pripada tamo (HSFI 16), čak i ako je račun stigao u siječnju
-
 > nove godine. To se zove **vremensko razgraničenje** i rješava se interno u
-
 > knjigovodstvu, ne kroz eRačun XML.
-
 >
-
 > **eRačun datumi služe za PDV, ne za priznavanje rashoda.**
 
 
@@ -1368,11 +1218,8 @@ Redoslijed elemenata u UBL Invoice XML-u je strogo definiran shemom:
 
 
 > Sva pravila u tablici ispod su **`flag="fatal"`** — ako ih račun ne zadovolji,
-
 > **Schematron validator odbija XML** i račun se ne može poslati posredniku.
-
 > Pravila s prefiksom **HR-BR** dolaze iz HR CIUS 2025 schematrona (`HR-CIUS-EXT-EN16931-UBL.sch`),
-
 > a pravila s prefiksom **BR-CO** iz europskog EN16931 schematrona (`EN16931-UBL-validation.xslt`).
 
 
@@ -1413,9 +1260,7 @@ Redoslijed elemenata u UBL Invoice XML-u je strogo definiran shemom:
 
 
 > **Pročišćeni tekstovi zakona** (neslužbeni, ali lakši za čitanje):
-
 > <a href="https://www.zakon.hr/z/1455/zakon-o-porezu-na-dodanu-vrijednost" target="_blank">Zakon o PDV-u — zakon.hr</a> ·
-
 > <a href="https://www.zakon.hr/z/3960/zakon-o-fiskalizaciji" target="_blank">Zakon o fiskalizaciji — zakon.hr</a>
 
 
