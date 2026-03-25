@@ -119,7 +119,7 @@ flowchart TD
 > **Primjer**: Roba isporučena 28.03., račun izdan 05.04.
 > BT-7 (`cbc:TaxPointDate`) = 2026-03-28 → PDV ulazi u **ožujak**, ne u travanj.
 >
-> XML primjeri za ovaj slučaj: [4.1.1 Isti dan](#411-isporuka-i-račun-isti-dan), [4.1.2 Drugi mjesec](#412-isporuka-u-drugom-mjesecu-od-računa), [4.1.3 Račun prije isporuke](#413-račun-izdan-prije-isporuke-čl-30-st-2), [4.1.4 Predujam](#414-predujam--avansni-račun-čl-30-st-5), [4.1.5 Kontinuirana](#415-kontinuirana-usluga--obračunsko-razdoblje-bt-73-bt-74)
+> XML primjeri za ovaj slučaj: [4.1.1 Isti dan](#411-isporuka-i-račun-isti-dan-po-izdavanju), [4.1.2 Drugi mjesec](#412-isporuka-u-drugom-mjesecu-od-računa-po-izdavanju), [4.1.3 Račun prije isporuke](#413-račun-izdan-prije-isporuke-čl-30-st-2-po-izdavanju), [4.1.4 Predujam](#414-predujam-avansni-račun-čl-30-st-5-po-izdavanju), [4.1.5 Kontinuirana](#415-kontinuirana-usluga-obračunsko-razdoblje-bt-73-bt-74-po-izdavanju)
 
 ---
 
@@ -169,7 +169,7 @@ flowchart TD
 > `EvidentirajERacun` prema Poreznoj upravi, koja označava da se za ovaj račun
 > primjenjuje postupak oporezivanja prema naplaćenim naknadama (čl. 125.i Zakona o PDV-u).
 >
-> XML primjeri za ovaj slučaj: [4.2.1 Isti mjesec](#421-isporuka-i-račun-isti-mjesec), [4.2.2 Drugi mjesec](#422-isporuka-u-drugom-mjesecu-od-računa), [4.2.3 Račun prije isporuke](#423-račun-izdan-prije-isporuke), [4.2.4 Predujam](#424-predujam--avansni-račun), [4.2.5 Kontinuirana](#425-kontinuirana-usluga-s-obračunskim-razdobljem), [4.2.6 Odobrenje](#426-odobrenje--creditnote)
+> XML primjeri za ovaj slučaj: [4.2.1 Isti mjesec](#421-isporuka-i-račun-isti-mjesec-po-naplati), [4.2.2 Drugi mjesec](#422-isporuka-u-drugom-mjesecu-od-računa-po-naplati), [4.2.3 Račun prije isporuke](#423-račun-izdan-prije-isporuke-po-naplati), [4.2.4 Predujam](#424-predujam-avansni-račun-po-naplati), [4.2.5 Kontinuirana](#425-kontinuirana-usluga-s-obračunskim-razdobljem-po-naplati), [4.2.6 Odobrenje](#426-odobrenje-creditnote-po-naplati)
 
 ---
 
