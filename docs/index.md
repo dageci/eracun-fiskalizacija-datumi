@@ -30,6 +30,7 @@ title: "eRačun Hrvatska — Datumi i porezna obveza"
 | Dokument | Opis |
 |----------|------|
 | [Datumi i porezna obveza — kompletni workflow](eracun-datumi-poreza-workflow) | Glavni dokument s dijagramima, primjerima i zakonskim temeljem |
+| [Prijedlozi za proširenje validatora](prijedlozi-validator) | Konkretna pravila koja bi validator mogao uhvatiti na razini posrednika |
 
 ## Što pokriva dokumentacija?
 
