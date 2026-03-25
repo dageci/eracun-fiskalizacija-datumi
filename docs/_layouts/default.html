@@ -162,6 +162,8 @@
     .code-copy { position: absolute; top: 0.4rem; right: 0.5rem; font-size: 0.7rem; background: #f0f0f0; color: #333; padding: 0.2rem 0.6rem; border-radius: 3px; border: none; cursor: pointer; z-index: 2; transition: all 0.15s; font-weight: 500; font-family: inherit; }
     .code-copy:hover { background: #fff; color: #1a5276; }
     .code-copy.copied { background: #27ae60; color: white; }
+    .code-xml-help { position: absolute; top: 0.4rem; right: 5rem; font-size: 0.65rem; background: transparent; color: #6a9955; padding: 0.2rem 0.5rem; border-radius: 3px; text-decoration: none; z-index: 1; transition: all 0.15s; }
+    .code-xml-help:hover { background: rgba(255,255,255,0.1); color: #9cdcfe; text-decoration: none; }
 
     /* Feedback bar */
     .page-feedback { margin-top: 2rem; padding: 1.25rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-alt); text-align: center; }
@@ -398,6 +400,17 @@
         setTimeout(function() { btn.textContent = 'Kopiraj'; btn.classList.remove('copied'); }, 2000);
       });
       wrapper.appendChild(btn);
+
+      // Add "Kako čitati?" link for XML blocks
+      var text = code.textContent;
+      if (text.indexOf('<cbc:') !== -1 || text.indexOf('<cac:') !== -1 || text.indexOf('<ext:') !== -1 || text.indexOf('CreditNote') !== -1) {
+        var help = document.createElement('a');
+        help.classList.add('code-xml-help');
+        help.href = '#kako-citati-xml';
+        help.textContent = 'Kako čitati XML?';
+        help.title = 'Objašnjenje boja i komentara u XML kodu';
+        wrapper.appendChild(help);
+      }
     });
   })();
 
