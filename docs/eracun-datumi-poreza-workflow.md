@@ -43,7 +43,7 @@ has_toc: true
 > sustav ne bi znao koji ima prednost. Ovo pravilo je **`flag="fatal"`** u Schematron validatoru
 > — račun koji sadrži oba polja bit će **odbijen**.
 
-### Dozvoljene kombinacije
+### Dozvoljene kombinacije prisutnosti polja u XML dokumentu
 
 | | BT-7 | BT-8 | Rezultat | Kako se određuje datum porezne obveze |
 |:---:|:---:|:---:|:---:|:---|
