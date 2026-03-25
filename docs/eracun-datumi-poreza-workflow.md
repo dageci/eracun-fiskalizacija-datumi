@@ -193,10 +193,7 @@ flowchart TD
 | Datum izdavanja računa | BT-2 | `cbc:IssueDate` | 2026-03-15 |
 | Datum isporuke dobara | BT-72 | `cbc:ActualDeliveryDate` | 2026-03-15 |
 
-> BT-2: Datum izdavanja računa
-> BT-7: NEMA — datum isporuke = datum izdavanja
-> BT-8: NEMA
-> BT-72: NEMA — datum isporuke = datum izdavanja
+> BT-2: Datum izdavanja računa · BT-7: NEMA — datum isporuke = datum izdavanja · BT-8: NEMA · BT-72: NEMA — datum isporuke = datum izdavanja
 
 ```xml
 <cbc:IssueDate>2026-03-15</cbc:IssueDate>
@@ -214,9 +211,7 @@ flowchart TD
 | Datum isporuke dobara | BT-72 | `cbc:ActualDeliveryDate` | 2026-03-28 |
 | Datum nastanka obveze PDV-a | BT-7 | `cbc:TaxPointDate` | 2026-03-28 |
 
-> BT-2: Datum izdavanja računa
-> BT-7: Datum nastanka obveze PDV-a = datum isporuke (čl. 30 st. 1)
-> BT-72: Stvarni datum isporuke
+> BT-2: Datum izdavanja računa · BT-7: Datum nastanka obveze PDV-a = datum isporuke (čl. 30 st. 1) · BT-72: Stvarni datum isporuke
 
 ```xml
 <cbc:IssueDate>2026-04-05</cbc:IssueDate>
@@ -242,12 +237,7 @@ flowchart TD
 | Kod datuma PDV obveze | BT-8 | `cbc:DescriptionCode` | 432 |
 | Datum plaćanja | — | — | nije poznat u trenutku izdavanja |
 
-> BT-2: Datum izdavanja
-> BT-7: NEMA! (BR-CO-03 — ne smije biti uz BT-8)
-> BT-8 = 432: Porezna obveza nastaje danom plaćanja
-> BT-72: Datum isporuke
-> HR-BT-15: U HRFISK20Data bloku
-> ... ostali HR podaci ...
+> BT-2: Datum izdavanja · BT-7: NEMA! (BR-CO-03 — ne smije biti uz BT-8) · BT-8 = 432: Porezna obveza nastaje danom plaćanja · BT-72: Datum isporuke · HR-BT-15: U HRFISK20Data bloku · ... ostali HR podaci ...
 
 ```xml
 <cbc:IssueDate>2026-03-15</cbc:IssueDate>
@@ -293,8 +283,7 @@ flowchart TD
 > Isporuka je bila u siječnju → porezna obveza nastala u siječnju.
 > BT-7 eksplicitno upisuje datum isporuke kao datum porezne obveze.
 
-> BT-7: Eksplicitni datum nastanka obveze PDV-a = datum isporuke
-> BT-72: Stvarni datum isporuke
+> BT-7: Eksplicitni datum nastanka obveze PDV-a = datum isporuke · BT-72: Stvarni datum isporuke
 
 ```xml
 <cbc:IssueDate>2026-03-10</cbc:IssueDate>
@@ -315,9 +304,7 @@ flowchart TD
 > "datum porezne obveze = datum isporuke (BT-72)".
 > Rezultat je isti kao D.1, ali mehanizam je drugačiji.
 
-> BT-7: NEMA — koristimo BT-8 umjesto eksplicitnog datuma
-> BT-8 = 35: porezna obveza = BT-72 ActualDeliveryDate
-> BT-72: Stvarni datum isporuke — sustav automatski koristi ovaj datum za PDV
+> BT-7: NEMA — koristimo BT-8 umjesto eksplicitnog datuma · BT-8 = 35: porezna obveza = BT-72 ActualDeliveryDate · BT-72: Stvarni datum isporuke — sustav automatski koristi ovaj datum za PDV
 
 ```xml
 <cbc:IssueDate>2026-03-10</cbc:IssueDate>
@@ -341,12 +328,7 @@ flowchart TD
 > Isti podaci, ali obveznik koristi obračun po naplaćenoj naknadi.
 > Ni isporuka ni izdavanje ne određuju datum poreza — samo plaćanje.
 
-> BT-7: NEMA — datum poreza nije poznat (BR-CO-03)
-> BT-8 = 432: porezna obveza nastaje danom plaćanja
-> BT-72: Stvarni datum isporuke — informativan, NE utječe na PDV
-> HR-BT-15: Napomena za Poreznu upravu
-> (unutar ext:UBLExtensions / hrextac:HRFISK20Data)
-> <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati>
+> BT-7: NEMA — datum poreza nije poznat (BR-CO-03) · BT-8 = 432: porezna obveza nastaje danom plaćanja · BT-72: Stvarni datum isporuke — informativan, NE utječe na PDV · HR-BT-15: Napomena za Poreznu upravu · (unutar ext:UBLExtensions / hrextac:HRFISK20Data) · <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati>
 
 ```xml
 <cbc:IssueDate>2026-03-10</cbc:IssueDate>
@@ -383,9 +365,7 @@ flowchart TD
 | Kraj obračunskog razdoblja | BT-74 | `cbc:EndDate` | 2026-03-31 |
 | Datum nastanka obveze PDV-a | BT-7 | `cbc:TaxPointDate` | 2026-03-31 |
 
-> BT-7: Datum nastanka obveze PDV-a = kraj obračunskog razdoblja
-> BT-73/BT-74: Obračunsko razdoblje — informacija o periodu usluge
-> BT-72: NEMA — kod kontinuiranih usluga nema jednog datuma isporuke
+> BT-7: Datum nastanka obveze PDV-a = kraj obračunskog razdoblja · BT-73/BT-74: Obračunsko razdoblje — informacija o periodu usluge · BT-72: NEMA — kod kontinuiranih usluga nema jednog datuma isporuke
 
 ```xml
 <cbc:IssueDate>2026-04-05</cbc:IssueDate>
@@ -411,8 +391,7 @@ flowchart TD
 
 > Isti slučaj kao D.4 (IT podrška sij–ožu, račun u travnju), ali **bez BT-7**.
 
-> BT-7: NEMA!
-> BT-8: NEMA!
+> BT-7: NEMA! · BT-8: NEMA!
 
 ```xml
 <cbc:IssueDate>2026-04-05</cbc:IssueDate>
@@ -470,10 +449,7 @@ flowchart TD
 > IT podrška za razdoblje siječanj–ožujak, račun u travnju, kupac plaća u lipnju.
 > Obveznik koristi obračun po naplaćenoj naknadi (čl. 125.i).
 
-> BT-7: NEMA — jer koristimo BT-8 (BR-CO-03)
-> BT-8 = 432 + BT-73/BT-74 zajedno u InvoicePeriod
-> HR-BT-15: u HRFISK20Data
-> <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati>
+> BT-7: NEMA — jer koristimo BT-8 (BR-CO-03) · BT-8 = 432 + BT-73/BT-74 zajedno u InvoicePeriod · HR-BT-15: u HRFISK20Data · <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati>
 
 ```xml
 <cbc:IssueDate>2026-04-05</cbc:IssueDate>
@@ -527,9 +503,7 @@ flowchart TD
 | Datum izdavanja računa | BT-2 | `cbc:IssueDate` | 2026-03-05 |
 | Stvarni datum isporuke | BT-72 | `cbc:ActualDeliveryDate` | 2026-03-20 |
 
-> BT-7: NEMA — porezna obveza = datum izdavanja (čl. 30 st. 2)
-> BT-8: NEMA — default ponašanje je upravo to što nam treba
-> BT-72: Isporuka je nakon računa
+> BT-7: NEMA — porezna obveza = datum izdavanja (čl. 30 st. 2) · BT-8: NEMA — default ponašanje je upravo to što nam treba · BT-72: Isporuka je nakon računa
 
 ```xml
 <cbc:IssueDate>2026-03-05</cbc:IssueDate>
@@ -562,9 +536,7 @@ flowchart TD
 | Datum izdavanja računa | BT-2 | `cbc:IssueDate` | 2026-02-10 |
 | Datum primitka predujma | BT-7 | `cbc:TaxPointDate` | 2026-02-05 |
 
-> BT-7: Datum primitka predujma — to je datum porezne obveze (čl. 30 st. 5)
-> BT-72: NEMA — isporuka se još nije dogodila
-> Vrsta dokumenta: 386 = predujam
+> BT-7: Datum primitka predujma — to je datum porezne obveze (čl. 30 st. 5) · BT-72: NEMA — isporuka se još nije dogodila · Vrsta dokumenta: 386 = predujam
 
 ```xml
 <cbc:IssueDate>2026-02-10</cbc:IssueDate>
@@ -595,10 +567,7 @@ flowchart TD
 | Referenca na izvorni račun | BT-25 | `cbc:ID` (BillingReference) | 147/1/1 |
 | Datum izvornog računa | BT-26 | `cbc:IssueDate` (BillingReference) | 2026-03-15 |
 
-> Korijen: CreditNote, NE Invoice
-> BT-7: NE POSTOJI u CreditNote shemi!
-> Vrsta dokumenta: 381 = odobrenje
-> BT-25/BT-26: Referenca na izvorni račun
+> Korijen: CreditNote, NE Invoice · BT-7: NE POSTOJI u CreditNote shemi! · Vrsta dokumenta: 381 = odobrenje · BT-25/BT-26: Referenca na izvorni račun
 
 ```xml
 <CreditNote>
@@ -670,13 +639,7 @@ Primjer: IT podrška obavljena u prosincu 2025., račun izdan u siječnju 2026.,
 
 Redoslijed elemenata u UBL Invoice XML-u je strogo definiran shemom:
 
-> 1. Zaglavlje
-> 2. Datumi
-> 3. Reference
-> 4. InvoicePeriod (ako se koristi BT-8)
-> ... narudžbe, reference ...
-> 5. Isporuka
-> ... stavke, porezi, iznosi ...
+> 1. Zaglavlje · 2. Datumi · 3. Reference · 4. InvoicePeriod (ako se koristi BT-8) · ... narudžbe, reference ... · 5. Isporuka · ... stavke, porezi, iznosi ...
 
 ```xml
 <Invoice>
