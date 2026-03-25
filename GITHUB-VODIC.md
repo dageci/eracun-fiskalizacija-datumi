@@ -47,9 +47,18 @@ GitHub nije samo za programere — koriste ga državne institucije, porezne upra
 | **Francuska (Legifrance)** | Francuski zakoni dostupni u strojno čitljivom formatu. | [Legifrance projekti](https://github.com/topics/legifrance) |
 | **Government Open Source Policies** | Zbirka pristupa vlada diljem svijeta prema open source softveru. | [github/government-open-source-policies](https://github.com/github/government-open-source-policies) |
 
-> **Poanta**: Ako američka porezna uprava koristi GitHub za porezne zakone,
-> a Europska komisija za eRačun specifikacije — onda je GitHub apsolutno
-> prikladno mjesto za zajedničku dokumentaciju o hrvatskim eRačunima.
+### Velike tvrtke
+
+| Tvrtka | Opis | Link |
+|--------|------|------|
+| **Microsoft** | **Cjelokupna** dokumentacija (learn.microsoft.com) je na GitHubu — 800+ repozitorija. Svaki članak ima "Edit" gumb za predlaganje izmjena. | [MicrosoftDocs](https://github.com/MicrosoftDocs) |
+| **Google** | Dokumentacija za Android, Kubernetes, TensorFlow, Go i stotine drugih projekata — sve otvoreno za doprinose. | [google](https://github.com/google) |
+| **Meta (Facebook)** | React, React Native i ostala dokumentacija razvija se otvoreno na GitHubu. | [facebook](https://github.com/facebook) |
+
+> **Poanta**: Ako Microsoft koristi GitHub za svu svoju dokumentaciju,
+> američka porezna uprava za porezne zakone, a Europska komisija za
+> eRačun specifikacije — onda je GitHub apsolutno prikladno mjesto
+> za zajedničku dokumentaciju o hrvatskim eRačunima.
 
 ## Kako čitati dokumentaciju?
 
