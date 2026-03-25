@@ -652,11 +652,26 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <cbc:TaxPointDate>2026-02-05</cbc:TaxPointDate>
 
 <cbc:InvoiceTypeCode>386</cbc:InvoiceTypeCode>
+
+<!-- HR-BT-15: Obavezno — obveznik koristi obračun po naplaćenoj naknadi -->
+<ext:UBLExtensions>
+  <ext:UBLExtension>
+    <ext:ExtensionContent>
+      <hrextac:HRFISK20Data>
+        <hrextac:HRObracunPDVPoNaplati>
+          Obračun prema naplaćenoj naknadi
+        </hrextac:HRObracunPDVPoNaplati>
+      </hrextac:HRFISK20Data>
+    </ext:ExtensionContent>
+  </ext:UBLExtension>
+</ext:UBLExtensions>
 ```
 > PDV ide u **veljaču** — predujam je primljen 05.02. (čl. 30 st. 5).
 > Ovo je jedini slučaj kod obračuna po naplati gdje koristimo **BT-7 umjesto BT-8** — jer je datum plaćanja poznat (kupac je već platio), pa nema smisla stavljati BT-8=432 ("datum plaćanja će se odrediti u budućnosti").
 >
-> **Zaključak**: Predujam se tretira identično bez obzira na način obračuna — jer je po definiciji već plaćen.
+> **HR-BT-15 je i dalje obavezan** — iako koristimo BT-7 umjesto BT-8, obveznik je registriran za obračun po naplaćenoj naknadi i ta informacija mora biti u HRFISK20Data bloku za fiskalizacijsku poruku prema Poreznoj upravi.
+>
+> **Zaključak**: Predujam kod obračuna po naplati koristi BT-7 (jer je datum plaćanja poznat), ali HR-BT-15 ostaje obavezan jer je to svojstvo obveznika, ne pojedinačnog računa.
 
 #### 4.2.5 Kontinuirana usluga s obračunskim razdobljem
 
@@ -745,6 +760,7 @@ Primjer: IT podrška obavljena u prosincu 2025., račun izdan u siječnju 2026.,
 > **Ključna razlika**: Kad prodavatelj koristi obračun po naplati, kupac **ne smije odbiti
 > pretporez pri primitku računa** — mora čekati do plaćanja. PDV obveza prodavatelja i
 > pravo na pretporez kupca nastaju u istom trenutku: danom plaćanja.
+
 > Sve pet stavki mogu biti u **različitim mjesecima ili čak godinama** za isti poslovni događaj.
 >
 > Kad knjigovođa kaže *"ide u trošak za prošlu godinu"* — misli da je usluga obavljena u
