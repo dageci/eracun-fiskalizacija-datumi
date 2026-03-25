@@ -177,7 +177,7 @@ flowchart TD
 > `EvidentirajERacun` prema Poreznoj upravi, koja označava da se za ovaj račun
 > primjenjuje postupak oporezivanja prema naplaćenim naknadama (čl. 125.i Zakona o PDV-u).
 >
-> XML primjeri za ovaj slučaj: [4.2.1 Isti mjesec](#421-isporuka-i-račun-isti-mjesec), [4.2.2 Drugi mjesec](#422-isporuka-u-drugom-mjesecu-od-računa), [4.2.3 Račun prije isporuke](#423-račun-izdan-prije-isporuke), [4.2.4 Predujam](#424-predujam--avansni-račun), [4.2.5 Kontinuirana](#425-kontinuirana-usluga-s-obračunskim-razdobljem)
+> XML primjeri za ovaj slučaj: [4.2.1 Isti mjesec](#421-isporuka-i-račun-isti-mjesec), [4.2.2 Drugi mjesec](#422-isporuka-u-drugom-mjesecu-od-računa), [4.2.3 Račun prije isporuke](#423-račun-izdan-prije-isporuke), [4.2.4 Predujam](#424-predujam--avansni-račun), [4.2.5 Kontinuirana](#425-kontinuirana-usluga-s-obračunskim-razdobljem), [4.2.6 Odobrenje](#426-odobrenje--creditnote)
 
 ---
 
@@ -711,6 +711,55 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > **Važno**: BT-8 (DescriptionCode) i BT-73/BT-74 (StartDate/EndDate) mogu
 > koegzistirati unutar istog `cac:InvoicePeriod` elementa — nisu međusobno isključivi.
 > Međusobno isključivi su samo BT-7 i BT-8 (pravilo BR-CO-03).
+
+#### 4.2.6 Odobrenje / CreditNote
+
+> Odobrenje za obveznika koji koristi obračun po naplaćenoj naknadi.
+> Odobrenje umanjuje iznos prethodno izdanog računa 147/1/1 od 15.03.2026.
+
+| Podatak | BT polje | XML element | Vrijednost |
+|---------|----------|-------------|-----------|
+| Datum izdavanja odobrenja | BT-2 | `cbc:IssueDate` | 2026-04-10 |
+| Referenca na izvorni račun | BT-25 | `cbc:ID` (BillingReference) | 147/1/1 |
+| Datum izvornog računa | BT-26 | `cbc:IssueDate` (BillingReference) | 2026-03-15 |
+
+```xml
+<!-- BT-7: NE POSTOJI u CreditNote shemi -->
+<!-- Korijen: CreditNote, NE Invoice -->
+<CreditNote>
+  <cbc:IssueDate>2026-04-10</cbc:IssueDate>
+  <cbc:IssueTime>12:00:00</cbc:IssueTime>
+
+  <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
+
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>147/1/1</cbc:ID>
+      <cbc:IssueDate>2026-03-15</cbc:IssueDate>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
+
+  <!-- HR-BT-15: Obavezno — obveznik koristi obračun po naplaćenoj naknadi -->
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <hrextac:HRFISK20Data>
+          <hrextac:HRObracunPDVPoNaplati>
+            Obračun prema naplaćenoj naknadi
+          </hrextac:HRObracunPDVPoNaplati>
+        </hrextac:HRFISK20Data>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+</CreditNote>
+```
+> BT-7 ne postoji u UBL CreditNote shemi, ali **HR-BT-15 je obavezan** jer je obveznik
+> registriran za obračun po naplaćenoj naknadi. `UBLExtensions` blok postoji i u CreditNote
+> shemi — schematron pravila koriste `//` xpath koji pokriva i Invoice i CreditNote.
+>
+> Za razliku od primjera 4.1.7 (CreditNote po izdavanju) koji nema HR-BT-15,
+> ovdje ga **moramo uključiti** jer posrednik iz njega generira fiskalizacijsku poruku
+> s oznakom obračuna po naplaćenoj naknadi.
 
 ### 4.3 Usporedba svih mehanizama za isti poslovni slučaj
 
