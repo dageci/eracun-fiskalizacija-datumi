@@ -59,8 +59,11 @@
 > razdoblje se račun odnosi (npr. "najam za siječanj–ožujak").
 >
 > Razlog: datum porezne obveze se **uvijek** određuje kroz gornja tri polja po sljedećoj
-> hijerarhiji — BT-73/BT-74 nisu dio te hijerarhije i sustav ih ignorira pri izračunu PDV-a.
-> Mogu se dodati u bilo koji račun bez ikakve promjene u PDV tretmanu.
+> hijerarhiji. Ključno je da **BT-2 (IssueDate) uvijek postoji** — to je obavezno polje
+> (HR-BR-40). Zato hijerarhija uvijek ima odgovor i nikada ne može doći u stanje
+> "nema datuma poreza" — što znači da BT-73/BT-74 nikada ne mogu doći na red
+> kao zamjena. Oni su isključivo informativni i mogu se dodati u bilo koji račun
+> bez ikakve promjene u PDV tretmanu.
 
 ```mermaid
 flowchart TD
@@ -70,9 +73,11 @@ flowchart TD
     CHECK1 -->|NE| CHECK2{Postoji li<br>BT-8 DescriptionCode<br>u XML-u?}
 
     CHECK2 -->|DA| RESULT2[Datum poreza ovisi o kodu:<br>3 = BT-2 IssueDate<br>35 = BT-72 ActualDeliveryDate<br>432 = datum plaćanja]
-    CHECK2 -->|NE| RESULT3[Datum poreza = BT-2<br>IssueDate<br>DEFAULT]
+    CHECK2 -->|NE| RESULT3[Datum poreza = BT-2<br>IssueDate<br>UVIJEK POSTOJI - obavezno polje!]
 
-    BT73[BT-73 StartDate<br>BT-74 EndDate] -.->|Samo informativno<br>NIKAD ne utječe<br>na datum poreza| START
+    RESULT3 -.- NOTE[Hijerarhija uvijek završava ovdje<br>jer BT-2 je obavezan.<br>Nema scenarija bez odgovora.]
+
+    BT73[BT-73 StartDate<br>BT-74 EndDate] -.->|Izvan hijerarhije.<br>Ne postoji grana<br>koja vodi do njih.| START
 
     style START fill:#e3f2fd,stroke:#1565c0,color:#000
     style CHECK1 fill:#fff3e0,stroke:#e65100,color:#000
@@ -80,6 +85,7 @@ flowchart TD
     style RESULT1 fill:#e8f5e9,stroke:#2e7d32,color:#000
     style RESULT2 fill:#e8f5e9,stroke:#2e7d32,color:#000
     style RESULT3 fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style NOTE fill:#f5f5f5,stroke:#9e9e9e,color:#9e9e9e
     style BT73 fill:#f5f5f5,stroke:#9e9e9e,color:#9e9e9e
 ```
 
