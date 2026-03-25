@@ -83,6 +83,7 @@ Dokument koristi [Mermaid](https://mermaid.js.org/) dijagrame. Za prikaz:
 ## Doprinos
 
 - [GITHUB-VODIC.md](GITHUB-VODIC.md) — **Što je GitHub, zašto ga koristimo i kako sudjelovati** (za početnike)
+- [GITHUB-OBAVIJESTI.md](GITHUB-OBAVIJESTI.md) — **Kako dobivati obavijesti o promjenama na email** (Watch, filtriranje, primjeri po ulozi)
 - [CONTRIBUTING.md](CONTRIBUTING.md) — Upute za rasprave, prijave grešaka i pull requestove
 
 ---

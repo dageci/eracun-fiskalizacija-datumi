@@ -87,6 +87,7 @@ Ako niste sigurni kako GitHub funkcionira, pogledajte **<a href="https://github.
 | Predložiti izmjenu teksta | <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/pulls" target="_blank">Pull Requests</a> |
 | Glasati za prijedlog | Emoji reakcije (👍 👎) na postojećim raspravama |
 | Samo čitati | Upravo ste na pravom mjestu — registracija nije potrebna |
+| Dobivati obavijesti o promjenama na email | Kliknite **Watch** na <a href="https://github.com/dageci/eracun-fiskalizacija-datumi" target="_blank">GitHub repu</a> — možete odabrati sve promjene ili samo određene (npr. samo rasprave, samo izmjene dokumenta). Detaljne upute: <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-OBAVIJESTI.md" target="_blank">Vodič za obavijesti</a> |
 
 Detaljne upute: <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/CONTRIBUTING.md" target="_blank">CONTRIBUTING.md</a>
 
