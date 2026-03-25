@@ -47,14 +47,10 @@ Glavni dokument koji pokriva:
    - Brojčanik računa i BT-2
    - Flowchart dijagrami (Mermaid) za oba scenarija
 3. **Mogući kodovi za BT-8** — 3 (IssueDate), 35 (ActualDeliveryDate), 432 (datum plaćanja)
-4. **Primjeri iz prakse**
-   - A: Isporuka i račun isti dan
-   - B: Isporuka u drugom mjesecu
-   - C: Obračun po naplaćenoj naknadi (čl. 125.i)
-   - D: Svi datumi u različitim mjesecima (5 potprimjera + usporedna tablica)
-   - E: Račun izdan prije isporuke (čl. 30 st. 2)
-   - F: Predujam / avansni račun (čl. 30 st. 5)
-   - G: Odobrenje / CreditNote
+4. **Primjeri iz prakse** — grupirani po načinu obračuna
+   - **4.1 Po izdavanju** (čl. 30): isti dan, drugi mjesec, račun prije isporuke, predujam, kontinuirana usluga, BT-8=35, odobrenje, svi datumi različiti
+   - **4.2 Po naplati** (čl. 125.i): isti mjesec, drugi mjesec, račun prije isporuke, predujam, kontinuirana usluga, odobrenje
+   - **4.3 Usporedba** svih 5 mehanizama za isti poslovni slučaj
 5. **Datumi na eRačunu vs. datumi u knjigovodstvu** — razlika između PDV-a, rashoda, pretporeza i poreza na dobit
 6. **XML struktura** — pozicija elemenata u UBL shemi
 7. **Validacijska pravila** — Schematron pravila (sva `flag="fatal"`)

@@ -43,15 +43,19 @@ title: "eRačun Hrvatska — Datumi i porezna obveza"
 - **HR-BT-15** / Obračun po naplaćenoj naknadi (`hrextac:HRObracunPDVPoNaplati`)
 - **BR-CO-03** — BT-7 i BT-8 su međusobno isključivi (`flag="fatal"`)
 
-### Primjeri iz prakse
-- Isporuka i račun isti dan
-- Isporuka u drugom mjesecu od računa
-- Obračun po naplaćenoj naknadi (čl. 125.i)
-- Svi datumi u različitim mjesecima (5 potprimjera)
-- Račun izdan prije isporuke (čl. 30 st. 2)
-- Predujam / avansni račun (čl. 30 st. 5)
-- Odobrenje / CreditNote
-- Kontinuirana usluga s obračunskim razdobljem
+### Primjeri iz prakse — grupirani po načinu obračuna
+
+**Obračun po izdavanju (čl. 30):** <span class="badge-izdavanje">Po izdavanju</span>
+- Isporuka i račun isti dan, isporuka u drugom mjesecu, račun prije isporuke
+- Predujam / avansni račun, kontinuirana usluga s obračunskim razdobljem
+- BT-8=35 alternativa, odobrenje / CreditNote, svi datumi u različitim mjesecima
+
+**Obračun po naplaćenoj naknadi (čl. 125.i):** <span class="badge-naplata">Po naplati</span>
+- Isporuka isti mjesec, isporuka u drugom mjesecu, račun prije isporuke
+- Predujam (edge case), kontinuirana usluga, odobrenje / CreditNote
+
+**Usporedba:** <span class="badge-usporedba">Usporedba</span>
+- Svih 5 mehanizama za isti poslovni slučaj u jednoj tablici
 
 ### Dodatne teme
 - Razlika između datuma za PDV i datuma za priznavanje rashoda u knjigovodstvu
