@@ -115,6 +115,45 @@
     .badge-naplata { display: inline-block; background: #e67e22; color: white; font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 3px; vertical-align: middle; margin-left: 0.5rem; }
     .badge-usporedba { display: inline-block; background: #8e44ad; color: white; font-size: 0.72rem; font-weight: 600; padding: 0.15rem 0.55rem; border-radius: 3px; vertical-align: middle; margin-left: 0.5rem; }
 
+    /* BT tooltips */
+    .bt-tooltip {
+      position: relative;
+      border-bottom: 1px dotted var(--primary-light);
+      cursor: help;
+      white-space: nowrap;
+    }
+    .bt-tooltip .bt-tip {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      white-space: nowrap;
+      z-index: 200;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      pointer-events: none;
+      margin-bottom: 0.3rem;
+    }
+    .bt-tooltip .bt-tip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #1e293b;
+    }
+    .bt-tooltip:hover .bt-tip { display: block; }
+    .bt-tip .bt-label { color: #5dade2; font-weight: 600; }
+    .bt-tip .bt-xml { color: #6a9955; font-family: "Fira Code", "Consolas", monospace; font-size: 0.74rem; }
+    .bt-tip .bt-req { color: #e67e22; }
+
     /* Code block wrapper with badge */
     .code-wrapper { position: relative; }
     .code-badge { position: absolute; top: 0.4rem; right: 0.5rem; font-size: 0.7rem; background: #f0f0f0; color: #333; padding: 0.2rem 0.6rem; border-radius: 3px; text-decoration: none; z-index: 1; transition: all 0.15s; font-weight: 500; }
@@ -466,6 +505,81 @@
   })();
 
   // ============================================================
+  // ============================================================
+  // BT tooltips - auto-wrap BT-* terms with tooltip popups
+  // ============================================================
+  (function() {
+    var definitions = {
+      'BT-2': { label: 'Datum izdavanja računa', xml: 'cbc:IssueDate', req: 'Obavezno' },
+      'HR-BT-2': { label: 'Vrijeme izdavanja računa', xml: 'cbc:IssueTime', req: 'Obavezno (HR)' },
+      'BT-7': { label: 'Datum nastanka obveze PDV-a', xml: 'cbc:TaxPointDate', req: 'Opcionalno' },
+      'BT-8': { label: 'Kod datuma PDV obveze', xml: 'cac:InvoicePeriod/cbc:DescriptionCode', req: 'Opcionalno' },
+      'BT-9': { label: 'Datum dospijeća plaćanja', xml: 'cbc:DueDate', req: 'Opcionalno' },
+      'BT-72': { label: 'Stvarni datum isporuke', xml: 'cbc:ActualDeliveryDate', req: 'Opcionalno' },
+      'BT-73': { label: 'Početak obračunskog razdoblja', xml: 'cbc:StartDate', req: 'Opcionalno' },
+      'BT-74': { label: 'Kraj obračunskog razdoblja', xml: 'cbc:EndDate', req: 'Opcionalno' },
+      'BT-25': { label: 'Referenca na prethodni račun', xml: 'cbc:ID (BillingReference)', req: 'Opcionalno' },
+      'BT-26': { label: 'Datum prethodnog računa', xml: 'cbc:IssueDate (BillingReference)', req: 'Opcionalno' },
+      'HR-BT-15': { label: 'Obračun prema naplaćenoj naknadi', xml: 'hrextac:HRObracunPDVPoNaplati', req: 'Za čl. 125.i' },
+      'BR-CO-03': { label: 'BT-7 i BT-8 su međusobno isključivi', xml: 'Schematron pravilo', req: 'flag="fatal"' }
+    };
+
+    var content = document.querySelector('.main-content');
+    if (!content) return;
+
+    // Sort keys by length descending to match longer terms first (HR-BT-15 before BT-1)
+    var keys = Object.keys(definitions).sort(function(a, b) { return b.length - a.length; });
+
+    // Build regex that matches BT terms not inside HTML tags, code, or pre
+    var walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT, null, false);
+    var textNodes = [];
+    while (walker.nextNode()) {
+      var node = walker.currentNode;
+      var parent = node.parentElement;
+      // Skip if inside code, pre, a, or already processed tooltip
+      if (parent && (parent.closest('pre, code, a, .bt-tooltip, .mermaid, .code-badge, h1, h2, h3, h4'))) continue;
+      if (node.textContent.match(/BT-|BR-CO/)) textNodes.push(node);
+    }
+
+    var pattern = new RegExp('\\b(' + keys.map(function(k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')\\b', 'g');
+
+    textNodes.forEach(function(node) {
+      var text = node.textContent;
+      if (!pattern.test(text)) return;
+      pattern.lastIndex = 0;
+
+      var frag = document.createDocumentFragment();
+      var lastIdx = 0;
+      var match;
+
+      while ((match = pattern.exec(text)) !== null) {
+        // Text before match
+        if (match.index > lastIdx) {
+          frag.appendChild(document.createTextNode(text.substring(lastIdx, match.index)));
+        }
+        // Create tooltip
+        var term = match[1];
+        var def = definitions[term];
+        var span = document.createElement('span');
+        span.className = 'bt-tooltip';
+        span.textContent = term;
+        var tip = document.createElement('span');
+        tip.className = 'bt-tip';
+        tip.innerHTML = '<span class="bt-label">' + term + '</span> — ' + def.label +
+          '<br><span class="bt-xml">' + def.xml + '</span>' +
+          '<br><span class="bt-req">' + def.req + '</span>';
+        span.appendChild(tip);
+        frag.appendChild(span);
+        lastIdx = match.index + match[0].length;
+      }
+      // Remaining text
+      if (lastIdx < text.length) {
+        frag.appendChild(document.createTextNode(text.substring(lastIdx)));
+      }
+      node.parentNode.replaceChild(frag, node);
+    });
+  })();
+
   // Back to top
   // ============================================================
   (function() {
