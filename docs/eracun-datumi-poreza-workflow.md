@@ -64,11 +64,30 @@ has_toc: true
 > Oni su uvijek isključivo informativni — govore primatelju računa za koje vremensko
 > razdoblje se račun odnosi (npr. "najam za siječanj–ožujak").
 >
-> Razlog: datum porezne obveze se **uvijek** određuje kroz gornja tri polja — ako postoji
-> BT-7, on određuje datum; ako postoji BT-8, kod određuje mehanizam; ako nema ni jednog
-> ni drugog, datum poreza je automatski BT-2 (datum izdavanja). BT-73/BT-74 nisu dio te
-> hijerarhije — sustav ih ignorira pri izračunu PDV-a. Mogu se dodati u bilo koji račun
-> bez ikakve promjene u PDV tretmanu.
+> Razlog: datum porezne obveze se **uvijek** određuje kroz gornja tri polja po sljedećoj
+> hijerarhiji — BT-73/BT-74 nisu dio te hijerarhije i sustav ih ignorira pri izračunu PDV-a.
+> Mogu se dodati u bilo koji račun bez ikakve promjene u PDV tretmanu.
+
+```mermaid
+flowchart TD
+    START([Koji je datum porezne obveze?]) --> CHECK1{Postoji li<br>BT-7 TaxPointDate<br>u XML-u?}
+
+    CHECK1 -->|DA| RESULT1[Datum poreza = BT-7<br>eksplicitni datum]
+    CHECK1 -->|NE| CHECK2{Postoji li<br>BT-8 DescriptionCode<br>u XML-u?}
+
+    CHECK2 -->|DA| RESULT2[Datum poreza ovisi o kodu:<br>3 = BT-2 IssueDate<br>35 = BT-72 ActualDeliveryDate<br>432 = datum plaćanja]
+    CHECK2 -->|NE| RESULT3[Datum poreza = BT-2<br>IssueDate<br>DEFAULT]
+
+    BT73[BT-73 StartDate<br>BT-74 EndDate] -.->|Samo informativno<br>NIKAD ne utječe<br>na datum poreza| START
+
+    style START fill:#e3f2fd,stroke:#1565c0,color:#000
+    style CHECK1 fill:#fff3e0,stroke:#e65100,color:#000
+    style CHECK2 fill:#fff3e0,stroke:#e65100,color:#000
+    style RESULT1 fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style RESULT2 fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style RESULT3 fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style BT73 fill:#f5f5f5,stroke:#9e9e9e,color:#9e9e9e
+```
 
 ### Brojčanik računa i BT-2 (IssueDate)
 
