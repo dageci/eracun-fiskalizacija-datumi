@@ -76,7 +76,7 @@ Ova dokumentacija je otvorena za sve — **svatko može komentirati, predložiti
   - <a href="https://github.com/DCCouncil/law-xml" target="_blank">Washington DC</a> — prvi zakonodavac koji je prihvatio izmjenu zakona od građanina kroz Pull Request
   - <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework" target="_blank">EU Digital Identity Wallet</a> — arhitektura europskog digitalnog identiteta razvija se otvoreno na GitHubu
 
-Ako niste sigurni kako GitHub funkcionira, pogledajte **<a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md" target="_blank">Vodič za GitHub</a>** — objašnjeno je korak po korak, za potpune početnike. Tu se nalaze i <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md#tko-još-koristi-github-za-zakone-i-propise" target="_blank">dodatni primjeri institucija</a> koje koriste GitHub.
+Ako niste sigurni kako GitHub funkcionira, pogledajte **<a href="/eracun-fiskalizacija-datumi/github-vodic">Vodič za GitHub</a>** — objašnjeno je korak po korak, za potpune početnike. Tu se nalaze i <a href="/eracun-fiskalizacija-datumi/github-vodic#tko-još-koristi-github-za-zakone-i-propise" target="_blank">dodatni primjeri institucija</a> koje koriste GitHub.
 
 ### Kako sudjelovati?
 
@@ -87,9 +87,9 @@ Ako niste sigurni kako GitHub funkcionira, pogledajte **<a href="https://github.
 | Predložiti izmjenu teksta | <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/pulls" target="_blank">Pull Requests</a> |
 | Glasati za prijedlog | Emoji reakcije (👍 👎) na postojećim raspravama |
 | Samo čitati | Upravo ste na pravom mjestu — registracija nije potrebna |
-| Dobivati obavijesti o promjenama na email | Kliknite **Watch** na <a href="https://github.com/dageci/eracun-fiskalizacija-datumi" target="_blank">GitHub repu</a> — možete odabrati sve promjene ili samo određene (npr. samo rasprave, samo izmjene dokumenta). Detaljne upute: <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-OBAVIJESTI.md" target="_blank">Vodič za obavijesti</a> |
+| Dobivati obavijesti o promjenama na email | Kliknite **Watch** na <a href="https://github.com/dageci/eracun-fiskalizacija-datumi" target="_blank">GitHub repu</a> — možete odabrati sve promjene ili samo određene (npr. samo rasprave, samo izmjene dokumenta). Detaljne upute: <a href="/eracun-fiskalizacija-datumi/github-obavijesti">Vodič za obavijesti</a> |
 
-Detaljne upute: <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/CONTRIBUTING.md" target="_blank">CONTRIBUTING.md</a>
+Detaljne upute: <a href="/eracun-fiskalizacija-datumi/kako-doprinijeti">CONTRIBUTING.md</a>
 
 ## Licenca
 

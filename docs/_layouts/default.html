@@ -17,161 +17,70 @@
       --left-nav: 220px;
       --right-toc: 220px;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.7;
-      color: var(--text);
-      background: var(--bg);
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); }
 
     /* Header */
-    .page-header {
-      background: linear-gradient(135deg, #2471a3 0%, #5dade2 100%);
-      color: white;
-      padding: 1.5rem 2rem;
-    }
+    .page-header { background: linear-gradient(135deg, #2471a3 0%, #5dade2 100%); color: white; padding: 1.5rem 2rem; }
     .page-header h1 { font-size: 1.6rem; margin-bottom: 0.3rem; color: white; border: none; }
     .page-header p { font-size: 0.92rem; opacity: 0.92; }
     .page-header a { color: #eaf2f8; text-decoration: none; font-weight: 500; }
     .page-header a:hover { color: white; text-decoration: underline; }
-    .header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      max-width: 100%;
-      margin: 0;
-    }
+    .header-row { display: flex; justify-content: space-between; align-items: flex-start; max-width: 100%; margin: 0; }
     .header-left { text-align: left; }
-    .header-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.35rem;
-      flex-shrink: 0;
-      margin-left: 2rem;
-    }
+    .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.35rem; flex-shrink: 0; margin-left: 2rem; }
     .badges { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end; }
     .badges img { height: 20px; }
     .header-gh-links { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end; }
-    .header-gh-links a {
-      background: rgba(255,255,255,0.15);
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.78rem;
-      color: white;
-      transition: background 0.15s;
-    }
+    .header-gh-links a { background: rgba(255,255,255,0.15); padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.78rem; color: white; transition: background 0.15s; }
     .header-gh-links a:hover { background: rgba(255,255,255,0.3); text-decoration: none; }
     .nav-links { margin-top: 0.5rem; font-size: 0.85rem; }
 
     /* 3-column layout */
-    .page-body {
-      display: flex;
-      max-width: 100%;
-      margin: 0;
-    }
+    .page-body { display: flex; max-width: 100%; margin: 0; }
 
     /* Left nav */
-    .left-nav {
-      width: var(--left-nav);
-      min-width: var(--left-nav);
-      padding: 1.25rem 0.75rem 2rem 1.25rem;
-      border-right: 1px solid var(--border);
-      background: var(--bg-alt);
-      font-size: 0.82rem;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow-y: auto;
-    }
-    .left-nav h3 {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-light);
-      margin: 1.1rem 0 0.3rem;
-      border: none;
-    }
+    .left-nav { width: var(--left-nav); min-width: var(--left-nav); padding: 1.25rem 0.75rem 2rem 1.25rem; border-right: 1px solid var(--border); background: var(--bg-alt); font-size: 0.82rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    .left-nav h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin: 1.1rem 0 0.3rem; border: none; }
     .left-nav h3:first-child { margin-top: 0; }
     .left-nav ul { list-style: none; margin: 0; padding: 0; }
     .left-nav li { margin-bottom: 0.15rem; }
-    .left-nav a {
-      color: var(--text);
-      text-decoration: none;
-      display: block;
-      padding: 0.2rem 0.4rem;
-      border-radius: 3px;
-      transition: background 0.15s;
-    }
+    .left-nav a { color: var(--text); text-decoration: none; display: block; padding: 0.2rem 0.4rem; border-radius: 3px; transition: background 0.15s; }
     .left-nav a:hover { background: #e2e8f0; color: var(--primary); }
 
     /* Search */
-    .search-box {
-      width: 100%;
-      padding: 0.4rem 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      font-size: 0.8rem;
-      margin-bottom: 0.75rem;
-      outline: none;
-    }
+    .search-box { width: 100%; padding: 0.4rem 0.5rem; border: 1px solid var(--border); border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.5rem; outline: none; }
     .search-box:focus { border-color: var(--primary-light); box-shadow: 0 0 0 2px rgba(41,128,185,0.15); }
-    .search-results { font-size: 0.78rem; margin-bottom: 0.75rem; }
-    .search-results li { margin-bottom: 0.2rem; }
-    .search-no-results { color: var(--text-light); font-size: 0.78rem; font-style: italic; }
+    .search-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 200; }
+    .search-overlay.active { display: flex; justify-content: center; padding-top: 10vh; }
+    .search-modal { background: white; border-radius: 8px; width: 600px; max-width: 90vw; max-height: 70vh; overflow-y: auto; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+    .search-modal-header { padding: 1rem; border-bottom: 1px solid var(--border); }
+    .search-modal-header input { width: 100%; padding: 0.6rem 0.8rem; border: 2px solid var(--primary-light); border-radius: 6px; font-size: 1rem; outline: none; }
+    .search-modal-results { padding: 0.5rem; }
+    .search-modal-results a { display: block; padding: 0.6rem 0.8rem; border-radius: 4px; text-decoration: none; color: var(--text); transition: background 0.1s; }
+    .search-modal-results a:hover { background: #eef6fc; }
+    .search-modal-results .result-title { font-weight: 600; color: var(--primary); font-size: 0.9rem; }
+    .search-modal-results .result-page { font-size: 0.75rem; color: var(--text-light); }
+    .search-modal-results .result-snippet { font-size: 0.82rem; color: var(--text-light); margin-top: 0.15rem; }
+    .search-modal-results mark { background: #fff3cd; padding: 0 0.15rem; border-radius: 2px; }
+    .search-no-results { padding: 1rem; color: var(--text-light); font-style: italic; text-align: center; }
 
     /* Main content */
-    .main-content {
-      flex: 1;
-      min-width: 0;
-      padding: 1.5rem 2.5rem 4rem;
-      max-width: none;
-    }
+    .main-content { flex: 1; min-width: 0; padding: 1.5rem 2.5rem 4rem; max-width: none; }
 
     /* Right TOC */
-    .right-toc {
-      width: var(--right-toc);
-      min-width: var(--right-toc);
-      padding: 1.25rem 1rem 2rem 0.75rem;
-      border-left: 1px solid var(--border);
-      font-size: 0.78rem;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow-y: auto;
-    }
-    .right-toc h3 {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-light);
-      margin: 0 0 0.5rem;
-      border: none;
-    }
+    .right-toc { width: var(--right-toc); min-width: var(--right-toc); padding: 1.25rem 1rem 2rem 0.75rem; border-left: 1px solid var(--border); font-size: 0.78rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    .right-toc h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin: 0 0 0.5rem; border: none; }
     .right-toc ul { list-style: none; margin: 0; padding: 0; }
     .right-toc li { margin-bottom: 0.15rem; }
-    .right-toc a {
-      color: var(--text-light);
-      text-decoration: none;
-      display: block;
-      padding: 0.15rem 0.4rem;
-      border-left: 2px solid transparent;
-      transition: all 0.15s;
-    }
+    .right-toc a { color: var(--text-light); text-decoration: none; display: block; padding: 0.15rem 0.4rem; border-left: 2px solid transparent; transition: all 0.15s; }
     .right-toc a:hover { color: var(--primary); border-left-color: var(--primary-light); }
     .right-toc a.active { color: var(--primary); border-left-color: var(--primary-light); font-weight: 600; }
     .right-toc .toc-h3 { padding-left: 1rem; font-size: 0.74rem; }
     .right-toc .toc-h4 { padding-left: 1.6rem; font-size: 0.72rem; }
 
     /* Typography */
-    .main-content h1, .main-content h2, .main-content h3, .main-content h4 {
-      color: var(--primary);
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-    }
+    .main-content h1, .main-content h2, .main-content h3, .main-content h4 { color: var(--primary); margin-top: 2rem; margin-bottom: 0.75rem; }
     .main-content h1 { font-size: 1.7rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.3rem; }
     .main-content h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
     .main-content h3 { font-size: 1.15rem; border: none; }
@@ -197,13 +106,10 @@
     blockquote p:last-child { margin-bottom: 0; }
     blockquote strong { color: var(--primary); }
 
-    /* Lists */
     ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
     li { margin-bottom: 0.3rem; }
-
     hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 
-    /* Mermaid */
     .mermaid { text-align: center; margin: 1.5rem 0; background: var(--bg-alt); padding: 1rem; border-radius: 6px; border: 1px solid var(--border); }
 
     /* Page actions */
@@ -211,20 +117,15 @@
     .page-actions a { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.65rem; border: 1px solid var(--border); border-radius: 5px; font-size: 0.78rem; color: var(--text); background: var(--bg-alt); text-decoration: none; transition: all 0.15s; }
     .page-actions a:hover { border-color: var(--primary-light); color: var(--primary-light); background: #eef6fc; }
 
-    /* Back to top */
     .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: var(--primary-light); color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; z-index: 100; }
     .back-to-top.visible { opacity: 1; visibility: visible; }
     .back-to-top:hover { background: var(--primary); }
 
-    /* Footer */
     .site-footer { border-top: 1px solid var(--border); padding: 1.5rem 0; margin-top: 3rem; text-align: center; color: var(--text-light); font-size: 0.82rem; }
     .site-footer a { color: var(--primary-light); text-decoration: none; }
     .site-footer a:hover { text-decoration: underline; }
 
-    /* Mobile */
-    @media (max-width: 1100px) {
-      .right-toc { display: none; }
-    }
+    @media (max-width: 1100px) { .right-toc { display: none; } }
     @media (max-width: 900px) {
       .header-row { flex-direction: column; text-align: center; }
       .header-left { text-align: center; }
@@ -235,12 +136,10 @@
       table { font-size: 0.8rem; }
       th, td { padding: 0.3rem 0.4rem; }
     }
-
-    /* Print */
     @media print {
       .page-header { background: none; color: var(--text); padding: 1rem 0; }
       .page-header h1 { color: var(--text); }
-      .left-nav, .right-toc, .back-to-top, .page-actions { display: none; }
+      .left-nav, .right-toc, .back-to-top, .page-actions, .search-overlay { display: none; }
       .main-content { max-width: none; padding: 0; }
       pre { background: var(--bg-alt); color: var(--text); border: 1px solid var(--border); }
     }
@@ -257,8 +156,8 @@
         <p>{{ site.description }}</p>
         <p class="nav-links">
           <a href="{{ site.baseurl }}/">Početna</a> ·
-          <a href="https://github.com/dageci/eracun-fiskalizacija-datumi" target="_blank">GitHub</a> ·
-          <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Rasprave</a>
+          <a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow">Dokumentacija</a> ·
+          <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Rasprave ↗</a>
         </p>
       </div>
       <div class="header-right">
@@ -273,32 +172,45 @@
           <img src="https://img.shields.io/badge/HR_CIUS-2025-blue" alt="HR CIUS 2025">
         </div>
         <div class="header-gh-links">
-          <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Pokreni raspravu</a>
-          <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues/new" target="_blank">Prijavi grešku</a>
-          <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md" target="_blank">Vodič za GitHub</a>
+          <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Pokreni raspravu ↗</a>
+          <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues/new" target="_blank">Prijavi grešku ↗</a>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- Search overlay modal -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-modal">
+      <div class="search-modal-header">
+        <input type="text" id="searchModalInput" placeholder="Pretraži sve stranice (npr. BT-7, naplata, predujam...)">
+      </div>
+      <div class="search-modal-results" id="searchModalResults"></div>
+    </div>
+  </div>
+
   <div class="page-body">
     <nav class="left-nav">
-      <input type="text" class="search-box" id="searchBox" placeholder="Pretraži...">
-      <div id="searchResults"></div>
+      <input type="text" class="search-box" id="searchBox" placeholder="Pretraži..." readonly>
 
-      <h3>Stranice</h3>
+      <h3>Dokumentacija</h3>
       <ul>
         <li><a href="{{ site.baseurl }}/">Početna</a></li>
         <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow">Datumi i porezna obveza</a></li>
       </ul>
 
-      <h3>Sudjelovanje</h3>
+      <h3>Vodiči</h3>
       <ul>
-        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Rasprave ↗</a></li>
-        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues" target="_blank">Prijavi grešku ↗</a></li>
-        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-VODIC.md" target="_blank">Vodič za GitHub ↗</a></li>
-        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/GITHUB-OBAVIJESTI.md" target="_blank">Email obavijesti ↗</a></li>
-        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/blob/master/CONTRIBUTING.md" target="_blank">Kako doprinijeti ↗</a></li>
+        <li><a href="{{ site.baseurl }}/github-vodic">Zašto GitHub</a></li>
+        <li><a href="{{ site.baseurl }}/github-obavijesti">Email obavijesti</a></li>
+        <li><a href="{{ site.baseurl }}/kako-doprinijeti">Kako doprinijeti</a></li>
+      </ul>
+
+      <h3>Sudjelovanje ↗</h3>
+      <ul>
+        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Rasprave</a></li>
+        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues" target="_blank">Prijavi grešku</a></li>
+        <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi" target="_blank">GitHub repo</a></li>
       </ul>
     </nav>
 
@@ -330,26 +242,23 @@
 
   <footer class="site-footer">
     <p>
-      <a href="https://github.com/dageci/eracun-fiskalizacija-datumi">GitHub repo</a> ·
-      <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions">Rasprave</a> ·
-      <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues">Prijavi grešku</a>
+      <a href="https://github.com/dageci/eracun-fiskalizacija-datumi" target="_blank">GitHub repo</a> ·
+      <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Rasprave</a> ·
+      <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues" target="_blank">Prijavi grešku</a>
     </p>
-    <p>Licenca: <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12">EUPL 1.2</a> · Autor: Davor Geci</p>
+    <p>Licenca: <a href="https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12" target="_blank">EUPL 1.2</a> · Autor: Davor Geci</p>
   </footer>
 
   <script>
-  // Auto-generate right TOC from headings
+  // ============================================================
+  // Right TOC - auto-generated from headings + scroll spy
+  // ============================================================
   (function() {
     var content = document.querySelector('.main-content');
     var tocList = document.getElementById('tocList');
     if (!content || !tocList) return;
-
     var headings = content.querySelectorAll('h2, h3, h4');
-    if (headings.length === 0) {
-      document.getElementById('rightToc').style.display = 'none';
-      return;
-    }
-
+    if (headings.length === 0) { document.getElementById('rightToc').style.display = 'none'; return; }
     headings.forEach(function(h) {
       if (!h.id) return;
       var li = document.createElement('li');
@@ -362,80 +271,121 @@
       li.appendChild(a);
       tocList.appendChild(li);
     });
-
-    // Highlight active section on scroll
     var tocLinks = tocList.querySelectorAll('a');
     var headingEls = Array.from(headings).filter(function(h) { return h.id; });
-
     function updateActive() {
       var scrollPos = window.scrollY + 100;
       var current = '';
-      headingEls.forEach(function(h) {
-        if (h.offsetTop <= scrollPos) current = h.id;
-      });
-      tocLinks.forEach(function(a) {
-        if (a.dataset.target === current) a.classList.add('active');
-        else a.classList.remove('active');
-      });
+      headingEls.forEach(function(h) { if (h.offsetTop <= scrollPos) current = h.id; });
+      tocLinks.forEach(function(a) { a.classList.toggle('active', a.dataset.target === current); });
     }
     window.addEventListener('scroll', updateActive);
     updateActive();
   })();
 
-  // Search
+  // ============================================================
+  // Full-text search across all pages
+  // ============================================================
   (function() {
     var searchBox = document.getElementById('searchBox');
-    var searchResults = document.getElementById('searchResults');
-    if (!searchBox || !searchResults) return;
+    var overlay = document.getElementById('searchOverlay');
+    var modalInput = document.getElementById('searchModalInput');
+    var modalResults = document.getElementById('searchModalResults');
+    if (!searchBox || !overlay) return;
 
-    var content = document.querySelector('.main-content');
-    if (!content) return;
+    // Search index - built from all pages at build time via Jekyll
+    var searchIndex = [
+      {% for page in site.pages %}{% if page.title %}
+      {
+        title: {{ page.title | jsonify }},
+        url: "{{ site.baseurl }}{{ page.url | replace: '.html', '' }}",
+        content: {{ page.content | strip_html | truncatewords: 500 | jsonify }}
+      },
+      {% endif %}{% endfor %}
+    ];
 
-    var sections = [];
-    var headings = content.querySelectorAll('h1, h2, h3, h4');
-    headings.forEach(function(h) {
-      var text = '';
-      var el = h.nextElementSibling;
-      while (el && !el.matches('h1, h2, h3, h4')) {
-        text += ' ' + el.textContent;
-        el = el.nextElementSibling;
-      }
-      sections.push({ title: h.textContent, text: text.toLowerCase(), id: h.id || '' });
+    // Open modal
+    searchBox.addEventListener('click', function() {
+      overlay.classList.add('active');
+      setTimeout(function() { modalInput.focus(); }, 100);
     });
 
+    // Close on overlay click
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) { overlay.classList.remove('active'); modalInput.value = ''; modalResults.innerHTML = ''; }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) {
+        overlay.classList.remove('active'); modalInput.value = ''; modalResults.innerHTML = '';
+      }
+      // Ctrl+K or / to open search
+      if ((e.key === 'k' && (e.ctrlKey || e.metaKey)) || (e.key === '/' && !e.target.matches('input, textarea'))) {
+        e.preventDefault();
+        overlay.classList.add('active');
+        setTimeout(function() { modalInput.focus(); }, 100);
+      }
+    });
+
+    // Search logic
     var debounce;
-    searchBox.addEventListener('input', function() {
+    modalInput.addEventListener('input', function() {
       clearTimeout(debounce);
       debounce = setTimeout(function() {
-        var q = searchBox.value.trim().toLowerCase();
-        if (q.length < 2) { searchResults.innerHTML = ''; return; }
-        var matches = sections.filter(function(s) {
-          return s.title.toLowerCase().indexOf(q) !== -1 || s.text.indexOf(q) !== -1;
+        var q = modalInput.value.trim().toLowerCase();
+        if (q.length < 2) { modalResults.innerHTML = ''; return; }
+
+        var results = [];
+        searchIndex.forEach(function(page) {
+          var titleMatch = page.title.toLowerCase().indexOf(q) !== -1;
+          var contentLower = page.content.toLowerCase();
+          var contentMatch = contentLower.indexOf(q) !== -1;
+
+          if (titleMatch || contentMatch) {
+            var snippet = '';
+            if (contentMatch) {
+              var idx = contentLower.indexOf(q);
+              var start = Math.max(0, idx - 60);
+              var end = Math.min(page.content.length, idx + q.length + 60);
+              snippet = (start > 0 ? '...' : '') +
+                page.content.substring(start, idx) +
+                '<mark>' + page.content.substring(idx, idx + q.length) + '</mark>' +
+                page.content.substring(idx + q.length, end) +
+                (end < page.content.length ? '...' : '');
+            }
+            results.push({ title: page.title, url: page.url, snippet: snippet, titleMatch: titleMatch });
+          }
         });
-        if (matches.length === 0) {
-          searchResults.innerHTML = '<p class="search-no-results">Nema rezultata</p>';
+
+        // Sort: title matches first
+        results.sort(function(a, b) { return (b.titleMatch ? 1 : 0) - (a.titleMatch ? 1 : 0); });
+
+        if (results.length === 0) {
+          modalResults.innerHTML = '<p class="search-no-results">Nema rezultata za "' + modalInput.value + '"</p>';
           return;
         }
-        var html = '<ul class="search-results">';
-        matches.forEach(function(m) {
-          html += '<li><a href="' + (m.id ? '#' + m.id : '#') + '">' + m.title + '</a></li>';
+
+        var html = '';
+        results.forEach(function(r) {
+          html += '<a href="' + r.url + '">';
+          html += '<div class="result-title">' + r.title + '</div>';
+          if (r.snippet) html += '<div class="result-snippet">' + r.snippet + '</div>';
+          html += '</a>';
         });
-        html += '</ul>';
-        searchResults.innerHTML = html;
+        modalResults.innerHTML = html;
       }, 200);
     });
   })();
 
+  // ============================================================
   // Back to top
+  // ============================================================
   (function() {
     var btn = document.getElementById('backToTop');
     if (!btn) return;
-    window.addEventListener('scroll', function() {
-      btn.classList.toggle('visible', window.scrollY > 400);
-    });
-    btn.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    window.addEventListener('scroll', function() { btn.classList.toggle('visible', window.scrollY > 400); });
+    btn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   })();
   </script>
 
