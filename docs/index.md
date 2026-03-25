@@ -7,23 +7,13 @@ title: "eRačun Hrvatska — Datumi i porezna obveza"
 
 > **Ovo je inicijalni prijedlog dokumentacije** — morali smo od nečeg početi.
 >
-> Nismo stručnjaci sveznalice, niti se itko od nas rodio s ovim znanjem. Svima nam je ovo novo — eRačuni su obvezni od 01.01.2026. i svi učimo u hodu. Upravo zato je ova dokumentacija otvorena: da zajedno kao zajednica razradimo i posložimo ove teme na jednom mjestu.
+> Svima nam je ovo novo — eRačuni su obvezni od 01.01.2026. i svi učimo u hodu. Dobijem 1000 ulaznih XML-ova i većina ih tretira datumske pojmove po zidarski — "tak je špaga vudrila". Ni mi koji kreiramo izlazne eRačune nismo sigurni da ih ispravno generiramo. Uključujući i mene.
 >
-> **Ako primijetite grešku — ukažite na nju.** Ako imate bolji primjer — predložite ga. Ako se ne slažete s nečim — pokrenite raspravu. Ostali neka glasaju i komentiraju. Možda se javi i netko iz Porezne uprave ili informacijskih posrednika da potvrdi ili ispravi — svaki takav doprinos je dragocjen.
+> **Plan**: skupiti i razraditi primjere kao zajednica, a onda pozvati relevantnu osobu ili tim iz Porezne uprave koji su radili na Fiskalizacija 2.0 projektu da revidira dokument. Da imamo **jedan izvor istine** kojeg onda svi možemo koristiti — za korekcije softvera, izgradnju novih sustava i referenciranje u stručnim literaturama. Da porezni i financijski stručnjaci imaju sigurnost u automatskoj obradi i ulaznih i izlaznih XML eRačuna, i da svi radimo po istom principu.
 >
-> Ako je nešto krivo napisano — nemojte napadati, jednostavno ukažite na grešku, predložite ispravak i neka ostali glasaju ili komentiraju da li je ispravak valjan. Tako zajedno dolazimo do točnih odgovora.
->
-> Cilj nije imati savršen dokument od prvog dana, nego imati **jedno mjesto** gdje možemo zajedno doći do ispravnih odgovora. I da se što prije počnemo svi zajedno smijati kako početkom 2026. ovo nismo znali.
+> Ako je nešto krivo napisano — nemojte napadati, jednostavno ukažite, predložite ispravak i neka ostali glasaju. I da se što prije počnemo svi zajedno smijati kako početkom 2026. ovo nismo znali.
 >
 > *Prva inicijalna verzija objavljena: 24.03.2026. — Davor Geci*
-
-## Zašto ovo postoji?
-
-Od 01.01.2026. Hrvatska je prešla na obvezni eRačun (Fiskalizacija 2.0). Prijelaz je bio nagao — svi smo odjednom počeli i slati i primati XML račune u EN16931 formatu s hrvatskim proširenjima (HR CIUS 2025).
-
-**Problem**: ulazni eRačuni od različitih izdavatelja dolaze s različitim postavkama datumskih polja. Jedni koriste BT-7, drugi BT-8, treći ni jedno. A svi ti datumi utječu na to **u koje porezno razdoblje ulazi PDV**. Ali nije samo problem ulaznih računa — ni mi koji kreiramo izlazne eRačune nismo sigurni da ih ispravno generiramo. Uključujući i mene — i zato sam pokrenuo ovaj repozitorij.
-
-U grupama i forumima se otvaraju beskonačna pitanja o istim temama. Cilj ovog repozitorija je da sva ta znanja budu **na jednom mjestu** — strukturirano, s primjerima i zakonskim temeljem. **Svatko može doprinijeti**: ispraviti grešku, dodati primjer, ukazati na slučaj koji nedostaje.
 
 ## Dokumentacija
 

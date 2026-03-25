@@ -4,38 +4,27 @@
 
 > **Ovo je inicijalni prijedlog dokumentacije** — morali smo od nečeg početi.
 >
-> Nismo stručnjaci sveznalice, niti se itko od nas rodio s ovim znanjem. Svima nam je ovo novo — eRačuni su obvezni od 01.01.2026. i svi učimo u hodu. Upravo zato je ova dokumentacija otvorena: da zajedno kao zajednica razradimo i posložimo ove teme na jednom mjestu.
+> Svima nam je ovo novo — eRačuni su obvezni od 01.01.2026. i svi učimo u hodu. Dobijem 1000 ulaznih XML-ova i većina ih tretira datumske pojmove po zidarski — "tak je špaga vudrila". Ni mi koji kreiramo izlazne eRačune nismo sigurni da ih ispravno generiramo. Uključujući i mene.
 >
-> **Ako primijetite grešku — ukažite na nju.** Ako imate bolji primjer — predložite ga. Ako se ne slažete s nečim — pokrenite raspravu. Ostali neka glasaju i komentiraju. Možda se javi i netko iz Porezne uprave ili informacijskih posrednika da potvrdi ili ispravi — svaki takav doprinos je dragocjen.
+> **Plan**: skupiti i razraditi primjere kao zajednica, a onda pozvati relevantnu osobu ili tim iz Porezne uprave koji su radili na Fiskalizacija 2.0 projektu da revidira dokument. Da imamo **jedan izvor istine** kojeg onda svi možemo koristiti — za korekcije softvera, izgradnju novih sustava i referenciranje u stručnim literaturama. Da porezni i financijski stručnjaci imaju sigurnost u automatskoj obradi i ulaznih i izlaznih XML eRačuna, i da svi radimo po istom principu.
 >
-> Ako je nešto krivo napisano — nemojte napadati, jednostavno ukažite na grešku, predložite ispravak i neka ostali glasaju ili komentiraju da li je ispravak valjan. Tako zajedno dolazimo do točnih odgovora.
->
-> Cilj nije imati savršen dokument od prvog dana, nego imati **jedno mjesto** gdje možemo zajedno doći do ispravnih odgovora. I da se što prije počnemo svi zajedno smijati kako početkom 2026. ovo nismo znali.
+> Ako je nešto krivo napisano — nemojte napadati, jednostavno ukažite, predložite ispravak i neka ostali glasaju. I da se što prije počnemo svi zajedno smijati kako početkom 2026. ovo nismo znali.
 >
 > *Prva inicijalna verzija objavljena: 24.03.2026. — Davor Geci*
 
-Dokumentacija o datumskim poljima u hrvatskom eRačunu (HR CIUS 2025 / EN16931) i njihovom utjecaju na nastanak obveze PDV-a.
-
 ## Zašto ovo postoji?
 
-Od 01.01.2026. Hrvatska je prešla na obvezni eRačun (Fiskalizacija 2.0). Prijelaz je bio nagao — svi smo odjednom počeli i slati i primati XML račune u EN16931 formatu s hrvatskim proširenjima (HR CIUS 2025).
+Od 01.01.2026. Hrvatska je prešla na obvezni eRačun (Fiskalizacija 2.0). U grupama i forumima se otvaraju beskonačna pitanja o istim temama:
 
-**Problem koji je odmah isplivao**: ulazni eRačuni od različitih izdavatelja dolaze s različitim postavkama datumskih polja. Jedni koriste BT-7, drugi BT-8, treći ni jedno. Neki stavljaju BT-72, neki ne. Neki imaju InvoicePeriod, neki nemaju. A svi ti datumi utječu na to **u koje porezno razdoblje ulazi PDV** — što je kritično za ispravnu PDV prijavu.
-
-Ali nije samo problem ulaznih računa — **ni mi koji kreiramo izlazne eRačune nismo sigurni da ih ispravno generiramo**. Koji datum staviti u BT-7? Treba li BT-8? Kada koristiti 432, a kada 35? Prolazi li to validator? Je li to u skladu sa zakonom? Uključujući i mene — i zato sam pokrenuo ovaj repozitorij.
-
-U Facebook grupama, na forumima i u razgovorima između ERP programera i knjigovođa otvaraju se **beskonačna pitanja i rasprave** o istim temama:
 - *"Koji datum određuje PDV — datum računa ili datum isporuke?"*
 - *"Što je BT-7, a što BT-8 i mogu li oba biti u XML-u?"*
 - *"Kako funkcionira obračun po naplati u eRačunu?"*
 - *"Zašto mi validator odbija račun s TaxPointDate?"*
 - *"Što znači DescriptionCode 432?"*
 
-**Cilj ovog repozitorija** je da sva ta znanja i odgovori budu **na jednom mjestu** — strukturirano, s primjerima, zakonskim temeljem i XML isječcima. Umjesto da se ista pitanja ponavljaju u 10 različitih grupa, možemo ih ovdje jednom riješiti i svi koristiti.
+Cilj je da sva ta znanja budu **na jednom mjestu** — strukturirano, s primjerima, zakonskim temeljem i XML isječcima. Svatko može doprinijeti.
 
-Ovo nije zatvoreni dokument jedne osobe — **svatko može doprinijeti**: ispraviti grešku, dodati primjer koji nedostaje, ukazati na slučaj koji nismo pokrili. Što više nas sudjeluje, to će dokumentacija biti potpunija i pouzdanija.
-
-### Konkretno, dokumentacija pokriva:
+### Dokumentacija pokriva:
 
 - **Datumska polja** u eRačunu (BT-2, BT-7, BT-8, BT-72, BT-73, BT-74, HR-BT-2, HR-BT-15) — što je što, kada se koristi, kako se međusobno isključuju
 - **Schematron validacijska pravila** — koja kombinacija prolazi validator, a koja ne (sva su `flag="fatal"`)
