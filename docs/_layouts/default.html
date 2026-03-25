@@ -13,11 +13,9 @@
       --text: #2c3e50;
       --text-light: #7f8c8d;
       --border: #dee2e6;
-      --success: #27ae60;
-      --warning: #e67e22;
-      --danger: #c0392b;
       --code-bg: #f4f6f8;
-      --sidebar-width: 260px;
+      --left-nav: 220px;
+      --right-toc: 220px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,112 +31,140 @@
     .page-header {
       background: linear-gradient(135deg, #2471a3 0%, #5dade2 100%);
       color: white;
-      padding: 2rem 2rem;
-      text-align: center;
+      padding: 1.5rem 2rem;
     }
-    .page-header h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      color: white;
-      border: none;
-    }
-    .page-header p { font-size: 1rem; opacity: 0.92; max-width: 700px; margin: 0 auto; }
+    .page-header h1 { font-size: 1.6rem; margin-bottom: 0.3rem; color: white; border: none; }
+    .page-header p { font-size: 0.92rem; opacity: 0.92; }
     .page-header a { color: #eaf2f8; text-decoration: none; font-weight: 500; }
     .page-header a:hover { color: white; text-decoration: underline; }
-    .page-header .nav-links { margin-top: 0.75rem; font-size: 0.9rem; }
-    .page-header .header-row {
+    .header-row {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
     }
-    .page-header .header-left { text-align: left; }
-    .page-header .header-right {
+    .header-left { text-align: left; }
+    .header-right {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      gap: 0.4rem;
+      gap: 0.35rem;
       flex-shrink: 0;
       margin-left: 2rem;
     }
-    .page-header .badges { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end; }
-    .page-header .badges img { height: 20px; }
-    .page-header .header-gh-links { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: flex-end; }
-    .page-header .header-gh-links a {
+    .badges { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end; }
+    .badges img { height: 20px; }
+    .header-gh-links { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: flex-end; }
+    .header-gh-links a {
       background: rgba(255,255,255,0.15);
-      padding: 0.25rem 0.7rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 4px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: white;
       transition: background 0.15s;
     }
-    .page-header .header-gh-links a:hover { background: rgba(255,255,255,0.3); text-decoration: none; }
+    .header-gh-links a:hover { background: rgba(255,255,255,0.3); text-decoration: none; }
+    .nav-links { margin-top: 0.5rem; font-size: 0.85rem; }
 
-    /* Layout: sidebar + content */
+    /* 3-column layout */
     .page-body {
       display: flex;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
-    /* Sidebar */
-    .sidebar {
-      width: var(--sidebar-width);
-      min-width: var(--sidebar-width);
-      padding: 1.5rem 1rem 2rem 1.5rem;
+    /* Left nav */
+    .left-nav {
+      width: var(--left-nav);
+      min-width: var(--left-nav);
+      padding: 1.25rem 0.75rem 2rem 1.25rem;
       border-right: 1px solid var(--border);
       background: var(--bg-alt);
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       position: sticky;
       top: 0;
       height: 100vh;
       overflow-y: auto;
     }
-    .sidebar h3 {
-      font-size: 0.8rem;
+    .left-nav h3 {
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--text-light);
-      margin: 1.25rem 0 0.4rem;
+      margin: 1.1rem 0 0.3rem;
       border: none;
     }
-    .sidebar h3:first-child { margin-top: 0; }
-    .sidebar ul { list-style: none; margin: 0; padding: 0; }
-    .sidebar li { margin-bottom: 0.2rem; }
-    .sidebar a {
+    .left-nav h3:first-child { margin-top: 0; }
+    .left-nav ul { list-style: none; margin: 0; padding: 0; }
+    .left-nav li { margin-bottom: 0.15rem; }
+    .left-nav a {
       color: var(--text);
       text-decoration: none;
       display: block;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
       transition: background 0.15s;
     }
-    .sidebar a:hover { background: #e2e8f0; color: var(--primary); }
-    .sidebar a.active { background: var(--primary-light); color: white; }
+    .left-nav a:hover { background: #e2e8f0; color: var(--primary); }
 
     /* Search */
     .search-box {
       width: 100%;
-      padding: 0.45rem 0.6rem;
+      padding: 0.4rem 0.5rem;
       border: 1px solid var(--border);
       border-radius: 4px;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
       outline: none;
     }
     .search-box:focus { border-color: var(--primary-light); box-shadow: 0 0 0 2px rgba(41,128,185,0.15); }
-    .search-results { font-size: 0.82rem; margin-bottom: 1rem; }
-    .search-results li { margin-bottom: 0.3rem; }
-    .search-results .highlight { background: #fff3cd; padding: 0.1rem 0.2rem; border-radius: 2px; }
-    .search-no-results { color: var(--text-light); font-size: 0.82rem; font-style: italic; }
+    .search-results { font-size: 0.78rem; margin-bottom: 0.75rem; }
+    .search-results li { margin-bottom: 0.2rem; }
+    .search-no-results { color: var(--text-light); font-size: 0.78rem; font-style: italic; }
 
     /* Main content */
     .main-content {
       flex: 1;
       min-width: 0;
-      padding: 2rem 2rem 4rem;
+      padding: 1.5rem 2.5rem 4rem;
+      max-width: none;
     }
+
+    /* Right TOC */
+    .right-toc {
+      width: var(--right-toc);
+      min-width: var(--right-toc);
+      padding: 1.25rem 1rem 2rem 0.75rem;
+      border-left: 1px solid var(--border);
+      font-size: 0.78rem;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .right-toc h3 {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      margin: 0 0 0.5rem;
+      border: none;
+    }
+    .right-toc ul { list-style: none; margin: 0; padding: 0; }
+    .right-toc li { margin-bottom: 0.15rem; }
+    .right-toc a {
+      color: var(--text-light);
+      text-decoration: none;
+      display: block;
+      padding: 0.15rem 0.4rem;
+      border-left: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .right-toc a:hover { color: var(--primary); border-left-color: var(--primary-light); }
+    .right-toc a.active { color: var(--primary); border-left-color: var(--primary-light); font-weight: 600; }
+    .right-toc .toc-h3 { padding-left: 1rem; font-size: 0.74rem; }
+    .right-toc .toc-h4 { padding-left: 1.6rem; font-size: 0.72rem; }
 
     /* Typography */
     .main-content h1, .main-content h2, .main-content h3, .main-content h4 {
@@ -146,76 +172,27 @@
       margin-top: 2rem;
       margin-bottom: 0.75rem;
     }
-    .main-content h1 {
-      font-size: 1.8rem;
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 0.3rem;
-    }
-    .main-content h2 {
-      font-size: 1.5rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.3rem;
-    }
-    .main-content h3 { font-size: 1.25rem; border: none; }
-    .main-content h4 { font-size: 1.1rem; color: var(--primary-light); }
+    .main-content h1 { font-size: 1.7rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.3rem; }
+    .main-content h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    .main-content h3 { font-size: 1.15rem; border: none; }
+    .main-content h4 { font-size: 1rem; color: var(--primary-light); }
     p { margin-bottom: 1rem; }
-
-    /* Links */
     .main-content a { color: var(--primary-light); text-decoration: none; }
     .main-content a:hover { text-decoration: underline; }
 
     /* Tables */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0 1.5rem;
-      font-size: 0.92rem;
-    }
-    th, td {
-      border: 1px solid var(--border);
-      padding: 0.5rem 0.75rem;
-      text-align: left;
-    }
-    th {
-      background: var(--bg-alt);
-      font-weight: 600;
-      color: var(--primary);
-    }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.9rem; }
+    th, td { border: 1px solid var(--border); padding: 0.45rem 0.65rem; text-align: left; }
+    th { background: var(--bg-alt); font-weight: 600; color: var(--primary); }
     tr:nth-child(even) { background: #fafbfc; }
 
     /* Code */
-    code {
-      background: var(--code-bg);
-      padding: 0.15rem 0.4rem;
-      border-radius: 3px;
-      font-size: 0.88rem;
-      font-family: "Fira Code", "Consolas", "Monaco", monospace;
-    }
-    pre {
-      background: #1e293b;
-      color: #e2e8f0;
-      padding: 1.25rem;
-      border-radius: 6px;
-      overflow-x: auto;
-      margin: 1rem 0 1.5rem;
-      font-size: 0.85rem;
-      line-height: 1.5;
-    }
-    pre code {
-      background: none;
-      padding: 0;
-      color: inherit;
-      font-size: inherit;
-    }
+    code { background: var(--code-bg); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.86rem; font-family: "Fira Code", "Consolas", monospace; }
+    pre { background: #1e293b; color: #e2e8f0; padding: 1.25rem; border-radius: 6px; overflow-x: auto; margin: 1rem 0 1.5rem; font-size: 0.84rem; line-height: 1.5; }
+    pre code { background: none; padding: 0; color: inherit; font-size: inherit; }
 
     /* Blockquotes */
-    blockquote {
-      border-left: 4px solid var(--primary-light);
-      background: #eef6fc;
-      padding: 1rem 1.25rem;
-      margin: 1rem 0 1.5rem;
-      border-radius: 0 6px 6px 0;
-    }
+    blockquote { border-left: 4px solid var(--primary-light); background: #eef6fc; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; border-radius: 0 6px 6px 0; }
     blockquote p { margin-bottom: 0.5rem; }
     blockquote p:last-child { margin-bottom: 0; }
     blockquote strong { color: var(--primary); }
@@ -224,118 +201,50 @@
     ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
     li { margin-bottom: 0.3rem; }
 
-    /* Horizontal rules */
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 2rem 0;
-    }
+    hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 
-    /* Mermaid diagrams */
-    .mermaid {
-      text-align: center;
-      margin: 1.5rem 0;
-      background: var(--bg-alt);
-      padding: 1rem;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-    }
+    /* Mermaid */
+    .mermaid { text-align: center; margin: 1.5rem 0; background: var(--bg-alt); padding: 1rem; border-radius: 6px; border: 1px solid var(--border); }
 
-    /* Page actions bar (edit, issue) */
-    .page-actions {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--border);
-      flex-wrap: wrap;
-    }
-    .page-actions a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      padding: 0.35rem 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      font-size: 0.82rem;
-      color: var(--text);
-      background: var(--bg-alt);
-      text-decoration: none;
-      transition: all 0.15s;
-    }
+    /* Page actions */
+    .page-actions { display: flex; gap: 0.6rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .page-actions a { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.65rem; border: 1px solid var(--border); border-radius: 5px; font-size: 0.78rem; color: var(--text); background: var(--bg-alt); text-decoration: none; transition: all 0.15s; }
     .page-actions a:hover { border-color: var(--primary-light); color: var(--primary-light); background: #eef6fc; }
-    .page-actions .icon { font-size: 1rem; }
 
-    /* Back to top button */
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--primary-light);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      font-size: 1.3rem;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s;
-      z-index: 100;
-    }
+    /* Back to top */
+    .back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: var(--primary-light); color: white; border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 1.2rem; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; z-index: 100; }
     .back-to-top.visible { opacity: 1; visibility: visible; }
     .back-to-top:hover { background: var(--primary); }
 
-    /* Section anchor links */
-    .main-content h2, .main-content h3, .main-content h4 { position: relative; }
-    .main-content h2:hover .heading-link,
-    .main-content h3:hover .heading-link,
-    .main-content h4:hover .heading-link { opacity: 1; }
-
     /* Footer */
-    .site-footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem 0;
-      margin-top: 3rem;
-      text-align: center;
-      color: var(--text-light);
-      font-size: 0.85rem;
-    }
+    .site-footer { border-top: 1px solid var(--border); padding: 1.5rem 0; margin-top: 3rem; text-align: center; color: var(--text-light); font-size: 0.82rem; }
     .site-footer a { color: var(--primary-light); text-decoration: none; }
     .site-footer a:hover { text-decoration: underline; }
 
     /* Mobile */
+    @media (max-width: 1100px) {
+      .right-toc { display: none; }
+    }
     @media (max-width: 900px) {
-      .page-header .header-row { flex-direction: column; text-align: center; }
-      .page-header .header-left { text-align: center; }
-      .page-header .header-right { align-items: center; margin-left: 0; margin-top: 1rem; }
+      .header-row { flex-direction: column; text-align: center; }
+      .header-left { text-align: center; }
+      .header-right { align-items: center; margin-left: 0; margin-top: 0.75rem; }
       .page-body { flex-direction: column; }
-      .sidebar {
-        width: 100%;
-        min-width: 100%;
-        height: auto;
-        position: static;
-        border-right: none;
-        border-bottom: 1px solid var(--border);
-        padding: 1rem;
-      }
+      .left-nav { width: 100%; min-width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); padding: 0.75rem; }
       .main-content { padding: 1rem; }
-      table { font-size: 0.82rem; }
-      th, td { padding: 0.35rem 0.5rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.3rem 0.4rem; }
     }
 
     /* Print */
     @media print {
       .page-header { background: none; color: var(--text); padding: 1rem 0; }
       .page-header h1 { color: var(--text); }
-      .sidebar { display: none; }
+      .left-nav, .right-toc, .back-to-top, .page-actions { display: none; }
       .main-content { max-width: none; padding: 0; }
       pre { background: var(--bg-alt); color: var(--text); border: 1px solid var(--border); }
     }
   </style>
-  <!-- Mermaid -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
 </head>
@@ -373,26 +282,14 @@
   </header>
 
   <div class="page-body">
-    <nav class="sidebar">
-      <input type="text" class="search-box" id="searchBox" placeholder="Pretraži (npr. BT-7, naplata...)">
+    <nav class="left-nav">
+      <input type="text" class="search-box" id="searchBox" placeholder="Pretraži...">
       <div id="searchResults"></div>
 
-      <h3>Dokumentacija</h3>
+      <h3>Stranice</h3>
       <ul>
         <li><a href="{{ site.baseurl }}/">Početna</a></li>
         <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow">Datumi i porezna obveza</a></li>
-      </ul>
-
-      <h3>Sadržaj dokumenta</h3>
-      <ul>
-        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#1-pregled-polja">1. Pregled polja</a></li>
-        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#2-ključno-pravilo-br-co-03">2. BR-CO-03 pravilo</a></li>
-        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#3-mogući-kodovi-za-bt-8">3. Kodovi za BT-8</a></li>
-        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#4-primjeri-iz-prakse">4. Primjeri iz prakse</a></li>
-        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#5-datumi-na-eračunu-vs-datumi-u-knjigovodstvu">5. PDV vs. knjigovodstvo</a></li>
-        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#6-xml-struktura--pozicija-elemenata">6. XML struktura</a></li>
-        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#7-validacijska-pravila-za-datume-schematron">7. Validacijska pravila</a></li>
-        <li><a href="{{ site.baseurl }}/eracun-datumi-poreza-workflow#8-zakonski-temelj">8. Zakonski temelj</a></li>
       </ul>
 
       <h3>Sudjelovanje</h3>
@@ -408,19 +305,24 @@
       {% if page.url != "/" %}
       <div class="page-actions">
         <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/edit/master/docs{{ page.url | replace: '.html', '.md' }}.md" target="_blank">
-          <span class="icon">✏️</span> Uredi ovu stranicu na GitHubu
+          ✏️ Uredi ovu stranicu
         </a>
         <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues/new?title=Greška na stranici: {{ page.title | url_encode }}&body=Stranica: {{ page.url }}%0A%0AOpis greške:%0A" target="_blank">
-          <span class="icon">🐛</span> Prijavi grešku na ovoj stranici
+          🐛 Prijavi grešku
         </a>
         <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions/new?category=pitanja-i-odgovori" target="_blank">
-          <span class="icon">💬</span> Postavi pitanje
+          💬 Postavi pitanje
         </a>
       </div>
       {% endif %}
 
       {{ content }}
     </main>
+
+    <aside class="right-toc" id="rightToc">
+      <h3>Na ovoj stranici</h3>
+      <ul id="tocList"></ul>
+    </aside>
   </div>
 
   <button class="back-to-top" id="backToTop" title="Natrag na vrh">↑</button>
@@ -435,12 +337,56 @@
   </footer>
 
   <script>
+  // Auto-generate right TOC from headings
+  (function() {
+    var content = document.querySelector('.main-content');
+    var tocList = document.getElementById('tocList');
+    if (!content || !tocList) return;
+
+    var headings = content.querySelectorAll('h2, h3, h4');
+    if (headings.length === 0) {
+      document.getElementById('rightToc').style.display = 'none';
+      return;
+    }
+
+    headings.forEach(function(h) {
+      if (!h.id) return;
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent;
+      a.dataset.target = h.id;
+      if (h.tagName === 'H3') a.classList.add('toc-h3');
+      if (h.tagName === 'H4') a.classList.add('toc-h4');
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+
+    // Highlight active section on scroll
+    var tocLinks = tocList.querySelectorAll('a');
+    var headingEls = Array.from(headings).filter(function(h) { return h.id; });
+
+    function updateActive() {
+      var scrollPos = window.scrollY + 100;
+      var current = '';
+      headingEls.forEach(function(h) {
+        if (h.offsetTop <= scrollPos) current = h.id;
+      });
+      tocLinks.forEach(function(a) {
+        if (a.dataset.target === current) a.classList.add('active');
+        else a.classList.remove('active');
+      });
+    }
+    window.addEventListener('scroll', updateActive);
+    updateActive();
+  })();
+
+  // Search
   (function() {
     var searchBox = document.getElementById('searchBox');
     var searchResults = document.getElementById('searchResults');
     if (!searchBox || !searchResults) return;
 
-    // Build search index from headings and paragraphs
     var content = document.querySelector('.main-content');
     if (!content) return;
 
@@ -453,12 +399,7 @@
         text += ' ' + el.textContent;
         el = el.nextElementSibling;
       }
-      sections.push({
-        title: h.textContent,
-        text: text.toLowerCase(),
-        id: h.id || '',
-        level: h.tagName
-      });
+      sections.push({ title: h.textContent, text: text.toLowerCase(), id: h.id || '' });
     });
 
     var debounce;
@@ -467,39 +408,29 @@
       debounce = setTimeout(function() {
         var q = searchBox.value.trim().toLowerCase();
         if (q.length < 2) { searchResults.innerHTML = ''; return; }
-
         var matches = sections.filter(function(s) {
           return s.title.toLowerCase().indexOf(q) !== -1 || s.text.indexOf(q) !== -1;
         });
-
         if (matches.length === 0) {
-          searchResults.innerHTML = '<p class="search-no-results">Nema rezultata za "' + searchBox.value + '"</p>';
+          searchResults.innerHTML = '<p class="search-no-results">Nema rezultata</p>';
           return;
         }
-
         var html = '<ul class="search-results">';
         matches.forEach(function(m) {
-          var link = m.id ? ('#' + m.id) : '#';
-          html += '<li><a href="' + link + '">' + m.title + '</a></li>';
+          html += '<li><a href="' + (m.id ? '#' + m.id : '#') + '">' + m.title + '</a></li>';
         });
         html += '</ul>';
         searchResults.innerHTML = html;
       }, 200);
     });
   })();
-  </script>
 
-  <script>
-  // Back to top button
+  // Back to top
   (function() {
     var btn = document.getElementById('backToTop');
     if (!btn) return;
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 400) {
-        btn.classList.add('visible');
-      } else {
-        btn.classList.remove('visible');
-      }
+      btn.classList.toggle('visible', window.scrollY > 400);
     });
     btn.addEventListener('click', function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
