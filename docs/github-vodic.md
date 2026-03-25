@@ -11,8 +11,8 @@ GitHub je **besplatna platforma** za suradnju na dokumentima i kodu. Koriste ga 
 
 Ovaj projekt koristi GitHub jer:
 
-- **Besplatan je** — za javne projekte nema nikakvih troškova, ni za autore ni za suradnike
-- **Transparentan** — svaka promjena je vidljiva, s autorom i datumom
+- **Besplatan je** — za javne projekte nema nikakvih troškova, ni za održavatelje ni za suradnike
+- **Transparentan** — svaka promjena je vidljiva, s održavateljem i datumom
 - **Otvoren** — svatko može pregledati dokumente bez registracije
 - **Verzioniran** — svaka izmjena je sačuvana, moguće je vidjeti povijest i vratiti se na stariju verziju
 - **Omogućuje suradnju** — komentari, rasprave, prijedlozi izmjena, glasanje
@@ -94,7 +94,7 @@ Ako želite sami predložiti izmjenu:
 2. Kliknite ikonu olovke (Edit)
 3. Napravite izmjenu
 4. Kliknite "Propose changes"
-5. GitHub automatski kreira Pull Request koji autor pregledava
+5. GitHub automatski kreira Pull Request koji održavatelj pregledava
 
 Ili za naprednije korisnike:
 1. Forkajte repo
@@ -125,10 +125,11 @@ Ako vam je GitHub sučelje na engleskom, evo što znače ključni pojmovi:
 | **Watch** | Pratite | Pratite promjene — dobivate obavijesti o novim raspravama i izmjenama dokumentacije. |
 | **Fork** | Kopija | Napravite svoju kopiju projekta na vašem računu, za predlaganje izmjena. |
 | **Issue** | Prijava | Prijavite grešku ili problem u dokumentaciji. |
-| **Pull Request** | Prijedlog izmjene | Predložite konkretnu izmjenu teksta koju autor pregledava i prihvaća ili odbija. |
+| **Pull Request** | Prijedlog izmjene | Predložite konkretnu izmjenu teksta koju održavatelj pregledava i prihvaća ili odbija. |
 | **Discussion** | Rasprava | Otvorena rasprava — pitanja, prijedlozi, iskustva. |
 | **New Issue** | Nova prijava | Gumb za kreiranje nove prijave greške. |
 | **Propose changes** | Predloži izmjene | Gumb koji se pojavi kad editirate datoteku na GitHubu. |
+| **Maintainer** | Održavatelj | Osoba koja pregledava prijedloge izmjena i upravlja projektom. |
 
 ## Što je Markdown?
 

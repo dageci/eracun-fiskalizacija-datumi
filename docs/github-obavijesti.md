@@ -75,7 +75,7 @@ Dobit ćete email za svaku aktivnost — nove rasprave, komentari, izmjene, prij
 ### "Zanima me samo kad izađe nova verzija dokumenta"
 → Odaberite **Custom** → označite samo **Releases**
 
-Dobit ćete email samo kad autor objavi novu verziju (npr. nakon veće revizije ili potvrde od Porezne uprave).
+Dobit ćete email samo kad održavatelj objavi novu verziju (npr. nakon veće revizije ili potvrde od Porezne uprave).
 
 ---
 

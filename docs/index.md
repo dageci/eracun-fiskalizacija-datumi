@@ -67,7 +67,7 @@ Ova dokumentacija je otvorena za sve — **svatko može komentirati, predložiti
 ### Zašto GitHub?
 
 - **Besplatan** — za čitanje ne treba ni registracija, za komentiranje treba samo besplatna prijava koja kreira korisnički račun (2 min registracije)
-- **Transparentan** — svaka promjena je vidljiva s autorom i datumom, ništa se ne može tiho promijeniti
+- **Transparentan** — svaka promjena je vidljiva s održavateljem i datumom, ništa se ne može tiho promijeniti
 - **Verzioniran** — svaka izmjena je trajno sačuvana, moguće je vidjeti cijelu povijest dokumenta
 - **Rasprave i glasanje** — <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Discussions</a> omogućuju strukturirane rasprave s emoji glasanjem (👍 👎 🤔)
 - **Koriste ga institucije i zakonodavci diljem svijeta**:
