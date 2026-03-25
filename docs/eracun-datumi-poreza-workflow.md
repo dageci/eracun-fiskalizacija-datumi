@@ -560,9 +560,6 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <!-- BT-7: NEMA — datum poreza nije poznat (BR-CO-03) -->
 <!-- BT-8 = 432: porezna obveza nastaje danom plaćanja -->
 <!-- BT-72: Stvarni datum isporuke — informativan, NE utječe na PDV -->
-<!-- HR-BT-15: Napomena za Poreznu upravu -->
-<!-- (unutar ext:UBLExtensions / hrextac:HRFISK20Data) -->
-<!-- <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati> -->
 <cbc:IssueDate>2026-03-10</cbc:IssueDate>
 <cbc:IssueTime>09:00:00</cbc:IssueTime>
 
@@ -573,6 +570,19 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <cac:Delivery>
   <cbc:ActualDeliveryDate>2026-01-25</cbc:ActualDeliveryDate>
 </cac:Delivery>
+
+<!-- HR-BT-15: Obavezno za obračun po naplaćenoj naknadi -->
+<ext:UBLExtensions>
+  <ext:UBLExtension>
+    <ext:ExtensionContent>
+      <hrextac:HRFISK20Data>
+        <hrextac:HRObracunPDVPoNaplati>
+          Obračun prema naplaćenoj naknadi
+        </hrextac:HRObracunPDVPoNaplati>
+      </hrextac:HRFISK20Data>
+    </ext:ExtensionContent>
+  </ext:UBLExtension>
+</ext:UBLExtensions>
 ```
 > PDV ide u **travanj** — obveza nastaje tek plaćanjem 15.04.
 > BT-72 (siječanj) je samo informativan za kupca.
@@ -592,9 +602,8 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 ```xml
 <!-- BT-7: NEMA (BR-CO-03) -->
-<!-- BT-8 = 432 -->
-<!-- BT-72: informativan -->
-<!-- HR-BT-15: u HRFISK20Data -->
+<!-- BT-8 = 432: porezna obveza nastaje danom plaćanja -->
+<!-- BT-72: informativan — ne utječe na PDV -->
 <cbc:IssueDate>2026-03-05</cbc:IssueDate>
 <cbc:IssueTime>10:00:00</cbc:IssueTime>
 
@@ -605,6 +614,19 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <cac:Delivery>
   <cbc:ActualDeliveryDate>2026-03-20</cbc:ActualDeliveryDate>
 </cac:Delivery>
+
+<!-- HR-BT-15: Obavezno za obračun po naplaćenoj naknadi -->
+<ext:UBLExtensions>
+  <ext:UBLExtension>
+    <ext:ExtensionContent>
+      <hrextac:HRFISK20Data>
+        <hrextac:HRObracunPDVPoNaplati>
+          Obračun prema naplaćenoj naknadi
+        </hrextac:HRObracunPDVPoNaplati>
+      </hrextac:HRFISK20Data>
+    </ext:ExtensionContent>
+  </ext:UBLExtension>
+</ext:UBLExtensions>
 ```
 > PDV ide u **travanj** — obveza nastaje plaćanjem 10.04. (čl. 125.i).
 > Za razliku od obračuna po izdavanju (4.1.3) gdje bi PDV išao u ožujak po datumu računa,
@@ -644,8 +666,6 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ```xml
 <!-- BT-7: NEMA — jer koristimo BT-8 (BR-CO-03) -->
 <!-- BT-8 = 432 + BT-73/BT-74 zajedno u InvoicePeriod -->
-<!-- HR-BT-15: u HRFISK20Data -->
-<!-- <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati> -->
 <cbc:IssueDate>2026-04-05</cbc:IssueDate>
 <cbc:IssueTime>10:00:00</cbc:IssueTime>
 
@@ -654,6 +674,19 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
   <cbc:EndDate>2026-03-31</cbc:EndDate>
   <cbc:DescriptionCode>432</cbc:DescriptionCode>
 </cac:InvoicePeriod>
+
+<!-- HR-BT-15: Obavezno za obračun po naplaćenoj naknadi -->
+<ext:UBLExtensions>
+  <ext:UBLExtension>
+    <ext:ExtensionContent>
+      <hrextac:HRFISK20Data>
+        <hrextac:HRObracunPDVPoNaplati>
+          Obračun prema naplaćenoj naknadi
+        </hrextac:HRObracunPDVPoNaplati>
+      </hrextac:HRFISK20Data>
+    </ext:ExtensionContent>
+  </ext:UBLExtension>
+</ext:UBLExtensions>
 ```
 > PDV ide u **lipanj** — obveza nastaje tek plaćanjem (čl. 125.i).
 > BT-73/BT-74 (sij–ožu) govore kupcu za koje razdoblje je račun.
