@@ -110,6 +110,11 @@
     .highlight .nv { color: #d4d4d4; }             /* variables */
     .highlight .k { color: #569cd6; }              /* keywords */
 
+    /* Code block wrapper with badge */
+    .code-wrapper { position: relative; }
+    .code-badge { position: absolute; top: 0.4rem; right: 0.5rem; font-size: 0.68rem; background: rgba(255,255,255,0.12); color: #9e9e9e; padding: 0.15rem 0.5rem; border-radius: 3px; text-decoration: none; z-index: 1; transition: all 0.15s; }
+    .code-badge:hover { background: rgba(255,255,255,0.25); color: white; }
+
     /* Blockquotes */
     blockquote { border-left: 4px solid var(--primary-light); background: #eef6fc; padding: 1rem 1.25rem; margin: 1rem 0 1.5rem; border-radius: 0 6px 6px 0; }
     blockquote p { margin-bottom: 0.5rem; }
@@ -290,6 +295,27 @@
   })();
 
   // ============================================================
+  // Add XML code badge with link to explanation
+  (function() {
+    document.querySelectorAll('.main-content .highlight').forEach(function(block) {
+      var code = block.querySelector('code');
+      if (!code) return;
+      var text = code.textContent;
+      if (text.indexOf('<cbc:') !== -1 || text.indexOf('<cac:') !== -1 || text.indexOf('<ext:') !== -1 || text.indexOf('CreditNote') !== -1) {
+        var wrapper = document.createElement('div');
+        wrapper.classList.add('code-wrapper');
+        block.parentNode.insertBefore(wrapper, block);
+        wrapper.appendChild(block);
+        var badge = document.createElement('a');
+        badge.classList.add('code-badge');
+        badge.href = '#kako-citati-xml';
+        badge.textContent = 'XML · Kako čitati?';
+        badge.title = 'Objašnjenje boja i komentara u XML kodu';
+        wrapper.appendChild(badge);
+      }
+    });
+  })();
+
   // Add anchor links to headings (entire heading is clickable)
   // ============================================================
   (function() {
