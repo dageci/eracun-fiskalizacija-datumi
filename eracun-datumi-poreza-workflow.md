@@ -114,6 +114,8 @@ flowchart TD
 
 > **Primjer**: Roba isporučena 28.03., račun izdan 05.04.
 > BT-7 (`cbc:TaxPointDate`) = 2026-03-28 → PDV ulazi u **ožujak**, ne u travanj.
+>
+> XML primjeri za ovaj slučaj: [Primjer A](#primjer-a-redovni-račun--isporuka-i-račun-isti-dan), [Primjer B](#primjer-b-isporuka-u-drugom-mjesecu-od-računa), [Primjer D.1](#d1-obračun-po-izdavanju--bt-7-eksplicitni-datum-čl-30-st-1), [Primjer D.2](#d2-obračun-po-izdavanju--bt-835-automatska-veza-na-datum-isporuke)
 
 ---
 
@@ -162,6 +164,8 @@ flowchart TD
 > (s tekstom *"Obračun prema naplaćenoj naknadi"*) generira SOAP poruku za
 > `EvidentirajERacun` prema Poreznoj upravi, koja označava da se za ovaj račun
 > primjenjuje postupak oporezivanja prema naplaćenim naknadama (čl. 125.i Zakona o PDV-u).
+>
+> XML primjeri za ovaj slučaj: [Primjer C](#primjer-c-obračun-po-naplaćenoj-naknadi-čl-125i), [Primjer D.3](#d3-obračun-po-naplaćenoj-naknadi--bt-8432-čl-125i), [Primjer D.4c](#d4c-kontinuirana-usluga-s-obračunom-po-naplaćenoj-naknadi)
 
 ---
 
