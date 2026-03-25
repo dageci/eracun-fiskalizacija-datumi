@@ -112,6 +112,14 @@
 
     .mermaid { text-align: center; margin: 1.5rem 0; background: var(--bg-alt); padding: 1rem; border-radius: 6px; border: 1px solid var(--border); }
 
+    /* Heading anchor links */
+    .heading-link { color: var(--text-light); text-decoration: none; margin-left: 0.3rem; opacity: 0; transition: opacity 0.15s; font-size: 0.85em; }
+    .main-content h1:hover .heading-link,
+    .main-content h2:hover .heading-link,
+    .main-content h3:hover .heading-link,
+    .main-content h4:hover .heading-link { opacity: 1; }
+    .heading-link:hover { color: var(--primary-light); }
+
     /* Page actions */
     .page-actions { display: flex; gap: 0.6rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
     .page-actions a { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.65rem; border: 1px solid var(--border); border-radius: 5px; font-size: 0.78rem; color: var(--text); background: var(--bg-alt); text-decoration: none; transition: all 0.15s; }
@@ -145,7 +153,7 @@
     }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
+  <script>mermaid.initialize({ startOnLoad: false, theme: 'default' });</script>
 </head>
 <body>
 
@@ -250,6 +258,36 @@
   </footer>
 
   <script>
+  // ============================================================
+  // Convert code blocks to mermaid divs (Jekyll outputs <pre><code class="language-mermaid">)
+  // ============================================================
+  (function() {
+    document.querySelectorAll('pre code.language-mermaid').forEach(function(codeEl) {
+      var pre = codeEl.parentElement;
+      var div = document.createElement('div');
+      div.classList.add('mermaid');
+      div.textContent = codeEl.textContent;
+      pre.parentNode.replaceChild(div, pre);
+    });
+    mermaid.run();
+  })();
+
+  // ============================================================
+  // Add anchor links to headings
+  // ============================================================
+  (function() {
+    var content = document.querySelector('.main-content');
+    if (!content) return;
+    content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]').forEach(function(h) {
+      var a = document.createElement('a');
+      a.classList.add('heading-link');
+      a.href = '#' + h.id;
+      a.textContent = '#';
+      a.title = 'Link na ovu sekciju';
+      h.appendChild(a);
+    });
+  })();
+
   // ============================================================
   // Right TOC - auto-generated from headings + scroll spy
   // ============================================================
