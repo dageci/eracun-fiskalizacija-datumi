@@ -1,6 +1,7 @@
 ---
 layout: default
-title: "eRačun Hrvatska — Datumi i porezna obveza"
+title: Početna
+nav_order: 1
 ---
 
 # eRačun Hrvatska — Datumi i porezna obveza

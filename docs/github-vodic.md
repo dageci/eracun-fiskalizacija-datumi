@@ -1,6 +1,8 @@
 ---
 layout: default
-title: "Zašto GitHub i kako sudjelovati"
+title: "Zašto GitHub"
+nav_order: 3
+has_toc: false
 ---
 
 # Zašto GitHub i kako sudjelovati
