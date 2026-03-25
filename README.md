@@ -8,6 +8,8 @@
 >
 > **Plan**: skupiti i razraditi primjere kao zajednica, a onda pozvati relevantnu osobu ili tim iz Porezne uprave koji su radili na Fiskalizacija 2.0 projektu da revidira dokument. Da imamo **jedan izvor istine** kojeg onda svi možemo koristiti — za korekcije softvera, izgradnju novih sustava i referenciranje u stručnim literaturama. Da porezni i financijski stručnjaci imaju sigurnost u automatskoj obradi i ulaznih i izlaznih XML eRačuna, i da svi radimo po istom principu.
 >
+> **Otvoreni poziv Poreznoj upravi**: Ovaj projekt rado prepuštamo u vlasništvo Poreznoj upravi ili Ministarstvu financija — logično je da službena dokumentacija o eRačunima živi pod službenim okriljem. GitHub omogućuje transparentno upravljanje dokumentacijom s verzioniranjem, obavijestima o promjenama i sudjelovanjem zajednice — pristup koji se koristi za EN16931 specifikacije na EU razini. Dodavanje sadržaja na web stranice s datumima u zagradama bez mogućnosti obavijesti i praćenja promjena napustilo se još u 90-tima — GitHub to rješava elegantno i besplatno.
+>
 > Ako je nešto krivo napisano — nemojte napadati, jednostavno ukažite, predložite ispravak i neka ostali glasaju. I da se što prije počnemo svi zajedno smijati kako početkom 2026. ovo nismo znali.
 >
 > *Prva inicijalna verzija objavljena: 24.03.2026. — Davor Geci*
