@@ -721,17 +721,23 @@ Redoslijed elemenata u UBL Invoice XML-u je strogo definiran shemom:
 
 ## 8. Zakonski temelj
 
-| Propis | Članak | Relevantnost |
-|--------|--------|-------------|
-| **Zakon o PDV-u** | Čl. 30, st. 1 | "Oporezivi događaj i obveza obračuna PDV-a nastaju kada su dobra isporučena ili usluge obavljene." |
-| **Zakon o PDV-u** | Čl. 30, st. 5 | "Za primljene predujmove obveza obračuna PDV-a nastaje u trenutku primitka predujma." |
-| **Zakon o PDV-u** | Čl. 125.i | Obračun prema naplaćenoj naknadi — obveza obračuna PDV-a u trenutku primitka plaćanja |
-| **Zakon o fiskalizaciji** | Čl. 48, st. 1, t. 7 | eRačun mora sadržavati "datum isporuke dobara ili obavljenih usluga... ako se razlikuje od datuma izdavanja" |
-| **EN16931** | BR-CO-03 | BT-7 i BT-8 su međusobno isključivi |
-| **HR CIUS 2025** | HR-BR-2 | IssueTime obavezan u formatu hh:mm:ss |
-| **HR CIUS 2025** | HR-BR-40 | IssueDate >= 01.01.2026 |
+| Propis | Članak | Relevantnost | Službeni izvor |
+|--------|--------|-------------|----------------|
+| **Zakon o PDV-u** | Čl. 30, st. 1 | "Oporezivi događaj i obveza obračuna PDV-a nastaju kada su dobra isporučena ili usluge obavljene." | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2013_06_73_1451.html" target="_blank">NN 73/13</a> |
+| **Zakon o PDV-u** | Čl. 30, st. 2 | Za kontinuirane isporuke, smatra se da su isporučeni po isteku razdoblja na koje se računi odnose | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2013_06_73_1451.html" target="_blank">NN 73/13</a> |
+| **Zakon o PDV-u** | Čl. 30, st. 5 | "Za primljene predujmove obveza obračuna PDV-a nastaje u trenutku primitka predujma." | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2013_06_73_1451.html" target="_blank">NN 73/13</a> |
+| **Zakon o PDV-u** | Čl. 125.i | Obračun prema naplaćenoj naknadi — obveza obračuna PDV-a u trenutku primitka plaćanja | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2013_06_73_1451.html" target="_blank">NN 73/13</a> |
+| **Zakon o fiskalizaciji** | Čl. 48, st. 1, t. 7 | eRačun mora sadržavati "datum isporuke dobara ili obavljenih usluga... ako se razlikuje od datuma izdavanja" | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2025_06_89_1233.html" target="_blank">NN 89/25</a> |
+| **EN16931** | BR-CO-03 | BT-7 i BT-8 su međusobno isključivi | <a href="https://github.com/ConnectingEurope/eInvoicing-EN16931" target="_blank">GitHub</a> |
+| **HR CIUS 2025** | HR-BR-2 | IssueTime obavezan u formatu hh:mm:ss | <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/196" target="_blank">Specifikacija</a> |
+| **HR CIUS 2025** | HR-BR-40 | IssueDate >= 01.01.2026 | <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/196" target="_blank">Specifikacija</a> |
+| **HR CIUS 2025** | HR-BR-48 | TaxPointDate >= 01.01.1900 i < 01.01.2100 | <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/197" target="_blank">Validator</a> |
+
+> **Pročišćeni tekstovi zakona** (neslužbeni, ali lakši za čitanje):
+> <a href="https://www.zakon.hr/z/1455/zakon-o-porezu-na-dodanu-vrijednost" target="_blank">Zakon o PDV-u — zakon.hr</a> ·
+> <a href="https://www.zakon.hr/z/3960/zakon-o-fiskalizaciji" target="_blank">Zakon o fiskalizaciji — zakon.hr</a>
 
 ---
 
 *Dokument kreiran: 2026-03-24*
-*Temeljem: Specifikacija osnovne uporabe eRačuna s proširenjima (12.03.2026), HR CIUS 2025, EN16931, Zakon o PDV-u, Zakon o fiskalizaciji (NN 89/25)*
+*Temeljem: <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/196" target="_blank">Specifikacija osnovne uporabe eRačuna s proširenjima (12.03.2026)</a>, <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/197" target="_blank">HR Schematron validator (13.03.2026)</a>, <a href="https://github.com/ConnectingEurope/eInvoicing-EN16931" target="_blank">EN16931</a>, <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2013_06_73_1451.html" target="_blank">Zakon o PDV-u</a>, <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2025_06_89_1233.html" target="_blank">Zakon o fiskalizaciji (NN 89/25)</a>*
