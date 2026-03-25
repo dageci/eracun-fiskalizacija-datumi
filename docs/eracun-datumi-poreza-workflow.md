@@ -810,7 +810,7 @@ Primjer: IT podrška obavljena u prosincu 2025., račun izdan u siječnju 2026.,
 > pretporez pri primitku računa** — mora čekati do plaćanja. PDV obveza prodavatelja i
 > pravo na pretporez kupca nastaju u istom trenutku: danom plaćanja.
 
-> Sve pet stavki mogu biti u **različitim mjesecima ili čak godinama** za isti poslovni događaj.
+> Svih pet stavki mogu biti u **različitim mjesecima ili čak godinama** za isti poslovni događaj.
 >
 > Kad knjigovođa kaže *"ide u trošak za prošlu godinu"* — misli da je usluga obavljena u
 > prošloj godini pa rashod pripada tamo (HSFI 16), čak i ako je račun stigao u siječnju
