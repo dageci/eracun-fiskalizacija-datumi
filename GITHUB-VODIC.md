@@ -2,7 +2,7 @@
 
 ## Što je GitHub?
 
-GitHub je **besplatna platforma** za suradnju na dokumentima i kodu. Koriste ga milioni programera, tvrtki i organizacija diljem svijeta — uključujući Europsku komisiju za EN16931 specifikacije.
+GitHub je **besplatna platforma** za suradnju na dokumentima i kodu. Koriste ga milijuni programera, tvrtki i organizacija diljem svijeta — uključujući Europsku komisiju za EN16931 specifikacije.
 
 Ovaj projekt koristi GitHub jer:
 
