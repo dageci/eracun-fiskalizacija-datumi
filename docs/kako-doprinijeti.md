@@ -7,6 +7,14 @@ title: "Kako doprinijeti"
 
 Hvala na interesu za doprinos! Ovaj projekt je otvoren za sve koji rade s hrvatskim eRačunima.
 
+### Sadržaj
+{: .no_toc }
+
+* TOC
+{:toc}
+
+---
+
 ## Rasprava (Discussions)
 
 Za pitanja, prijedloge i raspravu koristite **GitHub Discussions**:

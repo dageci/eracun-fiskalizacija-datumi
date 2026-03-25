@@ -7,6 +7,14 @@ title: "Kako dobivati obavijesti o promjenama"
 
 Možete postaviti da vas GitHub automatski obavještava emailom kad se nešto promijeni u ovom projektu — nova rasprava, izmjena dokumenta, novi prijedlog ili komentar. I možete odabrati **samo ono što vas zanima**.
 
+### Sadržaj
+{: .no_toc }
+
+* TOC
+{:toc}
+
+---
+
 ## Preduvjet: besplatna prijava na GitHub
 
 Za obavijesti trebate GitHub korisnički račun. Prijava je besplatna i traje 2 minute: [github.com/signup](https://github.com/signup)

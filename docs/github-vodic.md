@@ -5,6 +5,14 @@ title: "Zašto GitHub i kako sudjelovati"
 
 # Zašto GitHub i kako sudjelovati
 
+### Sadržaj
+{: .no_toc }
+
+* TOC
+{:toc}
+
+---
+
 ## Što je GitHub?
 
 GitHub je **besplatna platforma** za suradnju na dokumentima i kodu. Koriste ga milijuni programera, tvrtki i organizacija diljem svijeta — uključujući Europsku komisiju za EN16931 specifikacije.

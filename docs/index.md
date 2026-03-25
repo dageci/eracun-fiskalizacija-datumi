@@ -17,6 +17,14 @@ title: "eRačun Hrvatska — Datumi i porezna obveza"
 >
 > *Prva inicijalna verzija objavljena: 24.03.2026. — Davor Geci*
 
+### Sadržaj
+{: .no_toc }
+
+* TOC
+{:toc}
+
+---
+
 ## Dokumentacija
 
 | Dokument | Opis |
