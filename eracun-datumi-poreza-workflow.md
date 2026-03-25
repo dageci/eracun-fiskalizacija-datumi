@@ -154,7 +154,9 @@ flowchart TD
 > **Primjer**: Roba isporučena 28.03., račun izdan 05.04.
 > BT-7 (`cbc:TaxPointDate`) = 2026-03-28 → PDV ulazi u **ožujak**, ne u travanj.
 >
-> XML primjeri za ovaj slučaj: [4.1.1 Isti dan](#411-isporuka-i-račun-isti-dan-po-izdavanju), [4.1.2 Drugi mjesec](#412-isporuka-u-drugom-mjesecu-od-računa-po-izdavanju), [4.1.3 Račun prije isporuke](#413-račun-izdan-prije-isporuke-čl-30-st-2-po-izdavanju), [4.1.4 Predujam](#414-predujam-avansni-račun-čl-30-st-5-po-izdavanju), [4.1.5 Kontinuirana](#415-kontinuirana-usluga-obračunsko-razdoblje-bt-73-bt-74-po-izdavanju)
+> **Standardni slučajevi** (pokriveni dijagramom): [4.1.1 Isti dan](#411-isporuka-i-račun-isti-dan-po-izdavanju), [4.1.2 Drugi mjesec](#412-isporuka-u-drugom-mjesecu-od-računa-po-izdavanju), [4.1.4 Predujam](#414-predujam-avansni-račun-čl-30-st-5-po-izdavanju), [4.1.6 BT-8=35](#416-bt-835--automatska-veza-na-datum-isporuke-po-izdavanju), [4.1.8 Svi datumi različiti](#418-svi-datumi-u-različitim-mjesecima--bt-7-eksplicitni-datum-po-izdavanju)
+>
+> **Specijalni slučajevi** (nisu u dijagramu, detaljno razrađeni u primjerima): [4.1.3 Račun prije isporuke](#413-račun-izdan-prije-isporuke-čl-30-st-2-po-izdavanju) (čl. 30 st. 2 — PDV po datumu računa, ne isporuke), [4.1.5 Kontinuirana usluga](#415-kontinuirana-usluga--obračunsko-razdoblje-bt-73-bt-74-po-izdavanju) (BT-7 = kraj razdoblja, nema BT-72), [4.1.7 Odobrenje](#417-odobrenje--creditnote-po-izdavanju) (BT-7 ne postoji u CreditNote shemi)
 
 ---
 
