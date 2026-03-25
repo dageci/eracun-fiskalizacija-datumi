@@ -788,7 +788,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 Primjer: IT podrška obavljena u prosincu 2025., račun izdan u siječnju 2026., plaćen u veljači 2026.
 
-**Ako prodavatelj koristi obračun po izdavanju (čl. 30):**
+**Ako prodavatelj koristi obračun po izdavanju (čl. 30):** <span class="badge-izdavanje">Po izdavanju</span>
 
 | Pitanje | Odgovor | Razdoblje | Propis |
 |---------|---------|-----------|--------|
@@ -797,7 +797,7 @@ Primjer: IT podrška obavljena u prosincu 2025., račun izdan u siječnju 2026.,
 | Kad kupac ima **pravo na pretporez**? | Kad primi račun i kad je nastala obveza PDV-a | **Siječanj 2026.** | Čl. 58 Zakona o PDV-u |
 | Kad se rashod priznaje za **porez na dobit**? | U godini kad je nastao | **2025.** | Čl. 5 i 11 Zakona o porezu na dobit |
 
-**Ako prodavatelj koristi obračun po naplaćenoj naknadi (čl. 125.i):**
+**Ako prodavatelj koristi obračun po naplaćenoj naknadi (čl. 125.i):** <span class="badge-naplata">Po naplati</span>
 
 | Pitanje | Odgovor | Razdoblje | Propis |
 |---------|---------|-----------|--------|
