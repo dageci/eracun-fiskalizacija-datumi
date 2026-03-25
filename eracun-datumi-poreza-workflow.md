@@ -759,13 +759,13 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 > Pregled: roba isporučena 25.01., račun izdan 10.03., kupac plaća 15.04.
 
-| Mehanizam | BT-7 | BT-8 | BT-72 | PDV u mjesecu | Zakonski temelj |
-|-----------|:----:|:----:|:-----:|:-------------:|-----------------|
-| **Ni BT-7 ni BT-8** | — | — | 25.01. | **Ožujak** (datum računa) | Default |
-| **BT-7 eksplicitno** | 25.01. | — | 25.01. | **Siječanj** (datum isporuke) | Čl. 30, st. 1 |
-| **BT-8 = 35** | — | 35 | 25.01. | **Siječanj** (= BT-72) | Čl. 30, st. 1 |
-| **BT-8 = 432** | — | 432 | 25.01. | **Travanj** (datum plaćanja) | Čl. 125.i |
-| **BT-8 = 3** | — | 3 | 25.01. | **Ožujak** (= BT-2) | Redundantno |
+| Mehanizam | Obračun | BT-7 | BT-8 | BT-72 | PDV u mjesecu | Zakonski temelj |
+|-----------|---------|:----:|:----:|:-----:|:-------------:|-----------------|
+| **Ni BT-7 ni BT-8** | <span class="badge-izdavanje">Po izdavanju</span> | — | — | 25.01. | **Ožujak** (datum računa) | Default |
+| **BT-7 eksplicitno** | <span class="badge-izdavanje">Po izdavanju</span> | 25.01. | — | 25.01. | **Siječanj** (datum isporuke) | Čl. 30, st. 1 |
+| **BT-8 = 35** | <span class="badge-izdavanje">Po izdavanju</span> | — | 35 | 25.01. | **Siječanj** (= BT-72) | Čl. 30, st. 1 |
+| **BT-8 = 432** | <span class="badge-naplata">Po naplati</span> | — | 432 | 25.01. | **Travanj** (datum plaćanja) | Čl. 125.i |
+| **BT-8 = 3** | <span class="badge-izdavanje">Po izdavanju</span> | — | 3 | 25.01. | **Ožujak** (= BT-2) | Redundantno |
 
 > Ista roba, isti datumi — pet različitih PDV tretmana ovisno o odabiru BT-7/BT-8.
 > U praksi se za jednokratne isporuke koristi BT-7 (eksplicitno), a BT-8=432 za obračun po naplati.
