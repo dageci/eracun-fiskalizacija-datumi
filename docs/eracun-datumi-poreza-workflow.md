@@ -121,34 +121,40 @@ flowchart TD
 ```mermaid
 flowchart TD
     A([Obračun po IZDAVANJU<br>čl. 30 Zakona o PDV-u])
-    A --> B{Datum isporuke<br>razlikuje se od<br>datuma izdavanja računa?}
+    A --> B{Datum isporuke<br>razlikuje se od<br>datuma izdavanja?}
 
-    B -->|NE| C[Kombinacija 1.<br>Ni BT-7 ni BT-8]
-    B -->|DA| D[Kombinacija 2.<br>BT-7 = datum isporuke]
+    B -->|NE — isti su| PATH1[Ni BT-7 ni BT-8<br>Porezna obveza = BT-2]
+    B -->|DA — različiti| BT72{Postoji li datum<br>isporuke BT-72?}
 
-    C --> C1[Porezna obveza =<br>BT-2 Datum izdavanja<br>cbc:IssueDate]
-    D --> D1[BT-7 Datum nastanka obveze PDV-a<br>cbc:TaxPointDate<br>= datum isporuke]
+    BT72 -->|DA| METHOD{Kako označiti<br>datum poreza?}
+    BT72 -->|NE — npr. predujam| PATH4[BT-7 = datum<br>primitka predujma]
 
-    C1 --> XML1[U XML idu:<br>✅ cbc:IssueDate BT-2<br>✅ cbc:IssueTime HR-BT-2<br>✅ cbc:DueDate BT-9]
-    D1 --> XML2[U XML idu:<br>✅ cbc:IssueDate BT-2<br>✅ cbc:IssueTime HR-BT-2<br>✅ cbc:TaxPointDate BT-7<br>✅ cbc:DueDate BT-9]
+    METHOD -->|BT-7 eksplicitno| PATH2[BT-7 = datum isporuke<br>Primjeri: 4.1.2, 4.1.8]
+    METHOD -->|BT-8=35 automatski| PATH3[BT-8 = 35<br>sustav koristi BT-72<br>Primjer: 4.1.6]
 
-    XML1 --> N1[Ne ide u XML:<br>cbc:TaxPointDate<br>InvoicePeriod/DescriptionCode<br>HRObracunPDVPoNaplati]
-    XML2 --> N2[Ne ide u XML:<br>InvoicePeriod/DescriptionCode<br>HRObracunPDVPoNaplati]
+    PATH1 --> XML1[U XML:<br>✅ BT-2 IssueDate<br>✅ HR-BT-2 IssueTime<br>Primjer: 4.1.1]
+    PATH2 --> XML2[U XML:<br>✅ BT-2, HR-BT-2<br>✅ BT-7 TaxPointDate<br>✅ BT-72 ActualDeliveryDate]
+    PATH3 --> XML3[U XML:<br>✅ BT-2, HR-BT-2<br>✅ BT-8=35 DescriptionCode<br>✅ BT-72 ActualDeliveryDate]
+    PATH4 --> XML4[U XML:<br>✅ BT-2, HR-BT-2<br>✅ BT-7 TaxPointDate<br>Primjer: 4.1.4]
 
-    N1 --> OK1([BR-CO-03 ✅ Ispravno])
-    N2 --> OK2([BR-CO-03 ✅ Ispravno])
+    XML1 --> OK([BR-CO-03 ✅])
+    XML2 --> OK
+    XML3 --> OK
+    XML4 --> OK
 
     style A fill:#e8f5e9,stroke:#2e7d32,color:#000
-    style C fill:#e3f2fd,stroke:#1565c0,color:#000
-    style D fill:#fff3e0,stroke:#e65100,color:#000
-    style C1 fill:#e3f2fd,stroke:#1565c0,color:#000
-    style D1 fill:#fff3e0,stroke:#e65100,color:#000
-    style XML1 fill:#e8f5e9,stroke:#2e7d32,color:#000
-    style XML2 fill:#e8f5e9,stroke:#2e7d32,color:#000
-    style N1 fill:#f5f5f5,stroke:#9e9e9e,color:#9e9e9e
-    style N2 fill:#f5f5f5,stroke:#9e9e9e,color:#9e9e9e
-    style OK1 fill:#e8f5e9,stroke:#2e7d32,color:#000
-    style OK2 fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style B fill:#fff3e0,stroke:#e65100,color:#000
+    style BT72 fill:#fff3e0,stroke:#e65100,color:#000
+    style METHOD fill:#fff3e0,stroke:#e65100,color:#000
+    style PATH1 fill:#e3f2fd,stroke:#1565c0,color:#000
+    style PATH2 fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style PATH3 fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style PATH4 fill:#f3e5f5,stroke:#7b1fa2,color:#000
+    style XML1 fill:#f5f5f5,stroke:#616161,color:#000
+    style XML2 fill:#f5f5f5,stroke:#616161,color:#000
+    style XML3 fill:#f5f5f5,stroke:#616161,color:#000
+    style XML4 fill:#f5f5f5,stroke:#616161,color:#000
+    style OK fill:#e8f5e9,stroke:#2e7d32,color:#000
 ```
 
 > **Primjer**: Roba isporučena 28.03., račun izdan 05.04.
