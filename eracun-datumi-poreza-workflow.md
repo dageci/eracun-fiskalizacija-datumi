@@ -897,5 +897,4 @@ Redoslijed elemenata u UBL Invoice XML-u je strogo definiran shemom:
 
 ---
 
-*Dokument kreiran: 2026-03-24*
-*Temeljem: <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/196" target="_blank">Specifikacija osnovne uporabe eRačuna s proširenjima (12.03.2026)</a>, <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/197" target="_blank">HR Schematron validator (13.03.2026)</a>, <a href="https://github.com/ConnectingEurope/eInvoicing-EN16931" target="_blank">EN16931</a>, <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2013_06_73_1451.html" target="_blank">Zakon o PDV-u</a>, <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2025_06_89_1233.html" target="_blank">Zakon o fiskalizaciji (NN 89/25)</a>*
+*Dokument kreiran: 2026-03-24. Svi izvori navedeni u sekciji [8. Zakonski temelj](#8-zakonski-temelj).*
