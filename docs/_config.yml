@@ -1,12 +1,9 @@
 title: "eRačun Hrvatska — Datumi i porezna obveza"
 description: "Dokumentacija o datumima i poreznoj obvezi u hrvatskom eRačunu (HR CIUS 2025 / EN16931)"
-theme: jekyll-theme-cayman
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-plugins:
-  - jekyll-mermaid
 
 url: "https://dageci.github.io"
 baseurl: "/eracun-fiskalizacija-datumi"
