@@ -1,8 +1,6 @@
 ---
 layout: default
-title: "Email obavijesti"
-nav_order: 4
-has_toc: false
+title: "Kako dobivati obavijesti o promjenama"
 ---
 
 # Kako dobivati obavijesti o promjenama na email

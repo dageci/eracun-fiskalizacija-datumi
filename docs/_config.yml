@@ -1,6 +1,5 @@
-title: "eRačun Hrvatska"
-description: "Datumi i porezna obveza u hrvatskom eRačunu (HR CIUS 2025 / EN16931)"
-remote_theme: just-the-docs/just-the-docs
+title: "eRačun Hrvatska — Datumi i porezna obveza"
+description: "Dokumentacija o datumima i poreznoj obvezi u hrvatskom eRačunu (HR CIUS 2025 / EN16931)"
 markdown: kramdown
 kramdown:
   input: GFM
@@ -8,38 +7,3 @@ kramdown:
 
 url: "https://dageci.github.io"
 baseurl: "/eracun-fiskalizacija-datumi"
-
-color_scheme: light
-
-# Search
-search_enabled: true
-search:
-  heading_level: 2
-  previews: 3
-  preview_words_before: 5
-  preview_words_after: 10
-  tokenizer_separator: /[\s/]+/
-
-# Aux links (gornji desni kut)
-aux_links:
-  "GitHub repo":
-    - "https://github.com/dageci/eracun-fiskalizacija-datumi"
-  "Rasprave":
-    - "https://github.com/dageci/eracun-fiskalizacija-datumi/discussions"
-  "Prijavi grešku":
-    - "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/new"
-aux_links_new_tab: true
-
-# Footer
-footer_content: "Licenca: <a href=\"https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12\">EUPL 1.2</a> · Autor: Davor Geci · <a href=\"https://github.com/dageci/eracun-fiskalizacija-datumi\">GitHub</a>"
-
-# Back to top
-back_to_top: true
-back_to_top_text: "Natrag na vrh"
-
-# Enable copy button on code blocks
-enable_copy_code_button: true
-
-# Mermaid
-mermaid:
-  version: "10.9.0"

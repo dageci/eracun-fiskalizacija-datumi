@@ -1,8 +1,6 @@
 ---
 layout: default
 title: "Kako doprinijeti"
-nav_order: 5
-has_toc: false
 ---
 
 # Kako doprinijeti
