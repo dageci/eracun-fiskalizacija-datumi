@@ -198,7 +198,7 @@ flowchart TD
 U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za lakše čitanje:
 
 - <span style="color:#569cd6">**Plavo**</span> — nazivi XML elemenata (npr. `cbc:IssueDate`, `cac:InvoicePeriod`)
-- <span style="color:#ce9178">**Narančasto**</span> — vrijednosti i tekst (npr. `"2026-03-15"`, `"432"`)
+- **Bijelo** — vrijednosti i tekst (npr. `2026-03-15`, `432`)
 - <span style="color:#6a9955">***Zeleno italic***</span> — **komentari** (`<!-- ... -->`) — ovo **NIJE dio XML-a**, služi samo kao objašnjenje za čitatelja. Komentari se ne šalju u stvarnoj XML datoteci.
 
 ---
