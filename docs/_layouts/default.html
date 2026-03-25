@@ -113,12 +113,19 @@
     .mermaid { text-align: center; margin: 1.5rem 0; background: var(--bg-alt); padding: 1rem; border-radius: 6px; border: 1px solid var(--border); }
 
     /* Heading anchor links */
-    .heading-link { color: var(--text-light); text-decoration: none; margin-left: 0.3rem; opacity: 0; transition: opacity 0.15s; font-size: 0.85em; }
-    .main-content h1:hover .heading-link,
-    .main-content h2:hover .heading-link,
-    .main-content h3:hover .heading-link,
-    .main-content h4:hover .heading-link { opacity: 1; }
-    .heading-link:hover { color: var(--primary-light); }
+    .main-content h1[id] a.heading-link,
+    .main-content h2[id] a.heading-link,
+    .main-content h3[id] a.heading-link,
+    .main-content h4[id] a.heading-link {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+    }
+    .main-content h1[id]:hover a.heading-link,
+    .main-content h2[id]:hover a.heading-link,
+    .main-content h3[id]:hover a.heading-link,
+    .main-content h4[id]:hover a.heading-link { color: var(--primary-light); }
 
     /* Page actions */
     .page-actions { display: flex; gap: 0.6rem; margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
@@ -273,7 +280,7 @@
   })();
 
   // ============================================================
-  // Add anchor links to headings
+  // Add anchor links to headings (entire heading is clickable)
   // ============================================================
   (function() {
     var content = document.querySelector('.main-content');
@@ -282,8 +289,9 @@
       var a = document.createElement('a');
       a.classList.add('heading-link');
       a.href = '#' + h.id;
-      a.textContent = '#';
       a.title = 'Link na ovu sekciju';
+      a.innerHTML = h.innerHTML;
+      h.innerHTML = '';
       h.appendChild(a);
     });
   })();
