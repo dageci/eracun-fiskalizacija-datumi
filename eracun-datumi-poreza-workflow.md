@@ -199,9 +199,9 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 ---
 
-### 4.1 Obračun po izdavanju (čl. 30 Zakona o PDV-u)
+### 4.1 Obračun po izdavanju (čl. 30 Zakona o PDV-u) <span class="badge-izdavanje">Po izdavanju</span>
 
-#### 4.1.1 Isporuka i račun isti dan
+#### 4.1.1 Isporuka i račun isti dan <span class="badge-izdavanje">Po izdavanju</span>
 
 | Podatak | BT polje | XML element | Vrijednost |
 |---------|----------|-------------|-----------|
@@ -220,7 +220,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 ---
 
-#### 4.1.2 Isporuka u drugom mjesecu od računa
+#### 4.1.2 Isporuka u drugom mjesecu od računa <span class="badge-izdavanje">Po izdavanju</span>
 
 | Podatak | BT polje | XML element | Vrijednost |
 |---------|----------|-------------|-----------|
@@ -246,7 +246,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 ---
 
-#### 4.1.3 Račun izdan prije isporuke (čl. 30 st. 2)
+#### 4.1.3 Račun izdan prije isporuke (čl. 30 st. 2) <span class="badge-izdavanje">Po izdavanju</span>
 
 > *"Ako je račun izdan prije nego su dobra isporučena ili usluge obavljene,*
 > *obveza obračuna PDV-a nastaje na dan izdavanja računa."*
@@ -281,7 +281,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 ---
 
-#### 4.1.4 Predujam / avansni račun (čl. 30 st. 5)
+#### 4.1.4 Predujam / avansni račun (čl. 30 st. 5) <span class="badge-izdavanje">Po izdavanju</span>
 
 > *"Za primljene predujmove obveza obračuna PDV-a na primljeni iznos*
 > *nastaje u trenutku primitka predujma."*
@@ -315,7 +315,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 ---
 
-#### 4.1.5 Kontinuirana usluga — obračunsko razdoblje (BT-73, BT-74)
+#### 4.1.5 Kontinuirana usluga — obračunsko razdoblje (BT-73, BT-74) <span class="badge-izdavanje">Po izdavanju</span>
 
 > IT podrška za razdoblje siječanj–ožujak 2026. Račun izdan u travnju.
 > Ovo je primjer iz čl. 30 st. 2 Zakona o PDV-u: *"Za kontinuirane isporuke dobara*
@@ -356,7 +356,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > Datum poreza i dalje određuje BT-7 (ili BT-8). Ali za kontinuirane usluge, BT-7
 > se postavlja na datum koji proizlazi iz čl. 30 st. 2 — kraj razdoblja.
 
-#### 4.1.5a Što ako izostavimo BT-7 kod kontinuirane usluge?
+#### 4.1.5a Što ako izostavimo BT-7 kod kontinuirane usluge? <span class="badge-izdavanje">Po izdavanju</span>
 
 > Isti slučaj kao D.4 (IT podrška sij–ožu, račun u travnju), ali **bez BT-7**.
 
@@ -382,7 +382,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > **Zaključak**: Za kontinuirane usluge BT-7 je **nužan** — bez njega PDV
 > ide u mjesec izdavanja računa umjesto u mjesec završetka usluge.
 
-#### 4.1.5b BT-7 različit od kraja razdoblja — je li to ispravno?
+#### 4.1.5b BT-7 različit od kraja razdoblja — je li to ispravno? <span class="badge-izdavanje">Po izdavanju</span>
 
 > Isti slučaj, ali BT-7 postavljen na veljaču umjesto na ožujak.
 
@@ -413,7 +413,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > validaciju ne znači da je porezno ispravan. BT-7 kod kontinuiranih usluga **mora biti
 > jednak BT-74** (kraj obračunskog razdoblja) da bi bio usklađen s čl. 30 st. 2.
 
-#### 4.1.6 BT-8=35 — automatska veza na datum isporuke
+#### 4.1.6 BT-8=35 — automatska veza na datum isporuke <span class="badge-izdavanje">Po izdavanju</span>
 
 > Umjesto da eksplicitno upišemo datum u BT-7, kažemo sustavu:
 > "datum porezne obveze = datum isporuke (BT-72)".
@@ -439,7 +439,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > Prednost BT-8=35: garantira konzistentnost — nema rizika da BT-7 i BT-72 budu različiti.
 > Nedostatak: ne možemo odvojiti datum poreza od datuma isporuke (vidi D.4).
 
-#### 4.1.7 Odobrenje / CreditNote
+#### 4.1.7 Odobrenje / CreditNote <span class="badge-izdavanje">Po izdavanju</span>
 
 > Odobrenje (knjižno odobrenje) umanjuje iznos prethodno izdanog računa.
 > U UBL CreditNote shemi **BT-7 (`cbc:TaxPointDate`) ne postoji**.
@@ -480,7 +480,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ---
 
 
-#### 4.1.8 Svi datumi u različitim mjesecima — BT-7 eksplicitni datum
+#### 4.1.8 Svi datumi u različitim mjesecima — BT-7 eksplicitni datum <span class="badge-izdavanje">Po izdavanju</span>
 
 > Isporuka je bila u siječnju → porezna obveza nastala u siječnju.
 > BT-7 eksplicitno upisuje datum isporuke kao datum porezne obveze.
@@ -500,9 +500,9 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > PDV ide u **siječanj**. BT-7 i BT-72 imaju isti datum jer je
 > porezna obveza vezana za isporuku (čl. 30 st. 1).
 
-### 4.2 Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u)
+### 4.2 Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) <span class="badge-naplata">Po naplati</span>
 
-#### 4.2.1 Isporuka i račun isti mjesec
+#### 4.2.1 Isporuka i račun isti mjesec <span class="badge-naplata">Po naplati</span>
 
 | Podatak | BT polje | XML element | Vrijednost |
 |---------|----------|-------------|-----------|
@@ -545,7 +545,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 ---
 
-#### 4.2.2 Isporuka u drugom mjesecu od računa
+#### 4.2.2 Isporuka u drugom mjesecu od računa <span class="badge-naplata">Po naplati</span>
 
 > Isti podaci, ali obveznik koristi obračun po naplaćenoj naknadi.
 > Ni isporuka ni izdavanje ne određuju datum poreza — samo plaćanje.
@@ -583,7 +583,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > BT-2 (ožujak) je samo administrativni datum izdavanja.
 > Ni jedan ni drugi ne utječe na poreznu obvezu.
 
-#### 4.2.3 Račun izdan prije isporuke
+#### 4.2.3 Račun izdan prije isporuke <span class="badge-naplata">Po naplati</span>
 
 > Račun izdan 05.03., isporuka planirana 20.03., kupac plaća 10.04.
 > Kod obračuna po naplati, niti datum računa niti datum isporuke ne igraju ulogu — PDV nastaje isključivo plaćanjem.
@@ -626,7 +626,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > Za razliku od obračuna po izdavanju (4.1.3) gdje bi PDV išao u ožujak po datumu računa,
 > ovdje čak i datum računa ne igra ulogu.
 
-#### 4.2.4 Predujam / avansni račun
+#### 4.2.4 Predujam / avansni račun <span class="badge-naplata">Po naplati</span>
 
 > Kupac plaća unaprijed 05.02., račun za predujam izdan 10.02., isporuke još nema.
 > Kod obračuna po naplati, predujam je poseban slučaj: kupac je **već platio** — dakle PDV obveza nastaje **odmah** pri primitku predujma, jednako kao kod obračuna po izdavanju (čl. 30 st. 5).
@@ -667,7 +667,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 >
 > **Zaključak**: Predujam kod obračuna po naplati koristi BT-7 (jer je datum plaćanja poznat), ali HR-BT-15 ostaje obavezan jer je to svojstvo obveznika, ne pojedinačnog računa.
 
-#### 4.2.5 Kontinuirana usluga s obračunskim razdobljem
+#### 4.2.5 Kontinuirana usluga s obračunskim razdobljem <span class="badge-naplata">Po naplati</span>
 
 > IT podrška za razdoblje siječanj–ožujak, račun u travnju, kupac plaća u lipnju.
 > Obveznik koristi obračun po naplaćenoj naknadi (čl. 125.i).
@@ -706,7 +706,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > koegzistirati unutar istog `cac:InvoicePeriod` elementa — nisu međusobno isključivi.
 > Međusobno isključivi su samo BT-7 i BT-8 (pravilo BR-CO-03).
 
-#### 4.2.6 Odobrenje / CreditNote
+#### 4.2.6 Odobrenje / CreditNote <span class="badge-naplata">Po naplati</span>
 
 > Odobrenje za obveznika koji koristi obračun po naplaćenoj naknadi.
 > Odobrenje umanjuje iznos prethodno izdanog računa 147/1/1 od 15.03.2026.
@@ -755,7 +755,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > ovdje ga **moramo uključiti** jer posrednik iz njega generira fiskalizacijsku poruku
 > s oznakom obračuna po naplaćenoj naknadi.
 
-### 4.3 Usporedba svih mehanizama za isti poslovni slučaj
+### 4.3 Usporedba svih mehanizama za isti poslovni slučaj <span class="badge-usporedba">Usporedba</span>
 
 > Pregled: roba isporučena 25.01., račun izdan 10.03., kupac plaća 15.04.
 
