@@ -23,6 +23,57 @@ title: "eRačun Hrvatska — Datumi i porezna obveza"
 * TOC
 {:toc}
 
+<div style="background: #fff3f3; border-left: 5px solid #e74c3c; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0;">
+<strong style="color: #c0392b;">&#9888; Ovo NIJE službena uputa</strong><br>
+Sve što je ovdje napisano proizlazi iz autorove analize specifikacija, zakona i prakse. Dokument je prijedlog zajednice namijenjen za raspravu. <strong>Nijedan zaključak nema službenu potvrdu Porezne uprave, radne skupine ni zakonodavca</strong> — dok tu potvrdu ne dobijemo, sadržaj treba tretirati isključivo kao polaznu točku za diskusiju, ne kao uputu za implementaciju.<br><br>
+Kad pojedini primjeri i zaključci budu službeno potvrđeni ili opovrgnuti, označit ćemo ih odgovarajućim statusom: <span style="display:inline-block;background:#27ae60;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Potvrđeno</span> <span style="display:inline-block;background:#e74c3c;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Opovrgnuto</span> <span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span>
+</div>
+
+---
+
+## Konkretan primjer: zašto ovo postoji
+
+Evo jednog od mnogih primjera gdje specifikacije ostavljaju prostor za različita tumačenja. Upravo takve situacije su razlog nastanka ovog dokumenta.
+
+### HR-BT-15 vs BT-8=432 — isti podatak na dva mjesta?
+
+Porezni obveznik koji primjenjuje obračun PDV-a po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) mora to navesti u eRačunu. Problem: **dva elementa nose istu informaciju**.
+
+**BT-8** — element iz EU norme EN16931:
+
+```xml
+<cac:InvoicePeriod>
+  <cbc:DescriptionCode>432</cbc:DescriptionCode>
+</cac:InvoicePeriod>
+```
+Kod `432` znači "datum plaćanja" — dakle PDV nastaje tek po naplati.
+
+**HR-BT-15** — element iz HR proširenja (HRFISK20Data):
+
+```xml
+<ext:Extensions>
+  <ext:Extension>
+    <ext:ExtensionContent>
+      <hrextac:HRFISK20Data>
+        <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati>
+      </hrextac:HRFISK20Data>
+    </ext:ExtensionContent>
+  </ext:Extension>
+</ext:Extensions>
+```
+
+**Oba elementa kažu istu stvar**: izdavatelj obračunava PDV po naplaćenoj naknadi. No nigdje u specifikaciji nije objašnjeno:
+
+- Mora li se koristiti **samo HR-BT-15**, ili **oba** zajedno?
+- Koristi li se BT-8=432 uopće u HR kontekstu, ili ga HR proširenje zamjenjuje?
+- Ako su oba prisutna, koji ima prednost u slučaju konflikta?
+- Ili je ovo jednostavno previd — slučajno dupliciranje podatka iz EU norme u HR ekstenziju?
+
+Ovo je primjer pitanja na koje **samo radna skupina, Porezna uprava ili zakonodavac** mogu dati konačan odgovor. Bez tog odgovora, svaki softver u Hrvatskoj implementira svoju pretpostavku — a kupci koji primaju eRačune ne mogu pouzdano automatizirati obradu.
+
+{: .highlight }
+> Ako znate odgovor ili imate službeno tumačenje — [otvorite raspravu](https://github.com/dageci/eracun-fiskalizacija-datumi/discussions) ili [predložite izmjenu](https://github.com/dageci/eracun-fiskalizacija-datumi/pulls).
+
 ---
 
 ## Dokumentacija

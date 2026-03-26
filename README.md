@@ -14,6 +14,11 @@
 >
 > *Prva inicijalna verzija objavljena: 24.03.2026. — Davor Geci*
 
+> [!CAUTION]
+> **Ovo NIJE službena uputa.** Sve što je ovdje napisano proizlazi iz autorove analize specifikacija, zakona i prakse. Dokument je prijedlog zajednice namijenjen za raspravu. **Nijedan zaključak nema službenu potvrdu Porezne uprave, radne skupine ni zakonodavca** — dok tu potvrdu ne dobijemo, sadržaj treba tretirati isključivo kao polaznu točku za diskusiju, ne kao uputu za implementaciju.
+>
+> Kad pojedini primjeri i zaključci budu službeno potvrđeni ili opovrgnuti, označit ćemo ih odgovarajućim statusom.
+
 ## Zašto ovo postoji?
 
 Od 01.01.2026. Hrvatska je prešla na obvezni eRačun (Fiskalizacija 2.0). U grupama i forumima se otvaraju beskonačna pitanja o istim temama:
@@ -25,6 +30,32 @@ Od 01.01.2026. Hrvatska je prešla na obvezni eRačun (Fiskalizacija 2.0). U gru
 - *"Što znači DescriptionCode 432?"*
 
 Cilj je da sva ta znanja budu **na jednom mjestu** — strukturirano, s primjerima, zakonskim temeljem i XML isječcima. Svatko može doprinijeti.
+
+### Konkretan primjer: HR-BT-15 vs BT-8=432
+
+Porezni obveznik koji obračunava PDV po naplaćenoj naknadi (čl. 125.i) mora to navesti u eRačunu. Problem: **dva elementa nose istu informaciju**.
+
+**BT-8** iz EU norme:
+```xml
+<cac:InvoicePeriod>
+  <cbc:DescriptionCode>432</cbc:DescriptionCode>   <!-- "datum plaćanja" = PDV po naplati -->
+</cac:InvoicePeriod>
+```
+
+**HR-BT-15** iz HR proširenja:
+```xml
+<hrextac:HRFISK20Data>
+  <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati>
+</hrextac:HRFISK20Data>
+```
+
+Oba kažu istu stvar. No nigdje nije objašnjeno:
+- Mora li se koristiti **samo HR-BT-15**, ili **oba** zajedno?
+- Koristi li se BT-8=432 uopće u HR kontekstu?
+- Ako su oba prisutna, koji ima prednost?
+- Ili je ovo previd — slučajno dupliciranje podatka?
+
+**Upravo ovakva pitanja su razlog zašto je ovaj dokument nastao** — trebamo odgovor od radne skupine, Porezne uprave ili zakonodavca. Bez njega svaki softver implementira svoju pretpostavku.
 
 ### Dokumentacija pokriva:
 
