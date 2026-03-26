@@ -33,6 +33,7 @@ has_toc: true
 ---
 
 ## 2. Ključno pravilo: BR-CO-03
+<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > **BR-CO-03**: Europska norma EN16931 propisuje da se **BT-7** i **BT-8** **međusobno isključuju**.
 >
@@ -217,6 +218,7 @@ flowchart TD
 ---
 
 ## 3. Mogući kodovi za BT-8
+<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 | Kod | Značenje | Porezna obveza = | Kada se koristi |
 |:---:|----------|------------------|-----------------|
@@ -224,7 +226,8 @@ flowchart TD
 | **35** | Datum isporuke | BT-72 / Stvarni datum isporuke (`cbc:ActualDeliveryDate`) | Kad želimo automatski vezati poreznu obvezu na datum isporuke |
 | **432** | Datum plaćanja | Datum kad kupac plati račun | **Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u)** |
 
-### 3.1 BT-8=432 i HR-BT-15 — obračun po naplati u dva elementa <span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;vertical-align:middle;">Čeka potvrdu</span>
+### 3.1 BT-8=432 i HR-BT-15 — obračun po naplati u dva elementa
+<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 Kod `432` signalizira obračun po naplaćenoj naknadi kroz EU normu (BT-8). Istovremeno, HR proširenje definira zaseban element za isti podatak (HR-BT-15). Oba nose istu informaciju — da izdavatelj obračunava PDV po naplati.
 
@@ -255,6 +258,8 @@ HR CIUS specifikacija (Tablica 52) definira: *"Porezni obveznik koji primjenjuje
 
 **Kontekst:** U Tehničkoj specifikaciji Fiskalizacija eRačuna i eIzvještavanje (Tablica 6, stupac "EU Norma") ne postoji mapiranje koje referencira BT-8 — fiskalizacijska poruka ne prenosi taj podatak prema Poreznoj upravi.
 
+> **Napomena iz primjera:** U sekciji [4.2](#42-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u) svi primjeri obračuna po naplati koriste HR-BT-15, dok BT-8=432 nije uvijek prisutan — [predujam (4.2.4)](#424-predujam-avansni-račun-po-naplati) koristi BT-7 jer je datum plaćanja poznat, a [CreditNote (4.2.6)](#426-odobrenje--creditnote-po-naplati) nema BT-8 u shemi. To sugerira da je **HR-BT-15 svojstvo obveznika** (uvijek prisutan kad je obveznik na sustavu po naplati), a **BT-8=432 mehanizam EU norme** za određivanje datuma poreza (prisutan kad je primjenjiv). No ovo je autorovo tumačenje — čekamo službenu potvrdu.
+
 ---
 
 ## 4. Primjeri iz prakse
@@ -272,6 +277,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ---
 
 ### 4.1 Obračun po izdavanju (čl. 30 Zakona o PDV-u) <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 #### 4.1.1 Isporuka i račun isti dan <span class="badge-izdavanje">Po izdavanju</span>
 
@@ -573,6 +579,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > porezna obveza vezana za isporuku (čl. 30 st. 1).
 
 ### 4.2 Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) <span class="badge-naplata">Po naplati</span>
+<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 #### 4.2.1 Isporuka i račun isti mjesec <span class="badge-naplata">Po naplati</span>
 
@@ -828,6 +835,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > s oznakom obračuna po naplaćenoj naknadi.
 
 ### 4.3 Usporedba svih mehanizama za isti poslovni slučaj <span class="badge-usporedba">Usporedba</span>
+<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Pregled: roba isporučena 25.01., račun izdan 10.03., kupac plaća 15.04.
 
@@ -847,6 +855,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ---
 
 ## 5. Datumi na eRačunu vs. datumi u knjigovodstvu
+<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > **Česta zabuna**: Datumi na eRačunu (BT-2, BT-7, BT-8, BT-72) služe **isključivo za PDV**.
 > Oni NE određuju kada se nešto priznaje kao rashod/trošak u poslovnim knjigama.

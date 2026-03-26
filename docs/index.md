@@ -33,46 +33,9 @@ Kad pojedini primjeri i zaključci budu službeno potvrđeni ili opovrgnuti, ozn
 
 ## Konkretan primjer: zašto ovo postoji
 
-Evo jednog od mnogih primjera gdje specifikacije ostavljaju prostor za različita tumačenja. Upravo takve situacije su razlog nastanka ovog dokumenta.
+Obračun PDV-a po naplaćenoj naknadi (čl. 125.i) mora se označiti u eRačunu. Za to postoje **dva elementa** — `BT-8=432` iz EU norme i `HR-BT-15` iz HR proširenja — koji nose istu informaciju. Iz primjera u dokumentaciji vidljivo je da je HR-BT-15 uvijek prisutan (svojstvo obveznika), dok BT-8=432 nije uvijek primjenjiv (npr. CreditNote nema BT-8 u shemi, predujam koristi BT-7). No nigdje u specifikaciji nije eksplicitno objašnjeno moraju li se koristiti oba, samo jedan, ili je ovo nenamjerno dupliciranje.
 
-### HR-BT-15 vs BT-8=432 — isti podatak na dva mjesta?
-
-Porezni obveznik koji primjenjuje obračun PDV-a po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) mora to navesti u eRačunu. Problem: **dva elementa nose istu informaciju**.
-
-**BT-8** — element iz EU norme EN16931:
-
-```xml
-<cac:InvoicePeriod>
-  <cbc:DescriptionCode>432</cbc:DescriptionCode>
-</cac:InvoicePeriod>
-```
-Kod `432` znači "datum plaćanja" — dakle PDV nastaje tek po naplati.
-
-**HR-BT-15** — element iz HR proširenja (HRFISK20Data):
-
-```xml
-<ext:Extensions>
-  <ext:Extension>
-    <ext:ExtensionContent>
-      <hrextac:HRFISK20Data>
-        <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati>
-      </hrextac:HRFISK20Data>
-    </ext:ExtensionContent>
-  </ext:Extension>
-</ext:Extensions>
-```
-
-**Oba elementa kažu istu stvar**: izdavatelj obračunava PDV po naplaćenoj naknadi. No nigdje u specifikaciji nije objašnjeno:
-
-- Mora li se koristiti **samo HR-BT-15**, ili **oba** zajedno?
-- Koristi li se BT-8=432 uopće u HR kontekstu, ili ga HR proširenje zamjenjuje?
-- Ako su oba prisutna, koji ima prednost u slučaju konflikta?
-- Ili je ovo jednostavno previd — slučajno dupliciranje podatka iz EU norme u HR ekstenziju?
-
-Ovo je primjer pitanja na koje **samo radna skupina, Porezna uprava ili zakonodavac** mogu dati konačan odgovor. Bez tog odgovora, svaki softver u Hrvatskoj implementira svoju pretpostavku — a kupci koji primaju eRačune ne mogu pouzdano automatizirati obradu.
-
-{: .highlight }
-> Ako znate odgovor ili imate službeno tumačenje — [otvorite raspravu](https://github.com/dageci/eracun-fiskalizacija-datumi/discussions) ili [predložite izmjenu](https://github.com/dageci/eracun-fiskalizacija-datumi/pulls).
+Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu dati konačan odgovor — su razlog nastanka ovog dokumenta. Detaljna analiza s XML primjerima: [sekcija 3.1](eracun-datumi-poreza-workflow#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
 
 ---
 

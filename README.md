@@ -33,29 +33,9 @@ Cilj je da sva ta znanja budu **na jednom mjestu** — strukturirano, s primjeri
 
 ### Konkretan primjer: HR-BT-15 vs BT-8=432
 
-Porezni obveznik koji obračunava PDV po naplaćenoj naknadi (čl. 125.i) mora to navesti u eRačunu. Problem: **dva elementa nose istu informaciju**.
+Obračun PDV-a po naplaćenoj naknadi (čl. 125.i) mora se označiti u eRačunu. Za to postoje **dva elementa** — `BT-8=432` iz EU norme i `HR-BT-15` iz HR proširenja — koji nose istu informaciju. Iz primjera u dokumentaciji vidljivo je da je HR-BT-15 uvijek prisutan (svojstvo obveznika), dok BT-8=432 nije uvijek primjenjiv (npr. CreditNote nema BT-8 u shemi, predujam koristi BT-7). No nigdje nije eksplicitno objašnjeno moraju li se koristiti oba, samo jedan, ili je ovo nenamjerno dupliciranje.
 
-**BT-8** iz EU norme:
-```xml
-<cac:InvoicePeriod>
-  <cbc:DescriptionCode>432</cbc:DescriptionCode>   <!-- "datum plaćanja" = PDV po naplati -->
-</cac:InvoicePeriod>
-```
-
-**HR-BT-15** iz HR proširenja:
-```xml
-<hrextac:HRFISK20Data>
-  <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati>
-</hrextac:HRFISK20Data>
-```
-
-Oba kažu istu stvar. No nigdje nije objašnjeno:
-- Mora li se koristiti **samo HR-BT-15**, ili **oba** zajedno?
-- Koristi li se BT-8=432 uopće u HR kontekstu?
-- Ako su oba prisutna, koji ima prednost?
-- Ili je ovo previd — slučajno dupliciranje podatka?
-
-**Upravo ovakva pitanja su razlog zašto je ovaj dokument nastao** — trebamo odgovor od radne skupine, Porezne uprave ili zakonodavca. Bez njega svaki softver implementira svoju pretpostavku.
+**Upravo ovakva pitanja su razlog zašto je ovaj dokument nastao** — trebamo odgovor od radne skupine, Porezne uprave ili zakonodavca. Detaljna analiza: [sekcija 3.1](https://dageci.github.io/eracun-fiskalizacija-datumi/eracun-datumi-poreza-workflow#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
 
 ### Dokumentacija pokriva:
 
