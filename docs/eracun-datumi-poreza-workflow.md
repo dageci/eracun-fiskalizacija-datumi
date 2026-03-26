@@ -224,6 +224,37 @@ flowchart TD
 | **35** | Datum isporuke | BT-72 / Stvarni datum isporuke (`cbc:ActualDeliveryDate`) | Kad želimo automatski vezati poreznu obvezu na datum isporuke |
 | **432** | Datum plaćanja | Datum kad kupac plati račun | **Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u)** |
 
+### 3.1 BT-8=432 i HR-BT-15 — obračun po naplati u dva elementa <span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;vertical-align:middle;">Čeka potvrdu</span>
+
+Kod `432` signalizira obračun po naplaćenoj naknadi kroz EU normu (BT-8). Istovremeno, HR proširenje definira zaseban element za isti podatak (HR-BT-15). Oba nose istu informaciju — da izdavatelj obračunava PDV po naplati.
+
+**BT-8** — element iz EU norme EN16931 (`0..1`):
+
+```xml
+<cac:InvoicePeriod>
+  <cbc:DescriptionCode>432</cbc:DescriptionCode>
+</cac:InvoicePeriod>
+```
+
+**HR-BT-15** — element iz HR proširenja HRFISK20Data (`0..1`):
+
+```xml
+<hrextac:HRFISK20Data>
+  <hrextac:HRObracunPDVPoNaplati>Obračun prema naplaćenoj naknadi</hrextac:HRObracunPDVPoNaplati>
+</hrextac:HRFISK20Data>
+```
+
+HR CIUS specifikacija (Tablica 52) definira: *"Porezni obveznik koji primjenjuje postupak oporezivanja prema naplaćenim naknadama na računu mora navesti 'Obračun prema naplaćenim naknadama'."*
+
+**Otvorena pitanja:**
+
+1. Mora li obveznik koristiti **samo HR-BT-15**, **samo BT-8=432**, ili **oba** zajedno?
+2. Ako su oba prisutna, koji ima prednost pri obradi?
+3. Koristi li sustav fiskalizacije BT-8 iz EU norme, ili isključivo HR-BT-15 iz HRFISK20Data ekstenzije?
+4. Je li ovo namjerno (HR proširenje kao eksplicitan flag za fiskalizacijsku poruku) ili nenamjerno dupliciranje?
+
+**Kontekst:** U Tehničkoj specifikaciji Fiskalizacija eRačuna i eIzvještavanje (Tablica 6, stupac "EU Norma") ne postoji mapiranje koje referencira BT-8 — fiskalizacijska poruka ne prenosi taj podatak prema Poreznoj upravi.
+
 ---
 
 ## 4. Primjeri iz prakse
