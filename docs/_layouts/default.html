@@ -40,19 +40,20 @@
     .page-body { display: flex; max-width: 100%; margin: 0; }
 
     /* Left nav */
-    .left-nav { width: var(--left-nav); min-width: var(--left-nav); padding: 1.25rem 0.75rem 2rem 1.25rem; border-right: 1px solid var(--border); background: var(--bg-alt); font-size: 0.82rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
-    .left-nav h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin: 1.1rem 0 0.3rem; border: none; }
+    .left-nav { width: var(--left-nav); min-width: var(--left-nav); padding: 1.25rem 0.75rem 2rem 1.25rem; border-right: none; background: #1e293b; font-size: 0.82rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    .left-nav h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin: 1.1rem 0 0.3rem; border: none; }
     .left-nav h3:first-child { margin-top: 0; }
     .left-nav ul { list-style: none; margin: 0; padding: 0; }
     .left-nav li { margin-bottom: 0.15rem; }
-    .left-nav a { color: var(--text); text-decoration: none; display: block; padding: 0.2rem 0.4rem; border-radius: 3px; transition: background 0.15s; }
-    .left-nav a:hover { background: #e2e8f0; color: var(--primary); }
+    .left-nav a { color: #cbd5e1; text-decoration: none; display: block; padding: 0.2rem 0.4rem; border-radius: 3px; transition: background 0.15s; }
+    .left-nav a:hover { background: #334155; color: #e2e8f0; }
     .left-nav a.active { background: var(--primary-light); color: white; font-weight: 600; }
     .left-nav a.active:hover { background: var(--primary); }
 
     /* Search */
-    .search-box { width: 100%; padding: 0.4rem 0.5rem; border: 1px solid var(--border); border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.5rem; outline: none; }
-    .search-box:focus { border-color: var(--primary-light); box-shadow: 0 0 0 2px rgba(41,128,185,0.15); }
+    .search-box { width: 100%; padding: 0.4rem 0.5rem; border: 1px solid #475569; border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.5rem; outline: none; background: #334155; color: #e2e8f0; }
+    .search-box:focus { border-color: var(--primary-light); box-shadow: 0 0 0 2px rgba(41,128,185,0.25); }
+    .search-box::placeholder { color: #94a3b8; }
     .search-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4); z-index: 200; }
     .search-overlay.active { display: flex; justify-content: center; padding-top: 10vh; }
     .search-modal { background: white; border-radius: 8px; width: 600px; max-width: 90vw; max-height: 70vh; overflow-y: auto; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
@@ -71,7 +72,7 @@
     .main-content { flex: 1; min-width: 0; padding: 1.5rem 2.5rem 4rem; max-width: none; }
 
     /* Right TOC */
-    .right-toc { width: var(--right-toc); min-width: var(--right-toc); padding: 1.25rem 1rem 2rem 0.75rem; border-left: 1px solid var(--border); font-size: 0.78rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    .right-toc { width: var(--right-toc); min-width: var(--right-toc); padding: 1.25rem 1rem 2rem 0.75rem; border-left: 2px solid #e2e8f0; background: #f8fafc; font-size: 0.78rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
     .right-toc h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); margin: 0 0 0.5rem; border: none; }
     .right-toc ul { list-style: none; margin: 0; padding: 0; }
     .right-toc li { margin-bottom: 0.15rem; }
@@ -230,7 +231,7 @@
       .header-left { text-align: center; }
       .header-right { align-items: center; margin-left: 0; margin-top: 0.75rem; }
       .page-body { flex-direction: column; }
-      .left-nav { width: 100%; min-width: 100%; height: auto; position: static; border-right: none; border-bottom: 1px solid var(--border); padding: 0.75rem; }
+      .left-nav { width: 100%; min-width: 100%; height: auto; position: static; border-right: none; border-bottom: 2px solid #334155; padding: 0.75rem; }
       .main-content { padding: 1rem; }
       table { font-size: 0.8rem; }
       th, td { padding: 0.3rem 0.4rem; }
