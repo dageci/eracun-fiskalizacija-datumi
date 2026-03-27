@@ -21,12 +21,14 @@ Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni za
 
 ### Legenda
 
-| Oznaka | Značenje |
-|---|---|
-| **Clearance** | Račun prolazi kroz sustav porezne uprave prije dostave kupcu |
-| **Reporting** | Podaci o računu se šalju poreznoj, ali račun ide direktno kupcu |
-| **Post-audit** | Porezna dobiva podatke naknadno (SAF-T, PDV prijava) |
-| **Peppol** | Decentralizirana razmjena bez porezne u sredini |
+| Oznaka | Značenje | Tok računa |
+|---|---|---|
+| **Clearance** | Račun prolazi kroz sustav porezne uprave **prije** dostave kupcu — porezna ga vidi u realnom vremenu | Izdavatelj → **Porezna uprava** → Kupac |
+| **Reporting** | Račun ide direktno kupcu, ali se podaci **paralelno** šalju poreznoj (obično u roku nekoliko dana) | Izdavatelj → Kupac + Izdavatelj → **Porezna uprava** |
+| **Post-audit** | Porezna dobiva podatke **naknadno** kroz periodične izvještaje (SAF-T, PDV prijava) — ne u realnom vremenu | Izdavatelj → Kupac (porezna vidi tek kroz izvještaje) |
+| **Peppol** | Decentralizirana razmjena kroz certificirane pristupne točke — porezna uprava **nije** u toku razmjene | Izdavatelj → AP → AP → Kupac |
+| **PU** | Kratica za **Poreznu upravu** (ili ekvivalent u drugoj zemlji — ANAF, AEAT, NAV, SDI...) | — |
+| **CIUS** | Core Invoice Usage Specification — nacionalna prilagodba EU norme EN16931 | — |
 
 ---
 
@@ -109,7 +111,7 @@ Hrvatska je **jedina EU zemlja** koja zahtijeva formalno izvještavanje o odbija
 
 Poljsko Ministarstvo financija objavilo je **"Broszura informacyjna"** — dokument koji za svaki XML element navodi opis, tip podatka, **referencu na članak Zakona o PDV-u**, primjer i napomene. Ovo je **najbliže** onome što mi gradimo za Hrvatsku.
 
-**Ključna razlika**: Vlastiti XML format (FA(3)), ne UBL. Nema problem "EU norma vs proširenje". KSeF je clearance — račun prolazi kroz sustav MF **prije** dostave kupcu.
+**Ključna razlika**: Vlastiti XML format (FA(3)), ne UBL. Nema problem "EU norma vs proširenje". KSeF je clearance — račun prolazi kroz sustav Ministarstva financija **prije** dostave kupcu.
 
 **Izvori:**
 - <a href="https://ksef.podatki.gov.pl/media/4u1bmhx4/information-sheet-on-the-fa-3-logical-structure.pdf" target="_blank">FA(3) Information Sheet (engleski)</a>
