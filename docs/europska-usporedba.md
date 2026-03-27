@@ -46,15 +46,15 @@ Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni za
 | **Italija** | FatturaPA vlastiti | 2019 | Clearance (SDI) | **DA** | **DA** (automatski) | NE | — (vlastiti format) |
 | **Grčka** | myDATA XML/JSON | 03/2026 | Clearance (myDATA) | **DA** | **DA** (klasifikacija) | Djelomično | — |
 | **Francuska** | Factur-X/UBL/CII | 09/2026 | Clearance (PPF+PDP) | **DA** | **DA** | NE | — |
-| **Mađarska** | NAV XML v3.0 | RTIR: 2018 | Real-time reporting | **DA** (sve!) | NE | NE | — (vlastiti format) |
+| **Mađarska** | NAV XML v3.0 | RTIR: 2018 | Real-time Reporting | **DA** (sve!) | NE | NE | — (vlastiti format) |
 | **Slovačka** | UBL/Peppol | 01/2027 | 5-corner (Peppol + PU) | **DA** | **DA** | NE | EN16931 |
 | **Njemačka** | UBL/CII (XRechnung) | 01/2025 (prijem) | Decentralizirano | NE | NE | NE | XRechnung CIUS |
 | **Danska** | OIOUBL / NemHandel BIS 4 | 01/2026 | Peppol (NemHandel) | NE | NE | NE | OIOUBL |
 | **Belgija** | Peppol BIS 3.0 | 01/2026 | Peppol | NE | NE | NE | — |
-| **Litva** | i.SAF (SAF-T) | NE (samo reporting) | Post-audit (i.SAF) | **DA** (i.SAF) | **DA** (i.SAF) | NE | i.SAF |
+| **Litva** | i.SAF (SAF-T) | NE (samo Reporting) | Post-audit (i.SAF) | **DA** (i.SAF) | **DA** (i.SAF) | NE | i.SAF |
 | **Estonija** | UBL / CII | 07/2025 (buyer-choice) | Post-audit (KMD INF) | Djelomično | Djelomično | NE | — |
 | **Portugal** | CIUS-PT / SAF-T | NE (samo B2G) | Post-audit (SAF-T) | **DA** (SAF-T) | NE | NE | CIUS-PT |
-| **Latvija** | UBL / Peppol | 01/2028 | Planirano reporting | **DA** (planirano) | **DA** (planirano) | NE | — |
+| **Latvija** | UBL / Peppol | 01/2028 | Planirano Reporting | **DA** (planirano) | **DA** (planirano) | NE | — |
 | **Irska** | Peppol BIS 3.0 | 11/2028 | Planirano Peppol | **DA** (planirano) | **DA** (planirano) | NE | Peppol BIS 3.0 |
 | **Slovenija** | e-SLOG 2.0 / UBL | 01/2028 (odgođeno) | Planirano Peppol | NE (odgođeno) | NE (odgođeno) | NE | e-SLOG |
 | **Nizozemska** | SI-UBL / NLCIUS | planirano 2030-2032 | Planirano Peppol | NE | NE | NE | NLCIUS |
@@ -84,12 +84,12 @@ Hrvatska je **jedina EU zemlja** koja zahtijeva formalno izvještavanje o odbija
 | Zemlja | Kako | Automatski? |
 |---|---|---|
 | **Hrvatska** | Posrednik šalje fiskalizacijsku poruku za oba smjera | NE — posrednik/obveznik inicira |
-| **Rumunjska** | Sve prolazi kroz e-Factura platformu | DA — clearance |
-| **Poljska** | Sve prolazi kroz KSeF | DA — clearance |
-| **Italija** | Sve prolazi kroz SDI | DA — clearance |
+| **Rumunjska** | Sve prolazi kroz e-Factura platformu | DA — Clearance |
+| **Poljska** | Sve prolazi kroz KSeF | DA — Clearance |
+| **Italija** | Sve prolazi kroz SDI | DA — Clearance |
 | **Grčka** | Clearance + klasifikacija na myDATA | DA — ali primatelj mora klasificirati |
-| **Španjolska** | Obje strane šalju u SII (post-audit) | NE — obveznik šalje u roku 4 dana |
-| **Litva** | i.SAF izvještaj (prodajne i nabavne knjige) | NE — post-audit, periodični izvještaj |
+| **Španjolska** | Obje strane šalju u SII (Post-audit) | NE — obveznik šalje u roku 4 dana |
+| **Litva** | i.SAF izvještaj (prodajne i nabavne knjige) | NE — Post-audit, periodični izvještaj |
 
 ### Zanimljive specifičnosti po zemljama
 

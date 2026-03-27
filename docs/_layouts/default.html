@@ -628,11 +628,11 @@
       var parent = node.parentElement;
       // Skip if inside code, pre, a, or already processed tooltip
       if (parent && (parent.closest('pre, code, a, .bt-tooltip, .mermaid, .code-badge, h1, h2, h3, h4'))) continue;
-      if (node.textContent.match(/BT-|BR-CO|Clearance|Reporting|Post-audit|Peppol|eDelivery|CIUS|KSeF|SDI|SII|NPOO|5-corner/i)) textNodes.push(node);
+      if (node.textContent.match(/BT-|BR-CO|Clearance|Reporting|Post-audit|Peppol|eDelivery|CIUS|KSeF|SDI|SII|NPOO|5-corner/)) textNodes.push(node);
     }
 
     var escaped = keys.map(function(k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); });
-    var pattern = new RegExp('(?<![\\w-])(' + escaped.join('|') + ')(?![\\w-])', 'gi');
+    var pattern = new RegExp('(?<![\\w-])(' + escaped.join('|') + ')(?![\\w-])', 'g');
 
     textNodes.forEach(function(node) {
       var text = node.textContent;
