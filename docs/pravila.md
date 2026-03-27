@@ -276,3 +276,29 @@ HR CIUS specifikacija (Tablica 52) definira: *"Porezni obveznik koji primjenjuje
 > **Napomena iz primjera:** U sekciji [4.2](primjeri-izdavatelj#42-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u) svi primjeri obračuna po naplati koriste HR-BT-15, dok BT-8=432 nije uvijek prisutan — [predujam (4.2.4)](primjeri-izdavatelj#424-predujam-avansni-račun-po-naplati) koristi BT-7 jer je datum plaćanja poznat, a [CreditNote (4.2.6)](primjeri-izdavatelj#426-odobrenje--creditnote-po-naplati) nema BT-8 u shemi. To sugerira da je **HR-BT-15 svojstvo obveznika** (uvijek prisutan kad je obveznik na sustavu po naplati), a **BT-8=432 mehanizam EU norme** za određivanje datuma poreza (prisutan kad je primjenjiv). No ovo je autorovo tumačenje — čekamo službenu potvrdu.
 
 ---
+
+## 4. Koji datum čemu služi?
+
+Datumi na eRačunu služe za **više različitih svrha** — PDV, priznavanje rashoda, materijalno/skladišno poslovanje — i regulirani su različitim propisima. Česta zabuna je poistovjećivati ih.
+
+| BT polje | XML element | Služi za | Propis |
+|----------|-------------|----------|--------|
+| **BT-2** | `cbc:IssueDate` | Brojčanik računa, rok za fiskalizaciju, default datum PDV-a | Zakon o fiskalizaciji čl. 8-9 |
+| **BT-7** | `cbc:TaxPointDate` | Eksplicitni datum nastanka obveze PDV-a | Čl. 30 Zakona o PDV-u |
+| **BT-8** | `cbc:DescriptionCode` | Kod za određivanje datuma PDV-a (3, 35, 432) | EN16931 / BR-CO-03 |
+| **BT-9** | `cbc:DueDate` | Rok plaćanja — za likvidaturu, cash flow, eIzvještavanje | Čl. 53 Zakona o fiskalizaciji |
+| **BT-72** | `cbc:ActualDeliveryDate` | Datum isporuke — za PDV, ali i za **priznavanje rashoda/prihoda**, **skladišno poslovanje**, **garancije** | HSFI 16, čl. 30 Zakona o PDV-u |
+| **BT-73/74** | `cbc:StartDate`/`cbc:EndDate` | Obračunsko razdoblje — za **periodične usluge**, **razgraničenje troškova**, **pretplate** | HSFI 16, računovodstvena praksa |
+
+> **BT-72 (ActualDeliveryDate)** nije samo "informativan" — on je ključan za:
+> - **Računovodstvo**: priznavanje rashoda/prihoda po načelu nastanka događaja (HSFI 16) — trošak se priznaje kad je usluga obavljena, ne kad je račun izdan
+> - **Skladišno poslovanje**: primitak robe u skladište, usklađivanje s primkom/otpremnicom
+> - **Garancije**: početak garantnog roka od datuma isporuke
+> - **PDV**: ako se razlikuje od BT-2, kroz BT-7 ili BT-8=35 određuje datum porezne obveze
+>
+> **BT-73/BT-74 (StartDate/EndDate)** su ključni za:
+> - **Vremensko razgraničenje troškova**: najam za Q1 se knjizi kao trošak Q1, čak i ako račun stiže u Q2
+> - **Pretplate i pretplatničke usluge**: za koji period vrijedi usluga
+> - **Kontinuirane isporuke**: komunalne usluge, telekomunikacije, zakup
+
+---

@@ -43,10 +43,9 @@ Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu
 
 | Stranica | Opis | Tko čita |
 |----------|------|----------|
-| [Pravila i mehanizmi](pravila) | BT polja, BR-CO-03, flowcharti, kodovi za BT-8, HR-BT-15 pitanje | Svi |
+| [Pravila i mehanizmi](pravila) | BT polja, BR-CO-03, flowcharti, kodovi za BT-8, koji datum čemu služi | Svi |
 | [Primjeri — izdavatelj](primjeri-izdavatelj) | 16 primjera s XML isječcima — koji element staviti za koji slučaj | Programeri, izdavatelji |
-| [Primjeri — primatelj](primjeri-primatelj) | 12 primjera — pretporez, knjiženje troška, skladišna primka | Računovođe, primatelji |
-| [Datumi i knjigovodstvo](datumi-knjigovodstvo) | Pretporez (čl. 57 + čl. 60), vremensko razgraničenje, CJEU praksa | Računovođe, porezni savjetnici |
+| [Primjeri — primatelj](primjeri-primatelj) | 12 primjera — pretporez, rashod, skladišna primka + pretporez detaljno (čl. 57/60, CJEU) | Računovođe, primatelji |
 | [Referenca — XML, validacija, zakoni](referenca) | XML struktura, Schematron pravila, zakonski temelj | Programeri, svi |
 | [Prijedlozi za validator](prijedlozi-validator) | Pravila koja bi validator mogao uhvatiti na razini posrednika | Programeri, posrednici |
 | [Kompletni dokument (jedna stranica)](eracun-datumi-poreza-workflow) | Sve gore navedeno u jednom dokumentu — za čitanje od početka do kraja | Svi |
@@ -68,12 +67,8 @@ Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu
 **Primatelj** → [Primjeri — primatelj](primjeri-primatelj)
 - 8 primjera po izdavanju + 4 primjera po naplati — iz kupčeve perspektive
 - Za svaki primjer: pretporez, rashod, skladišna primka
-- Algoritam za automatsku obradu u ERP-u
-
-### Datumi i knjigovodstvo → [Datumi i knjigovodstvo](datumi-knjigovodstvo)
-- Koji datum čemu služi (PDV, trošak, skladište, garancije)
-- Pretporez: dva uvjeta (čl. 57 + čl. 60), rok za PDV prijavu, sudska praksa EU
-- Vremensko razgraničenje troškova
+- Pretporez detaljno: dva uvjeta (čl. 57 + čl. 60), rok za PDV prijavu, CJEU sudska praksa
+- Vremensko razgraničenje troškova, algoritam za ERP
 
 ## Temelj dokumentacije i službeni izvori
 
