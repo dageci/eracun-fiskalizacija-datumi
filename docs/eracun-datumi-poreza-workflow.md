@@ -8,6 +8,23 @@ has_toc: true
 
 > **HR CIUS 2025 / EN16931 — Specifikacija osnovne uporabe eRačuna s proširenjima**
 
+### Zašto ovaj dokument?
+
+Pravila o datumima i poreznoj obvezi u eRačunu su razasuta po četiri izvora:
+
+| Izvor | Što definira | Što NE definira |
+|-------|-------------|-----------------|
+| **Zakon o PDV-u** (čl. 30, 125.i) | Kada nastaje porezna obveza | Koji XML element koristiti |
+| **Zakon o fiskalizaciji** (NN 89/25) | Koje podatke mora sadržavati eRačun | Kako ih popuniti u praksi |
+| **HR CIUS specifikacija** | XML elemente i njihove tipove | Primjere po poslovnim slučajevima |
+| **EN16931 norma** | Pravila poput BR-CO-03 | Specifičnosti hrvatskog PDV sustava |
+
+Svaki izvor odgovara na svoj dio pitanja, ali nijedan ne spaja cjelinu: *"za ovaj poslovni slučaj, stavi ove podatke u ove XML elemente, a porezna obveza nastaje ovako"*.
+
+Rezultat: svaka softverska kuća implementira svoju pretpostavku, ulazni XML-ovi su nekonzistentni, a automatsko knjiženje ulaznih eRačuna zahtijeva ručnu provjeru svakog računa.
+
+Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka sekcija koja sadrži autorovo tumačenje označena je badge-om <span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span> — dok službena potvrda ne stigne, sadržaj treba tretirati kao prijedlog, ne kao uputu.
+
 ### Sadržaj
 {: .no_toc }
 
