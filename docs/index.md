@@ -47,9 +47,8 @@ Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu
 | [Primjeri — izdavatelj](primjeri-izdavatelj) | 16 primjera s XML isječcima — koji element staviti za koji slučaj | Programeri, izdavatelji |
 | [Primjeri — primatelj](primjeri-primatelj) | 12 primjera — pretporez, rashod, skladišna primka + pretporez detaljno (čl. 57/60, CJEU) | Računovođe, primatelji |
 | [Referenca — XML, validacija, zakoni](referenca) | XML struktura, Schematron pravila, zakonski temelj | Programeri, svi |
-| [Europska usporedba](europska-usporedba) | Kako PL, DE, IT, FR, BE dokumentiraju eRačun — i što HR može naučiti | Svi |
+| [Europska usporedba](europska-usporedba) | 23 EU zemlje — modeli razmjene, izvještavanje prema poreznoj, dokumentacija | Svi |
 | [Prijedlozi za validator](prijedlozi-validator) | Pravila koja bi validator mogao uhvatiti na razini posrednika | Programeri, posrednici |
-| [Kompletni dokument (jedna stranica)](eracun-datumi-poreza-workflow) | Sve gore navedeno u jednom dokumentu — za čitanje od početka do kraja | Svi |
 
 ## Što pokriva dokumentacija?
 
