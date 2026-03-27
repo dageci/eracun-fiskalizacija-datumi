@@ -153,6 +153,83 @@ Belgija je uzela **najjednostavniji put** — koristi Peppol BIS 3.0 bez ikakve 
 
 ---
 
+## Kompletna EU tablica — svih 23 zemlje
+
+### Legenda
+
+| Oznaka | Značenje |
+|---|---|
+| **Clearance** | Račun prolazi kroz sustav porezne uprave prije dostave kupcu |
+| **Reporting** | Podaci o računu se šalju poreznoj, ali račun ide direktno kupcu |
+| **Post-audit** | Porezna dobiva podatke naknadno (SAF-T, PDV prijava) |
+| **Peppol** | Decentralizirana razmjena bez porezne u sredini |
+
+### Tablica
+
+| Zemlja | Format | Obvezno B2B | Model | Izlazni → PU | Ulazni → PU | Naplata → PU | Nacionalni CIUS |
+|---|---|---|---|---|---|---|---|
+| **Hrvatska** | UBL + HRFISK20Data | 01/2026 | Posrednici + eFiskalizacija | **DA** | **DA** | **DA** (eIzvještavanje) | HR CIUS 2025 |
+| **Poljska** | FA(3) vlastiti | 02/2026 | Clearance (KSeF) | **DA** | **DA** (automatski) | NE | — (vlastiti format) |
+| **Njemačka** | UBL/CII (XRechnung) | 01/2025 (prijem) | Decentralizirano | NE | NE | NE | XRechnung CIUS |
+| **Italija** | FatturaPA vlastiti | 2019 | Clearance (SDI) | **DA** | **DA** (automatski) | NE | — (vlastiti format) |
+| **Francuska** | Factur-X/UBL/CII | 09/2026 | Clearance (PPF+PDP) | **DA** | **DA** | NE | — |
+| **Belgija** | Peppol BIS 3.0 | 01/2026 | Peppol | NE | NE | NE | — (koristi Peppol as-is) |
+| **Španjolska** | SII XML / Verifactu | SII: 2017; Verifactu: 01/2026 | Reporting (SII) + Verifactu | **DA** (4 dana) | **DA** (4 dana) | **DA** ("Cobros") | — |
+| **Rumunjska** | RO_CIUS (UBL) | 01/2024 | Clearance (e-Factura) | **DA** | **DA** (automatski) | NE | RO_CIUS |
+| **Grčka** | myDATA XML/JSON | 03/2026 | Clearance (myDATA) | **DA** | **DA** (klasifikacija) | Djelomično | — |
+| **Mađarska** | NAV XML v3.0 | RTIR: 2018 | Real-time reporting | **DA** (sve!) | NE | NE | — (vlastiti format) |
+| **Slovačka** | UBL/Peppol | 01/2027 | 5-corner (Peppol + PU) | **DA** | **DA** | NE | EN16931 |
+| **Danska** | OIOUBL / NemHandel BIS 4 | 01/2026 | Peppol (NemHandel) | NE | NE | NE | OIOUBL |
+| **Nizozemska** | SI-UBL / NLCIUS | planirano 2030-2032 | Planirano Peppol | NE | NE | NE | NLCIUS |
+| **Finska** | Finvoice 3.0 / Peppol | NE (pravo na eRačun) | Peppol | NE | NE | NE | Finvoice |
+| **Austrija** | ebInterface / UBL | NE (samo B2G) | Portal (USP) | NE | NE | NE | ebInterface |
+| **Slovenija** | e-SLOG 2.0 / UBL | 01/2028 (odgođeno) | Planirano Peppol | NE (odgođeno) | NE (odgođeno) | NE | e-SLOG |
+| **Irska** | Peppol BIS 3.0 | 11/2028 | Planirano Peppol | **DA** (planirano) | **DA** (planirano) | NE | Peppol BIS 3.0 |
+| **Estonija** | UBL / CII | 07/2025 (buyer-choice) | Post-audit (KMD INF) | Djelomično (KMD INF) | Djelomično (KMD INF) | NE | — |
+| **Latvija** | UBL / Peppol | 01/2028 | Planirano reporting | **DA** (planirano) | **DA** (planirano) | NE | — |
+| **Litva** | i.SAF (SAF-T) | NE (samo reporting) | Post-audit (i.SAF) | **DA** (i.SAF) | **DA** (i.SAF) | NE | i.SAF |
+| **Portugal** | CIUS-PT / SAF-T | NE (samo B2G) | Post-audit (SAF-T) | **DA** (SAF-T mjesečno) | NE | NE | CIUS-PT |
+| **Češka** | ISDOC / UBL | planirano 2035 | — | NE | NE | NE | ISDOC |
+| **Švedska** | Peppol BIS 3.0 | NE (istraga pokrenuta) | — | NE | NE | NE | — |
+
+### Ključni zaključci iz tablice
+
+**Izvještavanje o naplati — samo Hrvatska i Španjolska:**
+
+Samo dvije EU zemlje zahtijevaju od obveznika da izvještavaju o naplati eRačuna:
+- **Hrvatska** — `EvidentirajNaplatu` kroz eIzvještavanje servis (čl. 53 Zakona o fiskalizaciji)
+- **Španjolska** — "Cobros sobre facturas" kroz SII sustav (naplate na izdanim računima)
+
+Nijedna druga zemlja — ni Italija, ni Poljska, ni Rumunjska — ne prati što se događa s računom **nakon** što je izdan/dostavljen.
+
+**Izvještavanje o odbijanju — samo Hrvatska:**
+
+Hrvatska je **jedina EU zemlja** koja zahtijeva formalno izvještavanje o odbijanju eRačuna (`EvidentirajOdbijanje`).
+
+**Oba smjera (izlazni + ulazni) → porezna:**
+
+| Zemlja | Izlazni | Ulazni | Kako |
+|---|---|---|---|
+| **Hrvatska** | DA | DA | eFiskalizacija — posrednik šalje fiskalizacijsku poruku |
+| **Rumunjska** | DA | DA | Clearance — sve prolazi kroz e-Factura platformu |
+| **Poljska** | DA | DA | Clearance — sve prolazi kroz KSeF |
+| **Italija** | DA | DA | Clearance — sve prolazi kroz SDI |
+| **Grčka** | DA | DA | Clearance + klasifikacija na myDATA |
+| **Španjolska** | DA | DA | Post-audit — obe strane šalju u SII |
+| **Litva** | DA | DA | Post-audit — i.SAF izvještaj (prodajne i nabavne knjige) |
+
+**Zanimljive specifičnosti:**
+
+- **Mađarska** — najširi opseg: **SVE** fakture (B2B + B2C + izvoz) u realnom vremenu, ali samo izdane
+- **Danska** — pionir eRačuna od 2005., 20+ godina iskustva
+- **Finska** — model "prava na eRačun" (kupac može zahtijevati od dobavljača)
+- **Estonija** — "buyer-choice" model (kupac se registrira i forsira dobavljača)
+- **Slovačka** — jedina zemlja s "5-corner" modelom (Peppol + PU kao peti kut)
+- **Portugal** — ATCUD + QR kod na svakom računu (verifikacija od strane potrošača)
+- **Španjolska** — 3 paralelna sustava (SII + Verifactu + TicketBAI) zbog regionalne autonomije
+
+---
+
 ## EU-level resursi
 
 | Izvor | Link |
