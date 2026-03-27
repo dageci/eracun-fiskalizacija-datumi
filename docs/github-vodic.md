@@ -111,7 +111,8 @@ Koraci:
 4. Kliknite **"Propose changes"** i kratko opišite što ste promijenili
 5. GitHub automatski kreira **Pull Request** — prijedlog izmjene
 6. Održavatelj dobije obavijest, pregledava izmjenu, komentira ili odobrava
-7. Tek kad održavatelj klikne **"Merge"** — izmjena postaje vidljiva na web stranici
+7. **Drugi čitatelji također mogu komentirati** vaš prijedlog, glasati za ili protiv, predložiti dodatne izmjene — rasprava je javna i transparentna
+8. Tek kad održavatelj klikne **"Merge"** — izmjena postaje vidljiva na web stranici
 
 Ili za naprednije korisnike:
 1. Forkajte repo
