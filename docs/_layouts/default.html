@@ -609,7 +609,8 @@
       'KSeF': { label: 'Krajowy System e-Faktur (Poljska)', xml: 'Centralni clearance sustav', req: 'Obvezno od 02/2026', desc: 'Poljski nacionalni sustav — svaki račun prolazi kroz KSeF prije dostave kupcu. Ministarstvo financija dodjeljuje jedinstveni broj.' },
       'SDI': { label: 'Sistema di Interscambio (Italija)', xml: 'Centralni clearance sustav', req: 'Obvezno od 2019', desc: 'Talijanski sustav razmjene — svi eRačuni prolaze kroz SDI. Najduže iskustvo u EU (B2B od 2019, B2G od 2014).' },
       'SII': { label: 'Suministro Inmediato de Información (Španjolska)', xml: 'Real-time reporting sustav', req: 'Obvezno od 2017 (velike tvrtke)', desc: 'Španjolski sustav izvještavanja — izdani i primljeni računi se prijavljuju AEAT-u u roku 4 dana. Uključuje praćenje naplata (Cobros).' },
-      'NPOO': { label: 'Nacionalni plan oporavka i otpornosti', xml: 'EU NextGenerationEU sredstva', req: 'Financiranje', desc: 'EU bespovratna sredstva iz kojih je financiran projekt Fiskalizacija 2.0 u Hrvatskoj' }
+      'NPOO': { label: 'Nacionalni plan oporavka i otpornosti', xml: 'EU NextGenerationEU sredstva', req: 'Financiranje', desc: 'EU bespovratna sredstva iz kojih je financiran projekt Fiskalizacija 2.0 u Hrvatskoj' },
+      '5-corner': { label: '5-corner model', xml: 'Izdavatelj → AP → PU → AP → Kupac', req: 'Model razmjene', desc: 'Proširenje Peppol 4-corner modela gdje je porezna uprava peti sudionik — sve transakcije automatski vidljive PU' }
     };
 
     var content = document.querySelector('.main-content');
@@ -626,7 +627,7 @@
       var parent = node.parentElement;
       // Skip if inside code, pre, a, or already processed tooltip
       if (parent && (parent.closest('pre, code, a, .bt-tooltip, .mermaid, .code-badge, h1, h2, h3, h4'))) continue;
-      if (node.textContent.match(/BT-|BR-CO|Clearance|Reporting|Post-audit|Peppol|CIUS|KSeF|SDI|SII|NPOO/)) textNodes.push(node);
+      if (node.textContent.match(/BT-|BR-CO|Clearance|Reporting|Post-audit|Peppol|CIUS|KSeF|SDI|SII|NPOO|5-corner/)) textNodes.push(node);
     }
 
     var pattern = new RegExp('\\b(' + keys.map(function(k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')\\b', 'g');

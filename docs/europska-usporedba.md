@@ -26,8 +26,11 @@ Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni za
 | **Clearance** | Račun prolazi kroz sustav porezne uprave **prije** dostave kupcu — porezna ga vidi u realnom vremenu | Izdavatelj → **Porezna uprava** → Kupac |
 | **Reporting** | Račun ide direktno kupcu, ali se podaci **paralelno** šalju poreznoj (obično u roku nekoliko dana) | Izdavatelj → Kupac + Izdavatelj → **Porezna uprava** |
 | **Post-audit** | Porezna dobiva podatke **naknadno** kroz periodične izvještaje (SAF-T, PDV prijava) — ne u realnom vremenu | Izdavatelj → Kupac (porezna vidi tek kroz izvještaje) |
-| **Peppol** | Decentralizirana razmjena kroz certificirane pristupne točke — porezna uprava **nije** u toku razmjene | Izdavatelj → AP → AP → Kupac |
+| **Peppol** | Decentralizirana razmjena kroz certificirane pristupne točke — porezna uprava **nije** u samom toku razmjene, ali neke zemlje dodaju paralelni kanal prema PU (Slovačka 5-corner, Hrvatska fiskalizacija) | Izdavatelj → AP → AP → Kupac |
+| **Peppol + fiskalizacija** | Hrvatski hibridni model: razmjena eRačuna ide Peppol-stilom (4-corner, AP ↔ AP), ali posrednik **paralelno** šalje fiskalizacijsku poruku Poreznoj upravi za svaki izlazni i ulazni eRačun, plus eIzvještavanje o naplati i odbijanju | Izdavatelj → AP →→ AP → Kupac, **istovremeno** AP → **Porezna uprava** |
+| **5-corner** | Proširenje Peppol modela gdje je porezna uprava **peti sudionik** — sve transakcije automatski vidljive PU kroz mrežu | Izdavatelj → AP → **PU** → AP → Kupac |
 | **PU** | Kratica za **Poreznu upravu** (ili ekvivalent u drugoj zemlji — ANAF, AEAT, NAV, SDI...) | — |
+| **AP** | Kratica za **pristupnu točku** (Access Point) — certificirani posrednik za razmjenu eRačuna | — |
 | **CIUS** | Core Invoice Usage Specification — nacionalna prilagodba EU norme EN16931 | — |
 
 ---
@@ -36,7 +39,7 @@ Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni za
 
 | Zemlja | Format | Obvezno B2B | Model | Izlazni → PU | Ulazni → PU | Naplata → PU | Nacionalni CIUS |
 |---|---|---|---|---|---|---|---|
-| **Hrvatska** | UBL + HRFISK20Data | 01/2026 | Posrednici + Fiskalizacija 2.0 (mikroeRačun besplatan za ne-PDV obveznike) | **DA** | **DA** | **DA** (eIzvještavanje) | HR CIUS 2025 |
+| **Hrvatska** | UBL + HRFISK20Data | 01/2026 | Peppol + fiskalizacija (mikroeRačun besplatan za ne-PDV obveznike) | **DA** | **DA** | **DA** (eIzvještavanje) | HR CIUS 2025 |
 | **Španjolska** | SII XML / Verifactu | SII: 2017; Verifactu: 01/2026 | Reporting (SII) + Verifactu | **DA** (4 dana) | **DA** (4 dana) | **DA** ("Cobros") | — |
 | **Rumunjska** | RO_CIUS (UBL) | 01/2024 | Clearance (e-Factura) | **DA** | **DA** (automatski) | NE | RO_CIUS |
 | **Poljska** | FA(3) vlastiti | 02/2026 | Clearance (KSeF) | **DA** | **DA** (automatski) | NE | — (vlastiti format) |
