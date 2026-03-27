@@ -47,6 +47,8 @@
     .left-nav li { margin-bottom: 0.15rem; }
     .left-nav a { color: var(--text); text-decoration: none; display: block; padding: 0.2rem 0.4rem; border-radius: 3px; transition: background 0.15s; }
     .left-nav a:hover { background: #e2e8f0; color: var(--primary); }
+    .left-nav a.active { background: var(--primary-light); color: white; font-weight: 600; }
+    .left-nav a.active:hover { background: var(--primary); }
 
     /* Search */
     .search-box { width: 100%; padding: 0.4rem 0.5rem; border: 1px solid var(--border); border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.5rem; outline: none; }
@@ -584,6 +586,18 @@
   })();
 
   // ============================================================
+  // Active nav link highlight
+  (function() {
+    var path = window.location.pathname.replace(/\/$/, '');
+    var links = document.querySelectorAll('.left-nav a');
+    links.forEach(function(link) {
+      var href = link.getAttribute('href').replace(/\/$/, '');
+      if (path === href || (href !== '{{ site.baseurl }}' && path.indexOf(href) === 0)) {
+        link.classList.add('active');
+      }
+    });
+  })();
+
   // ============================================================
   // BT tooltips - auto-wrap BT-* terms with tooltip popups
   // ============================================================
