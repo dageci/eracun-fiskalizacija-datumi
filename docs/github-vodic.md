@@ -99,13 +99,19 @@ Ako pronađete grešku (krivi članak zakona, netočan XML primjer, pogrešna BT
 
 ### 3. Pull Request — za direktne izmjene teksta
 
-Ako želite sami predložiti izmjenu:
+**Najlakši način**: Na svakoj stranici dokumentacije postoji gumb **"✏️ Uredi ovu stranicu"** koji vas vodi direktno na GitHub editor za tu stranicu. Napravite izmjenu u tekstu i kliknite "Propose changes".
 
-1. Kliknite na datoteku koju želite izmijeniti
-2. Kliknite ikonu olovke (Edit)
+**Što se onda događa? Ništa se ne mijenja odmah!** Vaša izmjena NE ide direktno na stranicu — ona se šalje kao **prijedlog** (Pull Request) koji održavatelj mora pregledati i odobriti. Tek kad održavatelj klikne "Merge", izmjena postaje vidljiva na web stranici. Dakle slobodno predlažite — ne možete ništa pokvariti. U najgorem slučaju, održavatelj odbije prijedlog s obrazloženjem.
+
+Koraci:
+
+1. Kliknite **"✏️ Uredi ovu stranicu"** na web stranici (ili ikonu olovke na GitHubu)
+2. GitHub vam otvori editor s tekstom stranice
 3. Napravite izmjenu
-4. Kliknite "Propose changes"
-5. GitHub automatski kreira Pull Request koji održavatelj pregledava
+4. Kliknite **"Propose changes"** i kratko opišite što ste promijenili
+5. GitHub automatski kreira **Pull Request** — prijedlog izmjene
+6. Održavatelj dobije obavijest, pregledava izmjenu, komentira ili odobrava
+7. Tek kad održavatelj klikne **"Merge"** — izmjena postaje vidljiva na web stranici
 
 Ili za naprednije korisnike:
 1. Forkajte repo
