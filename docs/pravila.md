@@ -42,9 +42,9 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 | **BT-72** | `cac:Delivery/cbc:ActualDeliveryDate` | Stvarni datum isporuke | NE | **Rashod/prihod** (HSFI 16), **skladišna primka**, garancije, PDV (ako BT-8=35) | — |
 | **BT-73** | `cac:InvoicePeriod/cbc:StartDate` | Početak obračunskog razdoblja | NE | **Razgraničenje troškova**, pretplate, kontinuirane usluge | — |
 | **BT-74** | `cac:InvoicePeriod/cbc:EndDate` | Kraj obračunskog razdoblja | NE | **Razgraničenje troškova**, pretplate, kontinuirane usluge | — |
-| **HR-BT-15** | `hrextac:HRObracunPDVPoNaplati` | Obračun prema naplaćenoj naknadi | NE* | **Fiskalizacijska poruka** za Poreznu upravu | — |
+| **HR-BT-15** | `hrextac:HRObracunPDVPoNaplati` | Obračun prema naplaćenoj naknadi | NE* | **Fiskalizacijska poruka** za PU, signal primatelju da je izdavatelj na sustavu po naplati → primatelj **ne smije** odbiti pretporez prije plaćanja (čl. 125.i st. 3) | — |
 
-\* HR-BT-15 je obavezan za obveznike koji koriste obračun po naplaćenoj naknadi (čl. 125.i). Vidi [sekcija 3.1](#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
+\* HR-BT-15 je **obavezan** za obveznike koji koriste obračun po naplaćenoj naknadi (čl. 125.i) — **u svakom računu**, uključujući CreditNote i predujam. To je svojstvo obveznika, ne pojedinačnog računa. BT-8=432 nije uvijek prisutan (CreditNote nema BT-8, predujam koristi BT-7), ali HR-BT-15 je **uvijek** prisutan. Vidi [sekcija 3.1](#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
 
 ### Kada se koje polje koristi — po scenarijima
 
@@ -64,6 +64,8 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 
 \* BT-72 se ne mora navoditi kad je jednak BT-2, ali može.
 
+> **HR-BT-15 u tablici iznad**: Primijetite da je HR-BT-15 prisutan u **svim** scenarijima "Po naplati" — uključujući predujam (gdje je BT-8 odsutan jer se koristi BT-7) i CreditNote (gdje BT-8 ne postoji u shemi). To potvrđuje da je HR-BT-15 **svojstvo obveznika** (uvijek prisutan kad je obveznik na čl. 125.i), dok je BT-8=432 **mehanizam za datum** (prisutan kad je primjenjiv). Detaljna analiza: [sekcija 3.1](#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
+
 ### Što svako polje znači za koga
 
 | BT | Izdavatelj (porez) | Primatelj (pretporez) | Računovođa (trošak) | Skladištar (primka) |
@@ -74,7 +76,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 | **BT-9** | Rok za eIzvještavanje o naplati | Rok plaćanja za likvidaturu | — | — |
 | **BT-72** | Datum isporuke za PDV (s BT-7 ili BT-8=35) | — | **Kad priznati rashod** (HSFI 16) | **Kad knjižiti primku** |
 | **BT-73/74** | Informacija za kupca | — | **Razgraničenje troškova** po mjesecima | — |
-| **HR-BT-15** | Oznaka za fiskalizacijsku poruku | Obveznik je na sustavu po naplati → čekati s pretporezom do plaćanja | — | — |
+| **HR-BT-15** | Oznaka za fiskalizacijsku poruku — posrednik iz nje generira SOAP poruku za PU | **Ključan signal**: izdavatelj je na sustavu po naplati → **ne odbijati pretporez** prije plaćanja (čl. 125.i st. 3). Bez ovog elementa primatelj ne zna da mora čekati | Ako je prisutan, rashod se i dalje priznaje po BT-72 (HSFI 16), ali PDV tretman je drugačiji | — |
 
 ---
 
