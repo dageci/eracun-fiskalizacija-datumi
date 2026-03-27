@@ -69,7 +69,7 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
 </assert>
 ```
 
-**Dokumentacija**: Vidi primjere [4.2.1–4.2.6](eracun-datumi-poreza-workflow#42-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u-po-naplati) — svi koriste BT-8=432 i svi imaju HR-BT-15.
+**Dokumentacija**: Vidi primjere [4.2.1–4.2.6](primjeri-izdavatelj#42-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u-po-naplati) — svi koriste BT-8=432 i svi imaju HR-BT-15.
 
 ---
 
@@ -94,7 +94,7 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
 </assert>
 ```
 
-**Dokumentacija**: Vidi primjer [4.2.4 Predujam](eracun-datumi-poreza-workflow#424-predujam--avansni-račun-po-naplati) — jedini slučaj po naplati s BT-7.
+**Dokumentacija**: Vidi primjer [4.2.4 Predujam](primjeri-izdavatelj#424-predujam--avansni-račun-po-naplati) — jedini slučaj po naplati s BT-7.
 
 ---
 
@@ -118,7 +118,7 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
 </assert>
 ```
 
-**Dokumentacija**: Vidi primjer [4.1.5a](eracun-datumi-poreza-workflow#415a-što-ako-izostavimo-bt-7-kod-kontinuirane-usluge-po-izdavanju) — PDV u krivom mjesecu.
+**Dokumentacija**: Vidi primjer [4.1.5a](primjeri-izdavatelj#415a-što-ako-izostavimo-bt-7-kod-kontinuirane-usluge-po-izdavanju) — PDV u krivom mjesecu.
 
 ---
 
