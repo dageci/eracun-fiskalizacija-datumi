@@ -28,19 +28,53 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 
 ---
 
-## 1. Pregled polja
+## 1. Pregled polja — što na što utječe
 
-| BT polje | XML element | Hrvatski naziv | Obavezno? | Opis |
-|----------|-------------|----------------|-----------|------|
-| **BT-2** | `cbc:IssueDate` | Datum izdavanja računa | **DA** | Kada je račun izdan |
-| **HR-BT-2** | `cbc:IssueTime` | Vrijeme izdavanja računa | **DA** (HR) | Točno vrijeme izdavanja (hh:mm:ss) |
-| **BT-7** | `cbc:TaxPointDate` | Datum nastanka obveze PDV-a | NE | Eksplicitni datum kada nastaje porezna obveza |
-| **BT-8** | `cac:InvoicePeriod/cbc:DescriptionCode` | Kod datuma PDV obveze | NE | Kod koji govori KAKO odrediti datum porezne obveze |
-| **BT-9** | `cbc:DueDate` | Datum dospijeća plaćanja | NE | Rok do kojeg kupac treba platiti |
-| **BT-72** | `cac:Delivery/cbc:ActualDeliveryDate` | Stvarni datum isporuke | NE | Kada je roba isporučena ili usluga obavljena |
-| **BT-73** | `cac:InvoicePeriod/cbc:StartDate` | Početak obračunskog razdoblja | NE | Za periodične račune (pretplate, najam...) |
-| **BT-74** | `cac:InvoicePeriod/cbc:EndDate` | Kraj obračunskog razdoblja | NE | Za periodične račune (pretplate, najam...) |
-| **HR-BT-15** | `hrextac:HRObracunPDVPoNaplati` | Obračun prema naplaćenoj naknadi | NE | Oznaka u HRFISK20Data bloku za čl. 125.i |
+### Osnovna referenca
+
+| BT | XML element | Hrvatski naziv | Obavezno | Utječe na | Isključuje se s |
+|---|---|---|---|---|---|
+| **BT-2** | `cbc:IssueDate` | Datum izdavanja računa | **DA** | PDV (default ako nema BT-7/BT-8), brojčanik računa, rok fiskalizacije | — |
+| **HR-BT-2** | `cbc:IssueTime` | Vrijeme izdavanja računa | **DA** (HR) | Fiskalizacija (točan trenutak izdavanja) | — |
+| **BT-7** | `cbc:TaxPointDate` | Datum nastanka obveze PDV-a | NE | **PDV** izdavatelja (eksplicitni datum), **pretporez** kupca | **BT-8** (BR-CO-03, fatal!) |
+| **BT-8** | `cac:InvoicePeriod/cbc:DescriptionCode` | Kod datuma PDV obveze | NE | **PDV** (preko koda: 3=BT-2, 35=BT-72, 432=plaćanje) | **BT-7** (BR-CO-03, fatal!) |
+| **BT-9** | `cbc:DueDate` | Datum dospijeća plaćanja | NE | Likvidatura, cash flow, **eIzvještavanje o naplati** | — |
+| **BT-72** | `cac:Delivery/cbc:ActualDeliveryDate` | Stvarni datum isporuke | NE | **Rashod/prihod** (HSFI 16), **skladišna primka**, garancije, PDV (ako BT-8=35) | — |
+| **BT-73** | `cac:InvoicePeriod/cbc:StartDate` | Početak obračunskog razdoblja | NE | **Razgraničenje troškova**, pretplate, kontinuirane usluge | — |
+| **BT-74** | `cac:InvoicePeriod/cbc:EndDate` | Kraj obračunskog razdoblja | NE | **Razgraničenje troškova**, pretplate, kontinuirane usluge | — |
+| **HR-BT-15** | `hrextac:HRObracunPDVPoNaplati` | Obračun prema naplaćenoj naknadi | NE* | **Fiskalizacijska poruka** za Poreznu upravu | — |
+
+\* HR-BT-15 je obavezan za obveznike koji koriste obračun po naplaćenoj naknadi (čl. 125.i). Vidi [sekcija 3.1](#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
+
+### Kada se koje polje koristi — po scenarijima
+
+| Scenarij | BT-2 | HR-BT-2 | BT-7 | BT-8 | BT-9 | BT-72 | BT-73/74 | HR-BT-15 | Primjeri |
+|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
+| Isporuka = datum računa | **DA** | **DA** | — | — | DA | —* | — | — | [Izd. 4.1.1](primjeri-izdavatelj#411-isporuka-i-račun-isti-dan-po-izdavanju), [Prim. P.1.1](primjeri-primatelj#p11-isporuka-i-račun-isti-dan) |
+| Isporuka ≠ datum računa | **DA** | **DA** | **DA** | — | DA | DA | — | — | [Izd. 4.1.2](primjeri-izdavatelj#412-isporuka-u-drugom-mjesecu-od-računa-po-izdavanju), [Prim. P.1.2](primjeri-primatelj#p12-isporuka-u-drugom-mjesecu) |
+| Račun prije isporuke | **DA** | **DA** | **DA** | — | DA | DA | — | — | [Izd. 4.1.3](primjeri-izdavatelj#413-račun-izdan-prije-isporuke-čl-30-st-2-po-izdavanju), [Prim. P.1.3](primjeri-primatelj#p13-račun-izdan-prije-isporuke) |
+| Predujam (po izdavanju) | **DA** | **DA** | **DA** | — | — | — | — | — | [Izd. 4.1.4](primjeri-izdavatelj#414-predujam-avansni-račun-čl-30-st-5-po-izdavanju), [Prim. P.1.4](primjeri-primatelj#p14-predujam--avansni-račun) |
+| Kontinuirana usluga | **DA** | **DA** | **DA** | — | DA | — | **DA** | — | [Izd. 4.1.5](primjeri-izdavatelj#415-kontinuirana-usluga--obračunsko-razdoblje-bt-73-bt-74-po-izdavanju), [Prim. P.1.5](primjeri-primatelj#p15-kontinuirana-usluga) |
+| BT-8=35 (auto isporuka) | **DA** | **DA** | — | **35** | DA | **DA** | — | — | [Izd. 4.1.6](primjeri-izdavatelj#416-bt-835--automatska-veza-na-datum-isporuke-po-izdavanju), [Prim. P.1.6](primjeri-primatelj#p16-bt-835--automatska-veza-na-datum-isporuke) |
+| Odobrenje / CreditNote | **DA** | **DA** | — | — | — | — | — | — | [Izd. 4.1.7](primjeri-izdavatelj#417-odobrenje--creditnote-po-izdavanju), [Prim. P.1.7](primjeri-primatelj#p17-odobrenje--creditnote) |
+| Po naplati (standardni) | **DA** | **DA** | — | **432** | **DA** | DA | — | **DA** | [Izd. 4.2.1](primjeri-izdavatelj#421-isporuka-i-račun-isti-mjesec-po-naplati), [Prim. P.2.1](primjeri-primatelj#p21-isporuka-i-račun-isti-mjesec) |
+| Po naplati (predujam) | **DA** | **DA** | **DA** | — | — | — | — | **DA** | [Izd. 4.2.4](primjeri-izdavatelj#424-predujam-avansni-račun-po-naplati), [Prim. P.2.3](primjeri-primatelj#p23-predujam-po-naplati) |
+| Po naplati (kontinuirana) | **DA** | **DA** | — | **432** | **DA** | — | **DA** | **DA** | [Izd. 4.2.5](primjeri-izdavatelj#425-kontinuirana-usluga-s-obračunskim-razdobljem-po-naplati) |
+| Po naplati (CreditNote) | **DA** | **DA** | — | — | — | — | — | **DA** | [Izd. 4.2.6](primjeri-izdavatelj#426-odobrenje--creditnote-po-naplati), [Prim. P.2.4](primjeri-primatelj#p24-odobrenje--creditnote-po-naplati) |
+
+\* BT-72 se ne mora navoditi kad je jednak BT-2, ali može.
+
+### Što svako polje znači za koga
+
+| BT | Izdavatelj (porez) | Primatelj (pretporez) | Računovođa (trošak) | Skladištar (primka) |
+|---|---|---|---|---|
+| **BT-2** | Datum brojčanika | Datum primitka računa ≈ BT-2 kod eRačuna | — | — |
+| **BT-7** | U koji mjesec ide PDV | [Kad nastaje pravo na pretporez](primjeri-primatelj#pretporez-dva-uvjeta-i-nijanse-u-praksi) (čl. 57) | — | — |
+| **BT-8** | Kako sustav određuje datum PDV-a | 432 = pretporez tek po plaćanju | — | — |
+| **BT-9** | Rok za eIzvještavanje o naplati | Rok plaćanja za likvidaturu | — | — |
+| **BT-72** | Datum isporuke za PDV (s BT-7 ili BT-8=35) | — | **Kad priznati rashod** (HSFI 16) | **Kad knjižiti primku** |
+| **BT-73/74** | Informacija za kupca | — | **Razgraničenje troškova** po mjesecima | — |
+| **HR-BT-15** | Oznaka za fiskalizacijsku poruku | Obveznik je na sustavu po naplati → čekati s pretporezom do plaćanja | — | — |
 
 ---
 
@@ -276,29 +310,5 @@ HR CIUS specifikacija (Tablica 52) definira: *"Porezni obveznik koji primjenjuje
 > **Napomena iz primjera:** U sekciji [4.2](primjeri-izdavatelj#42-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u) svi primjeri obračuna po naplati koriste HR-BT-15, dok BT-8=432 nije uvijek prisutan — [predujam (4.2.4)](primjeri-izdavatelj#424-predujam-avansni-račun-po-naplati) koristi BT-7 jer je datum plaćanja poznat, a [CreditNote (4.2.6)](primjeri-izdavatelj#426-odobrenje--creditnote-po-naplati) nema BT-8 u shemi. To sugerira da je **HR-BT-15 svojstvo obveznika** (uvijek prisutan kad je obveznik na sustavu po naplati), a **BT-8=432 mehanizam EU norme** za određivanje datuma poreza (prisutan kad je primjenjiv). No ovo je autorovo tumačenje — čekamo službenu potvrdu.
 
 ---
-
-## 4. Koji datum čemu služi?
-
-Datumi na eRačunu služe za **više različitih svrha** — PDV, priznavanje rashoda, materijalno/skladišno poslovanje — i regulirani su različitim propisima. Česta zabuna je poistovjećivati ih.
-
-| BT polje | XML element | Služi za | Propis |
-|----------|-------------|----------|--------|
-| **BT-2** | `cbc:IssueDate` | Brojčanik računa, rok za fiskalizaciju, default datum PDV-a | Zakon o fiskalizaciji čl. 8-9 |
-| **BT-7** | `cbc:TaxPointDate` | Eksplicitni datum nastanka obveze PDV-a | Čl. 30 Zakona o PDV-u |
-| **BT-8** | `cbc:DescriptionCode` | Kod za određivanje datuma PDV-a (3, 35, 432) | EN16931 / BR-CO-03 |
-| **BT-9** | `cbc:DueDate` | Rok plaćanja — za likvidaturu, cash flow, eIzvještavanje | Čl. 53 Zakona o fiskalizaciji |
-| **BT-72** | `cbc:ActualDeliveryDate` | Datum isporuke — za PDV, ali i za **priznavanje rashoda/prihoda**, **skladišno poslovanje**, **garancije** | HSFI 16, čl. 30 Zakona o PDV-u |
-| **BT-73/74** | `cbc:StartDate`/`cbc:EndDate` | Obračunsko razdoblje — za **periodične usluge**, **razgraničenje troškova**, **pretplate** | HSFI 16, računovodstvena praksa |
-
-> **BT-72 (ActualDeliveryDate)** nije samo "informativan" — on je ključan za:
-> - **Računovodstvo**: priznavanje rashoda/prihoda po načelu nastanka događaja (HSFI 16) — trošak se priznaje kad je usluga obavljena, ne kad je račun izdan
-> - **Skladišno poslovanje**: primitak robe u skladište, usklađivanje s primkom/otpremnicom
-> - **Garancije**: početak garantnog roka od datuma isporuke
-> - **PDV**: ako se razlikuje od BT-2, kroz BT-7 ili BT-8=35 određuje datum porezne obveze
->
-> **BT-73/BT-74 (StartDate/EndDate)** su ključni za:
-> - **Vremensko razgraničenje troškova**: najam za Q1 se knjizi kao trošak Q1, čak i ako račun stiže u Q2
-> - **Pretplate i pretplatničke usluge**: za koji period vrijedi usluga
-> - **Kontinuirane isporuke**: komunalne usluge, telekomunikacije, zakup
 
 ---
