@@ -34,7 +34,7 @@ Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni za
 
 | Zemlja | Format | Obvezno B2B | Model | Izlazni → PU | Ulazni → PU | Naplata → PU | Nacionalni CIUS |
 |---|---|---|---|---|---|---|---|
-| **Hrvatska** | UBL + HRFISK20Data | 01/2026 | Posrednici + eFiskalizacija | **DA** | **DA** | **DA** (eIzvještavanje) | HR CIUS 2025 |
+| **Hrvatska** | UBL + HRFISK20Data | 01/2026 | Posrednici + eFiskalizacija (mikroeRačun besplatan za ne-PDV obveznike) | **DA** | **DA** | **DA** (eIzvještavanje) | HR CIUS 2025 |
 | **Španjolska** | SII XML / Verifactu | SII: 2017; Verifactu: 01/2026 | Reporting (SII) + Verifactu | **DA** (4 dana) | **DA** (4 dana) | **DA** ("Cobros") | — |
 | **Rumunjska** | RO_CIUS (UBL) | 01/2024 | Clearance (e-Factura) | **DA** | **DA** (automatski) | NE | RO_CIUS |
 | **Poljska** | FA(3) vlastiti | 02/2026 | Clearance (KSeF) | **DA** | **DA** (automatski) | NE | — (vlastiti format) |
@@ -90,6 +90,7 @@ Hrvatska je **jedina EU zemlja** koja zahtijeva formalno izvještavanje o odbija
 
 | Zemlja | Specifičnost |
 |---|---|
+| **Hrvatska** | Jedina zemlja koja ima besplatni državni sustav (mikroeRačun) ali ga ograničava na ne-PDV obveznike; PDV obveznici moraju koristiti komercijalnog posrednika |
 | **Mađarska** | Najširi opseg: **SVE** fakture (B2B + B2C + izvoz) u realnom vremenu — ali samo izdane, ne primljene |
 | **Danska** | Pionir eRačuna od 2005., 20+ godina iskustva, migracija na NemHandel BIS 4 do 2029. |
 | **Finska** | Model "prava na eRačun" — kupac može zahtijevati od dobavljača da šalje eRačun |
