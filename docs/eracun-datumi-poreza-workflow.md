@@ -33,7 +33,6 @@ has_toc: true
 ---
 
 ## 2. Ključno pravilo: BR-CO-03
-<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > **BR-CO-03**: Europska norma EN16931 propisuje da se **BT-7** i **BT-8** **međusobno isključuju**.
 >
@@ -43,6 +42,8 @@ has_toc: true
 > Oba služe istoj svrsi: definiranju kada nastaje obveza PDV-a. Ako bi oba bila prisutna,
 > sustav ne bi znao koji ima prednost. Ovo pravilo je **`flag="fatal"`** u Schematron validatoru
 > — račun koji sadrži oba polja bit će **odbijen**.
+
+> **Važno:** Hrvatska ima dva načina obračuna PDV-a — **po izdavanju** (čl. 30 Zakona o PDV-u) i **po naplaćenoj naknadi** (čl. 125.i). XML mehanizam za određivanje datuma poreza (BT-7 / BT-8 / BT-2) je isti za oba, ali značenje je različito: kod obračuna po izdavanju datum poreza je **poznat** u trenutku izdavanja računa (= datum isporuke), kod obračuna po naplati datum **nije poznat** (= datum plaćanja u budućnosti). Oba slučaja su detaljno razrađena s flowchart dijagramima u nastavku ove sekcije ([Slučaj 1](#slučaj-1-obračun-po-izdavanju-čl-30-zakona-o-pdv-u), [Slučaj 2](#slučaj-2-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u)).
 
 ### Dozvoljene kombinacije prisutnosti polja u XML dokumentu
 
@@ -113,6 +114,7 @@ flowchart TD
 ---
 
 ### Slučaj 1: Obračun po izdavanju (čl. 30 Zakona o PDV-u)
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > *"Oporezivi događaj i obveza obračuna PDV-a nastaju kada su dobra isporučena ili usluge obavljene."*
 > — Čl. 30, st. 1 Zakona o PDV-u
@@ -168,6 +170,7 @@ flowchart TD
 ---
 
 ### Slučaj 2: Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u)
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > *"Porezni obveznik koji primjenjuje postupak oporezivanja prema naplaćenim naknadama,*
 > *obvezu obračuna PDV-a ima u trenutku primitka plaćanja."*
