@@ -600,7 +600,16 @@
       'BT-25': { label: 'Referenca na prethodni račun', xml: 'cbc:ID (BillingReference)', req: 'Opcionalno', desc: 'Broj izvornog računa kod odobrenja/korekcije' },
       'BT-26': { label: 'Datum prethodnog računa', xml: 'cbc:IssueDate (BillingReference)', req: 'Opcionalno', desc: 'Datum izdavanja izvornog računa kod odobrenja' },
       'HR-BT-15': { label: 'Obračun prema naplaćenoj naknadi', xml: 'hrextac:HRObracunPDVPoNaplati', req: 'Za čl. 125.i', desc: 'Napomena u HRFISK20Data bloku za fiskalizacijsku poruku prema PU' },
-      'BR-CO-03': { label: 'BT-7 i BT-8 su međusobno isključivi', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Validator ODBIJA račun ako su oba prisutna istovremeno' }
+      'BR-CO-03': { label: 'BT-7 i BT-8 su međusobno isključivi', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Validator ODBIJA račun ako su oba prisutna istovremeno' },
+      'Clearance': { label: 'Clearance model', xml: 'Izdavatelj → Porezna uprava → Kupac', req: 'Model razmjene', desc: 'Račun prolazi kroz sustav porezne uprave PRIJE dostave kupcu — porezna ga vidi u realnom vremenu' },
+      'Reporting': { label: 'Reporting model', xml: 'Izdavatelj → Kupac + Izdavatelj → PU', req: 'Model razmjene', desc: 'Račun ide direktno kupcu, ali se podaci paralelno šalju poreznoj (obično u roku nekoliko dana)' },
+      'Post-audit': { label: 'Post-audit model', xml: 'SAF-T, PDV prijava', req: 'Model razmjene', desc: 'Porezna dobiva podatke naknadno kroz periodične izvještaje — ne u realnom vremenu' },
+      'Peppol': { label: 'Peppol mreža', xml: 'Izdavatelj → AP → AP → Kupac', req: 'Decentralizirano', desc: 'Razmjena kroz certificirane pristupne točke (Access Points) — porezna uprava NIJE u toku razmjene' },
+      'CIUS': { label: 'Core Invoice Usage Specification', xml: 'Nacionalna prilagodba EN16931', req: 'Standard', desc: 'Nacionalna specifikacija koja prilagođava EU normu EN16931 za specifičnosti zemlje (npr. HR CIUS 2025, XRechnung, RO_CIUS)' },
+      'KSeF': { label: 'Krajowy System e-Faktur (Poljska)', xml: 'Centralni clearance sustav', req: 'Obvezno od 02/2026', desc: 'Poljski nacionalni sustav — svaki račun prolazi kroz KSeF prije dostave kupcu. Ministarstvo financija dodjeljuje jedinstveni broj.' },
+      'SDI': { label: 'Sistema di Interscambio (Italija)', xml: 'Centralni clearance sustav', req: 'Obvezno od 2019', desc: 'Talijanski sustav razmjene — svi eRačuni prolaze kroz SDI. Najduže iskustvo u EU (B2B od 2019, B2G od 2014).' },
+      'SII': { label: 'Suministro Inmediato de Información (Španjolska)', xml: 'Real-time reporting sustav', req: 'Obvezno od 2017 (velike tvrtke)', desc: 'Španjolski sustav izvještavanja — izdani i primljeni računi se prijavljuju AEAT-u u roku 4 dana. Uključuje praćenje naplata (Cobros).' },
+      'NPOO': { label: 'Nacionalni plan oporavka i otpornosti', xml: 'EU NextGenerationEU sredstva', req: 'Financiranje', desc: 'EU bespovratna sredstva iz kojih je financiran projekt Fiskalizacija 2.0 u Hrvatskoj' }
     };
 
     var content = document.querySelector('.main-content');
@@ -617,7 +626,7 @@
       var parent = node.parentElement;
       // Skip if inside code, pre, a, or already processed tooltip
       if (parent && (parent.closest('pre, code, a, .bt-tooltip, .mermaid, .code-badge, h1, h2, h3, h4'))) continue;
-      if (node.textContent.match(/BT-|BR-CO/)) textNodes.push(node);
+      if (node.textContent.match(/BT-|BR-CO|Clearance|Reporting|Post-audit|Peppol|CIUS|KSeF|SDI|SII|NPOO/)) textNodes.push(node);
     }
 
     var pattern = new RegExp('\\b(' + keys.map(function(k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')\\b', 'g');
