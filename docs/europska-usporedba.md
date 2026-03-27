@@ -5,7 +5,7 @@ has_toc: true
 nav_order: 7
 ---
 
-# Europska usporedba — kako druge zemlje dokumentiraju eRačun
+# Europska usporedba — eRačun sustavi u EU
 
 ### Sadržaj
 {: .no_toc }
@@ -17,143 +17,7 @@ nav_order: 7
 
 ## Zašto usporedba?
 
-Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni zakon s XML elementima eRačuna. Sve EU zemlje imaju isti temelj (Direktiva 2006/112/EC, norma EN16931), ali svaka ima nacionalne specifičnosti. Neke su napravile izvrsnu dokumentaciju, neke minimalno — i iz toga možemo učiti.
-
----
-
-## Usporedna tablica
-
-| | Poljska | Njemačka | Italija | Francuska | Belgija | **Hrvatska** |
-|---|---|---|---|---|---|---|
-| **XML format** | Vlastiti (FA(3)) | UBL/CII (XRechnung) | Vlastiti (FatturaPA) | Factur-X / UBL / CII | Peppol BIS 3.0 | UBL + HR proširenje (HRFISK20Data) |
-| **Centralni sustav** | KSeF (clearance) | Decentralizirano | SDI (clearance) | PPF + PDP (clearance) | Peppol mreža | Posrednici + eFiskalizacija |
-| **Fiskalizacija u realnom vremenu** | DA | NE | DA | DA (od 09/2026) | NE | **DA** |
-| **Izlazni račun → porezna** | **DA** — račun prolazi kroz KSeF prije dostave kupcu | NE | **DA** — račun prolazi kroz SDI | **DA** — prolazi kroz PPF/PDP | NE | **DA** — posrednik/PT šalje fiskalizacijsku poruku (`EvidentirajERacun`) |
-| **Ulazni račun → porezna** | **DA** — KSeF automatski bilježi prijem | NE | **DA** — SDI automatski bilježi | **DA** — PPF bilježi | NE | **DA** — primatelj (ili PT) fiskalizira ulazni eRačun |
-| **Izvještavanje o naplati** | NE (u planu) | NE | NE | NE | NE | **DA** — `EvidentirajNaplatu` (eIzvještavanje, čl. 53) |
-| **Izvještavanje o odbijanju** | NE | NE | NE | NE | NE | **DA** — `EvidentirajOdbijanje` (eIzvještavanje) |
-| **Obvezno od** | 02/2026 | 01/2025 (prijem) | 2019 (B2B) | 09/2026 | 01/2026 | 01/2026 |
-| **Zakon + XML u jednom dokumentu?** | **DA** | Djelomično | Djelomično | NE | NE | **U izradi** |
-| **Primjeri po scenarijima** | DA (ZIP s XML) | DA (GitHub test suite) | DA (6 primjera) | NE (plaćeni AFNOR standardi) | NE | **DA** (16 izdavatelj + 12 primatelj) |
-| **Open source alati** | NE | **DA** (GitHub) | NE | NE | NE | **DA** (GitHub) |
-| **Dva režima PDV-a** | DA | DA | DA | DA | DA | DA |
-| **Kako označavaju "po naplati"** | Zaglavlje FA(3) | BT-8=432 | EsigibilitaIVA="D" | BT-8=432 | BT-8=432 | BT-8=432 **+ HR-BT-15** |
-
-> **Hrvatska je jedina EU zemlja** koja od obveznika zahtijeva i **izvještavanje o naplati** i **izvještavanje o odbijanju** eRačuna prema Poreznoj upravi. U ostalim clearance modelima (Poljska, Italija, Francuska) porezna uprava vidi samo sam račun — ne i što se s njim dalje dogodilo (je li plaćen, odbijen, djelomično naplaćen).
-
----
-
-## Poljska (KSeF) — zlatni standard dokumentacije
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#27ae60;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Najbolja praksa</span></div>
-
-Poljsko Ministarstvo financija objavilo je **"Broszura informacyjna"** — dokument koji za svaki XML element navodi:
-- Opis i tip podatka
-- **Referencu na članak poljskog Zakona o PDV-u**
-- Primjer vrijednosti
-- Napomene o uporabi
-
-Ovo je **najbliže** onome što mi gradimo za Hrvatsku — jedan dokument koji spaja zakon i XML.
-
-**Ključna razlika**: Poljska koristi **vlastiti XML format** (FA(3)), ne EN16931 UBL. Zato su elementi potpuno drugačiji (P_1, P_6 umjesto BT-2, BT-7). Nemaju problem s "EU norma vs nacionalno proširenje" jer je sve nacionalno.
-
-**Fiskalizacija**: KSeF je clearance model — svaki račun prolazi kroz centralni sustav Ministarstva financija **prije** dostave kupcu. Sustav dodjeljuje jedinstveni KSeF broj. Nema posrednika u hrvatskom smislu.
-
-**Označavanje "po naplati"**: U zaglavlju računa, bez zasebnog elementa poput HR-BT-15.
-
-**Izvori:**
-- <a href="https://ksef.podatki.gov.pl/media/4u1bmhx4/information-sheet-on-the-fa-3-logical-structure.pdf" target="_blank">FA(3) Information Sheet (engleski)</a>
-- <a href="https://ksef.podatki.gov.pl/media/jknpcymf/broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3-04032026.pdf" target="_blank">Broszura informacyjna (poljski, ažuriran 03/2026)</a>
-- <a href="https://ksef.podatki.gov.pl/pliki-do-pobrania-ksef-20/" target="_blank">KSeF 2.0 — svi dokumenti za preuzimanje</a>
-
----
-
-## Njemačka (XRechnung) — najbolji open-source ekosustav
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#27ae60;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Najbolja praksa</span></div>
-
-Njemačka koristi **UBL/CII** (iste BT oznake kao Hrvatska) i ima najrazvijeniji open-source ekosustav:
-
-- **XRechnung CIUS specifikacija** — njemačka prilagodba EN16931
-- **UStG-to-BT mapping tablica** — mapira članke njemačkog Zakona o PDV-u na BT oznake. Ovo je najbliže onome što mi radimo, ali je **zasebni dokument**, ne integrirano u primjere
-- **GitHub repozitoriji** (sve javno):
-  - Test suite s XML primjerima
-  - Schematron pravila
-  - Validator konfiguracija
-
-**Ključna razlika**: Njemačka **nema** centralni clearance sustav ni fiskalizaciju u realnom vremenu. eRačuni se razmjenjuju decentralizirano (Peppol, email, portali). Nema ekvivalenta hrvatske eFiskalizacije.
-
-**Označavanje "po naplati"**: Koriste BT-8=432, **bez** nacionalnog proširenja poput HR-BT-15.
-
-**Izvori:**
-- <a href="https://xeinkauf.de/xrechnung/" target="_blank">XRechnung portal (KoSIT)</a>
-- <a href="https://github.com/itplr-kosit/xrechnung-testsuite" target="_blank">GitHub — XRechnung test suite</a>
-- <a href="https://github.com/itplr-kosit/xrechnung-schematron" target="_blank">GitHub — XRechnung Schematron</a>
-
----
-
-## Italija (FatturaPA / SDI) — najduže iskustvo
-
-Italija je **pionir** EU eRačuna — B2G od 2014., B2B obvezno od 2019. Imaju 7+ godina iskustva.
-
-- **SDI (Sistema di Interscambio)** — clearance model, svaki račun prolazi kroz SDI
-- **FatturaPA** — vlastiti XML format (ne UBL), ali usklađen s EN16931
-- **Tehnička specifikacija** — 71 stranica, element po element, s tabularnim prikazom
-
-**Ključna razlika**: Italija ima **najelegantniji** pristup "po naplati" — jedan element `EsigibilitaIVA` s tri vrijednosti:
-- `I` = Immediata (odmah po isporuci)
-- `D` = Differita (po naplati)
-- `S` = Split Payment (javna uprava plaća PDV direktno državi)
-
-Nema ambigviteta — jedna oznaka, tri opcije. Za razliku od hrvatskog pristupa gdje imamo BT-8=432 iz EU norme **plus** HR-BT-15 iz nacionalnog proširenja za istu informaciju.
-
-**Izvori:**
-- <a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" target="_blank">FatturaPA dokumentacija</a>
-- <a href="https://www.fatturapa.gov.it/en/lafatturapa/esempi/" target="_blank">Primjeri XML datoteka</a>
-
----
-
-## Francuska (Factur-X / PPF) — fragmentirano
-
-Francuska uvodi obvezni eRačun u fazama od rujna 2026. Dokumentacija je **razasuta** po tri organizacije:
-- **DGFiP** (porezna uprava) — regulatorna specifikacija
-- **AFNOR** (tijelo za standarde) — tehničke norme (plaćene, nisu javne!)
-- **FNFE-MPE** (industrijski forum) — Factur-X format specifikacija
-
-**Ključna razlika**: Francuska podržava **tri formata** (Factur-X, UBL, CII) i ima clearance model (PPF + certificirane PDP platforme). Nema jednog dokumenta koji sve spaja — i AFNOR standardi se moraju kupiti.
-
-**Označavanje "po naplati"**: Koriste BT-8=432, bez nacionalnog proširenja.
-
-**Izvori:**
-- <a href="https://www.impots.gouv.fr/specifications-externes-b2b" target="_blank">Specifications externes B2B (DGFiP)</a>
-- <a href="https://fnfe-mpe.org/factur-x/factur-x_en/" target="_blank">Factur-X specifikacija</a>
-
----
-
-## Belgija (Peppol) — minimalistički pristup
-
-Belgija je uzela **najjednostavniji put** — koristi Peppol BIS 3.0 bez ikakve nacionalne prilagodbe. Nema CIUS-BE, nema nacionalnih proširenja, nema fiskalizacije u realnom vremenu.
-
-**Nema** dokumenta koji spaja porezni zakon s XML elementima — oslanjaju se potpuno na Peppol dokumentaciju.
-
-**Izvori:**
-- <a href="https://www.peppolcheck.be/guidelines" target="_blank">Belgian B2B guidelines</a>
-
----
-
-## Što Hrvatska može naučiti?
-
-| Lekcija | Izvor | Primjena za HR |
-|---------|-------|----------------|
-| **Jedan dokument koji spaja zakon i XML** | Poljska (brošura) | Upravo to gradimo — ali za UBL format, ne vlastiti |
-| **Open-source ekosustav na GitHubu** | Njemačka (KoSIT) | Već koristimo GitHub — dodati test suite i validator? |
-| **Elegantan pristup "po naplati"** | Italija (EsigibilitaIVA I/D/S) | HR ima BT-8 + HR-BT-15 — složenije, ali je tako definirano |
-| **Ne fragmentirati dokumentaciju** | Francuska (anti-primjer) | Držati sve na jednom mjestu, javno dostupno |
-| **Minimalni pristup nije dovoljan** | Belgija (anti-primjer) | Bez primjera i objašnjenja, ostaje se na forumima |
-
-> **Zaključak**: Ono što mi gradimo za Hrvatsku — dokument koji spaja Zakon o PDV-u, HR CIUS specifikaciju, EN16931 pravila i XML primjere — **ne postoji nigdje u EU za UBL-bazirani CIUS**. Poljska to ima za vlastiti format, Njemačka ima mapping tablicu, ali kompletni primjeri po poslovnim scenarijima s perspektivom i izdavatelja i primatelja — to je novo.
-
----
-
-## Kompletna EU tablica — svih 23 zemlje
+Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni zakon s XML elementima eRačuna. Sve EU zemlje imaju isti temelj (Direktiva 2006/112/EC, norma EN16931), ali svaka ima nacionalne specifičnosti — u formatu, modelu razmjene, izvještavanju prema poreznoj i kvaliteti dokumentacije.
 
 ### Legenda
 
@@ -164,37 +28,41 @@ Belgija je uzela **najjednostavniji put** — koristi Peppol BIS 3.0 bez ikakve 
 | **Post-audit** | Porezna dobiva podatke naknadno (SAF-T, PDV prijava) |
 | **Peppol** | Decentralizirana razmjena bez porezne u sredini |
 
-### Tablica
+---
+
+## Usporedna tablica — svih 23 EU zemlje
 
 | Zemlja | Format | Obvezno B2B | Model | Izlazni → PU | Ulazni → PU | Naplata → PU | Nacionalni CIUS |
 |---|---|---|---|---|---|---|---|
 | **Hrvatska** | UBL + HRFISK20Data | 01/2026 | Posrednici + eFiskalizacija | **DA** | **DA** | **DA** (eIzvještavanje) | HR CIUS 2025 |
-| **Poljska** | FA(3) vlastiti | 02/2026 | Clearance (KSeF) | **DA** | **DA** (automatski) | NE | — (vlastiti format) |
-| **Njemačka** | UBL/CII (XRechnung) | 01/2025 (prijem) | Decentralizirano | NE | NE | NE | XRechnung CIUS |
-| **Italija** | FatturaPA vlastiti | 2019 | Clearance (SDI) | **DA** | **DA** (automatski) | NE | — (vlastiti format) |
-| **Francuska** | Factur-X/UBL/CII | 09/2026 | Clearance (PPF+PDP) | **DA** | **DA** | NE | — |
-| **Belgija** | Peppol BIS 3.0 | 01/2026 | Peppol | NE | NE | NE | — (koristi Peppol as-is) |
 | **Španjolska** | SII XML / Verifactu | SII: 2017; Verifactu: 01/2026 | Reporting (SII) + Verifactu | **DA** (4 dana) | **DA** (4 dana) | **DA** ("Cobros") | — |
 | **Rumunjska** | RO_CIUS (UBL) | 01/2024 | Clearance (e-Factura) | **DA** | **DA** (automatski) | NE | RO_CIUS |
+| **Poljska** | FA(3) vlastiti | 02/2026 | Clearance (KSeF) | **DA** | **DA** (automatski) | NE | — (vlastiti format) |
+| **Italija** | FatturaPA vlastiti | 2019 | Clearance (SDI) | **DA** | **DA** (automatski) | NE | — (vlastiti format) |
 | **Grčka** | myDATA XML/JSON | 03/2026 | Clearance (myDATA) | **DA** | **DA** (klasifikacija) | Djelomično | — |
+| **Francuska** | Factur-X/UBL/CII | 09/2026 | Clearance (PPF+PDP) | **DA** | **DA** | NE | — |
 | **Mađarska** | NAV XML v3.0 | RTIR: 2018 | Real-time reporting | **DA** (sve!) | NE | NE | — (vlastiti format) |
 | **Slovačka** | UBL/Peppol | 01/2027 | 5-corner (Peppol + PU) | **DA** | **DA** | NE | EN16931 |
+| **Njemačka** | UBL/CII (XRechnung) | 01/2025 (prijem) | Decentralizirano | NE | NE | NE | XRechnung CIUS |
 | **Danska** | OIOUBL / NemHandel BIS 4 | 01/2026 | Peppol (NemHandel) | NE | NE | NE | OIOUBL |
+| **Belgija** | Peppol BIS 3.0 | 01/2026 | Peppol | NE | NE | NE | — |
+| **Litva** | i.SAF (SAF-T) | NE (samo reporting) | Post-audit (i.SAF) | **DA** (i.SAF) | **DA** (i.SAF) | NE | i.SAF |
+| **Estonija** | UBL / CII | 07/2025 (buyer-choice) | Post-audit (KMD INF) | Djelomično | Djelomično | NE | — |
+| **Portugal** | CIUS-PT / SAF-T | NE (samo B2G) | Post-audit (SAF-T) | **DA** (SAF-T) | NE | NE | CIUS-PT |
+| **Latvija** | UBL / Peppol | 01/2028 | Planirano reporting | **DA** (planirano) | **DA** (planirano) | NE | — |
+| **Irska** | Peppol BIS 3.0 | 11/2028 | Planirano Peppol | **DA** (planirano) | **DA** (planirano) | NE | Peppol BIS 3.0 |
+| **Slovenija** | e-SLOG 2.0 / UBL | 01/2028 (odgođeno) | Planirano Peppol | NE (odgođeno) | NE (odgođeno) | NE | e-SLOG |
 | **Nizozemska** | SI-UBL / NLCIUS | planirano 2030-2032 | Planirano Peppol | NE | NE | NE | NLCIUS |
 | **Finska** | Finvoice 3.0 / Peppol | NE (pravo na eRačun) | Peppol | NE | NE | NE | Finvoice |
 | **Austrija** | ebInterface / UBL | NE (samo B2G) | Portal (USP) | NE | NE | NE | ebInterface |
-| **Slovenija** | e-SLOG 2.0 / UBL | 01/2028 (odgođeno) | Planirano Peppol | NE (odgođeno) | NE (odgođeno) | NE | e-SLOG |
-| **Irska** | Peppol BIS 3.0 | 11/2028 | Planirano Peppol | **DA** (planirano) | **DA** (planirano) | NE | Peppol BIS 3.0 |
-| **Estonija** | UBL / CII | 07/2025 (buyer-choice) | Post-audit (KMD INF) | Djelomično (KMD INF) | Djelomično (KMD INF) | NE | — |
-| **Latvija** | UBL / Peppol | 01/2028 | Planirano reporting | **DA** (planirano) | **DA** (planirano) | NE | — |
-| **Litva** | i.SAF (SAF-T) | NE (samo reporting) | Post-audit (i.SAF) | **DA** (i.SAF) | **DA** (i.SAF) | NE | i.SAF |
-| **Portugal** | CIUS-PT / SAF-T | NE (samo B2G) | Post-audit (SAF-T) | **DA** (SAF-T mjesečno) | NE | NE | CIUS-PT |
 | **Češka** | ISDOC / UBL | planirano 2035 | — | NE | NE | NE | ISDOC |
 | **Švedska** | Peppol BIS 3.0 | NE (istraga pokrenuta) | — | NE | NE | NE | — |
 
-### Ključni zaključci iz tablice
+---
 
-**Izvještavanje o naplati — samo Hrvatska i Španjolska:**
+## Ključni zaključci
+
+### Izvještavanje o naplati — samo Hrvatska i Španjolska
 
 Samo dvije EU zemlje zahtijevaju od obveznika da izvještavaju o naplati eRačuna:
 - **Hrvatska** — `EvidentirajNaplatu` kroz eIzvještavanje servis (čl. 53 Zakona o fiskalizaciji)
@@ -202,31 +70,92 @@ Samo dvije EU zemlje zahtijevaju od obveznika da izvještavaju o naplati eRačun
 
 Nijedna druga zemlja — ni Italija, ni Poljska, ni Rumunjska — ne prati što se događa s računom **nakon** što je izdan/dostavljen.
 
-**Izvještavanje o odbijanju — samo Hrvatska:**
+### Izvještavanje o odbijanju — samo Hrvatska
 
 Hrvatska je **jedina EU zemlja** koja zahtijeva formalno izvještavanje o odbijanju eRačuna (`EvidentirajOdbijanje`).
 
-**Oba smjera (izlazni + ulazni) → porezna:**
+### Oba smjera (izlazni + ulazni) → porezna uprava
 
-| Zemlja | Izlazni | Ulazni | Kako |
-|---|---|---|---|
-| **Hrvatska** | DA | DA | eFiskalizacija — posrednik šalje fiskalizacijsku poruku |
-| **Rumunjska** | DA | DA | Clearance — sve prolazi kroz e-Factura platformu |
-| **Poljska** | DA | DA | Clearance — sve prolazi kroz KSeF |
-| **Italija** | DA | DA | Clearance — sve prolazi kroz SDI |
-| **Grčka** | DA | DA | Clearance + klasifikacija na myDATA |
-| **Španjolska** | DA | DA | Post-audit — obe strane šalju u SII |
-| **Litva** | DA | DA | Post-audit — i.SAF izvještaj (prodajne i nabavne knjige) |
+| Zemlja | Kako | Automatski? |
+|---|---|---|
+| **Hrvatska** | Posrednik šalje fiskalizacijsku poruku za oba smjera | NE — posrednik/obveznik inicira |
+| **Rumunjska** | Sve prolazi kroz e-Factura platformu | DA — clearance |
+| **Poljska** | Sve prolazi kroz KSeF | DA — clearance |
+| **Italija** | Sve prolazi kroz SDI | DA — clearance |
+| **Grčka** | Clearance + klasifikacija na myDATA | DA — ali primatelj mora klasificirati |
+| **Španjolska** | Obje strane šalju u SII (post-audit) | NE — obveznik šalje u roku 4 dana |
+| **Litva** | i.SAF izvještaj (prodajne i nabavne knjige) | NE — post-audit, periodični izvještaj |
 
-**Zanimljive specifičnosti:**
+### Zanimljive specifičnosti po zemljama
 
-- **Mađarska** — najširi opseg: **SVE** fakture (B2B + B2C + izvoz) u realnom vremenu, ali samo izdane
-- **Danska** — pionir eRačuna od 2005., 20+ godina iskustva
-- **Finska** — model "prava na eRačun" (kupac može zahtijevati od dobavljača)
-- **Estonija** — "buyer-choice" model (kupac se registrira i forsira dobavljača)
-- **Slovačka** — jedina zemlja s "5-corner" modelom (Peppol + PU kao peti kut)
-- **Portugal** — ATCUD + QR kod na svakom računu (verifikacija od strane potrošača)
-- **Španjolska** — 3 paralelna sustava (SII + Verifactu + TicketBAI) zbog regionalne autonomije
+| Zemlja | Specifičnost |
+|---|---|
+| **Mađarska** | Najširi opseg: **SVE** fakture (B2B + B2C + izvoz) u realnom vremenu — ali samo izdane, ne primljene |
+| **Danska** | Pionir eRačuna od 2005., 20+ godina iskustva, migracija na NemHandel BIS 4 do 2029. |
+| **Finska** | Model "prava na eRačun" — kupac može zahtijevati od dobavljača da šalje eRačun |
+| **Estonija** | "Buyer-choice" model — kupac se registrira i forsira dobavljača |
+| **Slovačka** | Jedina zemlja s "5-corner" modelom (Peppol 4 kutna + porezna uprava kao 5. kut) |
+| **Portugal** | ATCUD + QR kod na svakom računu — potrošač može verificirati račun |
+| **Španjolska** | 3 paralelna sustava (SII + Verifactu + TicketBAI) zbog regionalne autonomije Baskije i Navarre |
+| **Rumunjska** | e-Transport sustav za praćenje kretanja robe — povezan s e-Factura |
+
+---
+
+## Detaljnije o ključnim zemljama
+
+### Poljska (KSeF) — zlatni standard dokumentacije
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#27ae60;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Najbolja praksa</span></div>
+
+Poljsko Ministarstvo financija objavilo je **"Broszura informacyjna"** — dokument koji za svaki XML element navodi opis, tip podatka, **referencu na članak Zakona o PDV-u**, primjer i napomene. Ovo je **najbliže** onome što mi gradimo za Hrvatsku.
+
+**Ključna razlika**: Vlastiti XML format (FA(3)), ne UBL. Nema problem "EU norma vs proširenje". KSeF je clearance — račun prolazi kroz sustav MF **prije** dostave kupcu.
+
+**Izvori:**
+- <a href="https://ksef.podatki.gov.pl/media/4u1bmhx4/information-sheet-on-the-fa-3-logical-structure.pdf" target="_blank">FA(3) Information Sheet (engleski)</a>
+- <a href="https://ksef.podatki.gov.pl/media/jknpcymf/broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3-04032026.pdf" target="_blank">Broszura informacyjna (poljski, 03/2026)</a>
+- <a href="https://ksef.podatki.gov.pl/pliki-do-pobrania-ksef-20/" target="_blank">KSeF 2.0 — svi dokumenti</a>
+
+### Njemačka (XRechnung) — najbolji open-source ekosustav
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#27ae60;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Najbolja praksa</span></div>
+
+Koristi **UBL/CII** (iste BT oznake kao HR). Ima UStG-to-BT mapping tablicu i kompletni GitHub ekosustav (test suite, schematron, validator). **Nema** clearance ni fiskalizaciju.
+
+**Izvori:**
+- <a href="https://xeinkauf.de/xrechnung/" target="_blank">XRechnung portal (KoSIT)</a>
+- <a href="https://github.com/itplr-kosit/xrechnung-testsuite" target="_blank">GitHub — test suite</a>
+- <a href="https://github.com/itplr-kosit/xrechnung-schematron" target="_blank">GitHub — Schematron</a>
+
+### Italija (FatturaPA / SDI) — najduže iskustvo, najelegantniji pristup "po naplati"
+
+Pionir EU eRačuna — B2B obvezno od 2019. Clearance model (SDI). **Najelegantniji** pristup obračunu po naplati: jedan element `EsigibilitaIVA` s tri vrijednosti (`I`=odmah, `D`=po naplati, `S`=split payment). Nema ambigviteta — za razliku od HR pristupa s BT-8=432 + HR-BT-15.
+
+**Izvori:**
+- <a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" target="_blank">FatturaPA dokumentacija</a>
+- <a href="https://www.fatturapa.gov.it/en/lafatturapa/esempi/" target="_blank">Primjeri XML datoteka</a>
+
+### Španjolska (SII / Verifactu) — jedina osim HR s izvještavanjem o naplati
+
+Tri paralelna sustava: SII (velike tvrtke od 2017.), Verifactu (ostali od 01/2026), TicketBAI (Baskija). SII zahtijeva izvještavanje u roku 4 dana — i za izdane i za primljene račune. **"Cobros"** sustav prati naplate na izdanim računima — jedini osim HR koji to radi.
+
+### Mađarska (NAV RTIR) — najširi opseg izvještavanja
+
+**SVE** fakture (B2B + B2C + izvoz) se prijavljuju u realnom vremenu — najširi opseg u EU. Ali samo izdane, ne primljene. NAV objavljuje XSD, API, test okruženje — odlična dokumentacija.
+
+**Izvor:** <a href="https://onlineszamla.nav.gov.hu/dokumentaciok" target="_blank">NAV Online Számla dokumentacija</a>
+
+---
+
+## Što Hrvatska može naučiti?
+
+| Lekcija | Izvor | Primjena za HR |
+|---------|-------|----------------|
+| **Jedan dokument koji spaja zakon i XML** | Poljska (brošura) | Upravo to gradimo — ali za UBL format, ne vlastiti |
+| **Open-source ekosustav na GitHubu** | Njemačka (KoSIT) | Već koristimo GitHub — dodati test suite i validator? |
+| **Elegantan pristup "po naplati"** | Italija (EsigibilitaIVA) | HR ima BT-8 + HR-BT-15 — složenije, ali je tako definirano |
+| **Ne fragmentirati dokumentaciju** | Francuska (anti-primjer) | Držati sve na jednom mjestu, javno dostupno |
+| **Minimalni pristup nije dovoljan** | Belgija (anti-primjer) | Bez primjera i objašnjenja, ostaje se na forumima |
+
+> **Zaključak**: Ono što gradimo za Hrvatsku — dokumentacija koja spaja Zakon o PDV-u, HR CIUS specifikaciju, EN16931 pravila i XML primjere iz perspektive i izdavatelja i primatelja — **ne postoji nigdje u EU za UBL-bazirani CIUS**. Poljska to ima za vlastiti format, Njemačka ima mapping tablicu, ali kompletni primjeri po poslovnim scenarijima — to je novo.
 
 ---
 
