@@ -631,7 +631,8 @@
       if (node.textContent.match(/BT-|BR-CO|Clearance|Reporting|Post-audit|Peppol|eDelivery|CIUS|KSeF|SDI|SII|NPOO|5-corner/)) textNodes.push(node);
     }
 
-    var pattern = new RegExp('\\b(' + keys.map(function(k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')\\b', 'g');
+    var escaped = keys.map(function(k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); });
+    var pattern = new RegExp('(?<![\\w-])(' + escaped.join('|') + ')(?![\\w-])', 'g');
 
     textNodes.forEach(function(node) {
       var text = node.textContent;
