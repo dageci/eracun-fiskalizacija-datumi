@@ -34,7 +34,7 @@ Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni za
 
 | Zemlja | Format | Obvezno B2B | Model | Izlazni → PU | Ulazni → PU | Naplata → PU | Nacionalni CIUS |
 |---|---|---|---|---|---|---|---|
-| **Hrvatska** | UBL + HRFISK20Data | 01/2026 | Posrednici + eFiskalizacija (mikroeRačun besplatan za ne-PDV obveznike) | **DA** | **DA** | **DA** (eIzvještavanje) | HR CIUS 2025 |
+| **Hrvatska** | UBL + HRFISK20Data | 01/2026 | Posrednici + Fiskalizacija 2.0 (mikroeRačun besplatan za ne-PDV obveznike) | **DA** | **DA** | **DA** (eIzvještavanje) | HR CIUS 2025 |
 | **Španjolska** | SII XML / Verifactu | SII: 2017; Verifactu: 01/2026 | Reporting (SII) + Verifactu | **DA** (4 dana) | **DA** (4 dana) | **DA** ("Cobros") | — |
 | **Rumunjska** | RO_CIUS (UBL) | 01/2024 | Clearance (e-Factura) | **DA** | **DA** (automatski) | NE | RO_CIUS |
 | **Poljska** | FA(3) vlastiti | 02/2026 | Clearance (KSeF) | **DA** | **DA** (automatski) | NE | — (vlastiti format) |
