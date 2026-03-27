@@ -35,11 +35,11 @@ Kupac iz primljenog eRačun XML-a treba izvući tri neovisna datuma:
 
 | Pitanje | Gdje gledati u XML-u | Propis |
 |---------|----------------------|--------|
-| **PDV (pretporez)** — u koje razdoblje ide odbitak? | BT-7 > BT-8 > BT-2 (hijerarhija iz [sekcije 2](eracun-datumi-poreza-workflow#2-ključno-pravilo-br-co-03)) + provjera HR-BT-15 za obračun po naplati | Čl. 57, 60 i 125.i Zakona o PDV-u |
+| **PDV (pretporez)** — u koje razdoblje ide odbitak? | BT-7 > BT-8 > BT-2 (hijerarhija iz [sekcije 2](pravila#2-ključno-pravilo-br-co-03)) + provjera HR-BT-15 za obračun po naplati | Čl. 57, 60 i 125.i Zakona o PDV-u |
 | **Trošak/rashod** — u koje razdoblje se priznaje? | BT-72 (`ActualDeliveryDate`) ili BT-73/BT-74 (`StartDate`/`EndDate`) | HSFI 16, načelo nastanka događaja |
 | **Skladište (primka)** — kad se knjiži ulaz robe? | BT-72 (`ActualDeliveryDate`) ili stvarni datum primitka robe | Interna pravila, usklađenje s otpremnicom |
 
-> **Ključni uvid**: Ova tri datuma mogu biti u **različitim mjesecima ili čak godinama** za isti račun. To nije greška — to je normalan rad sustava gdje se PDV, trošak i skladište reguliraju različitim propisima. Detaljno objašnjenje: [sekcija 5 — Datumi na eRačunu vs. datumi u knjigovodstvu](eracun-datumi-poreza-workflow#5-datumi-na-eračunu-vs-datumi-u-knjigovodstvu).
+> **Ključni uvid**: Ova tri datuma mogu biti u **različitim mjesecima ili čak godinama** za isti račun. To nije greška — to je normalan rad sustava gdje se PDV, trošak i skladište reguliraju različitim propisima. Detaljno objašnjenje: [sekcija 5 — Datumi na eRačunu vs. datumi u knjigovodstvu](#5-datumi-na-eračunu-vs-datumi-u-knjigovodstvu).
 
 ### Pretporez kod obračuna po naplati — posebna pravila za kupca
 
@@ -58,7 +58,7 @@ To znači da kupac mora pratiti:
 ### P.1.1 Isporuka i račun isti dan
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.1.1](eracun-datumi-poreza-workflow#411-isporuka-i-račun-isti-dan-po-izdavanju)
+Izdavateljeva perspektiva: [4.1.1](primjeri-izdavatelj#411-isporuka-i-račun-isti-dan-po-izdavanju)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -80,7 +80,7 @@ Izdavateljeva perspektiva: [4.1.1](eracun-datumi-poreza-workflow#411-isporuka-i-
 ### P.1.2 Isporuka u drugom mjesecu od računa
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.1.2](eracun-datumi-poreza-workflow#412-isporuka-u-drugom-mjesecu-od-računa-po-izdavanju)
+Izdavateljeva perspektiva: [4.1.2](primjeri-izdavatelj#412-isporuka-u-drugom-mjesecu-od-računa-po-izdavanju)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -95,7 +95,7 @@ Izdavateljeva perspektiva: [4.1.2](eracun-datumi-poreza-workflow#412-isporuka-u-
 |:---:|:---:|:---:|
 | **Ožujak 2026.** | **Ožujak 2026.** | **28.03.2026.** |
 
-> **Pretporez ide u ožujak**, ne u travanj! Obveza PDV-a nastala je 28.03. (BT-7 = datum isporuke). Kupac je primio račun 05.04., ali rok za PDV prijavu za ožujak je 30.04.2026. — budući da je račun stigao **prije roka**, kupac može uključiti pretporez u prijavu za ožujak (čl. 57 + čl. 60, vidi [sekciju 5.3](eracun-datumi-poreza-workflow#53-pretporez-dva-uvjeta-i-nijanse-u-praksi)).
+> **Pretporez ide u ožujak**, ne u travanj! Obveza PDV-a nastala je 28.03. (BT-7 = datum isporuke). Kupac je primio račun 05.04., ali rok za PDV prijavu za ožujak je 30.04.2026. — budući da je račun stigao **prije roka**, kupac može uključiti pretporez u prijavu za ožujak (čl. 57 + čl. 60, vidi [sekciju 5.3](#pretporez-pretporez-dva-uvjeta-i-nijanse-u-praksi)).
 >
 > Rashod se također priznaje u ožujku po BT-72 (datum isporuke = datum nastanka poslovnog događaja, HSFI 16).
 
@@ -104,7 +104,7 @@ Izdavateljeva perspektiva: [4.1.2](eracun-datumi-poreza-workflow#412-isporuka-u-
 ### P.1.3 Račun izdan prije isporuke (čl. 30 st. 2)
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.1.3](eracun-datumi-poreza-workflow#413-račun-izdan-prije-isporuke-čl-30-st-2-po-izdavanju)
+Izdavateljeva perspektiva: [4.1.3](primjeri-izdavatelj#413-račun-izdan-prije-isporuke-čl-30-st-2-po-izdavanju)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -132,7 +132,7 @@ Izdavateljeva perspektiva: [4.1.3](eracun-datumi-poreza-workflow#413-račun-izda
 ### P.1.4 Predujam / avansni račun (čl. 30 st. 5)
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.1.4](eracun-datumi-poreza-workflow#414-predujam-avansni-račun-čl-30-st-5-po-izdavanju)
+Izdavateljeva perspektiva: [4.1.4](primjeri-izdavatelj#414-predujam-avansni-račun-čl-30-st-5-po-izdavanju)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -160,7 +160,7 @@ Izdavateljeva perspektiva: [4.1.4](eracun-datumi-poreza-workflow#414-predujam-av
 ### P.1.5 Kontinuirana usluga — obračunsko razdoblje (BT-73/BT-74)
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.1.5](eracun-datumi-poreza-workflow#415-kontinuirana-usluga--obračunsko-razdoblje-bt-73-bt-74-po-izdavanju)
+Izdavateljeva perspektiva: [4.1.5](primjeri-izdavatelj#415-kontinuirana-usluga--obračunsko-razdoblje-bt-73-bt-74-po-izdavanju)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -189,7 +189,7 @@ Izdavateljeva perspektiva: [4.1.5](eracun-datumi-poreza-workflow#415-kontinuiran
 ### P.1.6 BT-8=35 — automatska veza na datum isporuke
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.1.6](eracun-datumi-poreza-workflow#416-bt-835--automatska-veza-na-datum-isporuke-po-izdavanju)
+Izdavateljeva perspektiva: [4.1.6](primjeri-izdavatelj#416-bt-835--automatska-veza-na-datum-isporuke-po-izdavanju)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -206,7 +206,7 @@ Izdavateljeva perspektiva: [4.1.6](eracun-datumi-poreza-workflow#416-bt-835--aut
 
 > **BT-8=35 znači: datum porezne obveze = BT-72 (datum isporuke).**
 >
-> - **Pretporez: siječanj** — BT-8=35 upućuje sustav da koristi BT-72 = 25.01. Račun je stigao 10.03. — ali rok za PDV prijavu za siječanj je bio 28.02. Ako je taj rok **već prošao**, pretporez ide u **ožujak** (razdoblje primitka računa), ne u siječanj! Vidi [sekciju 5.3](eracun-datumi-poreza-workflow#53-pretporez-dva-uvjeta-i-nijanse-u-praksi).
+> - **Pretporez: siječanj** — BT-8=35 upućuje sustav da koristi BT-72 = 25.01. Račun je stigao 10.03. — ali rok za PDV prijavu za siječanj je bio 28.02. Ako je taj rok **već prošao**, pretporez ide u **ožujak** (razdoblje primitka računa), ne u siječanj! Vidi [sekciju 5.3](#pretporez-pretporez-dva-uvjeta-i-nijanse-u-praksi).
 > - **Rashod: siječanj** — BT-72 = 25.01., roba je isporučena u siječnju.
 >
 > **Važno za primatelja**: Kad je BT-8=35, primatelj NE treba tražiti BT-7 — datum poreza se automatski čita iz BT-72. Rezultat je isti kao kad izdavatelj koristi BT-7 eksplicitno (primjer P.1.2), samo je mehanizam drugačiji.
@@ -216,7 +216,7 @@ Izdavateljeva perspektiva: [4.1.6](eracun-datumi-poreza-workflow#416-bt-835--aut
 ### P.1.7 Odobrenje / CreditNote
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.1.7](eracun-datumi-poreza-workflow#417-odobrenje--creditnote-po-izdavanju)
+Izdavateljeva perspektiva: [4.1.7](primjeri-izdavatelj#417-odobrenje--creditnote-po-izdavanju)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -244,7 +244,7 @@ Izdavateljeva perspektiva: [4.1.7](eracun-datumi-poreza-workflow#417-odobrenje--
 ### P.1.8 Svi datumi u različitim mjesecima — BT-7 eksplicitni datum
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.1.8](eracun-datumi-poreza-workflow#418-svi-datumi-u-različitim-mjesecima--bt-7-eksplicitni-datum-po-izdavanju)
+Izdavateljeva perspektiva: [4.1.8](primjeri-izdavatelj#418-svi-datumi-u-različitim-mjesecima--bt-7-eksplicitni-datum-po-izdavanju)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -261,7 +261,7 @@ Izdavateljeva perspektiva: [4.1.8](eracun-datumi-poreza-workflow#418-svi-datumi-
 
 > **Svi datumi u različitim mjesecima** — ovo je najsloženiji slučaj za primatelja.
 >
-> - **Pretporez**: Obveza PDV-a nastala u siječnju (BT-7 = 25.01.), ali račun je stigao tek u ožujku. Rok za PDV prijavu za siječanj bio je 28.02. — taj rok je **prošao**. Kupac prema praksi Porezne uprave može pretporez uključiti tek u prijavu za **ožujak** (mjesec primitka računa). Vidi detaljno [sekciju 5.3](eracun-datumi-poreza-workflow#53-pretporez-dva-uvjeta-i-nijanse-u-praksi).
+> - **Pretporez**: Obveza PDV-a nastala u siječnju (BT-7 = 25.01.), ali račun je stigao tek u ožujku. Rok za PDV prijavu za siječanj bio je 28.02. — taj rok je **prošao**. Kupac prema praksi Porezne uprave može pretporez uključiti tek u prijavu za **ožujak** (mjesec primitka računa). Vidi detaljno [sekciju 5.3](#pretporez-pretporez-dva-uvjeta-i-nijanse-u-praksi).
 > - **Rashod: siječanj** — BT-72 = 25.01., roba je isporučena u siječnju. Po HSFI 16, trošak pripada siječnju.
 > - **Primka: 25.01.** — roba je fizički zaprimljena u siječnju.
 >
@@ -274,7 +274,7 @@ Izdavateljeva perspektiva: [4.1.8](eracun-datumi-poreza-workflow#418-svi-datumi-
 ### P.2.1 Isporuka i račun isti mjesec
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.2.1](eracun-datumi-poreza-workflow#421-isporuka-i-račun-isti-mjesec-po-naplati)
+Izdavateljeva perspektiva: [4.2.1](primjeri-izdavatelj#421-isporuka-i-račun-isti-mjesec-po-naplati)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -304,7 +304,7 @@ Izdavateljeva perspektiva: [4.2.1](eracun-datumi-poreza-workflow#421-isporuka-i-
 ### P.2.2 Isporuka u drugom mjesecu od računa
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.2.2](eracun-datumi-poreza-workflow#422-isporuka-u-drugom-mjesecu-od-računa-po-naplati)
+Izdavateljeva perspektiva: [4.2.2](primjeri-izdavatelj#422-isporuka-u-drugom-mjesecu-od-računa-po-naplati)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -329,7 +329,7 @@ Izdavateljeva perspektiva: [4.2.2](eracun-datumi-poreza-workflow#422-isporuka-u-
 ### P.2.3 Predujam / avansni račun
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.2.4](eracun-datumi-poreza-workflow#424-predujam-avansni-račun-po-naplati)
+Izdavateljeva perspektiva: [4.2.4](primjeri-izdavatelj#424-predujam-avansni-račun-po-naplati)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -357,7 +357,7 @@ Izdavateljeva perspektiva: [4.2.4](eracun-datumi-poreza-workflow#424-predujam-av
 ### P.2.4 Odobrenje / CreditNote
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
-Izdavateljeva perspektiva: [4.2.6](eracun-datumi-poreza-workflow#426-odobrenje--creditnote-po-naplati)
+Izdavateljeva perspektiva: [4.2.6](primjeri-izdavatelj#426-odobrenje--creditnote-po-naplati)
 
 | Podatak | Vrijednost | Izvor u XML-u |
 |---------|-----------|---------------|
@@ -526,4 +526,4 @@ Relevantne presude:
 
 ---
 
-*Svi primjeri koriste iste poslovne slučajeve kao [glavna dokumentacija — sekcija 4](eracun-datumi-poreza-workflow#4-primjeri-iz-prakse). Zakonski temelj: [sekcija 8](eracun-datumi-poreza-workflow#8-zakonski-temelj).*
+*Svi primjeri koriste iste poslovne slučajeve kao [glavna dokumentacija — sekcija 4](primjeri-izdavatelj). Zakonski temelj: [sekcija 8](referenca#8-zakonski-temelj).*
