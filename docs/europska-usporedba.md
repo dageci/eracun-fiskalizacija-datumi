@@ -28,12 +28,18 @@ Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni za
 | **XML format** | Vlastiti (FA(3)) | UBL/CII (XRechnung) | Vlastiti (FatturaPA) | Factur-X / UBL / CII | Peppol BIS 3.0 | UBL + HR proširenje (HRFISK20Data) |
 | **Centralni sustav** | KSeF (clearance) | Decentralizirano | SDI (clearance) | PPF + PDP (clearance) | Peppol mreža | Posrednici + eFiskalizacija |
 | **Fiskalizacija u realnom vremenu** | DA | NE | DA | DA (od 09/2026) | NE | **DA** |
+| **Izlazni račun → porezna** | **DA** — račun prolazi kroz KSeF prije dostave kupcu | NE | **DA** — račun prolazi kroz SDI | **DA** — prolazi kroz PPF/PDP | NE | **DA** — posrednik/PT šalje fiskalizacijsku poruku (`EvidentirajERacun`) |
+| **Ulazni račun → porezna** | **DA** — KSeF automatski bilježi prijem | NE | **DA** — SDI automatski bilježi | **DA** — PPF bilježi | NE | **DA** — primatelj (ili PT) fiskalizira ulazni eRačun |
+| **Izvještavanje o naplati** | NE (u planu) | NE | NE | NE | NE | **DA** — `EvidentirajNaplatu` (eIzvještavanje, čl. 53) |
+| **Izvještavanje o odbijanju** | NE | NE | NE | NE | NE | **DA** — `EvidentirajOdbijanje` (eIzvještavanje) |
 | **Obvezno od** | 02/2026 | 01/2025 (prijem) | 2019 (B2B) | 09/2026 | 01/2026 | 01/2026 |
 | **Zakon + XML u jednom dokumentu?** | **DA** | Djelomično | Djelomično | NE | NE | **U izradi** |
 | **Primjeri po scenarijima** | DA (ZIP s XML) | DA (GitHub test suite) | DA (6 primjera) | NE (plaćeni AFNOR standardi) | NE | **DA** (16 izdavatelj + 12 primatelj) |
 | **Open source alati** | NE | **DA** (GitHub) | NE | NE | NE | **DA** (GitHub) |
 | **Dva režima PDV-a** | DA | DA | DA | DA | DA | DA |
 | **Kako označavaju "po naplati"** | Zaglavlje FA(3) | BT-8=432 | EsigibilitaIVA="D" | BT-8=432 | BT-8=432 | BT-8=432 **+ HR-BT-15** |
+
+> **Hrvatska je jedina EU zemlja** koja od obveznika zahtijeva i **izvještavanje o naplati** i **izvještavanje o odbijanju** eRačuna prema Poreznoj upravi. U ostalim clearance modelima (Poljska, Italija, Francuska) porezna uprava vidi samo sam račun — ne i što se s njim dalje dogodilo (je li plaćen, odbijen, djelomično naplaćen).
 
 ---
 
