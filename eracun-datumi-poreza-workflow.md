@@ -274,6 +274,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 #### 4.1.1 Isporuka i račun isti dan <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 | Podatak | BT polje | XML element | Vrijednost |
 |---------|----------|-------------|-----------|
@@ -293,6 +294,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ---
 
 #### 4.1.2 Isporuka u drugom mjesecu od računa <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 | Podatak | BT polje | XML element | Vrijednost |
 |---------|----------|-------------|-----------|
@@ -319,6 +321,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ---
 
 #### 4.1.3 Račun izdan prije isporuke (čl. 30 st. 2) <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > *"Ako je račun izdan prije nego su dobra isporučena ili usluge obavljene,*
 > *obveza obračuna PDV-a nastaje na dan izdavanja računa."*
@@ -354,6 +357,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ---
 
 #### 4.1.4 Predujam / avansni račun (čl. 30 st. 5) <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > *"Za primljene predujmove obveza obračuna PDV-a na primljeni iznos*
 > *nastaje u trenutku primitka predujma."*
@@ -388,6 +392,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ---
 
 #### 4.1.5 Kontinuirana usluga — obračunsko razdoblje (BT-73, BT-74) <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > IT podrška za razdoblje siječanj–ožujak 2026. Račun izdan u travnju.
 > Ovo je primjer iz čl. 30 st. 2 Zakona o PDV-u: *"Za kontinuirane isporuke dobara*
@@ -429,6 +434,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > se postavlja na datum koji proizlazi iz čl. 30 st. 2 — kraj razdoblja.
 
 #### 4.1.5a Što ako izostavimo BT-7 kod kontinuirane usluge? <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Isti slučaj kao D.4 (IT podrška sij–ožu, račun u travnju), ali **bez BT-7**.
 
@@ -455,6 +461,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > ide u mjesec izdavanja računa umjesto u mjesec završetka usluge.
 
 #### 4.1.5b BT-7 različit od kraja razdoblja — je li to ispravno? <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Isti slučaj, ali BT-7 postavljen na veljaču umjesto na ožujak.
 
@@ -486,6 +493,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > jednak BT-74** (kraj obračunskog razdoblja) da bi bio usklađen s čl. 30 st. 2.
 
 #### 4.1.6 BT-8=35 — automatska veza na datum isporuke <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Umjesto da eksplicitno upišemo datum u BT-7, kažemo sustavu:
 > "datum porezne obveze = datum isporuke (BT-72)".
@@ -512,6 +520,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > Nedostatak: ne možemo odvojiti datum poreza od datuma isporuke (vidi D.4).
 
 #### 4.1.7 Odobrenje / CreditNote <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Odobrenje (knjižno odobrenje) umanjuje iznos prethodno izdanog računa.
 > U UBL CreditNote shemi **BT-7 (`cbc:TaxPointDate`) ne postoji**.
@@ -553,6 +562,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 
 #### 4.1.8 Svi datumi u različitim mjesecima — BT-7 eksplicitni datum <span class="badge-izdavanje">Po izdavanju</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Isporuka je bila u siječnju → porezna obveza nastala u siječnju.
 > BT-7 eksplicitno upisuje datum isporuke kao datum porezne obveze.
@@ -576,6 +586,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 #### 4.2.1 Isporuka i račun isti mjesec <span class="badge-naplata">Po naplati</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 | Podatak | BT polje | XML element | Vrijednost |
 |---------|----------|-------------|-----------|
@@ -619,6 +630,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ---
 
 #### 4.2.2 Isporuka u drugom mjesecu od računa <span class="badge-naplata">Po naplati</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Isti podaci, ali obveznik koristi obračun po naplaćenoj naknadi.
 > Ni isporuka ni izdavanje ne određuju datum poreza — samo plaćanje.
@@ -657,6 +669,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > Ni jedan ni drugi ne utječe na poreznu obvezu.
 
 #### 4.2.3 Račun izdan prije isporuke <span class="badge-naplata">Po naplati</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Račun izdan 05.03., isporuka planirana 20.03., kupac plaća 10.04.
 > Kod obračuna po naplati, niti datum računa niti datum isporuke ne igraju ulogu — PDV nastaje isključivo plaćanjem.
@@ -700,6 +713,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > ovdje čak i datum računa ne igra ulogu.
 
 #### 4.2.4 Predujam / avansni račun <span class="badge-naplata">Po naplati</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Kupac plaća unaprijed 05.02., račun za predujam izdan 10.02., isporuke još nema.
 > Kod obračuna po naplati, predujam je poseban slučaj: kupac je **već platio** — dakle PDV obveza nastaje **odmah** pri primitku predujma, jednako kao kod obračuna po izdavanju (čl. 30 st. 5).
@@ -741,6 +755,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > **Zaključak**: Predujam kod obračuna po naplati koristi BT-7 (jer je datum plaćanja poznat), ali HR-BT-15 ostaje obavezan jer je to svojstvo obveznika, ne pojedinačnog računa.
 
 #### 4.2.5 Kontinuirana usluga s obračunskim razdobljem <span class="badge-naplata">Po naplati</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > IT podrška za razdoblje siječanj–ožujak, račun u travnju, kupac plaća u lipnju.
 > Obveznik koristi obračun po naplaćenoj naknadi (čl. 125.i).
@@ -780,6 +795,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > Međusobno isključivi su samo BT-7 i BT-8 (pravilo BR-CO-03).
 
 #### 4.2.6 Odobrenje / CreditNote <span class="badge-naplata">Po naplati</span>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Odobrenje za obveznika koji koristi obračun po naplaćenoj naknadi.
 > Odobrenje umanjuje iznos prethodno izdanog računa 147/1/1 od 15.03.2026.
