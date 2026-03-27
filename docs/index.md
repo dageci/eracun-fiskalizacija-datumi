@@ -50,99 +50,17 @@ Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu
 | [Europska usporedba](europska-usporedba) | 23 EU zemlje — modeli razmjene, izvještavanje prema poreznoj, dokumentacija | Svi |
 | [Prijedlozi za validator](prijedlozi-validator) | Pravila koja bi validator mogao uhvatiti na razini posrednika | Programeri, posrednici |
 
-## Što pokriva dokumentacija?
-
-### Pravila i mehanizmi → [Pravila](pravila)
-- **BR-CO-03** — BT-7 i BT-8 su međusobno isključivi (`flag="fatal"`)
-- Flowchart dijagrami za oba režima (po izdavanju i po naplati)
-- Kodovi za BT-8 (3, 35, 432) i otvoreno pitanje BT-8=432 vs HR-BT-15
-
-### Primjeri iz prakse — po perspektivi
-
-**Izdavatelj** → [Primjeri — izdavatelj](primjeri-izdavatelj)
-- 10 primjera obračun po izdavanju (čl. 30) <span class="badge-izdavanje">Po izdavanju</span>
-- 6 primjera obračun po naplati (čl. 125.i) <span class="badge-naplata">Po naplati</span>
-- Usporedba svih 5 mehanizama za isti slučaj <span class="badge-usporedba">Usporedba</span>
-
-**Primatelj** → [Primjeri — primatelj](primjeri-primatelj)
-- 8 primjera po izdavanju + 4 primjera po naplati — iz kupčeve perspektive
-- Za svaki primjer: pretporez, rashod, skladišna primka
-- Pretporez detaljno: dva uvjeta (čl. 57 + čl. 60), rok za PDV prijavu, CJEU sudska praksa
-- Vremensko razgraničenje troškova, algoritam za ERP
-
-## Temelj dokumentacije i službeni izvori
-
-### Zakoni i pravilnici — <a href="https://narodne-novine.nn.hr" target="_blank">Narodne novine</a> (službeni izvor)
-
-| Propis | NN broj | Službeni tekst |
-|--------|---------|----------------|
-| Zakon o PDV-u | NN 73/13 | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2013_06_73_1451.html" target="_blank">nn.hr — osnovni tekst</a> |
-| Zakon o PDV-u — izmjene | NN 152/24 | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2024_12_152_2508.html" target="_blank">nn.hr — izmjene za 2026</a> |
-| Zakon o PDV-u — izmjene | NN 151/25 | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_151_2262.html" target="_blank">nn.hr — dodatne izmjene</a> |
-| Zakon o fiskalizaciji | NN 89/25 | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2025_06_89_1233.html" target="_blank">nn.hr — novi zakon s eRačunom</a> |
-| Pravilnik o PDV-u — izmjene | NN 11/26 | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2026_01_11_90.html" target="_blank">nn.hr — usklađenje za 2026</a> |
-| Pravilnik o fiskalizaciji | NN 153/25 | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2025_12_153_2278.html" target="_blank">nn.hr — pravilnik uz novi zakon</a> |
-
-> **Pročišćeni tekstovi** (neslužbeni, ali lakši za čitanje):
-> <a href="https://www.zakon.hr/z/1455/zakon-o-porezu-na-dodanu-vrijednost" target="_blank">Zakon o PDV-u — zakon.hr</a> ·
-> <a href="https://www.zakon.hr/z/3960/zakon-o-fiskalizaciji" target="_blank">Zakon o fiskalizaciji — zakon.hr</a>
-
-### HR CIUS specifikacija i validator — <a href="https://porezna.gov.hr/fiskalizacija/bezgotovinski-racuni/eracun" target="_blank">Porezna uprava</a>
-
-| Dokument | Datum | Link |
-|----------|-------|------|
-| Specifikacija osnovne uporabe eRačuna s proširenjima | 12.03.2026 | <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/196" target="_blank">porezna.gov.hr — preuzimanje</a> |
-| Validator (HR Schematron) — u primjeni od 15.03.2026 | 13.03.2026 | <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/197" target="_blank">porezna.gov.hr — preuzimanje</a> |
-| Primjeri eRačuna | 12.12.2025 | <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/158" target="_blank">porezna.gov.hr — preuzimanje</a> |
-| Svi dokumenti za eRačun | — | <a href="https://porezna.gov.hr/fiskalizacija/bezgotovinski-racuni/eracun" target="_blank">porezna.gov.hr/eracun</a> |
-
-### EN16931 europska norma — <a href="https://github.com/ConnectingEurope" target="_blank">EU GitHub</a>
+## Službeni izvori i zakoni
 
 | Izvor | Link |
 |-------|------|
-| EN16931 validacijski artefakti (Schematron, XSLT) | <a href="https://github.com/ConnectingEurope/eInvoicing-EN16931" target="_blank">github.com/ConnectingEurope/eInvoicing-EN16931</a> |
-| CEN/TC 434 tehnički odbor za eInvoicing | <a href="https://github.com/CenPC434" target="_blank">github.com/CenPC434</a> |
+| Zakon o PDV-u (pročišćeni tekst) | <a href="https://www.zakon.hr/z/1455/zakon-o-porezu-na-dodanu-vrijednost" target="_blank">zakon.hr</a> |
+| Zakon o fiskalizaciji | <a href="https://www.zakon.hr/z/3960/zakon-o-fiskalizaciji" target="_blank">zakon.hr</a> |
+| HR CIUS specifikacija + validator | <a href="https://porezna.gov.hr/fiskalizacija/bezgotovinski-racuni/eracun" target="_blank">porezna.gov.hr/eracun</a> |
+| EN16931 (EU norma, Schematron) | <a href="https://github.com/ConnectingEurope/eInvoicing-EN16931" target="_blank">github.com/ConnectingEurope</a> |
+| Fiskalizacija 2.0 — vodič PU | <a href="https://porezna-uprava.gov.hr/hr/vodic-kroz-fiskalizaciju-2-0-8151/8151" target="_blank">porezna-uprava.gov.hr</a> |
 
-### Porezna uprava — vodiči i podrška
-
-| Izvor | Link |
-|-------|------|
-| Fiskalizacija 2.0 / eRačun — glavna stranica | <a href="https://porezna.gov.hr/fiskalizacija/bezgotovinski-racuni" target="_blank">porezna.gov.hr</a> |
-| Vodič kroz Fiskalizaciju 2.0 | <a href="https://porezna-uprava.gov.hr/hr/vodic-kroz-fiskalizaciju-2-0-8151/8151" target="_blank">porezna-uprava.gov.hr</a> |
-| Pitanja i odgovori | <a href="https://porezna-uprava.gov.hr/hr/pitanja-i-odgovori-vezani-uz-zakon-o-fiskalizaciji-8031/8031" target="_blank">porezna-uprava.gov.hr</a> |
-| Popis informacijskih posrednika | <a href="https://porezna-uprava.gov.hr/hr/popis-informacijskih-posrednika/8019" target="_blank">porezna-uprava.gov.hr</a> |
-
-## Doprinos i rasprava
-
-Ova dokumentacija je otvorena za sve — **svatko može komentirati, predložiti ispravku ili dodati primjer**. Upravo zato koristimo GitHub.
-
-### Zašto GitHub?
-
-- **Besplatan** — za čitanje ne treba ni registracija, za komentiranje treba samo besplatna prijava koja kreira korisnički račun (2 min registracije)
-- **Transparentan** — svaka promjena je vidljiva s održavateljem i datumom, ništa se ne može tiho promijeniti
-- **Verzioniran** — svaka izmjena je trajno sačuvana, moguće je vidjeti cijelu povijest dokumenta
-- **Rasprave i glasanje** — <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Discussions</a> omogućuju strukturirane rasprave s emoji glasanjem (👍 👎 🤔)
-- **Koriste ga institucije, tvrtke i zakonodavci diljem svijeta**:
-  - <a href="https://github.com/MicrosoftDocs" target="_blank">Microsoft</a> — **cjelokupna** dokumentacija (learn.microsoft.com) je na GitHubu — 800+ repozitorija, svaki članak ima "Edit" gumb
-  - <a href="https://github.com/google" target="_blank">Google</a> — Android, Kubernetes, TensorFlow i ostala dokumentacija otvorena za doprinose
-  - <a href="https://github.com/ConnectingEurope/eInvoicing-EN16931" target="_blank">EU / EN16931</a> — specifikacije i schematron validatori za europski eRačun koje i mi koristimo
-  - <a href="https://github.com/IRS-Public/direct-file" target="_blank">IRS (američka porezna uprava)</a> — porezni softver i <a href="https://github.com/IRS-Public/fact-graph" target="_blank">strojno čitljivi porezni zakoni</a>
-  - <a href="https://github.com/DCCouncil/law-xml" target="_blank">Washington DC</a> — prvi zakonodavac koji je prihvatio izmjenu zakona od građanina kroz Pull Request
-
-Ako niste sigurni kako GitHub funkcionira, pogledajte **<a href="/eracun-fiskalizacija-datumi/github-vodic">Vodič za GitHub</a>** — objašnjeno je korak po korak, za potpune početnike. Tu se nalaze i <a href="/eracun-fiskalizacija-datumi/github-vodic#tko-još-koristi-github-za-zakone-i-propise" target="_blank">dodatni primjeri institucija</a> koje koriste GitHub.
-
-### Kako sudjelovati?
-
-| Što želite? | Gdje? |
-|-------------|-------|
-| Postaviti pitanje ili pokrenuti raspravu | <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Discussions</a> |
-| Prijaviti grešku u dokumentaciji | <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues" target="_blank">Issues</a> |
-| Predložiti izmjenu teksta | <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/pulls" target="_blank">Pull Requests</a> |
-| Glasati za prijedlog | Emoji reakcije (👍 👎) na postojećim raspravama |
-| Samo čitati | Upravo ste na pravom mjestu — registracija nije potrebna |
-| Dobivati obavijesti o promjenama na email | Kliknite **Watch** na <a href="https://github.com/dageci/eracun-fiskalizacija-datumi" target="_blank">GitHub repu</a> — možete odabrati sve promjene ili samo određene (npr. samo rasprave, samo izmjene dokumenta). Detaljne upute: <a href="/eracun-fiskalizacija-datumi/github-obavijesti">Vodič za obavijesti</a> |
-
-Detaljne upute: <a href="/eracun-fiskalizacija-datumi/kako-doprinijeti">CONTRIBUTING.md</a>
+Kompletni popis zakona, pravilnika i izvora: [Referenca — zakonski temelj](referenca#8-zakonski-temelj)
 
 ## Licenca
 
