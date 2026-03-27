@@ -595,6 +595,8 @@
       'BT-8': { label: 'Kod datuma PDV obveze', xml: 'cac:InvoicePeriod/cbc:DescriptionCode', req: 'Opcionalno', desc: 'Kod koji govori KAKO odrediti datum porezne obveze (3=IssueDate, 35=isporuka, 432=plaćanje)' },
       'BT-9': { label: 'Datum dospijeća plaćanja', xml: 'cbc:DueDate', req: 'Opcionalno', desc: 'Rok do kojeg kupac treba platiti račun' },
       'BT-72': { label: 'Stvarni datum isporuke', xml: 'cbc:ActualDeliveryDate', req: 'Opcionalno', desc: 'Kada je roba isporučena ili usluga obavljena' },
+      'BT-73/74': { label: 'Obračunsko razdoblje (početak/kraj)', xml: 'cbc:StartDate / cbc:EndDate', req: 'Opcionalno', desc: 'Za periodične račune (najam, pretplate, komunalije). Služi za razgraničenje troškova, NE utječe na datum PDV obveze.' },
+      'BT-73/BT-74': { label: 'Obračunsko razdoblje (početak/kraj)', xml: 'cbc:StartDate / cbc:EndDate', req: 'Opcionalno', desc: 'Za periodične račune (najam, pretplate, komunalije). Služi za razgraničenje troškova, NE utječe na datum PDV obveze.' },
       'BT-73': { label: 'Početak obračunskog razdoblja', xml: 'cbc:StartDate', req: 'Opcionalno', desc: 'Za periodične račune — samo informativan, NE utječe na PDV' },
       'BT-74': { label: 'Kraj obračunskog razdoblja', xml: 'cbc:EndDate', req: 'Opcionalno', desc: 'Za periodične račune — samo informativan, NE utječe na PDV' },
       'BT-25': { label: 'Referenca na prethodni račun', xml: 'cbc:ID (BillingReference)', req: 'Opcionalno', desc: 'Broj izvornog računa kod odobrenja/korekcije' },
