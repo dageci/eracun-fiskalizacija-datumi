@@ -271,7 +271,6 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ---
 
 ### 4.1 Obračun po izdavanju (čl. 30 Zakona o PDV-u) <span class="badge-izdavanje">Po izdavanju</span>
-<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 #### 4.1.1 Isporuka i račun isti dan <span class="badge-izdavanje">Po izdavanju</span>
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
@@ -583,7 +582,6 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > porezna obveza vezana za isporuku (čl. 30 st. 1).
 
 ### 4.2 Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) <span class="badge-naplata">Po naplati</span>
-<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 #### 4.2.1 Isporuka i račun isti mjesec <span class="badge-naplata">Po naplati</span>
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
