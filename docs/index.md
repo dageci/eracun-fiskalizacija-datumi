@@ -35,48 +35,41 @@ Kad pojedini primjeri i zaključci budu službeno potvrđeni ili opovrgnuti, ozn
 
 Obračun PDV-a po naplaćenoj naknadi (čl. 125.i) mora se označiti u eRačunu. Za to postoje **dva elementa** — `BT-8=432` iz EU norme i `HR-BT-15` iz HR proširenja — koji nose istu informaciju. Iz primjera u dokumentaciji vidljivo je da je HR-BT-15 uvijek prisutan (svojstvo obveznika), dok BT-8=432 nije uvijek primjenjiv (npr. CreditNote nema BT-8 u shemi, predujam koristi BT-7). No nigdje u specifikaciji nije eksplicitno objašnjeno moraju li se koristiti oba, samo jedan, ili je ovo nenamjerno dupliciranje.
 
-Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu dati konačan odgovor — su razlog nastanka ovog dokumenta. Detaljna analiza s XML primjerima: [sekcija 3.1](eracun-datumi-poreza-workflow#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
+Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu dati konačan odgovor — su razlog nastanka ovog dokumenta. Detaljna analiza s XML primjerima: [sekcija 3.1 — Pravila i mehanizmi](pravila#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
 
 ---
 
 ## Dokumentacija
 
-| Dokument | Opis |
-|----------|------|
-| [Datumi i porezna obveza — kompletni workflow](eracun-datumi-poreza-workflow) | Glavni dokument s dijagramima, primjerima i zakonskim temeljem |
-| [Prijedlozi za proširenje validatora](prijedlozi-validator) | Konkretna pravila koja bi validator mogao uhvatiti na razini posrednika |
+| Stranica | Opis | Tko čita |
+|----------|------|----------|
+| [Pravila i mehanizmi](pravila) | BT polja, BR-CO-03, flowcharti, kodovi za BT-8, koji datum čemu služi | Svi |
+| [Primjeri — izdavatelj](primjeri-izdavatelj) | 16 primjera s XML isječcima — koji element staviti za koji slučaj | Programeri, izdavatelji |
+| [Primjeri — primatelj](primjeri-primatelj) | 12 primjera — pretporez, rashod, skladišna primka + pretporez detaljno (čl. 57/60, CJEU) | Računovođe, primatelji |
+| [Referenca — XML, validacija, zakoni](referenca) | XML struktura, Schematron pravila, zakonski temelj | Programeri, svi |
+| [Europska usporedba](europska-usporedba) | Kako PL, DE, IT, FR, BE dokumentiraju eRačun — i što HR može naučiti | Svi |
+| [Prijedlozi za validator](prijedlozi-validator) | Pravila koja bi validator mogao uhvatiti na razini posrednika | Programeri, posrednici |
+| [Kompletni dokument (jedna stranica)](eracun-datumi-poreza-workflow) | Sve gore navedeno u jednom dokumentu — za čitanje od početka do kraja | Svi |
 
 ## Što pokriva dokumentacija?
 
-### Polja i pravila
-- **BT-2** / Datum izdavanja računa (`cbc:IssueDate`) — obavezno
-- **HR-BT-2** / Vrijeme izdavanja (`cbc:IssueTime`) — obavezno u HR
-- **BT-7** / Datum nastanka obveze PDV-a (`cbc:TaxPointDate`) — eksplicitni datum
-- **BT-8** / Kod datuma PDV obveze (`cbc:DescriptionCode`) — kod (3, 35, 432)
-- **BT-72** / Stvarni datum isporuke (`cbc:ActualDeliveryDate`)
-- **BT-73/BT-74** / Obračunsko razdoblje (`cbc:StartDate`/`cbc:EndDate`)
-- **HR-BT-15** / Obračun po naplaćenoj naknadi (`hrextac:HRObracunPDVPoNaplati`)
+### Pravila i mehanizmi → [Pravila](pravila)
 - **BR-CO-03** — BT-7 i BT-8 su međusobno isključivi (`flag="fatal"`)
+- Flowchart dijagrami za oba režima (po izdavanju i po naplati)
+- Kodovi za BT-8 (3, 35, 432) i otvoreno pitanje BT-8=432 vs HR-BT-15
 
-### Primjeri iz prakse — grupirani po načinu obračuna
+### Primjeri iz prakse — po perspektivi
 
-**Obračun po izdavanju (čl. 30):** <span class="badge-izdavanje">Po izdavanju</span>
-- Isporuka i račun isti dan, isporuka u drugom mjesecu, račun prije isporuke
-- Predujam / avansni račun, kontinuirana usluga s obračunskim razdobljem
-- BT-8=35 alternativa, odobrenje / CreditNote, svi datumi u različitim mjesecima
+**Izdavatelj** → [Primjeri — izdavatelj](primjeri-izdavatelj)
+- 10 primjera obračun po izdavanju (čl. 30) <span class="badge-izdavanje">Po izdavanju</span>
+- 6 primjera obračun po naplati (čl. 125.i) <span class="badge-naplata">Po naplati</span>
+- Usporedba svih 5 mehanizama za isti slučaj <span class="badge-usporedba">Usporedba</span>
 
-**Obračun po naplaćenoj naknadi (čl. 125.i):** <span class="badge-naplata">Po naplati</span>
-- Isporuka isti mjesec, isporuka u drugom mjesecu, račun prije isporuke
-- Predujam (edge case), kontinuirana usluga, odobrenje / CreditNote
-
-**Usporedba:** <span class="badge-usporedba">Usporedba</span>
-- Svih 5 mehanizama za isti poslovni slučaj u jednoj tablici
-
-### Dodatne teme
-- Razlika između datuma za PDV i datuma za priznavanje rashoda u knjigovodstvu
-- XML struktura — pozicija elemenata u UBL shemi
-- Schematron validacijska pravila (sva `flag="fatal"`)
-- Zakonski temelj — Zakon o PDV-u, Zakon o fiskalizaciji, EN16931
+**Primatelj** → [Primjeri — primatelj](primjeri-primatelj)
+- 8 primjera po izdavanju + 4 primjera po naplati — iz kupčeve perspektive
+- Za svaki primjer: pretporez, rashod, skladišna primka
+- Pretporez detaljno: dva uvjeta (čl. 57 + čl. 60), rok za PDV prijavu, CJEU sudska praksa
+- Vremensko razgraničenje troškova, algoritam za ERP
 
 ## Temelj dokumentacije i službeni izvori
 
