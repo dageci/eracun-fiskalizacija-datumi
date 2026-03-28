@@ -33,39 +33,20 @@ Cilj je da sva ta znanja budu **na jednom mjestu** — strukturirano, s primjeri
 
 ### Konkretan primjer: HR-BT-15 vs BT-8=432
 
-Obračun PDV-a po naplaćenoj naknadi (čl. 125.i) mora se označiti u eRačunu. Za to postoje **dva elementa** — `BT-8=432` iz EU norme i `HR-BT-15` iz HR proširenja — koji nose istu informaciju. Iz primjera u dokumentaciji vidljivo je da je HR-BT-15 uvijek prisutan (svojstvo obveznika), dok BT-8=432 nije uvijek primjenjiv (npr. CreditNote nema BT-8 u shemi, predujam koristi BT-7). No nigdje nije eksplicitno objašnjeno moraju li se koristiti oba, samo jedan, ili je ovo nenamjerno dupliciranje.
+Obračun PDV-a po naplaćenoj naknadi (čl. 125.i) mora se označiti u eRačunu. Za to postoje **dva elementa** — `BT-8=432` iz EU norme i `HR-BT-15` iz HR proširenja — koji nose istu informaciju. BT-7 i BT-8 **postoje** u UBL CreditNote XSD shemi kao opcionalni elementi, ali se u praksi za odobrenja ne koriste. No nigdje nije eksplicitno objašnjeno moraju li se koristiti oba, samo jedan, ili je ovo nenamjerno dupliciranje.
 
-**Upravo ovakva pitanja su razlog zašto je ovaj dokument nastao** — trebamo odgovor od radne skupine, Porezne uprave ili zakonodavca. Detaljna analiza: [sekcija 3.1](https://dageci.github.io/eracun-fiskalizacija-datumi/eracun-datumi-poreza-workflow#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
+**Upravo ovakva pitanja su razlog zašto je ovaj dokument nastao** — trebamo odgovor od radne skupine, Porezne uprave ili zakonodavca. Detaljna analiza: [sekcija 3.1 na stranici Pravila i mehanizmi](https://dageci.github.io/eracun-fiskalizacija-datumi/pravila#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
 
-### Dokumentacija pokriva:
+### Dokumentacija
 
-- **Datumska polja** u eRačunu (BT-2, BT-7, BT-8, BT-72, BT-73, BT-74, HR-BT-2, HR-BT-15) — što je što, kada se koristi, kako se međusobno isključuju
-- **Schematron validacijska pravila** — koja kombinacija prolazi validator, a koja ne (sva su `flag="fatal"`)
-- **Primjeri iz prakse** — konkretni scenariji s XML isječcima (isporuka u drugom mjesecu, predujam, odobrenje, kontinuirana usluga, obračun po naplati...)
-- **Razliku između datuma za PDV i datuma u knjigovodstvu** — jer to nije isto i često se miješa
-- **Zakonski temelj** — članci iz Zakona o PDV-u i Zakona o fiskalizaciji na koje se sve oslanja
-
-## Sadržaj
-
-### [eracun-datumi-poreza-workflow.md](eracun-datumi-poreza-workflow.md)
-
-Glavni dokument koji pokriva:
-
-1. **Pregled polja** — BT oznake, XML elementi, hrvatski nazivi, obaveznost
-2. **Ključno pravilo BR-CO-03** — BT-7 i BT-8 su međusobno isključivi
-   - Dozvoljene kombinacije
-   - Što određuje datum poreza, a što NE (BT-73/BT-74 su samo informativni!)
-   - Brojčanik računa i BT-2
-   - Flowchart dijagrami (Mermaid) za oba scenarija
-3. **Mogući kodovi za BT-8** — 3 (IssueDate), 35 (ActualDeliveryDate), 432 (datum plaćanja)
-4. **Primjeri iz prakse** — grupirani po načinu obračuna
-   - **4.1 Po izdavanju** (čl. 30): isti dan, drugi mjesec, račun prije isporuke, predujam, kontinuirana usluga, BT-8=35, odobrenje, svi datumi različiti
-   - **4.2 Po naplati** (čl. 125.i): isti mjesec, drugi mjesec, račun prije isporuke, predujam, kontinuirana usluga, odobrenje
-   - **4.3 Usporedba** svih 5 mehanizama za isti poslovni slučaj
-5. **Datumi na eRačunu vs. datumi u knjigovodstvu** — razlika između PDV-a, rashoda, pretporeza i poreza na dobit
-6. **XML struktura** — pozicija elemenata u UBL shemi
-7. **Validacijska pravila** — Schematron pravila (sva `flag="fatal"`)
-8. **Zakonski temelj** — Zakon o PDV-u, Zakon o fiskalizaciji, EN16931, HR CIUS 2025
+| Stranica | Opis |
+|----------|------|
+| [Pravila i mehanizmi](https://dageci.github.io/eracun-fiskalizacija-datumi/pravila) | BT polja, BR-CO-03, flowcharti, HR-BT-15 anomalija, koji datum čemu služi |
+| [Primjeri — izdavatelj](https://dageci.github.io/eracun-fiskalizacija-datumi/primjeri-izdavatelj) | 16 primjera s XML isječcima — koji element staviti za koji slučaj |
+| [Primjeri — primatelj](https://dageci.github.io/eracun-fiskalizacija-datumi/primjeri-primatelj) | 12 primjera — pretporez, rashod, skladišna primka + pretporez detaljno (čl. 57/60, CJEU) |
+| [Europska usporedba](https://dageci.github.io/eracun-fiskalizacija-datumi/europska-usporedba) | 23 EU zemlje — modeli razmjene, izvještavanje prema poreznoj |
+| [Prijedlozi za validator](https://dageci.github.io/eracun-fiskalizacija-datumi/prijedlozi-validator) | 16 pravila (HR-BR-GECI-F01–F08, W01–W08) |
+| [Referenca](https://dageci.github.io/eracun-fiskalizacija-datumi/referenca) | XML struktura, Schematron pravila, zakonski temelj |
 
 ## Temelj dokumentacije
 
