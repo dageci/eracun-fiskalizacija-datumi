@@ -44,6 +44,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <!-- BT-7: NEMA — datum isporuke = datum izdavanja -->
 <!-- BT-8: NEMA -->
 <!-- BT-72: NEMA — datum isporuke = datum izdavanja -->
+<!-- HR-BT-15: NEMA — obračun po izdavanju -->
 <cbc:IssueDate>2026-03-15</cbc:IssueDate>
 <cbc:IssueTime>14:30:00</cbc:IssueTime>
 ```
@@ -64,6 +65,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <!-- BT-2: Datum izdavanja računa -->
 <!-- BT-7: Datum nastanka obveze PDV-a = datum isporuke (čl. 30 st. 1) -->
 <!-- BT-72: Stvarni datum isporuke -->
+<!-- HR-BT-15: NEMA — obračun po izdavanju -->
 <cbc:IssueDate>2026-04-05</cbc:IssueDate>
 <cbc:IssueTime>09:15:00</cbc:IssueTime>
 
@@ -97,6 +99,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <!-- BT-7: NEMA — porezna obveza = datum izdavanja (čl. 30 st. 2) -->
 <!-- BT-8: NEMA — default ponašanje je upravo to što nam treba -->
 <!-- BT-72: Isporuka je nakon računa -->
+<!-- HR-BT-15: NEMA — obračun po izdavanju -->
 <cbc:IssueDate>2026-03-05</cbc:IssueDate>
 <cbc:IssueTime>10:00:00</cbc:IssueTime>
 
@@ -132,6 +135,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <!-- BT-7: Datum primitka predujma — to je datum porezne obveze (čl. 30 st. 5) -->
 <!-- BT-72: NEMA — isporuka se još nije dogodila -->
 <!-- Vrsta dokumenta: 386 = predujam -->
+<!-- HR-BT-15: NEMA — obračun po izdavanju -->
 <cbc:IssueDate>2026-02-10</cbc:IssueDate>
 <cbc:IssueTime>08:30:00</cbc:IssueTime>
 
@@ -172,6 +176,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <!-- BT-7: Datum nastanka obveze PDV-a = kraj obračunskog razdoblja -->
 <!-- BT-73/BT-74: Obračunsko razdoblje — informacija o periodu usluge -->
 <!-- BT-72: NEMA — kod kontinuiranih usluga nema jednog datuma isporuke -->
+<!-- HR-BT-15: NEMA — obračun po izdavanju -->
 <cbc:IssueDate>2026-04-05</cbc:IssueDate>
 <cbc:IssueTime>10:00:00</cbc:IssueTime>
 
@@ -199,6 +204,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ```xml
 <!-- BT-7: NEMA! -->
 <!-- BT-8: NEMA! -->
+<!-- HR-BT-15: NEMA — obračun po izdavanju -->
 <cbc:IssueDate>2026-04-05</cbc:IssueDate>
 <cbc:IssueTime>10:00:00</cbc:IssueTime>
 
@@ -231,6 +237,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 | Datum nastanka obveze PDV-a | BT-7 | **2026-02-15** |
 
 ```xml
+<!-- HR-BT-15: NEMA — obračun po izdavanju -->
 <cbc:IssueDate>2026-04-05</cbc:IssueDate>
 <cbc:TaxPointDate>2026-02-15</cbc:TaxPointDate>
 <cac:InvoicePeriod>
@@ -261,6 +268,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <!-- BT-7: NEMA — koristimo BT-8 umjesto eksplicitnog datuma -->
 <!-- BT-8 = 35: porezna obveza = BT-72 ActualDeliveryDate -->
 <!-- BT-72: Stvarni datum isporuke — sustav automatski koristi ovaj datum za PDV -->
+<!-- HR-BT-15: NEMA — obračun po izdavanju -->
 <cbc:IssueDate>2026-03-10</cbc:IssueDate>
 <cbc:IssueTime>09:00:00</cbc:IssueTime>
 
@@ -294,6 +302,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <!-- BT-7: Postoji u CreditNote shemi ali se za odobrenja obično ne koristi -->
 <!-- Vrsta dokumenta: 381 = odobrenje -->
 <!-- BT-25/BT-26: Referenca na izvorni račun -->
+<!-- HR-BT-15: NEMA — obračun po izdavanju -->
 <CreditNote>
   <cbc:IssueDate>2026-04-10</cbc:IssueDate>
   <cbc:IssueTime>12:00:00</cbc:IssueTime>
@@ -327,6 +336,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 ```xml
 <!-- BT-7: Eksplicitni datum nastanka obveze PDV-a = datum isporuke -->
 <!-- BT-72: Stvarni datum isporuke -->
+<!-- HR-BT-15: NEMA — obračun po izdavanju -->
 <cbc:IssueDate>2026-03-10</cbc:IssueDate>
 <cbc:IssueTime>09:00:00</cbc:IssueTime>
 
@@ -609,13 +619,13 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 > Pregled: roba isporučena 25.01., račun izdan 10.03., kupac plaća 15.04.
 
-| Mehanizam | Obračun | BT-7 | BT-8 | BT-72 | PDV u mjesecu | Zakonski temelj |
-|-----------|---------|:----:|:----:|:-----:|:-------------:|-----------------|
-| **Ni BT-7 ni BT-8** | <span class="badge-izdavanje">Po izdavanju</span> | — | — | 25.01. | **Ožujak** (datum računa) | Default |
-| **BT-7 eksplicitno** | <span class="badge-izdavanje">Po izdavanju</span> | 25.01. | — | 25.01. | **Siječanj** (datum isporuke) | Čl. 30, st. 1 |
-| **BT-8 = 35** | <span class="badge-izdavanje">Po izdavanju</span> | — | 35 | 25.01. | **Siječanj** (= BT-72) | Čl. 30, st. 1 |
-| **BT-8 = 432** | <span class="badge-naplata">Po naplati</span> | — | 432 | 25.01. | **Travanj** (datum plaćanja) | Čl. 125.i |
-| **BT-8 = 3** | <span class="badge-izdavanje">Po izdavanju</span> | — | 3 | 25.01. | **Ožujak** (= BT-2) | Redundantno |
+| Mehanizam | Obračun | BT-7 | BT-8 | BT-72 | HR-BT-15 | PDV u mjesecu | Zakonski temelj |
+|-----------|---------|:----:|:----:|:-----:|:--------:|:-------------:|-----------------|
+| **Ni BT-7 ni BT-8** | <span class="badge-izdavanje">Po izdavanju</span> | — | — | 25.01. | — | **Ožujak** (datum računa) | Default |
+| **BT-7 eksplicitno** | <span class="badge-izdavanje">Po izdavanju</span> | 25.01. | — | 25.01. | — | **Siječanj** (datum isporuke) | Čl. 30, st. 1 |
+| **BT-8 = 35** | <span class="badge-izdavanje">Po izdavanju</span> | — | 35 | 25.01. | — | **Siječanj** (= BT-72) | Čl. 30, st. 1 |
+| **BT-8 = 432** | <span class="badge-naplata">Po naplati</span> | — | 432 | 25.01. | DA | **Travanj** (datum plaćanja) | Čl. 125.i |
+| **BT-8 = 3** | <span class="badge-izdavanje">Po izdavanju</span> | — | 3 | 25.01. | — | **Ožujak** (= BT-2) | Redundantno |
 
 > Ista roba, isti datumi — pet različitih PDV tretmana ovisno o odabiru BT-7/BT-8.
 > U praksi se za jednokratne isporuke koristi BT-7 (eksplicitno), a BT-8=432 za obračun po naplati.

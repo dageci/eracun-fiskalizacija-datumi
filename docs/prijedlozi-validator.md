@@ -122,6 +122,91 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
 
 ---
 
+## Prijedlog 4: Ako HR-BT-15 postoji bez BT-7 i bez BT-8=432 (osim CreditNote)
+
+**Što**: Ako eRačun sadrži `HRObracunPDVPoNaplati` (HR-BT-15), ali nema ni `TaxPointDate` (BT-7) ni `DescriptionCode = 432` (BT-8), i nije kreditna nota (381), izdati **upozorenje**.
+
+**Zašto**: HR-BT-15 bez mehanizma za datum PDV-a znači da se primjenjuje default BT-2, što kontradiktira obračunu po naplati. Ako je obveznik stavio HR-BT-15, očekuje se da koristi BT-8=432 ili barem BT-7 (kod predujma). Bez ijednog, PDV se računa po datumu izdavanja — što je vjerojatno greška.
+
+**Tip pravila**: `flag="warning"` — nije nužno greška (možda izdavatelj namjerno koristi BT-2), ali je neuobičajeno i vrijedi upozoriti.
+
+**Schematron primjer**:
+```xml
+<assert test="not(
+  exists(ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/
+    hrextac:HRFISK20Data/hrextac:HRObracunPDVPoNaplati) and
+  not(exists(cbc:TaxPointDate)) and
+  not(cac:InvoicePeriod/cbc:DescriptionCode = '432') and
+  not(cbc:InvoiceTypeCode = '381'))"
+  flag="warning"
+  id="HR-BR-NEW-04">
+  HR-BT-15 (obračun po naplati) je prisutan, ali nema ni BT-7 ni BT-8=432.
+  PDV se računa po datumu izdavanja (BT-2) — je li to namjerno?
+</assert>
+```
+
+**Dokumentacija**: Vidi [pravila.md sekcija 3.1 tablica scenarija](pravila#31-scenariji-prema-vrsti-transakcije) — pregled kombinacija datumskih polja za razne scenarije.
+
+---
+
+## Prijedlog 5: Ako HR-BT-15 postoji i BT-8 postoji ali NIJE 432
+
+**Što**: Ako eRačun sadrži `HRObracunPDVPoNaplati` (HR-BT-15), a istovremeno `DescriptionCode` (BT-8) postoji ali **nije** 432, odbiti kao **fatal**.
+
+**Zašto**: BT-8=3 ili BT-8=35 kontradiktira HR-BT-15. Kod 3 znači "datum izdavanja", kod 35 znači "datum isporuke" — oba su nespojiva s obračunom po naplati koji zahtijeva kod 432 ("datum plaćanja"). Ovo je jednoznačna kontradikcija između dva polja u istom dokumentu.
+
+**Tip pravila**: `flag="fatal"` — jednoznačna kontradikcija, nema edge case-ova.
+
+**Schematron primjer**:
+```xml
+<assert test="not(
+  exists(ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/
+    hrextac:HRFISK20Data/hrextac:HRObracunPDVPoNaplati) and
+  exists(cac:InvoicePeriod/cbc:DescriptionCode) and
+  not(cac:InvoicePeriod/cbc:DescriptionCode = '432'))"
+  flag="fatal"
+  id="HR-BR-NEW-05">
+  HR-BT-15 (obračun po naplati) je prisutan, ali BT-8 nije 432.
+  BT-8 kod mora biti 432 (datum plaćanja) ili ne smije postojati.
+</assert>
+```
+
+---
+
+## Prijedlog 6: Ako BT-8=35 postoji, BT-72 mora postojati
+
+**Što**: Ako eRačun sadrži `InvoicePeriod/DescriptionCode = 35` (PDV po datumu isporuke), tada `Delivery/ActualDeliveryDate` (BT-72) **mora postojati**.
+
+**Zašto**: BT-8=35 znači "PDV po datumu isporuke" ali bez BT-72 sustav ne zna koji je datum isporuke. Primatelj (i knjigovodstvo) ne može odrediti u koji mjesec pada porezna obveza. Bez BT-72, jedina alternativa je BT-2 (datum izdavanja) — ali tada je BT-8=35 besmislen jer isto postiže i BT-8=3.
+
+**Tip pravila**: `flag="fatal"` — bez BT-72, BT-8=35 je neizvršiv.
+
+**Schematron primjer**:
+```xml
+<assert test="not(cac:InvoicePeriod/cbc:DescriptionCode = '35') or
+  exists(cac:Delivery/cbc:ActualDeliveryDate)"
+  flag="fatal"
+  id="HR-BR-NEW-06">
+  BT-8 = 35 (datum poreza = datum isporuke), ali BT-72 (ActualDeliveryDate)
+  ne postoji. Navedite datum isporuke ili promijenite BT-8 kod.
+</assert>
+```
+
+---
+
+## Pregled svih prijedloga
+
+| ID | Pravilo | Tip | Status |
+|----|---------|-----|--------|
+| **HR-BR-NEW-01** | Ako BT-8=432, zahtijevaj HR-BT-15 | `fatal` | Prijedlog |
+| **HR-BR-NEW-02** | Ako HR-BT-15 postoji, BT-7 ne smije postojati (osim predujam 386) | `fatal` | Prijedlog |
+| **HR-BR-NEW-03** | InvoicePeriod ima datume ali nema BT-7 ni BT-8 | `warning` | Prijedlog |
+| **HR-BR-NEW-04** | HR-BT-15 postoji bez BT-7 i bez BT-8=432 (osim CreditNote) | `warning` | Prijedlog |
+| **HR-BR-NEW-05** | HR-BT-15 postoji i BT-8 postoji ali nije 432 | `fatal` | Prijedlog |
+| **HR-BR-NEW-06** | Ako BT-8=35, BT-72 mora postojati | `fatal` | Prijedlog |
+
+---
+
 ## Što NE može u validator
 
 Neke provjere su previše kontekstualne i validator ih ne može izvesti jer ne poznaje poslovni kontekst:

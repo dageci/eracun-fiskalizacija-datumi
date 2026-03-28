@@ -106,7 +106,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 
 | | BT-7 | BT-8 | Rezultat | Kako se određuje datum porezne obveze |
 |:---:|:---:|:---:|:---:|:---|
-| 1. | — | — | **Ispravno** | Porezna obveza = BT-2 / Datum izdavanja (`cbc:IssueDate`). **Najčešći slučaj.** |
+| 1. | — | — | **Ispravno** | Porezna obveza = BT-2 / Datum izdavanja (`cbc:IssueDate`). **Najčešći slučaj.** (osim ako je prisutan HR-BT-15 — tada PDV po plaćanju) |
 | 2. | **DA** | — | **Ispravno** | Porezna obveza = eksplicitni datum u BT-7 (`cbc:TaxPointDate`) |
 | 3. | — | **DA** | **Ispravno** | Porezna obveza se određuje prema kodu u BT-8 (vidi sekciju 3) |
 | 4. | **DA** | **DA** | **GREŠKA!** | Schematron validator **ODBIJA** račun (BR-CO-03) |
@@ -173,6 +173,8 @@ flowchart TD
 > — Čl. 30, st. 1 Zakona o PDV-u
 >
 > Datum poreza je poznat u trenutku izdavanja računa i jednak je **datumu isporuke**.
+
+> **Preduvjet**: HR-BT-15 NIJE prisutan u eRačunu. Ako jest, vidi [Slučaj 2](#slučaj-2-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u).
 
 ```mermaid
 flowchart TD
@@ -285,7 +287,7 @@ flowchart TD
 |:---:|----------|------------------|-----------------|
 | **3** | Datum izdavanja | BT-2 / Datum izdavanja računa (`cbc:IssueDate`) | Redundantno — isto kao default kad nema ni BT-7 ni BT-8 |
 | **35** | Datum isporuke | BT-72 / Stvarni datum isporuke (`cbc:ActualDeliveryDate`) | Kad želimo automatski vezati poreznu obvezu na datum isporuke |
-| **432** | Datum plaćanja | Datum kad kupac plati račun | **Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u)** |
+| **432** | Datum plaćanja | Datum kad kupac plati račun | **Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u)**. U praksi uvijek uz HR-BT-15 |
 
 ### 3.1 BT-8=432 i HR-BT-15 — obračun po naplati u dva elementa
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>

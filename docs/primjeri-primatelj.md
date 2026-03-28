@@ -73,7 +73,7 @@ Izdavateljeva perspektiva: [4.1.1](primjeri-izdavatelj#411-isporuka-i-račun-ist
 |:---:|:---:|:---:|
 | **Ožujak 2026.** | **Ožujak 2026.** | **15.03.2026.** |
 
-> **Najjednostavniji slučaj** — svi datumi su u istom mjesecu. Pretporez, rashod i primka idu u ožujak. Nema BT-7 ni BT-8, pa je datum porezne obveze = BT-2 = 15.03. Kupac je primio račun isti dan, obveza PDV-a je nastala, oba uvjeta za pretporez su ispunjena (čl. 57 + čl. 60).
+> **Najjednostavniji slučaj** — svi datumi su u istom mjesecu. Pretporez, rashod i primka idu u ožujak. Nema BT-7 ni BT-8, pa je datum porezne obveze = BT-2 = 15.03. Kupac je primio račun isti dan, obveza PDV-a je nastala, oba uvjeta za pretporez su ispunjena (čl. 57 + čl. 60). HR-BT-15 nije prisutan (obračun po izdavanju).
 
 ---
 
@@ -97,7 +97,7 @@ Izdavateljeva perspektiva: [4.1.2](primjeri-izdavatelj#412-isporuka-u-drugom-mje
 
 > **Pretporez ide u ožujak**, ne u travanj! Obveza PDV-a nastala je 28.03. (BT-7 = datum isporuke). Kupac je primio račun 05.04., ali rok za PDV prijavu za ožujak je 30.04.2026. — budući da je račun stigao **prije roka**, kupac može uključiti pretporez u prijavu za ožujak (čl. 57 + čl. 60, vidi [sekciju 5.3](#pretporez-pretporez-dva-uvjeta-i-nijanse-u-praksi)).
 >
-> Rashod se također priznaje u ožujku po BT-72 (datum isporuke = datum nastanka poslovnog događaja, HSFI 16).
+> Rashod se također priznaje u ožujku po BT-72 (datum isporuke = datum nastanka poslovnog događaja, HSFI 16). HR-BT-15 nije prisutan (obračun po izdavanju).
 
 ---
 
@@ -125,7 +125,7 @@ Izdavateljeva perspektiva: [4.1.3](primjeri-izdavatelj#413-račun-izdan-prije-is
 > - **Rashod: travanj** — rashod se priznaje po načelu nastanka događaja (HSFI 16), a roba je stvarno isporučena 05.04. (BT-72). Trošak pripada travnju bez obzira na datum računa.
 > - **Primka: 05.04.** — roba fizički stiže u skladište 05.04., tada se knjiži primka.
 >
-> **Za ERP sustav**: automatsko knjiženje mora razdvojiti PDV datum (BT-2 = 25.03.) od datuma rashoda (BT-72 = 05.04.).
+> **Za ERP sustav**: automatsko knjiženje mora razdvojiti PDV datum (BT-2 = 25.03.) od datuma rashoda (BT-72 = 05.04.). HR-BT-15 nije prisutan (obračun po izdavanju).
 
 ---
 
@@ -153,7 +153,7 @@ Izdavateljeva perspektiva: [4.1.4](primjeri-izdavatelj#414-predujam-avansni-rač
 > - **Rashod**: ne priznaje se — predujam se knjiži kao dano sredstvo (aktiva), ne kao trošak. Tek po isporuci (konačni račun) se prebacuje u rashod.
 > - **Primka**: nema — roba još nije stigla.
 >
-> **Prepoznavanje predujma u XML-u**: `InvoiceTypeCode = 386` i nepostojanje BT-72 (`ActualDeliveryDate`).
+> **Prepoznavanje predujma u XML-u**: `InvoiceTypeCode = 386` i nepostojanje BT-72 (`ActualDeliveryDate`). HR-BT-15 nije prisutan (obračun po izdavanju).
 
 ---
 
@@ -182,7 +182,7 @@ Izdavateljeva perspektiva: [4.1.5](primjeri-izdavatelj#415-kontinuirana-usluga--
 > - **Rashod: vremensko razgraničenje** — usluga je trajala od 01.01. do 31.03. (BT-73/BT-74). Prema HSFI 16, trošak se priznaje u razdoblju kad je usluga obavljena. Ukupni iznos se raspodjeljuje na siječanj, veljaču i ožujak (1/3 + 1/3 + 1/3) ili prema drugoj prikladnoj metodi.
 > - **Primka**: nema — ovo je usluga, ne fizička roba.
 >
-> **Za ERP sustav**: BT-73/BT-74 daju informaciju za automatsko vremensko razgraničenje troškova. Bez tih polja, ERP bi trošak knjižio u mjesec računa (travanj) — što bi bilo krivo.
+> **Za ERP sustav**: BT-73/BT-74 daju informaciju za automatsko vremensko razgraničenje troškova. Bez tih polja, ERP bi trošak knjižio u mjesec računa (travanj) — što bi bilo krivo. HR-BT-15 nije prisutan (obračun po izdavanju).
 
 ---
 
@@ -209,7 +209,7 @@ Izdavateljeva perspektiva: [4.1.6](primjeri-izdavatelj#416-bt-835--automatska-ve
 > - **Pretporez: siječanj** — BT-8=35 upućuje sustav da koristi BT-72 = 25.01. Račun je stigao 10.03. — ali rok za PDV prijavu za siječanj je bio 28.02. Ako je taj rok **već prošao**, pretporez ide u **ožujak** (razdoblje primitka računa), ne u siječanj! Vidi [sekciju 5.3](#pretporez-pretporez-dva-uvjeta-i-nijanse-u-praksi).
 > - **Rashod: siječanj** — BT-72 = 25.01., roba je isporučena u siječnju.
 >
-> **Važno za primatelja**: Kad je BT-8=35, primatelj NE treba tražiti BT-7 — datum poreza se automatski čita iz BT-72. Rezultat je isti kao kad izdavatelj koristi BT-7 eksplicitno (primjer P.1.2), samo je mehanizam drugačiji.
+> **Važno za primatelja**: Kad je BT-8=35, primatelj NE treba tražiti BT-7 — datum poreza se automatski čita iz BT-72. Rezultat je isti kao kad izdavatelj koristi BT-7 eksplicitno (primjer P.1.2), samo je mehanizam drugačiji. HR-BT-15 nije prisutan (obračun po izdavanju).
 
 ---
 
@@ -237,7 +237,7 @@ Izdavateljeva perspektiva: [4.1.7](primjeri-izdavatelj#417-odobrenje--creditnote
 > - **Rashod: travanj** — ispravak rashoda se također knjiži u travnju (datum primitka odobrenja).
 > - **Skladište**: Ako se radi o povratu robe, kupac knjiži izdatnicu (izlaz iz skladišta). Ako je odobrenje za popust/razliku u cijeni, nema skladišnog prometa.
 >
-> **Prepoznavanje u XML-u**: Korijen dokumenta je `<CreditNote>`, ne `<Invoice>`, i tip je 381.
+> **Prepoznavanje u XML-u**: Korijen dokumenta je `<CreditNote>`, ne `<Invoice>`, i tip je 381. HR-BT-15 nije prisutan (obračun po izdavanju).
 
 ---
 
@@ -265,7 +265,7 @@ Izdavateljeva perspektiva: [4.1.8](primjeri-izdavatelj#418-svi-datumi-u-različi
 > - **Rashod: siječanj** — BT-72 = 25.01., roba je isporučena u siječnju. Po HSFI 16, trošak pripada siječnju.
 > - **Primka: 25.01.** — roba je fizički zaprimljena u siječnju.
 >
-> **Za ERP sustav**: ovo zahtijeva **tri različita datuma** u istom dokumentu — PDV u ožujku, rashod u siječnju, primka 25.01. Automatsko knjiženje mora sve tri razlikovati.
+> **Za ERP sustav**: ovo zahtijeva **tri različita datuma** u istom dokumentu — PDV u ožujku, rashod u siječnju, primka 25.01. Automatsko knjiženje mora sve tri razlikovati. HR-BT-15 nije prisutan (obračun po izdavanju).
 
 ---
 
@@ -390,11 +390,15 @@ Za automatsko knjiženje primljenog eRačuna, ERP sustav treba izvršiti sljede�
 ### Korak 1: Odredi datum nastanka porezne obveze
 
 ```
-AKO postoji BT-7 (TaxPointDate)     → datum_poreza = BT-7
+AKO postoji HR-BT-15 (HRObracunPDVPoNaplati):
+  → režim = "po naplati", datum_poreza = datum_plaćanja (čl. 125.i)
+  → IZUZETAK: predujam (InvoiceTypeCode=386) → datum_poreza = BT-7
+INAČE AKO postoji BT-7 (TaxPointDate)     → datum_poreza = BT-7
 INAČE AKO postoji BT-8:
   AKO BT-8 = 3                      → datum_poreza = BT-2 (IssueDate)
   AKO BT-8 = 35                     → datum_poreza = BT-72 (ActualDeliveryDate)
-  AKO BT-8 = 432                    → datum_poreza = datum_placanja (odgođeno!)
+  AKO BT-8 = 432                    → datum_poreza = datum_plaćanja (ovo bi trebalo
+                                       biti pokriveno HR-BT-15 gore)
 INAČE                                → datum_poreza = BT-2 (IssueDate)
 ```
 
@@ -507,20 +511,20 @@ Relevantne presude:
 
 ## Usporedna tablica svih primjera
 
-| Primjer | Način obračuna | Datum računa | Datum isporuke | Datum plaćanja | Pretporez | Rashod | Primka |
-|---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| **P.1.1** | <span class="badge-izdavanje">Izdavanje</span> | 15.03. | 15.03. | — | Ožujak | Ožujak | 15.03. |
-| **P.1.2** | <span class="badge-izdavanje">Izdavanje</span> | 05.04. | 28.03. | — | Ožujak | Ožujak | 28.03. |
-| **P.1.3** | <span class="badge-izdavanje">Izdavanje</span> | 25.03. | 05.04. | — | Ožujak | **Travanj** | 05.04. |
-| **P.1.4** | <span class="badge-izdavanje">Izdavanje</span> | 10.02. | — | 05.02. | Veljača | — | — |
-| **P.1.5** | <span class="badge-izdavanje">Izdavanje</span> | 05.04. | — | — | Ožujak | **Q1 (razgraničenje)** | — |
-| **P.1.6** | <span class="badge-izdavanje">Izdavanje</span> | 10.03. | 25.01. | — | Siječanj* | Siječanj | 25.01. |
-| **P.1.7** | <span class="badge-izdavanje">Izdavanje</span> | 10.04. | — | — | Travanj | Travanj | — |
-| **P.1.8** | <span class="badge-izdavanje">Izdavanje</span> | 10.03. | 25.01. | — | Siječanj ili ožujak* | Siječanj | 25.01. |
-| **P.2.1** | <span class="badge-naplata">Naplata</span> | 20.03. | 10.03. | **15.05.** | **Maj** | Ožujak | 10.03. |
-| **P.2.2** | <span class="badge-naplata">Naplata</span> | 10.03. | 25.01. | **15.04.** | **Travanj** | Siječanj | 25.01. |
-| **P.2.3** | <span class="badge-naplata">Naplata</span> | 10.02. | — | 05.02. | Veljača | — | — |
-| **P.2.4** | <span class="badge-naplata">Naplata</span> | 10.04. | — | — | Travanj | Travanj | — |
+| Primjer | Način obračuna | HR-BT-15 | Datum računa | Datum isporuke | Datum plaćanja | Pretporez | Rashod | Primka |
+|---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| **P.1.1** | <span class="badge-izdavanje">Izdavanje</span> | — | 15.03. | 15.03. | — | Ožujak | Ožujak | 15.03. |
+| **P.1.2** | <span class="badge-izdavanje">Izdavanje</span> | — | 05.04. | 28.03. | — | Ožujak | Ožujak | 28.03. |
+| **P.1.3** | <span class="badge-izdavanje">Izdavanje</span> | — | 25.03. | 05.04. | — | Ožujak | **Travanj** | 05.04. |
+| **P.1.4** | <span class="badge-izdavanje">Izdavanje</span> | — | 10.02. | — | 05.02. | Veljača | — | — |
+| **P.1.5** | <span class="badge-izdavanje">Izdavanje</span> | — | 05.04. | — | — | Ožujak | **Q1 (razgraničenje)** | — |
+| **P.1.6** | <span class="badge-izdavanje">Izdavanje</span> | — | 10.03. | 25.01. | — | Siječanj* | Siječanj | 25.01. |
+| **P.1.7** | <span class="badge-izdavanje">Izdavanje</span> | — | 10.04. | — | — | Travanj | Travanj | — |
+| **P.1.8** | <span class="badge-izdavanje">Izdavanje</span> | — | 10.03. | 25.01. | — | Siječanj ili ožujak* | Siječanj | 25.01. |
+| **P.2.1** | <span class="badge-naplata">Naplata</span> | DA | 20.03. | 10.03. | **15.05.** | **Maj** | Ožujak | 10.03. |
+| **P.2.2** | <span class="badge-naplata">Naplata</span> | DA | 10.03. | 25.01. | **15.04.** | **Travanj** | Siječanj | 25.01. |
+| **P.2.3** | <span class="badge-naplata">Naplata</span> | DA | 10.02. | — | 05.02. | Veljača | — | — |
+| **P.2.4** | <span class="badge-naplata">Naplata</span> | DA | 10.04. | — | — | Travanj | Travanj | — |
 
 \* Ovisi o tome je li račun stigao prije roka za PDV prijavu — vidi [Pretporez: dva uvjeta](#pretporez-dva-uvjeta-i-nijanse-u-praksi) na ovoj stranici.
 
