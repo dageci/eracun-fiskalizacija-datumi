@@ -228,9 +228,11 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 ---
 
-## Detalji novih prijedloga (F05–F08, W03–W08)
+## Detalji novih prijedloga
 
-### Prijedlog 7: BT-73 mora biti <= BT-74
+### Greške — `fatal` (račun se ODBIJA)
+
+#### Prijedlog 7: BT-73 mora biti <= BT-74
 
 **Što**: Ako obračunsko razdoblje ima oba datuma, početak mora biti prije ili jednak kraju.
 
@@ -251,7 +253,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 ---
 
-### Prijedlog 8: Vrijeme izdavanja mora biti validno
+#### Prijedlog 8: Vrijeme izdavanja mora biti validno
 
 **Što**: HR-BR-2 provjerava format `hh:mm:ss` regexom, ali dozvoljava `99:99:99`. Treba provjera raspona.
 
@@ -276,7 +278,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 ---
 
-### Prijedlog 9: BT-8 dozvoljeni kodovi
+#### Prijedlog 9: BT-8 dozvoljeni kodovi
 
 **Što**: BT-8 (DescriptionCode) smije biti samo 3, 35 ili 432 prema UNTDID 2005.
 
@@ -298,7 +300,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 ---
 
-### Prijedlog 10: Predujam po naplati mora imati BT-7
+#### Prijedlog 10: Predujam po naplati mora imati BT-7
 
 **Što**: Predujam (386) s HR-BT-15 mora imati BT-7 jer je datum plaćanja poznat (kupac je već platio).
 
@@ -324,7 +326,9 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 ---
 
-### Prijedlog 11: DueDate prije IssueDate
+### Upozorenja — `warning` (račun PROLAZI ali je sumnjiv)
+
+#### Prijedlog 11: DueDate prije IssueDate
 
 **Što**: Datum dospijeća (BT-9) je prije datuma izdavanja (BT-2).
 
@@ -344,7 +348,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 ---
 
-### Prijedlog 12: BT-7 izvan obračunskog razdoblja
+#### Prijedlog 12: BT-7 izvan obračunskog razdoblja
 
 **Što**: Datum poreza (BT-7) je izvan raspona obračunskog razdoblja (BT-73/BT-74).
 
@@ -367,7 +371,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 ---
 
-### Prijedlog 13: HR-BT-15 nestandardni tekst
+#### Prijedlog 13: HR-BT-15 nestandardni tekst
 
 **Što**: Sadržaj HR-BT-15 nije "Obračun prema naplaćenoj naknadi".
 
@@ -389,7 +393,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 ---
 
-### Prijedlog 14: Predujam s datumom isporuke
+#### Prijedlog 14: Predujam s datumom isporuke
 
 **Što**: Predujam (386) ima BT-72 (ActualDeliveryDate) — isporuka se još nije dogodila.
 
@@ -409,7 +413,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 ---
 
-### Prijedlog 15: Predujam po naplati s BT-8=432
+#### Prijedlog 15: Predujam po naplati s BT-8=432
 
 **Što**: Predujam (386) s HR-BT-15 koristi BT-8=432 umjesto BT-7.
 
@@ -433,7 +437,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 ---
 
-### Prijedlog 16: BT-8=3 je redundantan
+#### Prijedlog 16: BT-8=3 je redundantan
 
 **Što**: BT-8=3 znači "datum poreza = datum izdavanja" — isto kao default kad nema ni BT-7 ni BT-8.
 
