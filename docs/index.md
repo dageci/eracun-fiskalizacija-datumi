@@ -33,7 +33,7 @@ Kad pojedini primjeri i zaključci budu službeno potvrđeni ili opovrgnuti, ozn
 
 ## Konkretan primjer: zašto ovo postoji
 
-Obračun PDV-a po naplaćenoj naknadi (čl. 125.i) mora se označiti u eRačunu. Za to postoje **dva elementa** — `BT-8=432` iz EU norme i `HR-BT-15` iz HR proširenja — koji nose istu informaciju. Iz primjera u dokumentaciji vidljivo je da je HR-BT-15 uvijek prisutan (svojstvo obveznika), dok BT-8=432 nije uvijek primjenjiv (npr. CreditNote nema BT-8 u shemi, predujam koristi BT-7). No nigdje u specifikaciji nije eksplicitno objašnjeno moraju li se koristiti oba, samo jedan, ili je ovo nenamjerno dupliciranje.
+Obračun PDV-a po naplaćenoj naknadi (čl. 125.i) mora se označiti u eRačunu. Za to postoje **dva elementa** — `BT-8=432` iz EU norme i `HR-BT-15` iz HR proširenja — koji nose istu informaciju. Iz primjera u dokumentaciji vidljivo je da je HR-BT-15 uvijek prisutan (svojstvo obveznika), dok BT-8=432 nije uvijek korišten u praksi (npr. predujam koristi BT-7 umjesto BT-8). Napomena: i BT-7 i BT-8 **postoje** u UBL CreditNote XSD shemi kao opcionalni elementi, ali se u primjerima iz specifikacije za odobrenja ne koriste — za CreditNote po naplati, BT-8=432 bi se teoretski mogao koristiti, što znači da HR-BT-15 nije nužno jedini signal za obračun po naplati. No nigdje u specifikaciji nije eksplicitno objašnjeno moraju li se koristiti oba, samo jedan, ili je ovo nenamjerno dupliciranje.
 
 Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu dati konačan odgovor — su razlog nastanka ovog dokumenta. Detaljna analiza s XML primjerima: [sekcija 3.1 na stranici Pravila i mehanizmi](pravila#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
 

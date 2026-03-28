@@ -233,7 +233,7 @@ Izdavateljeva perspektiva: [4.1.7](primjeri-izdavatelj#417-odobrenje--creditnote
 
 > **Primatelj mora ispraviti pretporez** u mjesecu primitka odobrenja.
 >
-> - **Pretporez: travanj** — BT-7 ne postoji u UBL CreditNote shemi. Datum porezne obveze = BT-2 = 10.04. Kupac u PDV prijavi za travanj smanjuje pretporez za iznos odobrenja.
+> - **Pretporez: travanj** — BT-7 i BT-8 postoje u UBL CreditNote XSD shemi kao opcionalni elementi, ali se za odobrenja u praksi ne koriste. Datum porezne obveze = BT-2 = 10.04. Kupac u PDV prijavi za travanj smanjuje pretporez za iznos odobrenja.
 > - **Rashod: travanj** — ispravak rashoda se također knjiži u travnju (datum primitka odobrenja).
 > - **Skladište**: Ako se radi o povratu robe, kupac knjiži izdatnicu (izlaz iz skladišta). Ako je odobrenje za popust/razliku u cijeni, nema skladišnog prometa.
 >
@@ -375,7 +375,7 @@ Izdavateljeva perspektiva: [4.2.6](primjeri-izdavatelj#426-odobrenje--creditnote
 
 > **Primatelj prima CreditNote od obveznika na sustavu po naplati** — treba stornirati dio pretporeza.
 >
-> - **Pretporez: travanj** — ispravak pretporeza se knjiži u mjesecu primitka odobrenja (10.04.). BT-7 ne postoji u CreditNote shemi.
+> - **Pretporez: travanj** — ispravak pretporeza se knjiži u mjesecu primitka odobrenja (10.04.). BT-7 i BT-8 postoje u CreditNote XSD shemi kao opcionalni elementi, ali se za odobrenja u praksi ne koriste — BT-2 služi kao default datum poreza.
 > - **Rashod: travanj** — korekcija rashoda u mjesecu primitka.
 > - **HR-BT-15 je prisutan** i u CreditNote jer je to svojstvo obveznika.
 >

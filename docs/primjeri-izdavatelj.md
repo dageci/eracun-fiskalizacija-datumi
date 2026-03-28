@@ -281,7 +281,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 > Odobrenje (knjižno odobrenje) umanjuje iznos prethodno izdanog računa.
-> U UBL CreditNote shemi **BT-7 (`cbc:TaxPointDate`) ne postoji**.
+> U UBL CreditNote XSD shemi BT-7 (`cbc:TaxPointDate`) i BT-8 (`cac:InvoicePeriod/cbc:DescriptionCode`) **postoje kao opcionalni elementi**, ali se za odobrenja u praksi obično ne koriste — porezna korekcija prati datum izdavanja odobrenja (BT-2).
 
 | Podatak | BT polje | XML element | Vrijednost |
 |---------|----------|-------------|-----------|
@@ -291,7 +291,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 ```xml
 <!-- Korijen: CreditNote, NE Invoice -->
-<!-- BT-7: NE POSTOJI u CreditNote shemi! -->
+<!-- BT-7: Postoji u CreditNote shemi ali se za odobrenja obično ne koristi -->
 <!-- Vrsta dokumenta: 381 = odobrenje -->
 <!-- BT-25/BT-26: Referenca na izvorni račun -->
 <CreditNote>
@@ -309,8 +309,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 </CreditNote>
 ```
 > PDV korekcija ide u **travanj** (datum izdavanja odobrenja).
-> BT-7 ne postoji u UBL CreditNote shemi — nema mogućnosti eksplicitnog datuma poreza.
-> BT-8 se također ne koristi za odobrenja.
+> BT-7 i BT-8 **postoje** u UBL CreditNote XSD shemi kao opcionalni elementi, ali se za odobrenja u praksi ne koriste — datum poreza za korekciju je BT-2 (datum izdavanja odobrenja).
 > Referenca na izvorni račun (BT-25/BT-26) povezuje odobrenje s originalnim računom.
 >
 > **Napomena**: U praksi, knjigovođa odlučuje u koje porezno razdoblje ulazi
@@ -564,7 +563,8 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 | Datum izvornog računa | BT-26 | `cbc:IssueDate` (BillingReference) | 2026-03-15 |
 
 ```xml
-<!-- BT-7: NE POSTOJI u CreditNote shemi -->
+<!-- BT-7: Postoji u CreditNote shemi ali se za odobrenja obično ne koristi -->
+<!-- BT-8=432: Mogao bi se koristiti za CreditNote po naplati (vidi napomenu ispod) -->
 <!-- Korijen: CreditNote, NE Invoice -->
 <CreditNote>
   <cbc:IssueDate>2026-04-10</cbc:IssueDate>
@@ -593,13 +593,16 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
   </ext:UBLExtensions>
 </CreditNote>
 ```
-> BT-7 ne postoji u UBL CreditNote shemi, ali **HR-BT-15 je obavezan** jer je obveznik
+> BT-7 i BT-8 **postoje** u UBL CreditNote XSD shemi kao opcionalni elementi. Za CreditNote po naplati,
+> BT-8=432 bi se teoretski mogao koristiti kao signal obračuna po naplati — što znači da HR-BT-15
+> **nije jedini** mogući signal za obračun po naplati u CreditNote. Ipak, **HR-BT-15 je obavezan** jer je obveznik
 > registriran za obračun po naplaćenoj naknadi. `UBLExtensions` blok postoji i u CreditNote
 > shemi — schematron pravila koriste `//` xpath koji pokriva i Invoice i CreditNote.
 >
 > Za razliku od primjera 4.1.7 (CreditNote po izdavanju) koji nema HR-BT-15,
 > ovdje ga **moramo uključiti** jer posrednik iz njega generira fiskalizacijsku poruku
-> s oznakom obračuna po naplaćenoj naknadi.
+> s oznakom obračuna po naplaćenoj naknadi. Činjenica da bi se i BT-8=432 mogao koristiti
+> u CreditNote dodatno pojačava pitanje je li HR-BT-15 zaista potreban kao zasebni element.
 
 ### 4.3 Usporedba svih mehanizama za isti poslovni slučaj <span class="badge-usporedba">Usporedba</span>
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
