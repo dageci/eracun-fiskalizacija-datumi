@@ -64,7 +64,7 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
   exists(ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/
   hrextac:HRFISK20Data/hrextac:HRObracunPDVPoNaplati)"
   flag="fatal"
-  id="HR-BR-GECI-01">
+  id="HR-BR-GECI-F01">
   Ako je BT-8 = 432, HR-BT-15 (HRObracunPDVPoNaplati) mora postojati.
 </assert>
 ```
@@ -88,7 +88,7 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
   exists(cbc:TaxPointDate) and
   not(cbc:InvoiceTypeCode = '386'))"
   flag="fatal"
-  id="HR-BR-GECI-02">
+  id="HR-BR-GECI-F02">
   Obveznik po naplaćenoj naknadi ne smije imati TaxPointDate (BT-7),
   osim za predujam (vrsta dokumenta 386).
 </assert>
@@ -112,7 +112,7 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
   not(exists(cbc:TaxPointDate)) and
   not(exists(cac:InvoicePeriod/cbc:DescriptionCode)))"
   flag="warning"
-  id="HR-BR-GECI-03">
+  id="HR-BR-GECI-W01">
   InvoicePeriod ima datume ali nema BT-7 ni BT-8.
   PDV se računa po datumu izdavanja — je li to namjerno?
 </assert>
@@ -139,7 +139,7 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
   not(cac:InvoicePeriod/cbc:DescriptionCode = '432') and
   not(cbc:InvoiceTypeCode = '381'))"
   flag="warning"
-  id="HR-BR-GECI-04">
+  id="HR-BR-GECI-W02">
   HR-BT-15 (obračun po naplati) je prisutan, ali nema ni BT-7 ni BT-8=432.
   PDV se računa po datumu izdavanja (BT-2) — je li to namjerno?
 </assert>
@@ -165,7 +165,7 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
   exists(cac:InvoicePeriod/cbc:DescriptionCode) and
   not(cac:InvoicePeriod/cbc:DescriptionCode = '432'))"
   flag="fatal"
-  id="HR-BR-GECI-05">
+  id="HR-BR-GECI-F03">
   HR-BT-15 (obračun po naplati) je prisutan, ali BT-8 nije 432.
   BT-8 kod mora biti 432 (datum plaćanja) ili ne smije postojati.
 </assert>
@@ -186,7 +186,7 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
 <assert test="not(cac:InvoicePeriod/cbc:DescriptionCode = '35') or
   exists(cac:Delivery/cbc:ActualDeliveryDate)"
   flag="fatal"
-  id="HR-BR-GECI-06">
+  id="HR-BR-GECI-F04">
   BT-8 = 35 (datum poreza = datum isporuke), ali BT-72 (ActualDeliveryDate)
   ne postoji. Navedite datum isporuke ili promijenite BT-8 kod.
 </assert>
@@ -196,14 +196,25 @@ Sva pravila su `flag="fatal"` — XML koji ih ne zadovolji se odbija.
 
 ## Pregled svih prijedloga
 
-| ID | Pravilo | Tip | Status |
-|----|---------|-----|--------|
-| **HR-BR-GECI-01** | Ako BT-8=432, zahtijevaj HR-BT-15 | `fatal` | Prijedlog |
-| **HR-BR-GECI-02** | Ako HR-BT-15 postoji, BT-7 ne smije postojati (osim predujam 386) | `fatal` | Prijedlog |
-| **HR-BR-GECI-03** | InvoicePeriod ima datume ali nema BT-7 ni BT-8 | `warning` | Prijedlog |
-| **HR-BR-GECI-04** | HR-BT-15 postoji bez BT-7 i bez BT-8=432 (osim CreditNote) | `warning` | Prijedlog |
-| **HR-BR-GECI-05** | HR-BT-15 postoji i BT-8 postoji ali nije 432 | `fatal` | Prijedlog |
-| **HR-BR-GECI-06** | Ako BT-8=35, BT-72 mora postojati | `fatal` | Prijedlog |
+### Greške — `fatal` (račun se ODBIJA)
+
+Validator odbija eRačun ako otkrije ovo pravilo. Jednoznačna logička kontradikcija ili nedostajući obavezni podatak.
+
+| ID | Pravilo |
+|----|---------|
+| **HR-BR-GECI-F01** | Ako BT-8=432, zahtijevaj HR-BT-15 |
+| **HR-BR-GECI-F02** | Ako HR-BT-15 postoji, BT-7 ne smije postojati (osim predujam 386) |
+| **HR-BR-GECI-F03** | HR-BT-15 postoji i BT-8 postoji ali NIJE 432 — kontradikcija |
+| **HR-BR-GECI-F04** | Ako BT-8=35, BT-72 (datum isporuke) mora postojati |
+
+### Upozorenja — `warning` (račun PROLAZI ali je sumnjiv)
+
+Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška ili neuobičajena kombinacija koja zahtijeva provjeru.
+
+| ID | Pravilo |
+|----|---------|
+| **HR-BR-GECI-W01** | InvoicePeriod ima datume ali nema BT-7 ni BT-8 — PDV možda u krivom mjesecu |
+| **HR-BR-GECI-W02** | HR-BT-15 postoji bez BT-7 i bez BT-8=432 (osim CreditNote) — namjerno? |
 
 ---
 
