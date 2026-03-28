@@ -310,16 +310,40 @@ Kod `432` signalizira obračun po naplaćenoj naknadi kroz EU normu (BT-8). Isto
 
 HR CIUS specifikacija (Tablica 52) definira: *"Porezni obveznik koji primjenjuje postupak oporezivanja prema naplaćenim naknadama na računu mora navesti 'Obračun prema naplaćenim naknadama'."*
 
-**Otvorena pitanja:**
+**Treba li HR-BT-15 uopće?**
 
-1. Mora li obveznik koristiti **samo HR-BT-15**, **samo BT-8=432**, ili **oba** zajedno?
-2. Ako su oba prisutna, koji ima prednost pri obradi?
-3. Koristi li sustav fiskalizacije BT-8 iz EU norme, ili isključivo HR-BT-15 iz HRFISK20Data ekstenzije?
-4. Je li ovo namjerno (HR proširenje kao eksplicitan flag za fiskalizacijsku poruku) ili nenamjerno dupliciranje?
+Nakon analize XSD sheme i svih scenarija, postavlja se pitanje: **pokriva li BT-8=432 iz EU norme sve slučajeve, čineći HR-BT-15 nepotrebnim?**
 
-**Kontekst:** U Tehničkoj specifikaciji Fiskalizacija eRačuna i eIzvještavanje (Tablica 6, stupac "EU Norma") ne postoji mapiranje koje referencira BT-8 — fiskalizacijska poruka ne prenosi taj podatak prema Poreznoj upravi.
+| Scenarij | BT-8=432 moguć? | HR-BT-15 prisutan? | Što bi bilo bez HR-BT-15? |
+|---|---|---|---|
+| Standardni račun po naplati | **DA** | DA | BT-8=432 dovoljan — primatelj vidi kod 432 = "plaćanje" |
+| Kontinuirana usluga po naplati | **DA** | DA | BT-8=432 dovoljan |
+| CreditNote po naplati | **DA** — BT-8 postoji u CreditNote XSD shemi | DA | BT-8=432 bi mogao signalizirati režim |
+| Predujam po naplati | NE — koristi BT-7 (datum plaćanja poznat) | DA | BT-7 pokazuje datum uplate; ali odakle primatelj zna da je to "po naplati" a ne "po izdavanju"? |
 
-> **Napomena iz primjera:** U sekciji [4.2](primjeri-izdavatelj#42-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u) svi primjeri obračuna po naplati koriste HR-BT-15, dok BT-8=432 nije uvijek prisutan — [predujam (4.2.4)](primjeri-izdavatelj#424-predujam-avansni-račun-po-naplati) koristi BT-7 jer je datum plaćanja poznat, a [CreditNote (4.2.6)](primjeri-izdavatelj#426-odobrenje--creditnote-po-naplati) u praksi ne koristi BT-8 (iako BT-7 i BT-8 **postoje** u CreditNote XSD shemi kao opcionalni elementi — BT-8=432 bi se teoretski mogao koristiti za CreditNote po naplati). To sugerira da je **HR-BT-15 svojstvo obveznika** (uvijek prisutan kad je obveznik na sustavu po naplati), a **BT-8=432 mehanizam EU norme** za određivanje datuma poreza (prisutan kad je primjenjiv). Činjenica da bi se BT-8=432 mogao koristiti i u CreditNote dodatno pojačava pitanje nužnosti HR-BT-15 kao zasebnog elementa. No ovo je autorovo tumačenje — čekamo službenu potvrdu.
+**Jedini scenarij** gdje BT-8=432 ne može preuzeti ulogu HR-BT-15 je **predujam** — jer tu koristimo BT-7 (datum je poznat), ne BT-8. Ali kod predujma je kupac **već platio**, pa pitanje pretporeza je ionako riješeno — pretporez ide u mjesec plaćanja u oba režima.
+
+**Argumenti za HR-BT-15 (zašto možda treba):**
+
+1. **Zakonski zahtjev** — čl. 125.i Zakona o PDV-u traži da obveznik na računu **navede** da koristi obračun po naplaćenoj naknadi. BT-8=432 je numerički kod koji čovjek ne može pročitati na ispisu računa, dok HR-BT-15 sadrži tekst "Obračun prema naplaćenoj naknadi"
+2. **Fiskalizacijska poruka** — posrednik iz HR-BT-15 generira SOAP poruku za `EvidentirajERacun` prema PU. U Tehničkoj specifikaciji Fiskalizacija eRačuna (Tablica 6, stupac "EU Norma") **ne postoji mapiranje** koje referencira BT-8 — fiskalizacijska poruka ne prenosi BT-8 prema Poreznoj upravi
+3. **Jasnoća za primatelja** — tekstualna napomena je jednoznačna, numerički kod zahtijeva lookup tablicu
+
+**Argumenti protiv HR-BT-15 (zašto možda ne treba):**
+
+1. **BT-8=432 je dovoljan signal** za softver — primatelj koji primi eRačun s BT-8=432 automatski zna da je obračun po naplati
+2. **Dupliciranje podatka** — ista informacija na dva mjesta povećava rizik nekonzistentnosti (što ako BT-8=432 ali HR-BT-15 nedostaje, ili obrnuto?)
+3. **Nijedna druga EU zemlja** nema ovakvo proširenje — Italija koristi jedno polje (`EsigibilitaIVA`), ostale koriste samo BT-8=432. Vidi [europsku usporedbu](europska-usporedba#usporedna-tablica--svih-23-eu-zemlje)
+4. **Tekstualna napomena** na ispisu računa može se generirati iz BT-8=432 — softver koji ispisuje račun može mapirati kod 432 u tekst "Obračun prema naplaćenoj naknadi" bez potrebe za zasebnim XML elementom
+
+**Otvorena pitanja za Poreznu upravu:**
+
+1. Je li HR-BT-15 uveden zbog zakonskog zahtjeva za tekstualnom napomenom (čl. 125.i), ili zbog tehničke potrebe fiskalizacijske poruke?
+2. Bi li BT-8=432 sam bio dovoljan da sustav fiskalizacije prepozna obračun po naplati?
+3. Ako su oba prisutna, koji ima prednost u slučaju konflikta (BT-8≠432 ali HR-BT-15 prisutan)?
+4. Zašto fiskalizacijska poruka (Tablica 6) ne prenosi BT-8 prema PU?
+
+> **Napomena iz primjera:** U sekciji [4.2](primjeri-izdavatelj#42-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u) svi primjeri obračuna po naplati koriste HR-BT-15, dok BT-8=432 nije uvijek korišten — [predujam (4.2.4)](primjeri-izdavatelj#424-predujam-avansni-račun-po-naplati) koristi BT-7, a [CreditNote (4.2.6)](primjeri-izdavatelj#426-odobrenje--creditnote-po-naplati) u praksi ne koristi BT-8 (iako **postoji** u CreditNote XSD shemi). No ovo je autorovo tumačenje — čekamo službenu potvrdu.
 
 ---
 
