@@ -15,6 +15,11 @@ has_toc: true
 > Komentari, ispravke i dodatni prijedlozi su dobrodošli kroz
 > <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">Discussions</a>.
 
+<div style="background: #fff3f3; border-left: 5px solid #e74c3c; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0;">
+<strong style="color: #c0392b;">&#9888; Ovo NIJE službena uputa</strong><br>
+Svi prijedlozi ispod su autorovo tumačenje — <strong>nijedan nije potvrđen od Porezne uprave ni radne skupine</strong>. Službeni HR Schematron (HR-BR-1 do HR-BR-56) je jedini važeći validator.
+</div>
+
 ### Sadržaj
 {: .no_toc }
 
@@ -66,6 +71,8 @@ Validator odbija eRačun ako otkrije ovo pravilo. Jednoznačna logička kontradi
 | **HR-BR-GECI-F06** | Vrijeme izdavanja (HR-BT-2) mora biti validno (sati 0-23, minute 0-59, sekunde 0-59) | Validacija formata |
 | **HR-BR-GECI-F07** | BT-8 (DescriptionCode) smije biti samo 3, 35 ili 432 | Dozvoljeni kodovi |
 | **HR-BR-GECI-F08** | Predujam (386) s HR-BT-15 mora imati BT-7 (datum plaćanja poznat) | HR-BT-15 logika |
+| **HR-BR-GECI-F09** | CreditNote/korekcija mora imati BT-25 (referencu na prethodni račun) | Referenca |
+| **HR-BR-GECI-F10** | Ako BT-25 postoji, BT-26 (datum prethodnog) mora postojati | Referenca |
 
 ### Upozorenja — `warning` (račun PROLAZI ali je sumnjiv)
 
@@ -81,12 +88,15 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 | **HR-BR-GECI-W06** | Predujam (386) ima datum isporuke (BT-72) — isporuka još nije obavljena? | Poslovni kontekst |
 | **HR-BR-GECI-W07** | Predujam (386) s HR-BT-15 koristi BT-8=432 umjesto BT-7 — datum plaćanja je poznat | HR-BT-15 logika |
 | **HR-BR-GECI-W08** | BT-8=3 je redundantan — isti rezultat kao da nema ni BT-7 ni BT-8 | Datumska logika |
+| **HR-BR-GECI-W09** | Nepoznat kod načina plaćanja (BT-81) za HR kontekst | Način plaćanja |
+| **HR-BR-GECI-W10** | Porezna kategorija nije S, ali nedostaje razlog oslobođenja (BT-120/BT-121) | PDV kategorija |
 
 ---
 
 ## Greške — fatal (račun se ODBIJA)
 
 ### F01: Ako BT-8=432, zahtijevaj HR-BT-15
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `InvoicePeriod/DescriptionCode = 432` (obračun po naplaćenoj naknadi), tada `HRFISK20Data/HRObracunPDVPoNaplati` **mora postojati**.
 
@@ -110,6 +120,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F02: Ako HR-BT-15 postoji, BT-7 ne smije postojati (osim predujam)
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `HRObracunPDVPoNaplati` (obveznik po naplati), tada `TaxPointDate` (BT-7) **ne smije postojati** — osim za vrstu dokumenta 386 (predujam).
 
@@ -135,6 +146,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F03: HR-BT-15 postoji i BT-8 postoji ali NIJE 432
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `HRObracunPDVPoNaplati` (HR-BT-15), a istovremeno `DescriptionCode` (BT-8) postoji ali **nije** 432, odbiti kao **fatal**.
 
@@ -159,6 +171,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F04: Ako BT-8=35, BT-72 mora postojati
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `InvoicePeriod/DescriptionCode = 35` (PDV po datumu isporuke), tada `Delivery/ActualDeliveryDate` (BT-72) **mora postojati**.
 
@@ -180,6 +193,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F05: BT-73 mora biti <= BT-74
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Ako obračunsko razdoblje ima oba datuma, početak mora biti prije ili jednak kraju.
 
@@ -201,6 +215,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F06: Vrijeme izdavanja mora biti validno
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: HR-BR-2 provjerava format `hh:mm:ss` regexom, ali dozvoljava `99:99:99`. Treba provjera raspona.
 
@@ -226,6 +241,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F07: BT-8 dozvoljeni kodovi
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: BT-8 (DescriptionCode) smije biti samo 3, 35 ili 432 prema UNTDID 2005.
 
@@ -248,6 +264,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F08: Predujam po naplati mora imati BT-7
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Predujam (386) s HR-BT-15 mora imati BT-7 jer je datum plaćanja poznat (kupac je već platio).
 
@@ -276,6 +293,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ## Upozorenja — warning (račun PROLAZI ali je sumnjiv)
 
 ### W01: InvoicePeriod ima datume ali nema BT-7 ni BT-8
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `InvoicePeriod` sa `StartDate` i/ili `EndDate`, ali nema ni `TaxPointDate` (BT-7) ni `DescriptionCode` (BT-8), izdati **upozorenje**.
 
@@ -300,6 +318,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W02: HR-BT-15 postoji bez BT-7 i bez BT-8=432 (osim CreditNote)
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `HRObracunPDVPoNaplati` (HR-BT-15), ali nema ni `TaxPointDate` (BT-7) ni `DescriptionCode = 432` (BT-8), i nije kreditna nota (381), izdati **upozorenje**.
 
@@ -327,6 +346,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W03: DueDate prije IssueDate
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Datum dospijeća (BT-9) je prije datuma izdavanja (BT-2).
 
@@ -347,6 +367,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W04: BT-7 izvan obračunskog razdoblja
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Datum poreza (BT-7) je izvan raspona obračunskog razdoblja (BT-73/BT-74).
 
@@ -370,6 +391,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W05: HR-BT-15 nestandardni tekst
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Sadržaj HR-BT-15 nije "Obračun prema naplaćenoj naknadi".
 
@@ -392,6 +414,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W06: Predujam s datumom isporuke
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Predujam (386) ima BT-72 (ActualDeliveryDate) — isporuka se još nije dogodila.
 
@@ -412,6 +435,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W07: Predujam po naplati s BT-8=432
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: Predujam (386) s HR-BT-15 koristi BT-8=432 umjesto BT-7.
 
@@ -436,6 +460,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W08: BT-8=3 je redundantan
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
 
 **Što**: BT-8=3 znači "datum poreza = datum izdavanja" — isto kao default kad nema ni BT-7 ni BT-8.
 
@@ -450,6 +475,105 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
   id="HR-BR-GECI-W08">
   BT-8=3 je redundantan — isti rezultat kao da nema BT-8.
   Datum poreza = BT-2 (IssueDate) je default ponašanje.
+</assert>
+```
+
+---
+
+### F09: CreditNote/korekcija mora imati referencu na prethodni račun
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+
+**Što**: Ako je vrsta dokumenta 381 (CreditNote) ili 384 (korekcija), BT-25 (referenca na prethodni račun) mora postojati.
+
+**Zašto**: Odobrenje/korekcija bez reference na izvorni račun ne može se automatski povezati s originalnom transakcijom. Primatelj ne zna koji račun se ispravlja.
+
+**Tip pravila**: `flag="fatal"`
+
+**Schematron primjer**:
+```xml
+<assert test="not(cbc:InvoiceTypeCode = '381' or cbc:InvoiceTypeCode = '384' or
+  cbc:CreditNoteTypeCode = '381' or cbc:CreditNoteTypeCode = '384') or
+  exists(cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID)"
+  flag="fatal"
+  id="HR-BR-GECI-F09">
+  CreditNote (381) ili korekcija (384) mora sadržavati referencu
+  na prethodni račun (BT-25).
+</assert>
+```
+
+---
+
+### F10: Referenca na prethodni račun mora imati datum
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+
+**Što**: Ako postoji BT-25 (broj prethodnog računa), BT-26 (datum prethodnog računa) mora također postojati.
+
+**Zašto**: Identifikator eRačuna se sastoji od broja + datuma izdavanja + OIB izdavatelja. Samo broj bez datuma ne omogućuje jednoznačnu identifikaciju izvornog računa.
+
+**Tip pravila**: `flag="fatal"`
+
+**Schematron primjer**:
+```xml
+<assert test="not(exists(cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID)) or
+  exists(cac:BillingReference/cac:InvoiceDocumentReference/cbc:IssueDate)"
+  flag="fatal"
+  id="HR-BR-GECI-F10">
+  Referenca na prethodni račun (BT-25) mora sadržavati i datum
+  prethodnog računa (BT-26).
+</assert>
+```
+
+---
+
+### W09: Nepoznat kod načina plaćanja
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+
+**Što**: BT-81 (PaymentMeansCode) sadrži kod koji nije među uobičajenim kodovima za HR kontekst.
+
+**Zašto**: UNTDID 4461 definira desetke kodova, ali u hrvatskom B2B kontekstu se koristi ograničeni skup: 30 (virman), 42 (bankovni transfer), 48/49 (kartice), 57/58 (trajni nalog/SEPA), 97 (kompenzacija), ZZZ (ostalo).
+
+**Tip pravila**: `flag="warning"` — ostali kodovi su tehnički validni ali neuobičajeni u HR.
+
+**Schematron primjer**:
+```xml
+<assert test="not(exists(cac:PaymentMeans/cbc:PaymentMeansCode)) or
+  cac:PaymentMeans/cbc:PaymentMeansCode = '10' or
+  cac:PaymentMeans/cbc:PaymentMeansCode = '30' or
+  cac:PaymentMeans/cbc:PaymentMeansCode = '31' or
+  cac:PaymentMeans/cbc:PaymentMeansCode = '42' or
+  cac:PaymentMeans/cbc:PaymentMeansCode = '48' or
+  cac:PaymentMeans/cbc:PaymentMeansCode = '49' or
+  cac:PaymentMeans/cbc:PaymentMeansCode = '57' or
+  cac:PaymentMeans/cbc:PaymentMeansCode = '58' or
+  cac:PaymentMeans/cbc:PaymentMeansCode = '59' or
+  cac:PaymentMeans/cbc:PaymentMeansCode = '97' or
+  cac:PaymentMeans/cbc:PaymentMeansCode = 'ZZZ'"
+  flag="warning"
+  id="HR-BR-GECI-W09">
+  Kod načina plaćanja (BT-81) nije uobičajen za HR kontekst.
+</assert>
+```
+
+---
+
+### W10: Nedostaje razlog oslobođenja za ne-S kategoriju PDV-a
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+
+**Što**: Porezna kategorija nije S (Standard), ali nema ni teksta razloga oslobođenja (BT-120) ni VATEX koda (BT-121).
+
+**Zašto**: Za kategorije E (oslobođeno), O (izvan opsega), AE (reverse charge), K, G, Z — razlog oslobođenja je ključna informacija za primatelja i PDV prijavu.
+
+**Tip pravila**: `flag="warning"` — moguće da je razlog naveden drugdje na računu.
+
+**Schematron primjer**:
+```xml
+<assert test="not(
+  cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:ID != 'S' and
+  not(exists(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReason)) and
+  not(exists(cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:TaxExemptionReasonCode)))"
+  flag="warning"
+  id="HR-BR-GECI-W10">
+  Porezna kategorija nije S, ali nedostaje razlog oslobođenja (BT-120 ili BT-121).
 </assert>
 ```
 
