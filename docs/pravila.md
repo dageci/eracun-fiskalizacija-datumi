@@ -113,26 +113,20 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 
 ### Što određuje datum poreza, a što NE
 
-> **Datum nastanka porezne obveze** uvijek određuje isključivo:
-> 1. **BT-7** (`cbc:TaxPointDate`) — eksplicitni datum, ili
-> 2. **BT-8** (`cbc:DescriptionCode`) — kod koji upućuje na drugi datum, ili
-> 3. **BT-2** (`cbc:IssueDate`) — default ako nema ni BT-7 ni BT-8
+> **Kako odrediti datum nastanka porezne obveze** — redoslijed provjere:
+> 1. **HR-BT-15** — ako je prisutan, PDV nastaje tek po plaćanju (čl. 125.i), neovisno o BT-7/BT-8/BT-2
+> 2. **BT-7** (`cbc:TaxPointDate`) — eksplicitni datum, ili
+> 3. **BT-8** (`cbc:DescriptionCode`) — kod koji upućuje na drugi datum, ili
+> 4. **BT-2** (`cbc:IssueDate`) — default ako nema ni BT-7 ni BT-8
 >
-> **BT-73 / Početak obračunskog razdoblja (`cbc:StartDate`) i BT-74 / Kraj obračunskog
-> razdoblja (`cbc:EndDate`) NIKADA ne utječu na datum nastanka porezne obveze.**
-> Oni su uvijek isključivo informativni — govore primatelju računa za koje vremensko
-> razdoblje se račun odnosi (npr. "najam za siječanj–ožujak").
->
-> Razlog: datum porezne obveze se **uvijek** određuje kroz gornja tri polja po sljedećoj
-> hijerarhiji. Ključno je da **BT-2 (IssueDate) uvijek postoji** — to je obavezno polje
-> (HR-BR-40). Zato hijerarhija uvijek ima odgovor i nikada ne može doći u stanje
-> "nema datuma poreza" — što znači da BT-73/BT-74 nikada ne mogu doći na red
-> kao zamjena. Oni su isključivo informativni i mogu se dodati u bilo koji račun
-> bez ikakve promjene u PDV tretmanu.
+> **BT-73/BT-74 NIKADA ne utječu na datum nastanka porezne obveze** — uvijek su informativni.
 
 ```mermaid
 flowchart TD
-    START([Koji je datum porezne obveze?]) --> CHECK1{Postoji li<br>BT-7 TaxPointDate<br>u XML-u?}
+    START([Koji je datum porezne obveze?]) --> CHECK0{Postoji li<br>HR-BT-15<br>HRObracunPDVPoNaplati?}
+
+    CHECK0 -->|DA| NAPLATA[Obračun po NAPLATI čl. 125.i<br>PDV nastaje tek kad kupac plati<br>Datum poreza = datum plaćanja]
+    CHECK0 -->|NE| CHECK1{Postoji li<br>BT-7 TaxPointDate<br>u XML-u?}
 
     CHECK1 -->|DA| RESULT1[Datum poreza = BT-7<br>eksplicitni datum]
     CHECK1 -->|NE| CHECK2{Postoji li<br>BT-8 DescriptionCode<br>u XML-u?}
@@ -145,6 +139,8 @@ flowchart TD
     BT73[BT-73 StartDate<br>BT-74 EndDate] -.->|Izvan hijerarhije.<br>Ne postoji grana<br>koja vodi do njih.| START
 
     style START fill:#e3f2fd,stroke:#1565c0,color:#000
+    style CHECK0 fill:#fff3e0,stroke:#e65100,color:#000
+    style NAPLATA fill:#fce4ec,stroke:#c62828,color:#000
     style CHECK1 fill:#fff3e0,stroke:#e65100,color:#000
     style CHECK2 fill:#fff3e0,stroke:#e65100,color:#000
     style RESULT1 fill:#e8f5e9,stroke:#2e7d32,color:#000
@@ -238,29 +234,34 @@ flowchart TD
 ```mermaid
 flowchart TD
     A([Obračun po NAPLAĆENOJ NAKNADI<br>čl. 125.i Zakona o PDV-u])
-    A --> B[Datum poreza = datum plaćanja<br>Kupac još nije platio<br>→ datum poreza NIJE POZNAT]
 
-    B --> C[Kombinacija 3.<br>BT-8 = 432]
-    C --> C1[BT-8 Kod datuma PDV obveze<br>InvoicePeriod/DescriptionCode = 432<br>Značenje: porezna obveza nastaje<br>danom plaćanja]
+    A --> HRBT15[HR-BT-15 OBAVEZAN<br>HRObracunPDVPoNaplati<br>Signal: izdavatelj na sustavu po naplati<br>Primatelj: NE odbijati pretporez do plaćanja!]
 
-    C1 --> C2[BT-7 se NE SMIJE upisati!<br>cbc:TaxPointDate = ✗<br>Razlog: BR-CO-03]
+    HRBT15 --> B[Datum poreza = datum plaćanja<br>Kupac još nije platio<br>→ datum poreza NIJE POZNAT]
 
-    C2 --> C3[HR-BT-15 u HRFISK20Data<br>HRObracunPDVPoNaplati<br>Tekst: Obračun prema naplaćenoj naknadi<br>Napomena za PU i posrednika]
+    B --> C{Koji mehanizam<br>za datum?}
 
-    C3 --> XML[U XML idu:<br>✅ cbc:IssueDate BT-2<br>✅ cbc:IssueTime HR-BT-2<br>✅ cbc:DueDate BT-9<br>✅ InvoicePeriod/DescriptionCode = 432 BT-8<br>✅ HRObracunPDVPoNaplati HR-BT-15]
+    C -->|Standardni račun| C1[BT-8 = 432<br>DescriptionCode = 432<br>Sustav zna: PDV po plaćanju<br>BT-7 se NE SMIJE uz BT-8!]
 
-    XML --> N[Ne ide u XML:<br>cbc:TaxPointDate]
+    C -->|Predujam<br>datum plaćanja poznat| C2[BT-7 = datum uplate<br>TaxPointDate = datum predujma<br>BT-8 se NE SMIJE uz BT-7!]
 
-    N --> OK([BR-CO-03 ✅ Ispravno])
+    C -->|CreditNote| C3[BT-8 = 432 moguć<br>ali u praksi se ne koristi<br>HR-BT-15 je prisutan]
+
+    C1 --> XML[U XML idu:<br>✅ BT-2 IssueDate<br>✅ HR-BT-2 IssueTime<br>✅ BT-9 DueDate<br>✅ BT-8 = 432<br>✅ HR-BT-15]
+
+    C2 --> XML
+    C3 --> XML
+
+    XML --> OK([BR-CO-03 ✅ Ispravno])
 
     style A fill:#fff3e0,stroke:#e65100,color:#000
+    style HRBT15 fill:#fce4ec,stroke:#c62828,color:#000
     style B fill:#fff8e1,stroke:#f57f17,color:#000
     style C fill:#fff3e0,stroke:#e65100,color:#000
-    style C1 fill:#fff3e0,stroke:#e65100,color:#000
-    style C2 fill:#ffebee,stroke:#c62828,color:#000
-    style C3 fill:#f3e5f5,stroke:#7b1fa2,color:#000
-    style XML fill:#e8f5e9,stroke:#2e7d32,color:#000
-    style N fill:#f5f5f5,stroke:#9e9e9e,color:#9e9e9e
+    style C1 fill:#e8f5e9,stroke:#2e7d32,color:#000
+    style C2 fill:#f3e5f5,stroke:#7b1fa2,color:#000
+    style C3 fill:#e3f2fd,stroke:#1565c0,color:#000
+    style XML fill:#f5f5f5,stroke:#616161,color:#000
     style OK fill:#e8f5e9,stroke:#2e7d32,color:#000
 ```
 
