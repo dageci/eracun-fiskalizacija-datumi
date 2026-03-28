@@ -51,6 +51,8 @@ To znači da kupac mora pratiti:
 1. Datum primitka eRačuna (za evidenciju)
 2. **Datum plaćanja** (za pretporez) — ovo je datum koji određuje PDV razdoblje
 
+> **PU pojašnjenje (19.12.2025., pitanje 17)**: Zakon o fiskalizaciji ne propisuje rok za prihvat (likvidaturu) računa, već propisuje rok za **fiskalizaciju zaprimanja** — 5 radnih dana od primitka. Ako nakon fiskalizacije zaprimanja tijekom likvidature dođe do potrebe odbijanja, o tome se izvještava Poreznu upravu do zadnjeg dana u mjesecu za prethodni mjesec.
+
 ---
 
 ## P.1 Obračun po izdavanju (čl. 30) <span class="badge-izdavanje">Po izdavanju</span>

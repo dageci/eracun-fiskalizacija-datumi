@@ -347,6 +347,8 @@ Nakon analize XSD sheme i svih scenarija, postavlja se pitanje: **pokriva li BT-
 
 > **Napomena iz primjera:** U sekciji [4.2](primjeri-izdavatelj#42-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u) svi primjeri obračuna po naplati koriste HR-BT-15, dok BT-8=432 nije uvijek korišten — [predujam (4.2.4)](primjeri-izdavatelj#424-predujam-avansni-račun-po-naplati) koristi BT-7, a [CreditNote (4.2.6)](primjeri-izdavatelj#426-odobrenje--creditnote-po-naplati) u praksi ne koristi BT-8 (iako **postoji** u CreditNote XSD shemi). No ovo je autorovo tumačenje — čekamo službenu potvrdu.
 
+> **PU pojašnjenje (19.12.2025., pitanje 188)**: eIzvještavanje o naplati je obvezno za **sve** obveznike (ne samo za one na sustavu po naplati) — zamjenjuje OPZ-STAT-1. To znači da je BT-9 (DueDate) i BT-115 (PayableAmount) relevantan za sve eRačune, ne samo za one s HR-BT-15.
+
 ---
 
 ---

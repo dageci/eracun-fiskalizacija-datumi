@@ -29,6 +29,12 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 ---
 
+> **PU pojašnjenje (19.12.2025., pitanje 155/157)**: Predujmovi iz 2025. se ne izdaju niti fiskaliziraju kao eRačun. Ni konačan račun koji se izdaje u 2026. za takav predujam ne podliježe Fiskalizaciji 2.0.
+
+> **PU pojašnjenje (19.12.2025., pitanje 101/104)**: Zakon o fiskalizaciji odnosi se na eRačune **izdane** od 1.1.2026. — ključan je BT-2 (datum izdavanja), ne datum obavljene usluge.
+
+---
+
 ### 4.1 Obračun po izdavanju (čl. 30 Zakona o PDV-u) <span class="badge-izdavanje">Po izdavanju</span>
 
 #### 4.1.1 Isporuka i račun isti dan <span class="badge-izdavanje">Po izdavanju</span>
@@ -150,6 +156,8 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > **Važno**: Kod predujma, BT-7 je **datum primitka uplate**, ne datum isporuke.
 > Ovo je poseban slučaj čl. 30 st. 5 gdje porezna obveza nastaje
 > primanjem novca, a ne isporukom dobara.
+
+> **PU pojašnjenje (19.12.2025., pitanje 222)**: Porezni obveznik nije obvezan izdati račun za primljeni predujam ako je izdao račun za obavljenu isporuku do roka za podnošenje prijave PDV-a za razdoblje u kojem je primio predujam. Međutim, ako je predujam primljen u jednom razdoblju oporezivanja, a isporuka se obavi u drugom — račun za predujam se **mora** izdati.
 
 ---
 
@@ -519,6 +527,8 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > **HR-BT-15 je i dalje obavezan** — iako koristimo BT-7 umjesto BT-8, obveznik je registriran za obračun po naplaćenoj naknadi i ta informacija mora biti u HRFISK20Data bloku za fiskalizacijsku poruku prema Poreznoj upravi.
 >
 > **Zaključak**: Predujam kod obračuna po naplati koristi BT-7 (jer je datum plaćanja poznat), ali HR-BT-15 ostaje obavezan jer je to svojstvo obveznika, ne pojedinačnog računa.
+
+> **PU pojašnjenje (19.12.2025., pitanje 222)**: Porezni obveznik nije obvezan izdati račun za primljeni predujam ako je izdao račun za obavljenu isporuku do roka za podnošenje prijave PDV-a za razdoblje u kojem je primio predujam. Međutim, ako je predujam primljen u jednom razdoblju oporezivanja, a isporuka se obavi u drugom — račun za predujam se **mora** izdati.
 
 #### 4.2.5 Kontinuirana usluga s obračunskim razdobljem <span class="badge-naplata">Po naplati</span>
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>

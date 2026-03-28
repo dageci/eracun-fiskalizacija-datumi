@@ -90,6 +90,14 @@ Redoslijed elemenata u UBL Invoice XML-u je strogo definiran shemom:
 | **HR CIUS 2025** | HR-BR-40 | IssueDate >= 01.01.2026 | <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/196" target="_blank">Specifikacija</a> |
 | **HR CIUS 2025** | HR-BR-48 | TaxPointDate >= 01.01.1900 i < 01.01.2100 | <a href="https://porezna.gov.hr/fiskalizacija/api/dokumenti/197" target="_blank">Validator</a> |
 
+> **PU pojašnjenje (19.12.2025., pitanje 101/104)**: Zakon o fiskalizaciji odnosi se na eRačune **izdane** od 1.1.2026. — ključan je BT-2 (datum izdavanja), ne datum obavljene usluge.
+
+> **PU pojašnjenje (19.12.2025., pitanje 155/157)**: Predujmovi iz 2025. se ne izdaju niti fiskaliziraju kao eRačun. Ni konačan račun koji se izdaje u 2026. za takav predujam ne podliježe Fiskalizaciji 2.0.
+
+> **PU pojašnjenje (19.12.2025., pitanje 188)**: eIzvještavanje zamjenjuje OPZ-STAT-1 obrazac. Svi obveznici izdavanja i primanja eRačuna obvezni su provoditi eIzvještavanje, neovisno koriste li informacijskog posrednika ili mikroeRačun.
+
+> **PU pojašnjenje (19.12.2025., pitanje 92)**: Fiskalizacija 1.0 (čl. 39 ZOF, gotovinski B2B do 700 EUR) i Fiskalizacija 2.0 (eRačun) su **međusobno isključivi** za isti račun — ne može se koristiti oboje.
+
 > **Pročišćeni tekstovi zakona** (neslužbeni, ali lakši za čitanje):
 > <a href="https://www.zakon.hr/z/1455/zakon-o-porezu-na-dodanu-vrijednost" target="_blank">Zakon o PDV-u — zakon.hr</a> ·
 > <a href="https://www.zakon.hr/z/3960/zakon-o-fiskalizaciji" target="_blank">Zakon o fiskalizaciji — zakon.hr</a>
