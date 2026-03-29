@@ -96,7 +96,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ## Greške — fatal (račun se ODBIJA)
 
 ### F01: Ako BT-8=432, zahtijevaj HR-BT-15
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `InvoicePeriod/DescriptionCode = 432` (obračun po naplaćenoj naknadi), tada `HRFISK20Data/HRObracunPDVPoNaplati` **mora postojati**.
 
@@ -120,7 +120,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F02: Ako HR-BT-15 postoji, BT-7 ne smije postojati (osim predujam)
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `HRObracunPDVPoNaplati` (obveznik po naplati), tada `TaxPointDate` (BT-7) **ne smije postojati** — osim za vrstu dokumenta 386 (predujam).
 
@@ -146,7 +146,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F03: HR-BT-15 postoji i BT-8 postoji ali NIJE 432
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `HRObracunPDVPoNaplati` (HR-BT-15), a istovremeno `DescriptionCode` (BT-8) postoji ali **nije** 432, odbiti kao **fatal**.
 
@@ -171,7 +171,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F04: Ako BT-8=35, BT-72 mora postojati
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `InvoicePeriod/DescriptionCode = 35` (PDV po datumu isporuke), tada `Delivery/ActualDeliveryDate` (BT-72) **mora postojati**.
 
@@ -193,7 +193,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F05: BT-73 mora biti <= BT-74
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Ako obračunsko razdoblje ima oba datuma, početak mora biti prije ili jednak kraju.
 
@@ -215,7 +215,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F06: Vrijeme izdavanja mora biti validno
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: HR-BR-2 provjerava format `hh:mm:ss` regexom, ali dozvoljava `99:99:99`. Treba provjera raspona.
 
@@ -241,7 +241,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F07: BT-8 dozvoljeni kodovi
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: BT-8 (DescriptionCode) smije biti samo 3, 35 ili 432 prema UNTDID 2005.
 
@@ -264,7 +264,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F08: Predujam po naplati mora imati BT-7
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Predujam (386) s HR-BT-15 mora imati BT-7 jer je datum plaćanja poznat (kupac je već platio).
 
@@ -293,7 +293,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ## Upozorenja — warning (račun PROLAZI ali je sumnjiv)
 
 ### W01: InvoicePeriod ima datume ali nema BT-7 ni BT-8
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `InvoicePeriod` sa `StartDate` i/ili `EndDate`, ali nema ni `TaxPointDate` (BT-7) ni `DescriptionCode` (BT-8), izdati **upozorenje**.
 
@@ -318,7 +318,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W02: HR-BT-15 postoji bez BT-7 i bez BT-8=432 (osim CreditNote)
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Ako eRačun sadrži `HRObracunPDVPoNaplati` (HR-BT-15), ali nema ni `TaxPointDate` (BT-7) ni `DescriptionCode = 432` (BT-8), i nije kreditna nota (381), izdati **upozorenje**.
 
@@ -346,7 +346,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W03: DueDate prije IssueDate
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Datum dospijeća (BT-9) je prije datuma izdavanja (BT-2).
 
@@ -367,7 +367,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W04: BT-7 izvan obračunskog razdoblja
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Datum poreza (BT-7) je izvan raspona obračunskog razdoblja (BT-73/BT-74).
 
@@ -391,7 +391,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W05: HR-BT-15 nestandardni tekst
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Sadržaj HR-BT-15 nije "Obračun prema naplaćenoj naknadi".
 
@@ -414,7 +414,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W06: Predujam s datumom isporuke
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Predujam (386) ima BT-72 (ActualDeliveryDate) — isporuka se još nije dogodila.
 
@@ -435,7 +435,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W07: Predujam po naplati s BT-8=432
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Predujam (386) s HR-BT-15 koristi BT-8=432 umjesto BT-7.
 
@@ -460,7 +460,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W08: BT-8=3 je redundantan
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: BT-8=3 znači "datum poreza = datum izdavanja" — isto kao default kad nema ni BT-7 ni BT-8.
 
@@ -481,7 +481,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F09: CreditNote/korekcija mora imati referencu na prethodni račun
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Ako je vrsta dokumenta 381 (CreditNote) ili 384 (korekcija), BT-25 (referenca na prethodni račun) mora postojati.
 
@@ -504,7 +504,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### F10: Referenca na prethodni račun mora imati datum
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Ako postoji BT-25 (broj prethodnog računa), BT-26 (datum prethodnog računa) mora također postojati.
 
@@ -526,7 +526,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W09: Nepoznat kod načina plaćanja
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: BT-81 (PaymentMeansCode) sadrži kod koji nije među uobičajenim kodovima za HR kontekst.
 
@@ -557,7 +557,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 ---
 
 ### W10: Nedostaje razlog oslobođenja za ne-S kategoriju PDV-a
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Što**: Porezna kategorija nije S (Standard), ali nema ni teksta razloga oslobođenja (BT-120) ni VATEX koda (BT-121).
 

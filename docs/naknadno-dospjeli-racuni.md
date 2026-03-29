@@ -41,7 +41,7 @@ Svaki od ovih slučajeva otvara pitanje: **primjenjuje li se F2 fiskalizacija, i
 ---
 
 ### 1.1 Usluga u prosincu 2025., račun u siječnju 2026.
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Klasičan prijelazni slučaj: usluga je obavljena u prosincu 2025. (prije obveze eRačuna), ali račun se izdaje u siječnju 2026. (kad je eRačun obavezan).
 
@@ -75,7 +75,7 @@ Klasičan prijelazni slučaj: usluga je obavljena u prosincu 2025. (prije obveze
 ---
 
 ### 1.2 Predujam iz 2025., konačni račun 2026.
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Kupac je platio predujam u studenom 2025., izdavatelj je izdao avansni račun u studenom 2025. Isporuka je u veljači 2026. — izdaje se konačni račun.
 
@@ -126,7 +126,7 @@ Kupac je platio predujam u studenom 2025., izdavatelj je izdao avansni račun u 
 ---
 
 ### 1.3 Odobrenje u 2026. za račun iz 2025.
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izvorni račun izdan je u studenom 2025. (nije bio F2 fiskaliziran). U veljači 2026. otkrivena je greška ili odobren popust — izdaje se CreditNote.
 
@@ -166,7 +166,7 @@ Ovi slučajevi nisu specifični za prijelazno razdoblje — događaju se i unuta
 ---
 
 ### 2.1 Račun izdan mjesecima nakon isporuke
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Usluga obavljena u ožujku 2026., ali račun izdan tek u lipnju 2026. — zbog administrativnog propusta, čekanja na odobrenje, ili jednostavno kasnog fakturiranja.
 
@@ -203,7 +203,7 @@ Usluga obavljena u ožujku 2026., ali račun izdan tek u lipnju 2026. — zbog a
 ---
 
 ### 2.2 IOS usklađenje — otkriven nefakturirani posao
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Tijekom IOS (izvod otvorenih stavaka) usklađenja u lipnju 2026. otkriveno je da isporuka iz siječnja 2026. **nije fakturirana** — roba je isporučena, primka postoji kod kupca, ali račun nikad nije izdan.
 
@@ -237,7 +237,7 @@ Tijekom IOS (izvod otvorenih stavaka) usklađenja u lipnju 2026. otkriveno je da
 ---
 
 ### 2.3 Sudska presuda — naknadno izdavanje
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Sud naredi izdavatelju izdavanje računa za uslugu obavljenu u prošloj godini. Izdavatelj je odbijao izdati račun, kupac je pokrenuo spor, i sud je presudio.
 
