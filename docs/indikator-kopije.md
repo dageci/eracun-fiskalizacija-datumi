@@ -35,9 +35,9 @@ Sve što je ovdje napisano proizlazi iz autorove analize specifikacija, zakona i
 | **Kardinalnost u UBL XSD** | 0..1 (opcionalan) |
 | **Pozicija u XML-u** | Odmah nakon `cbc:ID`, prije `cbc:UUID` |
 | **Fiskalizacijski element** | `indikatorKopije` (obavezan, `xsd:boolean`) |
-| **eIzvještavanje element** | `indikatorKopije` (obavezan, `xsd:boolean`) |
+| **eIzvještavanje element** | `indikatorKopije` (obavezan, `xsd:boolean`) — samo u EvidentirajIsporukuZaKojuNijeIzdanERačun |
 
-**Vazna razlika EU vs. HR**: U EU normi EN16931, `CopyIndicator` se **ne koristi** — EU validator izdaje upozorenje `UBL-CR-004` ("A UBL invoice should not include the CopyIndicator"). Medutim, Hrvatska je kroz fiskalizacijsku shemu (`eFiskalizacijaSchema.xsd`) i shemu eIzvještavanja uvela `indikatorKopije` kao **obavezan element** u SOAP poruci prema Poreznoj upravi. To znači da je za svaku fiskalizaciju potrebno poslati `indikatorKopije` — u većini slučajeva s vrijednoscu `false`.
+**Vazna razlika EU vs. HR**: U EU normi EN16931, `CopyIndicator` se **ne koristi** — EU validator izdaje upozorenje `UBL-CR-004` ("A UBL invoice should not include the CopyIndicator"). Medutim, Hrvatska je kroz fiskalizacijsku shemu (`eFiskalizacijaSchema.xsd`) i shemu eIzvještavanja (metoda EvidentirajIsporukuZaKojuNijeIzdanERačun) uvela `indikatorKopije` kao **obavezan element** u SOAP poruci prema Poreznoj upravi. To znači da je za svaku fiskalizaciju potrebno poslati `indikatorKopije` — u većini slučajeva s vrijednoscu `false`.
 
 ```xml
 <!-- UBL eRačun — samo ako je kopija -->
@@ -148,7 +148,7 @@ Ovo je **otvoreno pitanje** na koje trenutno nemamo službeni odgovor:
 
 ### 4.3 Primjenjuje li se eIzvještavanje na kopije?
 
-Element `indikatorKopije` postoji i u `eIzvještavanjeSchema.xsd`, što sugerira da se i eIzvještavanje o naplati salje s oznakom kopije. Logicno bi bilo da Porezna uprava **ne broji kopiju kao novu naplatu** — ali sluzbena potvrda ne postoji.
+Element `indikatorKopije` postoji u `eIzvještavanjeSchema.xsd`, ali **samo** unutar metode **EvidentirajIsporukuZaKojuNijeIzdanERačun** (čl. 51 Zakona o fiskalizaciji) — ne unutar EvidentirajNaplatu ni EvidentirajOdbijanje. To je logično jer ta metoda šalje kompletne podatke o računu (uključujući stavke i iznose) kao zamjenu za fiskalizacijsku poruku, pa treba i oznaku kopije.
 
 ---
 
@@ -272,7 +272,7 @@ Sljedeca pitanja zahtijevaju službenu potvrdu Porezne uprave:
 2. **QR kod / UUID**: Generira li kopija novi QR kod ili mora koristiti isti UUID kao original?
 3. **Granica kopije**: Smiju li se u kopiji mijenjati polja koja ne utječu na PDV (adresa, napomena, referenca na narudzbu)?
 4. **Vremensko ogranicenje**: Postoji li rok do kojeg se kopija može poslati nakon originala?
-5. **eIzvještavanje kopije**: Ako se kopija salje s `indikatorKopije=true` u eIzvještavanju, broji li se kao nova naplata ili se ignorira?
+5. **EvidentirajIsporukuZaKojuNijeIzdanERačun**: Kako PU sustav tretira poruku s `indikatorKopije=true` — ignorira li duplikat ili ga procesira?
 6. **Visestruke kopije**: Može li se isti račun kopirati vise puta (npr. kupac trazi ponovni primitak tri puta)?
 7. **Posrednik i kopija**: Tko inicira kopiju — izdavatelj, primatelj ili posrednik? Da li posrednik može autonomno ponovo poslati eRačun bez izdavateljeve suglasnosti?
 
