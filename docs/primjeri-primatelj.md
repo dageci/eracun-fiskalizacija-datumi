@@ -381,7 +381,7 @@ Izdavateljeva perspektiva: [4.2.6](primjeri-izdavatelj#426-odobrenje--creditnote
 > - **Rashod: travanj** — korekcija rashoda u mjesecu primitka.
 > - **HR-BT-15 je prisutan** i u CreditNote jer je to svojstvo obveznika.
 >
-> **Senatex pojašnjenje**: Prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), ako je izvorni račun već plaćen i pretporez odbijen u ranijem mjesecu, obveznik **ima pravo** na retroaktivni ispravak u tom ranijem mjesecu. U praksi se najčešće radi u mjesecu primitka odobrenja jer je jednostavnije (bez dopunske PDV prijave), ali obje opcije su legalne.
+> **Senatex pojašnjenje**: Prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), ako je izvorni račun već plaćen i pretporez odbijen u ranijem mjesecu, obveznik **ima pravo** na retroaktivni ispravak u tom ranijem mjesecu. U praksi se najčešće radi u mjesecu primitka odobrenja jer je jednostavnije (bez ispravka PDV prijave za ranije razdoblje), ali obje opcije su legalne.
 
 ---
 
@@ -506,8 +506,8 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
   >
   > | Pristup | Što radi | Posljedica | Temelj |
   > |---|---|---|---|
-  > | **Retroaktivno** | Ispravak pretporeza u mjesecu **izvornog računa** | Dopunska PDV prijava za taj mjesec | Senatex C-518/14 — pravo obveznika |
-  > | **Tekuće razdoblje** | Ispravak pretporeza u mjesecu **primitka odobrenja** | Bez dopunske prijave, jednostavnije | Uobičajena praksa |
+  > | **Retroaktivno** | Ispravak pretporeza u mjesecu **izvornog računa** | Ispravak (zamjenska) PDV prijave za to razdoblje putem ePorezna | Senatex C-518/14 — pravo obveznika |
+  > | **Tekuće razdoblje** | Ispravak pretporeza u mjesecu **primitka odobrenja** | Bez ispravka ranije prijave, jednostavnije | Uobičajena praksa (čl. 33 st. 7 ZPDV dopušta odbitak u kasnijem razdoblju) |
   >
   > Obje opcije su legalne. Senatex samo kaže da država ne smije **zabraniti** retroaktivni pristup — ne kaže da je obvezan. Kod eRačuna, ispravci (CreditNote 381, korekcija 384) referenciraju izvorni račun putem BT-25/BT-26, što omogućuje automatsko povezivanje s izvornim razdobljem.
 
