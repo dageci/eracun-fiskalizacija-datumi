@@ -159,7 +159,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 > **PU pojašnjenje (19.12.2025., pitanje 222)**: Porezni obveznik nije obvezan izdati račun za primljeni predujam ako je izdao račun za obavljenu isporuku do roka za podnošenje prijave PDV-a za razdoblje u kojem je primio predujam. Međutim, ako je predujam primljen u jednom razdoblju oporezivanja, a isporuka se obavi u drugom — račun za predujam se **mora** izdati.
 
-> **Kompletni ciklus predujma**: Ovaj primjer prikazuje samo **prvi korak** — račun za predujam. Kad isporuka bude obavljena (u drugom razdoblju), potrebno je izdati: (1) **storno računa za predujam** (vrsta 384, proces P10 ili vrsta 381, proces P9) i (2) **konačni račun** za puni iznos (vrsta 380). Detaljan prikaz sva tri dokumenta: [Naknadno dospjeli računi — predujam](naknadno-dospjeli-racuni#12-predujam-iz-2025-konačni-račun-2026).
+> **Kompletni ciklus predujma**: Ovaj primjer prikazuje samo **prvi korak** — račun za predujam. Kad isporuka bude obavljena (u drugom razdoblju), potrebno je izdati: (1) **storno računa za predujam** — preporučamo vrstu **381** (CreditNote) ili **386 s negativnom količinom** jer ne zahtijevaju KPD klasifikaciju (HR-BR-25); vrsta 384 zahtijeva KPD što je problematično za predujam — i (2) **konačni račun** za puni iznos (vrsta 380). Detaljan prikaz: [Naknadno dospjeli računi — predujam](naknadno-dospjeli-racuni#12-predujam-iz-2025-konačni-račun-2026).
 
 ---
 

@@ -94,10 +94,13 @@ Kupac je platio predujam u studenom 2025., izdavatelj je izdao avansni račun u 
 
 > **Kompletni ciklus predujma** (kad su predujam i isporuka u **različitim** poreznim razdobljima):
 > 1. **Račun za predujam** — izdaje se kad novac stigne (studeni 2025.)
-> 2. **Storno računa za predujam** — izdaje se kad je isporuka obavljena (veljača 2026.) — poništava avansni račun. Može biti korektivni račun (vrsta dokumenta 384, proces P10) ili odobrenje (381, proces P9)
+> 2. **Storno računa za predujam** — izdaje se kad je isporuka obavljena (veljača 2026.) — poništava avansni račun. Tri opcije:
+>    - **381 (CreditNote, proces P9)** — ne zahtijeva KPD klasifikaciju (HR-BR-25 izuzetak) ✅
+>    - **386 s negativnom količinom** — ne zahtijeva KPD (386 na listi izuzetaka) ✅
+>    - **384 (korektivni, proces P10)** — **zahtijeva KPD!** Problematično za predujam jer nema artikala ⚠️
 > 3. **Konačni račun** — izdaje se za puni iznos isporuke (veljača 2026.)
 >
-> **PU pojašnjenje (pitanja 3/4)**: Za korektivne račune preporuka je korištenje poslovnog procesa **P10** s vrstom dokumenta **384**. Izdavatelj samostalno određuje način korištenja (384 ili 381).
+> **PU pojašnjenje (pitanja 3/4)**: PU preporučuje P10 s vrstom 384, ali izdavatelj samostalno određuje način. **Napomena**: 384 zahtijeva KPD klasifikaciju artikala (HR-BR-25), što je problematično za storno predujma. Preporučamo **381 ili 386 s negativnom količinom** jer su oslobođeni KPD obveze.
 
 > **Ključni uvid — iznimka od F2**: Prema PU pojašnjenju (pitanja 155/157), **ni predujam, ni storno predujma, ni konačni račun ne idu kroz F2 fiskalizaciju** ako je predujam izdan u 2025. Logika: svi dokumenti čine jednu cjelinu — ako je predujam bio izvan sustava eRačuna (2025.), ostali dokumenti ga "nasljeđuju". Ovo je potvrđeno i PU odgovorom na pitanje o dokumentima koji mijenjaju račune iz 2025.: ne podliježu eRačun obvezi.
 
