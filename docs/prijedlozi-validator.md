@@ -102,7 +102,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 **Zašto**: BT-8=432 označava da PDV obveza nastaje danom plaćanja (čl. 125.i). Posrednik iz HR-BT-15 generira fiskalizacijsku SOAP poruku za Poreznu upravu. Bez HR-BT-15, fiskalizacijska poruka neće sadržavati oznaku obračuna po naplati.
 
-**Tip pravila**: `flag="fatal"` — jednoznačno, nema rubni slučaj-ova.
+**Tip pravila**: `flag="fatal"` — jednoznačno, nema rubnih slučajeva.
 
 **Schematron primjer**:
 ```xml
@@ -152,7 +152,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 
 **Zašto**: BT-8=3 ili BT-8=35 kontradiktira HR-BT-15. Kod 3 znači "datum izdavanja", kod 35 znači "datum isporuke" — oba su nespojiva s obračunom po naplati koji zahtijeva kod 432 ("datum plaćanja"). Ovo je jednoznačna kontradikcija između dva polja u istom dokumentu.
 
-**Tip pravila**: `flag="fatal"` — jednoznačna kontradikcija, nema rubni slučaj-ova.
+**Tip pravila**: `flag="fatal"` — jednoznačna kontradikcija, nema rubnih slučajeva.
 
 **Schematron primjer**:
 ```xml
