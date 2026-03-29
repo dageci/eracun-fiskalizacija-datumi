@@ -50,6 +50,7 @@ Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu
 | [Europska usporedba](europska-usporedba) | 23 EU zemlje — modeli razmjene, izvještavanje prema poreznoj, dokumentacija | Svi |
 | [Naknadno dospjeli računi](naknadno-dospjeli-racuni) | Prijelazno razdoblje 2025→2026, kasno fakturiranje, IOS, sudske presude | Računovođe, svi |
 | [Prijedlozi za validator](prijedlozi-validator) | 20 pravila koja bi validator mogao uhvatiti na razini posrednika | Programeri, posrednici |
+| [Indikator kopije](indikator-kopije) | CopyIndicator / indikatorKopije — kada se smije koristiti, koja polja se ne smiju mijenjati | Programeri, svi |
 
 ## Službeni izvori i zakoni
 
