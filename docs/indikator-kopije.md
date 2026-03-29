@@ -37,7 +37,14 @@ Sve što je ovdje napisano proizlazi iz autorove analize specifikacija, zakona i
 | **Fiskalizacijski element** | `indikatorKopije` (obavezan, `xsd:boolean`) |
 | **eIzvještavanje element** | `indikatorKopije` (obavezan, `xsd:boolean`) — samo u EvidentirajIsporukuZaKojuNijeIzdanERačun |
 
-**Vazna razlika EU vs. HR**: U EU normi EN16931, `CopyIndicator` se **ne koristi** — EU validator izdaje upozorenje `UBL-CR-004` ("A UBL invoice should not include the CopyIndicator"). Medutim, Hrvatska je kroz fiskalizacijsku shemu (`eFiskalizacijaSchema.xsd`) i shemu eIzvještavanja (metoda EvidentirajIsporukuZaKojuNijeIzdanERačun) uvela `indikatorKopije` kao **obavezan element** u SOAP poruci prema Poreznoj upravi. To znači da je za svaku fiskalizaciju potrebno poslati `indikatorKopije` — u većini slučajeva s vrijednoscu `false`.
+> **Gdje sve postoji CopyIndicator / indikatorKopije:**
+> - **UBL Invoice XML** — `cbc:CopyIndicator` (opcionalan, 0..1)
+> - **UBL CreditNote XML** — `cbc:CopyIndicator` (opcionalan, 0..1)
+> - **eFiskalizacija SOAP poruka** — `indikatorKopije` (**obavezan**) u `EvidentirajERacunZahtjev`
+> - **eIzvještavanje SOAP poruka** — `indikatorKopije` (**obavezan**) u `EvidentirajIsporukuZaKojuNijeIzdanERacun` (čl. 51)
+> - **EvidentirajNaplatu i EvidentirajOdbijanje** — **NEMA** indikatorKopije
+
+**Važna razlika EU vs. HR**: U EU normi EN16931, `CopyIndicator` se **ne koristi** — EU validator izdaje upozorenje `UBL-CR-004` ("A UBL invoice should not include the CopyIndicator"). Međutim, Hrvatska je kroz HR CIUS specifikaciju (HR-BT-1) uvela CopyIndicator kao polje u eRačunu, a kroz fiskalizacijsku shemu `indikatorKopije` kao **obavezan element** u SOAP poruci. To znači da posrednik za svaku fiskalizaciju mora poslati `indikatorKopije` — u većini slučajeva s vrijednošću `false`.
 
 ```xml
 <!-- UBL eRačun — samo ako je kopija -->
