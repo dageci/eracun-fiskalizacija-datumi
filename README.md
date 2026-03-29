@@ -1,6 +1,13 @@
 # eRačun Hrvatska — Datumi i porezna obveza
 
-**Web stranica**: [dageci.github.io/eracun-fiskalizacija-datumi](https://dageci.github.io/eracun-fiskalizacija-datumi/) — formatirani prikaz s dijagramima i navigacijom, ne zahtijeva registraciju
+### Gdje čitati?
+
+| | Link | Za koga |
+|---|---|---|
+| **Web stranica** | [dageci.github.io/eracun-fiskalizacija-datumi](https://dageci.github.io/eracun-fiskalizacija-datumi/) | Za čitanje — formatirani prikaz s navigacijom, dijagramima i tooltipovima. Ne zahtijeva registraciju. |
+| **GitHub repo** | [github.com/dageci/eracun-fiskalizacija-datumi](https://github.com/dageci/eracun-fiskalizacija-datumi) | Za sudjelovanje — povijest izmjena, rasprave, prijedlozi ispravaka, glasanje. Komentiranje zahtijeva besplatnu registraciju (2 min). |
+
+Web stranica se automatski generira iz ovog repozitorija — sadržaj je isti, razlika je u prikazu i mogućnosti suradnje.
 
 > **Ovo je inicijalni prijedlog dokumentacije** — morali smo od nečeg početi.
 >
