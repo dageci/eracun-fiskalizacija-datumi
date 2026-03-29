@@ -490,7 +490,7 @@
       {
         title: {{ page.title | jsonify }},
         url: "{{ site.baseurl }}{{ page.url | replace: '.html', '' }}",
-        content: {{ page.content | strip_html | truncatewords: 500 | jsonify }}
+        content: {{ page.content | strip_html | jsonify }}
       },
       {% endif %}{% endfor %}
     ];
