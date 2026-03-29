@@ -5,7 +5,7 @@ has_toc: true
 nav_order: 8
 ---
 
-# Naknadno dospjeli računi — prijelazno razdoblje i edge case-ovi
+# Naknadno dospjeli računi — prijelazno razdoblje i granični slučajevi
 
 Ova stranica pokriva situacije u kojima se eRačun izdaje **znatno nakon isporuke** — bilo zbog prijelaznog razdoblja 2025-2026, bilo zbog propusta, IOS usklađenja ili sudske presude. Za svaki slučaj analiziramo perspektivu izdavatelja i primatelja: koji datumi idu u XML, koji PDV period se primjenjuje, te kako fiskalizacija (F2) utječe na cijeli proces.
 
@@ -68,7 +68,7 @@ Klasičan prijelazni slučaj: usluga je obavljena u prosincu 2025. (prije obveze
 
 | Pretporez period | Rashod period | Napomena |
 |:---:|:---:|---|
-| **Prosinac 2025.** (ako BT-7=15.12.) ili **Siječanj 2026.** (ako nema BT-7) | **Prosinac 2025.** (BT-72=15.12.) | Pretporez ovisi o BT-7 i o tome kad primatelj primi račun — ako račun stigne u siječnju, a rok za PDV prijavu za prosinac je 20.01., primatelj mora imati račun u rukama prije roka |
+| **Prosinac 2025.** (ako BT-7=15.12.) ili **Siječanj 2026.** (ako nema BT-7) | **Prosinac 2025.** (BT-72=15.12.) | Pretporez ovisi o BT-7 i o tome kad primatelj primi račun — ako račun stigne u siječnju, a rok za PDV prijavu za prosinac 2025. je **20.01.2026.** (stari rok — od siječnja 2026. nadalje rok je zadnji dan u mjesecu), primatelj mora imati račun u rukama prije roka |
 
 > **Otvoreno pitanje**: Ako izdavatelj **ne navede BT-7** (jer nije bio obavezan u 2025. praksi), BT-2=10.01.2026. postaje default datum PDV obveze. Tada izdavatelj prijavljuje PDV u siječnju 2026. umjesto u prosincu 2025. — a primatelj nema osnovu za pretporez u prosincu. Ovo je **čest problem prijelaznog razdoblja** gdje izdavatelji ne navode BT-7 jer im "nije trebao" za stari sustav. Preporuka: **uvijek navesti BT-7** kad se isporuka i račun razlikuju.
 
@@ -185,9 +185,9 @@ Usluga obavljena u ožujku 2026., ali račun izdan tek u lipnju 2026. — zbog a
 
 | Pretporez period | Rashod period | Napomena |
 |:---:|:---:|---|
-| **Ožujak 2026.** — ako račun stigne prije roka za prijavu; inače **Lipanj 2026.** | **Ožujak 2026.** (BT-72) | Pretporez: dva uvjeta moraju biti ispunjena — (1) obveza PDV-a nastala (ožujak, BT-7) i (2) primatelj ima račun. Ako je rok za PDV prijavu za ožujak istekao (20.04.), primatelj uključuje pretporez u prvi sljedeći period kad ima račun = lipanj. |
+| **Ožujak 2026.** — ako račun stigne prije roka za prijavu; inače **Lipanj 2026.** | **Ožujak 2026.** (BT-72) | Pretporez: dva uvjeta moraju biti ispunjena — (1) obveza PDV-a nastala (ožujak, BT-7) i (2) primatelj ima račun. Ako je rok za PDV prijavu za ožujak istekao (30.04. — od 2026. rok je zadnji dan u mjesecu), primatelj uključuje pretporez u prvi sljedeći period kad ima račun = lipanj. |
 
-> **Otvoreno pitanje — ispravak prijave**: Primatelj primi račun u lipnju za isporuku iz ožujka. Može li retroaktivno ispraviti PDV prijavu za ožujak i uključiti pretporez u ožujak? U praksi, PU dopušta ispravak ako rok za prijavu za ožujak (20.04.) nije istekao u trenutku primitka računa — ali ako je istekao, primatelj pretporez uključuje u lipanj (kad je primio račun). Alternativno, neki porezni savjetnici preporučuju podnošenje ispravka za ožujak, pozivajući se na Senatex presudu.
+> **Otvoreno pitanje — ispravak prijave**: Primatelj primi račun u lipnju za isporuku iz ožujka. Može li retroaktivno ispraviti PDV prijavu za ožujak i uključiti pretporez u ožujak? U praksi, PU dopušta ispravak ako rok za prijavu za ožujak (30.04.) nije istekao u trenutku primitka računa — ali ako je istekao, primatelj pretporez uključuje u lipanj (kad je primio račun). Alternativno, neki porezni savjetnici preporučuju podnošenje ispravka za ožujak, pozivajući se na Senatex presudu.
 
 ---
 
