@@ -156,6 +156,8 @@ Izdavateljeva perspektiva: [4.1.4](primjeri-izdavatelj#414-predujam-avansni-rač
 > - **Primka**: nema — roba još nije stigla.
 >
 > **Prepoznavanje predujma u XML-u**: `InvoiceTypeCode = 386` i nepostojanje BT-72 (`ActualDeliveryDate`). HR-BT-15 nije prisutan (obračun po izdavanju).
+>
+> **Kompletni ciklus predujma**: Ovo je samo **prvi korak** iz perspektive primatelja. Kad isporuka bude obavljena, primatelj će zaprimiti storno predujma + konačni račun — tek tada prizna rashod i knjži primku. Detaljan prikaz: [Naknadno dospjeli računi — predujam](naknadno-dospjeli-racuni#12-predujam-iz-2025-konačni-račun-2026).
 
 ---
 
@@ -353,6 +355,8 @@ Izdavateljeva perspektiva: [4.2.4](primjeri-izdavatelj#424-predujam-avansni-rač
 > - **Primka**: nema — roba još nije stigla.
 >
 > **Kako prepoznati u XML-u**: Prisutan je **BT-7** (ne BT-8=432!) jer je datum plaćanja poznat. Ali **HR-BT-15 je također prisutan** jer je to svojstvo obveznika, ne pojedinačnog računa. Ovo je jedini primjer obračuna po naplati koji koristi BT-7 umjesto BT-8=432.
+>
+> **Kompletni ciklus predujma**: Ovo je samo **prvi korak**. Kad isporuka bude obavljena, primatelj će zaprimiti storno predujma + konačni račun (oba s HR-BT-15). Detaljan prikaz: [Naknadno dospjeli računi — predujam](naknadno-dospjeli-racuni#12-predujam-iz-2025-konačni-račun-2026).
 
 ---
 

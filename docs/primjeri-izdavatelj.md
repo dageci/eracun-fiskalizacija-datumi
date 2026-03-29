@@ -159,6 +159,8 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 > **PU pojašnjenje (19.12.2025., pitanje 222)**: Porezni obveznik nije obvezan izdati račun za primljeni predujam ako je izdao račun za obavljenu isporuku do roka za podnošenje prijave PDV-a za razdoblje u kojem je primio predujam. Međutim, ako je predujam primljen u jednom razdoblju oporezivanja, a isporuka se obavi u drugom — račun za predujam se **mora** izdati.
 
+> **Kompletni ciklus predujma**: Ovaj primjer prikazuje samo **prvi korak** — račun za predujam. Kad isporuka bude obavljena (u drugom razdoblju), potrebno je izdati: (1) **storno računa za predujam** (vrsta 384, proces P10 ili vrsta 381, proces P9) i (2) **konačni račun** za puni iznos (vrsta 380). Detaljan prikaz sva tri dokumenta: [Naknadno dospjeli računi — predujam](naknadno-dospjeli-racuni#12-predujam-iz-2025-konačni-račun-2026).
+
 ---
 
 #### 4.1.5 Kontinuirana usluga — obračunsko razdoblje (BT-73, BT-74) <span class="badge-izdavanje">Po izdavanju</span>
@@ -529,6 +531,8 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > **Zaključak**: Predujam kod obračuna po naplati koristi BT-7 (jer je datum plaćanja poznat), ali HR-BT-15 ostaje obavezan jer je to svojstvo obveznika, ne pojedinačnog računa.
 
 > **PU pojašnjenje (19.12.2025., pitanje 222)**: Porezni obveznik nije obvezan izdati račun za primljeni predujam ako je izdao račun za obavljenu isporuku do roka za podnošenje prijave PDV-a za razdoblje u kojem je primio predujam. Međutim, ako je predujam primljen u jednom razdoblju oporezivanja, a isporuka se obavi u drugom — račun za predujam se **mora** izdati.
+
+> **Kompletni ciklus predujma**: Ovaj primjer prikazuje samo **prvi korak** — račun za predujam. Kad isporuka bude obavljena, potrebno je izdati storno predujma + konačni račun. Sva tri dokumenta moraju imati HR-BT-15 jer je izdavatelj na sustavu po naplati. Detaljan prikaz: [Naknadno dospjeli računi — predujam](naknadno-dospjeli-racuni#12-predujam-iz-2025-konačni-račun-2026).
 
 #### 4.2.5 Kontinuirana usluga s obračunskim razdobljem <span class="badge-naplata">Po naplati</span>
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Čeka potvrdu</span></div>
