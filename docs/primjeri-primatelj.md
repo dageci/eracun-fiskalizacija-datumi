@@ -237,8 +237,8 @@ Izdavateljeva perspektiva: [4.1.7](primjeri-izdavatelj#417-odobrenje--creditnote
 
 > **Pretporez:** Ispravak pretporeza se u praksi najčešće knjži u mjesecu primitka odobrenja (**travanj**). Međutim, prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), porezni obveznik **ima pravo** na retroaktivni ispravak u mjesecu izvornog računa (**ožujak**) — i država mu to ne smije uskratiti. Obveznik bira pristup. HR-BT-15 nije prisutan (obračun po izdavanju).
 >
-> - **Pretporez: travanj** — BT-7 i BT-8 postoje u UBL CreditNote XSD shemi kao opcionalni elementi, ali se za odobrenja u praksi ne koriste. Datum porezne obveze = BT-2 = 10.04. Kupac u PDV prijavi za travanj smanjuje pretporez za iznos odobrenja.
-> - **Rashod: travanj** — ispravak rashoda se također knjiži u travnju (datum primitka odobrenja).
+> - **Pretporez: travanj** (u praksi) ili retroaktivno u ožujak (Senatex pravo). Kupac je u ožujku odbio pretporez za puni iznos izvornog računa. CreditNote u travnju **umanjuje** taj pretporez za iznos odobrenja — to je negativni pretporez (ne novi pretporez, nego korekcija starog).
+> - **Rashod: travanj** — ispravak rashoda se također knjiži u travnju (datum primitka odobrenja). Rashod iz ožujka se umanjuje za iznos odobrenja.
 > - **Skladište**: Ako se radi o povratu robe, kupac knjiži izdatnicu (izlaz iz skladišta). Ako je odobrenje za popust/razliku u cijeni, nema skladišnog prometa.
 >
 > **Prepoznavanje u XML-u**: Korijen dokumenta je `<CreditNote>`, ne `<Invoice>`, i tip je 381. HR-BT-15 nije prisutan (obračun po izdavanju).
@@ -381,9 +381,9 @@ Izdavateljeva perspektiva: [4.2.6](primjeri-izdavatelj#426-odobrenje--creditnote
 
 > **Primatelj prima CreditNote od obveznika na sustavu po naplati** — treba stornirati dio pretporeza.
 >
-> - **Pretporez: travanj** (u praksi) ili retroaktivno u mjesec izvornog pretporeza (prema [Senatex C-518/14](#sudska-praksa-eu--pravo-na-odbitak-i-račun)). Obveznik bira pristup — obje opcije su legalne.
-> - **Rashod: travanj** — korekcija rashoda u mjesecu primitka.
-> - **HR-BT-15 je prisutan** i u CreditNote jer je to svojstvo obveznika.
+> - **Pretporez: travanj** (u praksi) ili retroaktivno u mjesec izvornog pretporeza (prema [Senatex C-518/14](#sudska-praksa-eu--pravo-na-odbitak-i-račun)). Obveznik bira pristup. CreditNote **umanjuje** prethodno odbijeni pretporez — to je negativni pretporez, ne novi.
+> - **Rashod: travanj** — korekcija rashoda u mjesecu primitka. Rashod iz izvornog razdoblja se umanjuje.
+> - **HR-BT-15 je prisutan** i u CreditNote jer je to svojstvo obveznika — primatelj iz njega zna da je riječ o obračunu po naplati.
 >
 > **Senatex pojašnjenje**: Prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), ako je izvorni račun već plaćen i pretporez odbijen u ranijem mjesecu, obveznik **ima pravo** na retroaktivni ispravak u tom ranijem mjesecu. U praksi se najčešće radi u mjesecu primitka odobrenja jer je jednostavnije (bez ispravka PDV prijave za ranije razdoblje), ali obje opcije su legalne.
 
