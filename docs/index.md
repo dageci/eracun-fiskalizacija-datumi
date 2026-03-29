@@ -48,7 +48,8 @@ Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu
 | [Primjeri — primatelj](primjeri-primatelj) | 12 primjera — pretporez, rashod, skladišna primka + pretporez detaljno (čl. 57/60, CJEU) | Računovođe, primatelji |
 | [Referenca — XML, validacija, zakoni](referenca) | XML struktura, Schematron pravila, zakonski temelj | Programeri, svi |
 | [Europska usporedba](europska-usporedba) | 23 EU zemlje — modeli razmjene, izvještavanje prema poreznoj, dokumentacija | Svi |
-| [Prijedlozi za validator](prijedlozi-validator) | Pravila koja bi validator mogao uhvatiti na razini posrednika | Programeri, posrednici |
+| [Naknadno dospjeli računi](naknadno-dospjeli-racuni) | Prijelazno razdoblje 2025→2026, kasno fakturiranje, IOS, sudske presude | Računovođe, svi |
+| [Prijedlozi za validator](prijedlozi-validator) | 20 pravila koja bi validator mogao uhvatiti na razini posrednika | Programeri, posrednici |
 
 ## Službeni izvori i zakoni
 
