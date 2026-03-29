@@ -5,9 +5,9 @@ has_toc: true
 nav_order: 9
 ---
 
-# Indikator kopije (CopyIndicator)
+# Indikator kopije (HR-BT-1) — ispravak nePDV podataka bez storna
 
-Ova stranica pokriva element `CopyIndicator` u eRačunu i `indikatorKopije` u fiskalizacijskoj/eIzvještavajućoj poruci: što znači, kada se smije koristiti, koja polja se ne smiju mijenjati u kopiji, te kako se kopija tretira u fiskalizaciji i eIzvještavanju.
+Ova stranica pokriva element `CopyIndicator` (HR-BT-1) u eRačunu i `indikatorKopije` u fiskalizacijskoj/eIzvještavajućoj poruci. Suprotno intuitivnom nazivu, **ovo NIJE mehanizam za slanje klasične kopije računa** — to je mehanizam za **ispravak podataka koji ne utječu na obračun poreza**, pod istim brojem računa, bez potrebe za stornom i novim računom.
 
 ### Sadržaj
 {: .no_toc }
@@ -16,206 +16,208 @@ Ova stranica pokriva element `CopyIndicator` u eRačunu i `indikatorKopije` u fi
 {:toc}
 
 <div style="background: #fff3f3; border-left: 5px solid #e74c3c; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0;">
-<strong style="color: #c0392b;">&#9888; Ovo NIJE sluzbena uputa</strong><br>
+<strong style="color: #c0392b;">&#9888; Ovo NIJE službena uputa</strong><br>
 Sve što je ovdje napisano proizlazi iz autorove analize specifikacija, zakona i prakse. <strong>Nijedan zaključak nema službenu potvrdu Porezne uprave, radne skupine ni zakonodavca</strong> — dok tu potvrdu ne dobijemo, sadržaj treba tretirati isključivo kao polaznu točku za diskusiju, ne kao uputu za implementaciju.
 </div>
 
 ---
 
 ## 1. Što je indikator kopije?
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
-`CopyIndicator` je UBL 2.1 element koji oznacava radi li se o **kopiji** dokumenta (`true`) ili **originalu** (`false` / odsutan).
+Članak 43. Zakona o fiskalizaciji (NN 89/25) definira poseban mehanizam:
+
+> *"Kada se ispravlja podatak na eRačunu koji ne utječe na obračun poreza, eRačun se može u istom razdoblju oporezivanja izdati pod istim brojem, uz obvezno navođenje podatka 'indikator kopije računa'."*
+
+Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno slanje identičnog računa (klasična kopija), nego je **mehanizam za ispravak nePDV podataka pod istim brojem računa** — alternativa postupku storniranja (CreditNote 381) i izdavanja novog računa (Invoice 380).
+
+**Ključne točke:**
+
+- To **NIJE klasična kopija** — Porezna uprava eksplicitno upozorava da se ne smije koristiti u svrhu klasične kopije računa
+- To je **ispravak podataka koji ne utječu na obračun poreza** pod istim brojem računa
+- To je **opcija, ne obveza** — alternativa je uvijek storno (CreditNote 381) + novi račun (Invoice 380)
+- Vrijedi **samo u istom razdoblju oporezivanja** kao original
+- Ispravljeni eRačun se mora **odmah fiskalizirati** s `indikatorKopije=true`
 
 | Svojstvo | Vrijednost |
 |----------|-----------|
-| **UBL element** | `cbc:CopyIndicator` |
-| **XML putanja (Invoice)** | `/Invoice/cbc:CopyIndicator` |
-| **XML putanja (CreditNote)** | `/CreditNote/cbc:CopyIndicator` |
+| **HR-BT-1 / UBL element** | `cbc:CopyIndicator` |
+| **Putanja Invoice** | `/Invoice/cbc:CopyIndicator` |
+| **Putanja CreditNote** | `/CreditNote/cbc:CopyIndicator` |
 | **Tip podatka** | `boolean` (`true` / `false`) |
-| **Kardinalnost u UBL XSD** | 0..1 (opcionalan) |
-| **Pozicija u XML-u** | Odmah nakon `cbc:ID`, prije `cbc:UUID` |
-| **Fiskalizacijski element** | `indikatorKopije` (obavezan, `xsd:boolean`) |
-| **eIzvještavanje element** | `indikatorKopije` (obavezan, `xsd:boolean`) — samo u EvidentirajIsporukuZaKojuNijeIzdanERačun |
+| **Kardinalnost UBL** | 0..1 (opcionalan) |
+| **Kardinalnost fiskalizacija** | 1..1 (**obavezan!**) |
+| **Zakonski temelj** | Čl. 43 Zakona o fiskalizaciji (NN 89/25) |
 
-> **Gdje sve postoji CopyIndicator / indikatorKopije:**
-> - **UBL Invoice XML** — `cbc:CopyIndicator` (opcionalan, 0..1)
-> - **UBL CreditNote XML** — `cbc:CopyIndicator` (opcionalan, 0..1)
-> - **eFiskalizacija SOAP poruka** — `indikatorKopije` (**obavezan**) u `EvidentirajERacunZahtjev`
-> - **eIzvještavanje SOAP poruka** — `indikatorKopije` (**obavezan**) u `EvidentirajIsporukuZaKojuNijeIzdanERacun` (čl. 51)
-> - **EvidentirajNaplatu i EvidentirajOdbijanje** — **NEMA** indikatorKopije
-
-**Važna razlika EU vs. HR**: U EU normi EN16931, `CopyIndicator` se **ne koristi** — EU validator izdaje upozorenje `UBL-CR-004` ("A UBL invoice should not include the CopyIndicator"). Međutim, Hrvatska je kroz HR CIUS specifikaciju (HR-BT-1) uvela CopyIndicator kao polje u eRačunu, a kroz fiskalizacijsku shemu `indikatorKopije` kao **obavezan element** u SOAP poruci. To znači da posrednik za svaku fiskalizaciju mora poslati `indikatorKopije` — u većini slučajeva s vrijednošću `false`.
-
-```xml
-<!-- UBL eRačun — samo ako je kopija -->
-<cbc:ID>2026-001-00042</cbc:ID>
-<cbc:CopyIndicator>true</cbc:CopyIndicator>
-<cbc:IssueDate>2026-03-15</cbc:IssueDate>
-<cbc:IssueTime>14:30:00</cbc:IssueTime>
-```
-
-```xml
-<!-- Fiskalizacijska SOAP poruka — uvijek prisutan -->
-<indikatorKopije>false</indikatorKopije>
-<!-- ili za kopiju: -->
-<indikatorKopije>true</indikatorKopije>
-```
-
-### Gdje zivi indikatorKopije u fiskalizacijskoj shemi
-
-Element `indikatorKopije` je dio `ERačun` kompleksnog tipa unutar `EvidentirajERačunZahtjev` SOAP poruke. Definicija iz `eFiskalizacijaSchema.xsd`:
-
-```xml
-<xsd:element name="indikatorKopije" type="xsd:boolean">
-    <xsd:annotation>
-        <xsd:documentation>Indikator kopije računa koji pokazuje radi li
-        se o kopiji računa (true) ili ne (false).</xsd:documentation>
-    </xsd:annotation>
-</xsd:element>
-```
-
-Isti element postoji i u `eIzvještavanjeSchema.xsd` unutar strukture za eIzvještavanje o naplacenim računima.
+> **UPOZORENJE Porezne uprave**: *"Mogućnost uz naznaku 'indikator kopije računa' propisana člankom 43. Zakona o fiskalizaciji NE može se koristiti u svrhu klasične kopije računa."*
+>
+> Izvor: <a href="https://porezna-uprava.gov.hr/hr/ispravci-eracuna-koji-ne-utjecu-na-obracun-poreza-i-statistika-fiskalizacije-2-0/8349" target="_blank">Porezna uprava — Ispravci eRačuna koji ne utječu na obračun poreza</a>
 
 ---
 
-## 2. Kada se smije koristiti indikator kopije?
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumacenje koje jos nije službeno potvrdeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Ceka potvrdu</span></div>
+## 2. Što se SMIJE ispraviti kopijom?
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
-Kopija se smije koristiti **isključivo** kada se **isti račun** salje ponovo — npr. jer ga je kupac izgubio, doslo je do greške u prijenosu, ili je kupac zatrazio ponovni primitak. Kopija znači: "ovo je isti dokument koji ste vec primili, bez ikakve izmjene".
+Čl. 43 dopušta ispravak samo **podataka koji ne utječu na obračun poreza**. Sljedeća tablica klasificira podatke prema tome smiju li se ispraviti putem kopije ili zahtijevaju storno + novi račun.
 
-**Legitimni razlozi za kopiju:**
-- Kupac nije zaprimio original (greška u sustavu posrednika)
-- Kupcev sustav je izgubio/ostecen i trazi ponovni primitak
-- Tehnicki problem u prijenosu — posrednik potvrdjuje da original nije isporučen
+| Podatak | Smije se ispraviti kopijom? | Primjer |
+|---|---|---|
+| Referenca na narudžbu (BT-13) | **DA** | Krivi broj narudžbenice |
+| Napomene na računu (BT-22) | **DA** | Pogrešan tekst napomene |
+| Datum dospijeća (BT-9) | **DA** | Krivi rok plaćanja |
+| Podaci o plaćanju (BG-16) | **DA** | Krivi IBAN primatelja |
+| Oznaka operatera | **DA** | Krivi OIB operatera |
+| KPD klasifikacija | **DA** | Kriva KPD šifra artikla |
+| VATEX kod | **DA** | Krivi kod oslobođenja |
+| Podaci o partneru (GLN, adresa) | **DA** | Krivi GLN broj kupca |
+| Iznosi (BT-106 do BT-119) | **NE!** | Bilo kakva promjena iznosa |
+| PDV stopa/kategorija | **NE!** | Promjena stope ili kategorije |
+| Datum izdavanja (BT-2) | **NE!** | Drugi datum = drugi račun |
+| Datum isporuke (BT-72) | **NE!** | Utječe na rashod/prihod i PDV |
+| Datum PDV obveze (BT-7/BT-8) | **NE!** | Mijenja datum porezne obveze |
+| HR-BT-15 (obračun po naplati) | **NE!** | Mijenja PDV režim |
+| Broj računa (BT-1) | **MORA biti isti** | Isti broj = kopija istog računa |
+| Artikli, količine, cijene | **NE!** | Utječu na iznose |
 
-**Što kopija NIJE:**
-- Ispravljeni račun s promijenjenim iznosom, datumom ili PDV-om — to je **korekcija** (CreditNote 381 + novi Invoice 380)
-- Račun s promijenjenim brojem dokumenta — to je **novi račun**, ne kopija
-- Račun poslan drugom kupcu — to je **novi račun**
-
-### Osnovno pravilo
-
-> **Kopija MORA biti identicna originalu.** Ako se bilo koje polje koje utječe na PDV razlikuje od originala, radi se o korekciji ili novom računu — ne o kopiji.
+> **Pravilo palca**: Ako promjena podatka može promijeniti iznos PDV-a, PDV kategoriju, PDV period ili rashod/prihod — **nije dopuštena kopijom**. Mora se raditi storno (CreditNote 381) + novi račun (Invoice 380).
 
 ---
 
-## 3. Koja polja utječu na PDV? (ne smiju se mijenjati u kopiji)
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumacenje koje jos nije službeno potvrdeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Ceka potvrdu</span></div>
+## 3. Uvjeti za korištenje kopije
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
-Sljedeca tablica klasificira polja po utječaju na PDV. Polja označena s **DA** se nikada ne smiju razlikovati u kopiji od originala — promjena tih polja znači da dokument **nije kopija**.
+Sva tri uvjeta moraju biti **istovremeno** ispunjena:
 
-| BT | Polje | XML element | Utjece na PDV? | Ako se promijeni = |
-|---|---|---|---|---|
-| **BT-1** | Broj računa | `cbc:ID` | **MORA biti isti** | Nije kopija — novi dokument |
-| **BT-2** | Datum izdavanja | `cbc:IssueDate` | **DA** | Nova fiskalizacija, novi PDV period |
-| **BT-7** | Datum nastanka obveze PDV-a | `cbc:TaxPointDate` | **DA** | Mijenja datum porezne obveze |
-| **BT-8** | Kod datuma PDV obveze | `cac:InvoicePeriod/cbc:DescriptionCode` | **DA** | Mijenja mehanizam datuma |
-| **BT-9** | Datum dospijeca | `cbc:DueDate` | NE (ali utječe na eIzvještavanje) | Moguca kopija* |
-| **BT-72** | Datum isporuke | `cac:Delivery/cbc:ActualDeliveryDate` | **DA** (rashod/prihod) | Nova fiskalizacija |
-| **BT-106** | Ukupan iznos stavki | `cbc:LineExtensionAmount` | **DA** | Korekcija, ne kopija |
-| **BT-109** | Ukupan iznos bez PDV-a | `cbc:TaxExclusiveAmount` | **DA** | Korekcija, ne kopija |
-| **BT-110** | Ukupan iznos PDV-a | `cbc:TaxAmount` | **DA** | Korekcija, ne kopija |
-| **BT-112** | Ukupan iznos s PDV-om | `cbc:TaxInclusiveAmount` | **DA** | Korekcija, ne kopija |
-| **BT-115** | Iznos za uplatu | `cbc:PayableAmount` | **DA** | Korekcija, ne kopija |
-| **BT-116** | PDV kategorija | `cac:TaxSubtotal/.../cbc:ID` | **DA** | Korekcija, ne kopija |
-| **BT-118** | Osnovica poreza | `cbc:TaxableAmount` | **DA** | Korekcija, ne kopija |
-| **BT-119** | Iznos poreza kategorije | `cac:TaxSubtotal/cbc:TaxAmount` | **DA** | Korekcija, ne kopija |
-| **HR-BT-15** | Obračun po naplacenom | `hrextac:HRObračunPDVPoNaplati` | **DA** | Mijenja PDV rezim |
-| **BT-25** | Referenca preth. računa | `cac:BillingReference/.../cbc:ID` | NE | Moguca kopija* |
-| **BT-26** | Datum preth. računa | `cac:BillingReference/.../cbc:IssueDate` | NE | Moguca kopija* |
+| # | Uvjet | Obrazloženje |
+|---|-------|-------------|
+| 1 | Ispravak se odnosi **SAMO** na podatke koji ne utječu na obračun poreza | Čl. 43 — eksplicitna zakonska odredba |
+| 2 | Kopija se izdaje u **ISTOM razdoblju oporezivanja** kao original | Čl. 43 — isti obračunski period |
+| 3 | Broj računa (BT-1) **MORA biti identičan** originalu | Logika kopije — isti dokument, ispravljen |
 
-\* Polja označena "Moguca kopija" ne utječu izravno na PDV, ali je upitno zašto bi se razlikovala od originala. Promjena bilo kojeg polja tehnickih dovodi u pitanje je li dokument zaista kopija ili nova verzija.
+Ako **bilo koji** uvjet nije zadovoljen → storno (CreditNote 381) + novi račun (Invoice 380).
 
-> **Preporuka**: Kopija bi trebala biti **bitovno identicna** originalu, s jedinom razlikom da sadrži `<cbc:CopyIndicator>true</cbc:CopyIndicator>`. Svaka druga promjena otvara pitanja o integritetu dokumenta.
+**Primjer**: Original izdan 15.03.2026. Izdavatelj želi ispraviti IBAN 28.03.2026. — sva tri uvjeta su ispunjena (nePDV podatak, isto razdoblje, isti broj). Može kopija.
+
+**Protuprimjer**: Original izdan 15.03.2026. Izdavatelj želi ispraviti IBAN 05.04.2026. — uvjet 2 **nije** ispunjen (drugo razdoblje oporezivanja). Mora storno + novi račun.
 
 ---
 
 ## 4. Fiskalizacija kopije
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumacenje koje jos nije službeno potvrdeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Ceka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
-### 4.1 Fiskalizira li se kopija ponovo?
+Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`EvidentirajERacunZahtjev`). Za svaku fiskalizaciju — i original i kopiju — mora se eksplicitno navesti vrijednost:
 
-**Da** — kopija se salje Poreznoj upravi kroz isti `EvidentirajERačunZahtjev` SOAP servis, ali s `indikatorKopije` postavljenim na `true`. Porezna uprava time zna da je rijec o ponovnom slanju istog računa, a ne o novom računu.
-
-Iz sheme `eFiskalizacijaSchema.xsd`, element `indikatorKopije` je **obavezan** (`xsd:boolean` bez `minOccurs="0"`), što znači da se za svaku fiskalizaciju — i original i kopiju — mora eksplicitno navesti je li rijec o kopiji ili ne:
-
-| Slučaj | `indikatorKopije` | Što PU sustav ocekuje |
+| Slučaj | `indikatorKopije` | Što PU sustav očekuje |
 |--------|-------------------|----------------------|
 | Original (prvi put) | `false` | Evidentiraj novi račun |
-| Kopija (ponovo) | `true` | Evidentiraj kao kopiju postojeceg računa |
+| Ispravak nePDV podataka (kopija) | `true` | Evidentiraj kao ispravak postojećeg računa |
 
-### 4.2 Što sustav PU radi s kopijom?
+### 4.1 Ponašanje PU sustava
 
-Ovo je **otvoreno pitanje** na koje trenutno nemamo službeni odgovor:
+- PU sustav **provjerava** da originalni račun s istim brojem dokumenta (BT-1) **postoji** u evidenciji
+- Ako original ne postoji → greška **S012**
+- Ako se šalje račun s istim brojem BEZ `indikatorKopije=true` → greška **S008**
 
-- Da li PU sustav provjerava postoji li vec evidentirani račun s istim brojem dokumenta (BT-1)?
-- Da li PU sustav usporeduje sadržaj kopije s originalom?
-- Da li kopija generira novi QR kod / UUID ili koristi isti kao original?
-- Da li kopija ulazi u porezne evidencije ponovo ili se samo biljezi kao "ponovo poslan"?
+### 4.2 Gdje postoji indikatorKopije
 
-### 4.3 Primjenjuje li se eIzvještavanje na kopije?
+| Poruka | Element | Obavezan? |
+|--------|---------|-----------|
+| **eFiskalizacija** (`EvidentirajERacunZahtjev`) | `indikatorKopije` | **DA** (1..1) |
+| **eIzvještavanje** (`EvidentirajIsporukuZaKojuNijeIzdanERacun`) | `indikatorKopije` | **DA** (1..1) |
+| **EvidentirajNaplatu** | — | **NEMA** |
+| **EvidentirajOdbijanje** | — | **NEMA** |
 
-Element `indikatorKopije` postoji u `eIzvještavanjeSchema.xsd`, ali **samo** unutar metode **EvidentirajIsporukuZaKojuNijeIzdanERačun** (čl. 51 Zakona o fiskalizaciji) — ne unutar EvidentirajNaplatu ni EvidentirajOdbijanje. To je logično jer ta metoda šalje kompletne podatke o računu (uključujući stavke i iznose) kao zamjenu za fiskalizacijsku poruku, pa treba i oznaku kopije.
+```xml
+<!-- Fiskalizacijska SOAP poruka — original -->
+<indikatorKopije>false</indikatorKopije>
+
+<!-- Fiskalizacijska SOAP poruka — ispravak nePDV podataka -->
+<indikatorKopije>true</indikatorKopije>
+```
+
+```xml
+<!-- UBL eRačun — ispravak nePDV podataka -->
+<cbc:ID>2026-001-00042</cbc:ID>
+<cbc:CopyIndicator>true</cbc:CopyIndicator>
+<cbc:IssueDate>2026-03-15</cbc:IssueDate>
+```
 
 ---
 
 ## 5. Primjeri
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumacenje koje jos nije službeno potvrdeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Ceka potvrdu</span></div>
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
-### 5.1 Legitimna kopija
+### 5.1 Legitimna kopija — ispravak reference na narudžbu
 
-**Situacija**: Kupac javlja da njegov sustav nije zaprimio eRačun 2026-001-00042 zbog tehnickog problema kod posrednika. Trazi ponovni primitak.
+**Situacija**: Izdavatelj je poslao eRačun 2026-001-00042 s krivim brojem narudžbenice u BT-13 (napisao "NAR-100" umjesto "NAR-200"). Iznosi su ispravni, PDV je ispravan, isti mjesec.
 
-**Ispravno**: Izdavatelj ponovo salje **identican XML**, ali dodaje `CopyIndicator`:
+**Ispravno**: Izdavatelj šalje isti račun s istim brojem, `CopyIndicator=true`, i ispravljenim BT-13:
 
 ```xml
 <cbc:ID>2026-001-00042</cbc:ID>
 <cbc:CopyIndicator>true</cbc:CopyIndicator>
 <cbc:IssueDate>2026-03-15</cbc:IssueDate>
-<cbc:IssueTime>14:30:00</cbc:IssueTime>
 <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
-<!-- ... svi ostali elementi IDENTIČNI originalu ... -->
+<!-- ... -->
+<cac:OrderReference>
+  <cbc:ID>NAR-200</cbc:ID>  <!-- ISPRAVLJENO (bilo NAR-100) -->
+</cac:OrderReference>
+<!-- ... svi iznosi i PDV identični originalu ... -->
 ```
 
-Fiskalizacijska poruka:
-```xml
-<indikatorKopije>true</indikatorKopije>
-```
+Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 
-Rezultat: Kupac prima isti račun, sustav prepoznaje da je kopija, ne knjizi duplicirani troskak.
+**Rezultat**: Kupac prima ispravljeni račun s točnom referencom. Iznosi i PDV nepromijenjeni.
 
 ---
 
-### 5.2 Nedopuštena "kopija" — zapravo korekcija
+### 5.2 Legitimna kopija — ispravak IBAN-a
 
-**Situacija**: Izdavatelj primijeti da je na računu 2026-001-00042 krivi iznos (10.000 EUR umješto 8.000 EUR). Pokusava ponovo poslati "ispravljeni" račun s `CopyIndicator=true`.
+**Situacija**: Na računu 2026-001-00042 naveden je krivi IBAN primatelja uplate. Kupac ne može platiti. Isti mjesec.
 
-**KRIVO**:
+**Ispravno**: `CopyIndicator=true`, ispravljeni IBAN u BG-16 (podaci o plaćanju), sve ostalo identično.
+
 ```xml
 <cbc:ID>2026-001-00042</cbc:ID>
 <cbc:CopyIndicator>true</cbc:CopyIndicator>
-<cbc:IssueDate>2026-03-15</cbc:IssueDate>
 <!-- ... -->
-<cbc:PayableAmount currencyID="EUR">8000.00</cbc:PayableAmount>
-<!-- ^^^ Različito od originala (bio 10000.00) — OVO NIJE KOPIJA! -->
+<cac:PaymentMeans>
+  <cac:PayeeFinancialAccount>
+    <cbc:ID>HR1234567890123456789</cbc:ID>  <!-- ISPRAVLJENI IBAN -->
+  </cac:PayeeFinancialAccount>
+</cac:PaymentMeans>
 ```
 
-**ISPRAVNO**: Izdavatelj mora izdati CreditNote (381) za pogresni račun i novi Invoice (380) s tocnim iznosom:
+Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 
-1. **CreditNote 381** — stornira original:
+---
+
+### 5.3 NEDOPUŠTENA kopija — promjena iznosa
+
+**Situacija**: Izdavatelj je na računu 2026-001-00042 naveo krivi iznos (10.000 EUR umjesto 8.000 EUR). Pokušava poslati "kopiju" s ispravljenim iznosom.
+
+**KRIVO** — iznosi utječu na obračun poreza:
+```xml
+<cbc:ID>2026-001-00042</cbc:ID>
+<cbc:CopyIndicator>true</cbc:CopyIndicator>
+<cbc:PayableAmount currencyID="EUR">8000.00</cbc:PayableAmount>
+<!-- ^^^ NEDOPUŠTENO! Promjena iznosa = utječe na PDV -->
+```
+
+**ISPRAVNO** — storno + novi račun:
+
+1. **CreditNote 381** — stornira pogrešni original:
 ```xml
 <cbc:ID>2026-001-00043</cbc:ID>
 <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
-<!-- Referenca na pogresni račun -->
 <cac:BillingReference>
   <cac:InvoiceDocumentReference>
     <cbc:ID>2026-001-00042</cbc:ID>
-    <cbc:IssueDate>2026-03-15</cbc:IssueDate>
   </cac:InvoiceDocumentReference>
 </cac:BillingReference>
 ```
 
-2. **Novi Invoice 380** — s tocnim iznosom:
+2. **Novi Invoice 380** — s točnim iznosom:
 ```xml
 <cbc:ID>2026-001-00044</cbc:ID>
 <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
@@ -224,64 +226,63 @@ Rezultat: Kupac prima isti račun, sustav prepoznaje da je kopija, ne knjizi dup
 
 ---
 
-### 5.3 Promjena nePDV polja — siva zona
+### 5.4 NEDOPUŠTENA kopija — drugo razdoblje oporezivanja
 
-**Situacija**: Izdavatelj primijeti tipfelera u adresi kupca (npr. "Ilica 1" umješto "Ilica 10"). Zeli ponovo poslati račun s ispravkom i `CopyIndicator=true`.
+**Situacija**: Izdavatelj je u ožujku 2026. izdao račun s pogrešnom napomenom (BT-22). Napomena ne utječe na PDV, ali je sada travanj 2026. — drugo razdoblje oporezivanja.
 
-**Problem**: Adresa kupca ne utječe na PDV iznose, ali dokument **nije identican** originalu. Je li to kopija?
+**KRIVO** — čl. 43 vrijedi samo u istom razdoblju oporezivanja:
+```xml
+<!-- Travanj 2026. — pokušaj ispravka napomene s ožujskog računa -->
+<cbc:ID>2026-001-00042</cbc:ID>
+<cbc:CopyIndicator>true</cbc:CopyIndicator>
+<!-- ^^^ NEDOPUŠTENO! Drugo razdoblje oporezivanja -->
+```
 
-| Pristup | Argument za | Argument protiv |
-|---------|-------------|-----------------|
-| **DA, kopija** | Adresa ne utječe na PDV, iznosi su isti, BT-1 je isti | Dokument nije identican — integritet je narusen |
-| **NE, novi račun** | Svaka promjena znači da to nije isti dokument | Pretjerano strogo za tipfeler u adresi |
-
-> **Preporuka**: Iz opreza tretirajte svaku promjenu kao novi račun (CreditNote + novi Invoice), osim ako Porezna uprava eksplicitno potvrdi da su promjene nePDV polja dopuštene u kopiji. Razlog: ako sustav PU usporeduje sadržaj kopije s originalom, različita adresa može prouzročiti odbijanje.
+**ISPRAVNO** — storno + novi račun (jer je prošlo obračunsko razdoblje, mehanizam kopije iz čl. 43 se ne može primijeniti).
 
 ---
 
-## 6. Validator prijedlozi za kopiju
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumacenje koje jos nije službeno potvrdeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Ceka potvrdu</span></div>
+## 6. Razlika od EU norme
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
-### Postojeca validacija
+EU norma EN16931 **ne koristi** `CopyIndicator` — EU validator izdaje upozorenje **UBL-CR-004** (*"A UBL invoice should not include the CopyIndicator"*). Element postoji u UBL 2.1 XSD shemi, ali nije dio EN16931 semantičkog modela.
 
-Trenutno niti HR CIUS Schematron (`HR-CIUS-EXT-EN16931-UBL.sch`) niti EU EN16931 Schematron nemaju **fatal** pravila za `CopyIndicator`. Jedino što postoji:
+Hrvatska je uvela `CopyIndicator` kroz HR CIUS specifikaciju kao **HR-BT-1**, s posebnom svrhom definiranom u čl. 43 Zakona o fiskalizaciji. To nije klasična kopija u smislu UBL standarda, nego mehanizam specifičan za hrvatsku fiskalizaciju.
 
-| Pravilo | Izvor | Tip | Što radi |
-|---------|-------|-----|----------|
-| **UBL-CR-004** | EN16931 | `warning` | "A UBL invoice should not include the CopyIndicator" |
+| Aspekt | EU norma (EN16931) | Hrvatska (HR CIUS) |
+|--------|--------------------|--------------------|
+| Element | Ne koristi se | HR-BT-1 (`cbc:CopyIndicator`) |
+| Validator | UBL-CR-004 upozorenje | Dopušten |
+| Svrha | — | Ispravak nePDV podataka (čl. 43) |
+| Fiskalizacija | — | `indikatorKopije` obavezan (1..1) |
+| Ekvivalent u drugim EU zemljama | **Nema** | Nijedna druga EU zemlja nema ovaj mehanizam u ovom obliku |
 
-Ovo EU upozorenje postoji jer EN16931 ne koristi `CopyIndicator` u svom modelu podataka. Medutim, Hrvatska ga koristi kroz fiskalizacijsku shemu, pa ovo upozorenje treba tumaciti u HR kontekstu kao informativno, ne kao zabranu.
-
-### Prijedlog novog pravila
-
-| ID | Pravilo | Tip | Obrazloženje |
-|----|---------|-----|--------------|
-| **HR-BR-GECI-W11** | Ako `CopyIndicator=true`, izdaj upozorenje: "Račun je označen kao kopija — provjerite da je identican originalu" | `warning` | Kopija je neuobicajena situacija. Upozorenje podsijeca posrednika i primatelja da provjere je li dokument zaista identican originalu ili se radi o nedopuštenoj promjeni s oznakom kopije. |
-
-**Schematron primjer**:
-```xml
-<assert test="not(cbc:CopyIndicator = 'true')"
-  flag="warning"
-  id="HR-BR-GECI-W11">
-  [HR-BR-GECI-W11] - Račun je označen kao kopija (CopyIndicator=true).
-  Kopija mora biti identicna originalu — provjerite da se nijedan
-  iznos, datum ni PDV podatak ne razlikuje od prvog slanja.
-</assert>
-```
+> **Napomena**: Upozorenje UBL-CR-004 treba u hrvatskom kontekstu tretirati kao informativno, ne kao zabranu — element je legitimno u upotrebi temeljem HR CIUS proširenja.
 
 ---
 
 ## 7. Otvorena pitanja
 
-Sljedeca pitanja zahtijevaju službenu potvrdu Porezne uprave:
+Sljedeća pitanja zahtijevaju službenu potvrdu Porezne uprave:
 
-1. **Usporedba sadržaja**: Da li PU sustav usporeduje sadržaj kopije s originalom, ili samo biljezi da je kopija poslana?
-2. **QR kod / UUID**: Generira li kopija novi QR kod ili mora koristiti isti UUID kao original?
-3. **Granica kopije**: Smiju li se u kopiji mijenjati polja koja ne utječu na PDV (adresa, napomena, referenca na narudzbu)?
-4. **Vremensko ogranicenje**: Postoji li rok do kojeg se kopija može poslati nakon originala?
-5. **EvidentirajIsporukuZaKojuNijeIzdanERačun**: Kako PU sustav tretira poruku s `indikatorKopije=true` — ignorira li duplikat ili ga procesira?
-6. **Visestruke kopije**: Može li se isti račun kopirati vise puta (npr. kupac trazi ponovni primitak tri puta)?
-7. **Posrednik i kopija**: Tko inicira kopiju — izdavatelj, primatelj ili posrednik? Da li posrednik može autonomno ponovo poslati eRačun bez izdavateljeve suglasnosti?
+1. **Datum dospijeća (BT-9)**: Smije li se mijenjati kopijom? PU kaže "podaci o plaćanju" — ali BT-9 utječe na eIzvještavanje o naplati. Praktički nePDV podatak, ali posljedice za eIzvještavanje nisu jasne.
+2. **Adresa kupca/prodavatelja**: Smije li se ispraviti adresa kopijom? Ne utječe na PDV, ali mijenja identifikaciju stranke.
+3. **Drugo razdoblje — obaveza storna**: Čl. 43 eksplicitno ograničava kopiju na isto razdoblje oporezivanja. Za ispravke u drugom razdoblju, jedina opcija je storno + novi račun — postoji li iznimka?
+4. **Zamjena u evidenciji PU**: Kako PU sustav tretira kopiju — zamjenjuje li original u evidenciji ili ga čuva uz bilješku o ispravku?
+5. **Višestruki ispravci**: Može li se isti račun ispraviti kopijom više puta unutar istog razdoblja?
+6. **QR kod / UUID**: Generira li kopija novi UUID ili koristi isti kao original?
+
+---
+
+## Izvori
+
+| Izvor | Link |
+|-------|------|
+| Zakon o fiskalizaciji, čl. 43 (NN 89/25) | <a href="https://zakon.hr/z/2933/Zakon-o-fiskalizaciji" target="_blank">zakon.hr</a> |
+| PU: Ispravci eRačuna koji ne utječu na obračun poreza | <a href="https://porezna-uprava.gov.hr/hr/ispravci-eracuna-koji-ne-utjecu-na-obracun-poreza-i-statistika-fiskalizacije-2-0/8349" target="_blank">porezna-uprava.gov.hr</a> |
+| PU: Pitanja i odgovori (Q55, Q56) | <a href="https://porezna-uprava.gov.hr" target="_blank">porezna-uprava.gov.hr</a> |
+| HR CIUS specifikacija (HR-BT-1) | <a href="https://porezna.gov.hr" target="_blank">porezna.gov.hr</a> |
+| Tehnička specifikacija Fiskalizacija (Tablica 76) | <a href="https://porezna.gov.hr" target="_blank">porezna.gov.hr</a> |
 
 ---
 
@@ -289,7 +290,7 @@ Sljedeca pitanja zahtijevaju službenu potvrdu Porezne uprave:
 
 | Stranica | Relevantnost |
 |----------|-------------|
-| [Pravila i mehanizmi](pravila) | BT polja koja utječu na PDV — osnova za procjenu što se smije mijenjati u kopiji |
-| [Primjeri — izdavatelj](primjeri-izdavatelj) | Scenariji izdavanja eRačuna — svaki se može pojaviti i kao kopija |
-| [Prijedlozi za validator](prijedlozi-validator) | Sva predložena pravila za HR CIUS validator, ukljucujuci HR-BR-GECI-W11 |
+| [Pravila i mehanizmi](pravila) | BT polja koja utječu na PDV — osnova za procjenu što se smije ispraviti kopijom |
+| [Primjeri — izdavatelj](primjeri-izdavatelj) | Scenariji izdavanja eRačuna |
+| [Prijedlozi za validator](prijedlozi-validator) | Predložena pravila za HR CIUS validator |
 | [Referenca](referenca) | XML struktura, pozicija CopyIndicator elementa u dokumentu |
