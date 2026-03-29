@@ -313,7 +313,6 @@
     </nav>
 
     <main class="main-content">
-      {% if page.url != "/" %}
       <div class="page-actions">
         <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/edit/master/docs/{{ page.path }}" target="_blank">
           ✏️ Uredi ovu stranicu
@@ -326,18 +325,14 @@
         <span id="readingTime"></span>
         <span id="lastUpdated"></span>
       </div>
-      {% endif %}
-
       {{ content }}
 
-      {% if page.url != "/" %}
       <div class="page-feedback">
         <p>Je li ova stranica bila korisna?</p>
         <a class="fb-yes" href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions/new?category=općenito&title=Korisna stranica: {{ page.title | url_encode }}" target="_blank">👍 Da, korisno</a>
         <a class="fb-no" href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues/new?title=Poboljšanje: {{ page.title | url_encode }}&body=Stranica: {{ page.url }}%0A%0AŠto bi moglo biti bolje:%0A" target="_blank">👎 Može bolje</a>
         <a class="fb-discuss" href="https://github.com/dageci/eracun-fiskalizacija-datumi/discussions" target="_blank">💬 Imam pitanje</a>
       </div>
-      {% endif %}
     </main>
 
     <aside class="right-toc" id="rightToc">
