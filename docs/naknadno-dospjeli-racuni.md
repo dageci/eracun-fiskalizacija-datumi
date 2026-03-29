@@ -11,6 +11,14 @@ Ova stranica pokriva situacije u kojima se eRačun izdaje **znatno nakon isporuk
 
 > **Ključno pravno načelo**: Za tuzemne isporuke u Hrvatskoj **ne postoji zakonski rok za izdavanje računa** (čl. 78 ZPDV propisuje rok samo za intra-EU isporuke — do 15. u mjesecu). Za domaće B2B transakcije, rok nije propisan — preporuka je "u najkraćem razumnom roku" (izvor: <a href="https://www.teb.hr/novosti/2024/u-kojem-roku-treba-izdati-racun/" target="_blank">TEB</a>). Međutim, **PDV obveza nastaje isporukom** (čl. 30 st. 1 ZPDV), neovisno o tome kad je račun izdan.
 
+> **Napomena o HR-BT-15 (obračun po naplati)**: Sva analiza na ovoj stranici pretpostavlja **obračun po izdavanju** (čl. 30 ZPDV). Ako izdavatelj koristi **obračun po naplaćenoj naknadi** (čl. 125.i), PDV tretman se fundamentalno mijenja:
+> - eRačun MORA sadržavati **HR-BT-15** (`HRObracunPDVPoNaplati`)
+> - PDV obveza nastaje tek **po plaćanju**, ne po isporuci — BT-7 postaje datum plaćanja
+> - Primatelj **ne smije** odbiti pretporez do plaćanja (čl. 125.i st. 3)
+> - Kasno fakturiranje je **manje problematično** za PDV jer obveza ionako nastaje po plaćanju, ali eIzvještavanje o naplati ostaje obvezno
+>
+> Za detalje vidi [Pravila — anomalija HR proširenja](pravila#anomalija-hr-proširenja).
+
 ### Sadržaj
 {: .no_toc }
 
@@ -47,6 +55,8 @@ Klasičan prijelazni slučaj: usluga je obavljena u prosincu 2025. (prije obveze
 | F2 fiskalizacija | **DA** | Račun je IZDAN u 2026. |
 
 > **Ključni uvid — F2 obaveza**: Račun se fiskalizira jer je **izdan** u 2026. (BT-2 = 10.01.2026.). Nije bitno kad je usluga obavljena — F2 obaveza ovisi o datumu izdavanja, ne o datumu isporuke. Ovo proizlazi iz PU pojašnjenja (pitanja 101/104).
+
+> **PU pojašnjenje (pitanje 9)**: Računi poslani u 2025. ne podliježu obvezama iz Zakona o fiskalizaciji — ne treba raditi ni eIzvještavanje čak i ako je uplata u 2026.
 
 **Perspektiva izdavatelja:**
 
@@ -97,6 +107,10 @@ Kupac je platio predujam u studenom 2025., izdavatelj je izdao avansni račun u 
 | Konačni račun (veljača 2026.) | Veljača 2026. | Veljača 2026. (BT-72) | Razlika predujam-konačni |
 
 > **Otvoreno pitanje**: Što ako predujam **nije izdan** u 2025. (propust), ali je novac primljen u 2025.? Kupac je platio, izdavatelj nije izdao avansni račun, a sada u 2026. izdaje i avansni i konačni račun. Primjenjuje li se F2 na oba? PU pojašnjenje pokriva samo slučaj kad je predujam izdan u 2025. — što ako nije, ostaje nejasno.
+
+> **PU pojašnjenje (pitanje 171)**: Ovo pravilo vrijedi i kada dolazi do prijenosa poslovanja (npr. obrt → d.o.o.) — ako je predujam primljen u 2025., konačni račun u 2026. (čak i pod novim OIB-om) ne podliježe F2.
+>
+> **PU pojašnjenje (pitanje 222)**: Porezni obveznik nije obvezan izdati račun za primljeni predujam ako je izdao račun za obavljenu isporuku do roka za podnošenje prijave PDV-a za razdoblje u kojem je primio predujam. Međutim, ako je predujam primljen u jednom razdoblju oporezivanja, a isporuka se obavi u drugom — račun za predujam se **mora** izdati.
 
 ---
 
@@ -156,6 +170,10 @@ Usluga obavljena u ožujku 2026., ali račun izdan tek u lipnju 2026. — zbog a
 | F2 fiskalizacija | **DA** — u lipnju | Račun izdan u lipnju |
 
 > **Ključni uvid**: Čl. 78 st. 1 Zakona o PDV-u propisuje rok za izdavanje računa: **najkasnije 15. dana od kraja mjeseca** u kojem je obavljena isporuka (za domaće isporuke). Za isporuku 20.03. — rok je 15.04.2026. Račun izdan u lipnju je **kasno izdan račun** u smislu Zakona, ali to ne znači da je nevažeći — samo da je izdavatelj prekršio rok.
+
+> **PU pojašnjenje (pitanje 146)**: "Zakonom o fiskalizaciji nije propisan rok za izdavanje računa" — potvrda da za tuzemne isporuke nema zakonskog roka.
+>
+> **Građevinske situacije (PU pitanja 43, 99)**: Građevinske privremene situacije su najčešći legitimni razlog za kasno fakturiranje (ovjera nadzornog inženjera može trajati i 45+ dana). Fiskalizacija se provodi istovremeno s izdavanjem. Između PDV obveznika primjenjuje se prijenos porezne obveze — PDV obveza nastaje kad je usluga obavljena, neovisno o ovjeri. Za ne-PDV primatelje, PDV nastaje istekom razdoblja u kojem je situacija ovjerena.
 
 **Perspektiva izdavatelja:**
 
