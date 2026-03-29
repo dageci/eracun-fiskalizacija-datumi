@@ -85,26 +85,37 @@ Kupac je platio predujam u studenom 2025., izdavatelj je izdao avansni račun u 
 |---------|-----------|-------------|
 | Predujam — datum izdavanja | 20.11.2025. | Izdan u 2025. — NIJE eRačun |
 | Predujam — datum primitka uplate | 18.11.2025. | BT-7 na avansnom računu |
+| **Storno predujma** — datum izdavanja | 05.02.2026. | Korektivni dokument za predujam |
 | Konačni račun — datum izdavanja | 05.02.2026. | BT-2 (`cbc:IssueDate`) |
 | Konačni račun — datum isporuke | 03.02.2026. | BT-72 (`cbc:ActualDeliveryDate`) |
 | F2 fiskalizacija — predujam | **NE** | Izdan u 2025. |
+| F2 fiskalizacija — storno predujma | **Iznimka — NE!** | Dokument koji mijenja račun iz 2025. |
 | F2 fiskalizacija — konačni račun | **Iznimka — NE!** | PU pitanje 155/157 |
 
-> **Ključni uvid — iznimka od F2**: Prema PU pojašnjenju (pitanja 155/157), **ni predujam ni konačni račun ne idu kroz F2 fiskalizaciju** ako je predujam izdan u 2025. Logika: predujam i konačni račun čine jednu cjelinu — ako je predujam bio izvan sustava eRačuna (2025.), konačni račun ga "nasljeđuje" i također ne podliježe F2. Ovo je izričita iznimka od općeg pravila da se računi izdani u 2026. fiskaliziraju.
+> **Kompletni ciklus predujma** (kad su predujam i isporuka u **različitim** poreznim razdobljima):
+> 1. **Račun za predujam** — izdaje se kad novac stigne (studeni 2025.)
+> 2. **Storno računa za predujam** — izdaje se kad je isporuka obavljena (veljača 2026.) — poništava avansni račun. Može biti korektivni račun (vrsta dokumenta 384, proces P10) ili odobrenje (381, proces P9)
+> 3. **Konačni račun** — izdaje se za puni iznos isporuke (veljača 2026.)
+>
+> **PU pojašnjenje (pitanja 3/4)**: Za korektivne račune preporuka je korištenje poslovnog procesa **P10** s vrstom dokumenta **384**. Izdavatelj samostalno određuje način korištenja (384 ili 381).
+
+> **Ključni uvid — iznimka od F2**: Prema PU pojašnjenju (pitanja 155/157), **ni predujam, ni storno predujma, ni konačni račun ne idu kroz F2 fiskalizaciju** ako je predujam izdan u 2025. Logika: svi dokumenti čine jednu cjelinu — ako je predujam bio izvan sustava eRačuna (2025.), ostali dokumenti ga "nasljeđuju". Ovo je potvrđeno i PU odgovorom na pitanje o dokumentima koji mijenjaju račune iz 2025.: ne podliježu eRačun obvezi.
 
 **Perspektiva izdavatelja:**
 
-| Dokument | PDV period | F2? | Napomena |
-|----------|:---:|:---:|---|
-| Predujam (studeni 2025.) | Studeni 2025. | NE | Izdan u 2025. |
-| Konačni račun (veljača 2026.) | Veljača 2026. (za razliku do punog iznosa) | **NE** | PU iznimka — cjelina s predujmom iz 2025. |
+| Dokument | PDV period | F2? | Prihod | Napomena |
+|----------|:---:|:---:|:---:|---|
+| Predujam (studeni 2025.) | Studeni 2025. | NE | Ne priznaje se (primljeno sredstvo) | Izdan u 2025. |
+| Storno predujma (veljača 2026.) | Poništava studeni 2025. | **NE** | — | Dokument koji mijenja račun iz 2025. |
+| Konačni račun (veljača 2026.) | Veljača 2026. (puni iznos) | **NE** | Veljača 2026. (HSFI 15) | PU iznimka — cjelina s predujmom iz 2025. |
 
 **Perspektiva primatelja:**
 
 | Dokument | Pretporez period | Rashod period | Napomena |
 |----------|:---:|:---:|---|
 | Predujam (studeni 2025.) | Studeni 2025. | Ne priznaje se (dano sredstvo) | Standardni tretman predujma |
-| Konačni račun (veljača 2026.) | Veljača 2026. | Veljača 2026. (BT-72) | Razlika predujam-konačni |
+| Storno predujma (veljača 2026.) | Poništava pretporez iz studenog | — | Ispravak PDV prijave za studeni ili uključenje u veljaču |
+| Konačni račun (veljača 2026.) | Veljača 2026. | Veljača 2026. (BT-72) | Puni iznos — uključuje i dio koji je bio pokriven predujmom |
 
 > **Otvoreno pitanje**: Što ako predujam **nije izdan** u 2025. (propust), ali je novac primljen u 2025.? Kupac je platio, izdavatelj nije izdao avansni račun, a sada u 2026. izdaje i avansni i konačni račun. Primjenjuje li se F2 na oba? PU pojašnjenje pokriva samo slučaj kad je predujam izdan u 2025. — što ako nije, ostaje nejasno.
 
