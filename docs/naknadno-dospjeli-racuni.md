@@ -116,9 +116,11 @@ Kupac je platio predujam u studenom 2025., izdavatelj je izdao avansni račun u 
 
 | Dokument | Pretporez period | Rashod period | Napomena |
 |----------|:---:|:---:|---|
-| Predujam (studeni 2025.) | Studeni 2025. | Ne priznaje se (dano sredstvo) | Standardni tretman predujma |
-| Storno predujma (veljača 2026.) | Poništava pretporez iz studenog | — | Ispravak PDV prijave za studeni ili uključenje u veljaču |
-| Konačni račun (veljača 2026.) | Veljača 2026. | Veljača 2026. (BT-72) | Puni iznos — uključuje i dio koji je bio pokriven predujmom |
+| Predujam (studeni 2025.) | Studeni 2025. | Ne priznaje se (dano sredstvo) | Pretporez odbijen u studenom |
+| Storno predujma (veljača 2026.) | Poništava pretporez iz studenog | — | Negativni pretporez — umanjuje prethodno odbijeni iznos iz studenog. Ispravak PDV prijave za studeni ili uključenje u tekuću (veljačku) prijavu (čl. 33 st. 7) |
+| Konačni račun (veljača 2026.) | Veljača 2026. | Veljača 2026. (BT-72) | Pretporez za **puni iznos** isporuke (ne samo razliku) — jer je storno poništio predujam |
+
+> **Neto efekt predujam ciklusa za primatelja**: Pretporez iz studenog (predujam) se poništava stornom, a konačni račun daje pretporez za puni iznos u veljači. Krajnji rezultat: pretporez se "seli" iz studenog u veljaču. Rashod se priznaje tek u veljači (kad je isporuka obavljena, BT-72).
 
 > **Otvoreno pitanje**: Što ako predujam **nije izdan** u 2025. (propust), ali je novac primljen u 2025.? Kupac je platio, izdavatelj nije izdao avansni račun, a sada u 2026. izdaje i avansni i konačni račun. Primjenjuje li se F2 na oba? PU pojašnjenje pokriva samo slučaj kad je predujam izdan u 2025. — što ako nije, ostaje nejasno.
 
