@@ -502,7 +502,11 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 
 - **<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62014CJ0518" target="_blank">C-518/14 (Senatex), 15.09.2016.</a>** — Senatex GmbH protiv Finanzamt Hannover-Nord (Njemačka). Ispravak računa ima **retroaktivan učinak** — pretporez se može odbiti za razdoblje u kojem je račun **izvorno izdan**, ne samo u razdoblju ispravka. EU pravo zabranjuje nacionalno zakonodavstvo koje sprječava retroaktivnu primjenu ispravaka računa.
 
+  > **Što to znači u praksi:** Ako ste primili račun s greškom u ožujku, a ispravak stigao u lipnju — pretporez ide u **ožujak** (kad je izvorni račun izdan), ne u lipanj. Ne trebate podnositi dopunsku PDV prijavu za lipanj — ispravak se vraća u izvorni period. Ovo je posebno važno kod eRačuna jer se ispravci (CreditNote 381, korekcija 384) referenciraju na izvorni račun putem BT-25/BT-26.
+
 - **<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:62020CJ0080" target="_blank">C-80/20 (Wilo Salmson France), 21.10.2021.</a>** — Wilo Salmson France SAS protiv ANAF (Rumunjska). EU pravo zabranjuje odbijanje povrata PDV-a u određenom razdoblju samo zato što je PDV dospio u ranijem razdoblju, a račun izdan u kasnijem. Poništenje i ponovna izdaja računa ne mijenja razdoblje za koje se može zatražiti povrat.
+
+  > **Što to znači u praksi:** Usluga obavljena u prosincu, račun izdan u veljači. Porezna uprava ne smije reći "PDV je dospio u prosincu, ali račun je iz veljače, pa ne možete tražiti povrat za prosinac." Pravo na povrat slijedi poreznu obvezu (prosinac), ne datum računa. Ovo potvrđuje da je **BT-7 (datum porezne obveze) ključan** — ne BT-2 (datum izdavanja).
 
 ---
 
