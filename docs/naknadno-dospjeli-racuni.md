@@ -158,9 +158,9 @@ Izvorni račun izdan je u studenom 2025. (nije bio F2 fiskaliziran). U veljači 
 
 | Pretporez period | Rashod period | Napomena |
 |:---:|:---:|---|
-| Umanjenje pretporeza u **veljači 2026.** ili ispravak prijave za **studeni 2025.** | Ispravak rashoda — ovisi o materijalnosti (HSFI 5) | Senatex presuda (C-518/14): pravo na retroaktivni ispravak pretporeza u period kad je nastala obveza, ali HR praksa nije potpuno usklađena |
+| Umanjenje pretporeza u **veljači 2026.** ili ispravak prijave za **studeni 2025.** | Ispravak rashoda — ovisi o materijalnosti (HSFI 5) | Senatex presuda ([C-518/14 (Senatex)](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun)): pravo na retroaktivni ispravak pretporeza u period kad je nastala obveza, ali HR praksa nije potpuno usklađena |
 
-> **EU kontekst — Senatex**: Presuda Suda EU (C-518/14, Senatex) potvrđuje pravo na retroaktivni ispravak odbitka pretporeza u porezno razdoblje kad je nastala obveza, bez obzira kad je ispravak primljen. No u hrvatskom kontekstu, primjena ovog načela na prijelazno razdoblje 2025./2026. još nije razjašnjena.
+> **EU kontekst — Senatex**: Presuda Suda EU ([C-518/14, Senatex](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun)) potvrđuje pravo na retroaktivni ispravak odbitka pretporeza u porezno razdoblje kad je nastala obveza, bez obzira kad je ispravak primljen. No u hrvatskom kontekstu, primjena ovog načela na prijelazno razdoblje 2025./2026. još nije razjašnjena.
 
 ---
 
@@ -203,7 +203,7 @@ Usluga obavljena u ožujku 2026., ali račun izdan tek u lipnju 2026. — zbog a
 |:---:|:---:|---|
 | **Ožujak 2026.** — ako račun stigne prije roka za prijavu; inače **Lipanj 2026.** | **Ožujak 2026.** (BT-72) | Pretporez: dva uvjeta moraju biti ispunjena — (1) obveza PDV-a nastala (ožujak, BT-7) i (2) primatelj ima račun. Ako je rok za PDV prijavu za ožujak istekao (30.04. — od 2026. rok je zadnji dan u mjesecu), primatelj uključuje pretporez u prvi sljedeći period kad ima račun = lipanj. |
 
-> **Otvoreno pitanje — ispravak prijave**: Primatelj primi račun u lipnju za isporuku iz ožujka. Može li retroaktivno ispraviti PDV prijavu za ožujak i uključiti pretporez u ožujak? U praksi, PU dopušta ispravak ako rok za prijavu za ožujak (30.04.) nije istekao u trenutku primitka računa — ali ako je istekao, primatelj pretporez uključuje u lipanj (kad je primio račun). Alternativno, neki porezni savjetnici preporučuju podnošenje ispravka za ožujak, pozivajući se na Senatex presudu.
+> **Otvoreno pitanje — ispravak prijave**: Primatelj primi račun u lipnju za isporuku iz ožujka. Može li retroaktivno ispraviti PDV prijavu za ožujak i uključiti pretporez u ožujak? U praksi, PU dopušta ispravak ako rok za prijavu za ožujak (30.04.) nije istekao u trenutku primitka računa — ali ako je istekao, primatelj pretporez uključuje u lipanj (kad je primio račun). Alternativno, neki porezni savjetnici preporučuju podnošenje ispravka za ožujak, pozivajući se na [Senatex presudu](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun).
 
 ---
 
@@ -270,7 +270,7 @@ Sud naredi izdavatelju izdavanje računa za uslugu obavljenu u prošloj godini. 
 
 | Pretporez period | Rashod period | Napomena |
 |:---:|:---:|---|
-| **Rujan 2026.** (kad primi račun) ili ispravak za **Lipanj 2025.** (Senatex) | **Lipanj 2025.** — ispravak rashoda ovisi o materijalnosti (HSFI 5) | Primatelj tek u rujnu 2026. dobiva račun. Po čl. 60 Zakona o PDV-u, pretporez može koristiti tek kad ima račun. Po Senatex presudi, mogao bi tražiti retroaktivni ispravak za lipanj 2025. — ali u HR praksi to zahtijeva podnošenje ispravka prijave i obrazloženje PU-u. |
+| **Rujan 2026.** (kad primi račun) ili ispravak za **Lipanj 2025.** (Senatex) | **Lipanj 2025.** — ispravak rashoda ovisi o materijalnosti (HSFI 5) | Primatelj tek u rujnu 2026. dobiva račun. Po čl. 60 Zakona o PDV-u, pretporez može koristiti tek kad ima račun. Po [C-518/14 (Senatex)](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun) presudi, mogao bi tražiti retroaktivni ispravak za lipanj 2025. — ali u HR praksi to zahtijeva podnošenje ispravka prijave i obrazloženje PU-u. |
 
 > **Otvoreno pitanje — PDV period isporuke iz 2025.**: Isporuka je bila u lipnju 2025. — prije sustava eRačuna. BT-7=01.06.2025. je "u prošlosti" iz perspektive novog sustava. Kako PU tretira ispravak za period koji je bio pod starim režimom (papirni računi, bez F2)? Ovo je granični slučaj koji PU pojašnjenja trenutno ne pokrivaju.
 
@@ -303,10 +303,10 @@ Sumarni pregled svih scenarija iz perspektive primatelja:
 |---|-----------|:-:|:-:|:-:|:-:|---|
 | 1.1 | Usluga 12/2025., račun 01/2026. | Siječanj 2026. | Prosinac 2025. (ako stigne prije roka) ili Siječanj 2026. | Prosinac 2025. | Možda — ovisi o roku | Provjeriti BT-7 |
 | 1.2 | Predujam 2025., konačni 2026. | Veljača 2026. | Veljača 2026. | Veljača 2026. | NE | Standardni konačni račun |
-| 1.3 | CreditNote 2026. za račun 2025. | Veljača 2026. | Veljača 2026. (umanjenje) ili ispravak 11/2025. | Ispravak — ovisi o materijalnosti | Možda (Senatex) | Retroaktivni ispravak? |
+| 1.3 | CreditNote 2026. za račun 2025. | Veljača 2026. | Veljača 2026. (umanjenje) ili ispravak 11/2025. | Ispravak — ovisi o materijalnosti | Možda ([Senatex](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun)) | Retroaktivni ispravak? |
 | 2.1 | Račun 3 mj. nakon isporuke | Lipanj 2026. | Lipanj 2026. (propušten rok za ožujak) | Ožujak 2026. | Moguć ispravak za ožujak | Dva uvjeta za pretporez |
 | 2.2 | IOS — nefakturirano | Lipanj 2026. | Lipanj 2026. | Siječanj 2026. (primka) | NE za pretporez, DA za rashod (usklađenje iznosa) | Rashod po primci, pretporez po računu |
-| 2.3 | Sudska presuda | Rujan 2026. | Rujan 2026. ili ispravak 06/2025. (Senatex) | Lipanj 2025. (ispravak) | DA — za rashod sigurno, za pretporez ovisi o pristupu | Najkompleksniji slučaj |
+| 2.3 | Sudska presuda | Rujan 2026. | Rujan 2026. ili ispravak 06/2025. ([Senatex](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun)) | Lipanj 2025. (ispravak) | DA — za rashod sigurno, za pretporez ovisi o pristupu | Najkompleksniji slučaj |
 
 > **Napomena o rashodu**: Rashod se uvijek priznaje po datumu isporuke (HSFI 16), ne po datumu računa. Primatelj evidentira rashod kad nastane poslovni događaj (isporuka, BT-72), neovisno o tome kad račun stigne. Ako račun kasni, primatelj koristi procjenu (razgraničenje) i usklađuje kad račun stigne.
 

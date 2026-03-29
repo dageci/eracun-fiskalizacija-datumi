@@ -327,7 +327,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
   </cac:BillingReference>
 </CreditNote>
 ```
-> PDV korekcija u praksi najčešće ide u **travanj** (datum izdavanja odobrenja). Međutim, prema pravomoćnoj presudi ECJ C-518/14 (Senatex), izdavatelj **ima pravo** na retroaktivni ispravak PDV-a u **ožujku** (mjesec izvornog računa 147/1/1) — i PU mu to ne smije uskratiti. Obveznik bira pristup.
+> PDV korekcija u praksi najčešće ide u **travanj** (datum izdavanja odobrenja). Međutim, prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun), izdavatelj **ima pravo** na retroaktivni ispravak PDV-a u **ožujku** (mjesec izvornog računa 147/1/1) — i PU mu to ne smije uskratiti. Obveznik bira pristup.
 > BT-7 i BT-8 **postoje** u UBL CreditNote XSD shemi kao opcionalni elementi, ali se za odobrenja u praksi ne koriste.
 > Referenca na izvorni račun (BT-25/BT-26) povezuje odobrenje s originalnim računom i omogućuje retroaktivno knjiženje.
 >
