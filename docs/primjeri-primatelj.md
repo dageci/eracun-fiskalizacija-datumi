@@ -233,7 +233,7 @@ Izdavateljeva perspektiva: [4.1.7](primjeri-izdavatelj#417-odobrenje--creditnote
 |:---:|:---:|:---:|
 | **Travanj 2026.** | **Travanj 2026.** | Ovisi o vrsti odobrenja |
 
-> **Primatelj mora ispraviti pretporez** u mjesecu primitka odobrenja.
+> **Pretporez:** Ispravak pretporeza se u praksi najčešće knjži u mjesecu primitka odobrenja (**travanj**). Međutim, prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), porezni obveznik **ima pravo** na retroaktivni ispravak u mjesecu izvornog računa (**ožujak**) — i država mu to ne smije uskratiti. Obveznik bira pristup. HR-BT-15 nije prisutan (obračun po izdavanju).
 >
 > - **Pretporez: travanj** — BT-7 i BT-8 postoje u UBL CreditNote XSD shemi kao opcionalni elementi, ali se za odobrenja u praksi ne koriste. Datum porezne obveze = BT-2 = 10.04. Kupac u PDV prijavi za travanj smanjuje pretporez za iznos odobrenja.
 > - **Rashod: travanj** — ispravak rashoda se također knjiži u travnju (datum primitka odobrenja).
@@ -377,11 +377,11 @@ Izdavateljeva perspektiva: [4.2.6](primjeri-izdavatelj#426-odobrenje--creditnote
 
 > **Primatelj prima CreditNote od obveznika na sustavu po naplati** — treba stornirati dio pretporeza.
 >
-> - **Pretporez: travanj** — ispravak pretporeza se knjiži u mjesecu primitka odobrenja (10.04.). BT-7 i BT-8 postoje u CreditNote XSD shemi kao opcionalni elementi, ali se za odobrenja u praksi ne koriste — BT-2 služi kao default datum poreza.
+> - **Pretporez: travanj** (u praksi) ili retroaktivno u mjesec izvornog pretporeza (prema [Senatex C-518/14](#sudska-praksa-eu--pravo-na-odbitak-i-račun)). Obveznik bira pristup — obje opcije su legalne.
 > - **Rashod: travanj** — korekcija rashoda u mjesecu primitka.
 > - **HR-BT-15 je prisutan** i u CreditNote jer je to svojstvo obveznika.
 >
-> **Otvoreno pitanje**: Ako je izvorni račun već plaćen i pretporez odbijen u ranijem mjesecu, treba li ispravak pretporeza ići retroaktivno u taj raniji mjesec ili u mjesec primitka odobrenja? U praksi se radi **u mjesecu primitka odobrenja**.
+> **Senatex pojašnjenje**: Prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), ako je izvorni račun već plaćen i pretporez odbijen u ranijem mjesecu, obveznik **ima pravo** na retroaktivni ispravak u tom ranijem mjesecu. U praksi se najčešće radi u mjesecu primitka odobrenja jer je jednostavnije (bez dopunske PDV prijave), ali obje opcije su legalne.
 
 ---
 
@@ -502,7 +502,14 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 
 - **<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62014CJ0518" target="_blank">C-518/14 (Senatex), 15.09.2016.</a>** — Senatex GmbH protiv Finanzamt Hannover-Nord (Njemačka). Ispravak računa ima **retroaktivan učinak** — pretporez se može odbiti za razdoblje u kojem je račun **izvorno izdan**, ne samo u razdoblju ispravka. EU pravo zabranjuje nacionalno zakonodavstvo koje sprječava retroaktivnu primjenu ispravaka računa.
 
-  > **Što to znači u praksi:** Ako ste primili račun s greškom u ožujku, a ispravak stigao u lipnju — pretporez ide u **ožujak** (kad je izvorni račun izdan), ne u lipanj. Ne trebate podnositi dopunsku PDV prijavu za lipanj — ispravak se vraća u izvorni period. Ovo je posebno važno kod eRačuna jer se ispravci (CreditNote 381, korekcija 384) referenciraju na izvorni račun putem BT-25/BT-26.
+  > **Što to znači u praksi:** Senatex daje poreznom obvezniku **pravo** (ne obvezu) na retroaktivni ispravak pretporeza. Država mu to **ne smije uskratiti**, ali on ne mora koristiti to pravo. U praksi postoje dva pristupa:
+  >
+  > | Pristup | Što radi | Posljedica | Temelj |
+  > |---|---|---|---|
+  > | **Retroaktivno** | Ispravak pretporeza u mjesecu **izvornog računa** | Dopunska PDV prijava za taj mjesec | Senatex C-518/14 — pravo obveznika |
+  > | **Tekuće razdoblje** | Ispravak pretporeza u mjesecu **primitka odobrenja** | Bez dopunske prijave, jednostavnije | Uobičajena praksa |
+  >
+  > Obje opcije su legalne. Senatex samo kaže da država ne smije **zabraniti** retroaktivni pristup — ne kaže da je obvezan. Kod eRačuna, ispravci (CreditNote 381, korekcija 384) referenciraju izvorni račun putem BT-25/BT-26, što omogućuje automatsko povezivanje s izvornim razdobljem.
 
 - **<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:62020CJ0080" target="_blank">C-80/20 (Wilo Salmson France), 21.10.2021.</a>** — Wilo Salmson France SAS protiv ANAF (Rumunjska). EU pravo zabranjuje odbijanje povrata PDV-a u određenom razdoblju samo zato što je PDV dospio u ranijem razdoblju, a račun izdan u kasnijem. Poništenje i ponovna izdaja računa ne mijenja razdoblje za koje se može zatražiti povrat.
 
@@ -535,14 +542,14 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 | **P.1.4** | <span class="badge-izdavanje">Izdavanje</span> | — | 10.02. | — | 05.02. | Veljača | — | — |
 | **P.1.5** | <span class="badge-izdavanje">Izdavanje</span> | — | 05.04. | — | — | Ožujak | **Q1 (razgraničenje)** | — |
 | **P.1.6** | <span class="badge-izdavanje">Izdavanje</span> | — | 10.03. | 25.01. | — | Siječanj* | Siječanj | 25.01. |
-| **P.1.7** | <span class="badge-izdavanje">Izdavanje</span> | — | 10.04. | — | — | Travanj | Travanj | — |
+| **P.1.7** | <span class="badge-izdavanje">Izdavanje</span> | — | 10.04. | — | — | Travanj* | Travanj | — |
 | **P.1.8** | <span class="badge-izdavanje">Izdavanje</span> | — | 10.03. | 25.01. | — | Siječanj ili ožujak* | Siječanj | 25.01. |
 | **P.2.1** | <span class="badge-naplata">Naplata</span> | DA | 20.03. | 10.03. | **15.05.** | **Maj** | Ožujak | 10.03. |
 | **P.2.2** | <span class="badge-naplata">Naplata</span> | DA | 10.03. | 25.01. | **15.04.** | **Travanj** | Siječanj | 25.01. |
 | **P.2.3** | <span class="badge-naplata">Naplata</span> | DA | 10.02. | — | 05.02. | Veljača | — | — |
-| **P.2.4** | <span class="badge-naplata">Naplata</span> | DA | 10.04. | — | — | Travanj | Travanj | — |
+| **P.2.4** | <span class="badge-naplata">Naplata</span> | DA | 10.04. | — | — | Travanj* | Travanj | — |
 
-\* Ovisi o tome je li račun stigao prije roka za PDV prijavu — vidi [Pretporez: dva uvjeta](#pretporez-dva-uvjeta-i-nijanse-u-praksi) na ovoj stranici.
+\* Za P.1.x: ovisi o tome je li račun stigao prije roka za PDV prijavu — vidi [Pretporez: dva uvjeta](#pretporez-dva-uvjeta-i-nijanse-u-praksi). Za P.1.7 i P.2.4 (CreditNote): travanj u praksi, ali obveznik ima pravo na retroaktivni ispravak u mjesecu izvornog računa — vidi [Senatex C-518/14](#sudska-praksa-eu--pravo-na-odbitak-i-račun).
 
 ---
 
