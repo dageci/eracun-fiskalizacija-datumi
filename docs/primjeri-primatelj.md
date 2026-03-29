@@ -482,17 +482,27 @@ To znači da kod eRačuna pretporez u praksi **uvijek ide u razdoblje kad je nas
 
 ### Sudska praksa EU — pravo na odbitak i račun
 
-Pred Europskim sudom pravde (CJEU) vodi se postupak **C-167/26** (revizija predmeta T-689/24) koji se bavi upravo ovim pitanjem. Opći sud EU utvrdio je da:
+Pred Europskim sudom pravde (CJEU) vodi se postupak **C-167/26** (revizija predmeta T-689/24) koji se bavi upravo ovim pitanjem.
 
-- "Hold an invoice" iz čl. 178 Direktive je **formalni uvjet** za **ostvarivanje** prava na odbitak
+**Što se dogodilo:** Opći sud EU (General Court) donio je 11. veljače 2026. presudu u predmetu **T-689/24** (I. S.A. protiv Dyrektora Krajowej Informacji Skarbowej, Poljska) u kojoj je utvrdio:
+
+- "Hold an invoice" iz čl. 178(a) Direktive o PDV-u je **formalni uvjet** za **ostvarivanje** prava na odbitak
 - Ali **nije uvjet** za **nastanak** tog prava (nastanak je po čl. 167 = kad nastane obveza obračuna)
-- Odgoda odbitka pretporeza samo zato što račun još nije primljen **krši načelo neutralnosti PDV-a** i proporcionalnosti
+- Odgoda odbitka pretporeza samo zato što račun još nije primljen tijekom poreznog razdoblja **krši načelo neutralnosti PDV-a**, pod uvjetom da je račun primljen prije podnošenja PDV prijave za to razdoblje
 
-Konačna odluka ECJ-a još nije donesena. Ako potvrdi ovo tumačenje, to bi moglo značiti da kupac ima pravo na pretporez **odmah kad nastane obveza** (prosinac), neovisno o tome kad primi račun.
+**Što se sada događa:** Prvi opći odvjetnik (First Advocate General) pokrenuo je 14. ožujka 2026. postupak revizije pred Velikim vijećem ECJ-a (predmet **C-167/26 RX**). ECJ će ocijeniti može li presuda Općeg suda ugroziti koherentnost prava EU-a u području PDV-a, posebno tumačenje čl. 167, 168(a) i 178(a).
 
-Relevantne presude:
-- **C-518/14 (Senatex)**: Ispravak računa ima retroaktivan učinak — pretporez se može odbiti za razdoblje u kojem je račun izvorno izdan, ne samo u razdoblju ispravka
-- **C-80/20 (Wilo Salmson France)**: EU pravo zabranjuje odbijanje povrata PDV-a u određenom razdoblju samo zato što je PDV dospio u ranijem razdoblju, a račun izdan u kasnijem
+**Status (ožujak 2026.):** Postupak revizije je u ranoj fazi. **Konačna odluka nije donesena.** Ako ECJ potvrdi tumačenje Općeg suda, to bi moglo značiti da kupac ima pravo na pretporez **odmah kad nastane obveza** (prosinac), neovisno o tome kad primi račun — pod uvjetom da ga primi prije roka za PDV prijavu.
+
+**Zašto je ovo važno za eRačun:** Ako presuda postane pravomoćna, razdvajanje pretporeza između razdoblja (sekcija iznad) postaje irelevantno za eRačune jer se eRačun dostavlja u sekundama — uvijek prije roka za PDV prijavu.
+
+Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-review-case-egc-case-t-689-24-rx-vat-deduction-invoice-timing/" target="_blank">VATupdate — ECJ C-167/26 review</a>, <a href="https://www.vatupdate.com/2026/02/16/comments-on-ecg-t-689-24-confirms-incompatibility-of-polish-input-vat-deduction-rules-with-eu-law/" target="_blank">VATupdate — T-689/24 presuda</a>
+
+**Relevantne pravomoćne presude:**
+
+- **<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62014CJ0518" target="_blank">C-518/14 (Senatex), 15.09.2016.</a>** — Senatex GmbH protiv Finanzamt Hannover-Nord (Njemačka). Ispravak računa ima **retroaktivan učinak** — pretporez se može odbiti za razdoblje u kojem je račun **izvorno izdan**, ne samo u razdoblju ispravka. EU pravo zabranjuje nacionalno zakonodavstvo koje sprječava retroaktivnu primjenu ispravaka računa.
+
+- **<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:62020CJ0080" target="_blank">C-80/20 (Wilo Salmson France), 21.10.2021.</a>** — Wilo Salmson France SAS protiv ANAF (Rumunjska). EU pravo zabranjuje odbijanje povrata PDV-a u određenom razdoblju samo zato što je PDV dospio u ranijem razdoblju, a račun izdan u kasnijem. Poništenje i ponovna izdaja računa ne mijenja razdoblje za koje se može zatražiti povrat.
 
 ---
 
