@@ -9,6 +9,8 @@ nav_order: 8
 
 Ova stranica pokriva situacije u kojima se eRačun izdaje **znatno nakon isporuke** — bilo zbog prijelaznog razdoblja 2025-2026, bilo zbog propusta, IOS usklađenja ili sudske presude. Za svaki slučaj analiziramo perspektivu izdavatelja i primatelja: koji datumi idu u XML, koji PDV period se primjenjuje, te kako fiskalizacija (F2) utječe na cijeli proces.
 
+> **Ključno pravno načelo**: Za tuzemne isporuke u Hrvatskoj **ne postoji zakonski rok za izdavanje računa** (čl. 78 ZPDV propisuje rok samo za intra-EU isporuke — do 15. u mjesecu). Za domaće B2B transakcije, rok nije propisan — preporuka je "u najkraćem razumnom roku" (izvor: <a href="https://www.teb.hr/novosti/2024/u-kojem-roku-treba-izdati-racun/" target="_blank">TEB</a>). Međutim, **PDV obveza nastaje isporukom** (čl. 30 st. 1 ZPDV), neovisno o tome kad je račun izdan.
+
 ### Sadržaj
 {: .no_toc }
 
@@ -112,6 +114,8 @@ Izvorni račun izdan je u studenom 2025. (nije bio F2 fiskaliziran). U veljači 
 | Referenca na izvorni račun | BR-2025-1234 | BT-25 (`cbc:ID` u `BillingReference`) |
 | F2 fiskalizacija — CreditNote | **?** | Otvoreno pitanje |
 
+> **PU pojašnjenje**: Dokumenti koji mijenjaju račune iz 2025. **ne podliježu** obvezi izdavanja eRačuna niti fiskalizaciji u 2026. Storno ili odobrenje za izvorni račun iz 2025. prati pravila koja su važila kad je izvorni račun izdan.
+
 > **Ključni uvid — otvoreno pitanje**: CreditNote je izdan u 2026. (BT-2=10.02.2026.), što bi po općem pravilu značilo obvezu F2 fiskalizacije. Ali se odnosi na račun iz 2025. koji **nije bio fiskaliziran**. Pitanje: mora li se CreditNote fiskalizirati ako izvorni račun nije bio u sustavu? PU pojašnjenja (pitanja 155/157) pokrivaju predujam, ali ne pokrivaju eksplicitno CreditNote za račune iz 2025.
 
 **Perspektiva izdavatelja:**
@@ -183,6 +187,8 @@ Tijekom IOS (izvod otvorenih stavaka) usklađenja u lipnju 2026. otkriveno je da
 | Datum nastanka obveze PDV-a | 15.01.2026. | BT-7 (`cbc:TaxPointDate`) |
 | F2 fiskalizacija | **DA** — u lipnju | Račun izdan u lipnju |
 
+> **Upozorenje**: Ako se tijekom IOS-a otkrije da isporuka nikad nije fakturirana, izdavatelj je **već trebao prijaviti PDV** u razdoblju isporuke (čl. 30 st. 1 — obveza nastaje isporukom, ne fakturiranjem). Naknadno izdavanje računa ne mijenja PDV obvezu — samo formalizira dokumentaciju. Neizdavanje računa je prekršaj s kaznom 3.980–66.360 EUR za pravne osobe.
+
 > **Ključni uvid**: Ovo je teži slučaj od 2.1 jer **PDV obveza je nastala u siječnju** (čl. 30 — isporukom), ali izdavatelj uopće nije prijavio PDV za tu transakciju. Izdavanje računa u lipnju ne "pomiče" PDV obvezu — izdavatelj mora podnijeti **ispravak PDV prijave za siječanj** i prijaviti obvezu retroaktivno, zajedno s eventualnim zateznim kamatama.
 
 **Perspektiva izdavatelja:**
@@ -216,6 +222,8 @@ Sud naredi izdavatelju izdavanje računa za uslugu obavljenu u prošloj godini. 
 | Datum pravomoćnosti presude | 15.08.2026. | Nije BT element — interni podatak |
 | F2 fiskalizacija | **DA** — u rujnu 2026. | Račun izdan u 2026. |
 
+> **Zastara potraživanja** (ZOO): B2B potraživanja zastarijevaju za **3 godine** (čl. 228 st. 1), sudski utvrđena za **10 godina**. Zastara potraživanja je odvojena od porezne obveze — čak i ako je potraživanje zastarjelo, porezna obveza za prijavu PDV-a u razdoblju isporuke ostaje.
+
 > **Ključni uvid**: Najekstremniji slučaj — isporuka je bila prije **više od godine dana**, u razdoblju kad F2 fiskalizacija nije ni postojala. Ali račun se izdaje u 2026. i podliježe F2. PDV obveza je nastala u lipnju 2025. — izdavatelj mora podnijeti ispravak za lipanj 2025. Ovo otvara pitanje zastare i kamate, jer je prošlo više od 12 mjeseci.
 
 **Perspektiva izdavatelja:**
@@ -238,14 +246,16 @@ Sud naredi izdavatelju izdavanje računa za uslugu obavljenu u prošloj godini. 
 
 Sumarni pregled svih scenarija iz perspektive izdavatelja:
 
-| # | Situacija | BT-2 | BT-7 | BT-72 | F2? | PDV period | Napomena |
-|---|-----------|------|------|-------|:---:|------------|----------|
-| 1.1 | Usluga 12/2025., račun 01/2026. | 10.01.2026. | 15.12.2025. | 15.12.2025. | **DA** | Prosinac 2025. | Preporuka: navesti BT-7 |
-| 1.2 | Predujam 2025., konačni 2026. | 05.02.2026. | — | 03.02.2026. | **NE** | Veljača 2026. (razlika) | PU iznimka (pit. 155/157) |
-| 1.3 | CreditNote 2026. za račun 2025. | 10.02.2026. | — | — | **?** | Veljača 2026. ili ispravak 11/2025. | Otvoreno pitanje |
-| 2.1 | Račun 3 mj. nakon isporuke | 15.06.2026. | 20.03.2026. | 20.03.2026. | **DA** | Ožujak 2026. | Kasno izdan — ispravak prijave |
-| 2.2 | IOS — nefakturirano | 20.06.2026. | 15.01.2026. | 15.01.2026. | **DA** | Siječanj 2026. (ispravak!) | Obveza nastala isporukom |
-| 2.3 | Sudska presuda | 10.09.2026. | 01.06.2025. | 01.06.2025. | **DA** | Lipanj 2025. (ispravak!) | Moguće zatezne kamate |
+| # | Situacija | BT-2 | BT-7 | BT-72 | F2? | PDV period | Prihod | Napomena |
+|---|-----------|------|------|-------|:---:|------------|--------|----------|
+| 1.1 | Usluga 12/2025., račun 01/2026. | 10.01.2026. | 15.12.2025. | 15.12.2025. | **DA** | Prosinac 2025. | Prosinac 2025. | Preporuka: navesti BT-7 |
+| 1.2 | Predujam 2025., konačni 2026. | 05.02.2026. | — | 03.02.2026. | **NE** | Veljača 2026. (razlika) | Veljača 2026. | PU iznimka (pit. 155/157) |
+| 1.3 | CreditNote 2026. za račun 2025. | 10.02.2026. | — | — | **?** | Veljača 2026. ili ispravak 11/2025. | Ispravak 11/2025. | Otvoreno pitanje |
+| 2.1 | Račun 3 mj. nakon isporuke | 15.06.2026. | 20.03.2026. | 20.03.2026. | **DA** | Ožujak 2026. | Ožujak 2026. | Kasno izdan — ispravak prijave |
+| 2.2 | IOS — nefakturirano | 20.06.2026. | 15.01.2026. | 15.01.2026. | **DA** | Siječanj 2026. (ispravak!) | Siječanj 2026. | Obveza nastala isporukom |
+| 2.3 | Sudska presuda | 10.09.2026. | 01.06.2025. | 01.06.2025. | **DA** | Lipanj 2025. (ispravak!) | Lipanj 2025. | Moguće zatezne kamate |
+
+> **Napomena o prihodu**: Prihod se uvijek priznaje po datumu isporuke (HSFI 15), ne po datumu računa. Čak i kad je račun izdan mjesecima kasnije, prihod se evidentira u razdoblju kad je isporuka obavljena (BT-72).
 
 > **Obrazac**: U svim slučajevima, **F2 fiskalizacija se veže za BT-2** (datum izdavanja), a **PDV period se veže za BT-7** (datum nastanka obveze). Ova dva datuma mogu biti u potpuno različitim godinama. Izdavatelj mora fiskalizirati račun kad ga izda (F2), ali PDV prijaviti u period kad je nastala obveza (BT-7).
 
@@ -264,6 +274,8 @@ Sumarni pregled svih scenarija iz perspektive primatelja:
 | 2.2 | IOS — nefakturirano | Lipanj 2026. | Lipanj 2026. | Siječanj 2026. (primka) | NE za pretporez, DA za rashod (usklađenje iznosa) | Rashod po primci, pretporez po računu |
 | 2.3 | Sudska presuda | Rujan 2026. | Rujan 2026. ili ispravak 06/2025. (Senatex) | Lipanj 2025. (ispravak) | DA — za rashod sigurno, za pretporez ovisi o pristupu | Najkompleksniji slučaj |
 
+> **Napomena o rashodu**: Rashod se uvijek priznaje po datumu isporuke (HSFI 16), ne po datumu računa. Primatelj evidentira rashod kad nastane poslovni događaj (isporuka, BT-72), neovisno o tome kad račun stigne. Ako račun kasni, primatelj koristi procjenu (razgraničenje) i usklađuje kad račun stigne.
+
 > **Obrazac za primatelja**: Rashod se uvijek veže za **BT-72 (datum isporuke)** — neovisno o tome kad račun stigne. Pretporez ovisi o **dva uvjeta**: (1) nastanak PDV obveze (BT-7) i (2) posjedovanje računa (čl. 60). Ako primatelj primi račun **nakon roka** za PDV prijavu za period iz BT-7, pretporez ide u period kad je primio račun — osim ako podnese ispravak prijave (što je dopušteno, ali zahtijeva obrazloženje).
 
 ---
@@ -274,12 +286,27 @@ Sumarni pregled svih scenarija iz perspektive primatelja:
 
 > **S eRačunom**: dostava je gotovo trenutna — posrednik isporučuje XML u roku sekundi ili minuta. Ali to **ne rješava sve probleme**: BT-2 (datum izdavanja) i dalje može biti daleko nakon isporuke (BT-72). eRačun ne sprječava kasno fakturiranje — samo osigurava da kad se račun izda, dostava bude brza.
 
+> **Fiskalizacija čini kasno fakturiranje vidljivim**: Prije F2, PU nije znala kad je račun izdan vs kad je isporuka obavljena. S F2, PU vidi BT-2 (datum izdavanja) i BT-7/BT-72 (datum isporuke) — ako su mjesecima razmaknuti, to je signal za provjeru.
+
 > **Fiskalizacija F2**: Porezna uprava sada vidi **oba kraja** transakcije — izlazni račun izdavatelja (F2 fiskalizacija) i ulazni račun primatelja (fiskalizacija zaprimanja). To znači da PU može detektirati:
 > - Kasno fakturiranje (BT-72 daleko prije BT-2)
 > - Nefakturirane isporuke (primka kod kupca, a nema F2 zapisa kod PU)
 > - Neusklađenost između PDV prijava izdavatelja i primatelja
 >
 > Ovo je značajna promjena u odnosu na papirni sustav — ali **pravila o PDV-u se nisu promijenila**, samo je vidljivost veća. Kasno fakturiranje i dalje rezultira ispravkom PDV prijave, ali sada PU može proaktivno detektirati takve slučajeve umjesto da čeka inspekciju.
+
+---
+
+## Izvori
+
+| Izvor | Link |
+|-------|------|
+| TEB: U kojem roku treba izdati račun? | <a href="https://www.teb.hr/novosti/2024/u-kojem-roku-treba-izdati-racun/" target="_blank">teb.hr</a> |
+| PU: Nastanak porezne obveze i odbitak PDV-a | <a href="https://porezna-uprava.gov.hr/Misljenja/Detaljno/1782" target="_blank">porezna-uprava.gov.hr</a> |
+| PU: Pitanja i odgovori F2 | <a href="https://porezna-uprava.gov.hr/hr/izdavanje-i-primanje-eracuna-i-fiskalizacija-eracuna/8047" target="_blank">porezna-uprava.gov.hr</a> |
+| PU: Primjeri postupanja za predujmove | <a href="https://porezna.gov.hr/fiskalizacija/bezgotovinski-racuni/bezgotovinski-racuni-novosti/o/primljeni-predujmovi" target="_blank">porezna.gov.hr</a> |
+| Zastara kod prometa roba i usluga | <a href="https://sudovi.hr/sites/default/files/dokumenti/2019-10/Zastara_kod_ugovora_o_prometu_roba_i_usluga.pdf" target="_blank">sudovi.hr (PDF)</a> |
+| Zakon o PDV-u (pročišćeni tekst) | <a href="https://www.zakon.hr/z/1455/zakon-o-porezu-na-dodanu-vrijednost" target="_blank">zakon.hr</a> |
 
 ---
 
