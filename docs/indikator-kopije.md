@@ -36,7 +36,11 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 > - **Korektivni račun 384** — korekcija s referencom na original (zahtijeva KPD!)
 > - **Invoice 386 s negativnom količinom** — samo za **storno predujma** (386 = Prepayment invoice, ne generički storno)
 >
-> **Napomena o materijalnom/robnom storniranju**: CreditNote (381) je **financijski** dokument i **oslobođen je KPD klasifikacije** (HR-BR-25). To znači da PU vidi financijsko storniranje, ali **ne vidi koje stavke/artikli se vraćaju** jer CreditNote nema KPD. Ako je na originalnom računu (380) bila KPD klasifikacija, storno putem 381 ne poništava tu KPD evidenciju kod PU — otvoreno je pitanje je li to namjerno ili propust. Fizički povrat robe se rješava zasebnim skladišnim dokumentom (povratnica) izvan sustava eRačuna.
+> **Napomena o materijalnom/robnom storniranju**: CreditNote (381) je **oslobođen KPD klasifikacije** (HR-BR-25) — ali i dalje može sadržavati stavke s količinama u minusu. Ako je bitno da PU vidi i **koje stavke** se vraćaju (ne samo financijski iznos), postoje opcije:
+> - **381 sa stavkama** (količina u minusu) — PU vidi artikle, ali bez KPD-a
+> - **384 (korektivni račun)** — PU vidi artikle **s KPD-om** jer 384 zahtijeva KPD klasifikaciju
+>
+> Izbor ovisi o tome treba li PU evidencija sadržavati i robni aspekt storna ili samo financijski.
 
 **Ključne točke:**
 
