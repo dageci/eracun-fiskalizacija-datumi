@@ -95,7 +95,7 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 |---|---|---|
 | **GLN kupca/prodavatelja** | BT-46/BT-29 | GLN identificira poslovnicu — promjena GLN-a može značiti drugu lokaciju. Utječe li to na PDV? |
 | **Adresa kupca/prodavatelja** | BG-5/BG-8 | Ne utječe na PDV iznos, ali ako se OIB ne mijenja — je li to dopušteno? |
-| **Datum dospijeća** | BT-9 | PU kaže "podaci o plaćanju" su dopušteni — ali BT-9 utječe na eIzvještavanje o naplati |
+| **Datum dospijeća** | BT-9 | PU navodi "promjena podataka o plaćanju" kao dopuštenu (<a href="https://porezna-uprava.gov.hr/hr/ispravci-eracuna-koji-ne-utjecu-na-obracun-poreza-i-statistika-fiskalizacije-2-0/8349" target="_blank">izvor</a>) — ali BT-9 utječe na eIzvještavanje o naplati |
 | **Naziv artikla/opis** | BT-153/BT-154 | Ne utječe na iznos ni PDV — ali mijenja li to identitet stavke? |
 | **Barkod artikla** | BT-157 | Čisti identifikator, ne utječe na PDV — ali PU nije potvrdila |
 | **VATEX kod** | BT-121 | VATEX određuje razlog oslobođenja od PDV-a (npr. reverse charge vs izvan opsega) — **direktno utječe na PDV tretman**. Neki proizvođači softvera navode da se smije ispraviti kopijom, ali PU to **nije eksplicitno potvrdila**. Smatramo da bi trebao biti u "NE SMIJE" kategoriji. |
@@ -296,7 +296,7 @@ Hrvatska je uvela `CopyIndicator` kroz HR CIUS specifikaciju kao **HR-BT-1**, s 
 
 Sljedeća pitanja zahtijevaju službenu potvrdu Porezne uprave:
 
-1. **Datum dospijeća (BT-9)**: Smije li se mijenjati kopijom? PU kaže "podaci o plaćanju" — ali BT-9 utječe na eIzvještavanje o naplati. Praktički nePDV podatak, ali posljedice za eIzvještavanje nisu jasne.
+1. **Datum dospijeća (BT-9)**: Smije li se mijenjati kopijom? PU navodi "promjena podataka o plaćanju" kao dopuštenu (<a href="https://porezna-uprava.gov.hr/hr/ispravci-eracuna-koji-ne-utjecu-na-obracun-poreza-i-statistika-fiskalizacije-2-0/8349" target="_blank">izvor</a>) — ali BT-9 utječe na eIzvještavanje o naplati. Praktički nePDV podatak, ali posljedice za eIzvještavanje nisu jasne.
 2. **Adresa kupca/prodavatelja**: Smije li se ispraviti adresa kopijom? Ne utječe na PDV, ali mijenja identifikaciju stranke.
 3. **Drugo razdoblje — obaveza storna**: Čl. 43 eksplicitno ograničava kopiju na isto razdoblje oporezivanja. Za ispravke u drugom razdoblju, jedina opcija je storno + novi račun — postoji li iznimka?
 4. **Zamjena u evidenciji PU**: Kako PU sustav tretira kopiju — zamjenjuje li original u evidenciji ili ga čuva uz bilješku o ispravku?
