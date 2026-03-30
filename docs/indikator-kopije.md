@@ -189,6 +189,7 @@ Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`Evide
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 ### 5.1 Legitimna kopija — ispravak reference na narudžbu
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Situacija**: Izdavatelj je poslao eRačun 42/P1/2 s krivim brojem narudžbenice u BT-13 (napisao "NAR-100" umjesto "NAR-200"). Iznosi su ispravni, PDV je ispravan, isti mjesec.
 
@@ -213,6 +214,7 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 ---
 
 ### 5.2 Legitimna kopija — ispravak IBAN-a
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Situacija**: Na računu 42/P1/2 naveden je krivi IBAN primatelja uplate. Kupac ne može platiti. Isti mjesec.
 
@@ -234,6 +236,7 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 ---
 
 ### 5.3 NEDOPUŠTENA kopija — promjena iznosa
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Situacija**: Izdavatelj je na računu 42/P1/2 naveo krivi iznos (10.000 EUR umjesto 8.000 EUR). Pokušava poslati "kopiju" s ispravljenim iznosom.
 
