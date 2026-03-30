@@ -313,7 +313,6 @@ Sljedeća pitanja zahtijevaju službenu potvrdu Porezne uprave:
 3. **Drugo razdoblje — obaveza storna**: Čl. 43 eksplicitno ograničava kopiju na isto razdoblje oporezivanja. Za ispravke u drugom razdoblju, jedina opcija je storno + novi račun — postoji li iznimka?
 4. **Zamjena u evidenciji PU**: Kako PU sustav tretira kopiju — zamjenjuje li original u evidenciji ili ga čuva uz bilješku o ispravku?
 5. **Višestruki ispravci**: Može li se isti račun ispraviti kopijom više puta unutar istog razdoblja?
-6. **QR kod / UUID**: Generira li kopija novi UUID ili koristi isti kao original?
 
 ---
 
