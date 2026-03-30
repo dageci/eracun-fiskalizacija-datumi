@@ -72,6 +72,7 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 Čl. 43 dopušta ispravak samo **podataka koji ne utječu na obračun poreza**. Umjesto nabrajanja svih polja koja se smiju mijenjati (kojih ima stotine), praktičnije je definirati **što se NE SMIJE mijenjati** — sve ostalo je po logici čl. 43 dopušteno.
 
 ### Što se NE SMIJE mijenjati u kopiji
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | Podatak | BT polje | Zašto ne |
 |---|---|---|
@@ -135,6 +136,7 @@ Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`Evide
 | Ispravak nePDV podataka (kopija) | `true` | Evidentiraj kao ispravak postojećeg računa |
 
 ### 4.1 Ponašanje PU sustava
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 - PU sustav **provjerava** da originalni račun **postoji** u evidenciji prema identifikatoru eRačuna i vrsti (ulazni/izlazni)
 - Ako original ne postoji → greška **S012** ("Ne postoji evidentiran originalni eRačun")
