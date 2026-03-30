@@ -139,15 +139,19 @@ Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`Evide
 - Ako se šalje račun s istim identifikatorom BEZ `indikatorKopije=true` → greška **S008** ("Već postoji fiskaliziran eRačun s istim identifikatorom")
 - `CopyIndicator=true` signalizira PU sustavu da je to **namjerni ispravak** istog računa, ne duplikat greškom
 
-> **Identifikator eRačuna (kompozitni ključ)**: Prema Tehničkoj specifikaciji Fiskalizacija eRačuna i eIzvještavanje (Tablica 6), identifikator eRačuna se sastoji od:
-> - **BT-1** (brojDokumenta) — "dio identifikatora eRačuna"
-> - **BT-2** (datumIzdavanja) — "dio identifikatora eRačuna" — **cijeli datum** u formatu YYYY-MM-DD
-> - **BT-3** (vrstaDokumenta) — "dio identifikatora eRačuna"
+> **Identifikator eRačuna (kompozitni ključ)**: Prema Tehničkoj specifikaciji Fiskalizacija eRačuna i eIzvještavanje (Tablica 6), specifikacija navodi da su **dio identifikatora eRačuna**:
+> - **BT-1** (brojDokumenta)
+> - **BT-2** (datumIzdavanja) — format YYYY-MM-DD
+> - **BT-3** (vrstaDokumenta)
 > - Plus **vrsta eRačuna** (I = izlazni, U = ulazni) pri provjeri jedinstvenosti (S008)
 >
-> To znači da **BT-2 u kopiji MORA biti isti kao u originalu** — jer ako se promijeni datum izdavanja, to je formalno **novi identifikator** i PU sustav tretira račun kao novi dokument, ne kopiju.
+> **Otvorena pitanja**:
+> - Kako PU sustav koristi BT-2 u provjeri jedinstvenosti — uspoređuje li **cijeli datum**, samo **godinu**, ili ga uopće ne koristi u usporedbi?
+> - Mora li BT-2 u kopiji biti **isti kao u originalu**, ili kopija može imati **novi datum izdavanja** (datum ponovnog slanja)?
+> - Čl. 43 kaže "pod istim **brojem**" — ne kaže "pod istim datumom"
+> - Što je s HR-BT-2 (IssueTime) — je li dio identifikatora?
 >
-> **Otvoreno pitanje**: Što je s HR-BT-2 (IssueTime)? Specifikacija ne navodi vrijeme kao dio identifikatora, pa bi se samo vrijeme moglo razlikovati. Ali ovo nije potvrđeno.
+> Bez službene potvrde, ne možemo tvrditi kako točno PU sustav tretira ova polja u kontekstu kopije.
 
 > **Napomena o validaciji**: Schematron validator **ne može** provjeriti je li kopija legitimna jer vidi samo jedan dokument. **Posrednik** ima pristup oba dokumenta i mogao bi uspoređivati PDV-relevantna polja — ali ni to nije jednostavno jer ovisi o definiciji kompozitnog ključa.
 
