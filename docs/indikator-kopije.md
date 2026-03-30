@@ -87,7 +87,7 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 | **Datum dospijeća** | BT-9 | PU kaže "podaci o plaćanju" su dopušteni — ali BT-9 utječe na eIzvještavanje o naplati |
 | **Naziv artikla/opis** | BT-153/BT-154 | Ne utječe na iznos ni PDV — ali mijenja li to identitet stavke? |
 | **Barkod artikla** | BT-157 | Čisti identifikator, ne utječe na PDV — ali PU nije potvrdila |
-| **VATEX kod** | BT-121 | VATEX određuje razlog oslobođenja od PDV-a (npr. reverse charge vs izvan opsega) — **direktno utječe na PDV tretman**. Neki posrednici navode da se smije ispraviti kopijom, ali PU to **nije eksplicitno potvrdila**. Smatramo da bi trebao biti u "NE SMIJE" kategoriji. |
+| **VATEX kod** | BT-121 | VATEX određuje razlog oslobođenja od PDV-a (npr. reverse charge vs izvan opsega) — **direktno utječe na PDV tretman**. Neki proizvođači softvera navode da se smije ispraviti kopijom, ali PU to **nije eksplicitno potvrdila**. Smatramo da bi trebao biti u "NE SMIJE" kategoriji. |
 
 > **Naše tumačenje**: Sve što **ne mijenja iznos, stopu, kategoriju PDV-a, niti identitet stranaka (OIB)** bi trebalo biti dopušteno za kopiju. Ali za siva zona polja — čekamo službenu potvrdu PU.
 
