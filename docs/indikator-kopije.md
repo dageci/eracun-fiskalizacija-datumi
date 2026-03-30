@@ -29,7 +29,14 @@ Sve što je ovdje napisano proizlazi iz autorove analize specifikacija, zakona i
 
 > *"Kada se ispravlja podatak na eRačunu koji ne utječe na obračun poreza, eRačun se može u istom razdoblju oporezivanja izdati pod istim brojem, uz obvezno navođenje podatka 'indikator kopije računa'."*
 
-Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno slanje identičnog računa (klasična kopija), nego je **mehanizam za ispravak nePDV podataka pod istim brojem računa** — alternativa postupku storniranja (CreditNote 381) i izdavanja novog računa (Invoice 380).
+Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno slanje identičnog računa (klasična kopija), nego je **mehanizam za ispravak nePDV podataka pod istim brojem računa** — alternativa postupku storniranja i izdavanja novog računa.
+
+> **Ako kopija nije dopuštena** (promjena PDV podataka, drugo razdoblje), alternativa je storno + novi račun. Storno se može izvršiti na više načina:
+> - **CreditNote 381** — financijsko odobrenje/storno (ne zahtijeva KPD, HR-BR-25 izuzetak) — **najčešći postupak**
+> - **Korektivni račun 384** — korekcija s referencom na original (zahtijeva KPD!)
+> - **Invoice 386 s negativnom količinom** — alternativa za 381 (ne zahtijeva KPD)
+>
+> Napomena: CreditNote je **financijski** dokument — ne stornira materijalno/robno poslovanje. Ako je potreban i povrat robe, to se rješava zasebnim skladišnim dokumentom (povratnica) izvan sustava eRačuna.
 
 **Ključne točke:**
 
