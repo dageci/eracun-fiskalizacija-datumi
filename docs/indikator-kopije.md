@@ -277,7 +277,9 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 <!-- ^^^ NEDOPUŠTENO! Drugo razdoblje oporezivanja -->
 ```
 
-**ISPRAVNO** — storno + novi račun (jer je prošlo obračunsko razdoblje, mehanizam kopije iz čl. 43 se ne može primijeniti).
+**Zašto ne radi**: Čak i da zanemarimo ograničenje čl. 43 na isto razdoblje — tu je i problem s datumom izdavanja. Ako kopija zadrži BT-2 = ožujak (isti kao original), šalje se dokument s datumom izdavanja iz prošlosti. Ako kopija stavi BT-2 = travanj (stvarni datum slanja), to je **novi identifikator** jer je BT-2 dio identifikatora eRačuna — PU sustav bi ga mogao tretirati kao novi račun, ne kopiju (vidi napomenu o BT-2 iznad).
+
+**ISPRAVNO** — storno + novi račun jer je prošlo obračunsko razdoblje i mehanizam kopije iz čl. 43 se ne može primijeniti.
 
 ---
 
