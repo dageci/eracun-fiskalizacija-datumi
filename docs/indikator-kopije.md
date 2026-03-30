@@ -109,13 +109,14 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 ## 3. Uvjeti za korištenje kopije
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
-Sva tri uvjeta moraju biti **istovremeno** ispunjena:
+Sva **četiri** uvjeta moraju biti **istovremeno** ispunjena:
 
 | # | Uvjet | Obrazloženje |
 |---|-------|-------------|
-| 1 | Ispravak se odnosi **SAMO** na podatke koji ne utječu na obračun poreza | Čl. 43 — eksplicitna zakonska odredba |
-| 2 | Kopija se izdaje u **ISTOM razdoblju oporezivanja** kao original | Čl. 43 — isti obračunski period |
-| 3 | Broj računa (BT-1) **MORA biti identičan** originalu | Logika kopije — isti dokument, ispravljen |
+| 1 | Originalni eRačun **mora biti fiskaliziran** | Bez fiskaliziranog originala u PU sustavu, kopija nema smisla — greška S012 |
+| 2 | Ispravak se odnosi **SAMO** na podatke koji ne utječu na obračun poreza | Čl. 43 — eksplicitna zakonska odredba |
+| 3 | Kopija se izdaje u **ISTOM razdoblju oporezivanja** kao original | Čl. 43 — isti obračunski period |
+| 4 | Broj računa (BT-1) **MORA biti identičan** originalu | Logika kopije — isti dokument, ispravljen |
 
 Ako **bilo koji** uvjet nije zadovoljen → storno (CreditNote 381) + novi račun (Invoice 380).
 
