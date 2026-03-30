@@ -58,28 +58,40 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 ## 2. Što se SMIJE ispraviti kopijom?
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
-Čl. 43 dopušta ispravak samo **podataka koji ne utječu na obračun poreza**. Sljedeća tablica klasificira podatke prema tome smiju li se ispraviti putem kopije ili zahtijevaju storno + novi račun.
+Čl. 43 dopušta ispravak samo **podataka koji ne utječu na obračun poreza**. Umjesto nabrajanja svih polja koja se smiju mijenjati (kojih ima stotine), praktičnije je definirati **što se NE SMIJE mijenjati** — sve ostalo je po logici čl. 43 dopušteno.
 
-| Podatak | Smije se ispraviti kopijom? | Primjer |
+### Što se NE SMIJE mijenjati u kopiji
+
+| Podatak | BT polje | Zašto ne |
 |---|---|---|
-| Referenca na narudžbu (BT-13) | **DA** | Krivi broj narudžbenice |
-| Napomene na računu (BT-22) | **DA** | Pogrešan tekst napomene |
-| Datum dospijeća (BT-9) | **DA** | Krivi rok plaćanja |
-| Podaci o plaćanju (BG-16) | **DA** | Krivi IBAN primatelja |
-| Oznaka operatera | **DA** | Krivi OIB operatera |
-| KPD klasifikacija | **DA** | Kriva KPD šifra artikla |
-| VATEX kod | **DA** | Krivi kod oslobođenja |
-| Podaci o partneru (GLN, adresa) | **DA** | Krivi GLN broj kupca |
-| Iznosi (BT-106 do BT-119) | **NE!** | Bilo kakva promjena iznosa |
-| PDV stopa/kategorija | **NE!** | Promjena stope ili kategorije |
-| Datum izdavanja (BT-2) | **NE!** | Drugi datum = drugi račun |
-| Datum isporuke (BT-72) | **NE!** | Utječe na rashod/prihod i PDV |
-| Datum PDV obveze (BT-7/BT-8) | **NE!** | Mijenja datum porezne obveze |
-| HR-BT-15 (obračun po naplati) | **NE!** | Mijenja PDV režim |
-| Broj računa (BT-1) | **MORA biti isti** | Isti broj = kopija istog računa |
-| Artikli, količine, cijene | **NE!** | Utječu na iznose |
+| **Broj računa** | BT-1 | MORA biti isti — to je identifikator kopije |
+| **OIB izdavatelja** | BT-31 | Promjena OIB-a = drugi izdavatelj = drugi račun |
+| **OIB primatelja** | BT-48 | Promjena OIB-a = drugi kupac = drugi račun |
+| **Datum izdavanja** | BT-2 | Utječe na PDV period (default datum), brojčanik |
+| **Datum porezne obveze** | BT-7 | Direktno određuje PDV period |
+| **Kod datuma PDV-a** | BT-8 | Mijenja mehanizam PDV datuma |
+| **Datum isporuke** | BT-72 | Utječe na rashod/prihod (HSFI 15/16) i PDV |
+| **Svi iznosi** | BT-106 do BT-119 | Mijenja poreznu osnovicu, PDV iznos |
+| **PDV stope i kategorije** | BT-116 do BT-119, BT-151/152 | Direktno utječe na PDV |
+| **HR-BT-15** | HRObracunPDVPoNaplati | Mijenja cijeli PDV režim |
+| **Artikli, količine, cijene** | BG-25 stavke | Utječu na iznose → utječu na PDV |
+| **Vrsta dokumenta** | BT-3 | Drugi tip = drugi dokument |
 
-> **Pravilo palca**: Ako promjena podatka može promijeniti iznos PDV-a, PDV kategoriju, PDV period ili rashod/prihod — **nije dopuštena kopijom**. Mora se raditi storno (CreditNote 381) + novi račun (Invoice 380).
+### Što je upitno (siva zona)
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
+
+| Podatak | BT polje | Pitanje |
+|---|---|---|
+| **GLN kupca/prodavatelja** | BT-46/BT-29 | GLN identificira poslovnicu — promjena GLN-a može značiti drugu lokaciju. Utječe li to na PDV? |
+| **Adresa kupca/prodavatelja** | BG-5/BG-8 | Ne utječe na PDV iznos, ali ako se OIB ne mijenja — je li to dopušteno? |
+| **Datum dospijeća** | BT-9 | PU kaže "podaci o plaćanju" su dopušteni — ali BT-9 utječe na eIzvještavanje o naplati |
+| **Naziv artikla/opis** | BT-153/BT-154 | Ne utječe na iznos ni PDV — ali mijenja li to identitet stavke? |
+| **Barkod artikla** | BT-157 | Čisti identifikator, ne utječe na PDV — ali PU nije potvrdila |
+| **VATEX kod** | BT-121 | PU kaže da se može — ali VATEX utječe na PDV kategoriju? |
+
+> **Naše tumačenje**: Sve što **ne mijenja iznos, stopu, kategoriju PDV-a, niti identitet stranaka (OIB)** bi trebalo biti dopušteno za kopiju. Ali za siva zona polja — čekamo službenu potvrdu PU.
+
+> **PU navodi kao primjere dopuštenih ispravaka**: "referenciranje na dokument, promjena podataka o plaćanju, operatera i slično" (izvor: <a href="https://porezna-uprava.gov.hr/hr/ispravci-eracuna-koji-ne-utjecu-na-obracun-poreza-i-statistika-fiskalizacije-2-0/8349" target="_blank">porezna-uprava.gov.hr</a>).
 
 ---
 
@@ -95,10 +107,6 @@ Sva tri uvjeta moraju biti **istovremeno** ispunjena:
 | 3 | Broj računa (BT-1) **MORA biti identičan** originalu | Logika kopije — isti dokument, ispravljen |
 
 Ako **bilo koji** uvjet nije zadovoljen → storno (CreditNote 381) + novi račun (Invoice 380).
-
-**Primjer**: Original izdan 15.03.2026. Izdavatelj želi ispraviti IBAN 28.03.2026. — sva tri uvjeta su ispunjena (nePDV podatak, isto razdoblje, isti broj). Može kopija.
-
-**Protuprimjer**: Original izdan 15.03.2026. Izdavatelj želi ispraviti IBAN 05.04.2026. — uvjet 2 **nije** ispunjen (drugo razdoblje oporezivanja). Mora storno + novi račun.
 
 ---
 
