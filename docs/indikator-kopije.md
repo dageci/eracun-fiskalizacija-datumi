@@ -265,21 +265,23 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 
 ---
 
-### 5.4 NEDOPUŠTENA kopija — drugo razdoblje oporezivanja
+### 5.4 Kopija poslana u drugom mjesecu — je li to "drugo razdoblje"?
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
-**Situacija**: Izdavatelj je u ožujku 2026. izdao račun s pogrešnom napomenom (BT-22). Napomena ne utječe na PDV, ali je sada travanj 2026. — drugo razdoblje oporezivanja.
+**Situacija**: Izdavatelj je u ožujku 2026. izdao račun s pogrešnom napomenom (BT-22). Sada je travanj 2026. — želi poslati kopiju s ispravkom.
 
-**KRIVO** — čl. 43 vrijedi samo u istom razdoblju oporezivanja:
-```xml
-<!-- Travanj 2026. — pokušaj ispravka napomene s ožujskog računa -->
-<cbc:ID>42/P1/2</cbc:ID>
-<cbc:CopyIndicator>true</cbc:CopyIndicator>
-<!-- ^^^ NEDOPUŠTENO! Drugo razdoblje oporezivanja -->
-```
+**Ključno pitanje**: Čl. 43 kaže "u istom razdoblju oporezivanja". Ali:
 
-**Zašto ne radi**: Čak i da zanemarimo ograničenje čl. 43 na isto razdoblje — tu je i problem s datumom izdavanja. Ako kopija zadrži BT-2 = ožujak (isti kao original), šalje se dokument s datumom izdavanja iz prošlosti. Ako kopija stavi BT-2 = travanj (stvarni datum slanja), to je **novi identifikator** jer je BT-2 dio identifikatora eRačuna — PU sustav bi ga mogao tretirati kao novi račun, ne kopiju (vidi napomenu o BT-2 iznad).
+- BT-2 (datum izdavanja) se **ne smije mijenjati** jer je PDV podatak i dio identifikatora
+- Ako BT-2 ostaje **15.03.2026.** (isti kao original), onda je dokument iz **ožujka** — **isto razdoblje oporezivanja**
+- Kopija se fizički **šalje** u travnju, ali BT-2 je iz ožujka
+- **Datum slanja ≠ datum izdavanja** — posrednik ima timestamp slanja, ali BT-2 je datum dokumenta
 
-**ISPRAVNO** — storno + novi račun jer je prošlo obračunsko razdoblje i mehanizam kopije iz čl. 43 se ne može primijeniti.
+> **Razmišljanje**: Ako se BT-2 ne smije mijenjati (jer utječe na PDV), onda kopija **uvijek ostaje u istom razdoblju** kao original — jer je BT-2 isti. Uvjet "isto razdoblje" iz čl. 43 je **automatski ispunjen** samom činjenicom da se BT-2 ne mijenja. To bi značilo da se kopija može poslati i mjesecima nakon originala, sve dok su ispunjeni ostali uvjeti (isti broj, samo nePDV ispravci).
+>
+> **Ali**: Nije jasno tumači li PU "isto razdoblje oporezivanja" kao **razdoblje u kojem je BT-2** (dakle automatski ispunjeno) ili kao **kalendarski mjesec u kojem se kopija šalje** (dakle kopija u travnju za ožujski račun bi bila nedopuštena). Čekamo službenu potvrdu.
+
+**Ako PU tumači "razdoblje" po datumu slanja** → storno + novi račun je jedina opcija za ispravke u drugom mjesecu.
 
 ---
 
