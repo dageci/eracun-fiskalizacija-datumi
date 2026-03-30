@@ -537,6 +537,33 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 >
 > Svih pet stavki iz primjera iznad mogu biti u **različitim mjesecima ili čak godinama** za isti poslovni događaj. To nije greška — to je normalan rad sustava gdje se PDV, trošak i porez na dobit reguliraju različitim propisima.
 
+### BT-72 (datum isporuke) — utjecaj na trošak, prihod i skladište
+
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
+
+| Scenarij | BT-2 (račun) | BT-72 (isporuka) | Prihod (izdavatelj) | Rashod (primatelj) | Primka/Otpremnica | PDV |
+|---|---|---|---|---|---|---|
+| Isti dan | 15.03. | 15.03. | Ožujak | Ožujak | 15.03. | Ožujak |
+| Račun nakon isporuke | 05.04. | 28.03. | **Ožujak** (HSFI 15 — po isporuci) | **Ožujak** (HSFI 16 — po nastanku) | 28.03. | Ožujak (BT-7) |
+| Račun prije isporuke | 25.03. | 05.04. | **Travanj** (isporuka tek u 04) | **Travanj** (roba tek u 04) | 05.04. | Ožujak (BT-7=BT-2 po čl. 30 st. 2) |
+| Bez BT-72 (usluga) | 05.04. | — | Prema BT-7 ili BT-2 | Prema BT-7 ili BT-2 | — (usluga) | BT-7 ili BT-2 |
+
+> **Ključni uvid**: BT-72 je ključan za **knjiženje troška/prihoda i skladišno poslovanje** neovisno o PDV tretmanu. Čak i kad je PDV u jednom mjesecu (BT-7), trošak/prihod i primka mogu biti u drugom (BT-72). ERP sustavi koji automatski učitavaju eRačune moraju razdvojiti ove dvije logike.
+
+### BT-73/BT-74 (obračunsko razdoblje) — razgraničenje troškova
+
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
+
+| Scenarij | BT-2 | BT-73 | BT-74 | Račun za | Trošak primatelja | Prihod izdavatelja |
+|---|---|---|---|---|---|---|
+| Mjesečni najam | 05.04. | 01.03. | 31.03. | Najam za ožujak | **Ožujak** (razgraničenje) | **Ožujak** |
+| Kvartalna usluga | 05.04. | 01.01. | 31.03. | IT podrška Q1 | **Raspodijeliti na 01-03** | **Raspodijeliti na 01-03** |
+| Godišnja pretplata | 15.01. | 01.01. | 31.12. | Softver licence 2026 | **Raspodijeliti na 01-12** | **Raspodijeliti na 01-12** |
+
+> **Ključni uvid**: BT-73/BT-74 daju ERP sustavu informaciju za **automatsko vremensko razgraničenje**. Bez tih polja, računovođa mora ručno rasporediti trošak po mjesecima. S njima, ERP može automatski knjižiti 1/3 troška u svaki mjesec kvartala (ili 1/12 za godišnju pretplatu).
+>
+> **Napomena**: BT-73/BT-74 **ne utječu na PDV** — PDV se određuje kroz BT-7/BT-8/BT-2. Obračunsko razdoblje je isključivo informativno za knjigovodstvene svrhe.
+
 ---
 
 ## Usporedna tablica svih primjera
