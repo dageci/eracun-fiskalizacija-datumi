@@ -149,7 +149,7 @@ Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`Evide
 
 ```xml
 <!-- UBL eRačun — ispravak nePDV podataka -->
-<cbc:ID>2026-001-00042</cbc:ID>
+<cbc:ID>42/P1/2</cbc:ID>
 <cbc:CopyIndicator>true</cbc:CopyIndicator>
 <cbc:IssueDate>2026-03-15</cbc:IssueDate>
 ```
@@ -161,12 +161,12 @@ Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`Evide
 
 ### 5.1 Legitimna kopija — ispravak reference na narudžbu
 
-**Situacija**: Izdavatelj je poslao eRačun 2026-001-00042 s krivim brojem narudžbenice u BT-13 (napisao "NAR-100" umjesto "NAR-200"). Iznosi su ispravni, PDV je ispravan, isti mjesec.
+**Situacija**: Izdavatelj je poslao eRačun 42/P1/2 s krivim brojem narudžbenice u BT-13 (napisao "NAR-100" umjesto "NAR-200"). Iznosi su ispravni, PDV je ispravan, isti mjesec.
 
 **Ispravno**: Izdavatelj šalje isti račun s istim brojem, `CopyIndicator=true`, i ispravljenim BT-13:
 
 ```xml
-<cbc:ID>2026-001-00042</cbc:ID>
+<cbc:ID>42/P1/2</cbc:ID>
 <cbc:CopyIndicator>true</cbc:CopyIndicator>
 <cbc:IssueDate>2026-03-15</cbc:IssueDate>
 <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
@@ -185,12 +185,12 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 
 ### 5.2 Legitimna kopija — ispravak IBAN-a
 
-**Situacija**: Na računu 2026-001-00042 naveden je krivi IBAN primatelja uplate. Kupac ne može platiti. Isti mjesec.
+**Situacija**: Na računu 42/P1/2 naveden je krivi IBAN primatelja uplate. Kupac ne može platiti. Isti mjesec.
 
 **Ispravno**: `CopyIndicator=true`, ispravljeni IBAN u BG-16 (podaci o plaćanju), sve ostalo identično.
 
 ```xml
-<cbc:ID>2026-001-00042</cbc:ID>
+<cbc:ID>42/P1/2</cbc:ID>
 <cbc:CopyIndicator>true</cbc:CopyIndicator>
 <!-- ... -->
 <cac:PaymentMeans>
@@ -206,11 +206,11 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 
 ### 5.3 NEDOPUŠTENA kopija — promjena iznosa
 
-**Situacija**: Izdavatelj je na računu 2026-001-00042 naveo krivi iznos (10.000 EUR umjesto 8.000 EUR). Pokušava poslati "kopiju" s ispravljenim iznosom.
+**Situacija**: Izdavatelj je na računu 42/P1/2 naveo krivi iznos (10.000 EUR umjesto 8.000 EUR). Pokušava poslati "kopiju" s ispravljenim iznosom.
 
 **KRIVO** — iznosi utječu na obračun poreza:
 ```xml
-<cbc:ID>2026-001-00042</cbc:ID>
+<cbc:ID>42/P1/2</cbc:ID>
 <cbc:CopyIndicator>true</cbc:CopyIndicator>
 <cbc:PayableAmount currencyID="EUR">8000.00</cbc:PayableAmount>
 <!-- ^^^ NEDOPUŠTENO! Promjena iznosa = utječe na PDV -->
@@ -220,18 +220,18 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 
 1. **CreditNote 381** — stornira pogrešni original:
 ```xml
-<cbc:ID>2026-001-00043</cbc:ID>
+<cbc:ID>43/P1/2</cbc:ID>
 <cbc:CreditNoteTypeCode>381</cbc:CreditNoteTypeCode>
 <cac:BillingReference>
   <cac:InvoiceDocumentReference>
-    <cbc:ID>2026-001-00042</cbc:ID>
+    <cbc:ID>42/P1/2</cbc:ID>
   </cac:InvoiceDocumentReference>
 </cac:BillingReference>
 ```
 
 2. **Novi Invoice 380** — s točnim iznosom:
 ```xml
-<cbc:ID>2026-001-00044</cbc:ID>
+<cbc:ID>44/P1/2</cbc:ID>
 <cbc:InvoiceTypeCode>380</cbc:InvoiceTypeCode>
 <cbc:PayableAmount currencyID="EUR">8000.00</cbc:PayableAmount>
 ```
@@ -245,7 +245,7 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 **KRIVO** — čl. 43 vrijedi samo u istom razdoblju oporezivanja:
 ```xml
 <!-- Travanj 2026. — pokušaj ispravka napomene s ožujskog računa -->
-<cbc:ID>2026-001-00042</cbc:ID>
+<cbc:ID>42/P1/2</cbc:ID>
 <cbc:CopyIndicator>true</cbc:CopyIndicator>
 <!-- ^^^ NEDOPUŠTENO! Drugo razdoblje oporezivanja -->
 ```

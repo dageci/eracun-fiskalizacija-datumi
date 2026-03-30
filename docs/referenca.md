@@ -29,7 +29,7 @@ Redoslijed elemenata u UBL Invoice XML-u je strogo definiran shemom:
 <Invoice>
   <cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:mfin.gov.hr:cius-2025:1.0...</cbc:CustomizationID>
   <cbc:ProfileID>P1</cbc:ProfileID>
-  <cbc:ID>2026-001-00001</cbc:ID>
+  <cbc:ID>1/P1/2</cbc:ID>
 
   <cbc:IssueDate>2026-03-15</cbc:IssueDate>          <!-- BT-2:  OBAVEZNO -->
   <cbc:IssueTime>14:30:00</cbc:IssueTime>             <!-- HR-BT-2: OBAVEZNO (HR) -->
