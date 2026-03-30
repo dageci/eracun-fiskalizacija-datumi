@@ -410,6 +410,13 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > Isti podaci, ali obveznik koristi obračun po naplaćenoj naknadi.
 > Ni isporuka ni izdavanje ne određuju datum poreza — samo plaćanje.
 
+| Podatak | BT polje | XML element | Vrijednost |
+|---------|----------|-------------|-----------|
+| Datum izdavanja računa | BT-2 | `cbc:IssueDate` | 2026-03-10 |
+| Stvarni datum isporuke | BT-72 | `cbc:ActualDeliveryDate` | 2026-01-25 |
+| Kod datuma PDV obveze | BT-8 | `cbc:DescriptionCode` | 432 |
+| Datum plaćanja | — | — | nije poznat (kupac plaća 15.04.) |
+
 ```xml
 <!-- BT-7: NEMA — datum poreza nije poznat (BR-CO-03) -->
 <!-- BT-8 = 432: porezna obveza nastaje danom plaćanja -->

@@ -498,8 +498,8 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
   exists(cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID)"
   flag="fatal"
   id="HR-BR-GECI-F09">
-  CreditNote (381) ili korekcija (384) mora sadržavati referencu
-  na prethodni račun (BT-25).
+  Dokument tipa 381 (odobrenje) ili 384 (korekcija) mora sadržavati referencu
+  na prethodni račun (BT-25) — vrijedi za Invoice i CreditNote kontekst.
 </assert>
 ```
 

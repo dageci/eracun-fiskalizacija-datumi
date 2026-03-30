@@ -68,7 +68,7 @@ Klasičan prijelazni slučaj: usluga je obavljena u prosincu 2025. (prije obveze
 
 | Pretporez period | Rashod period | Napomena |
 |:---:|:---:|---|
-| **Prosinac 2025.** (ako BT-7=15.12.) ili **Siječanj 2026.** (ako nema BT-7) | **Prosinac 2025.** (BT-72=15.12.) | Pretporez ovisi o BT-7 i o tome kad primatelj primi račun — ako račun stigne u siječnju, a rok za PDV prijavu za prosinac 2025. je **20.01.2026.** (stari rok — od siječnja 2026. nadalje rok je zadnji dan u mjesecu), primatelj mora imati račun u rukama prije roka |
+| **Prosinac 2025.** (ako BT-7=15.12.) ili **Siječanj 2026.** (ako nema BT-7) | **Prosinac 2025.** (BT-72=15.12.) | Pretporez ovisi o BT-7 i o tome kad primatelj primi račun — ako račun stigne u siječnju, a rok za PDV prijavu za prosinac 2025. je **20.01.2026.** (stari rok). Od PDV prijave za siječanj 2026. nadalje, rok je **zadnji dan u mjesecu** (dakle prijava za siječanj 2026. ima rok 28.02.2026.), primatelj mora imati račun u rukama prije roka |
 
 > **Otvoreno pitanje**: Ako izdavatelj **ne navede BT-7** (jer nije bio obavezan u 2025. praksi), BT-2=10.01.2026. postaje default datum PDV obveze. Tada izdavatelj prijavljuje PDV u siječnju 2026. umjesto u prosincu 2025. — a primatelj nema osnovu za pretporez u prosincu. Ovo je **čest problem prijelaznog razdoblja** gdje izdavatelji ne navode BT-7 jer im "nije trebao" za stari sustav. Preporuka: **uvijek navesti BT-7** kad se isporuka i račun razlikuju.
 
