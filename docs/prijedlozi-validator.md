@@ -341,7 +341,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 </assert>
 ```
 
-**Dokumentacija**: Vidi [pravila.md sekcija 3.1 tablica scenarija](pravila#31-scenariji-prema-vrsti-transakcije) — pregled kombinacija datumskih polja za razne scenarije.
+**Dokumentacija**: Vidi [pravila.md sekcija 3.1 tablica scenarija](pravila#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa) — pregled kombinacija datumskih polja za razne scenarije.
 
 ---
 

@@ -39,7 +39,7 @@ Kupac iz primljenog eRačun XML-a treba izvući tri neovisna datuma:
 | **Trošak/rashod** — u koje razdoblje se priznaje? | BT-72 (`ActualDeliveryDate`) ili BT-73/BT-74 (`StartDate`/`EndDate`) | HSFI 16, načelo nastanka događaja |
 | **Skladište (primka)** — kad se knjiži ulaz robe? | BT-72 (`ActualDeliveryDate`) ili stvarni datum primitka robe | Interna pravila, usklađenje s otpremnicom |
 
-> **Ključni uvid**: Ova tri datuma mogu biti u **različitim mjesecima ili čak godinama** za isti račun. To nije greška — to je normalan rad sustava gdje se PDV, trošak i skladište reguliraju različitim propisima. Detaljno objašnjenje: [sekcija 5 — Datumi na eRačunu vs. datumi u knjigovodstvu](#5-datumi-na-eračunu-vs-datumi-u-knjigovodstvu).
+> **Ključni uvid**: Ova tri datuma mogu biti u **različitim mjesecima ili čak godinama** za isti račun. To nije greška — to je normalan rad sustava gdje se PDV, trošak i skladište reguliraju različitim propisima. Detaljno objašnjenje: [sekcija 5 — Datumi na eRačunu vs. datumi u knjigovodstvu](#vremensko-razgraničenje-u-knjigovodstvu).
 
 ### Pretporez kod obračuna po naplati — posebna pravila za kupca
 
@@ -97,7 +97,7 @@ Izdavateljeva perspektiva: [4.1.2](primjeri-izdavatelj#412-isporuka-u-drugom-mje
 |:---:|:---:|:---:|
 | **Ožujak 2026.** | **Ožujak 2026.** | **28.03.2026.** |
 
-> **Pretporez ide u ožujak**, ne u travanj! Obveza PDV-a nastala je 28.03. (BT-7 = datum isporuke). Kupac je primio račun 05.04., ali rok za PDV prijavu za ožujak je 30.04.2026. — budući da je račun stigao **prije roka**, kupac može uključiti pretporez u prijavu za ožujak (čl. 57 + čl. 60, vidi [sekciju 5.3](#pretporez-pretporez-dva-uvjeta-i-nijanse-u-praksi)), potvrđeno presudom [C-80/20 (Wilo Salmson)](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun).
+> **Pretporez ide u ožujak**, ne u travanj! Obveza PDV-a nastala je 28.03. (BT-7 = datum isporuke). Kupac je primio račun 05.04., ali rok za PDV prijavu za ožujak je 30.04.2026. — budući da je račun stigao **prije roka**, kupac može uključiti pretporez u prijavu za ožujak (čl. 57 + čl. 60, vidi [sekciju 5.3](#pretporez-dva-uvjeta-i-nijanse-u-praksi)), potvrđeno presudom [C-80/20 (Wilo Salmson)](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun).
 >
 > Rashod se također priznaje u ožujku po BT-72 (datum isporuke = datum nastanka poslovnog događaja, HSFI 16). HR-BT-15 nije prisutan (obračun po izdavanju).
 
@@ -210,7 +210,7 @@ Izdavateljeva perspektiva: [4.1.6](primjeri-izdavatelj#416-bt-835--automatska-ve
 
 > **BT-8=35 znači: datum porezne obveze = BT-72 (datum isporuke).**
 >
-> - **Pretporez: siječanj** — BT-8=35 upućuje sustav da koristi BT-72 = 25.01. Račun je stigao 10.03. — ali rok za PDV prijavu za siječanj je bio 28.02. Ako je taj rok **već prošao**, pretporez ide u **ožujak** (razdoblje primitka računa), ne u siječanj! Vidi [sekciju 5.3](#pretporez-pretporez-dva-uvjeta-i-nijanse-u-praksi). Napomena: prema [C-80/20 (Wilo Salmson)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), obveznik ima pravo podnijeti ispravak prijave za siječanj.
+> - **Pretporez: siječanj** — BT-8=35 upućuje sustav da koristi BT-72 = 25.01. Račun je stigao 10.03. — ali rok za PDV prijavu za siječanj je bio 28.02. Ako je taj rok **već prošao**, pretporez ide u **ožujak** (razdoblje primitka računa), ne u siječanj! Vidi [sekciju 5.3](#pretporez-dva-uvjeta-i-nijanse-u-praksi). Napomena: prema [C-80/20 (Wilo Salmson)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), obveznik ima pravo podnijeti ispravak prijave za siječanj.
 > - **Rashod: siječanj** — BT-72 = 25.01., roba je isporučena u siječnju.
 >
 > **Važno za primatelja**: Kad je BT-8=35, primatelj NE treba tražiti BT-7 — datum poreza se automatski čita iz BT-72. Rezultat je isti kao kad izdavatelj koristi BT-7 eksplicitno (primjer P.1.2), samo je mehanizam drugačiji. HR-BT-15 nije prisutan (obračun po izdavanju).
@@ -265,7 +265,7 @@ Izdavateljeva perspektiva: [4.1.8](primjeri-izdavatelj#418-svi-datumi-u-različi
 
 > **Svi datumi u različitim mjesecima** — ovo je najsloženiji slučaj za primatelja.
 >
-> - **Pretporez**: Obveza PDV-a nastala u siječnju (BT-7 = 25.01.), ali račun je stigao tek u ožujku. Rok za PDV prijavu za siječanj bio je 28.02. — taj rok je **prošao**. Kupac prema praksi Porezne uprave može pretporez uključiti tek u prijavu za **ožujak** (mjesec primitka računa). Vidi detaljno [sekciju 5.3](#pretporez-pretporez-dva-uvjeta-i-nijanse-u-praksi). Prema [C-80/20 (Wilo Salmson)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), obveznik ima pravo podnijeti ispravak prijave za siječanj.
+> - **Pretporez**: Obveza PDV-a nastala u siječnju (BT-7 = 25.01.), ali račun je stigao tek u ožujku. Rok za PDV prijavu za siječanj bio je 28.02. — taj rok je **prošao**. Kupac prema praksi Porezne uprave može pretporez uključiti tek u prijavu za **ožujak** (mjesec primitka računa). Vidi detaljno [sekciju 5.3](#pretporez-dva-uvjeta-i-nijanse-u-praksi). Prema [C-80/20 (Wilo Salmson)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), obveznik ima pravo podnijeti ispravak prijave za siječanj.
 > - **Rashod: siječanj** — BT-72 = 25.01., roba je isporučena u siječnju. Po HSFI 16, trošak pripada siječnju.
 > - **Primka: 25.01.** — roba je fizički zaprimljena u siječnju.
 >

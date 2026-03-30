@@ -627,6 +627,8 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > ovdje ga **moramo uključiti** jer posrednik iz njega generira fiskalizacijsku poruku
 > s oznakom obračuna po naplaćenoj naknadi. Činjenica da bi se i BT-8=432 mogao koristiti
 > u CreditNote dodatno pojačava pitanje je li HR-BT-15 zaista potreban kao zasebni element.
+>
+> Prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun), izdavatelj ima pravo na retroaktivni ispravak PDV-a u mjesecu izvornog računa.
 
 ### 4.3 Usporedba svih mehanizama za isti poslovni slučaj <span class="badge-usporedba">Usporedba</span>
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>

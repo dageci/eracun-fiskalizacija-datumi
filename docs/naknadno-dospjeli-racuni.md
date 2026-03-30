@@ -203,7 +203,7 @@ Usluga obavljena u ožujku 2026., ali račun izdan tek u lipnju 2026. — zbog a
 |:---:|:---:|---|
 | **Ožujak 2026.** — ako račun stigne prije roka za prijavu; inače **Lipanj 2026.** | **Ožujak 2026.** (BT-72) | Pretporez: dva uvjeta moraju biti ispunjena — (1) obveza PDV-a nastala (ožujak, BT-7) i (2) primatelj ima račun. Ako je rok za PDV prijavu za ožujak istekao (30.04. — od 2026. rok je zadnji dan u mjesecu), primatelj uključuje pretporez u prvi sljedeći period kad ima račun = lipanj. |
 
-> **Otvoreno pitanje — ispravak prijave**: Primatelj primi račun u lipnju za isporuku iz ožujka. Može li retroaktivno ispraviti PDV prijavu za ožujak i uključiti pretporez u ožujak? U praksi, PU dopušta ispravak ako rok za prijavu za ožujak (30.04.) nije istekao u trenutku primitka računa — ali ako je istekao, primatelj pretporez uključuje u lipanj (kad je primio račun). Alternativno, neki porezni savjetnici preporučuju podnošenje ispravka za ožujak, pozivajući se na [Senatex presudu](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun).
+> **Otvoreno pitanje — ispravak prijave**: Primatelj primi račun u lipnju za isporuku iz ožujka. Može li retroaktivno ispraviti PDV prijavu za ožujak i uključiti pretporez u ožujak? U praksi, PU dopušta ispravak ako rok za prijavu za ožujak (30.04.) nije istekao u trenutku primitka računa — ali ako je istekao, primatelj pretporez uključuje u lipanj (kad je primio račun). Alternativno, neki porezni savjetnici preporučuju podnošenje ispravka za ožujak, pozivajući se na [Senatex presudu](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun) i [Wilo Salmson C-80/20](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun).
 
 ---
 
@@ -235,7 +235,7 @@ Tijekom IOS (izvod otvorenih stavaka) usklađenja u lipnju 2026. otkriveno je da
 
 | Pretporez period | Rashod period | Primka | Napomena |
 |:---:|:---:|:---:|---|
-| **Lipanj 2026.** (kad primi račun) | **Siječanj 2026.** (BT-72) | **Već knjižena u siječnju** | Primatelj je robu primio i proknjižio primku u siječnju. Rashod je priznat u siječnju (nastanak događaja). Pretporez: primatelj nije imao račun do lipnja — uključuje pretporez u lipanj. |
+| **Lipanj 2026.** (kad primi račun) | **Siječanj 2026.** (BT-72) | **Već knjižena u siječnju** | Primatelj je robu primio i proknjižio primku u siječnju. Rashod je priznat u siječnju (nastanak događaja). Pretporez: primatelj nije imao račun do lipnja — uključuje pretporez u lipanj. Prema [C-80/20 (Wilo Salmson)](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun), obveznik ima pravo na ispravak prijave za izvorni mjesec. |
 
 > **Otvoreno pitanje**: Primatelj je rashod proknjižio u siječnju na temelju primke (bez računa). Je li to ispravno? Po HSFI 16, rashod se priznaje kad nastane poslovni događaj — isporuka u siječnju. Ali bez računa, primatelj je morao koristiti procijenjeni iznos (razgraničenje). Kad račun stigne u lipnju, usklađuje se eventualna razlika. Za pretporez: ispravak prijave za siječanj je diskutabilan jer primatelj **nije imao račun** u siječnju — čl. 60 traži posjedovanje računa kao uvjet za pretporez.
 
