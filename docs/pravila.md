@@ -44,7 +44,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 | **HR-BT-2** | `cbc:IssueTime` | Vrijeme izdavanja računa | **DA** (HR) | Fiskalizacija (točan trenutak izdavanja) | — |
 | **BT-7** | `cbc:TaxPointDate` | Datum nastanka obveze PDV-a | NE | **PDV** izdavatelja (eksplicitni datum), **pretporez** kupca. **Ako je prisutan HR-BT-15**: BT-7 označava datum plaćanja (kod predujma), ne datum isporuke | **BT-8** (BR-CO-03, fatal!) |
 | **BT-8** | `cac:InvoicePeriod/cbc:DescriptionCode` | Kod datuma PDV obveze | NE | **PDV** (preko koda: 3=BT-2, 35=BT-72, 432=plaćanje). **Kod 432 i HR-BT-15 nose istu informaciju** — vidi [sekcija 3.1](#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa) | **BT-7** (BR-CO-03, fatal!) |
-| **BT-9** | `cbc:DueDate` | Datum dospijeća plaćanja | NE | Likvidatura, cash flow, **eIzvještavanje o naplati**. **Ako je prisutan HR-BT-15**: BT-9 postaje ključan jer eIzvještavanje prati naplate po BT-115 | — |
+| **BT-9** | `cbc:DueDate` | Datum dospijeća plaćanja | NE | Likvidatura, cash flow, praćenje rokova plaćanja. HR-BR-4: obavezan ako BT-115 > 0 | — |
 | **BT-72** | `cac:Delivery/cbc:ActualDeliveryDate` | Stvarni datum isporuke | NE | **Rashod/prihod** (HSFI 16), **skladišna primka**, garancije, PDV (ako BT-8=35). **Ako je prisutan HR-BT-15**: BT-72 i dalje vrijedi za rashod/prihod i primku, ali NE za datum PDV-a | — |
 | **BT-73** | `cac:InvoicePeriod/cbc:StartDate` | Početak obračunskog razdoblja | NE | **Razgraničenje troškova**, pretplate, kontinuirane usluge | — |
 | **BT-74** | `cac:InvoicePeriod/cbc:EndDate` | Kraj obračunskog razdoblja | NE | **Razgraničenje troškova**, pretplate, kontinuirane usluge | — |
@@ -83,7 +83,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 | **BT-2** | Datum brojčanika; default PDV ako nema BT-7/BT-8 — **osim ako je prisutan HR-BT-15** (tada PDV po plaćanju) | Datum primitka računa ≈ BT-2 kod eRačuna | — | — |
 | **BT-7** | U koji mjesec ide PDV — **osim ako je prisutan HR-BT-15** (tada BT-7 označava datum plaćanja, ne isporuke) | [Kad nastaje pravo na pretporez](primjeri-primatelj#pretporez-dva-uvjeta-i-nijanse-u-praksi) (čl. 57) — **osim ako je prisutan HR-BT-15** (tada pretporez tek po plaćanju) | — | — |
 | **BT-8** | Kako sustav određuje datum PDV-a; **432 = obračun po naplati** (isto značenje kao HR-BT-15) | 432 = pretporez tek po plaćanju; **isto značenje kao HR-BT-15** — vidi [3.1](#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa) | — | — |
-| **BT-9** | Rok za eIzvještavanje o naplati — **posebno važan ako je prisutan HR-BT-15** jer PU prati naplate | Rok plaćanja za likvidaturu | — | — |
+| **BT-9** | Rok plaćanja za likvidaturu i cash flow. HR-BR-4: obavezan ako BT-115 > 0 | Rok plaćanja za likvidaturu | — | — |
 | **BT-72** | Datum isporuke za PDV (s BT-7 ili BT-8=35) — **ako je prisutan HR-BT-15**, BT-72 NE utječe na PDV ali i dalje na rashod i primku | — | **Kad priznati rashod** (HSFI 16) — neovisno o HR-BT-15 | **Kad knjižiti primku** — neovisno o HR-BT-15 |
 | **BT-73/74** | Informacija za kupca | — | **Razgraničenje troškova** po mjesecima — neovisno o HR-BT-15 | — |
 | **HR-BT-15** | Fiskalizacijska poruka za PU — **mijenja PDV režim cijelog računa** | **PRVO PROVJERITI**: ako je prisutan, pretporez tek po plaćanju neovisno o BT-7/BT-8/BT-2 | Rashod se i dalje priznaje po BT-72, ali PDV tretman je drugačiji | — |
@@ -359,7 +359,7 @@ Nakon analize XSD sheme i svih scenarija, postavlja se pitanje: **pokriva li BT-
 
 > **Napomena iz primjera:** U sekciji [4.2](primjeri-izdavatelj#42-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u) svi primjeri obračuna po naplati koriste HR-BT-15, dok BT-8=432 nije uvijek korišten — [predujam (4.2.4)](primjeri-izdavatelj#424-predujam-avansni-račun-po-naplati) koristi BT-7, a [CreditNote (4.2.6)](primjeri-izdavatelj#426-odobrenje--creditnote-po-naplati) u praksi ne koristi BT-8 (iako **postoji** u CreditNote XSD shemi). No ovo je autorovo tumačenje — čekamo službenu potvrdu.
 
-> **PU pojašnjenje (19.12.2025., pitanje 188)**: eIzvještavanje o naplati je obvezno za **sve** obveznike (ne samo za one na sustavu po naplati) — zamjenjuje OPZ-STAT-1. To znači da je BT-9 (DueDate) i BT-115 (PayableAmount) relevantan za sve eRačune, ne samo za one s HR-BT-15.
+> **PU pojašnjenje (19.12.2025., pitanje 188)**: eIzvještavanje o naplati je obvezno za **sve** obveznike (ne samo za one na sustavu po naplati) — zamjenjuje OPZ-STAT-1. To znači da je BT-115 (PayableAmount) relevantan za sve eRačune. BT-9 (DueDate) je rok plaćanja — obavezan po HR-BR-4 kad je BT-115 > 0, ali nije direktno vezan uz eIzvještavanje o naplati (koje se odnosi na stvarni datum plaćanja, ne rok).
 
 ---
 
