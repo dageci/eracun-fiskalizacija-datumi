@@ -90,6 +90,7 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 | **HR-BR-GECI-W08** | BT-8=3 je redundantan — isti rezultat kao da nema ni BT-7 ni BT-8 | Datumska logika |
 | **HR-BR-GECI-W09** | Nepoznat kod načina plaćanja (BT-81) za HR kontekst | Način plaćanja |
 | **HR-BR-GECI-W10** | Porezna kategorija nije S, ali nedostaje razlog oslobođenja (BT-120/BT-121) | PDV kategorija |
+| **HR-BR-GECI-W11** | Samo jedan od BT-73/BT-74 postoji — nedostaje li drugi? | Datumska logika |
 
 ---
 
@@ -576,6 +577,30 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
   flag="warning"
   id="HR-BR-GECI-W10">
   Porezna kategorija nije S, ali nedostaje razlog oslobođenja (BT-120 ili BT-121).
+</assert>
+```
+
+---
+
+### W11: Samo jedan od BT-73/BT-74 postoji
+<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
+
+**Što**: Ako postoji BT-73 (StartDate) ali ne BT-74 (EndDate), ili obrnuto — upozoriti.
+
+**Zašto**: Oba datuma su opcionalna (0..1) i specifikacija ne zahtijeva da moraju biti u paru. Postoje legitimni slučajevi gdje je samo jedan prisutan (npr. otvoreni ugovor bez poznatog kraja). Međutim, za **vremensko razgraničenje troškova** u ERP sustavu potrebna su oba datuma — bez oba, sustav ne može automatski raspodijeliti trošak po mjesecima.
+
+**Tip pravila**: `flag="warning"` — nije greška, ali ERP sustav primatelja možda neće moći automatski razgraničiti trošak.
+
+**Schematron primjer**:
+```xml
+<assert test="not(exists(cac:InvoicePeriod/cbc:StartDate) and
+  not(exists(cac:InvoicePeriod/cbc:EndDate))) and
+  not(exists(cac:InvoicePeriod/cbc:EndDate) and
+  not(exists(cac:InvoicePeriod/cbc:StartDate)))"
+  flag="warning"
+  id="HR-BR-GECI-W11">
+  Samo jedan od BT-73 (StartDate) ili BT-74 (EndDate) postoji.
+  Za vremensko razgraničenje troškova preporučamo navesti oba datuma.
 </assert>
 ```
 
