@@ -43,7 +43,6 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 | Podatak | BT polje | XML element | Vrijednost |
 |---------|----------|-------------|-----------|
 | Datum izdavanja računa | BT-2 | `cbc:IssueDate` | 2026-03-15 |
-| Datum isporuke dobara | BT-72 | `cbc:ActualDeliveryDate` | 2026-03-15 |
 
 ```xml
 <!-- BT-2: Datum izdavanja računa -->
@@ -639,7 +638,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 |---|---|---|---|---|---|
 | Isti dan | 15.03. | 15.03. | Ožujak | 15.03. | Ožujak |
 | Račun nakon isporuke | 05.04. | 28.03. | **Ožujak** (po isporuci) | 28.03. | Ožujak (BT-7) |
-| Račun prije isporuke | 25.03. | 05.04. | **Travanj** (isporuka tek u 04) | 05.04. | Ožujak (BT-7=BT-2, čl. 30 st. 2) |
+| Račun prije isporuke | 25.03. | 05.04. | **Travanj** (isporuka tek u 04) | 05.04. | Ožujak (default=BT-2 (bez BT-7), čl. 30 st. 2) |
 | Kontinuirana usluga | 05.04. | — | **Q1** (BT-73=01.01., BT-74=31.03.) | — (usluga) | Ožujak (BT-7=31.03.) |
 | Predujam | 10.02. | — | Ne priznaje se (primljeno sredstvo) | — | Veljača (BT-7=05.02.) |
 

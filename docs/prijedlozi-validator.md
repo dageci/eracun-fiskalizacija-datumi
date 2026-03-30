@@ -133,7 +133,8 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
 <assert test="not(exists(ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/
   hrextac:HRFISK20Data/hrextac:HRObracunPDVPoNaplati) and
   exists(cbc:TaxPointDate) and
-  not(cbc:InvoiceTypeCode = '386'))"
+  not(cbc:InvoiceTypeCode = '386') and
+  not(cbc:CreditNoteTypeCode = '381'))"
   flag="fatal"
   id="HR-BR-GECI-F02">
   Obveznik po naplaćenoj naknadi ne smije imati TaxPointDate (BT-7),
@@ -333,7 +334,8 @@ Validator propušta eRačun ali izdaje upozorenje. Moguća programerska greška 
     hrextac:HRFISK20Data/hrextac:HRObracunPDVPoNaplati) and
   not(exists(cbc:TaxPointDate)) and
   not(cac:InvoicePeriod/cbc:DescriptionCode = '432') and
-  not(cbc:InvoiceTypeCode = '381'))"
+  not(cbc:InvoiceTypeCode = '381') and
+  not(cbc:CreditNoteTypeCode = '381'))"
   flag="warning"
   id="HR-BR-GECI-W02">
   HR-BT-15 (obračun po naplati) je prisutan, ali nema ni BT-7 ni BT-8=432.

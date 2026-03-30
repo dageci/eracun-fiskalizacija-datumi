@@ -545,7 +545,7 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 |---|---|---|---|---|---|---|
 | Isti dan | 15.03. | 15.03. | Ožujak | Ožujak | 15.03. | Ožujak |
 | Račun nakon isporuke | 05.04. | 28.03. | **Ožujak** (HSFI 15 — po isporuci) | **Ožujak** (HSFI 16 — po nastanku) | 28.03. | Ožujak (BT-7) |
-| Račun prije isporuke | 25.03. | 05.04. | **Travanj** (isporuka tek u 04) | **Travanj** (roba tek u 04) | 05.04. | Ožujak (BT-7=BT-2 po čl. 30 st. 2) |
+| Račun prije isporuke | 25.03. | 05.04. | **Travanj** (isporuka tek u 04) | **Travanj** (roba tek u 04) | 05.04. | Ožujak (default=BT-2 (bez BT-7), čl. 30 st. 2) |
 | Bez BT-72 (usluga) | 05.04. | — | Prema BT-7 ili BT-2 | Prema BT-7 ili BT-2 | — (usluga) | BT-7 ili BT-2 |
 
 > **Ključni uvid**: BT-72 je ključan za **knjiženje troška/prihoda i skladišno poslovanje** neovisno o PDV tretmanu. Čak i kad je PDV u jednom mjesecu (BT-7), trošak/prihod i primka mogu biti u drugom (BT-72). ERP sustavi koji automatski učitavaju eRačune moraju razdvojiti ove dvije logike.

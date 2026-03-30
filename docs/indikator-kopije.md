@@ -82,7 +82,7 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 | **Datum izdavanja** | BT-2 | Utječe na PDV period (default datum), brojčanik — vidi napomenu ispod* |
 | **Datum porezne obveze** | BT-7 | Direktno određuje PDV period |
 | **Kod datuma PDV-a** | BT-8 | Mijenja mehanizam PDV datuma |
-| **Datum isporuke** | BT-72 | Utječe na rashod/prihod (HSFI 15/16) i PDV |
+| **Datum isporuke** | BT-72 | Utječe na rashod/prihod (HSFI 15/16); na PDV utječe samo kod obračuna po izdavanju (ne kad je prisutan HR-BT-15) |
 | **Svi iznosi** | BT-106 do BT-119 | Mijenja poreznu osnovicu, PDV iznos |
 | **PDV stope i kategorije** | BT-116 do BT-119, BT-151/152 | Direktno utječe na PDV |
 | **HR-BT-15** | HRObracunPDVPoNaplati | Mijenja cijeli PDV režim |

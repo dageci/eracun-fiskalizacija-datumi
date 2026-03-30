@@ -61,7 +61,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
 | Isporuka = datum računa | **DA** | **DA** | — | — | DA | —* | — | — | [Izd. 4.1.1](primjeri-izdavatelj#411-isporuka-i-račun-isti-dan-po-izdavanju), [Prim. P.1.1](primjeri-primatelj#p11-isporuka-i-račun-isti-dan) |
 | Isporuka ≠ datum računa | **DA** | **DA** | **DA** | — | DA | DA | — | — | [Izd. 4.1.2](primjeri-izdavatelj#412-isporuka-u-drugom-mjesecu-od-računa-po-izdavanju), [Prim. P.1.2](primjeri-primatelj#p12-isporuka-u-drugom-mjesecu) |
-| Račun prije isporuke | **DA** | **DA** | **DA** | — | DA | DA | — | — | [Izd. 4.1.3](primjeri-izdavatelj#413-račun-izdan-prije-isporuke-čl-30-st-2-po-izdavanju), [Prim. P.1.3](primjeri-primatelj#p13-račun-izdan-prije-isporuke) |
+| Račun prije isporuke | **DA** | **DA** | — | — | DA | DA | — | — | [Izd. 4.1.3](primjeri-izdavatelj#413-račun-izdan-prije-isporuke-čl-30-st-2-po-izdavanju), [Prim. P.1.3](primjeri-primatelj#p13-račun-izdan-prije-isporuke) |
 | Predujam (po izdavanju) | **DA** | **DA** | **DA** | — | — | — | — | — | [Izd. 4.1.4](primjeri-izdavatelj#414-predujam-avansni-račun-čl-30-st-5-po-izdavanju), [Prim. P.1.4](primjeri-primatelj#p14-predujam--avansni-račun) |
 | Kontinuirana usluga | **DA** | **DA** | **DA** | — | DA | — | **DA** | — | [Izd. 4.1.5](primjeri-izdavatelj#415-kontinuirana-usluga--obračunsko-razdoblje-bt-73-bt-74-po-izdavanju), [Prim. P.1.5](primjeri-primatelj#p15-kontinuirana-usluga) |
 | BT-8=35 (auto isporuka) | **DA** | **DA** | — | **35** | DA | **DA** | — | — | [Izd. 4.1.6](primjeri-izdavatelj#416-bt-835--automatska-veza-na-datum-isporuke-po-izdavanju), [Prim. P.1.6](primjeri-primatelj#p16-bt-835--automatska-veza-na-datum-isporuke) |
@@ -257,10 +257,13 @@ flowchart TD
 
     C1 --> XML[U XML idu:<br>✅ BT-2 IssueDate<br>✅ HR-BT-2 IssueTime<br>✅ BT-9 DueDate<br>✅ BT-8 = 432<br>✅ HR-BT-15]
 
-    C2 --> XML
-    C3 --> XML
+    C2 --> XML2[U XML idu:<br>✅ BT-2 IssueDate<br>✅ HR-BT-2 IssueTime<br>✅ BT-7 TaxPointDate<br>✅ HR-BT-15<br>❌ bez BT-8!]
+
+    C3 --> XML3[U XML idu:<br>✅ BT-2 IssueDate<br>✅ HR-BT-2 IssueTime<br>✅ HR-BT-15<br>BT-8=432 moguć ali ne koristi se u praksi]
 
     XML --> OK([BR-CO-03 ✅ Ispravno])
+    XML2 --> OK
+    XML3 --> OK
 
     style A fill:#fff3e0,stroke:#e65100,color:#000
     style HRBT15 fill:#fce4ec,stroke:#c62828,color:#000
@@ -270,6 +273,8 @@ flowchart TD
     style C2 fill:#f3e5f5,stroke:#7b1fa2,color:#000
     style C3 fill:#e3f2fd,stroke:#1565c0,color:#000
     style XML fill:#f5f5f5,stroke:#616161,color:#000
+    style XML2 fill:#f3e5f5,stroke:#7b1fa2,color:#000
+    style XML3 fill:#e3f2fd,stroke:#1565c0,color:#000
     style OK fill:#e8f5e9,stroke:#2e7d32,color:#000
 ```
 
