@@ -139,14 +139,15 @@ Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`Evide
 - Ako se šalje račun s istim identifikatorom BEZ `indikatorKopije=true` → greška **S008** ("Već postoji fiskaliziran eRačun s istim identifikatorom")
 - `CopyIndicator=true` signalizira PU sustavu da je to **namjerni ispravak** istog računa, ne duplikat greškom
 
-> **Otvoreno pitanje — kompozitni ključ identifikatora**: Specifikacija navodi da se provjera jedinstvenosti provodi pomoću "identifikatora i vrste eRačuna", ali ne definira precizno od kojih polja se identifikator sastoji. Nejasno je:
-> - Je li to **BT-1 (broj)** sam, ili **BT-1 + BT-2 (datum izdavanja) + OIB izdavatelja**?
-> - Mora li BT-2 u kopiji biti **isti kao u originalu** (datum prvog izdavanja) ili **datum ponovnog slanja**?
-> - Što je s HR-BT-2 (IssueTime) — ako je BT-2 isti ali vrijeme različito?
-> - Ako se BT-2 mijenja u kopiji, to je formalno **novi identifikator** — PU sustav bi ga tretirao kao novi račun, ne kopiju
-> - Zakon kaže "u istom razdoblju oporezivanja" — ali ne kaže "s istim datumom izdavanja"
+> **Identifikator eRačuna (kompozitni ključ)**: Prema Tehničkoj specifikaciji Fiskalizacija eRačuna i eIzvještavanje (Tablica 6), identifikator eRačuna se sastoji od:
+> - **BT-1** (brojDokumenta) — "dio identifikatora eRačuna"
+> - **BT-2** (datumIzdavanja) — "dio identifikatora eRačuna" — **cijeli datum** u formatu YYYY-MM-DD
+> - **BT-3** (vrstaDokumenta) — "dio identifikatora eRačuna"
+> - Plus **vrsta eRačuna** (I = izlazni, U = ulazni) pri provjeri jedinstvenosti (S008)
 >
-> Bez službenog odgovora, preporučamo: **BT-2 u kopiji isti kao u originalu** (datum prvog izdavanja), samo HR-BT-2 (vrijeme) može biti novo. To osigurava da PU sustav prepozna istu transakciju.
+> To znači da **BT-2 u kopiji MORA biti isti kao u originalu** — jer ako se promijeni datum izdavanja, to je formalno **novi identifikator** i PU sustav tretira račun kao novi dokument, ne kopiju.
+>
+> **Otvoreno pitanje**: Što je s HR-BT-2 (IssueTime)? Specifikacija ne navodi vrijeme kao dio identifikatora, pa bi se samo vrijeme moglo razlikovati. Ali ovo nije potvrđeno.
 
 > **Napomena o validaciji**: Schematron validator **ne može** provjeriti je li kopija legitimna jer vidi samo jedan dokument. **Posrednik** ima pristup oba dokumenta i mogao bi uspoređivati PDV-relevantna polja — ali ni to nije jednostavno jer ovisi o definiciji kompozitnog ključa.
 
