@@ -59,7 +59,7 @@ Datoteke su ulazni eRačuni (primljeni od dobavljača) preuzeti od triju komiten
 | **BT-2** (IssueDate) | 1.283 | 100% | Obavezno — svi ga imaju |
 | **BT-7** (TaxPointDate) | 1.059 | **82%** | Velika većina eksplicitno navodi datum porezne obveze |
 | **BT-8** (DescriptionCode) | 15 | **1%** | Gotovo nitko ne koristi BT-8 |
-| **BT-9** (DueDate) | 181 | **14%** | Većina računa nema rok plaćanja — čudno |
+| **BT-9** (DueDate) | 1.159 | **90%** | Od 1.172 s pozitivnim BT-115, 1.159 ima DueDate. 13 krši HR-BR-4 |
 | **BT-72** (ActualDeliveryDate) | 971 | **75%** | Tri od četiri računa imaju datum isporuke |
 | **BT-73** (StartDate) | 462 | 36% | Trećina ima obračunsko razdoblje |
 | **BT-74** (EndDate) | 445 | 34% | Slično — ali 18 računa ima BT-73 bez BT-74 |
@@ -101,7 +101,8 @@ Ovo je direktna potvrda iz prakse za ono što smo dokumentirali u [sekciji 3.1 n
 | Kombinacija | Broj | % | Što to znači |
 |---|:---:|:---:|---|
 | BT-7 = BT-2 (isti datum) | 691 | 54% | Isporuka = izdavanje, najčešći slučaj |
-| BT-7 ≠ BT-2 (različiti) | **368** | **29%** | Isporuka u drugom mjesecu — **PDV u drugom mjesecu od računa** |
+| BT-7 < BT-2 (isporuka PRIJE računa) | **331** | **26%** | Isporuka u ranijem mjesecu — PDV po isporuci, ne po računu |
+| BT-7 > BT-2 (isporuka NAKON računa) | 37 | 3% | Račun izdan prije isporuke (čl. 30 st. 2) ili predujam |
 | Bez BT-7 (default = BT-2) | 224 | 17% | Nema eksplicitnog datuma poreza |
 
 > **29% računa ima isporuku u drugom mjesecu od računa.** To znači da za gotovo trećinu ulaznih računa, PDV period NIJE isti kao mjesec izdavanja računa. Ovo je upravo razlog zašto automatsko knjiženje bez provjere BT-7 ne radi — račun izdan u travnju može imati PDV u ožujku.
@@ -116,6 +117,7 @@ Ovo je direktna potvrda iz prakse za ono što smo dokumentirali u [sekciji 3.1 n
 | BT-8=432 bez HR-BT-15 | HR-BR-GECI-F01 | **0** | — |
 | BT-73 > BT-74 | HR-BR-GECI-F05 | **0** | — |
 | CreditNote (381) bez BT-25 | HR-BR-GECI-F09 | **4** | 4 odobrenja bez reference na izvorni račun |
+| BT-115 > 0 bez BT-9 | HR-BR-4 (službeni!) | **13** | 13 računa krši službeno pravilo — pozitivan iznos bez roka plaćanja |
 | BT-73 bez BT-74 | HR-BR-GECI-W11 | **18** | 18 računa s početkom ali ne i krajem razdoblja |
 | BT-74 bez BT-73 | HR-BR-GECI-W11 | **1** | 1 račun s krajem ali ne i početkom |
 
@@ -135,7 +137,7 @@ Za automatsko učitavanje ulaznih eRačuna u knjigovodstveni sustav:
 
 3. **10% je po naplati** (HR-BT-15) — za te račune pretporez tek po plaćanju, ne po primitku
 
-4. **86% nema DueDate** — sustav ne može automatski postaviti rok plaćanja bez čitanja PaymentTerms
+4. **13 računa krši HR-BR-4** — pozitivan BT-115 bez DueDate. Većina (99%) poštuje pravilo
 
 5. **7 kopija** — sustav mora prepoznati CopyIndicator i ne duplicirati knjiženje
 
