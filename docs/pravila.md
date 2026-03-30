@@ -135,7 +135,7 @@ flowchart TD
     CHECK1 -->|DA| RESULT1[Datum poreza = BT-7<br>eksplicitni datum]
     CHECK1 -->|NE| CHECK2{Postoji li<br>BT-8 DescriptionCode<br>u XML-u?}
 
-    CHECK2 -->|DA| RESULT2[Datum poreza ovisi o kodu:<br>3 = BT-2 IssueDate<br>35 = BT-72 ActualDeliveryDate<br>432 = datum plaćanja]
+    CHECK2 -->|DA| RESULT2[Datum poreza ovisi o kodu:<br>3 = BT-2 IssueDate<br>35 = BT-72 ActualDeliveryDate<br>432 = GREŠKA! Bez HR-BT-15 ne smije biti 432]
     CHECK2 -->|NE| RESULT3[Datum poreza = BT-2<br>IssueDate<br>UVIJEK POSTOJI - obavezno polje!]
 
     RESULT3 -.- NOTE[Hijerarhija uvijek završava ovdje<br>jer BT-2 je obavezan.<br>Nema scenarija bez odgovora.]
