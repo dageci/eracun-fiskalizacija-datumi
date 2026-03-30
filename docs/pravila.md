@@ -154,6 +154,8 @@ flowchart TD
     style BT73 fill:#f5f5f5,stroke:#9e9e9e,color:#9e9e9e
 ```
 
+> **Napomena o BT-8=432 bez HR-BT-15**: U dijagramu iznad, kombinacija BT-8=432 bez HR-BT-15 je označena kao greška. Za ovu nekonzistentnost predložili smo validator pravilo **[HR-BR-GECI-F01](prijedlozi-validator#f01-ako-bt-8432-zahtijevaj-hr-bt-15)** (`flag="fatal"`) — račun s BT-8=432 bez HR-BT-15 bi trebao biti **odbijen** jer signalizira obračun po naplati kroz EU normu ali nema HR proširenje koje to potvrđuje.
+
 ### Brojčanik računa i BT-2 (IssueDate)
 
 > Redni broj računa (brojčanik) uvijek se vrti prema **BT-2 / Datum izdavanja računa
