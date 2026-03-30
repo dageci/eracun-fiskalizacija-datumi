@@ -78,7 +78,7 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 | **Broj računa** | BT-1 | MORA biti isti — to je identifikator kopije |
 | **OIB izdavatelja** | BT-31 | Promjena OIB-a = drugi izdavatelj = drugi račun |
 | **OIB primatelja** | BT-48 | Promjena OIB-a = drugi kupac = drugi račun |
-| **Datum izdavanja** | BT-2 | Utječe na PDV period (default datum), brojčanik |
+| **Datum izdavanja** | BT-2 | Utječe na PDV period (default datum), brojčanik — vidi napomenu ispod* |
 | **Datum porezne obveze** | BT-7 | Direktno određuje PDV period |
 | **Kod datuma PDV-a** | BT-8 | Mijenja mehanizam PDV datuma |
 | **Datum isporuke** | BT-72 | Utječe na rashod/prihod (HSFI 15/16) i PDV |
@@ -87,6 +87,8 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 | **HR-BT-15** | HRObracunPDVPoNaplati | Mijenja cijeli PDV režim |
 | **Artikli, količine, cijene** | BG-25 stavke | Utječu na iznose → utječu na PDV |
 | **Vrsta dokumenta** | BT-3 | Drugi tip = drugi dokument |
+
+\* **Napomena o BT-2 (datum izdavanja) u kopiji**: Čl. 43 Zakona o fiskalizaciji kaže da se eRačun može izdati "pod istim **brojem**" — ali **ne kaže eksplicitno** "pod istim **datumom izdavanja**". BT-2 je dio identifikatora eRačuna prema specifikaciji (Tablica 6), ali nije jasno kako PU sustav koristi BT-2 pri provjeri jedinstvenosti — uspoređuje li cijeli datum, samo godinu, ili ga uopće ne uspoređuje. Ako bi se BT-2 u kopiji razlikovao od originala, PU sustav bi to mogao tretirati kao **novi račun** (jer je novi identifikator), a ne kao kopiju — što bi rezultiralo greškom S008 umjesto očekivanog ponašanja kopije. Stoga je sigurnije da BT-2 u kopiji bude **isti kao u originalu**, ali službena potvrda ne postoji.
 
 ### Što je upitno (siva zona)
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
