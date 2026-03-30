@@ -327,12 +327,3 @@ Sljedeća pitanja zahtijevaju službenu potvrdu Porezne uprave:
 | Tehnička specifikacija Fiskalizacija (Tablica 76) | <a href="https://porezna.gov.hr" target="_blank">porezna.gov.hr</a> |
 
 ---
-
-## Povezane stranice
-
-| Stranica | Relevantnost |
-|----------|-------------|
-| [Pravila i mehanizmi](pravila) | BT polja koja utječu na PDV — osnova za procjenu što se smije ispraviti kopijom |
-| [Primjeri — izdavatelj](primjeri-izdavatelj) | Scenariji izdavanja eRačuna |
-| [Prijedlozi za validator](prijedlozi-validator) | Predložena pravila za HR CIUS validator |
-| [Referenca](referenca) | XML struktura, pozicija CopyIndicator elementa u dokumentu |
