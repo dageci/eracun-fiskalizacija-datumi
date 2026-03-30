@@ -87,6 +87,10 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 | **BT-73/74** | Informacija za kupca | — | **Razgraničenje troškova** po mjesecima — neovisno o HR-BT-15 | — |
 | **HR-BT-15** | Fiskalizacijska poruka za PU — **mijenja PDV režim cijelog računa** | **PRVO PROVJERITI**: ako je prisutan, pretporez tek po plaćanju neovisno o BT-7/BT-8/BT-2 | Rashod se i dalje priznaje po BT-72, ali PDV tretman je drugačiji | — |
 
+> **Detaljni primjeri utjecaja BT-72 i BT-73/74 na trošak, prihod i skladište:**
+> - Izdavateljeva perspektiva: [Primjeri — izdavatelj](primjeri-izdavatelj#utjecaj-bt-72-i-bt-7374-na-prihod-i-otpremnicu-izdavatelj)
+> - Primateljeva perspektiva: [Primjeri — primatelj](primjeri-primatelj#bt-72-datum-isporuke--utjecaj-na-trošak-prihod-i-skladište)
+
 ---
 
 ## 2. Ključno pravilo: BR-CO-03

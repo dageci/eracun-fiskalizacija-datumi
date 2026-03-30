@@ -630,6 +630,21 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 >
 > Prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun), izdavatelj ima pravo na retroaktivni ispravak PDV-a u mjesecu izvornog računa.
 
+### Utjecaj BT-72 i BT-73/74 na prihod i otpremnicu (izdavatelj)
+<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
+
+> Izdavatelj mora razlikovati **PDV period** (BT-7/BT-8/BT-2) od **prihoda** (BT-72, HSFI 15) i **otpremnice** (BT-72).
+
+| Scenarij | BT-2 (račun) | BT-72 (isporuka) | Prihod (HSFI 15) | Otpremnica | PDV period |
+|---|---|---|---|---|---|
+| Isti dan | 15.03. | 15.03. | Ožujak | 15.03. | Ožujak |
+| Račun nakon isporuke | 05.04. | 28.03. | **Ožujak** (po isporuci) | 28.03. | Ožujak (BT-7) |
+| Račun prije isporuke | 25.03. | 05.04. | **Travanj** (isporuka tek u 04) | 05.04. | Ožujak (BT-7=BT-2, čl. 30 st. 2) |
+| Kontinuirana usluga | 05.04. | — | **Q1** (BT-73=01.01., BT-74=31.03.) | — (usluga) | Ožujak (BT-7=31.03.) |
+| Predujam | 10.02. | — | Ne priznaje se (primljeno sredstvo) | — | Veljača (BT-7=05.02.) |
+
+> **Ključni uvid za izdavatelja**: Prihod se UVIJEK priznaje po datumu isporuke (BT-72) ili po obračunskom razdoblju (BT-73/BT-74), ne po datumu računa (BT-2). PDV može biti u drugom mjesecu od prihoda — to nije greška nego normalan rad sustava.
+
 ### 4.3 Usporedba svih mehanizama za isti poslovni slučaj <span class="badge-usporedba">Usporedba</span>
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
