@@ -49,8 +49,9 @@ Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu
 | [Referenca — XML, validacija, zakoni](referenca) | XML struktura, Schematron pravila, zakonski temelj | Programeri, svi |
 | [Europska usporedba](europska-usporedba) | 23 EU zemlje — modeli razmjene, izvještavanje prema poreznoj, dokumentacija | Svi |
 | [Naknadno dospjeli računi](naknadno-dospjeli-racuni) | Prijelazno razdoblje 2025→2026, kasno fakturiranje, IOS, sudske presude | Računovođe, svi |
-| [Prijedlozi za validator](prijedlozi-validator) | 20 pravila koja bi validator mogao uhvatiti na razini posrednika | Programeri, posrednici |
+| [Prijedlozi za validator](prijedlozi-validator) | 21 pravilo koje bi validator mogao uhvatiti na razini posrednika | Programeri, posrednici |
 | [Indikator kopije](indikator-kopije) | CopyIndicator / indikatorKopije — kada se smije koristiti, koja polja se ne smiju mijenjati | Programeri, svi |
+| [Analiza ulaznih XML-ova](analiza-ulaznih) | 1.283 eRačuna iz prakse — statistika polja, pronađeni problemi, HR-BT-15 potvrda | Svi |
 
 ## Službeni izvori i zakoni
 
