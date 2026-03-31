@@ -52,7 +52,6 @@ Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu
 | [Prijedlozi za validator](prijedlozi-validator) | 21 pravilo koje bi validator mogao uhvatiti na razini posrednika | Programeri, posrednici |
 | [Indikator kopije](indikator-kopije) | CopyIndicator / indikatorKopije — kada se smije koristiti, koja polja se ne smiju mijenjati | Programeri, svi |
 | [Analiza ulaznih XML-ova](analiza-ulaznih) | 1.283 eRačuna iz prakse — statistika polja, pronađeni problemi, HR-BT-15 potvrda | Svi |
-| [Analiza forum.hr diskusija](forum-analiza) | 2.657 postova developera — TaxPointDate, posrednici, validacija, greške iz prakse | Programeri |
 
 ## Službeni izvori i zakoni
 
