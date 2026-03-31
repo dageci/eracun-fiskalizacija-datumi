@@ -39,6 +39,7 @@ Datoteke su ulazni eRačuni (primljeni od dobavljača) preuzeti od triju komiten
 |---|:---:|:---:|
 | Invoice (380 i ostali) | 1.262 | 98,4% |
 | CreditNote (381) | 20 | 1,6% |
+| Ostalo (nečitljiv format) | 1 | 0,1% |
 
 | Poslovni proces | Broj | Postotak |
 |---|:---:|:---:|
