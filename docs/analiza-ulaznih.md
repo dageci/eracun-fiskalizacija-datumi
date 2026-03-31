@@ -52,7 +52,6 @@ Datoteke su ulazni eRačuni (primljeni od dobavljača) preuzeti od triju komiten
 ---
 
 ## 3. Korištenje datumskih polja
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | BT polje | Prisutno | % | Komentar |
 |---|:---:|:---:|---|
@@ -96,7 +95,6 @@ Ovo je direktna potvrda iz prakse za ono što smo dokumentirali u [sekciji 3.1 n
 ---
 
 ## 5. BT-7 vs BT-2 — koliko računa ima isporuku u drugom mjesecu?
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | Kombinacija | Broj | % | Što to znači |
 |---|:---:|:---:|---|

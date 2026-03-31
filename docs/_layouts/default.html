@@ -647,7 +647,13 @@
       'SDI': { label: 'Sistema di Interscambio (Italija)', xml: 'Centralni clearance sustav', req: 'Obvezno od 2019', desc: 'Talijanski sustav razmjene — svi eRačuni prolaze kroz SDI. Najduže iskustvo u EU (B2B od 2019, B2G od 2014).' },
       'SII': { label: 'Suministro Inmediato de Información (Španjolska)', xml: 'Real-time reporting sustav', req: 'Obvezno od 2017 (velike tvrtke)', desc: 'Španjolski sustav izvještavanja — izdani i primljeni računi se prijavljuju AEAT-u u roku 4 dana. Uključuje praćenje naplata (Cobros).' },
       'NPOO': { label: 'Nacionalni plan oporavka i otpornosti', xml: 'EU NextGenerationEU sredstva', req: 'Financiranje', desc: 'EU bespovratna sredstva iz kojih je financiran projekt Fiskalizacija 2.0 u Hrvatskoj' },
-      '5-corner': { label: '5-corner model', xml: 'Izdavatelj → AP → PU → AP → Kupac', req: 'Model razmjene', desc: 'Proširenje Peppol 4-corner modela gdje je porezna uprava peti sudionik — sve transakcije automatski vidljive PU' }
+      '5-corner': { label: '5-corner model', xml: 'Izdavatelj → AP → PU → AP → Kupac', req: 'Model razmjene', desc: 'Proširenje Peppol 4-corner modela gdje je porezna uprava peti sudionik — sve transakcije automatski vidljive PU' },
+      'HR-BR-2': { label: 'IssueTime obavezan', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Vrijeme izdavanja (cbc:IssueTime) mora postojati u formatu hh:mm:ss' },
+      'HR-BR-4': { label: 'DueDate obavezan kad BT-115 > 0', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Ako PayableAmount (BT-115) > 0, DueDate (BT-9) mora postojati. Službeno HR CIUS pravilo.' },
+      'HR-BR-25': { label: 'KPD klasifikacija artikala', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Artikl mora imati KPD (CPA) klasifikaciju — OSIM za tipove 381, 386 i druge izuzete dokumente.' },
+      'HR-BR-40': { label: 'IssueDate raspon', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Datum izdavanja (BT-2) mora biti >= 01.01.2026 i < 01.01.2100.' },
+      'HR-BR-49': { label: 'StartDate raspon', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Početak obračunskog razdoblja (BT-73) mora biti >= 01.01.1900 i < 01.01.2100.' },
+      'HR-BR-50': { label: 'EndDate raspon', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Kraj obračunskog razdoblja (BT-74) mora biti >= 01.01.1900 i < 01.01.2100.' }
     };
 
     var content = document.querySelector('.main-content');
@@ -664,7 +670,7 @@
       var parent = node.parentElement;
       // Skip if inside code, pre, a, or already processed tooltip
       if (parent && (parent.closest('pre, code, a, .bt-tooltip, .mermaid, .code-badge, h1, h2, h3, h4'))) continue;
-      if (node.textContent.match(/BT-|BR-CO|Clearance|Reporting|Post-audit|Peppol|eDelivery|CIUS|KSeF|SDI|SII|NPOO|5-corner/)) textNodes.push(node);
+      if (node.textContent.match(/BT-|BR-CO|HR-BR|Clearance|Reporting|Post-audit|Peppol|eDelivery|CIUS|KSeF|SDI|SII|NPOO|5-corner/)) textNodes.push(node);
     }
 
     var escaped = keys.map(function(k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); });
