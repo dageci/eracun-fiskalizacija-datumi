@@ -9,4 +9,4 @@ kramdown:
 url: "https://dageci.github.io"
 baseurl: "/eracun-fiskalizacija-datumi"
 
-google_analytics: ""  # Unesite GA4 Measurement ID (G-XXXXXXXXXX) za praćenje posjeta
+google_analytics: "G-ZDYRC1DMJZ"  # GA4 Measurement ID za praćenje posjeta
