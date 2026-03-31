@@ -71,7 +71,7 @@ Datoteke su ulazni eRačuni (primljeni od dobavljača) preuzeti od triju komiten
 
 > **BT-8 gotovo nitko ne koristi (1%)** — od 15 računa s BT-8, 11 koristi kod 3 (redundantno = isto kao default BT-2) i 4 koristi kod 35 (datum isporuke). **Nijedan ne koristi 432 (datum plaćanja)!**
 
-> **BT-9 (DueDate) ima samo 14%** — HR-BR-4 zahtijeva BT-9 kad je BT-115 > 0. Ako 86% računa stvarno nema rok plaćanja, ili softverske kuće ignoriraju HR-BR-4, ili koriste PaymentTerms/Note umjesto DueDate, ili su to predujmovi/odobrenja gdje DueDate nema smisla.
+> **BT-9 (DueDate) ima 90%** — od 1.172 računa s pozitivnim BT-115, 1.159 ima DueDate (99%). Samo **13 računa** krši HR-BR-4 (pozitivan iznos bez roka plaćanja). Preostalih 111 računa ima BT-115 ≤ 0 (odobrenja, nulti iznosi) gdje DueDate nije obavezan.
 
 ---
 
