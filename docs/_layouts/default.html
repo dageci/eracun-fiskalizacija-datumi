@@ -758,5 +758,15 @@
   })();
   </script>
 
+  <script>
+  // External links open in new tab
+  document.querySelectorAll('.main-content a[href^="http"]').forEach(function(a) {
+    if (a.hostname !== window.location.hostname) {
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener');
+    }
+  });
+  </script>
+
 </body>
 </html>

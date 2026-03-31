@@ -82,7 +82,7 @@ TaxPointDate (BT-7) — datum nastanka obveze PDV-a — <strong>ne prenosi se</s
 </div>
 
 > *"TaxPointDate čak i ne ide u Fisk-poruku."*
-> — Novi12 ([#2879](https://www.forum.hr/showpost.php?p=110619187&postcount=2879)), referira [webinar PU](https://youtu.be/aH76g9mWdnA) (40:50)
+> — Novi12 ([#2879](https://www.forum.hr/showpost.php?p=110619187&postcount=2879)), referira [webinar PU (40:50)](https://youtu.be/aH76g9mWdnA?t=2450)
 
 > *"Za svo neuparivanje, odgovor ti je u teh.specs fiskalizacije računa. A tamo nema TaxPointDate, već isključivo ADT (ActualDeliveryDate)."*
 > — Novi12 ([#4284](https://www.forum.hr/showpost.php?p=111005535&postcount=4284))
