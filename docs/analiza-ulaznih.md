@@ -89,7 +89,7 @@ Ovo je direktna potvrda iz prakse za ono što smo dokumentirali u [sekciji 3.1 n
 |---|---|:---:|---|
 | HR-BT-15 + BT-8=432 | Oba prisutna | **0** | Nitko ne koristi oba |
 | HR-BT-15 bez BT-8=432 | Samo HR element | **135** | Svi obveznici po naplati |
-| BT-8=432 bez HR-BT-15 | Greška (F01) | **0** | Nijedna greška ovog tipa |
+| BT-8=432 bez HR-BT-15 | Nekonzistentnost — naš prijedlog [HR-BR-GECI-F01](prijedlozi-validator#f01-ako-bt-8432-zahtijevaj-hr-bt-15) bi ovo uhvatio (nije u službenom validatoru) | **0** | Nijedna pojava ovog tipa |
 
 > **Zaključak**: Naše pitanje "treba li HR-BT-15 uopće kad postoji BT-8=432?" je u praksi odgovoreno obrnuto — **BT-8=432 uopće ne postoji u praksi**, samo HR-BT-15. EU mehanizam je potpuno zamijenjen HR proširenjem.
 
