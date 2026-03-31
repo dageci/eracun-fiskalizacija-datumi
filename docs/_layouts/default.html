@@ -40,7 +40,7 @@
     .page-body { display: flex; max-width: 100%; margin: 0; }
 
     /* Left nav */
-    .left-nav { width: var(--left-nav); min-width: var(--left-nav); padding: 1.25rem 0.75rem 2rem 1.25rem; border-right: none; background: #1e293b; font-size: 0.82rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    .left-nav { width: var(--left-nav); min-width: var(--left-nav); padding: 1.25rem 0.75rem 2rem 1.25rem; border-right: none; background: #1e293b; font-size: 0.82rem; position: sticky; top: 0; height: 100vh; overflow-y: auto; display: flex; flex-direction: column; }
     .left-nav h3 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; margin: 1.1rem 0 0.3rem; border: none; }
     .left-nav h3:first-child { margin-top: 0; }
     .left-nav ul { list-style: none; margin: 0; padding: 0; }
@@ -49,6 +49,10 @@
     .left-nav a:hover { background: #334155; color: #e2e8f0; }
     .left-nav a.active { background: var(--primary-light); color: white; font-weight: 600; }
     .left-nav a.active:hover { background: var(--primary); }
+    .left-nav-bottom { margin-top: auto; padding-top: 1rem; }
+    .left-nav-bottom h3 { margin-top: 0; }
+    .left-nav-bottom a { color: #94a3b8; font-size: 0.76rem; }
+    .left-nav-bottom a:hover { color: #e2e8f0; }
 
     /* Search */
     .search-box { width: 100%; padding: 0.4rem 0.5rem; border: 1px solid #475569; border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.5rem; outline: none; background: #334155; color: #e2e8f0; }
@@ -323,6 +327,13 @@
         <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues" target="_blank">Prijavi grešku</a></li>
         <li><a href="https://github.com/dageci/eracun-fiskalizacija-datumi" target="_blank">GitHub repo</a></li>
       </ul>
+
+      <div class="left-nav-bottom">
+        <h3>Info</h3>
+        <ul>
+          <li><a href="{{ site.baseurl }}/privatnost-statistika">Privatnost i statistika</a></li>
+        </ul>
+      </div>
     </nav>
 
     <main class="main-content">
