@@ -28,3 +28,5 @@ Statistika nam pomaže da vidimo:
 Ovo je mali javni projekt zajednice i cilj praćenja je isključivo razumjeti korištenje sadržaja i poboljšati dokumentaciju.
 
 Ako ne želite da vaš posjet bude uključen u ovakvu statistiku, možete koristiti blokiranje analitičkih skripti u pregledniku ili ekstenzije za zaštitu privatnosti.
+
+Više o tome kako Google Analytics obrađuje podatke: [Google Privacy Policy](https://policies.google.com/privacy).
