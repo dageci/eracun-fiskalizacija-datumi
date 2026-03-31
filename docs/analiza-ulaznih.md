@@ -120,11 +120,11 @@ Ovo je direktna potvrda iz prakse za ono što smo dokumentirali u [sekciji 3.1 n
 | BT-73 bez BT-74 | HR-BR-GECI-W11 | **18** | 18 računa s početkom ali ne i krajem razdoblja |
 | BT-74 bez BT-73 | HR-BR-GECI-W11 | **1** | 1 račun s krajem ali ne i početkom |
 
-> **4 CreditNote-a bez BT-25** — odobrenja koja ne referenciraju izvorni račun. Primatelj ne može automatski povezati odobrenje s originalnom transakcijom. Naše pravilo F09 bi ovo uhvatilo.
+> **4 CreditNote-a bez BT-25** — odobrenja koja ne referenciraju izvorni račun. Primatelj ne može automatski povezati odobrenje s originalnom transakcijom. Naš prijedlog HR-BR-GECI-F09 bi ovo uhvatio.
 
 > **13 računa krši HR-BR-4** — ovo je **službeno schematron pravilo** s `flag="fatal"` koje bi trebalo rezultirati **odbijanjem** računa. Činjenica da su ti računi prošli kroz posrednika i stigli do primatelja otvara pitanje: **provjeravaju li posrednici uopće HR CIUS schematron pravila?** Ako izdavateljev posrednik ne provjerava HR-BR-4 pri slanju, i primateljev posrednik ne provjerava pri zaprimanju — tko onda validira? Ili posrednici provjeravaju ali tretiraju `fatal` kao upozorenje umjesto odbijanja?
 
-> **18 računa s BT-73 bez BT-74** — imaju početak obračunskog razdoblja ali ne i kraj. ERP ne može automatski razgraničiti trošak. Naše pravilo W11 bi upozorilo.
+> **18 računa s BT-73 bez BT-74** — imaju početak obračunskog razdoblja ali ne i kraj. ERP ne može automatski razgraničiti trošak. Naš prijedlog HR-BR-GECI-W11 bi upozorio.
 
 ---
 
