@@ -17,7 +17,7 @@ Ova stranica pokriva situacije u kojima se eRačun izdaje **znatno nakon isporuk
 > - Primatelj **ne smije** odbiti pretporez do plaćanja (čl. 125.i st. 3)
 > - Kasno fakturiranje je **manje problematično** za PDV jer obveza ionako nastaje po plaćanju, ali eIzvještavanje o naplati ostaje obvezno
 >
-> Za detalje vidi [Pravila — anomalija HR proširenja](pravila#anomalija-hr-proširenja).
+> Za detalje vidi [Pravila — specifičnost HR proširenja](pravila#specificnost-hr-prosirenja).
 
 ### Sadržaj
 {: .no_toc }

@@ -36,7 +36,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 > 1. **Prvo provjeri HR-BT-15** — ako je prisutan, izdavatelj je na sustavu po naplaćenoj naknadi i PDV tretman se mijenja za cijeli račun (čl. 125.i)
 > 2. **Tek onda** tumači BT-7/BT-8/BT-2 prema EU normi
 >
-> Svaki redak u tablici ispod sadrži napomenu **"osim ako je prisutan HR-BT-15"** gdje je to relevantno. Ovo je [HR anomalija](#anomalija-hr-proširenja) koja nema ekvivalenta u EU normi.
+> Svaki redak u tablici ispod sadrži napomenu **"osim ako je prisutan HR-BT-15"** gdje je to relevantno. Ovo je [HR specifičnost](#specificnost-hr-prosirenja) koja nema ekvivalenta u EU normi.
 
 | BT | XML element | Hrvatski naziv | Obavezno | Utječe na | Isključuje se s |
 |---|---|---|---|---|---|
@@ -52,8 +52,8 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 
 \* HR-BT-15 je **obavezan** za obveznike koji koriste obračun po naplaćenoj naknadi (čl. 125.i) — **u svakom računu**, uključujući CreditNote i predujam. To je svojstvo obveznika, ne pojedinačnog računa. BT-8=432 nije uvijek korišten u praksi (predujam koristi BT-7), ali HR-BT-15 je **uvijek** prisutan. Napomena: i BT-7 i BT-8 **postoje** u UBL CreditNote XSD shemi kao opcionalni elementi — u praksi se za odobrenja obično ne koriste, ali za CreditNote po naplati BT-8=432 bi se teoretski mogao primijeniti. Vidi [sekcija 3.1](#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
 
-<a id="anomalija-hr-proširenja"></a>
-> **Anomalija HR proširenja**: U EU normi, PDV tretman se u potpunosti određuje iz BT-7/BT-8/BT-2 — čist sustav, jedno polje, jedan mehanizam. Hrvatska dodaje HR-BT-15 koji **nije datumsko polje** nego **flag koji mijenja cijeli PDV režim**. Za primatelja eRačuna, HR-BT-15 je zapravo **najvažniji podatak za PDV** — važniji od BT-7 i BT-8 — jer mu kaže: "izdavatelj je na sustavu po naplaćenoj naknadi, ne smiješ odbiti pretporez dok ne platiš" (čl. 125.i st. 3). Bez HR-BT-15 primatelj ne zna pod kojim režimom je izdavatelj, čak i ako vidi BT-8=432. BT-7 i BT-8 **postoje** u UBL CreditNote XSD shemi kao opcionalni elementi, ali se u praksi za odobrenja ne koriste — a za CreditNote po naplati, BT-8=432 bi se teoretski mogao primijeniti. Za predujam se koristi BT-7 umjesto BT-8. U tim slučajevima HR-BT-15 služi kao dodatni signal za obračun po naplati, iako pitanje je koliko je on neophodan s obzirom na mogućnost korištenja BT-8=432 i u CreditNote. Ovo nema ekvivalenta u EU normi — Italija to rješava elegantno jednim poljem (`EsigibilitaIVA`), a ostale zemlje koriste samo BT-8=432. Vidi [europsku usporedbu](europska-usporedba#usporedna-tablica--svih-23-eu-zemlje).
+<a id="specificnost-hr-prosirenja"></a>
+> **Specifičnost HR proširenja**: U EU normi, PDV tretman se u potpunosti određuje iz BT-7/BT-8/BT-2 — čist sustav, jedno polje, jedan mehanizam. Hrvatska dodaje HR-BT-15 koji **nije datumsko polje** nego **flag koji mijenja cijeli PDV režim**. Za primatelja eRačuna, HR-BT-15 je zapravo **najvažniji podatak za PDV** — važniji od BT-7 i BT-8 — jer mu kaže: "izdavatelj je na sustavu po naplaćenoj naknadi, ne smiješ odbiti pretporez dok ne platiš" (čl. 125.i st. 3). Bez HR-BT-15 primatelj ne zna pod kojim režimom je izdavatelj, čak i ako vidi BT-8=432. BT-7 i BT-8 **postoje** u UBL CreditNote XSD shemi kao opcionalni elementi, ali se u praksi za odobrenja ne koriste — a za CreditNote po naplati, BT-8=432 bi se teoretski mogao primijeniti. Za predujam se koristi BT-7 umjesto BT-8. U tim slučajevima HR-BT-15 služi kao dodatni signal za obračun po naplati, iako pitanje je koliko je on neophodan s obzirom na mogućnost korištenja BT-8=432 i u CreditNote. Ovo nema ekvivalenta u EU normi — Italija to rješava elegantno jednim poljem (`EsigibilitaIVA`), a ostale zemlje koriste samo BT-8=432. Vidi [europsku usporedbu](europska-usporedba#usporedna-tablica--svih-23-eu-zemlje).
 
 ### Kada se koje polje koristi — po scenarijima
 

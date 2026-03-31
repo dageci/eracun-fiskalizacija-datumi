@@ -48,7 +48,7 @@ Obračun PDV-a po naplaćenoj naknadi (čl. 125.i) mora se označiti u eRačunu.
 
 | Stranica | Opis |
 |----------|------|
-| [Pravila i mehanizmi](https://dageci.github.io/eracun-fiskalizacija-datumi/pravila) | BT polja, BR-CO-03, flowcharti, HR-BT-15 anomalija, koji datum čemu služi |
+| [Pravila i mehanizmi](https://dageci.github.io/eracun-fiskalizacija-datumi/pravila) | BT polja, BR-CO-03, flowcharti, HR-BT-15 specifičnost, koji datum čemu služi |
 | [Primjeri — izdavatelj](https://dageci.github.io/eracun-fiskalizacija-datumi/primjeri-izdavatelj) | 16 primjera s XML isječcima — koji element staviti za koji slučaj |
 | [Primjeri — primatelj](https://dageci.github.io/eracun-fiskalizacija-datumi/primjeri-primatelj) | 12 primjera — pretporez, rashod, skladišna primka + pretporez detaljno (čl. 57/60, CJEU) |
 | [Europska usporedba](https://dageci.github.io/eracun-fiskalizacija-datumi/europska-usporedba) | 23 EU zemlje — modeli razmjene, izvještavanje prema poreznoj |
