@@ -648,6 +648,27 @@
       'SII': { label: 'Suministro Inmediato de Información (Španjolska)', xml: 'Real-time reporting sustav', req: 'Obvezno od 2017 (velike tvrtke)', desc: 'Španjolski sustav izvještavanja — izdani i primljeni računi se prijavljuju AEAT-u u roku 4 dana. Uključuje praćenje naplata (Cobros).' },
       'NPOO': { label: 'Nacionalni plan oporavka i otpornosti', xml: 'EU NextGenerationEU sredstva', req: 'Financiranje', desc: 'EU bespovratna sredstva iz kojih je financiran projekt Fiskalizacija 2.0 u Hrvatskoj' },
       '5-corner': { label: '5-corner model', xml: 'Izdavatelj → AP → PU → AP → Kupac', req: 'Model razmjene', desc: 'Proširenje Peppol 4-corner modela gdje je porezna uprava peti sudionik — sve transakcije automatski vidljive PU' },
+      'HR-BR-GECI-F01': { label: 'Ako BT-8=432, zahtijevaj HR-BT-15', xml: 'Prijedlog pravila', req: 'ODBIJANJE (fatal)', desc: 'BT-8=432 bez HR-BT-15 je nekonzistentnost — NIJE u službenom validatoru, naš prijedlog' },
+      'HR-BR-GECI-F02': { label: 'HR-BT-15 + BT-7 samo za predujam', xml: 'Prijedlog pravila', req: 'ODBIJANJE (fatal)', desc: 'Ako HR-BT-15 postoji, BT-7 ne smije postojati osim za predujam (386) — naš prijedlog' },
+      'HR-BR-GECI-F03': { label: 'HR-BT-15 + BT-8 koji nije 432', xml: 'Prijedlog pravila', req: 'ODBIJANJE (fatal)', desc: 'Kontradikcija: HR-BT-15 (po naplati) uz BT-8=3 ili 35 (po izdavanju) — naš prijedlog' },
+      'HR-BR-GECI-F04': { label: 'BT-8=35 zahtijeva BT-72', xml: 'Prijedlog pravila', req: 'ODBIJANJE (fatal)', desc: 'BT-8=35 znači "PDV po isporuci" ali bez BT-72 nema datuma isporuke — naš prijedlog' },
+      'HR-BR-GECI-F05': { label: 'BT-73 mora biti <= BT-74', xml: 'Prijedlog pravila', req: 'ODBIJANJE (fatal)', desc: 'StartDate > EndDate je nemoguće razdoblje — naš prijedlog' },
+      'HR-BR-GECI-F06': { label: 'IssueTime mora biti validno', xml: 'Prijedlog pravila', req: 'ODBIJANJE (fatal)', desc: 'Sati 0-23, minute 0-59, sekunde 0-59 — naš prijedlog' },
+      'HR-BR-GECI-F07': { label: 'BT-8 samo 3, 35 ili 432', xml: 'Prijedlog pravila', req: 'ODBIJANJE (fatal)', desc: 'Dozvoljeni kodovi za DescriptionCode — naš prijedlog' },
+      'HR-BR-GECI-F08': { label: 'Predujam po naplati mora imati BT-7', xml: 'Prijedlog pravila', req: 'ODBIJANJE (fatal)', desc: 'Predujam (386) s HR-BT-15 bez BT-7 — datum plaćanja je poznat — naš prijedlog' },
+      'HR-BR-GECI-F09': { label: 'CreditNote mora imati BT-25', xml: 'Prijedlog pravila', req: 'ODBIJANJE (fatal)', desc: 'CreditNote (381) ili korekcija (384) bez reference na prethodni račun — naš prijedlog' },
+      'HR-BR-GECI-F10': { label: 'BT-25 zahtijeva BT-26', xml: 'Prijedlog pravila', req: 'ODBIJANJE (fatal)', desc: 'Referenca na prethodni račun bez datuma prethodnog — naš prijedlog' },
+      'HR-BR-GECI-W01': { label: 'InvoicePeriod bez BT-7/BT-8', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'Datumi razdoblja bez mehanizma za PDV datum — naš prijedlog' },
+      'HR-BR-GECI-W02': { label: 'HR-BT-15 bez BT-7 i BT-8=432', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'Obračun po naplati bez mehanizma za datum (osim CreditNote) — naš prijedlog' },
+      'HR-BR-GECI-W03': { label: 'DueDate prije IssueDate', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'Rok plaćanja prije datuma izdavanja — naš prijedlog' },
+      'HR-BR-GECI-W04': { label: 'BT-7 izvan BT-73/BT-74', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'Datum poreza izvan obračunskog razdoblja — naš prijedlog' },
+      'HR-BR-GECI-W05': { label: 'HR-BT-15 nestandardni tekst', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'Sadržaj nije "Obračun prema naplaćenoj naknadi" — naš prijedlog' },
+      'HR-BR-GECI-W06': { label: 'Predujam s datumom isporuke', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'Predujam (386) s BT-72 — isporuka obično još nije obavljena — naš prijedlog' },
+      'HR-BR-GECI-W07': { label: 'Predujam po naplati s BT-8=432', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'Datum plaćanja je poznat, trebao bi koristiti BT-7 — naš prijedlog' },
+      'HR-BR-GECI-W08': { label: 'BT-8=3 je redundantan', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'Isti rezultat kao da nema BT-8 — naš prijedlog' },
+      'HR-BR-GECI-W09': { label: 'Nepoznat kod načina plaćanja', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'BT-81 nije uobičajen za HR kontekst — naš prijedlog' },
+      'HR-BR-GECI-W10': { label: 'Nedostaje razlog oslobođenja', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'Kategorija nije S ali nema VATEX — naš prijedlog' },
+      'HR-BR-GECI-W11': { label: 'Samo jedan od BT-73/BT-74', xml: 'Prijedlog pravila', req: 'UPOZORENJE (warning)', desc: 'Za razgraničenje troškova trebaju oba datuma — naš prijedlog' },
       'HR-BR-2': { label: 'IssueTime obavezan', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Vrijeme izdavanja (cbc:IssueTime) mora postojati u formatu hh:mm:ss' },
       'HR-BR-4': { label: 'DueDate obavezan kad BT-115 > 0', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Ako PayableAmount (BT-115) > 0, DueDate (BT-9) mora postojati. Službeno HR CIUS pravilo.' },
       'HR-BR-25': { label: 'KPD klasifikacija artikala', xml: 'Schematron pravilo', req: 'flag="fatal"', desc: 'Artikl mora imati KPD (CPA) klasifikaciju — OSIM za tipove 381, 386 i druge izuzete dokumente.' },
@@ -670,7 +691,7 @@
       var parent = node.parentElement;
       // Skip if inside code, pre, a, or already processed tooltip
       if (parent && (parent.closest('pre, code, a, .bt-tooltip, .mermaid, .code-badge, h1, h2, h3, h4'))) continue;
-      if (node.textContent.match(/BT-|BR-CO|HR-BR|Clearance|Reporting|Post-audit|Peppol|eDelivery|CIUS|KSeF|SDI|SII|NPOO|5-corner/)) textNodes.push(node);
+      if (node.textContent.match(/BT-|BR-CO|HR-BR|GECI|Clearance|Reporting|Post-audit|Peppol|eDelivery|CIUS|KSeF|SDI|SII|NPOO|5-corner/)) textNodes.push(node);
     }
 
     var escaped = keys.map(function(k) { return k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); });
