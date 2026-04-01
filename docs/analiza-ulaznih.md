@@ -31,6 +31,8 @@ Analiza pokriva 1.283 ulaznih XML eRačuna od triju komitenata za razdoblje 01.0
 
 Datoteke su ulazni eRačuni (primljeni od dobavljača) preuzeti od triju komitenata za period 01.01.–28.03.2026.
 
+**244 jedinstvena izdavatelja** (različite tvrtke/OIB-ovi) — uzorak pokriva širok spektar softverskih kuća i industrija.
+
 ---
 
 ## 2. Tipovi dokumenata i profili
@@ -117,6 +119,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
 > **BT-9 (DueDate) ima 90%** — od 1.172 računa s pozitivnim BT-115, 1.159 ima DueDate (99%). Samo **13 računa** krši HR-BR-4 (pozitivan iznos bez roka plaćanja). Preostalih 111 računa ima BT-115 ≤ 0 (odobrenja, nulti iznosi) gdje DueDate nije obavezan.
 
+### Trend po mjesecima — sazrijevanje ekosustava
+
+<div style="max-width: 600px; margin: 1.5rem auto;">
+<canvas id="chartTrend" height="300"></canvas>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx = document.getElementById('chartTrend');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['Siječanj', 'Veljača', 'Ožujak'],
+      datasets: [
+        { label: 'BT-7 (TaxPointDate)', data: [80, 85, 82], borderColor: '#27ae60', backgroundColor: 'rgba(39,174,96,0.1)', fill: true, tension: 0.3 },
+        { label: 'BT-72 (DeliveryDate)', data: [61, 76, 85], borderColor: '#2980b9', backgroundColor: 'rgba(41,128,185,0.1)', fill: true, tension: 0.3 },
+        { label: 'BT-9 (DueDate)', data: [98, 97, 99], borderColor: '#8e44ad', backgroundColor: 'rgba(142,68,173,0.1)', fill: true, tension: 0.3 }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Prisutnost polja po mjesecima (%)', font: { size: 14 } },
+        tooltip: { callbacks: { label: function(ctx) { return ctx.dataset.label + ': ' + ctx.raw + '%'; } } }
+      },
+      scales: {
+        y: { min: 50, max: 100, ticks: { callback: function(v) { return v + '%'; } } }
+      }
+    }
+  });
+});
+</script>
+
+> **BT-72 skočio s 61% na 85%** od siječnja do ožujka — softverske kuće su postupno shvatile da trebaju slati datum isporuke. BT-7 je stabilan oko 80-85%. BT-9 (DueDate) je konzistentno visok.
+
 ---
 
 ## 4. HR-BT-15 specifičnost — potvrđena iz prakse
@@ -185,6 +222,85 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 > **29% računa ima isporuku u drugom mjesecu od računa.** To znači da za gotovo trećinu ulaznih računa, PDV period NIJE isti kao mjesec izdavanja računa. Ovo je upravo razlog zašto automatsko knjiženje bez provjere BT-7 ne radi — račun izdan u travnju može imati PDV u ožujku.
+
+### Koliko dana BT-7 odstupa od BT-2?
+
+<div style="max-width: 600px; margin: 1.5rem auto;">
+<canvas id="chartOffset" height="280"></canvas>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx = document.getElementById('chartOffset');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['<-30', '-11 do -30', '-6 do -10', '-5', '-4', '-3', '-2', '-1', '0', '+1 do +5', '>+5'],
+      datasets: [{
+        label: 'Broj racuna',
+        data: [1, 81, 82, 28, 27, 23, 37, 52, 691, 8, 29],
+        backgroundColor: function(ctx) {
+          var i = ctx.dataIndex;
+          if (i < 8) return '#e67e22';
+          if (i === 8) return '#27ae60';
+          return '#e74c3c';
+        },
+        borderRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Razlika BT-7 minus BT-2 (dani)', font: { size: 14 } },
+        legend: { display: false },
+        tooltip: { callbacks: { label: function(ctx) { return ctx.raw + ' racuna'; } } }
+      },
+      scales: {
+        y: { title: { display: true, text: 'Broj racuna' } },
+        x: { title: { display: true, text: 'Dani razlike (negativno = isporuka prije racuna)' } }
+      }
+    }
+  });
+});
+</script>
+
+> **Zeleno**: isti dan (691). **Narančasto**: isporuka PRIJE računa — najčešće 1-30 dana ranije (tipično: mjesečno fakturiranje za prethodni mjesec). **Crveno**: isporuka NAKON računa (predujmi, čl. 30).
+
+### Sezonski uzorak — veljača ima najviše neslaganja
+
+<div style="max-width: 600px; margin: 1.5rem auto;">
+<canvas id="chartSeason" height="280"></canvas>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx = document.getElementById('chartSeason');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Siječanj (355)', 'Veljača (461)', 'Ožujak (452)'],
+      datasets: [
+        { label: 'BT-7 = BT-2', data: [198, 248, 237], backgroundColor: '#27ae60' },
+        { label: 'BT-7 < BT-2 (prije)', data: [58, 142, 131], backgroundColor: '#e67e22' },
+        { label: 'BT-7 > BT-2 (nakon)', data: [28, 4, 4], backgroundColor: '#e74c3c' },
+        { label: 'Bez BT-7', data: [71, 67, 80], backgroundColor: '#bdc3c7' }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'BT-7 vs BT-2 po mjesecima', font: { size: 14 } }
+      },
+      scales: {
+        x: { stacked: true },
+        y: { stacked: true, title: { display: true, text: 'Broj racuna' } }
+      }
+    }
+  });
+});
+</script>
+
+> **Siječanj ima 28 računa s BT-7 > BT-2** (isporuka nakon izdavanja) — to su vjerojatno prijelazni računi iz prosinca 2025. s TaxPointDate u siječnju. U veljači i ožujku taj broj pada na 4 — normalizacija.
 
 ---
 
