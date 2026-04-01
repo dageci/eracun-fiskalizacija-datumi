@@ -66,6 +66,49 @@ Datoteke su ulazni eRačuni (primljeni od dobavljača) preuzeti od triju komiten
 | **HR-BT-15** (PoNaplati) | 135 | **10%** | Svaki deseti dobavljač je na sustavu po naplati |
 | **CopyIndicator=true** | 7 | 0,5% | 7 kopija (čl. 43 ispravci) |
 
+<div style="max-width: 600px; margin: 1.5rem auto;">
+<canvas id="chartPolja" height="280"></canvas>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx = document.getElementById('chartPolja');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['BT-2\nIssueDate', 'BT-9\nDueDate', 'BT-7\nTaxPoint', 'BT-72\nDelivery', 'BT-73/74\nPeriod', 'HR-BT-15\nPoNaplati', 'BT-8\nDescrCode'],
+      datasets: [{
+        label: 'Prisutnost u uzorku',
+        data: [100, 90, 82, 75, 36, 10, 1],
+        backgroundColor: [
+          '#2c3e50', '#2980b9', '#27ae60', '#16a085',
+          '#8e44ad', '#e67e22', '#e74c3c'
+        ],
+        borderRadius: 4,
+        barPercentage: 0.7
+      }]
+    },
+    options: {
+      responsive: true,
+      indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+        title: { display: true, text: 'Prisutnost datumskih polja (%)', font: { size: 14 } },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) { return ctx.raw + '% racuna'; }
+          }
+        }
+      },
+      scales: {
+        x: { max: 100, ticks: { callback: function(v) { return v + '%'; } } },
+        y: { ticks: { font: { size: 11 } } }
+      }
+    }
+  });
+});
+</script>
+
 ### Ključni uvidi
 
 > **82% ima BT-7** — to je pozitivno. Većina softverskih kuća razumije da je eksplicitni datum porezne obveze važan. Preostalih 18% koristi BT-2 kao default.
@@ -103,6 +146,43 @@ Ovo je direktna potvrda iz prakse za ono što smo dokumentirali u [sekciji 3.1 n
 | BT-7 < BT-2 (isporuka PRIJE računa) | **331** | **26%** | Isporuka u ranijem mjesecu — PDV po isporuci, ne po računu |
 | BT-7 > BT-2 (isporuka NAKON računa) | 37 | 3% | Račun izdan prije isporuke (čl. 30 st. 2) ili predujam |
 | Bez BT-7 (default = BT-2) | 224 | 17% | Nema eksplicitnog datuma poreza |
+
+<div style="max-width: 380px; margin: 1.5rem auto;">
+<canvas id="chartBT7" height="320"></canvas>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx = document.getElementById('chartBT7');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['BT-7 = BT-2 (isti datum)', 'BT-7 < BT-2 (isporuka prije)', 'BT-7 > BT-2 (isporuka nakon)', 'Bez BT-7'],
+      datasets: [{
+        data: [691, 331, 37, 224],
+        backgroundColor: ['#27ae60', '#e67e22', '#e74c3c', '#bdc3c7'],
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'BT-7 vs BT-2 — odnos datuma', font: { size: 14 } },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              var total = ctx.dataset.data.reduce(function(a,b){return a+b;}, 0);
+              var pct = Math.round(ctx.raw / total * 100);
+              return ctx.label + ': ' + ctx.raw + ' (' + pct + '%)';
+            }
+          }
+        }
+      }
+    }
+  });
+});
+</script>
 
 > **29% računa ima isporuku u drugom mjesecu od računa.** To znači da za gotovo trećinu ulaznih računa, PDV period NIJE isti kao mjesec izdavanja računa. Ovo je upravo razlog zašto automatsko knjiženje bez provjere BT-7 ne radi — račun izdan u travnju može imati PDV u ožujku.
 
