@@ -304,7 +304,175 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-## 6. Pronađeni problemi (naši validator prijedlozi)
+## 6. Širi profil računa — iznosi, stavke, PDV, plaćanja
+
+### Distribucija iznosa
+
+<div style="max-width: 600px; margin: 1.5rem auto;">
+<canvas id="chartAmount" height="280"></canvas>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx = document.getElementById('chartAmount');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['<= 0','0-10','10-50','50-100','100-500','500-1K','1K-5K','5K-10K','>10K'],
+      datasets: [{
+        label: 'Broj racuna',
+        data: [111, 79, 141, 133, 326, 161, 245, 28, 58],
+        backgroundColor: '#2980b9',
+        borderRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Distribucija iznosa racuna (EUR)', font: { size: 14 } },
+        legend: { display: false }
+      },
+      scales: { y: { title: { display: true, text: 'Broj racuna' } } }
+    }
+  });
+});
+</script>
+
+> **25% računa je 100–500 EUR** — najčešći raspon. **8% ima iznos ≤ 0** (odobrenja, storna, nulti iznosi). Samo 4% prelazi 10.000 EUR.
+
+### Broj stavki po računu
+
+<div style="max-width: 600px; margin: 1.5rem auto;">
+<canvas id="chartLines" height="260"></canvas>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx = document.getElementById('chartLines');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['1', '2-3', '4-5', '6-10', '11-20', '21-50', '50+'],
+      datasets: [{
+        label: 'Broj racuna',
+        data: [554, 419, 99, 118, 65, 23, 3],
+        backgroundColor: ['#e74c3c','#e67e22','#f39c12','#27ae60','#2980b9','#8e44ad','#2c3e50'],
+        borderRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Broj stavki po racunu', font: { size: 14 } },
+        legend: { display: false }
+      },
+      scales: { y: { title: { display: true, text: 'Broj racuna' } } }
+    }
+  });
+});
+</script>
+
+> **43% računa ima samo 1 stavku**, 75% ima 1–3 stavke. Medijan je 2, prosjek 3,9. Najsloženiji račun ima **243 stavke**.
+
+### PDV stope i kategorije
+
+<div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin: 1.5rem 0;">
+<div style="max-width: 320px; flex: 1;">
+<canvas id="chartVAT" height="280"></canvas>
+</div>
+<div style="max-width: 320px; flex: 1;">
+<canvas id="chartVATcat" height="280"></canvas>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx1 = document.getElementById('chartVAT');
+  if (ctx1) new Chart(ctx1, {
+    type: 'doughnut',
+    data: {
+      labels: ['25%', '0% (oslobodeno)', '13%', '5%'],
+      datasets: [{ data: [916, 368, 48, 24], backgroundColor: ['#2980b9','#e74c3c','#27ae60','#f39c12'], borderWidth: 2, borderColor: '#fff' }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'PDV stope (pojavljivanja)', font: { size: 13 } },
+        tooltip: { callbacks: { label: function(c) { return c.label + ': ' + c.raw; } } }
+      }
+    }
+  });
+  var ctx2 = document.getElementById('chartVATcat');
+  if (ctx2) new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+      labels: ['S (standardno)', 'E (oslobodeno)', 'AE (reverse charge)', 'Z (nulta stopa)', 'O (izvan PDV)'],
+      datasets: [{ data: [988, 198, 115, 53, 2], backgroundColor: ['#2980b9','#e74c3c','#8e44ad','#f39c12','#bdc3c7'], borderWidth: 2, borderColor: '#fff' }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'PDV kategorije', font: { size: 13 } },
+        tooltip: { callbacks: { label: function(c) { return c.label + ': ' + c.raw; } } }
+      }
+    }
+  });
+});
+</script>
+
+> **94% računa ima samo jednu PDV stopu**. Samo 6% kombinira više stopa na jednom računu. Kategorija **E (oslobođeno)** pojavljuje se na 198 računa — **reverse charge (AE)** na 115.
+
+### Dan u tjednu izdavanja
+
+<div style="max-width: 550px; margin: 1.5rem auto;">
+<canvas id="chartWeekday" height="260"></canvas>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx = document.getElementById('chartWeekday');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Pon', 'Uto', 'Sri', 'Cet', 'Pet', 'Sub', 'Ned'],
+      datasets: [{
+        label: 'Broj racuna',
+        data: [237, 246, 217, 222, 221, 110, 29],
+        backgroundColor: ['#2980b9','#2980b9','#2980b9','#2980b9','#2980b9','#e67e22','#e74c3c'],
+        borderRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        title: { display: true, text: 'Dan u tjednu izdavanja racuna', font: { size: 14 } },
+        legend: { display: false }
+      }
+    }
+  });
+});
+</script>
+
+> **Subotom se izdaje 8% računa, nedjeljom 2%.** Radnim danima distribucija je ravnomjerna (~17-19% po danu). Vikend računi su vjerojatno automatski generirani (komunalne usluge, telekomi, SaaS pretplate).
+
+### Način plaćanja i referencije
+
+| Podatak | Prisutno | % | Komentar |
+|---------|:--------:|:-:|----------|
+| Poziv na broj (BT-83) | 1.208 | **94%** | Odlično za automatizaciju plaćanja |
+| Napomena na računu (BT-22) | 1.062 | **82%** | Većina dodaje tekstualnu napomenu |
+| Ugovor (BT-12) | 188 | 14% | Referencija na ugovor |
+| BuyerReference (BT-10) | 152 | 11% | Interna oznaka kupca |
+| Narudžbenica (BT-13) | 102 | 7% | Broj narudžbenice |
+| PDF prilog | 1.281 | **99%** | Gotovo svi šalju PDF vizualizaciju |
+| Popust na stavci | 276 | **21%** | Svaki peti račun ima popust |
+| Dokument-level popust | 6 | 0,5% | Gotovo nitko ne koristi |
+| POVNAK/PP (trošak) | 21 | 1,6% | Povratna naknada ili porez na potrošnju |
+
+> **94% računa ima poziv na broj** — to je ključno za automatsko plaćanje iz ERP-a. **99% šalje PDF** kao prilog. **21% ima popust na stavci** ali dokument-level popusti su iznimno rijetki (0,5%).
+
+---
+
+## 7. Pronađeni problemi (naši validator prijedlozi)
 
 | Problem | Validator pravilo | Pronađeno | Primjeri |
 |---|---|:---:|---|
@@ -324,7 +492,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-## 7. Što ovo znači za automatizaciju?
+## 8. Što ovo znači za automatizaciju?
 
 Za automatsko učitavanje ulaznih eRačuna u knjigovodstveni sustav:
 
