@@ -15,8 +15,9 @@ ns = {
     'hrextac': 'urn:porezna-uprava.gov.hr:cius:2025:extension:components',
 }
 
-base = "."
-folders = ["A/XML", "B/XML", "C/XML"]
+# Putanje nisu uključene u repo — pokrenuti lokalno s pravim putanjama
+base = os.environ.get("ERACUN_XML_DIR", ".")
+folders = os.environ.get("ERACUN_XML_FOLDERS", "A/XML,B/XML,C/XML").split(",")
 
 def parse_date(s):
     if not s: return None

@@ -16,8 +16,9 @@ ns = {
     'hrextac': 'urn:porezna-uprava.gov.hr:cius:2025:extension:components',
 }
 
-base = "."
-folders = ["A/XML", "B/XML", "C/XML"]
+# Putanje nisu uključene u repo — pokrenuti lokalno s pravim putanjama
+base = os.environ.get("ERACUN_XML_DIR", ".")
+folders = os.environ.get("ERACUN_XML_FOLDERS", "A/XML,B/XML,C/XML").split(",")
 
 # Aggregation buckets
 by_month = defaultdict(lambda: {"total": 0, "has_bt7": 0, "has_bt72": 0, "has_bt8": 0, "has_hrbt15": 0, "has_bt9": 0})
