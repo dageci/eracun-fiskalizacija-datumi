@@ -1,0 +1,211 @@
+name: Generate meeting summary
+
+on:
+  milestone:
+    types: [closed]
+  workflow_dispatch:
+    inputs:
+      milestone_number:
+        description: 'Milestone number to summarize'
+        required: true
+        type: number
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+
+jobs:
+  summary:
+    runs-on: ubuntu-latest
+    # Only run for milestones whose title starts with "Sastanak-"
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      startsWith(github.event.milestone.title, 'Sastanak-')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Build meeting summary markdown
+        id: build
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const owner = context.repo.owner;
+            const repo  = context.repo.repo;
+
+            // Resolve milestone — from event or manual dispatch
+            let milestoneNumber;
+            let milestone;
+            if (context.eventName === 'milestone') {
+              milestoneNumber = context.payload.milestone.number;
+              milestone = context.payload.milestone;
+            } else {
+              milestoneNumber = parseInt(context.payload.inputs.milestone_number, 10);
+              const res = await github.rest.issues.getMilestone({
+                owner, repo, milestone_number: milestoneNumber
+              });
+              milestone = res.data;
+            }
+
+            core.info(`Milestone #${milestoneNumber}: ${milestone.title}`);
+
+            // Fetch all issues (open + closed) that belong to this milestone
+            const items = await github.paginate(
+              github.rest.issues.listForRepo,
+              {
+                owner,
+                repo,
+                state: 'all',
+                milestone: String(milestoneNumber),
+                per_page: 100
+              }
+            );
+
+            const issues = items.filter(i => !i.pull_request);
+            core.info(`Found ${issues.length} issues attached to milestone.`);
+
+            // For each issue, find PRs that referenced it via timeline events.
+            // We use the "cross-referenced" event from the issue timeline.
+            const prMap = new Map(); // pr number -> {number, title, state, url, merged_at, issue_numbers: Set}
+            for (const issue of issues) {
+              let events = [];
+              try {
+                events = await github.paginate(
+                  github.rest.issues.listEventsForTimeline,
+                  {
+                    owner,
+                    repo,
+                    issue_number: issue.number,
+                    per_page: 100,
+                    mediaType: { previews: ['mockingbird'] }
+                  }
+                );
+              } catch (err) {
+                core.warning(`Could not fetch timeline for #${issue.number}: ${err.message}`);
+                continue;
+              }
+
+              for (const ev of events) {
+                if (ev.event !== 'cross-referenced') continue;
+                const src = ev.source && ev.source.issue;
+                if (!src) continue;
+                if (!src.pull_request) continue; // only PRs
+                const prNum = src.number;
+                if (!prMap.has(prNum)) {
+                  prMap.set(prNum, {
+                    number: prNum,
+                    title: src.title || '',
+                    state: src.state || '',
+                    url: src.html_url || `https://github.com/${owner}/${repo}/pull/${prNum}`,
+                    merged_at: src.pull_request && src.pull_request.merged_at || null,
+                    issue_numbers: new Set()
+                  });
+                }
+                prMap.get(prNum).issue_numbers.add(issue.number);
+              }
+            }
+
+            // Determine meeting date — prefer milestone.due_on, fallback to closed_at, fallback to today
+            function toIsoDate(d) {
+              if (!d) return null;
+              return new Date(d).toISOString().slice(0, 10);
+            }
+            const meetingDate =
+              toIsoDate(milestone.due_on) ||
+              toIsoDate(milestone.closed_at) ||
+              new Date().toISOString().slice(0, 10);
+
+            // Build markdown
+            const lines = [];
+            lines.push(`# ${milestone.title}`);
+            lines.push('');
+            lines.push(`- **Datum sastanka:** ${meetingDate}`);
+            lines.push(`- **Milestone:** [#${milestoneNumber}](${milestone.html_url})`);
+            if (milestone.description && milestone.description.trim()) {
+              lines.push('');
+              lines.push('## Opis');
+              lines.push('');
+              lines.push(milestone.description.trim());
+            }
+            lines.push('');
+            lines.push(`## Issues (${issues.length})`);
+            lines.push('');
+            if (issues.length === 0) {
+              lines.push('_Nema vezanih issue-a._');
+            } else {
+              // Sort: closed first (done), then open, then by number
+              issues.sort((a, b) => {
+                if (a.state !== b.state) return a.state === 'closed' ? -1 : 1;
+                return a.number - b.number;
+              });
+              for (const i of issues) {
+                const stateIcon = i.state === 'closed' ? '[x]' : '[ ]';
+                // Extract status label for extra context
+                let status = '';
+                for (const l of (i.labels || [])) {
+                  const n = (l.name || '').toLowerCase();
+                  if (n.startsWith('status:')) { status = ` _(${n})_`; break; }
+                }
+                lines.push(`- ${stateIcon} [#${i.number}](${i.html_url}) ${i.title}${status}`);
+              }
+            }
+
+            lines.push('');
+            const prs = Array.from(prMap.values());
+            lines.push(`## Pull requests (${prs.length})`);
+            lines.push('');
+            if (prs.length === 0) {
+              lines.push('_Nema vezanih pull request-a._');
+            } else {
+              prs.sort((a, b) => a.number - b.number);
+              for (const pr of prs) {
+                const mergedTag = pr.merged_at ? ' (merged)' : ` (${pr.state})`;
+                const refs = Array.from(pr.issue_numbers)
+                  .sort((a, b) => a - b)
+                  .map(n => `#${n}`)
+                  .join(', ');
+                lines.push(`- [#${pr.number}](${pr.url}) ${pr.title}${mergedTag} — referencira: ${refs}`);
+              }
+            }
+
+            lines.push('');
+            lines.push('---');
+            lines.push('');
+            lines.push(`_Automatski generirano ${new Date().toISOString()} iz milestone-a \`${milestone.title}\`._`);
+            lines.push('');
+
+            const outDir = 'sastanci';
+            fs.mkdirSync(outDir, { recursive: true });
+            const outFile = path.join(outDir, `${meetingDate}-sumar.md`);
+            fs.writeFileSync(outFile, lines.join('\n'), 'utf8');
+
+            core.info(`Wrote ${outFile}`);
+            core.setOutput('file', outFile);
+            core.setOutput('title', milestone.title);
+
+      - name: Commit and push summary
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -z "${{ steps.build.outputs.file }}" ]; then
+            echo "No file produced — skipping commit."
+            exit 0
+          fi
+
+          git add "${{ steps.build.outputs.file }}"
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "docs(sastanci): sumar za ${{ steps.build.outputs.title }} [skip ci]"
+          git push

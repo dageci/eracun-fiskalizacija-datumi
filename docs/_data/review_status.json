@@ -1,0 +1,15 @@
+{
+  "last_updated": "2026-04-16T00:00:00Z",
+  "segments": [],
+  "summary": {
+    "total": 190,
+    "izvan_revizije": 45,
+    "za_reviziju": 145,
+    "potvrdeno": 0,
+    "u_reviziji": 0,
+    "ceka_pu": 0,
+    "trazi_izmjenu": 0,
+    "ceka": 145,
+    "odbaceno": 0
+  }
+}

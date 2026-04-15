@@ -1,0 +1,63 @@
+{% comment %}
+Renderira status badge za dani segment dokumentacije.
+Koristi se kao: {% include review-badge.html stranica="pravila" sec_id="sec-hr-bt-15" %}
+
+Čita iz docs/_data/review_status.json (auto-ažurira se kroz GitHub Action).
+Ako segment nije u JSON-u, prikazuje default "Za pregled".
+{% endcomment %}
+
+{% assign target_stranica = include.stranica %}
+{% assign target_sec_id = include.sec_id %}
+{% assign found_status = "ceka" %}
+{% assign found_issue = 0 %}
+
+{% for seg in site.data.review_status.segments %}
+  {% if seg.stranica == target_stranica and seg.sec_id == target_sec_id %}
+    {% assign found_status = seg.status %}
+    {% assign found_issue = seg.issue_number %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% case found_status %}
+  {% when "potvrdeno" %}
+    {% assign badge_color = "#0e8a16" %}
+    {% assign badge_text = "Potvrđeno" %}
+    {% assign badge_icon = "&#10003;" %}
+  {% when "u_reviziji" %}
+    {% assign badge_color = "#1d76db" %}
+    {% assign badge_text = "U reviziji" %}
+    {% assign badge_icon = "&#9679;" %}
+  {% when "ceka_pu" %}
+    {% assign badge_color = "#5dade2" %}
+    {% assign badge_text = "Čeka Poreznu upravu" %}
+    {% assign badge_icon = "&#9208;" %}
+  {% when "trazi_izmjenu" %}
+    {% assign badge_color = "#d93f0b" %}
+    {% assign badge_text = "Traži izmjenu" %}
+    {% assign badge_icon = "&#9888;" %}
+  {% when "izvan_revizije" %}
+    {% assign badge_color = "#808080" %}
+    {% assign badge_text = "Izvan revizije" %}
+    {% assign badge_icon = "&#9675;" %}
+  {% when "odbaceno" %}
+    {% assign badge_color = "#b60205" %}
+    {% assign badge_text = "Odbačeno" %}
+    {% assign badge_icon = "&#10007;" %}
+  {% else %}
+    {% assign badge_color = "#f39c12" %}
+    {% assign badge_text = "Za pregled" %}
+    {% assign badge_icon = "&#9675;" %}
+{% endcase %}
+
+<div class="review-badge-wrapper" style="margin: 0.3rem 0 0.8rem;">
+  {% if found_issue > 0 %}
+    <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues/{{ found_issue }}" target="_blank" rel="noopener" style="text-decoration: none;">
+  {% else %}
+    <a href="https://github.com/dageci/eracun-fiskalizacija-datumi/issues?q=is%3Aissue+{{ target_sec_id }}" target="_blank" rel="noopener" style="text-decoration: none;">
+  {% endif %}
+    <span style="display: inline-block; background: {{ badge_color }}; color: white; font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 3px; cursor: pointer;" title="Stanje revizije — klik za Issue na GitHubu">
+      {{ badge_icon }} {{ badge_text }}{% if found_issue > 0 %} · #{{ found_issue }}{% endif %}
+    </span>
+  </a>
+</div>

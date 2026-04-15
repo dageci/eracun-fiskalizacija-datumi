@@ -1,0 +1,209 @@
+name: Sync review status
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled, closed, reopened, deleted, transferred]
+  schedule:
+    # Safety-net: every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+
+concurrency:
+  group: review-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Build review_status.json
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            // Known status labels — keep in sync with issue templates / docs
+            const STATUS_LABELS = [
+              'ceka',
+              'u-reviziji',
+              'ceka-pu',
+              'potvrdeno',
+              'trazi-izmjenu',
+              'izvan-revizije',
+              'odbaceno'
+            ];
+
+            // Total segments baseline (used to compute "ceka" fallback count)
+            const TOTAL_SEGMENTS = 190;
+            const IZVAN_REVIZIJE_BASELINE = 45;   // authorial, not under review
+            const ZA_REVIZIJU_BASELINE = 145;     // 190 - 45
+
+            // Normalize status label: "status:potvrdeno" -> "potvrdeno"
+            function extractStatus(labels) {
+              for (const l of labels) {
+                const name = (l.name || '').toLowerCase();
+                if (name.startsWith('status:')) {
+                  return name.substring('status:'.length);
+                }
+              }
+              return null;
+            }
+
+            function extractStranica(labels) {
+              for (const l of labels) {
+                const name = (l.name || '').toLowerCase();
+                if (name.startsWith('stranica:')) {
+                  return name.substring('stranica:'.length);
+                }
+              }
+              return null;
+            }
+
+            // Try to find sec_id from issue body or title.
+            // Body format from template usually contains: "ID sekcije: `sec-xxx`"
+            // Also accept plain "sec-xxx" occurrences.
+            function extractSecId(issue) {
+              const haystacks = [issue.body || '', issue.title || ''];
+              // Prefer the explicit label form first
+              const explicit = /ID\s*sekcije[^\n`]*`?(sec-[a-z0-9][a-z0-9\-]*)`?/i;
+              for (const h of haystacks) {
+                const m = h.match(explicit);
+                if (m) return m[1].toLowerCase();
+              }
+              // Fallback: first sec-xxx we see
+              const loose = /\bsec-[a-z0-9][a-z0-9\-]*/i;
+              for (const h of haystacks) {
+                const m = h.match(loose);
+                if (m) return m[0].toLowerCase();
+              }
+              return null;
+            }
+
+            // Fetch ALL issues (open + closed), excluding PRs
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            core.info(`Fetching issues for ${owner}/${repo}...`);
+
+            const issues = await github.paginate(
+              github.rest.issues.listForRepo,
+              {
+                owner,
+                repo,
+                state: 'all',
+                per_page: 100
+              }
+            );
+
+            core.info(`Fetched ${issues.length} issues (including PRs).`);
+
+            const segments = [];
+            const statusCounts = {};
+            for (const s of STATUS_LABELS) statusCounts[s] = 0;
+
+            for (const issue of issues) {
+              // Skip pull requests — issues API returns them too
+              if (issue.pull_request) continue;
+
+              const labels = issue.labels || [];
+              const status = extractStatus(labels);
+              const stranica = extractStranica(labels);
+              const secId = extractSecId(issue);
+
+              // If a closed issue has no status label, treat it as "potvrdeno"
+              // (closed = done). If still open and no status, treat as "ceka".
+              let effectiveStatus = status;
+              if (!effectiveStatus) {
+                effectiveStatus = issue.state === 'closed' ? 'potvrdeno' : 'ceka';
+              }
+
+              if (statusCounts[effectiveStatus] === undefined) {
+                // Unknown status label — count it under its own bucket
+                statusCounts[effectiveStatus] = 0;
+              }
+              statusCounts[effectiveStatus]++;
+
+              segments.push({
+                stranica: stranica || null,
+                sec_id: secId || null,
+                issue_number: issue.number,
+                status: effectiveStatus,
+                title: issue.title || '',
+                url: issue.html_url,
+                updated_at: issue.updated_at
+              });
+            }
+
+            // Stable sort: by stranica then sec_id then issue_number
+            segments.sort((a, b) => {
+              const sa = (a.stranica || 'zzzz');
+              const sb = (b.stranica || 'zzzz');
+              if (sa !== sb) return sa.localeCompare(sb);
+              const ida = (a.sec_id || 'zzzz');
+              const idb = (b.sec_id || 'zzzz');
+              if (ida !== idb) return ida.localeCompare(idb);
+              return a.issue_number - b.issue_number;
+            });
+
+            // Build summary. "ceka" gets a fallback floor so the dashboard
+            // can still show "X of 145 awaiting review" even before issues
+            // are filed for every segment.
+            const trackedCount = segments.length;
+            const cekaTracked = statusCounts['ceka'] || 0;
+            const untracked = Math.max(0, ZA_REVIZIJU_BASELINE - (trackedCount - (statusCounts['izvan-revizije'] || 0)));
+
+            const summary = {
+              total: TOTAL_SEGMENTS,
+              izvan_revizije: statusCounts['izvan-revizije'] || IZVAN_REVIZIJE_BASELINE,
+              za_reviziju: ZA_REVIZIJU_BASELINE,
+              potvrdeno: statusCounts['potvrdeno'] || 0,
+              u_reviziji: statusCounts['u-reviziji'] || 0,
+              ceka_pu: statusCounts['ceka-pu'] || 0,
+              trazi_izmjenu: statusCounts['trazi-izmjenu'] || 0,
+              ceka: cekaTracked + untracked
+            };
+
+            const payload = {
+              last_updated: new Date().toISOString(),
+              segments,
+              summary
+            };
+
+            const outDir = path.join('docs', '_data');
+            fs.mkdirSync(outDir, { recursive: true });
+            const outFile = path.join(outDir, 'review_status.json');
+            fs.writeFileSync(outFile, JSON.stringify(payload, null, 2) + '\n', 'utf8');
+
+            core.info(`Wrote ${outFile} with ${segments.length} segments.`);
+            core.summary
+              .addHeading('Review status sync')
+              .addRaw(`Segments written: **${segments.length}**`)
+              .addBreak()
+              .addRaw(`Potvrdeno: ${summary.potvrdeno} / U reviziji: ${summary.u_reviziji} / Ceka: ${summary.ceka}`)
+              .write();
+
+      - name: Commit and push changes
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet -- docs/_data/review_status.json; then
+            echo "No changes to review_status.json — nothing to commit."
+            exit 0
+          fi
+
+          git add docs/_data/review_status.json
+          git commit -m "chore: auto-update review status [skip ci]"
+          git push
