@@ -7,7 +7,7 @@ title: "Kako dobivati obavijesti o promjenama"
 
 Možete postaviti da vas GitHub automatski obavještava emailom kad se nešto promijeni u ovom projektu — nova rasprava, izmjena dokumenta, novi prijedlog ili komentar. I možete odabrati **samo ono što vas zanima**.
 
-### Sadržaj
+### Sadržaj {#sec-sadrzaj}
 {: .no_toc }
 
 * TOC
@@ -15,35 +15,32 @@ Možete postaviti da vas GitHub automatski obavještava emailom kad se nešto pr
 
 ---
 
-## Preduvjet: besplatna prijava na GitHub
-
+## Preduvjet: besplatna prijava na GitHub {#sec-preduvjet-besplatna-prijava}
 Za obavijesti trebate GitHub korisnički račun. Prijava je besplatna i traje 2 minute: [github.com/signup](https://github.com/signup)
 
 ---
 
-## Korak 1: Otvorite repo i kliknite Watch
-
+## Korak 1: Otvorite repo i kliknite Watch {#sec-korak-1-otvorite}
 1. Idite na **[github.com/dageci/eracun-fiskalizacija-datumi](https://github.com/dageci/eracun-fiskalizacija-datumi)**
 2. U gornjem desnom kutu vidjet ćete gumb **Watch** (s ikonom oka)
 3. Kliknite na njega — otvori se padajući izbornik
 
-## Korak 2: Odaberite razinu obavijesti
-
+## Korak 2: Odaberite razinu obavijesti {#sec-korak-2-odaberite}
 GitHub nudi 4 opcije:
 
-### Opcija 1: Participating and @mentions (zadano)
+### Opcija 1: Participating and @mentions (zadano) {#sec-opcija-1-participating}
 > Dobivate obavijesti samo ako:
 > - Sudjelujete u raspravi (napisali ste komentar)
 > - Netko vas označi (@vaše-ime)
 >
 > **Za koga**: Ako želite mir i dobivati obavijesti samo kad vas se tiče.
 
-### Opcija 2: All Activity
+### Opcija 2: All Activity {#sec-opcija-2-all-activity}
 > Dobivate obavijesti za **sve** — svaka nova rasprava, svaki komentar, svaka izmjena dokumenta, svaki pull request.
 >
 > **Za koga**: Ako želite biti u toku sa svime što se događa u projektu.
 
-### Opcija 3: Custom
+### Opcija 3: Custom {#sec-opcija-3-custom}
 > **Najkorisnija opcija** — odabirete točno što vas zanima. Kliknite "Custom" i označite:
 >
 > | Opcija | Što dobivate | Primjer |
@@ -56,39 +53,37 @@ GitHub nudi 4 opcije:
 >
 > **Preporuka za ovaj projekt**: Označite **Discussions** i **Pull requests** — to su dvije najvažnije aktivnosti.
 
-### Opcija 4: Ignore
+### Opcija 4: Ignore {#sec-opcija-4-ignore}
 > Ne dobivate nikakve obavijesti, čak ni kad vas netko označi.
 >
 > **Za koga**: Ako ne želite nikakve obavijesti iz ovog projekta.
 
 ---
 
-## Primjeri: Što odabrati ovisno o vašoj ulozi
-
-### "Ja sam knjigovođa, zanima me samo kad se promijeni sadržaj dokumenta"
+## Primjeri: Što odabrati ovisno o vašoj ulozi {#sec-primjeri-sto-odabrati}
+### "Ja sam knjigovođa, zanima me samo kad se promijeni sadržaj dokumenta" {#sec-ja-sam-knjigovoda}
 → Odaberite **Custom** → označite samo **Pull requests**
 
 Dobit ćete email kad netko predloži izmjenu teksta (npr. ispravak članka zakona, novi primjer). Nećete dobivati obavijesti o raspravama i komentarima.
 
-### "Ja sam ERP programer, želim pratiti rasprave o implementaciji"
+### "Ja sam ERP programer, želim pratiti rasprave o implementaciji" {#sec-ja-sam-erp}
 → Odaberite **Custom** → označite **Discussions** i **Pull requests**
 
 Dobit ćete email za svaku novu raspravu (pitanja, prijedlozi) i za svaku predloženu izmjenu dokumenta.
 
-### "Želim znati sve što se događa"
+### "Želim znati sve što se događa" {#sec-zelim-znati-sve}
 → Odaberite **All Activity**
 
 Dobit ćete email za svaku aktivnost — nove rasprave, komentari, izmjene, prijave grešaka.
 
-### "Zanima me samo kad izađe nova verzija dokumenta"
+### "Zanima me samo kad izađe nova verzija dokumenta" {#sec-zanima-me-samo}
 → Odaberite **Custom** → označite samo **Releases**
 
 Dobit ćete email samo kad održavatelj objavi novu verziju (npr. nakon veće revizije ili potvrde od Porezne uprave).
 
 ---
 
-## Kako promijeniti ili isključiti obavijesti naknadno
-
+## Kako promijeniti ili isključiti obavijesti naknadno {#sec-kako-promijeniti-ili}
 1. Idite na **[github.com/dageci/eracun-fiskalizacija-datumi](https://github.com/dageci/eracun-fiskalizacija-datumi)**
 2. Kliknite **Watch** (gumb u gornjem desnom kutu)
 3. Promijenite opciju ili odaberite **Ignore** za isključivanje
@@ -97,28 +92,26 @@ Možete i centralno upravljati svim obavijestima na: **[github.com/settings/noti
 
 ---
 
-## Kako filtrirati obavijesti u email klijentu
-
+## Kako filtrirati obavijesti u email klijentu {#sec-kako-filtrirati-obavijesti}
 Ako dobivate previše emailova, možete ih filtrirati u svom email programu:
 
-### Gmail
+### Gmail {#sec-gmail}
 1. Otvorite email od GitHub notifikacije
 2. Kliknite tri točkice → "Filter messages like this"
 3. Dodajte pravilo: `from:notifications@github.com` i `subject:dageci/eracun-fiskalizacija-datumi`
 4. Odaberite akciju: automatski označi labelom "eRačun" ili premjesti u folder
 
-### Outlook
+### Outlook {#sec-outlook}
 1. Desni klik na email → "Rules" → "Create Rule"
 2. Uvjet: From = `notifications@github.com`, Subject contains = `eracun-fiskalizacija-datumi`
 3. Akcija: premjesti u folder "eRačun"
 
-### Općenito
+### Općenito {#sec-opcenito}
 GitHub obavijesti dolaze s adrese `notifications@github.com` i u subject liniji uvijek sadrže `dageci/eracun-fiskalizacija-datumi`. To možete koristiti za filtriranje u bilo kojem email klijentu.
 
 ---
 
-## Kako pratiti samo jednu raspravu (bez praćenja cijelog projekta)
-
+## Kako pratiti samo jednu raspravu (bez praćenja cijelog projekta) {#sec-kako-pratiti-samo}
 Ako vas zanima samo jedna konkretna rasprava:
 
 1. Otvorite tu raspravu (Discussion ili Issue)

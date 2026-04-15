@@ -9,7 +9,7 @@ nav_order: 3
 
 Ova stranica pokriva perspektivu **izdavatelja** — koji XML element staviti za koji poslovni slučaj. Za perspektivu primatelja (pretporez, knjiženje troška, skladište) vidi [Primjeri — primatelj](primjeri-primatelj).
 
-### Sadržaj
+### Sadržaj {#sec-sadrzaj}
 {: .no_toc }
 
 * TOC
@@ -19,8 +19,7 @@ Ova stranica pokriva perspektivu **izdavatelja** — koji XML element staviti za
 
 <a id="kako-citati-xml"></a>
 
-### Kako čitati XML primjere
-
+### Kako čitati XML primjere {#sec-kako-citati-xml-primjere}
 U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za lakše čitanje:
 
 - <span style="color:#569cd6">**Plavo**</span> — nazivi XML elemenata (npr. `cbc:IssueDate`, `cac:InvoicePeriod`)
@@ -35,8 +34,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 ---
 
-### 4.1 Obračun po izdavanju (čl. 30 Zakona o PDV-u) <span class="badge-izdavanje">Po izdavanju</span>
-
+### 4.1 Obračun po izdavanju (čl. 30 Zakona o PDV-u) <span class="badge-izdavanje">Po izdavanju</span> {#sec-obracun-po-izdavanju}
 #### 4.1.1 Isporuka i račun isti dan <span class="badge-izdavanje">Po izdavanju</span>
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
@@ -358,8 +356,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > PDV ide u **siječanj**. BT-7 i BT-72 imaju isti datum jer je
 > porezna obveza vezana za isporuku (čl. 30 st. 1).
 
-### 4.2 Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) <span class="badge-naplata">Po naplati</span>
-
+### 4.2 Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) <span class="badge-naplata">Po naplati</span> {#sec-obracun-po-naplacenoj-pdv}
 #### 4.2.1 Isporuka i račun isti mjesec <span class="badge-naplata">Po naplati</span>
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
@@ -636,7 +633,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 >
 > Prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun), izdavatelj ima pravo na retroaktivni ispravak PDV-a u mjesecu izvornog računa.
 
-### Utjecaj BT-72 i BT-73/74 na prihod i otpremnicu (izdavatelj)
+### Utjecaj BT-72 i BT-73/74 na prihod i otpremnicu (izdavatelj) {#sec-utjecaj-bt-72-izd}
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 > Izdavatelj mora razlikovati **PDV period** (BT-7/BT-8/BT-2) od **prihoda** (BT-72, HSFI 15) i **otpremnice** (BT-72).
@@ -651,7 +648,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 
 > **Ključni uvid za izdavatelja**: Prihod se UVIJEK priznaje po datumu isporuke (BT-72) ili po obračunskom razdoblju (BT-73/BT-74), ne po datumu računa (BT-2). PDV može biti u drugom mjesecu od prihoda — to nije greška nego normalan rad sustava.
 
-### 4.3 Usporedba svih mehanizama za isti poslovni slučaj <span class="badge-usporedba">Usporedba</span>
+### 4.3 Usporedba svih mehanizama za isti poslovni slučaj <span class="badge-usporedba">Usporedba</span> {#sec-usporedba-svih-mehanizama}
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 > Pregled: roba isporučena 25.01., račun izdan 10.03., kupac plaća 15.04.

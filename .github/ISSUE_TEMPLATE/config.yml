@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Rasprava o općoj temi
+    url: https://github.com/dageci/eracun-fiskalizacija-datumi/discussions
+    about: Za opća pitanja bez vezivanja za konkretan segment
+  - name: Vodič za radnu skupinu
+    url: https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju
+    about: Kako ide proces revizije, korak po korak

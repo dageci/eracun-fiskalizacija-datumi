@@ -7,7 +7,7 @@ nav_order: 7
 
 # Europska usporedba — eRačun sustavi u EU
 
-### Sadržaj
+### Sadržaj {#sec-sadrzaj}
 {: .no_toc }
 
 * TOC
@@ -15,12 +15,10 @@ nav_order: 7
 
 ---
 
-## Zašto usporedba?
-
+## Zašto usporedba? {#sec-zasto-usporedba}
 Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni zakon s XML elementima eRačuna. Sve EU zemlje imaju isti temelj (Direktiva 2006/112/EC, norma EN16931), ali svaka ima nacionalne specifičnosti — u formatu, modelu razmjene, izvještavanju prema poreznoj i kvaliteti dokumentacije.
 
-### Legenda
-
+### Legenda {#sec-legenda}
 | Oznaka | Značenje | Tok računa |
 |---|---|---|
 | **Clearance** | Račun prolazi kroz sustav porezne uprave **prije** dostave kupcu — porezna ga vidi u realnom vremenu | Izdavatelj → **Porezna uprava** → Kupac |
@@ -35,8 +33,7 @@ Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni za
 
 ---
 
-## Usporedna tablica — svih 23 EU zemlje
-
+## Usporedna tablica — svih 23 EU zemlje {#sec-usporedna-tablica-svih}
 | Zemlja | Format | Obvezno B2B | Model | Izlazni → PU | Ulazni → PU | Naplata → PU | Nacionalni CIUS |
 |---|---|---|---|---|---|---|---|
 | **Hrvatska** | UBL + HRFISK20Data | 01/2026 | eDelivery 4-corner + fiskalizacija (mikroeRačun besplatan za ne-PDV obveznike) | **DA** | **DA** | **DA** (eIzvještavanje) | HR CIUS 2025 |
@@ -65,22 +62,18 @@ Hrvatska nije jedina zemlja koja se suočava s pitanjem kako povezati porezni za
 
 ---
 
-## Ključni zaključci
-
-### Izvještavanje o naplati — samo Hrvatska i Španjolska
-
+## Ključni zaključci {#sec-kljucni-zakljucci}
+### Izvještavanje o naplati — samo Hrvatska i Španjolska {#sec-izvjestavanje-o-naplati}
 Samo dvije EU zemlje zahtijevaju od obveznika da izvještavaju o naplati eRačuna:
 - **Hrvatska** — `EvidentirajNaplatu` kroz eIzvještavanje servis (čl. 53 Zakona o fiskalizaciji)
 - **Španjolska** — "Cobros sobre facturas" kroz SII sustav (naplate na izdanim računima)
 
 Nijedna druga zemlja — ni Italija, ni Poljska, ni Rumunjska — ne prati što se događa s računom **nakon** što je izdan/dostavljen.
 
-### Izvještavanje o odbijanju — samo Hrvatska
-
+### Izvještavanje o odbijanju — samo Hrvatska {#sec-izvjestavanje-o-odbijanju}
 Hrvatska je **jedina EU zemlja** koja zahtijeva formalno izvještavanje o odbijanju eRačuna (`EvidentirajOdbijanje`).
 
-### Oba smjera (izlazni + ulazni) → porezna uprava
-
+### Oba smjera (izlazni + ulazni) → porezna uprava {#sec-oba-smjera-izlazni}
 | Zemlja | Kako | Automatski? |
 |---|---|---|
 | **Hrvatska** | Posrednik šalje fiskalizacijsku poruku za oba smjera | NE — posrednik/obveznik inicira |
@@ -91,8 +84,7 @@ Hrvatska je **jedina EU zemlja** koja zahtijeva formalno izvještavanje o odbija
 | **Španjolska** | Obje strane šalju u SII (Post-audit) | NE — obveznik šalje u roku 4 dana |
 | **Litva** | i.SAF izvještaj (prodajne i nabavne knjige) | NE — Post-audit, periodični izvještaj |
 
-### Zanimljive specifičnosti po zemljama
-
+### Zanimljive specifičnosti po zemljama {#sec-zanimljive-specificnosti-po-zemljama}
 | Zemlja | Specifičnost |
 |---|---|
 | **Hrvatska** | Jedina zemlja koja ima besplatni državni sustav (mikroeRačun) ali ga ograničava na ne-PDV obveznike; PDV obveznici moraju koristiti komercijalnog posrednika |
@@ -107,9 +99,8 @@ Hrvatska je **jedina EU zemlja** koja zahtijeva formalno izvještavanje o odbija
 
 ---
 
-## Detaljnije o ključnim zemljama
-
-### Poljska (KSeF) — zlatni standard dokumentacije
+## Detaljnije o ključnim zemljama {#sec-detaljnije-o-kljucnim-zemljama}
+### Poljska (KSeF) — zlatni standard dokumentacije {#sec-poljska-ksef-zlatni}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#27ae60;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Najbolja praksa</span></div>
 
 Poljsko Ministarstvo financija objavilo je **"Broszura informacyjna"** — dokument koji za svaki XML element navodi opis, tip podatka, **referencu na članak Zakona o PDV-u**, primjer i napomene. Ovo je **najbliže** onome što mi gradimo za Hrvatsku.
@@ -121,7 +112,7 @@ Poljsko Ministarstvo financija objavilo je **"Broszura informacyjna"** — dokum
 - <a href="https://ksef.podatki.gov.pl/media/jknpcymf/broszura-informacyjna-dotyczaca-struktury-logicznej-fa-3-04032026.pdf" target="_blank">Broszura informacyjna (poljski, 03/2026)</a>
 - <a href="https://ksef.podatki.gov.pl/pliki-do-pobrania-ksef-20/" target="_blank">KSeF 2.0 — svi dokumenti</a>
 
-### Njemačka (XRechnung) — najbolji open-source ekosustav
+### Njemačka (XRechnung) — najbolji open-source ekosustav {#sec-njemacka-xrechnung-najbolji}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#27ae60;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;">Najbolja praksa</span></div>
 
 Koristi **UBL/CII** (iste BT oznake kao HR). Ima UStG-to-BT mapping tablicu i kompletni GitHub ekosustav (test suite, schematron, validator). **Nema** clearance ni fiskalizaciju.
@@ -131,28 +122,24 @@ Koristi **UBL/CII** (iste BT oznake kao HR). Ima UStG-to-BT mapping tablicu i ko
 - <a href="https://github.com/itplr-kosit/xrechnung-testsuite" target="_blank">GitHub — test suite</a>
 - <a href="https://github.com/itplr-kosit/xrechnung-schematron" target="_blank">GitHub — Schematron</a>
 
-### Italija (FatturaPA / SDI) — najduže iskustvo, najelegantniji pristup "po naplati"
-
+### Italija (FatturaPA / SDI) — najduže iskustvo, najelegantniji pristup "po naplati" {#sec-italija-fatturapa-sdi}
 Pionir EU eRačuna — B2B obvezno od 2019. Clearance model (SDI). **Najelegantniji** pristup obračunu po naplati: jedan element `EsigibilitaIVA` s tri vrijednosti (`I`=odmah, `D`=po naplati, `S`=split payment). Nema ambigviteta — za razliku od HR pristupa s BT-8=432 + HR-BT-15.
 
 **Izvori:**
 - <a href="https://www.fatturapa.gov.it/it/norme-e-regole/documentazione-fattura-elettronica/formato-fatturapa/" target="_blank">FatturaPA dokumentacija</a>
 - <a href="https://www.fatturapa.gov.it/en/lafatturapa/esempi/" target="_blank">Primjeri XML datoteka</a>
 
-### Španjolska (SII / Verifactu) — jedina osim HR s izvještavanjem o naplati
-
+### Španjolska (SII / Verifactu) — jedina osim HR s izvještavanjem o naplati {#sec-spanjolska-sii-verifactu}
 Tri paralelna sustava: SII (velike tvrtke od 2017.), Verifactu (ostali od 01/2026), TicketBAI (Baskija). SII zahtijeva izvještavanje u roku 4 dana — i za izdane i za primljene račune. **"Cobros"** sustav prati naplate na izdanim računima — jedini osim HR koji to radi.
 
-### Mađarska (NAV RTIR) — najširi opseg izvještavanja
-
+### Mađarska (NAV RTIR) — najširi opseg izvještavanja {#sec-madarska-nav-rtir}
 **SVE** fakture (B2B + B2C + izvoz) se prijavljuju u realnom vremenu — najširi opseg u EU. Ali samo izdane, ne primljene. NAV objavljuje XSD, API, test okruženje — odlična dokumentacija.
 
 **Izvor:** <a href="https://onlineszamla.nav.gov.hu/dokumentaciok" target="_blank">NAV Online Számla dokumentacija</a>
 
 ---
 
-## Što Hrvatska može naučiti?
-
+## Što Hrvatska može naučiti? {#sec-sto-hrvatska-moze-nauciti}
 | Lekcija | Izvor | Primjena za HR |
 |---------|-------|----------------|
 | **Jedan dokument koji spaja zakon i XML** | Poljska (brošura) | Upravo to gradimo — ali za UBL format, ne vlastiti |
@@ -165,8 +152,7 @@ Tri paralelna sustava: SII (velike tvrtke od 2017.), Verifactu (ostali od 01/202
 
 ---
 
-## EU-level resursi
-
+## EU-level resursi {#sec-eu-level-resursi}
 | Izvor | Link |
 |-------|------|
 | EN16931 validacijski artefakti | <a href="https://github.com/ConnectingEurope/eInvoicing-EN16931" target="_blank">github.com/ConnectingEurope/eInvoicing-EN16931</a> |

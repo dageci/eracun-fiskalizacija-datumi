@@ -1,0 +1,115 @@
+name: Revizija segmenta dokumentacije
+description: Predložite pregled, ispravak ili potvrdu određenog segmenta
+title: "[stranica] kratak opis segmenta"
+labels: ["status:ceka"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Svaki segment dokumentacije (H2 ili H3 sekcija) ima svoj stabilni ID** u obliku `sec-xxx`.
+        Ljubazno Vas molimo da popunite sva polja — time omogućujete automatsko praćenje i povezivanje s Pull Request-om.
+
+  - type: dropdown
+    id: stranica
+    attributes:
+      label: Stranica
+      description: Na koju stranicu dokumentacije se prijedlog odnosi?
+      options:
+        - pravila
+        - primjeri-izdavatelj
+        - primjeri-primatelj
+        - referenca
+        - europska-usporedba
+        - naknadno-dospjeli-racuni
+        - prijedlozi-validator
+        - indikator-kopije
+        - analiza-ulaznih
+        - index
+        - drugo
+    validations:
+      required: true
+
+  - type: input
+    id: section-id
+    attributes:
+      label: ID sekcije
+      description: "Stabilni ID (npr. sec-hr-bt-15). Možete ga vidjeti u izvoru stranice ili u poveznici."
+      placeholder: "sec-xxx"
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: Poveznica na sekciju
+      description: "Puni URL do sekcije dokumentacije"
+      placeholder: "https://dageci.github.io/eracun-fiskalizacija-datumi/pravila#sec-xxx"
+    validations:
+      required: true
+
+  - type: textarea
+    id: trenutni-tekst
+    attributes:
+      label: Trenutni tekst / stanje
+      description: "Molimo kopirajte trenutni tekst ili opišite stanje koje predlažete promijeniti"
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: prijedlog
+    attributes:
+      label: Prijedlog izmjene ili potvrda
+      description: "Što predlažete? Ako je sadržaj ispravan — napišite 'Potvrđujemo ispravnost'."
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: obrazlozenje
+    attributes:
+      label: Obrazloženje
+      description: "Molimo navedite razlog prijedloga — tehnički, pravni ili praktični."
+    validations:
+      required: true
+
+  - type: textarea
+    id: izvor
+    attributes:
+      label: Izvor / dokaz (opcionalno)
+      description: "Poveznica na zakon, specifikaciju, XML primjer, CJEU odluku, službenu uputu Porezne uprave..."
+
+  - type: dropdown
+    id: tip
+    attributes:
+      label: Tip sadržaja
+      options:
+        - tekst
+        - tablica
+        - mermaid-graf
+        - xml-primjer
+        - citat-zakona
+        - slika
+        - drugo
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioritet
+    attributes:
+      label: Prioritet
+      options:
+        - nizak
+        - srednji
+        - visok
+        - kritican
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: ovlastenja
+    attributes:
+      label: Suglasnost
+      options:
+        - label: "Razumijem da ovaj Issue služi za evidenciju rasprave i da će sve izmjene biti primijenjene kroz Pull Request nakon postignutog konsenzusa"
+          required: true

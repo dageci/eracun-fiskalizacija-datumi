@@ -16,7 +16,7 @@ Svaki primjer koristi **isti poslovni slučaj** kao na stranici izdavatelja, ali
 > 2. **Trošak/rashod**: U koje razdoblje se priznaje rashod?
 > 3. **Skladište**: Kad se knjiži primka? (ako je primjenjivo)
 
-### Sadržaj
+### Sadržaj {#sec-sadrzaj}
 {: .no_toc }
 
 * TOC
@@ -29,8 +29,7 @@ Sve što je ovdje napisano proizlazi iz autorove analize specifikacija, zakona i
 
 ---
 
-## Kako primatelj određuje datume?
-
+## Kako primatelj određuje datume? {#sec-kako-primatelj-odreduje-datume}
 Kupac iz primljenog eRačun XML-a treba izvući tri neovisna datuma:
 
 | Pitanje | Gdje gledati u XML-u | Propis |
@@ -41,8 +40,7 @@ Kupac iz primljenog eRačun XML-a treba izvući tri neovisna datuma:
 
 > **Ključni uvid**: Ova tri datuma mogu biti u **različitim mjesecima ili čak godinama** za isti račun. To nije greška — to je normalan rad sustava gdje se PDV, trošak i skladište reguliraju različitim propisima. Detaljno objašnjenje: [sekcija 5 — Datumi na eRačunu vs. datumi u knjigovodstvu](#vremensko-razgraničenje-u-knjigovodstvu).
 
-### Pretporez kod obračuna po naplati — posebna pravila za kupca
-
+### Pretporez kod obračuna po naplati — posebna pravila za kupca {#sec-pretporez-kod-obracuna}
 Ako primljeni eRačun sadrži `BT-8=432` i/ili `HR-BT-15` (`HRObracunPDVPoNaplati`), to znači da izdavatelj koristi obračun po naplaćenoj naknadi (čl. 125.i). Za kupca to ima **direktnu posljedicu**:
 
 > **Čl. 125.i, st. 3 Zakona o PDV-u**: Kupac koji prima račun od obveznika koji obračunava PDV po naplaćenoj naknadi, **pravo na odbitak pretporeza ima tek u trenutku kad plati račun**, ne u trenutku primitka računa.
@@ -55,9 +53,8 @@ To znači da kupac mora pratiti:
 
 ---
 
-## P.1 Obračun po izdavanju (čl. 30) <span class="badge-izdavanje">Po izdavanju</span>
-
-### P.1.1 Isporuka i račun isti dan
+## P.1 Obračun po izdavanju (čl. 30) <span class="badge-izdavanje">Po izdavanju</span> {#sec-p1-obracun-po}
+### P.1.1 Isporuka i račun isti dan {#sec-p11-isporuka-i-dan}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.1](primjeri-izdavatelj#411-isporuka-i-račun-isti-dan-po-izdavanju)
@@ -79,7 +76,7 @@ Izdavateljeva perspektiva: [4.1.1](primjeri-izdavatelj#411-isporuka-i-račun-ist
 
 ---
 
-### P.1.2 Isporuka u drugom mjesecu od računa
+### P.1.2 Isporuka u drugom mjesecu od računa {#sec-p12-isporuka-u}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.2](primjeri-izdavatelj#412-isporuka-u-drugom-mjesecu-od-računa-po-izdavanju)
@@ -103,7 +100,7 @@ Izdavateljeva perspektiva: [4.1.2](primjeri-izdavatelj#412-isporuka-u-drugom-mje
 
 ---
 
-### P.1.3 Račun izdan prije isporuke (čl. 30 st. 2)
+### P.1.3 Račun izdan prije isporuke (čl. 30 st. 2) {#sec-p13-racun-izdan-2}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.3](primjeri-izdavatelj#413-račun-izdan-prije-isporuke-čl-30-st-2-po-izdavanju)
@@ -131,7 +128,7 @@ Izdavateljeva perspektiva: [4.1.3](primjeri-izdavatelj#413-račun-izdan-prije-is
 
 ---
 
-### P.1.4 Predujam / avansni račun (čl. 30 st. 5)
+### P.1.4 Predujam / avansni račun (čl. 30 st. 5) {#sec-p14-predujam-avansni-5}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.4](primjeri-izdavatelj#414-predujam-avansni-račun-čl-30-st-5-po-izdavanju)
@@ -161,7 +158,7 @@ Izdavateljeva perspektiva: [4.1.4](primjeri-izdavatelj#414-predujam-avansni-rač
 
 ---
 
-### P.1.5 Kontinuirana usluga — obračunsko razdoblje (BT-73/BT-74)
+### P.1.5 Kontinuirana usluga — obračunsko razdoblje (BT-73/BT-74) {#sec-p15-kontinuirana-usluga-73}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.5](primjeri-izdavatelj#415-kontinuirana-usluga--obračunsko-razdoblje-bt-73-bt-74-po-izdavanju)
@@ -190,7 +187,7 @@ Izdavateljeva perspektiva: [4.1.5](primjeri-izdavatelj#415-kontinuirana-usluga--
 
 ---
 
-### P.1.6 BT-8=35 — automatska veza na datum isporuke
+### P.1.6 BT-8=35 — automatska veza na datum isporuke {#sec-p16-bt-835}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.6](primjeri-izdavatelj#416-bt-835--automatska-veza-na-datum-isporuke-po-izdavanju)
@@ -217,7 +214,7 @@ Izdavateljeva perspektiva: [4.1.6](primjeri-izdavatelj#416-bt-835--automatska-ve
 
 ---
 
-### P.1.7 Odobrenje / CreditNote
+### P.1.7 Odobrenje / CreditNote {#sec-p17-odobrenje-creditnote}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.7](primjeri-izdavatelj#417-odobrenje--creditnote-po-izdavanju)
@@ -245,7 +242,7 @@ Izdavateljeva perspektiva: [4.1.7](primjeri-izdavatelj#417-odobrenje--creditnote
 
 ---
 
-### P.1.8 Svi datumi u različitim mjesecima — BT-7 eksplicitni datum
+### P.1.8 Svi datumi u različitim mjesecima — BT-7 eksplicitni datum {#sec-p18-svi-datumi}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.8](primjeri-izdavatelj#418-svi-datumi-u-različitim-mjesecima--bt-7-eksplicitni-datum-po-izdavanju)
@@ -273,9 +270,8 @@ Izdavateljeva perspektiva: [4.1.8](primjeri-izdavatelj#418-svi-datumi-u-različi
 
 ---
 
-## P.2 Obračun po naplaćenoj naknadi (čl. 125.i) <span class="badge-naplata">Po naplati</span>
-
-### P.2.1 Isporuka i račun isti mjesec
+## P.2 Obračun po naplaćenoj naknadi (čl. 125.i) <span class="badge-naplata">Po naplati</span> {#sec-p2-obracun-po}
+### P.2.1 Isporuka i račun isti mjesec {#sec-p21-isporuka-i}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.2.1](primjeri-izdavatelj#421-isporuka-i-račun-isti-mjesec-po-naplati)
@@ -305,7 +301,7 @@ Izdavateljeva perspektiva: [4.2.1](primjeri-izdavatelj#421-isporuka-i-račun-ist
 
 ---
 
-### P.2.2 Isporuka u drugom mjesecu od računa
+### P.2.2 Isporuka u drugom mjesecu od računa {#sec-p22-isporuka-u}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.2.2](primjeri-izdavatelj#422-isporuka-u-drugom-mjesecu-od-računa-po-naplati)
@@ -330,7 +326,7 @@ Izdavateljeva perspektiva: [4.2.2](primjeri-izdavatelj#422-isporuka-u-drugom-mje
 
 ---
 
-### P.2.3 Predujam / avansni račun
+### P.2.3 Predujam / avansni račun {#sec-p23-predujam-avansni-racun}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.2.4](primjeri-izdavatelj#424-predujam-avansni-račun-po-naplati)
@@ -360,7 +356,7 @@ Izdavateljeva perspektiva: [4.2.4](primjeri-izdavatelj#424-predujam-avansni-rač
 
 ---
 
-### P.2.4 Odobrenje / CreditNote
+### P.2.4 Odobrenje / CreditNote {#sec-p24-odobrenje-creditnote}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.2.6](primjeri-izdavatelj#426-odobrenje--creditnote-po-naplati)
@@ -389,12 +385,10 @@ Izdavateljeva perspektiva: [4.2.6](primjeri-izdavatelj#426-odobrenje--creditnote
 
 ---
 
-## Sažetak — algoritam za primatelja
-
+## Sažetak — algoritam za primatelja {#sec-sazetak-algoritam-za-primatelja}
 Za automatsko knjiženje primljenog eRačuna, ERP sustav treba izvršiti sljedeće korake:
 
-### Korak 1: Odredi datum nastanka porezne obveze
-
+### Korak 1: Odredi datum nastanka porezne obveze {#sec-korak-1-odredi}
 ```
 AKO postoji HR-BT-15 (HRObracunPDVPoNaplati):
   → režim = "po naplati", datum_poreza = datum_plaćanja (čl. 125.i)
@@ -408,8 +402,7 @@ INAČE AKO postoji BT-8:
 INAČE                                → datum_poreza = BT-2 (IssueDate)
 ```
 
-### Korak 2: Odredi pretporez
-
+### Korak 2: Odredi pretporez {#sec-korak-2-odredi-pretporez}
 ```
 AKO BT-8 = 432 ILI postoji HR-BT-15:
   → pretporez = mjesec u kojem kupac PLATI račun (čl. 125.i st. 3)
@@ -421,8 +414,7 @@ INAČE:
   →   (ALI: prema C-80/20 Wilo Salmson, obveznik MOŽE podnijeti ispravak prijave za izvorni mjesec)
 ```
 
-### Korak 3: Odredi rashod
-
+### Korak 3: Odredi rashod {#sec-korak-3-odredi-rashod}
 ```
 AKO postoji BT-72 (ActualDeliveryDate):
   → rashod = mjesec BT-72
@@ -436,8 +428,7 @@ INAČE:
   → rashod = mjesec BT-2 (IssueDate) kao zamjena
 ```
 
-### Korak 4: Odredi primku (ako je roba)
-
+### Korak 4: Odredi primku (ako je roba) {#sec-korak-4-odredi}
 ```
 AKO postoji BT-72 I radi se o robi (ne usluzi):
   → primka = BT-72
@@ -449,7 +440,7 @@ AKO je CreditNote s povratom robe:
 
 ---
 
-## Pretporez: dva uvjeta i nijanse u praksi
+## Pretporez: dva uvjeta i nijanse u praksi {#sec-pretporez-dva-uvjeta}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Pravo na odbitak pretporeza kod obračuna po izdavanju reguliraju **dva članka** koji se nadopunjuju:
@@ -464,14 +455,12 @@ Dakle **pravo nastaje** u trenutku isporuke (npr. prosinac 2025.).
 
 Dakle za **ostvarivanje** tog prava kupac mora **imati račun**.
 
-### Što znači "ima račun"?
-
+### Što znači "ima račun"? {#sec-sto-znaci-ima-racun}
 "Ima račun" ne znači datum izdavanja računa (BT-2), nego datum kad kupac **stvarno ima račun** — kad ga primi u svoj sustav. Kod eRačuna to je trenutak kad posrednik isporuči XML kupcu; kod papirnog računa to je dan kad stigne poštom.
 
 EU Direktiva 2006/112/EC koristi izraz **"hold an invoice"** (čl. 178) — "posjedovati račun", ne "kad je račun izdan".
 
-### U koje razdoblje ide pretporez?
-
+### U koje razdoblje ide pretporez? {#sec-u-koje-razdoblje}
 Prema praksi Porezne uprave, pravilo ovisi o tome **kad je račun stigao u odnosu na rok za PDV prijavu** (od 01.01.2026. rok je do **zadnjeg dana u mjesecu** za prethodni mjesec):
 
 | Kad je račun stigao | Pretporez ide u | Primjer |
@@ -481,14 +470,12 @@ Prema praksi Porezne uprave, pravilo ovisi o tome **kad je račun stigao u odnos
 
 > \* Prema [C-80/20 (Wilo Salmson)](#sudska-praksa-eu--pravo-na-odbitak-i-račun), obveznik ima pravo podnijeti ispravak PDV prijave za mjesec isporuke čak i ako je rok prošao — PU mu to ne smije uskratiti.
 
-### eRačun ovo praktički eliminira
-
+### eRačun ovo praktički eliminira {#sec-eracun-ovo-prakticki-eliminira}
 Kod eRačuna dostava se mjeri u sekundama/minutama. Izdavatelj kreira račun → posrednik ga odmah isporučuje kupcu. Razlika između datuma izdavanja i datuma primitka je zanemariva — uvijek unutar istog dana, uvijek unutar roka za PDV prijavu.
 
 To znači da kod eRačuna pretporez u praksi **uvijek ide u razdoblje kad je nastala obveza PDV-a** — što je upravo ono što čl. 57 namjerava. Razdvajanje se događa samo kod zakašnjelih papirnih računa ili kad izdavatelj kasni s izdavanjem.
 
-### Sudska praksa EU — pravo na odbitak i račun
-
+### Sudska praksa EU — pravo na odbitak i račun {#sec-sudska-praksa-eu}
 Pred Europskim sudom pravde (CJEU) vodi se postupak **C-167/26** (revizija predmeta T-689/24) koji se bavi upravo ovim pitanjem.
 
 **Što se dogodilo:** Opći sud EU (General Court) donio je 11. veljače 2026. presudu u predmetu **T-689/24** (I. S.A. protiv Dyrektora Krajowej Informacji Skarbowej, Poljska) u kojoj je utvrdio:
@@ -524,8 +511,7 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 
 ---
 
-## Vremensko razgraničenje u knjigovodstvu
-
+## Vremensko razgraničenje u knjigovodstvu {#sec-vremensko-razgranicenje-u-knjigovodstvu}
 > Kad knjigovođa kaže *"ide u trošak za prošlu godinu"* — misli da je usluga obavljena u
 > prošloj godini pa rashod pripada tamo (HSFI 16), čak i ako je račun stigao u siječnju
 > nove godine. To se zove **vremensko razgraničenje**.
@@ -537,8 +523,7 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 >
 > Svih pet stavki iz primjera iznad mogu biti u **različitim mjesecima ili čak godinama** za isti poslovni događaj. To nije greška — to je normalan rad sustava gdje se PDV, trošak i porez na dobit reguliraju različitim propisima.
 
-### BT-72 (datum isporuke) — utjecaj na trošak, prihod i skladište
-
+### BT-72 (datum isporuke) — utjecaj na trošak, prihod i skladište {#sec-bt-72-datum-sk}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | Scenarij | BT-2 (račun) | BT-72 (isporuka) | Prihod (izdavatelj) | Rashod (primatelj) | Primka/Otpremnica | PDV |
@@ -550,8 +535,7 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 
 > **Ključni uvid**: BT-72 je ključan za **knjiženje troška/prihoda i skladišno poslovanje** neovisno o PDV tretmanu. Čak i kad je PDV u jednom mjesecu (BT-7), trošak/prihod i primka mogu biti u drugom (BT-72). ERP sustavi koji automatski učitavaju eRačune moraju razdvojiti ove dvije logike.
 
-### BT-73/BT-74 (obračunsko razdoblje) — razgraničenje troškova
-
+### BT-73/BT-74 (obračunsko razdoblje) — razgraničenje troškova {#sec-bt-73bt-74}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | Scenarij | BT-2 | BT-73 | BT-74 | Račun za | Trošak primatelja | Prihod izdavatelja |
@@ -566,8 +550,7 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 
 ---
 
-## Usporedna tablica svih primjera
-
+## Usporedna tablica svih primjera {#sec-usporedna-tablica-svih-primjera}
 | Primjer | Način obračuna | HR-BT-15 | Datum računa | Datum isporuke | Datum plaćanja | Pretporez | Rashod | Primka |
 |---------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | **P.1.1** | <span class="badge-izdavanje">Izdavanje</span> | — | 15.03. | 15.03. | — | Ožujak | Ožujak | 15.03. |

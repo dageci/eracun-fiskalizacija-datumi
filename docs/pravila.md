@@ -9,8 +9,7 @@ nav_order: 2
 
 Ova stranica pokriva pravila i mehanizme za određivanje datuma nastanka porezne obveze na eRačunu: pregled relevantnih BT polja, ključno pravilo BR-CO-03 s flowchart dijagramima za oba slučaja obračuna (po izdavanju i po naplati), te mogući kodovi za BT-8.
 
-### Zašto ovaj dokument?
-
+### Zašto ovaj dokument? {#sec-zasto-ovaj-dokument}
 Pravila o datumima i poreznoj obvezi u eRačunu su razasuta po četiri izvora:
 
 | Izvor | Što definira | Što NE definira |
@@ -28,10 +27,8 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 
 ---
 
-## 1. Pregled polja — što na što utječe
-
-### Osnovna referenca
-
+## 1. Pregled polja — što na što utječe {#sec-pregled-polja-sto}
+### Osnovna referenca {#sec-osnovna-referenca}
 > **Kako čitati ovu tablicu — redoslijed provjere za primatelja eRačuna:**
 > 1. **Prvo provjeri HR-BT-15** — ako je prisutan, izdavatelj je na sustavu po naplaćenoj naknadi i PDV tretman se mijenja za cijeli račun (čl. 125.i)
 > 2. **Tek onda** tumači BT-7/BT-8/BT-2 prema EU normi
@@ -55,8 +52,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 <a id="specificnost-hr-prosirenja"></a>
 > **Specifičnost HR proširenja**: U EU normi, PDV tretman se u potpunosti određuje iz BT-7/BT-8/BT-2 — čist sustav, jedno polje, jedan mehanizam. Hrvatska dodaje HR-BT-15 koji **nije datumsko polje** nego **flag koji mijenja cijeli PDV režim**. Za primatelja eRačuna, HR-BT-15 je zapravo **najvažniji podatak za PDV** — važniji od BT-7 i BT-8 — jer mu kaže: "izdavatelj je na sustavu po naplaćenoj naknadi, ne smiješ odbiti pretporez dok ne platiš" (čl. 125.i st. 3). Bez HR-BT-15 primatelj ne zna pod kojim režimom je izdavatelj, čak i ako vidi BT-8=432. BT-7 i BT-8 **postoje** u UBL CreditNote XSD shemi kao opcionalni elementi, ali se u praksi za odobrenja ne koriste — a za CreditNote po naplati, BT-8=432 bi se teoretski mogao primijeniti. Za predujam se koristi BT-7 umjesto BT-8. U tim slučajevima HR-BT-15 služi kao dodatni signal za obračun po naplati, iako pitanje je koliko je on neophodan s obzirom na mogućnost korištenja BT-8=432 i u CreditNote. Ovo nema ekvivalenta u EU normi — Italija to rješava elegantno jednim poljem (`EsigibilitaIVA`), a ostale zemlje koriste samo BT-8=432. Vidi [europsku usporedbu](europska-usporedba#usporedna-tablica--svih-23-eu-zemlje).
 
-### Kada se koje polje koristi — po scenarijima
-
+### Kada se koje polje koristi — po scenarijima {#sec-kada-se-koje}
 | Scenarij | BT-2 | HR-BT-2 | BT-7 | BT-8 | BT-9 | BT-72 | BT-73/74 | HR-BT-15 | Primjeri |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|---|
 | Isporuka = datum računa | **DA** | **DA** | — | — | DA | —* | — | — | [Izd. 4.1.1](primjeri-izdavatelj#411-isporuka-i-račun-isti-dan-po-izdavanju), [Prim. P.1.1](primjeri-primatelj#p11-isporuka-i-račun-isti-dan) |
@@ -76,8 +72,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 
 > **HR-BT-15 u tablici iznad**: Primijetite da je HR-BT-15 prisutan u **svim** scenarijima "Po naplati" — uključujući predujam (gdje se koristi BT-7 umjesto BT-8) i CreditNote (gdje se BT-7/BT-8 u praksi ne koriste, iako **oba postoje** u UBL CreditNote XSD shemi kao opcionalni elementi). To potvrđuje da je HR-BT-15 **svojstvo obveznika** (uvijek prisutan kad je obveznik na čl. 125.i), dok je BT-8=432 **mehanizam za datum** (prisutan kad je primjenjiv). Napomena: za CreditNote po naplati, BT-8=432 bi se teoretski mogao koristiti — što dodatno otvara pitanje je li HR-BT-15 zaista neophodan kao zasebni element. Detaljna analiza: [sekcija 3.1](#31-bt-8432-i-hr-bt-15--obračun-po-naplati-u-dva-elementa).
 
-### Što svako polje znači za koga
-
+### Što svako polje znači za koga {#sec-sto-svako-polje}
 | BT | Izdavatelj (porez) | Primatelj (pretporez) | Računovođa (trošak) | Skladištar (primka) |
 |---|---|---|---|---|
 | **BT-2** | Datum brojčanika; default PDV ako nema BT-7/BT-8 — **osim ako je prisutan HR-BT-15** (tada PDV po plaćanju) | Datum primitka računa ≈ BT-2 kod eRačuna | — | — |
@@ -94,8 +89,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 
 ---
 
-## 2. Ključno pravilo: BR-CO-03
-
+## 2. Ključno pravilo: BR-CO-03 {#sec-kljucno-pravilo-br-03}
 > **BR-CO-03**: Europska norma EN16931 propisuje da se **BT-7** i **BT-8** **međusobno isključuju**.
 >
 > - **BT-7** / Datum nastanka obveze PDV-a (`cbc:TaxPointDate`) — eksplicitni datum
@@ -107,8 +101,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 
 > **Važno:** Hrvatska ima dva načina obračuna PDV-a — **po izdavanju** (čl. 30 Zakona o PDV-u) i **po naplaćenoj naknadi** (čl. 125.i). XML mehanizam za određivanje datuma poreza (BT-7 / BT-8 / BT-2) je isti za oba, ali značenje je različito: kod obračuna po izdavanju datum poreza je **poznat** u trenutku izdavanja računa (= datum isporuke), kod obračuna po naplati datum **nije poznat** (= datum plaćanja u budućnosti). Oba slučaja su detaljno razrađena s flowchart dijagramima u nastavku ove sekcije ([Slučaj 1](#slučaj-1-obračun-po-izdavanju-čl-30-zakona-o-pdv-u), [Slučaj 2](#slučaj-2-obračun-po-naplaćenoj-naknadi-čl-125i-zakona-o-pdv-u)).
 
-### Dozvoljene kombinacije prisutnosti polja u XML dokumentu
-
+### Dozvoljene kombinacije prisutnosti polja u XML dokumentu {#sec-dozvoljene-kombinacije-prisutnosti-dok}
 | | BT-7 | BT-8 | Rezultat | Kako se određuje datum porezne obveze |
 |:---:|:---:|:---:|:---:|:---|
 | 1. | — | — | **Ispravno** | Porezna obveza = BT-2 / Datum izdavanja (`cbc:IssueDate`). **Najčešći slučaj.** (osim ako je prisutan HR-BT-15 — tada PDV po plaćanju) |
@@ -116,8 +109,7 @@ Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka s
 | 3. | — | **DA** | **Ispravno** | Porezna obveza se određuje prema kodu u BT-8 (vidi sekciju 3) |
 | 4. | **DA** | **DA** | **GREŠKA!** | Schematron validator **ODBIJA** račun (BR-CO-03) |
 
-### Što određuje datum poreza, a što NE
-
+### Što određuje datum poreza, a što NE {#sec-sto-odreduje-datum-ne}
 > **Kako odrediti datum nastanka porezne obveze** — redoslijed provjere:
 > 1. **HR-BT-15** — ako je prisutan, PDV nastaje tek po plaćanju (čl. 125.i), neovisno o BT-7/BT-8/BT-2
 > 2. **BT-7** (`cbc:TaxPointDate`) — eksplicitni datum, ili
@@ -157,8 +149,7 @@ flowchart TD
 
 > **Napomena o BT-8=432 bez HR-BT-15**: U dijagramu iznad, kombinacija BT-8=432 bez HR-BT-15 je označena kao greška. Za ovu nekonzistentnost predložili smo validator pravilo **[HR-BR-GECI-F01](prijedlozi-validator#f01-ako-bt-8432-zahtijevaj-hr-bt-15)** (`flag="fatal"`) — račun s BT-8=432 bez HR-BT-15 bi trebao biti **odbijen** jer signalizira obračun po naplati kroz EU normu ali nema HR proširenje koje to potvrđuje.
 
-### Brojčanik računa i BT-2 (IssueDate)
-
+### Brojčanik računa i BT-2 (IssueDate) {#sec-brojcanik-racuna-i}
 > Redni broj računa (brojčanik) uvijek se vrti prema **BT-2 / Datum izdavanja računa
 > (`cbc:IssueDate`)**, bez obzira na koje se porezno razdoblje račun odnosi.
 >
@@ -173,7 +164,7 @@ flowchart TD
 
 ---
 
-### Slučaj 1: Obračun po izdavanju (čl. 30 Zakona o PDV-u)
+### Slučaj 1: Obračun po izdavanju (čl. 30 Zakona o PDV-u) {#sec-slucaj-1-obracun-u}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 > *"Oporezivi događaj i obveza obračuna PDV-a nastaju kada su dobra isporučena ili usluge obavljene."*
@@ -231,7 +222,7 @@ flowchart TD
 
 ---
 
-### Slučaj 2: Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u)
+### Slučaj 2: Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) {#sec-slucaj-2-obracun-zak}
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 > *"Porezni obveznik koji primjenjuje postupak oporezivanja prema naplaćenim naknadama,*
@@ -292,7 +283,7 @@ flowchart TD
 
 ---
 
-## 3. Mogući kodovi za BT-8
+## 3. Mogući kodovi za BT-8 {#sec-moguci-kodovi-za-8}
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | Kod | Značenje | Porezna obveza = | Kada se koristi |
@@ -301,7 +292,7 @@ flowchart TD
 | **35** | Datum isporuke | BT-72 / Stvarni datum isporuke (`cbc:ActualDeliveryDate`) | Kad želimo automatski vezati poreznu obvezu na datum isporuke |
 | **432** | Datum plaćanja | Datum kad kupac plati račun | **Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u)**. U praksi uvijek uz HR-BT-15 |
 
-### 3.1 BT-8=432 i HR-BT-15 — obračun po naplati u dva elementa
+### 3.1 BT-8=432 i HR-BT-15 — obračun po naplati u dva elementa {#sec-bt-8432-i}
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Kod `432` signalizira obračun po naplaćenoj naknadi kroz EU normu (BT-8). Istovremeno, HR proširenje definira zaseban element za isti podatak (HR-BT-15). Oba nose istu informaciju — da izdavatelj obračunava PDV po naplati.

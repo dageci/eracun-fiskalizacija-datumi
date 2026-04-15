@@ -1,0 +1,10 @@
+# CODEOWNERS — tko automatski postaje recenzent PR-a
+# Dokumentacija: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Vlasnik projekta — recenzent za sve promjene po defaultu
+* @dageci
+
+# Posebni dijelovi — mogu dobiti više recenzenata kada se pridruže
+# docs/pravila.md @dageci @drugi-korisnik
+# docs/primjeri-*.md @dageci @racunovodja-korisnik
+# .github/workflows/ @dageci

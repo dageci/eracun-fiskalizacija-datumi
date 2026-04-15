@@ -7,8 +7,7 @@ has_toc: false
 
 # Zašto GitHub i kako sudjelovati
 
-## Što je GitHub?
-
+## Što je GitHub? {#sec-sto-je-github}
 GitHub je **besplatna platforma** za suradnju na dokumentima i kodu. Koriste ga milijuni programera, tvrtki i organizacija diljem svijeta — uključujući Europsku komisiju za EN16931 specifikacije.
 
 Ovaj projekt koristi GitHub jer:
@@ -20,18 +19,15 @@ Ovaj projekt koristi GitHub jer:
 - **Omogućuje suradnju** — komentari, rasprave, prijedlozi izmjena, glasanje
 - **GitHub Pages** — automatski generira web stranicu iz dokumentacije
 
-## Koliko košta?
-
+## Koliko košta? {#sec-koliko-kosta}
 **Ništa.** GitHub je besplatan za javne projekte. Čitanje dokumentacije, pregled povijesti izmjena i pristup web stranici ne zahtijeva ni registraciju.
 
 Za aktivno sudjelovanje (komentare, rasprave, prijedloge) potrebna je **besplatna prijava koja kreira korisnički račun** — traje 2 minute na [github.com](https://github.com/signup).
 
-## Tko još koristi GitHub za zakone i propise?
-
+## Tko još koristi GitHub za zakone i propise? {#sec-tko-jos-koristi}
 GitHub nije samo za programere — koriste ga državne institucije, porezne uprave i zakonodavci diljem svijeta za otvorenu suradnju na propisima i dokumentaciji.
 
-### Europska unija
-
+### Europska unija {#sec-europska-unija}
 | Projekt | Opis | Link |
 |---------|------|------|
 | **EN16931 eInvoicing** | Specifikacije i schematron validatori za europski eRačun — isti standard koji i mi koristimo. Issues i rasprave su otvorene za sve. | [ConnectingEurope/eInvoicing-EN16931](https://github.com/ConnectingEurope/eInvoicing-EN16931) |
@@ -39,23 +35,20 @@ GitHub nije samo za programere — koriste ga državne institucije, porezne upra
 | **EU Digital Identity Wallet** | Arhitektura i referentni okvir za europski digitalni identitet — razvija se potpuno otvoreno. | [eu-digital-identity-wallet](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework) |
 | **EU Open Source Strategy** | Strategija EU za otvoreni kod — "Towards European Open Digital Ecosystems". | [GitHub Blog](https://github.blog/news-insights/policy-news-and-insights/help-shape-the-future-of-open-source-in-europe/) |
 
-### Porezne uprave
-
+### Porezne uprave {#sec-porezne-uprave}
 | Projekt | Opis | Link |
 |---------|------|------|
 | **IRS Direct File** | Američka porezna uprava (IRS) objavila besplatni softver za podnošenje poreznih prijava kao open source. | [IRS-Public/direct-file](https://github.com/IRS-Public/direct-file) |
 | **IRS Fact Graph** | Američki porezni zakoni u strojno čitljivom formatu — deklarativni okvir za interpretaciju poreznih pravila. | [IRS-Public/fact-graph](https://github.com/IRS-Public/fact-graph) |
 
-### Zakonodavci
-
+### Zakonodavci {#sec-zakonodavci}
 | Projekt | Opis | Link |
 |---------|------|------|
 | **Washington DC** | Prvi zakonodavac na svijetu koji je objavio zakone na GitHubu i prihvatio izmjenu od građanina kroz Pull Request. | [DCCouncil/law-xml](https://github.com/DCCouncil/law-xml) |
 | **Francuska (Legifrance)** | Francuski zakoni dostupni u strojno čitljivom formatu. | [Legifrance projekti](https://github.com/topics/legifrance) |
 | **Government Open Source Policies** | Zbirka pristupa vlada diljem svijeta prema open source softveru. | [github/government-open-source-policies](https://github.com/github/government-open-source-policies) |
 
-### Velike tvrtke
-
+### Velike tvrtke {#sec-velike-tvrtke}
 | Tvrtka | Opis | Link |
 |--------|------|------|
 | **Microsoft** | **Cjelokupna** dokumentacija (learn.microsoft.com) je na GitHubu — 800+ repozitorija. Svaki članak ima "Edit" gumb za predlaganje izmjena. | [MicrosoftDocs](https://github.com/MicrosoftDocs) |
@@ -67,18 +60,15 @@ GitHub nije samo za programere — koriste ga državne institucije, porezne upra
 > eRačun specifikacije — onda je GitHub apsolutno prikladno mjesto
 > za zajedničku dokumentaciju o hrvatskim eRačunima.
 
-## Kako čitati dokumentaciju?
-
-### Na web stranici (najjednostavnije)
+## Kako čitati dokumentaciju? {#sec-kako-citati-dokumentaciju}
+### Na web stranici (najjednostavnije) {#sec-na-web-stranici-najjednostavnije}
 Otvorite [dageci.github.io/eracun-fiskalizacija-datumi](https://dageci.github.io/eracun-fiskalizacija-datumi/) — formatirani prikaz s dijagramima, tablicama i navigacijom. Ne treba registracija.
 
-### Na GitHubu
+### Na GitHubu {#sec-na-githubu}
 Otvorite [github.com/dageci/eracun-fiskalizacija-datumi](https://github.com/dageci/eracun-fiskalizacija-datumi) — GitHub automatski prikazuje Markdown datoteke s formatiranjem i Mermaid dijagramima. Ne treba registracija.
 
-## Kako sudjelovati?
-
-### 1. Rasprave (Discussions) — za pitanja i prijedloge
-
+## Kako sudjelovati? {#sec-kako-sudjelovati}
+### 1. Rasprave (Discussions) — za pitanja i prijedloge {#sec-rasprave-discussions-za}
 Najbolje mjesto za početak. Otvorite [Discussions](https://github.com/dageci/eracun-fiskalizacija-datumi/discussions) i:
 
 - **Postavite pitanje** — ako nešto nije jasno u dokumentaciji
@@ -88,8 +78,7 @@ Najbolje mjesto za početak. Otvorite [Discussions](https://github.com/dageci/er
 
 Za ovo trebate besplatnu prijavu na GitHub (kreira korisnički račun).
 
-### 2. Prijava greške (Issues) — za konkretne probleme
-
+### 2. Prijava greške (Issues) — za konkretne probleme {#sec-prijava-greske-issues}
 Ako pronađete grešku (krivi članak zakona, netočan XML primjer, pogrešna BT oznaka):
 
 1. Otvorite [Issues](https://github.com/dageci/eracun-fiskalizacija-datumi/issues)
@@ -97,8 +86,7 @@ Ako pronađete grešku (krivi članak zakona, netočan XML primjer, pogrešna BT
 3. Opišite što je krivo i što bi trebalo pisati
 4. Navedite izvor (članak zakona, schematron pravilo, specifikacija)
 
-### 3. Pull Request — za direktne izmjene teksta
-
+### 3. Pull Request — za direktne izmjene teksta {#sec-pull-request-za}
 **Najlakši način**: Na svakoj stranici dokumentacije postoji gumb **"✏️ Uredi ovu stranicu"** koji vas vodi direktno na GitHub editor za tu stranicu. Napravite izmjenu u tekstu i kliknite "Propose changes".
 
 **Što se onda događa? Ništa se ne mijenja odmah!** Vaša izmjena NE ide direktno na stranicu — ona se šalje kao **prijedlog** (Pull Request) koji održavatelj mora pregledati i odobriti. Tek kad održavatelj klikne "Merge", izmjena postaje vidljiva na web stranici. Dakle slobodno predlažite — ne možete ništa pokvariti. U najgorem slučaju, održavatelj odbije prijedlog s obrazloženjem.
@@ -119,12 +107,10 @@ Ili za naprednije korisnike:
 2. Napravite promjene u svom forku
 3. Otvorite Pull Request s opisom što ste promijenili i zašto
 
-### 4. Samo čitanje — bez registracije
-
+### 4. Samo čitanje — bez registracije {#sec-samo-citanje-bez-registracije}
 Ako samo želite čitati dokumentaciju, ne trebate ništa — otvorite web stranicu ili GitHub repo i čitajte.
 
-## Tko može sudjelovati?
-
+## Tko može sudjelovati? {#sec-tko-moze-sudjelovati}
 Svi koji rade s hrvatskim eRačunima:
 
 - **ERP programeri** — koji implementiraju kreiranje eRačun XML-a
@@ -133,8 +119,7 @@ Svi koji rade s hrvatskim eRačunima:
 - **Porezni savjetnici** — koji poznaju zakonski okvir
 - **Studenti** — koji uče o e-fakturiranju
 
-## GitHub pojmovi na hrvatskom
-
+## GitHub pojmovi na hrvatskom {#sec-github-pojmovi-na-hrvatskom}
 Ako vam je GitHub sučelje na engleskom, evo što znače ključni pojmovi:
 
 | GitHub pojam | Hrvatski | Što znači |
@@ -149,24 +134,21 @@ Ako vam je GitHub sučelje na engleskom, evo što znače ključni pojmovi:
 | **Propose changes** | Predloži izmjene | Gumb koji se pojavi kad editirate datoteku na GitHubu. |
 | **Maintainer** | Održavatelj | Osoba koja pregledava prijedloge izmjena i upravlja projektom. |
 
-## Što je Markdown?
-
+## Što je Markdown? {#sec-sto-je-markdown}
 Dokumentacija je napisana u **Markdown** formatu — jednostavan tekstualni format koji GitHub automatski prikazuje s formatiranjem (naslovi, tablice, linkovi, code blokovi). Ne trebate nikakav poseban softver — možete editirati u bilo kojem text editoru.
 
 Primjer:
 ```
-## Ovo je naslov
+## Ovo je naslov {#sec-ovo-je-naslov}
 **Ovo je bold tekst**
 - Ovo je lista
 | Ovo | je | tablica |
 ```
 
-## Što su Mermaid dijagrami?
-
+## Što su Mermaid dijagrami? {#sec-sto-su-mermaid-dijagrami}
 Dokumentacija koristi [Mermaid](https://mermaid.js.org/) dijagrame za vizualizaciju workflow-a. GitHub ih automatski renderira. Ako koristite VS Code, instalirajte extension "Markdown Preview Mermaid Support".
 
-## Licenca
-
+## Licenca {#sec-licenca}
 Projekt koristi **EUPL 1.2** licencu — slobodno koristite, dijelite i prilagođavajte uz:
 - Navođenje autora
 - Dijeljenje pod istim uvjetima
