@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:03:42.697Z",
+  "last_updated": "2026-04-16T01:03:54.060Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -741,12 +741,30 @@
     },
     {
       "stranica": "prijedlozi-validator",
+      "sec_id": "sec-kako-predloziti-pravilo",
+      "issue_number": 101,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] Kako predložiti pravilo",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/101",
+      "updated_at": "2026-04-16T01:03:41Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
       "sec_id": "sec-pregled-svih-prijedloga",
       "issue_number": 74,
       "status": "ceka",
       "title": "[prijedlozi-validator] Pregled svih prijedloga",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/74",
       "updated_at": "2026-04-16T01:02:47Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-sto-ne-moze",
+      "issue_number": 100,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] Što NE može u validator",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/100",
+      "updated_at": "2026-04-16T01:03:39Z"
     },
     {
       "stranica": "prijedlozi-validator",
@@ -882,6 +900,42 @@
       "title": "[prijedlozi-validator] Zašto proširiti validator?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/72",
       "updated_at": "2026-04-16T01:02:43Z"
+    },
+    {
+      "stranica": "primjeri-izdavatelj",
+      "sec_id": "sec-kako-citati-xml-primjere",
+      "issue_number": 102,
+      "status": "ceka",
+      "title": "[primjeri-izdavatelj] Kako čitati XML primjere",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/102",
+      "updated_at": "2026-04-16T01:03:42Z"
+    },
+    {
+      "stranica": "primjeri-izdavatelj",
+      "sec_id": "sec-obracun-po-izdavanju",
+      "issue_number": 103,
+      "status": "ceka",
+      "title": "[primjeri-izdavatelj] 4.1 Obračun po izdavanju (čl. 30 Zakona o PDV-u) <span class=\"badge-izdavanje\">P",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/103",
+      "updated_at": "2026-04-16T01:03:45Z"
+    },
+    {
+      "stranica": "primjeri-izdavatelj",
+      "sec_id": "sec-obracun-po-naplacenoj-pdv",
+      "issue_number": 104,
+      "status": "ceka",
+      "title": "[primjeri-izdavatelj] 4.2 Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) <span class=\"badge-",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/104",
+      "updated_at": "2026-04-16T01:03:46Z"
+    },
+    {
+      "stranica": "primjeri-izdavatelj",
+      "sec_id": "sec-utjecaj-bt-72-izd",
+      "issue_number": 105,
+      "status": "ceka",
+      "title": "[primjeri-izdavatelj] Utjecaj BT-72 i BT-73/74 na prihod i otpremnicu (izdavatelj)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/105",
+      "updated_at": "2026-04-16T01:03:48Z"
     }
   ],
   "summary": {
