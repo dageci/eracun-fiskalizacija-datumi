@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:04:13.315Z",
+  "last_updated": "2026-04-16T01:04:23.349Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -1017,6 +1017,60 @@
       "title": "[primjeri-primatelj] P.1.6 BT-8=35 — automatska veza na datum isporuke",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/115",
       "updated_at": "2026-04-16T01:04:08Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-p17-odobrenje-creditnote",
+      "issue_number": 116,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] P.1.7 Odobrenje / CreditNote",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/116",
+      "updated_at": "2026-04-16T01:04:10Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-p18-svi-datumi",
+      "issue_number": 117,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] P.1.8 Svi datumi u različitim mjesecima — BT-7 eksplicitni datum",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/117",
+      "updated_at": "2026-04-16T01:04:12Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-p2-obracun-po",
+      "issue_number": 118,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] P.2 Obračun po naplaćenoj naknadi (čl. 125.i) <span class=\"badge-naplata\">Po nap",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/118",
+      "updated_at": "2026-04-16T01:04:14Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-p21-isporuka-i",
+      "issue_number": 119,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] P.2.1 Isporuka i račun isti mjesec",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/119",
+      "updated_at": "2026-04-16T01:04:16Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-p22-isporuka-u",
+      "issue_number": 120,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] P.2.2 Isporuka u drugom mjesecu od računa",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/120",
+      "updated_at": "2026-04-16T01:04:18Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-p23-predujam-avansni-racun",
+      "issue_number": 121,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] P.2.3 Predujam / avansni račun",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/121",
+      "updated_at": "2026-04-16T01:04:20Z"
     },
     {
       "stranica": "primjeri-primatelj",
