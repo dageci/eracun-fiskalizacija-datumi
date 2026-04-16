@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:00:26.293Z",
+  "last_updated": "2026-04-16T01:01:20.990Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -333,6 +333,33 @@
       "title": "[europska-usporedba] Zašto usporedba?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/23",
       "updated_at": "2026-04-16T00:59:53Z"
+    },
+    {
+      "stranica": "index",
+      "sec_id": "sec-dokumentacija",
+      "issue_number": 40,
+      "status": "ceka",
+      "title": "[index] Dokumentacija",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/40",
+      "updated_at": "2026-04-16T01:01:14Z"
+    },
+    {
+      "stranica": "index",
+      "sec_id": "sec-konkretan-primjer-zasto",
+      "issue_number": 39,
+      "status": "ceka",
+      "title": "[index] Konkretan primjer: zašto ovo postoji",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/39",
+      "updated_at": "2026-04-16T01:01:12Z"
+    },
+    {
+      "stranica": "index",
+      "sec_id": "sec-sluzbeni-izvori-i-zakoni",
+      "issue_number": 41,
+      "status": "ceka",
+      "title": "[index] Službeni izvori i zakoni",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/41",
+      "updated_at": "2026-04-16T01:01:16Z"
     }
   ],
   "summary": {
