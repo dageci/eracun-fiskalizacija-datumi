@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:16:25.251Z",
+  "last_updated": "2026-04-16T01:16:42.510Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -1101,6 +1101,15 @@
     },
     {
       "stranica": "pravila",
+      "sec_id": "sec-pravila-i-mehanizmi",
+      "issue_number": 212,
+      "status": "ceka",
+      "title": "[pravila] Pravila i mehanizmi za određivanje datuma PDV obveze",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/212",
+      "updated_at": "2026-04-16T01:16:22Z"
+    },
+    {
+      "stranica": "pravila",
       "sec_id": "sec-pregled-polja-sto",
       "issue_number": 60,
       "status": "ceka",
@@ -1281,6 +1290,15 @@
     },
     {
       "stranica": "prijedlozi-validator",
+      "sec_id": "sec-prijedlozi-za-prosirenje",
+      "issue_number": 213,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] Prijedlozi za proširenje HR CIUS validatora",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/213",
+      "updated_at": "2026-04-16T01:16:24Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
       "sec_id": "sec-sto-ne-moze",
       "issue_number": 100,
       "status": "ceka",
@@ -1449,6 +1467,15 @@
       "title": "[primjeri-izdavatelj] 4.2 Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) <span class=\"badge-",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/104",
       "updated_at": "2026-04-16T01:03:46Z"
+    },
+    {
+      "stranica": "primjeri-izdavatelj",
+      "sec_id": "sec-primjeri-iz-prakse",
+      "issue_number": 214,
+      "status": "ceka",
+      "title": "[primjeri-izdavatelj] Primjeri iz prakse — izdavatelj eRačuna",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/214",
+      "updated_at": "2026-04-16T01:16:27Z"
     },
     {
       "stranica": "primjeri-izdavatelj",
@@ -1686,6 +1713,15 @@
     },
     {
       "stranica": "primjeri-primatelj",
+      "sec_id": "sec-primjeri-iz-prakse",
+      "issue_number": 215,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] Primjeri iz prakse — primatelj eRačuna",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/215",
+      "updated_at": "2026-04-16T01:16:29Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
       "sec_id": "sec-sazetak-algoritam-za-primatelja",
       "issue_number": 123,
       "status": "ceka",
@@ -1737,6 +1773,15 @@
       "title": "[primjeri-primatelj] Vremensko razgraničenje u knjigovodstvu",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/133",
       "updated_at": "2026-04-16T01:04:44Z"
+    },
+    {
+      "stranica": "referenca",
+      "sec_id": "sec-referenca-xml-struktura",
+      "issue_number": 216,
+      "status": "ceka",
+      "title": "[referenca] Referenca — XML struktura, validacija, zakonski temelj",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/216",
+      "updated_at": "2026-04-16T01:16:31Z"
     },
     {
       "stranica": "referenca",
@@ -1821,6 +1866,24 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-korak-1-pronadite",
+      "issue_number": 218,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Korak 1: Pronađite segment koji vas zanima",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/218",
+      "updated_at": "2026-04-16T01:16:35Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-korak-2-procitajte",
+      "issue_number": 219,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Korak 2: Pročitajte segment u dokumentaciji",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/219",
+      "updated_at": "2026-04-16T01:16:37Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-novi-issue",
       "issue_number": 187,
       "status": "izvan-revizije",
@@ -1890,16 +1953,25 @@
       "title": "[vodic-za-reviziju] 3. Stanja revizije (Kanban stupci)",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/180",
       "updated_at": "2026-04-16T01:09:27Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-vodic-za-sudionike",
+      "issue_number": 217,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Vodič za sudionike radne skupine",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/217",
+      "updated_at": "2026-04-16T01:16:33Z"
     }
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 56,
+    "izvan_revizije": 59,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
     "ceka_pu": 0,
     "trazi_izmjenu": 0,
-    "ceka": 154
+    "ceka": 159
   }
 }
