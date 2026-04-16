@@ -21,6 +21,7 @@ Za obavijesti trebate GitHub korisnički račun. Prijava je besplatna i traje 2 
 ---
 
 ## Korak 1: Otvorite repo i kliknite Watch {#sec-korak-1-otvorite}
+
 1. Idite na **[github.com/dageci/eracun-fiskalizacija-datumi](https://github.com/dageci/eracun-fiskalizacija-datumi)**
 2. U gornjem desnom kutu vidjet ćete gumb **Watch** (s ikonom oka)
 3. Kliknite na njega — otvori se padajući izbornik
@@ -29,6 +30,7 @@ Za obavijesti trebate GitHub korisnički račun. Prijava je besplatna i traje 2 
 GitHub nudi 4 opcije:
 
 ### Opcija 1: Participating and @mentions (zadano) {#sec-opcija-1-participating}
+
 > Dobivate obavijesti samo ako:
 > - Sudjelujete u raspravi (napisali ste komentar)
 > - Netko vas označi (@vaše-ime)
@@ -36,11 +38,13 @@ GitHub nudi 4 opcije:
 > **Za koga**: Ako želite mir i dobivati obavijesti samo kad vas se tiče.
 
 ### Opcija 2: All Activity {#sec-opcija-2-all-activity}
+
 > Dobivate obavijesti za **sve** — svaka nova rasprava, svaki komentar, svaka izmjena dokumenta, svaki pull request.
 >
 > **Za koga**: Ako želite biti u toku sa svime što se događa u projektu.
 
 ### Opcija 3: Custom {#sec-opcija-3-custom}
+
 > **Najkorisnija opcija** — odabirete točno što vas zanima. Kliknite "Custom" i označite:
 >
 > | Opcija | Što dobivate | Primjer |
@@ -54,6 +58,7 @@ GitHub nudi 4 opcije:
 > **Preporuka za ovaj projekt**: Označite **Discussions** i **Pull requests** — to su dvije najvažnije aktivnosti.
 
 ### Opcija 4: Ignore {#sec-opcija-4-ignore}
+
 > Ne dobivate nikakve obavijesti, čak ni kad vas netko označi.
 >
 > **Za koga**: Ako ne želite nikakve obavijesti iz ovog projekta.
@@ -84,6 +89,7 @@ Dobit ćete email samo kad održavatelj objavi novu verziju (npr. nakon veće re
 ---
 
 ## Kako promijeniti ili isključiti obavijesti naknadno {#sec-kako-promijeniti-ili}
+
 1. Idite na **[github.com/dageci/eracun-fiskalizacija-datumi](https://github.com/dageci/eracun-fiskalizacija-datumi)**
 2. Kliknite **Watch** (gumb u gornjem desnom kutu)
 3. Promijenite opciju ili odaberite **Ignore** za isključivanje
@@ -96,12 +102,14 @@ Možete i centralno upravljati svim obavijestima na: **[github.com/settings/noti
 Ako dobivate previše emailova, možete ih filtrirati u svom email programu:
 
 ### Gmail {#sec-gmail}
+
 1. Otvorite email od GitHub notifikacije
 2. Kliknite tri točkice → "Filter messages like this"
 3. Dodajte pravilo: `from:notifications@github.com` i `subject:dageci/eracun-fiskalizacija-datumi`
 4. Odaberite akciju: automatski označi labelom "eRačun" ili premjesti u folder
 
 ### Outlook {#sec-outlook}
+
 1. Desni klik na email → "Rules" → "Create Rule"
 2. Uvjet: From = `notifications@github.com`, Subject contains = `eracun-fiskalizacija-datumi`
 3. Akcija: premjesti u folder "eRačun"

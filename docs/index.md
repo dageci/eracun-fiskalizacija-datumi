@@ -39,6 +39,7 @@ Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu
 ---
 
 ## Dokumentacija {#sec-dokumentacija}
+
 | Stranica | Opis | Tko čita |
 |----------|------|----------|
 | [Pravila i mehanizmi](pravila) | BT polja, BR-CO-03, flowcharti, kodovi za BT-8, koji datum čemu služi | Svi |
@@ -52,6 +53,7 @@ Upravo ovakva pitanja — na koja **samo Porezna uprava ili radna skupina** mogu
 | [Analiza ulaznih XML-ova](analiza-ulaznih) | 1.283 eRačuna iz prakse — statistika polja, pronađeni problemi, HR-BT-15 potvrda | Svi |
 
 ## Službeni izvori i zakoni {#sec-sluzbeni-izvori-i-zakoni}
+
 | Izvor | Link |
 |-------|------|
 | Zakon o PDV-u (pročišćeni tekst) | <a href="https://www.zakon.hr/z/1455/zakon-o-porezu-na-dodanu-vrijednost" target="_blank">zakon.hr</a> |

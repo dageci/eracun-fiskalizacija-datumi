@@ -20,6 +20,7 @@ Ovaj projekt koristi GitHub jer:
 - **GitHub Pages** — automatski generira web stranicu iz dokumentacije
 
 ## Koliko košta? {#sec-koliko-kosta}
+
 **Ništa.** GitHub je besplatan za javne projekte. Čitanje dokumentacije, pregled povijesti izmjena i pristup web stranici ne zahtijeva ni registraciju.
 
 Za aktivno sudjelovanje (komentare, rasprave, prijedloge) potrebna je **besplatna prijava koja kreira korisnički račun** — traje 2 minute na [github.com](https://github.com/signup).
@@ -28,6 +29,7 @@ Za aktivno sudjelovanje (komentare, rasprave, prijedloge) potrebna je **besplatn
 GitHub nije samo za programere — koriste ga državne institucije, porezne uprave i zakonodavci diljem svijeta za otvorenu suradnju na propisima i dokumentaciji.
 
 ### Europska unija {#sec-europska-unija}
+
 | Projekt | Opis | Link |
 |---------|------|------|
 | **EN16931 eInvoicing** | Specifikacije i schematron validatori za europski eRačun — isti standard koji i mi koristimo. Issues i rasprave su otvorene za sve. | [ConnectingEurope/eInvoicing-EN16931](https://github.com/ConnectingEurope/eInvoicing-EN16931) |
@@ -36,12 +38,14 @@ GitHub nije samo za programere — koriste ga državne institucije, porezne upra
 | **EU Open Source Strategy** | Strategija EU za otvoreni kod — "Towards European Open Digital Ecosystems". | [GitHub Blog](https://github.blog/news-insights/policy-news-and-insights/help-shape-the-future-of-open-source-in-europe/) |
 
 ### Porezne uprave {#sec-porezne-uprave}
+
 | Projekt | Opis | Link |
 |---------|------|------|
 | **IRS Direct File** | Američka porezna uprava (IRS) objavila besplatni softver za podnošenje poreznih prijava kao open source. | [IRS-Public/direct-file](https://github.com/IRS-Public/direct-file) |
 | **IRS Fact Graph** | Američki porezni zakoni u strojno čitljivom formatu — deklarativni okvir za interpretaciju poreznih pravila. | [IRS-Public/fact-graph](https://github.com/IRS-Public/fact-graph) |
 
 ### Zakonodavci {#sec-zakonodavci}
+
 | Projekt | Opis | Link |
 |---------|------|------|
 | **Washington DC** | Prvi zakonodavac na svijetu koji je objavio zakone na GitHubu i prihvatio izmjenu od građanina kroz Pull Request. | [DCCouncil/law-xml](https://github.com/DCCouncil/law-xml) |
@@ -49,6 +53,7 @@ GitHub nije samo za programere — koriste ga državne institucije, porezne upra
 | **Government Open Source Policies** | Zbirka pristupa vlada diljem svijeta prema open source softveru. | [github/government-open-source-policies](https://github.com/github/government-open-source-policies) |
 
 ### Velike tvrtke {#sec-velike-tvrtke}
+
 | Tvrtka | Opis | Link |
 |--------|------|------|
 | **Microsoft** | **Cjelokupna** dokumentacija (learn.microsoft.com) je na GitHubu — 800+ repozitorija. Svaki članak ima "Edit" gumb za predlaganje izmjena. | [MicrosoftDocs](https://github.com/MicrosoftDocs) |
@@ -87,6 +92,7 @@ Ako pronađete grešku (krivi članak zakona, netočan XML primjer, pogrešna BT
 4. Navedite izvor (članak zakona, schematron pravilo, specifikacija)
 
 ### 3. Pull Request — za direktne izmjene teksta {#sec-pull-request-za}
+
 **Najlakši način**: Na svakoj stranici dokumentacije postoji gumb **"✏️ Uredi ovu stranicu"** koji vas vodi direktno na GitHub editor za tu stranicu. Napravite izmjenu u tekstu i kliknite "Propose changes".
 
 **Što se onda događa? Ništa se ne mijenja odmah!** Vaša izmjena NE ide direktno na stranicu — ona se šalje kao **prijedlog** (Pull Request) koji održavatelj mora pregledati i odobriti. Tek kad održavatelj klikne "Merge", izmjena postaje vidljiva na web stranici. Dakle slobodno predlažite — ne možete ništa pokvariti. U najgorem slučaju, održavatelj odbije prijedlog s obrazloženjem.
@@ -140,6 +146,7 @@ Dokumentacija je napisana u **Markdown** formatu — jednostavan tekstualni form
 Primjer:
 ```
 ## Ovo je naslov {#sec-ovo-je-naslov}
+
 **Ovo je bold tekst**
 - Ovo je lista
 | Ovo | je | tablica |

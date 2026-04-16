@@ -56,6 +56,7 @@ Redoslijed elemenata u UBL Invoice XML-u je strogo definiran shemom:
 ---
 
 ## 7. Validacijska pravila za datume (Schematron) {#sec-validacijska-pravila-za}
+
 > Sva pravila u tablici ispod su **`flag="fatal"`** — ako ih račun ne zadovolji,
 > **Schematron validator odbija XML** i račun se ne može poslati posredniku.
 > Pravila s prefiksom **HR-BR** dolaze iz HR CIUS 2025 schematrona (`HR-CIUS-EXT-EN16931-UBL.sch`),
@@ -75,6 +76,7 @@ Redoslijed elemenata u UBL Invoice XML-u je strogo definiran shemom:
 ---
 
 ## 8. Zakonski temelj {#sec-zakonski-temelj}
+
 | Propis | Članak | Relevantnost | Službeni izvor |
 |--------|--------|-------------|----------------|
 | **Zakon o PDV-u** | Čl. 30, st. 1 | "Oporezivi događaj i obveza obračuna PDV-a nastaju kada su dobra isporučena ili usluge obavljene." | <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2013_06_73_1451.html" target="_blank">NN 73/13</a> |

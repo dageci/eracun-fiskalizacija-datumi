@@ -28,6 +28,7 @@ Ako pronađete grešku u dokumentaciji (krivi članak zakona, netočan XML primj
 3. Ako možete, navedite izvor (članak zakona, schematron pravilo, specifikacija)
 
 ## Pull Requests {#sec-pull-requests}
+
 1. Forkajte repo
 2. Napravite promjene
 3. Otvorite Pull Request s opisom što ste promijenili i zašto
@@ -40,6 +41,7 @@ Za prijedloge koji zahtijevaju konsenzus zajednice koristite emoji reakcije:
 - 🤔 Trebam više informacija
 
 ## Pravila {#sec-pravila}
+
 - Budite konstruktivni i profesionalni
 - Navodite izvore za tvrdnje o zakonima i propisima
 - Hrvatski jezik je preferirani, ali engleski je također prihvatljiv

@@ -23,6 +23,7 @@ Sve što je ovdje napisano proizlazi iz autorove analize specifikacija, zakona i
 ---
 
 ## 1. Što je indikator kopije? {#sec-sto-je-indikator-kopije}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Članak 43. Zakona o fiskalizaciji (NN 89/25) definira poseban mehanizam:
@@ -67,11 +68,13 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 ---
 
 ## 2. Što se SMIJE ispraviti kopijom? {#sec-sto-se-smije}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Čl. 43 dopušta ispravak samo **podataka koji ne utječu na obračun poreza**. Umjesto nabrajanja svih polja koja se smiju mijenjati (kojih ima stotine), praktičnije je definirati **što se NE SMIJE mijenjati** — sve ostalo je po logici čl. 43 dopušteno.
 
 ### Što se NE SMIJE mijenjati u kopiji {#sec-sto-se-ne}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | Podatak | BT polje | Zašto ne |
@@ -92,6 +95,7 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 \* **Napomena o BT-2 (datum izdavanja) u kopiji**: Čl. 43 Zakona o fiskalizaciji kaže da se eRačun može izdati "pod istim **brojem**" — ali **ne kaže eksplicitno** "pod istim **datumom izdavanja**". BT-2 je dio identifikatora eRačuna prema specifikaciji (Tablica 6), ali nije jasno kako PU sustav koristi BT-2 pri provjeri jedinstvenosti — uspoređuje li cijeli datum, samo godinu, ili ga uopće ne uspoređuje. Ako bi se BT-2 u kopiji razlikovao od originala, PU sustav bi to mogao tretirati kao **novi račun** (jer je novi identifikator), a ne kao kopiju — što bi rezultiralo greškom S008 umjesto očekivanog ponašanja kopije. Stoga je sigurnije da BT-2 u kopiji bude **isti kao u originalu**, ali službena potvrda ne postoji.
 
 ### Što je upitno (siva zona) {#sec-sto-je-upitno}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | Podatak | BT polje | Pitanje |
@@ -110,6 +114,7 @@ Ovo znači da `CopyIndicator` / `indikatorKopije` **nije** mehanizam za ponovno 
 ---
 
 ## 3. Uvjeti za korištenje kopije {#sec-uvjeti-za-koristenje-kopije}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Sva **četiri** uvjeta moraju biti **istovremeno** ispunjena:
@@ -126,6 +131,7 @@ Ako **bilo koji** uvjet nije zadovoljen → storno (CreditNote 381) + novi raču
 ---
 
 ## 4. Fiskalizacija kopije {#sec-fiskalizacija-kopije}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`EvidentirajERacunZahtjev`). Za svaku fiskalizaciju — i original i kopiju — mora se eksplicitno navesti vrijednost:
@@ -136,6 +142,7 @@ Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`Evide
 | Ispravak nePDV podataka (kopija) | `true` | Evidentiraj kao ispravak postojećeg računa |
 
 ### 4.1 Ponašanje PU sustava {#sec-ponasanje-pu-sustava}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 - PU sustav **provjerava** da originalni račun **postoji** u evidenciji prema identifikatoru eRačuna i vrsti (ulazni/izlazni)
@@ -160,6 +167,7 @@ Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`Evide
 > **Napomena o validaciji**: Schematron validator **ne može** provjeriti je li kopija legitimna jer vidi samo jedan dokument. **Posrednik** ima pristup oba dokumenta i mogao bi uspoređivati PDV-relevantna polja — ali ni to nije jednostavno jer ovisi o definiciji kompozitnog ključa.
 
 ### 4.2 Gdje postoji indikatorKopije {#sec-gdje-postoji-indikatorkopije}
+
 | Poruka | Element | Obavezan? |
 |--------|---------|-----------|
 | **eFiskalizacija** (`EvidentirajERacunZahtjev`) | `indikatorKopije` | **DA** (1..1) |
@@ -185,9 +193,11 @@ Element `indikatorKopije` je **obavezan** u fiskalizacijskoj SOAP poruci (`Evide
 ---
 
 ## 5. Primjeri {#sec-primjeri}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 ### 5.1 Legitimna kopija — ispravak reference na narudžbu {#sec-legitimna-kopija-ispravak}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Situacija**: Izdavatelj je poslao eRačun 42/P1/2 s krivim brojem narudžbenice u BT-13 (napisao "NAR-100" umjesto "NAR-200"). Iznosi su ispravni, PDV je ispravan, isti mjesec.
@@ -213,6 +223,7 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 ---
 
 ### 5.2 Legitimna kopija — ispravak IBAN-a {#sec-legitimna-kopija-ispravak-a}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Situacija**: Na računu 42/P1/2 naveden je krivi IBAN primatelja uplate. Kupac ne može platiti. Isti mjesec.
@@ -235,6 +246,7 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 ---
 
 ### 5.3 NEDOPUŠTENA kopija — promjena iznosa {#sec-nedopustena-kopija-promjena-iznosa}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Situacija**: Izdavatelj je na računu 42/P1/2 naveo krivi iznos (10.000 EUR umjesto 8.000 EUR). Pokušava poslati "kopiju" s ispravljenim iznosom.
@@ -270,6 +282,7 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 ---
 
 ### 5.4 Kopija poslana u drugom mjesecu — je li to "drugo razdoblje"? {#sec-kopija-poslana-u-raz}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **Situacija**: Izdavatelj je u ožujku 2026. izdao račun s pogrešnom napomenom (BT-22). Sada je travanj 2026. — želi poslati kopiju s ispravkom.
@@ -290,6 +303,7 @@ Fiskalizacija: `<indikatorKopije>true</indikatorKopije>`
 ---
 
 ## 6. Razlika od EU norme {#sec-razlika-od-eu-norme}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 EU norma EN16931 **ne koristi** `CopyIndicator` — EU validator izdaje upozorenje **UBL-CR-004** (*"A UBL invoice should not include the CopyIndicator"*). Element postoji u UBL 2.1 XSD shemi, ali nije dio EN16931 semantičkog modela.
@@ -320,6 +334,7 @@ Sljedeća pitanja zahtijevaju službenu potvrdu Porezne uprave:
 ---
 
 ## Izvori {#sec-izvori}
+
 | Izvor | Link |
 |-------|------|
 | Zakon o fiskalizaciji, čl. 43 (NN 89/25) | <a href="https://zakon.hr/z/2933/Zakon-o-fiskalizaciji" target="_blank">zakon.hr</a> |

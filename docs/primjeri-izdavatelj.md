@@ -634,6 +634,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > Prema pravomoćnoj presudi ECJ [C-518/14 (Senatex)](primjeri-primatelj#sudska-praksa-eu--pravo-na-odbitak-i-račun), izdavatelj ima pravo na retroaktivni ispravak PDV-a u mjesecu izvornog računa.
 
 ### Utjecaj BT-72 i BT-73/74 na prihod i otpremnicu (izdavatelj) {#sec-utjecaj-bt-72-izd}
+
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 > Izdavatelj mora razlikovati **PDV period** (BT-7/BT-8/BT-2) od **prihoda** (BT-72, HSFI 15) i **otpremnice** (BT-72).
@@ -649,6 +650,7 @@ U primjerima ispod prikazujemo isječke XML koda eRačuna. Kod je **obojan** za 
 > **Ključni uvid za izdavatelja**: Prihod se UVIJEK priznaje po datumu isporuke (BT-72) ili po obračunskom razdoblju (BT-73/BT-74), ne po datumu računa (BT-2). PDV može biti u drugom mjesecu od prihoda — to nije greška nego normalan rad sustava.
 
 ### 4.3 Usporedba svih mehanizama za isti poslovni slučaj <span class="badge-usporedba">Usporedba</span> {#sec-usporedba-svih-mehanizama}
+
 <div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 > Pregled: roba isporučena 25.01., račun izdan 10.03., kupac plaća 15.04.

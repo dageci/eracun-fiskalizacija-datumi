@@ -21,6 +21,7 @@ Analiza pokriva 1.283 ulaznih XML eRačuna od triju komitenata za razdoblje 01.0
 ---
 
 ## 1. Uzorak {#sec-uzorak}
+
 | Izvor | Broj XML-ova |
 |----------|:---:|
 | Komitent A | 285 |
@@ -35,6 +36,7 @@ Datoteke su ulazni eRačuni (primljeni od dobavljača) preuzeti od triju komiten
 ---
 
 ## 2. Tipovi dokumenata i profili {#sec-tipovi-dokumenata-i-profili}
+
 | Tip dokumenta | Broj | Postotak |
 |---|:---:|:---:|
 | Invoice (380 i ostali) | 1.262 | 98,4% |
@@ -53,6 +55,7 @@ Datoteke su ulazni eRačuni (primljeni od dobavljača) preuzeti od triju komiten
 ---
 
 ## 3. Korištenje datumskih polja {#sec-koristenje-datumskih-polja}
+
 | BT polje | Prisutno | % | Komentar |
 |---|:---:|:---:|---|
 | **BT-2** (IssueDate) | 1.283 | 100% | Obavezno — svi ga imaju |
@@ -109,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 ### Ključni uvidi {#sec-kljucni-uvidi}
+
 > **82% ima BT-7** — to je pozitivno. Većina softverskih kuća razumije da je eksplicitni datum porezne obveze važan. Preostalih 18% koristi BT-2 kao default.
 
 > **BT-8 gotovo nitko ne koristi (1%)** — od 15 računa s BT-8, 11 koristi kod 3 (redundantno = isto kao default BT-2) i 4 koristi kod 35 (datum isporuke). **Nijedan ne koristi 432 (datum plaćanja)!**
@@ -116,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
 > **BT-9 (DueDate) ima 90%** — od 1.172 računa s pozitivnim BT-115, 1.159 ima DueDate (99%). Samo **13 računa** krši HR-BR-4 (pozitivan iznos bez roka plaćanja). Preostalih 111 računa ima BT-115 ≤ 0 (odobrenja, nulti iznosi) gdje DueDate nije obavezan.
 
 ### Trend po mjesecima — sazrijevanje ekosustava {#sec-trend-po-mjesecima}
+
 <div style="max-width: 600px; margin: 1.5rem auto;">
 <canvas id="chartTrend" height="300"></canvas>
 </div>
@@ -152,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
 ---
 
 ## 4. HR-BT-15 specifičnost — potvrđena iz prakse {#sec-hr-bt-15}
+
 <div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **135 računa ima HR-BT-15 (obračun po naplati).**
@@ -171,6 +177,7 @@ Ovo je direktna potvrda iz prakse za ono što smo dokumentirali u [sekciji 3.1 n
 ---
 
 ## 5. BT-7 vs BT-2 — koliko računa ima isporuku u drugom mjesecu? {#sec-bt-7-vs-m}
+
 | Kombinacija | Broj | % | Što to znači |
 |---|:---:|:---:|---|
 | BT-7 = BT-2 (isti datum) | 691 | 54% | Isporuka = izdavanje, najčešći slučaj |
@@ -218,6 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
 > **29% računa ima isporuku u drugom mjesecu od računa.** To znači da za gotovo trećinu ulaznih računa, PDV period NIJE isti kao mjesec izdavanja računa. Ovo je upravo razlog zašto automatsko knjiženje bez provjere BT-7 ne radi — račun izdan u travnju može imati PDV u ožujku.
 
 ### Koliko dana BT-7 odstupa od BT-2? {#sec-koliko-dana-bt-2}
+
 <div style="max-width: 600px; margin: 1.5rem auto;">
 <canvas id="chartOffset" height="280"></canvas>
 </div>
@@ -260,6 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
 > **Zeleno**: isti dan (691). **Narančasto**: isporuka PRIJE računa — najčešće 1-30 dana ranije (tipično: mjesečno fakturiranje za prethodni mjesec). **Crveno**: isporuka NAKON računa (predujmi, čl. 30).
 
 ### Sezonski uzorak — veljača ima najviše neslaganja {#sec-sezonski-uzorak-veljaca}
+
 <div style="max-width: 600px; margin: 1.5rem auto;">
 <canvas id="chartSeason" height="280"></canvas>
 </div>
@@ -298,6 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## 6. Širi profil računa — iznosi, stavke, PDV, plaćanja {#sec-siri-profil-racuna}
 ### Distribucija iznosa {#sec-distribucija-iznosa}
+
 <div style="max-width: 600px; margin: 1.5rem auto;">
 <canvas id="chartAmount" height="280"></canvas>
 </div>
@@ -331,6 +341,7 @@ document.addEventListener('DOMContentLoaded', function() {
 > **25% računa je 100–500 EUR** — najčešći raspon. **8% ima iznos ≤ 0** (odobrenja, storna, nulti iznosi). Samo 4% prelazi 10.000 EUR.
 
 ### Broj stavki po računu {#sec-broj-stavki-po-racunu}
+
 <div style="max-width: 600px; margin: 1.5rem auto;">
 <canvas id="chartLines" height="260"></canvas>
 </div>
@@ -364,6 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
 > **43% računa ima samo 1 stavku**, 75% ima 1–3 stavke. Medijan je 2, prosjek 3,9. Najsloženiji račun ima **243 stavke**.
 
 ### PDV stope i kategorije {#sec-pdv-stope-i-kategorije}
+
 <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin: 1.5rem 0;">
 <div style="max-width: 320px; flex: 1;">
 <canvas id="chartVAT" height="280"></canvas>
@@ -410,6 +422,7 @@ document.addEventListener('DOMContentLoaded', function() {
 > **94% računa ima samo jednu PDV stopu**. Samo 6% kombinira više stopa na jednom računu. Kategorija **E (oslobođeno)** pojavljuje se na 198 računa — **reverse charge (AE)** na 115.
 
 ### Dan u tjednu izdavanja {#sec-dan-u-tjednu-izdavanja}
+
 <div style="max-width: 550px; margin: 1.5rem auto;">
 <canvas id="chartWeekday" height="260"></canvas>
 </div>
@@ -442,6 +455,7 @@ document.addEventListener('DOMContentLoaded', function() {
 > **Subotom se izdaje 8% računa, nedjeljom 2%.** Radnim danima distribucija je ravnomjerna (~17-19% po danu). Vikend računi su vjerojatno automatski generirani (komunalne usluge, telekomi, SaaS pretplate).
 
 ### Način plaćanja i referencije {#sec-nacin-placanja-i-referencije}
+
 | Podatak | Prisutno | % | Komentar |
 |---------|:--------:|:-:|----------|
 | Poziv na broj (BT-83) | 1.208 | **94%** | Odlično za automatizaciju plaćanja |
@@ -459,6 +473,7 @@ document.addEventListener('DOMContentLoaded', function() {
 ---
 
 ## 7. Pronađeni problemi (naši validator prijedlozi) {#sec-pronadeni-problemi-nasi}
+
 | Problem | Validator pravilo | Pronađeno | Primjeri |
 |---|---|:---:|---|
 | BT-7 + BT-8 oba prisutna | BR-CO-03 (fatal, EU) | **0** | Svi poštuju BR-CO-03 |
