@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:08:38.988Z",
+  "last_updated": "2026-04-16T01:08:49.023Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -507,12 +507,39 @@
     },
     {
       "stranica": "github-vodic",
+      "sec_id": "sec-kako-citati",
+      "issue_number": 165,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Kako čitati ovu dokumentaciju?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/165",
+      "updated_at": "2026-04-16T01:08:42Z"
+    },
+    {
+      "stranica": "github-vodic",
       "sec_id": "sec-koliko-kosta",
       "issue_number": 159,
       "status": "izvan-revizije",
       "title": "[github-vodic] Koliko košta?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/159",
       "updated_at": "2026-04-16T01:08:30Z"
+    },
+    {
+      "stranica": "github-vodic",
+      "sec_id": "sec-na-web-stranici",
+      "issue_number": 166,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Na web stranici (najjednostavnije)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/166",
+      "updated_at": "2026-04-16T01:08:44Z"
+    },
+    {
+      "stranica": "github-vodic",
+      "sec_id": "sec-porezne-uprave",
+      "issue_number": 162,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Porezne uprave",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/162",
+      "updated_at": "2026-04-16T01:08:36Z"
     },
     {
       "stranica": "github-vodic",
@@ -531,6 +558,24 @@
       "title": "[github-vodic] Tko još koristi GitHub za zakone, propise i dokumentaciju?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/160",
       "updated_at": "2026-04-16T01:08:32Z"
+    },
+    {
+      "stranica": "github-vodic",
+      "sec_id": "sec-velike-tvrtke",
+      "issue_number": 164,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Velike tvrtke",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/164",
+      "updated_at": "2026-04-16T01:08:40Z"
+    },
+    {
+      "stranica": "github-vodic",
+      "sec_id": "sec-zakonodavci",
+      "issue_number": 163,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Zakonodavci",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/163",
+      "updated_at": "2026-04-16T01:08:38Z"
     },
     {
       "stranica": "index",
@@ -1444,7 +1489,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 23,
+    "izvan_revizije": 28,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
