@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:16:50.531Z",
+  "last_updated": "2026-04-16T01:17:06.532Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -1830,6 +1830,15 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-davanje-povratne-informacije",
+      "issue_number": 224,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Davanje povratne informacije",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/224",
+      "updated_at": "2026-04-16T01:16:47Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-fap",
       "issue_number": 190,
       "status": "izvan-revizije",
@@ -1911,12 +1920,30 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-nakon-sastanka",
+      "issue_number": 228,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Nakon sastanka",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/228",
+      "updated_at": "2026-04-16T01:16:56Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-novi-issue",
       "issue_number": 187,
       "status": "izvan-revizije",
       "title": "[vodic-za-reviziju] 7. Kako otvoriti novi Issue (ako još ne postoji)",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/187",
       "updated_at": "2026-04-16T01:09:41Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-organizacija",
+      "issue_number": 225,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Organizacija",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/225",
+      "updated_at": "2026-04-16T01:16:50Z"
     },
     {
       "stranica": "vodic-za-reviziju",
@@ -1944,6 +1971,15 @@
       "title": "[vodic-za-reviziju] Pregled promjene",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/223",
       "updated_at": "2026-04-16T01:16:45Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-prije-sastanka",
+      "issue_number": 226,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Prije sastanka",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/226",
+      "updated_at": "2026-04-16T01:16:52Z"
     },
     {
       "stranica": "vodic-za-reviziju",
@@ -1992,6 +2028,42 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-sto-ako-primijetim-po",
+      "issue_number": 231,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Što ako primijetim pogrešku izvan svog stručnog područja?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/231",
+      "updated_at": "2026-04-16T01:17:02Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-tijekom-sastanka",
+      "issue_number": 227,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Tijekom sastanka",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/227",
+      "updated_at": "2026-04-16T01:16:54Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-trebam-li-biti",
+      "issue_number": 229,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Trebam li biti programer da sudjelujem?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/229",
+      "updated_at": "2026-04-16T01:16:58Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-trebam-li-instalirati-nesto",
+      "issue_number": 230,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Trebam li instalirati nešto?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/230",
+      "updated_at": "2026-04-16T01:17:00Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-vodic-za-sudionike",
       "issue_number": 217,
       "status": "izvan-revizije",
@@ -2002,7 +2074,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 63,
+    "izvan_revizije": 71,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
