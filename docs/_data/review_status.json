@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:08:01.341Z",
+  "last_updated": "2026-04-16T01:08:10.956Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -351,6 +351,42 @@
       "title": "[github-obavijesti] Korak 2: Odaberite razinu obavijesti",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/142",
       "updated_at": "2026-04-16T01:07:56Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-opcija-1-participating",
+      "issue_number": 143,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Opcija 1: Participating and @mentions (zadano)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/143",
+      "updated_at": "2026-04-16T01:07:58Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-opcija-2-all-activity",
+      "issue_number": 144,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Opcija 2: All Activity",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/144",
+      "updated_at": "2026-04-16T01:08:00Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-opcija-3-custom",
+      "issue_number": 145,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Opcija 3: Custom",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/145",
+      "updated_at": "2026-04-16T01:08:02Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-opcija-4-ignore",
+      "issue_number": 146,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Opcija 4: Ignore",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/146",
+      "updated_at": "2026-04-16T01:08:04Z"
     },
     {
       "stranica": "github-obavijesti",
@@ -1273,7 +1309,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 4,
+    "izvan_revizije": 8,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
