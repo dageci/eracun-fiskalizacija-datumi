@@ -14,6 +14,8 @@ Ova stranica prikazuje stanje stručne revizije dokumentacije u realnom vremenu.
 
 ## Ukupni napredak {#sec-ukupni-napredak}
 
+Napredak se računa iz **145 segmenata za reviziju** (45 autorskih segmenata nije uključeno u postotak).
+
 <div style="max-width: 720px; margin: 1.5rem auto;">
   <div id="progress-bar-total" style="background:#ecf0f1; border-radius: 8px; height: 32px; overflow: hidden; display: flex;">
     <div id="bar-potvrdeno" style="background:#27ae60; height: 100%; transition: width 0.5s;"></div>
@@ -118,7 +120,8 @@ Detaljnije: [Vodič za reviziju](vodic-za-reviziju).
     { num: (s.potvrdeno || 0), label: 'Potvrđeno', color: '#27ae60' },
     { num: (s.ceka || 0), label: 'Čeka pregled', color: '#f39c12' },
     { num: pct(s.potvrdeno || 0) + '%', label: 'Dovršeno', color: '#2980b9' },
-    { num: total, label: 'Segmenata ukupno', color: '#7f8c8d' }
+    { num: total, label: 'Za reviziju', color: '#7f8c8d' },
+    { num: (s.izvan_revizije || 0), label: 'Izvan revizije', color: '#94a3b8' }
   ];
   var cardsHTML = cards.map(function(c) {
     return '<div style="' + cardStyle + '">' +
@@ -130,18 +133,27 @@ Detaljnije: [Vodič za reviziju](vodic-za-reviziju).
   if (mainStats) mainStats.innerHTML = cardsHTML;
 
   // Chart: Po stranicama
+  var emptyBucket = function() { return { potvrdeno: 0, u_reviziji: 0, ceka_pu: 0, trazi_izmjenu: 0, ceka: 0, izvan_revizije: 0, odbaceno: 0 }; };
   var stranice = {};
   (data.segments || []).forEach(function(seg) {
-    if (!stranice[seg.stranica]) stranice[seg.stranica] = { potvrdeno: 0, u_reviziji: 0, ceka_pu: 0, trazi_izmjenu: 0, ceka: 0, izvan_revizije: 0 };
+    if (!stranice[seg.stranica]) stranice[seg.stranica] = emptyBucket();
     var st = seg.status || 'ceka';
     if (stranice[seg.stranica][st] !== undefined) stranice[seg.stranica][st]++;
   });
   // Default page list in case segments empty
-  var allPages = ['pravila','primjeri-izdavatelj','primjeri-primatelj','referenca','europska-usporedba','naknadno-dospjeli-racuni','prijedlozi-validator','indikator-kopije','analiza-ulaznih'];
+  var allPages = ['pravila','primjeri-izdavatelj','primjeri-primatelj','referenca','europska-usporedba','naknadno-dospjeli-racuni','prijedlozi-validator','indikator-kopije','analiza-ulaznih','index','vodic-za-reviziju','github-vodic','github-obavijesti','kako-doprinijeti'];
   allPages.forEach(function(p) {
-    if (!stranice[p]) stranice[p] = { potvrdeno: 0, u_reviziji: 0, ceka_pu: 0, trazi_izmjenu: 0, ceka: 0, izvan_revizije: 0 };
+    if (!stranice[p]) stranice[p] = emptyBucket();
   });
-  var pageLabels = Object.keys(stranice);
+  // Sort pages: those with any segments first, then alphabetically
+  var pageLabels = Object.keys(stranice).sort(function(a, b) {
+    var sumA = Object.values(stranice[a]).reduce(function(x,y){return x+y;}, 0);
+    var sumB = Object.values(stranice[b]).reduce(function(x,y){return x+y;}, 0);
+    if (sumA === 0 && sumB === 0) return a.localeCompare(b);
+    if (sumA === 0) return 1;
+    if (sumB === 0) return -1;
+    return b - a;
+  });
   var ctx1 = document.getElementById('chartPoStranicama');
   if (ctx1 && typeof Chart !== 'undefined') {
     new Chart(ctx1, {
@@ -153,7 +165,9 @@ Detaljnije: [Vodič za reviziju](vodic-za-reviziju).
           { label: 'U reviziji', data: pageLabels.map(function(p){return stranice[p].u_reviziji;}), backgroundColor: '#1d76db' },
           { label: 'Čeka PU', data: pageLabels.map(function(p){return stranice[p].ceka_pu;}), backgroundColor: '#5dade2' },
           { label: 'Traži izmjenu', data: pageLabels.map(function(p){return stranice[p].trazi_izmjenu;}), backgroundColor: '#d93f0b' },
-          { label: 'Za pregled', data: pageLabels.map(function(p){return stranice[p].ceka;}), backgroundColor: '#f39c12' }
+          { label: 'Za pregled', data: pageLabels.map(function(p){return stranice[p].ceka;}), backgroundColor: '#f39c12' },
+          { label: 'Izvan revizije', data: pageLabels.map(function(p){return stranice[p].izvan_revizije;}), backgroundColor: '#94a3b8' },
+          { label: 'Odbačeno', data: pageLabels.map(function(p){return stranice[p].odbaceno;}), backgroundColor: '#b60205' }
         ]
       },
       options: {
@@ -168,22 +182,41 @@ Detaljnije: [Vodič za reviziju](vodic-za-reviziju).
     });
   }
 
-  // Chart: Po stanjima (donut)
+  // Chart: Po stanjima (donut) — svih 7 stanja
   var ctx2 = document.getElementById('chartPoStanju');
   if (ctx2 && typeof Chart !== 'undefined') {
     new Chart(ctx2, {
       type: 'doughnut',
       data: {
-        labels: ['Potvrđeno', 'U reviziji', 'Čeka PU', 'Traži izmjenu', 'Za pregled'],
+        labels: ['Potvrđeno', 'U reviziji', 'Čeka PU', 'Traži izmjenu', 'Za pregled', 'Izvan revizije', 'Odbačeno'],
         datasets: [{
-          data: [s.potvrdeno || 0, s.u_reviziji || 0, s.ceka_pu || 0, s.trazi_izmjenu || 0, s.ceka || 0],
-          backgroundColor: ['#27ae60', '#1d76db', '#5dade2', '#d93f0b', '#f39c12'],
+          data: [
+            s.potvrdeno || 0,
+            s.u_reviziji || 0,
+            s.ceka_pu || 0,
+            s.trazi_izmjenu || 0,
+            s.ceka || 0,
+            s.izvan_revizije || 0,
+            s.odbaceno || 0
+          ],
+          backgroundColor: ['#27ae60', '#1d76db', '#5dade2', '#d93f0b', '#f39c12', '#94a3b8', '#b60205'],
           borderWidth: 2, borderColor: '#fff'
         }]
       },
       options: {
         responsive: true,
-        plugins: { legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 10, usePointStyle: true } } }
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 10, usePointStyle: true } },
+          tooltip: {
+            callbacks: {
+              label: function(ctx) {
+                var total = ctx.dataset.data.reduce(function(a,b){return a+b;}, 0);
+                var pct = total > 0 ? Math.round(ctx.raw / total * 100) : 0;
+                return ctx.label + ': ' + ctx.raw + ' (' + pct + '%)';
+              }
+            }
+          }
+        }
       }
     });
   }
