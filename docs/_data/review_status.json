@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:03:32.543Z",
+  "last_updated": "2026-04-16T01:03:42.697Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -714,6 +714,15 @@
     },
     {
       "stranica": "prijedlozi-validator",
+      "sec_id": "sec-f10-referenca-na",
+      "issue_number": 96,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] F10: Referenca na prethodni račun mora imati datum",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/96",
+      "updated_at": "2026-04-16T01:03:31Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
       "sec_id": "sec-greske-fatal-racun",
       "issue_number": 75,
       "status": "ceka",
@@ -837,6 +846,33 @@
       "title": "[prijedlozi-validator] W08: BT-8=3 je redundantan",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/94",
       "updated_at": "2026-04-16T01:03:27Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w09-nepoznat-kod",
+      "issue_number": 97,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W09: Nepoznat kod načina plaćanja",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/97",
+      "updated_at": "2026-04-16T01:03:33Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w10-nedostaje-razlog",
+      "issue_number": 98,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W10: Nedostaje razlog oslobođenja za ne-S kategoriju PDV-a",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/98",
+      "updated_at": "2026-04-16T01:03:35Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w11-samo-jedan",
+      "issue_number": 99,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W11: Samo jedan od BT-73/BT-74 postoji",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/99",
+      "updated_at": "2026-04-16T01:03:37Z"
     },
     {
       "stranica": "prijedlozi-validator",
