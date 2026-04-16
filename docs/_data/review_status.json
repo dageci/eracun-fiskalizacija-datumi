@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:02:34.643Z",
+  "last_updated": "2026-04-16T01:02:49.322Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -516,6 +516,24 @@
     },
     {
       "stranica": "pravila",
+      "sec_id": "sec-brojcanik-racuna-i",
+      "issue_number": 67,
+      "status": "ceka",
+      "title": "[pravila] Brojčanik računa i BT-2 (IssueDate)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/67",
+      "updated_at": "2026-04-16T01:02:33Z"
+    },
+    {
+      "stranica": "pravila",
+      "sec_id": "sec-bt-8432-i",
+      "issue_number": 71,
+      "status": "ceka",
+      "title": "[pravila] 3.1 BT-8=432 i HR-BT-15 — obračun po naplati u dva elementa",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/71",
+      "updated_at": "2026-04-16T01:02:42Z"
+    },
+    {
+      "stranica": "pravila",
       "sec_id": "sec-dozvoljene-kombinacije-prisutnosti-dok",
       "issue_number": 65,
       "status": "ceka",
@@ -543,6 +561,15 @@
     },
     {
       "stranica": "pravila",
+      "sec_id": "sec-moguci-kodovi-za-8",
+      "issue_number": 70,
+      "status": "ceka",
+      "title": "[pravila] 3. Mogući kodovi za BT-8",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/70",
+      "updated_at": "2026-04-16T01:02:40Z"
+    },
+    {
+      "stranica": "pravila",
       "sec_id": "sec-osnovna-referenca",
       "issue_number": 61,
       "status": "ceka",
@@ -561,6 +588,33 @@
     },
     {
       "stranica": "pravila",
+      "sec_id": "sec-slucaj-1-obracun-u",
+      "issue_number": 68,
+      "status": "ceka",
+      "title": "[pravila] Slučaj 1: Obračun po izdavanju (čl. 30 Zakona o PDV-u)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/68",
+      "updated_at": "2026-04-16T01:02:36Z"
+    },
+    {
+      "stranica": "pravila",
+      "sec_id": "sec-slucaj-2-obracun-zak",
+      "issue_number": 69,
+      "status": "ceka",
+      "title": "[pravila] Slučaj 2: Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/69",
+      "updated_at": "2026-04-16T01:02:38Z"
+    },
+    {
+      "stranica": "pravila",
+      "sec_id": "sec-sto-odreduje-datum-ne",
+      "issue_number": 66,
+      "status": "ceka",
+      "title": "[pravila] Što određuje datum poreza, a što NE",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/66",
+      "updated_at": "2026-04-16T01:02:31Z"
+    },
+    {
+      "stranica": "pravila",
       "sec_id": "sec-sto-svako-polje",
       "issue_number": 63,
       "status": "ceka",
@@ -576,6 +630,24 @@
       "title": "[pravila] Zašto ovaj dokument?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/59",
       "updated_at": "2026-04-16T01:02:18Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-sto-validator-danas",
+      "issue_number": 73,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] Što validator danas provjerava (datumi)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/73",
+      "updated_at": "2026-04-16T01:02:45Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-zasto-prosiriti-validator",
+      "issue_number": 72,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] Zašto proširiti validator?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/72",
+      "updated_at": "2026-04-16T01:02:43Z"
     }
   ],
   "summary": {
