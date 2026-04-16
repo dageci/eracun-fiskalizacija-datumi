@@ -790,5 +790,84 @@
   });
   </script>
 
+  <!-- Review status badges — injected after every H2/H3 with id="sec-xxx" -->
+  <script id="review-status-data" type="application/json">
+  {{ site.data.review_status | jsonify }}
+  </script>
+  <script>
+  (function() {
+    var dataEl = document.getElementById('review-status-data');
+    if (!dataEl) return;
+    var data;
+    try { data = JSON.parse(dataEl.textContent || dataEl.innerText); }
+    catch (e) { console.error('Review status parse error', e); return; }
+
+    // Map sec_id -> segment
+    var segmentMap = {};
+    (data.segments || []).forEach(function(seg) {
+      segmentMap[seg.sec_id] = seg;
+    });
+
+    // Badge styles per status
+    var badgeConfig = {
+      ceka:           { color: '#f39c12', label: 'Za pregled',         title: 'Segment čeka stručni pregled' },
+      u_reviziji:     { color: '#1d76db', label: 'U reviziji',          title: 'Aktivna rasprava' },
+      ceka_pu:        { color: '#5dade2', label: 'Čeka Poreznu upravu', title: 'Čeka službeni odgovor PU' },
+      trazi_izmjenu:  { color: '#d93f0b', label: 'Traži izmjenu',       title: 'Potrebna je ispravka' },
+      potvrdeno:      { color: '#0e8a16', label: 'Potvrđeno',           title: 'Stručno potvrđeno' },
+      izvan_revizije: { color: '#94a3b8', label: 'Izvan revizije',      title: 'Autorski sadržaj — ne zahtijeva reviziju' },
+      odbaceno:       { color: '#b60205', label: 'Odbačeno',            title: 'Ne uključuje se u konačnu verziju' }
+    };
+
+    // Default repo URL for Issue search fallback
+    var repoUrl = 'https://github.com/dageci/eracun-fiskalizacija-datumi/issues';
+
+    // Find every h2/h3 with id starting with "sec-"
+    var headings = document.querySelectorAll('.main-content h2[id^="sec-"], .main-content h3[id^="sec-"]');
+
+    headings.forEach(function(h) {
+      var secId = h.id;
+      var seg = segmentMap[secId];
+      if (!seg) return; // not in our segment list (e.g. TOC)
+
+      var cfg = badgeConfig[seg.status] || badgeConfig.ceka;
+
+      var badge = document.createElement('a');
+      badge.href = seg.issue_number && seg.issue_number > 0
+        ? repoUrl + '/' + seg.issue_number
+        : repoUrl + '?q=is%3Aissue+' + encodeURIComponent(secId);
+      badge.target = '_blank';
+      badge.rel = 'noopener';
+      badge.className = 'review-badge';
+      badge.title = cfg.title + ' — klik za GitHub Issue';
+      badge.style.cssText = (
+        'display: inline-block;' +
+        'background: ' + cfg.color + ';' +
+        'color: white;' +
+        'font-size: 0.7rem;' +
+        'font-weight: 600;' +
+        'padding: 0.15rem 0.55rem;' +
+        'border-radius: 3px;' +
+        'margin-left: 0.6rem;' +
+        'text-decoration: none;' +
+        'vertical-align: middle;' +
+        'white-space: nowrap;' +
+        'line-height: 1.4;' +
+        'cursor: pointer;'
+      );
+
+      var text = cfg.label;
+      if (seg.issue_number && seg.issue_number > 0) {
+        text += ' · #' + seg.issue_number;
+      }
+      badge.textContent = text;
+
+      // Insert at end of heading
+      h.appendChild(document.createTextNode(' '));
+      h.appendChild(badge);
+    });
+  })();
+  </script>
+
 </body>
 </html>
