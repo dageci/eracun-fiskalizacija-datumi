@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T00:59:54.797Z",
+  "last_updated": "2026-04-16T01:00:03.628Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -189,6 +189,51 @@
       "title": "[analiza-ulaznih] 1. Uzorak",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/6",
       "updated_at": "2026-04-15T22:50:26Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-izvjestavanje-o-naplati",
+      "issue_number": 27,
+      "status": "ceka",
+      "title": "[europska-usporedba] Izvještavanje o naplati — samo Hrvatska i Španjolska",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/27",
+      "updated_at": "2026-04-16T01:00:00Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-kljucni-zakljucci",
+      "issue_number": 26,
+      "status": "ceka",
+      "title": "[europska-usporedba] Ključni zaključci",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/26",
+      "updated_at": "2026-04-16T00:59:58Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-legenda",
+      "issue_number": 24,
+      "status": "ceka",
+      "title": "[europska-usporedba] Legenda",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/24",
+      "updated_at": "2026-04-16T00:59:54Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-usporedna-tablica-svih",
+      "issue_number": 25,
+      "status": "ceka",
+      "title": "[europska-usporedba] Usporedna tablica — svih 23 EU zemlje",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/25",
+      "updated_at": "2026-04-16T00:59:56Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-zasto-usporedba",
+      "issue_number": 23,
+      "status": "ceka",
+      "title": "[europska-usporedba] Zašto usporedba?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/23",
+      "updated_at": "2026-04-16T00:59:53Z"
     }
   ],
   "summary": {
