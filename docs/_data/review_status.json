@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:03:10.292Z",
+  "last_updated": "2026-04-16T01:03:18.121Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -696,6 +696,15 @@
     },
     {
       "stranica": "prijedlozi-validator",
+      "sec_id": "sec-f08-predujam-po-7",
+      "issue_number": 85,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] F08: Predujam po naplati mora imati BT-7",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/85",
+      "updated_at": "2026-04-16T01:03:08Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
       "sec_id": "sec-greske-fatal-racun",
       "issue_number": 75,
       "status": "ceka",
@@ -738,6 +747,24 @@
       "title": "[prijedlozi-validator] Upozorenja — `warning` (račun PROLAZI ali je sumnjiv)",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/76",
       "updated_at": "2026-04-16T01:02:51Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-upozorenja-warning-racun-2",
+      "issue_number": 86,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] Upozorenja — warning (račun PROLAZI ali je sumnjiv)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/86",
+      "updated_at": "2026-04-16T01:03:10Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w01-invoiceperiod-ima-8",
+      "issue_number": 87,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W01: InvoicePeriod ima datume ali nema BT-7 ni BT-8",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/87",
+      "updated_at": "2026-04-16T01:03:12Z"
     },
     {
       "stranica": "prijedlozi-validator",
