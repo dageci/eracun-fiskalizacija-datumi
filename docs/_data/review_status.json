@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:04:43.091Z",
+  "last_updated": "2026-04-16T01:05:13.784Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -948,6 +948,33 @@
     },
     {
       "stranica": "primjeri-primatelj",
+      "sec_id": "sec-bt-72-datum-sk",
+      "issue_number": 134,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] BT-72 (datum isporuke) — utjecaj na trošak, prihod i skladište",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/134",
+      "updated_at": "2026-04-16T01:04:46Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-bt-73bt-74",
+      "issue_number": 135,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] BT-73/BT-74 (obračunsko razdoblje) — razgraničenje troškova",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/135",
+      "updated_at": "2026-04-16T01:04:48Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-eracun-ovo-prakticki-eliminira",
+      "issue_number": 131,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] eRačun ovo praktički eliminira",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/131",
+      "updated_at": "2026-04-16T01:04:40Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
       "sec_id": "sec-kako-primatelj-odreduje-datume",
       "issue_number": 107,
       "status": "ceka",
@@ -1155,12 +1182,66 @@
     },
     {
       "stranica": "primjeri-primatelj",
+      "sec_id": "sec-sudska-praksa-eu",
+      "issue_number": 132,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] Sudska praksa EU — pravo na odbitak i račun",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/132",
+      "updated_at": "2026-04-16T01:04:42Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
       "sec_id": "sec-u-koje-razdoblje",
       "issue_number": 130,
       "status": "ceka",
       "title": "[primjeri-primatelj] U koje razdoblje ide pretporez?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/130",
       "updated_at": "2026-04-16T01:04:38Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-usporedna-tablica-svih-primjera",
+      "issue_number": 136,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] Usporedna tablica svih primjera",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/136",
+      "updated_at": "2026-04-16T01:04:50Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-vremensko-razgranicenje-u-knjigovodstvu",
+      "issue_number": 133,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] Vremensko razgraničenje u knjigovodstvu",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/133",
+      "updated_at": "2026-04-16T01:04:44Z"
+    },
+    {
+      "stranica": "referenca",
+      "sec_id": "sec-validacijska-pravila-za",
+      "issue_number": 138,
+      "status": "ceka",
+      "title": "[referenca] 7. Validacijska pravila za datume (Schematron)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/138",
+      "updated_at": "2026-04-16T01:04:53Z"
+    },
+    {
+      "stranica": "referenca",
+      "sec_id": "sec-xml-struktura-pozicija-elemenata",
+      "issue_number": 137,
+      "status": "ceka",
+      "title": "[referenca] 6. XML struktura — pozicija elemenata",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/137",
+      "updated_at": "2026-04-16T01:04:52Z"
+    },
+    {
+      "stranica": "referenca",
+      "sec_id": "sec-zakonski-temelj",
+      "issue_number": 139,
+      "status": "ceka",
+      "title": "[referenca] 8. Zakonski temelj",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/139",
+      "updated_at": "2026-04-16T01:04:55Z"
     }
   ],
   "summary": {
