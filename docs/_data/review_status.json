@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T00:59:46.207Z",
+  "last_updated": "2026-04-16T00:59:54.797Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -18,6 +18,15 @@
       "title": "[analiza-ulaznih] 5. BT-7 vs BT-2 — koliko računa ima isporuku u drugom mjesecu?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/12",
       "updated_at": "2026-04-16T00:59:31Z"
+    },
+    {
+      "stranica": "analiza-ulaznih",
+      "sec_id": "sec-dan-u-tjednu-izdavanja",
+      "issue_number": 19,
+      "status": "ceka",
+      "title": "[analiza-ulaznih] Dan u tjednu izdavanja",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/19",
+      "updated_at": "2026-04-16T00:59:45Z"
     },
     {
       "stranica": "analiza-ulaznih",
@@ -75,6 +84,33 @@
     },
     {
       "stranica": "analiza-ulaznih",
+      "sec_id": "sec-nacin-placanja-i-referencije",
+      "issue_number": 20,
+      "status": "ceka",
+      "title": "[analiza-ulaznih] Način plaćanja i referencije",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/20",
+      "updated_at": "2026-04-16T00:59:47Z"
+    },
+    {
+      "stranica": "analiza-ulaznih",
+      "sec_id": "sec-pdv-stope-i-kategorije",
+      "issue_number": 18,
+      "status": "ceka",
+      "title": "[analiza-ulaznih] PDV stope i kategorije",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/18",
+      "updated_at": "2026-04-16T00:59:43Z"
+    },
+    {
+      "stranica": "analiza-ulaznih",
+      "sec_id": "sec-pronadeni-problemi-nasi",
+      "issue_number": 21,
+      "status": "ceka",
+      "title": "[analiza-ulaznih] 7. Pronađeni problemi (naši validator prijedlozi)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/21",
+      "updated_at": "2026-04-16T00:59:49Z"
+    },
+    {
+      "stranica": "analiza-ulaznih",
       "sec_id": "sec-sadrzaj",
       "issue_number": 2,
       "status": "ceka",
@@ -99,6 +135,15 @@
       "title": "[analiza-ulaznih] 6. Širi profil računa — iznosi, stavke, PDV, plaćanja",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/15",
       "updated_at": "2026-04-16T00:59:37Z"
+    },
+    {
+      "stranica": "analiza-ulaznih",
+      "sec_id": "sec-sto-ovo-znaci",
+      "issue_number": 22,
+      "status": "ceka",
+      "title": "[analiza-ulaznih] 8. Što ovo znači za automatizaciju?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/22",
+      "updated_at": "2026-04-16T00:59:51Z"
     },
     {
       "stranica": "analiza-ulaznih",
