@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:03:25.214Z",
+  "last_updated": "2026-04-16T01:03:32.543Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -705,6 +705,15 @@
     },
     {
       "stranica": "prijedlozi-validator",
+      "sec_id": "sec-f09-creditnotekorekcija-mora-pr",
+      "issue_number": 95,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] F09: CreditNote/korekcija mora imati referencu na prethodni račun",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/95",
+      "updated_at": "2026-04-16T01:03:29Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
       "sec_id": "sec-greske-fatal-racun",
       "issue_number": 75,
       "status": "ceka",
@@ -801,6 +810,33 @@
       "title": "[prijedlozi-validator] W05: HR-BT-15 nestandardni tekst",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/91",
       "updated_at": "2026-04-16T01:03:20Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w06-predujam-s",
+      "issue_number": 92,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W06: Predujam s datumom isporuke",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/92",
+      "updated_at": "2026-04-16T01:03:22Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w07-predujam-po-8432",
+      "issue_number": 93,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W07: Predujam po naplati s BT-8=432",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/93",
+      "updated_at": "2026-04-16T01:03:25Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w08-bt-83",
+      "issue_number": 94,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W08: BT-8=3 je redundantan",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/94",
+      "updated_at": "2026-04-16T01:03:27Z"
     },
     {
       "stranica": "prijedlozi-validator",
