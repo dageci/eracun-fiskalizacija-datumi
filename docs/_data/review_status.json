@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:03:18.121Z",
+  "last_updated": "2026-04-16T01:03:25.214Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -765,6 +765,42 @@
       "title": "[prijedlozi-validator] W01: InvoicePeriod ima datume ali nema BT-7 ni BT-8",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/87",
       "updated_at": "2026-04-16T01:03:12Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w02-hr-bt-c",
+      "issue_number": 88,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W02: HR-BT-15 postoji bez BT-7 i bez BT-8=432 (osim CreditNote)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/88",
+      "updated_at": "2026-04-16T01:03:14Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w03-duedate-prije-issuedate",
+      "issue_number": 89,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W03: DueDate prije IssueDate",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/89",
+      "updated_at": "2026-04-16T01:03:16Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w04-bt-7",
+      "issue_number": 90,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W04: BT-7 izvan obračunskog razdoblja",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/90",
+      "updated_at": "2026-04-16T01:03:18Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-w05-hr-bt",
+      "issue_number": 91,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] W05: HR-BT-15 nestandardni tekst",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/91",
+      "updated_at": "2026-04-16T01:03:20Z"
     },
     {
       "stranica": "prijedlozi-validator",
