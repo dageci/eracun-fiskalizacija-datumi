@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:03:54.060Z",
+  "last_updated": "2026-04-16T01:04:04.744Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -930,12 +930,66 @@
     },
     {
       "stranica": "primjeri-izdavatelj",
+      "sec_id": "sec-usporedba-svih-mehanizama",
+      "issue_number": 106,
+      "status": "ceka",
+      "title": "[primjeri-izdavatelj] 4.3 Usporedba svih mehanizama za isti poslovni slučaj <span class=\"badge-uspored",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/106",
+      "updated_at": "2026-04-16T01:03:50Z"
+    },
+    {
+      "stranica": "primjeri-izdavatelj",
       "sec_id": "sec-utjecaj-bt-72-izd",
       "issue_number": 105,
       "status": "ceka",
       "title": "[primjeri-izdavatelj] Utjecaj BT-72 i BT-73/74 na prihod i otpremnicu (izdavatelj)",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/105",
       "updated_at": "2026-04-16T01:03:48Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-kako-primatelj-odreduje-datume",
+      "issue_number": 107,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] Kako primatelj određuje datume?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/107",
+      "updated_at": "2026-04-16T01:03:52Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-p1-obracun-po",
+      "issue_number": 109,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] P.1 Obračun po izdavanju (čl. 30) <span class=\"badge-izdavanje\">Po izdavanju</sp",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/109",
+      "updated_at": "2026-04-16T01:03:56Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-p11-isporuka-i-dan",
+      "issue_number": 110,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] P.1.1 Isporuka i račun isti dan",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/110",
+      "updated_at": "2026-04-16T01:03:58Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-p12-isporuka-u",
+      "issue_number": 111,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] P.1.2 Isporuka u drugom mjesecu od računa",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/111",
+      "updated_at": "2026-04-16T01:04:00Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-pretporez-kod-obracuna",
+      "issue_number": 108,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] Pretporez kod obračuna po naplati — posebna pravila za kupca",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/108",
+      "updated_at": "2026-04-16T01:03:54Z"
     }
   ],
   "summary": {
