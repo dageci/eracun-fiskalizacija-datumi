@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:02:49.322Z",
+  "last_updated": "2026-04-16T01:03:02.732Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -633,12 +633,66 @@
     },
     {
       "stranica": "prijedlozi-validator",
+      "sec_id": "sec-f01-ako-bt-15",
+      "issue_number": 78,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] F01: Ako BT-8=432, zahtijevaj HR-BT-15",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/78",
+      "updated_at": "2026-04-16T01:02:55Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-f02-ako-hr-o",
+      "issue_number": 79,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] F02: Ako HR-BT-15 postoji, BT-7 ne smije postojati (osim predujam)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/79",
+      "updated_at": "2026-04-16T01:02:57Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-greske-fatal-racun",
+      "issue_number": 75,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] Greške — `fatal` (račun se ODBIJA)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/75",
+      "updated_at": "2026-04-16T01:02:49Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-greske-fatal-racun-2",
+      "issue_number": 77,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] Greške — fatal (račun se ODBIJA)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/77",
+      "updated_at": "2026-04-16T01:02:53Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-pregled-svih-prijedloga",
+      "issue_number": 74,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] Pregled svih prijedloga",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/74",
+      "updated_at": "2026-04-16T01:02:47Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
       "sec_id": "sec-sto-validator-danas",
       "issue_number": 73,
       "status": "ceka",
       "title": "[prijedlozi-validator] Što validator danas provjerava (datumi)",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/73",
       "updated_at": "2026-04-16T01:02:45Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-upozorenja-warning-racun",
+      "issue_number": 76,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] Upozorenja — `warning` (račun PROLAZI ali je sumnjiv)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/76",
+      "updated_at": "2026-04-16T01:02:51Z"
     },
     {
       "stranica": "prijedlozi-validator",
