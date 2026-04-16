@@ -130,7 +130,7 @@ Dokumentacija je napisana u **Markdown** formatu — jednostavan tekstualni form
 
 Primjer:
 ```
-## Naslov sekcije
+## Naslov sekcije {#sec-naslov-sekcije}
 
 **Bold tekst** i *kurzivni tekst*
 

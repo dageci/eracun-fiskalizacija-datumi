@@ -8,7 +8,7 @@ nav_order: 11
 
 Ovaj vodič opisuje kako je organiziran proces pregleda i potvrde dokumentacije. Namijenjen je stručnjacima — programerima, računovođama, poreznim savjetnicima i predstavnicima Porezne uprave — koji žele doprinijeti reviziji sadržaja.
 
-### Sadržaj
+### Sadržaj {#sec-sadrzaj}
 {: .no_toc }
 
 * TOC
@@ -100,8 +100,7 @@ Otvori ih ovdje:
 
 ## 5. Kako započeti reviziju jednog segmenta {#sec-kako-zapoceti}
 
-### Korak 1: Pronađite segment koji vas zanima
-
+### Korak 1: Pronađite segment koji vas zanima {#sec-korak-1-pronadite}
 Otvorite listu Issueova:
 
 → [github.com/dageci/eracun-fiskalizacija-datumi/issues](https://github.com/dageci/eracun-fiskalizacija-datumi/issues)
@@ -112,12 +111,10 @@ Filtrirati možete po:
 - **Prioritetu** — `prioritet:visok`
 - **Tipu sadržaja** — `tip:xml-primjer`, `tip:citat-zakona`
 
-### Korak 2: Pročitajte segment u dokumentaciji
-
+### Korak 2: Pročitajte segment u dokumentaciji {#sec-korak-2-procitajte}
 U Issue-u se nalazi poveznica na točnu sekciju dokumentacije. Klik na nju otvara stranicu pozicioniranu na odgovarajući naslov.
 
-### Korak 3: Ostavite komentar na Issue-u
-
+### Korak 3: Ostavite komentar na Issue-u {#sec-korak-3-ostavite-u}
 Ovdje postoje tri mogućnosti:
 
 **A) Potvrda ispravnosti**
@@ -137,12 +134,10 @@ Ako uočite pogrešku ili predlažete poboljšanje:
 Ako niste sigurni što autor misli:
 > *"Molimo pojašnjenje: [pitanje]."*
 
-### Korak 4: Rasprava
-
+### Korak 4: Rasprava {#sec-korak-4-rasprava}
 Ostali sudionici mogu odgovoriti, potvrditi vaše stajalište ili predložiti alternativu. Cilj je postići **konsenzus** prije bilo kakve izmjene dokumenta.
 
-### Korak 5: Izmjena
-
+### Korak 5: Izmjena {#sec-korak-5-izmjena}
 Kada se postigne konsenzus, izmjena se primjenjuje kroz Pull Request. Autor dokumentacije ili bilo koji drugi sudionik otvara PR koji:
 
 - referencira ovaj Issue (`Closes #42`),
@@ -157,13 +152,13 @@ PR mora biti **odobren** od odgovornog recenzenta prije nego što se spoji u gla
 
 Ako ste označeni kao recenzent Pull Requesta:
 
-### Pregled promjene
+### Pregled promjene {#sec-pregled-promjene}
+
 - Otvorite PR na GitHubu
 - Kliknite karticu **Files changed** — tamo vidite točno što se mijenja (zeleno = dodano, crveno = uklonjeno)
 - Pročitajte diff rečenicu po rečenicu
 
-### Davanje povratne informacije
-
+### Davanje povratne informacije {#sec-davanje-povratne-informacije}
 Kliknite **Review changes** i odaberite jednu od tri opcije:
 
 - **Approve** — slažem se, spremno za spajanje
@@ -191,22 +186,21 @@ Odaberite template **"Revizija segmenta dokumentacije"** i ispunite polja.
 
 ## 8. Sastanci radne skupine {#sec-sastanci}
 
-### Organizacija
-
+### Organizacija {#sec-organizacija}
 Periodično se organiziraju radni sastanci (uživo ili putem video poziva) na kojima se prolazi skupina segmenata. Svaki sastanak ima **Milestone** u GitHubu (npr. `Sastanak 1 — 20.04.2026.`) s popisom Issueova za obradu.
 
-### Prije sastanka
+### Prije sastanka {#sec-prije-sastanka}
 
 - Moderator dodjeljuje Issueove Milestone-u
 - Sudionici mogu unaprijed ostaviti komentare na Issueove
 
-### Tijekom sastanka
+### Tijekom sastanka {#sec-tijekom-sastanka}
 
 - Prolazi se Issue po Issue
 - Donose se odluke koje se odmah upisuju u Issue komentare
 - Za svaku izmjenu se otvara PR (moderator ili autor)
 
-### Nakon sastanka
+### Nakon sastanka {#sec-nakon-sastanka}
 
 - GitHub Actions automatski generira **sažetak sastanka** (`sastanci/YYYY-MM-DD-sazetak.md`)
 - Sažetak sadrži: sudionike, popis obrađenih Issueova, odluke, otvorene PR-ove, zadatke za sljedeći sastanak
@@ -231,26 +225,21 @@ Ovaj pristup je posebno koristan kada izmjena zahvaća Mermaid dijagrame ili dru
 
 ## 10. Česta pitanja {#sec-fap}
 
-### Trebam li biti programer da sudjelujem?
-
+### Trebam li biti programer da sudjelujem? {#sec-trebam-li-biti}
 Ne. GitHub korisničko sučelje omogućuje komentiranje, potvrdu i otvaranje Issueova bez ikakvog programerskog znanja. Potrebno je samo:
 - Besplatan GitHub račun
 - Sposobnost čitanja dokumentacije i davanja stručnog mišljenja
 
-### Trebam li instalirati nešto?
-
+### Trebam li instalirati nešto? {#sec-trebam-li-instalirati-nesto}
 Ne. Sve se radi kroz web preglednik na github.com.
 
-### Što ako primijetim pogrešku izvan svog stručnog područja?
-
+### Što ako primijetim pogrešku izvan svog stručnog područja? {#sec-sto-ako-primijetim-po}
 Ostavite komentar na odgovarajućem Issue-u. Netko tko razumije temu će pristupiti raspravi.
 
-### Kako mogu pratiti što se događa?
-
+### Kako mogu pratiti što se događa? {#sec-kako-mogu-pratiti}
 Na GitHubu kliknite **Watch** na repozitoriju i odaberite razinu obavijesti. Dobivat ćete email za svaku aktivnost ili samo za teme u kojima sudjelujete. Detalji: [Email obavijesti](github-obavijesti).
 
-### Što ako se ne slažem s donesenom odlukom?
-
+### Što ako se ne slažem s donesenom odlukom? {#sec-sto-ako-se}
 Otvorite novi Issue ili komentirajte postojeći. Odluke se mogu preispitati. Git povijest čuva sve prethodne verzije.
 
 ---
