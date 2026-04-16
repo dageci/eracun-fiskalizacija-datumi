@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:11:06.496Z",
+  "last_updated": "2026-04-16T01:11:14.704Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -822,6 +822,24 @@
     },
     {
       "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-ios-uskladenje-otkriven",
+      "issue_number": 198,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 2.2 IOS usklađenje — otkriven nefakturirani posao",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/198",
+      "updated_at": "2026-04-16T01:11:09Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-naknadno-izdani-racuni",
+      "issue_number": 196,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 2. Naknadno izdani računi (izvan prijelaznog razdoblja)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/196",
+      "updated_at": "2026-04-16T01:11:05Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
       "sec_id": "sec-odobrenje-u-2026-2025",
       "issue_number": 195,
       "status": "ceka",
@@ -846,6 +864,15 @@
       "title": "[naknadno-dospjeli-racuni] 1. Prijelazno razdoblje 2025. -> 2026.",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/192",
       "updated_at": "2026-04-16T01:10:57Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-racun-izdan-mjesecima",
+      "issue_number": 197,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 2.1 Račun izdan mjesecima nakon isporuke",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/197",
+      "updated_at": "2026-04-16T01:11:07Z"
     },
     {
       "stranica": "naknadno-dospjeli-racuni",
