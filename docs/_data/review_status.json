@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:09:44.257Z",
+  "last_updated": "2026-04-16T01:09:52.417Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -1605,6 +1605,15 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-fap",
+      "issue_number": 190,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 10. Česta pitanja",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/190",
+      "updated_at": "2026-04-16T01:09:47Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-issue-vs-discussion",
       "issue_number": 181,
       "status": "izvan-revizije",
@@ -1614,12 +1623,30 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-kako-ai",
+      "issue_number": 189,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 9. Kako se AI asistenti uključuju u proces",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/189",
+      "updated_at": "2026-04-16T01:09:45Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-kako-zapoceti",
       "issue_number": 185,
       "status": "izvan-revizije",
       "title": "[vodic-za-reviziju] 5. Kako započeti reviziju jednog segmenta",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/185",
       "updated_at": "2026-04-16T01:09:37Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-novi-issue",
+      "issue_number": 187,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 7. Kako otvoriti novi Issue (ako još ne postoji)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/187",
+      "updated_at": "2026-04-16T01:09:41Z"
     },
     {
       "stranica": "vodic-za-reviziju",
@@ -1659,6 +1686,15 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-sastanci",
+      "issue_number": 188,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 8. Sastanci radne skupine",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/188",
+      "updated_at": "2026-04-16T01:09:43Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-stanja-revizije",
       "issue_number": 180,
       "status": "izvan-revizije",
@@ -1669,7 +1705,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 48,
+    "izvan_revizije": 52,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
