@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:01:48.050Z",
+  "last_updated": "2026-04-16T01:01:57.908Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -390,6 +390,24 @@
     },
     {
       "stranica": "indikator-kopije",
+      "sec_id": "sec-izvori",
+      "issue_number": 58,
+      "status": "ceka",
+      "title": "[indikator-kopije] Izvori",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/58",
+      "updated_at": "2026-04-16T01:01:52Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-kopija-poslana-u-raz",
+      "issue_number": 55,
+      "status": "ceka",
+      "title": "[indikator-kopije] 5.4 Kopija poslana u drugom mjesecu — je li to \"drugo razdoblje\"?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/55",
+      "updated_at": "2026-04-16T01:01:46Z"
+    },
+    {
+      "stranica": "indikator-kopije",
       "sec_id": "sec-legitimna-kopija-ispravak",
       "issue_number": 52,
       "status": "ceka",
@@ -417,6 +435,15 @@
     },
     {
       "stranica": "indikator-kopije",
+      "sec_id": "sec-otvorena-pitanja",
+      "issue_number": 57,
+      "status": "ceka",
+      "title": "[indikator-kopije] 7. Otvorena pitanja",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/57",
+      "updated_at": "2026-04-16T01:01:50Z"
+    },
+    {
+      "stranica": "indikator-kopije",
       "sec_id": "sec-ponasanje-pu-sustava",
       "issue_number": 49,
       "status": "ceka",
@@ -432,6 +459,15 @@
       "title": "[indikator-kopije] 5. Primjeri",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/51",
       "updated_at": "2026-04-16T01:01:37Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-razlika-od-eu-norme",
+      "issue_number": 56,
+      "status": "ceka",
+      "title": "[indikator-kopije] 6. Razlika od EU norme",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/56",
+      "updated_at": "2026-04-16T01:01:48Z"
     },
     {
       "stranica": "indikator-kopije",
