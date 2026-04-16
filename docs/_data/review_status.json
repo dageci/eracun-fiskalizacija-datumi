@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T00:11:13Z",
+  "last_updated": "2026-04-16T00:38:40Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -59,7 +59,7 @@
       "stranica": "analiza-ulaznih",
       "sec_id": "sec-bt-7-vs-m",
       "heading": "5. BT-7 vs BT-2 — koliko računa ima isporuku u drugom mjesecu?",
-      "tip": "citat-zakona",
+      "tip": "tablica",
       "status": "ceka",
       "issue_number": 0,
       "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/analiza-ulaznih#sec-bt-7-vs-m"
@@ -481,7 +481,7 @@
     {
       "stranica": "github-vodic",
       "sec_id": "sec-tko-jos-koristi",
-      "heading": "Tko još koristi GitHub za zakone i propise?",
+      "heading": "Tko još koristi GitHub za zakone, propise i dokumentaciju?",
       "tip": "autorsko",
       "status": "izvan_revizije",
       "issue_number": 0,
@@ -525,21 +525,21 @@
     },
     {
       "stranica": "github-vodic",
-      "sec_id": "sec-kako-citati-dokumentaciju",
-      "heading": "Kako čitati dokumentaciju?",
+      "sec_id": "sec-kako-citati",
+      "heading": "Kako čitati ovu dokumentaciju?",
       "tip": "autorsko",
       "status": "izvan_revizije",
       "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-kako-citati-dokumentaciju"
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-kako-citati"
     },
     {
       "stranica": "github-vodic",
-      "sec_id": "sec-na-web-stranici-najjednostavnije",
+      "sec_id": "sec-na-web-stranici",
       "heading": "Na web stranici (najjednostavnije)",
       "tip": "autorsko",
       "status": "izvan_revizije",
       "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-na-web-stranici-najjednostavnije"
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-na-web-stranici"
     },
     {
       "stranica": "github-vodic",
@@ -561,42 +561,6 @@
     },
     {
       "stranica": "github-vodic",
-      "sec_id": "sec-rasprave-discussions-za",
-      "heading": "1. Rasprave (Discussions) — za pitanja i prijedloge",
-      "tip": "autorsko",
-      "status": "izvan_revizije",
-      "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-rasprave-discussions-za"
-    },
-    {
-      "stranica": "github-vodic",
-      "sec_id": "sec-prijava-greske-issues",
-      "heading": "2. Prijava greške (Issues) — za konkretne probleme",
-      "tip": "autorsko",
-      "status": "izvan_revizije",
-      "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-prijava-greske-issues"
-    },
-    {
-      "stranica": "github-vodic",
-      "sec_id": "sec-pull-request-za",
-      "heading": "3. Pull Request — za direktne izmjene teksta",
-      "tip": "autorsko",
-      "status": "izvan_revizije",
-      "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-pull-request-za"
-    },
-    {
-      "stranica": "github-vodic",
-      "sec_id": "sec-samo-citanje-bez-registracije",
-      "heading": "4. Samo čitanje — bez registracije",
-      "tip": "autorsko",
-      "status": "izvan_revizije",
-      "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-samo-citanje-bez-registracije"
-    },
-    {
-      "stranica": "github-vodic",
       "sec_id": "sec-tko-moze-sudjelovati",
       "heading": "Tko može sudjelovati?",
       "tip": "autorsko",
@@ -606,12 +570,12 @@
     },
     {
       "stranica": "github-vodic",
-      "sec_id": "sec-github-pojmovi-na-hrvatskom",
+      "sec_id": "sec-github-pojmovi",
       "heading": "GitHub pojmovi na hrvatskom",
       "tip": "autorsko",
       "status": "izvan_revizije",
       "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-github-pojmovi-na-hrvatskom"
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-github-pojmovi"
     },
     {
       "stranica": "github-vodic",
@@ -621,15 +585,6 @@
       "status": "izvan_revizije",
       "issue_number": 0,
       "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-sto-je-markdown"
-    },
-    {
-      "stranica": "github-vodic",
-      "sec_id": "sec-ovo-je-naslov",
-      "heading": "Ovo je naslov",
-      "tip": "autorsko",
-      "status": "izvan_revizije",
-      "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/github-vodic#sec-ovo-je-naslov"
     },
     {
       "stranica": "github-vodic",
@@ -662,7 +617,7 @@
       "stranica": "index",
       "sec_id": "sec-dokumentacija",
       "heading": "Dokumentacija",
-      "tip": "citat-zakona",
+      "tip": "tablica",
       "status": "ceka",
       "issue_number": 0,
       "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/index#sec-dokumentacija"
@@ -830,51 +785,6 @@
       "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/indikator-kopije#sec-izvori"
     },
     {
-      "stranica": "kako-doprinijeti",
-      "sec_id": "sec-rasprava-discussions",
-      "heading": "Rasprava (Discussions)",
-      "tip": "autorsko",
-      "status": "izvan_revizije",
-      "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/kako-doprinijeti#sec-rasprava-discussions"
-    },
-    {
-      "stranica": "kako-doprinijeti",
-      "sec_id": "sec-prijava-greske-issues",
-      "heading": "Prijava greške (Issues)",
-      "tip": "autorsko",
-      "status": "izvan_revizije",
-      "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/kako-doprinijeti#sec-prijava-greske-issues"
-    },
-    {
-      "stranica": "kako-doprinijeti",
-      "sec_id": "sec-pull-requests",
-      "heading": "Pull Requests",
-      "tip": "autorsko",
-      "status": "izvan_revizije",
-      "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/kako-doprinijeti#sec-pull-requests"
-    },
-    {
-      "stranica": "kako-doprinijeti",
-      "sec_id": "sec-glasanje",
-      "heading": "Glasanje",
-      "tip": "autorsko",
-      "status": "izvan_revizije",
-      "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/kako-doprinijeti#sec-glasanje"
-    },
-    {
-      "stranica": "kako-doprinijeti",
-      "sec_id": "sec-pravila",
-      "heading": "Pravila",
-      "tip": "autorsko",
-      "status": "izvan_revizije",
-      "issue_number": 0,
-      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/kako-doprinijeti#sec-pravila"
-    },
-    {
       "stranica": "naknadno-dospjeli-racuni",
       "sec_id": "sec-prijelazno-razdoblje-2025-2026",
       "heading": "1. Prijelazno razdoblje 2025. -> 2026.",
@@ -981,6 +891,42 @@
       "status": "ceka",
       "issue_number": 0,
       "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/naknadno-dospjeli-racuni#sec-izvori"
+    },
+    {
+      "stranica": "napredak",
+      "sec_id": "sec-ukupni-napredak",
+      "heading": "Ukupni napredak",
+      "tip": "tekst",
+      "status": "ceka",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/napredak#sec-ukupni-napredak"
+    },
+    {
+      "stranica": "napredak",
+      "sec_id": "sec-po-stranicama",
+      "heading": "Po stranicama",
+      "tip": "tekst",
+      "status": "ceka",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/napredak#sec-po-stranicama"
+    },
+    {
+      "stranica": "napredak",
+      "sec_id": "sec-po-stanjima",
+      "heading": "Raspored po stanjima",
+      "tip": "tekst",
+      "status": "ceka",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/napredak#sec-po-stanjima"
+    },
+    {
+      "stranica": "napredak",
+      "sec_id": "sec-kako-stanja",
+      "heading": "Kako se stanja mijenjaju",
+      "tip": "tablica",
+      "status": "ceka",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/napredak#sec-kako-stanja"
     },
     {
       "stranica": "pravila",
@@ -1710,17 +1656,107 @@
       "status": "ceka",
       "issue_number": 0,
       "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/referenca#sec-zakonski-temelj"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-cilj-procesa",
+      "heading": "1. Što je cilj procesa?",
+      "tip": "autorsko",
+      "status": "izvan_revizije",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju#sec-cilj-procesa"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-organizacija-github",
+      "heading": "2. Kako je sve organizirano u GitHubu",
+      "tip": "autorsko",
+      "status": "izvan_revizije",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju#sec-organizacija-github"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-stanja-revizije",
+      "heading": "3. Stanja revizije (Kanban stupci)",
+      "tip": "autorsko",
+      "status": "izvan_revizije",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju#sec-stanja-revizije"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-kako-zapoceti",
+      "heading": "4. Kako započeti reviziju jednog segmenta",
+      "tip": "autorsko",
+      "status": "izvan_revizije",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju#sec-kako-zapoceti"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-pr-revizija",
+      "heading": "5. Kako sudjelovati u PR reviziji",
+      "tip": "autorsko",
+      "status": "izvan_revizije",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju#sec-pr-revizija"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-novi-issue",
+      "heading": "6. Kako otvoriti novi Issue (ako još ne postoji)",
+      "tip": "autorsko",
+      "status": "izvan_revizije",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju#sec-novi-issue"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-sastanci",
+      "heading": "7. Sastanci radne skupine",
+      "tip": "autorsko",
+      "status": "izvan_revizije",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju#sec-sastanci"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-kako-claude",
+      "heading": "8. Kako se Claude (AI asistent) uključuje",
+      "tip": "autorsko",
+      "status": "izvan_revizije",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju#sec-kako-claude"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-fap",
+      "heading": "9. Česta pitanja",
+      "tip": "autorsko",
+      "status": "izvan_revizije",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju#sec-fap"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-resursi",
+      "heading": "10. Dodatni resursi",
+      "tip": "autorsko",
+      "status": "izvan_revizije",
+      "issue_number": 0,
+      "url": "https://dageci.github.io/eracun-fiskalizacija-datumi/vodic-za-reviziju#sec-resursi"
     }
   ],
   "summary": {
-    "total": 190,
+    "total": 194,
     "izvan_revizije": 45,
-    "za_reviziju": 145,
+    "za_reviziju": 149,
     "potvrdeno": 0,
     "u_reviziji": 0,
     "ceka_pu": 0,
     "trazi_izmjenu": 0,
-    "ceka": 145,
+    "ceka": 149,
     "odbaceno": 0
   }
 }

@@ -141,7 +141,7 @@ Detaljnije: [Vodič za reviziju](vodic-za-reviziju).
     if (stranice[seg.stranica][st] !== undefined) stranice[seg.stranica][st]++;
   });
   // Default page list in case segments empty
-  var allPages = ['pravila','primjeri-izdavatelj','primjeri-primatelj','referenca','europska-usporedba','naknadno-dospjeli-racuni','prijedlozi-validator','indikator-kopije','analiza-ulaznih','index','vodic-za-reviziju','github-vodic','github-obavijesti','kako-doprinijeti'];
+  var allPages = ['pravila','primjeri-izdavatelj','primjeri-primatelj','referenca','europska-usporedba','naknadno-dospjeli-racuni','prijedlozi-validator','indikator-kopije','analiza-ulaznih','index','vodic-za-reviziju','github-vodic','github-obavijesti'];
   allPages.forEach(function(p) {
     if (!stranice[p]) stranice[p] = emptyBucket();
   });

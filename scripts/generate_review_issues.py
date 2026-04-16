@@ -29,7 +29,6 @@ SKIP_SECTION_IDS = {
 AUTORSKE_SEKCIJE = {
     # Ključ: stranica, Vrijednost: skup ID-eva koji su autorski
     "index": {"sec-licenca"},
-    "kako-doprinijeti": "ALL",  # cijela stranica
     "github-vodic": "ALL",
     "github-obavijesti": "ALL",
     "vodic-za-reviziju": "ALL",
