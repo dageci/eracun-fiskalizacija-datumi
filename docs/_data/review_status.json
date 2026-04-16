@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:08:10.956Z",
+  "last_updated": "2026-04-16T01:08:21.016Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -336,6 +336,33 @@
     },
     {
       "stranica": "github-obavijesti",
+      "sec_id": "sec-ja-sam-erp",
+      "issue_number": 149,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] \"Ja sam ERP programer, želim pratiti rasprave o implementaciji\"",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/149",
+      "updated_at": "2026-04-16T01:08:11Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-ja-sam-knjigovoda",
+      "issue_number": 148,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] \"Ja sam knjigovođa, zanima me samo kad se promijeni sadržaj dokumenta\"",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/148",
+      "updated_at": "2026-04-16T01:08:08Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-kako-promijeniti-ili",
+      "issue_number": 152,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Kako promijeniti ili isključiti obavijesti naknadno",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/152",
+      "updated_at": "2026-04-16T01:08:16Z"
+    },
+    {
+      "stranica": "github-obavijesti",
       "sec_id": "sec-korak-1-otvorite",
       "issue_number": 141,
       "status": "izvan-revizije",
@@ -396,6 +423,33 @@
       "title": "[github-obavijesti] Preduvjet: besplatna prijava na GitHub",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/140",
       "updated_at": "2026-04-16T01:07:53Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-primjeri-sto-odabrati",
+      "issue_number": 147,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Primjeri: Što odabrati ovisno o vašoj ulozi",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/147",
+      "updated_at": "2026-04-16T01:08:06Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-zanima-me-samo",
+      "issue_number": 151,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] \"Zanima me samo kad izađe nova verzija dokumenta\"",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/151",
+      "updated_at": "2026-04-16T01:08:14Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-zelim-znati-sve",
+      "issue_number": 150,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] \"Želim znati sve što se događa\"",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/150",
+      "updated_at": "2026-04-16T01:08:12Z"
     },
     {
       "stranica": "index",
@@ -1309,7 +1363,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 8,
+    "izvan_revizije": 14,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
