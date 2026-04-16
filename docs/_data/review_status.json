@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:17:06.532Z",
+  "last_updated": "2026-04-16T01:17:14.768Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -1866,6 +1866,15 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-kako-mogu-pratiti",
+      "issue_number": 232,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Kako mogu pratiti što se događa?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/232",
+      "updated_at": "2026-04-16T01:17:04Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-kako-zapoceti",
       "issue_number": 185,
       "status": "izvan-revizije",
@@ -2037,6 +2046,15 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-sto-ako-se",
+      "issue_number": 233,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Što ako se ne slažem s donesenom odlukom?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/233",
+      "updated_at": "2026-04-16T01:17:06Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-tijekom-sastanka",
       "issue_number": 227,
       "status": "izvan-revizije",
@@ -2074,7 +2092,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 71,
+    "izvan_revizije": 73,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
