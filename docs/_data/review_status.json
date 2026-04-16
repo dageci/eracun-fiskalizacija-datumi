@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:03:02.732Z",
+  "last_updated": "2026-04-16T01:03:10.292Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -648,6 +648,51 @@
       "title": "[prijedlozi-validator] F02: Ako HR-BT-15 postoji, BT-7 ne smije postojati (osim predujam)",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/79",
       "updated_at": "2026-04-16T01:02:57Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-f03-hr-bt-432",
+      "issue_number": 80,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] F03: HR-BT-15 postoji i BT-8 postoji ali NIJE 432",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/80",
+      "updated_at": "2026-04-16T01:02:59Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-f04-ako-bt",
+      "issue_number": 81,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] F04: Ako BT-8=35, BT-72 mora postojati",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/81",
+      "updated_at": "2026-04-16T01:03:01Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-f05-bt-73-74",
+      "issue_number": 82,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] F05: BT-73 mora biti <= BT-74",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/82",
+      "updated_at": "2026-04-16T01:03:03Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-f06-vrijeme-izdavanja",
+      "issue_number": 83,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] F06: Vrijeme izdavanja mora biti validno",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/83",
+      "updated_at": "2026-04-16T01:03:05Z"
+    },
+    {
+      "stranica": "prijedlozi-validator",
+      "sec_id": "sec-f07-bt-8",
+      "issue_number": 84,
+      "status": "ceka",
+      "title": "[prijedlozi-validator] F07: BT-8 dozvoljeni kodovi",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/84",
+      "updated_at": "2026-04-16T01:03:06Z"
     },
     {
       "stranica": "prijedlozi-validator",
