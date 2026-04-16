@@ -183,7 +183,7 @@ jobs:
 
             const outDir = 'sastanci';
             fs.mkdirSync(outDir, { recursive: true });
-            const outFile = path.join(outDir, `${meetingDate}-sumar.md`);
+            const outFile = path.join(outDir, `${meetingDate}-sazetak.md`);
             fs.writeFileSync(outFile, lines.join('\n'), 'utf8');
 
             core.info(`Wrote ${outFile}`);
@@ -207,5 +207,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "docs(sastanci): sumar za ${{ steps.build.outputs.title }} [skip ci]"
+          git commit -m "docs(sastanci): sažetak za ${{ steps.build.outputs.title }} [skip ci]"
           git push

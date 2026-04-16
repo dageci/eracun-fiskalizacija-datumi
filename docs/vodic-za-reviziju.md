@@ -170,24 +170,24 @@ Periodično se organiziraju radni sastanci (uživo ili putem video poziva) na ko
 
 ### Nakon sastanka
 
-- GitHub Actions automatski generira **sumarij sastanka** (`sastanci/YYYY-MM-DD-sumar.md`)
-- Sumarij sadrži: sudionike, popis obrađenih Issueova, odluke, otvorene PR-ove, zadatke za sljedeći sastanak
+- GitHub Actions automatski generira **sažetak sastanka** (`sastanci/YYYY-MM-DD-sazetak.md`)
+- Sažetak sadrži: sudionike, popis obrađenih Issueova, odluke, otvorene PR-ove, zadatke za sljedeći sastanak
 
 ---
 
-## 8. Kako se Claude (AI asistent) uključuje {#sec-kako-claude}
+## 8. Kako se AI asistenti uključuju u proces {#sec-kako-ai}
 
-Za tehnički složenije izmjene — osobito kod Mermaid dijagrama, tablica, XML primjera ili HTML vizualizacija — sudionici mogu zatražiti pomoć autora koji koristi Claude AI za primjenu dogovorenih izmjena.
+Za tehnički složenije izmjene — osobito kod Mermaid dijagrama, tablica, XML primjera ili HTML vizualizacija — sudionici mogu zatražiti pomoć autora koji se služi modernim **AI asistentima** (umjetna inteligencija specijalizirana za razvoj softvera i dokumentacije) za primjenu dogovorenih izmjena.
 
 **Tipičan tok**:
 
 1. U Issue-u se postigne konsenzus
-2. Autor otvara Claude sesiju u repozitoriju
+2. Autor otvara AI asistenta s pristupom repozitoriju
 3. Referencira Issue i opisuje dogovorenu izmjenu
-4. Claude primjenjuje izmjenu, commita i otvara PR koji referencira Issue
+4. AI primjenjuje izmjenu, sprema (commit) i otvara PR koji referencira Issue
 5. Sudionici pregledavaju PR i odobravaju ili traže daljnje izmjene
 
-Ovaj pristup je posebno koristan kada izmjena zahvaća Mermaid grafove ili druge vizualne elemente koje je teško editirati ručno.
+Ovaj pristup je posebno koristan kada izmjena zahvaća Mermaid dijagrame ili druge vizualne elemente koje je teško editirati ručno. Krajnju odluku o prihvaćanju izmjene uvijek donose ljudi — AI je samo alat koji ubrzava mehanički dio posla.
 
 ---
 
@@ -213,7 +213,7 @@ Na GitHubu kliknite **Watch** na repozitoriju i odaberite razinu obavijesti. Dob
 
 ### Što ako se ne slažem s donesenom odlukom?
 
-Otvorite novi Issue ili komentirajte postojeći. Odluke se mogu preispitati. Git historija čuva sve prethodne verzije.
+Otvorite novi Issue ili komentirajte postojeći. Odluke se mogu preispitati. Git povijest čuva sve prethodne verzije.
 
 ---
 
