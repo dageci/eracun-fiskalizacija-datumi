@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:09:52.417Z",
+  "last_updated": "2026-04-16T01:11:06.496Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -819,6 +819,42 @@
       "title": "[indikator-kopije] 3. Uvjeti za korištenje kopije",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/47",
       "updated_at": "2026-04-16T01:01:29Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-odobrenje-u-2026-2025",
+      "issue_number": 195,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 1.3 Odobrenje u 2026. za račun iz 2025.",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/195",
+      "updated_at": "2026-04-16T01:11:03Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-predujam-iz-2025-2026",
+      "issue_number": 194,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 1.2 Predujam iz 2025., konačni račun 2026.",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/194",
+      "updated_at": "2026-04-16T01:11:01Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-prijelazno-razdoblje-2025-2026",
+      "issue_number": 192,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 1. Prijelazno razdoblje 2025. -> 2026.",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/192",
+      "updated_at": "2026-04-16T01:10:57Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-usluga-u-prosincu-2026",
+      "issue_number": 193,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 1.1 Usluga u prosincu 2025., račun u siječnju 2026.",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/193",
+      "updated_at": "2026-04-16T01:10:59Z"
     },
     {
       "stranica": "napredak",
@@ -1686,6 +1722,15 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-resursi",
+      "issue_number": 191,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 11. Dodatni resursi",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/191",
+      "updated_at": "2026-04-16T01:09:49Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-sastanci",
       "issue_number": 188,
       "status": "izvan-revizije",
@@ -1705,7 +1750,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 52,
+    "izvan_revizije": 53,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
