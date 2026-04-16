@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:08:21.016Z",
+  "last_updated": "2026-04-16T01:08:29.098Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -336,6 +336,15 @@
     },
     {
       "stranica": "github-obavijesti",
+      "sec_id": "sec-gmail",
+      "issue_number": 154,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Gmail",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/154",
+      "updated_at": "2026-04-16T01:08:20Z"
+    },
+    {
+      "stranica": "github-obavijesti",
       "sec_id": "sec-ja-sam-erp",
       "issue_number": 149,
       "status": "izvan-revizije",
@@ -351,6 +360,15 @@
       "title": "[github-obavijesti] \"Ja sam knjigovođa, zanima me samo kad se promijeni sadržaj dokumenta\"",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/148",
       "updated_at": "2026-04-16T01:08:08Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-kako-filtrirati-obavijesti",
+      "issue_number": 153,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Kako filtrirati obavijesti u email klijentu",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/153",
+      "updated_at": "2026-04-16T01:08:18Z"
     },
     {
       "stranica": "github-obavijesti",
@@ -378,6 +396,15 @@
       "title": "[github-obavijesti] Korak 2: Odaberite razinu obavijesti",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/142",
       "updated_at": "2026-04-16T01:07:56Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-opcenito",
+      "issue_number": 156,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Općenito",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/156",
+      "updated_at": "2026-04-16T01:08:24Z"
     },
     {
       "stranica": "github-obavijesti",
@@ -414,6 +441,15 @@
       "title": "[github-obavijesti] Opcija 4: Ignore",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/146",
       "updated_at": "2026-04-16T01:08:04Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-outlook",
+      "issue_number": 155,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Outlook",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/155",
+      "updated_at": "2026-04-16T01:08:22Z"
     },
     {
       "stranica": "github-obavijesti",
@@ -1363,7 +1399,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 14,
+    "izvan_revizije": 18,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
