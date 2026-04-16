@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:01:20.990Z",
+  "last_updated": "2026-04-16T01:01:38.658Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -354,17 +354,98 @@
     },
     {
       "stranica": "index",
+      "sec_id": "sec-licenca",
+      "issue_number": 42,
+      "status": "izvan-revizije",
+      "title": "[index] Licenca",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/42",
+      "updated_at": "2026-04-16T01:01:18Z"
+    },
+    {
+      "stranica": "index",
       "sec_id": "sec-sluzbeni-izvori-i-zakoni",
       "issue_number": 41,
       "status": "ceka",
       "title": "[index] Službeni izvori i zakoni",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/41",
       "updated_at": "2026-04-16T01:01:16Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-fiskalizacija-kopije",
+      "issue_number": 48,
+      "status": "ceka",
+      "title": "[indikator-kopije] 4. Fiskalizacija kopije",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/48",
+      "updated_at": "2026-04-16T01:01:31Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-gdje-postoji-indikatorkopije",
+      "issue_number": 50,
+      "status": "ceka",
+      "title": "[indikator-kopije] 4.2 Gdje postoji indikatorKopije",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/50",
+      "updated_at": "2026-04-16T01:01:35Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-ponasanje-pu-sustava",
+      "issue_number": 49,
+      "status": "ceka",
+      "title": "[indikator-kopije] 4.1 Ponašanje PU sustava",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/49",
+      "updated_at": "2026-04-16T01:01:33Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-sto-je-indikator-kopije",
+      "issue_number": 43,
+      "status": "ceka",
+      "title": "[indikator-kopije] 1. Što je indikator kopije?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/43",
+      "updated_at": "2026-04-16T01:01:20Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-sto-je-upitno",
+      "issue_number": 46,
+      "status": "ceka",
+      "title": "[indikator-kopije] Što je upitno (siva zona)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/46",
+      "updated_at": "2026-04-16T01:01:27Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-sto-se-ne",
+      "issue_number": 45,
+      "status": "ceka",
+      "title": "[indikator-kopije] Što se NE SMIJE mijenjati u kopiji",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/45",
+      "updated_at": "2026-04-16T01:01:24Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-sto-se-smije",
+      "issue_number": 44,
+      "status": "ceka",
+      "title": "[indikator-kopije] 2. Što se SMIJE ispraviti kopijom?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/44",
+      "updated_at": "2026-04-16T01:01:22Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-uvjeti-za-koristenje-kopije",
+      "issue_number": 47,
+      "status": "ceka",
+      "title": "[indikator-kopije] 3. Uvjeti za korištenje kopije",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/47",
+      "updated_at": "2026-04-16T01:01:29Z"
     }
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 45,
+    "izvan_revizije": 1,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
