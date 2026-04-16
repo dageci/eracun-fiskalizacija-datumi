@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:01:57.908Z",
+  "last_updated": "2026-04-16T01:02:27.374Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -513,6 +513,42 @@
       "title": "[indikator-kopije] 3. Uvjeti za korištenje kopije",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/47",
       "updated_at": "2026-04-16T01:01:29Z"
+    },
+    {
+      "stranica": "pravila",
+      "sec_id": "sec-kada-se-koje",
+      "issue_number": 62,
+      "status": "ceka",
+      "title": "[pravila] Kada se koje polje koristi — po scenarijima",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/62",
+      "updated_at": "2026-04-16T01:02:24Z"
+    },
+    {
+      "stranica": "pravila",
+      "sec_id": "sec-osnovna-referenca",
+      "issue_number": 61,
+      "status": "ceka",
+      "title": "[pravila] Osnovna referenca",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/61",
+      "updated_at": "2026-04-16T01:02:22Z"
+    },
+    {
+      "stranica": "pravila",
+      "sec_id": "sec-pregled-polja-sto",
+      "issue_number": 60,
+      "status": "ceka",
+      "title": "[pravila] 1. Pregled polja — što na što utječe",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/60",
+      "updated_at": "2026-04-16T01:02:20Z"
+    },
+    {
+      "stranica": "pravila",
+      "sec_id": "sec-zasto-ovaj-dokument",
+      "issue_number": 59,
+      "status": "ceka",
+      "title": "[pravila] Zašto ovaj dokument?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/59",
+      "updated_at": "2026-04-16T01:02:18Z"
     }
   ],
   "summary": {
