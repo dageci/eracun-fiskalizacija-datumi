@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:04:34.597Z",
+  "last_updated": "2026-04-16T01:04:43.091Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -984,6 +984,15 @@
     },
     {
       "stranica": "primjeri-primatelj",
+      "sec_id": "sec-korak-4-odredi",
+      "issue_number": 127,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] Korak 4: Odredi primku (ako je roba)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/127",
+      "updated_at": "2026-04-16T01:04:31Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
       "sec_id": "sec-p1-obracun-po",
       "issue_number": 109,
       "status": "ceka",
@@ -1110,6 +1119,15 @@
     },
     {
       "stranica": "primjeri-primatelj",
+      "sec_id": "sec-pretporez-dva-uvjeta",
+      "issue_number": 128,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] Pretporez: dva uvjeta i nijanse u praksi",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/128",
+      "updated_at": "2026-04-16T01:04:34Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
       "sec_id": "sec-pretporez-kod-obracuna",
       "issue_number": 108,
       "status": "ceka",
@@ -1125,6 +1143,24 @@
       "title": "[primjeri-primatelj] Sažetak — algoritam za primatelja",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/123",
       "updated_at": "2026-04-16T01:04:23Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-sto-znaci-ima-racun",
+      "issue_number": 129,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] Što znači \"ima račun\"?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/129",
+      "updated_at": "2026-04-16T01:04:36Z"
+    },
+    {
+      "stranica": "primjeri-primatelj",
+      "sec_id": "sec-u-koje-razdoblje",
+      "issue_number": 130,
+      "status": "ceka",
+      "title": "[primjeri-primatelj] U koje razdoblje ide pretporez?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/130",
+      "updated_at": "2026-04-16T01:04:38Z"
     }
   ],
   "summary": {
