@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:00:11.761Z",
+  "last_updated": "2026-04-16T01:00:26.293Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -201,6 +201,24 @@
     },
     {
       "stranica": "europska-usporedba",
+      "sec_id": "sec-eu-level-resursi",
+      "issue_number": 38,
+      "status": "ceka",
+      "title": "[europska-usporedba] EU-level resursi",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/38",
+      "updated_at": "2026-04-16T01:00:23Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-italija-fatturapa-sdi",
+      "issue_number": 34,
+      "status": "ceka",
+      "title": "[europska-usporedba] Italija (FatturaPA / SDI) — najduže iskustvo, najelegantniji pristup \"po naplati",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/34",
+      "updated_at": "2026-04-16T01:00:14Z"
+    },
+    {
+      "stranica": "europska-usporedba",
       "sec_id": "sec-izvjestavanje-o-naplati",
       "issue_number": 27,
       "status": "ceka",
@@ -237,12 +255,57 @@
     },
     {
       "stranica": "europska-usporedba",
+      "sec_id": "sec-madarska-nav-rtir",
+      "issue_number": 36,
+      "status": "ceka",
+      "title": "[europska-usporedba] Mađarska (NAV RTIR) — najširi opseg izvještavanja",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/36",
+      "updated_at": "2026-04-16T01:00:19Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-njemacka-xrechnung-najbolji",
+      "issue_number": 33,
+      "status": "ceka",
+      "title": "[europska-usporedba] Njemačka (XRechnung) — najbolji open-source ekosustav",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/33",
+      "updated_at": "2026-04-16T01:00:13Z"
+    },
+    {
+      "stranica": "europska-usporedba",
       "sec_id": "sec-oba-smjera-izlazni",
       "issue_number": 29,
       "status": "ceka",
       "title": "[europska-usporedba] Oba smjera (izlazni + ulazni) → porezna uprava",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/29",
       "updated_at": "2026-04-16T01:00:04Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-poljska-ksef-zlatni",
+      "issue_number": 32,
+      "status": "ceka",
+      "title": "[europska-usporedba] Poljska (KSeF) — zlatni standard dokumentacije",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/32",
+      "updated_at": "2026-04-16T01:00:11Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-spanjolska-sii-verifactu",
+      "issue_number": 35,
+      "status": "ceka",
+      "title": "[europska-usporedba] Španjolska (SII / Verifactu) — jedina osim HR s izvještavanjem o naplati",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/35",
+      "updated_at": "2026-04-16T01:00:16Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-sto-hrvatska-moze-nauciti",
+      "issue_number": 37,
+      "status": "ceka",
+      "title": "[europska-usporedba] Što Hrvatska može naučiti?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/37",
+      "updated_at": "2026-04-16T01:00:21Z"
     },
     {
       "stranica": "europska-usporedba",
