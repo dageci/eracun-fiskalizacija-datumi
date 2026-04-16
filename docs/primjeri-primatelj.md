@@ -56,7 +56,6 @@ To znači da kupac mora pratiti:
 ## P.1 Obračun po izdavanju (čl. 30) <span class="badge-izdavanje">Po izdavanju</span> {#sec-p1-obracun-po}
 ### P.1.1 Isporuka i račun isti dan {#sec-p11-isporuka-i-dan}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.1](primjeri-izdavatelj#411-isporuka-i-račun-isti-dan-po-izdavanju)
 
@@ -79,7 +78,6 @@ Izdavateljeva perspektiva: [4.1.1](primjeri-izdavatelj#411-isporuka-i-račun-ist
 
 ### P.1.2 Isporuka u drugom mjesecu od računa {#sec-p12-isporuka-u}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.2](primjeri-izdavatelj#412-isporuka-u-drugom-mjesecu-od-računa-po-izdavanju)
 
@@ -104,7 +102,6 @@ Izdavateljeva perspektiva: [4.1.2](primjeri-izdavatelj#412-isporuka-u-drugom-mje
 
 ### P.1.3 Račun izdan prije isporuke (čl. 30 st. 2) {#sec-p13-racun-izdan-2}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.3](primjeri-izdavatelj#413-račun-izdan-prije-isporuke-čl-30-st-2-po-izdavanju)
 
@@ -133,7 +130,6 @@ Izdavateljeva perspektiva: [4.1.3](primjeri-izdavatelj#413-račun-izdan-prije-is
 
 ### P.1.4 Predujam / avansni račun (čl. 30 st. 5) {#sec-p14-predujam-avansni-5}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.4](primjeri-izdavatelj#414-predujam-avansni-račun-čl-30-st-5-po-izdavanju)
 
@@ -164,7 +160,6 @@ Izdavateljeva perspektiva: [4.1.4](primjeri-izdavatelj#414-predujam-avansni-rač
 
 ### P.1.5 Kontinuirana usluga — obračunsko razdoblje (BT-73/BT-74) {#sec-p15-kontinuirana-usluga-73}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.5](primjeri-izdavatelj#415-kontinuirana-usluga--obračunsko-razdoblje-bt-73-bt-74-po-izdavanju)
 
@@ -194,7 +189,6 @@ Izdavateljeva perspektiva: [4.1.5](primjeri-izdavatelj#415-kontinuirana-usluga--
 
 ### P.1.6 BT-8=35 — automatska veza na datum isporuke {#sec-p16-bt-835}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.6](primjeri-izdavatelj#416-bt-835--automatska-veza-na-datum-isporuke-po-izdavanju)
 
@@ -222,7 +216,6 @@ Izdavateljeva perspektiva: [4.1.6](primjeri-izdavatelj#416-bt-835--automatska-ve
 
 ### P.1.7 Odobrenje / CreditNote {#sec-p17-odobrenje-creditnote}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.7](primjeri-izdavatelj#417-odobrenje--creditnote-po-izdavanju)
 
@@ -251,7 +244,6 @@ Izdavateljeva perspektiva: [4.1.7](primjeri-izdavatelj#417-odobrenje--creditnote
 
 ### P.1.8 Svi datumi u različitim mjesecima — BT-7 eksplicitni datum {#sec-p18-svi-datumi}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.1.8](primjeri-izdavatelj#418-svi-datumi-u-različitim-mjesecima--bt-7-eksplicitni-datum-po-izdavanju)
 
@@ -281,7 +273,6 @@ Izdavateljeva perspektiva: [4.1.8](primjeri-izdavatelj#418-svi-datumi-u-različi
 ## P.2 Obračun po naplaćenoj naknadi (čl. 125.i) <span class="badge-naplata">Po naplati</span> {#sec-p2-obracun-po}
 ### P.2.1 Isporuka i račun isti mjesec {#sec-p21-isporuka-i}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.2.1](primjeri-izdavatelj#421-isporuka-i-račun-isti-mjesec-po-naplati)
 
@@ -312,7 +303,6 @@ Izdavateljeva perspektiva: [4.2.1](primjeri-izdavatelj#421-isporuka-i-račun-ist
 
 ### P.2.2 Isporuka u drugom mjesecu od računa {#sec-p22-isporuka-u}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.2.2](primjeri-izdavatelj#422-isporuka-u-drugom-mjesecu-od-računa-po-naplati)
 
@@ -338,7 +328,6 @@ Izdavateljeva perspektiva: [4.2.2](primjeri-izdavatelj#422-isporuka-u-drugom-mje
 
 ### P.2.3 Predujam / avansni račun {#sec-p23-predujam-avansni-racun}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.2.4](primjeri-izdavatelj#424-predujam-avansni-račun-po-naplati)
 
@@ -369,7 +358,6 @@ Izdavateljeva perspektiva: [4.2.4](primjeri-izdavatelj#424-predujam-avansni-rač
 
 ### P.2.4 Odobrenje / CreditNote {#sec-p24-odobrenje-creditnote}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Izdavateljeva perspektiva: [4.2.6](primjeri-izdavatelj#426-odobrenje--creditnote-po-naplati)
 
@@ -458,7 +446,6 @@ AKO je CreditNote s povratom robe:
 
 ## Pretporez: dva uvjeta i nijanse u praksi {#sec-pretporez-dva-uvjeta}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Pravo na odbitak pretporeza kod obračuna po izdavanju reguliraju **dva članka** koji se nadopunjuju:
 
@@ -543,7 +530,6 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 
 ### BT-72 (datum isporuke) — utjecaj na trošak, prihod i skladište {#sec-bt-72-datum-sk}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | Scenarij | BT-2 (račun) | BT-72 (isporuka) | Prihod (izdavatelj) | Rashod (primatelj) | Primka/Otpremnica | PDV |
 |---|---|---|---|---|---|---|
@@ -556,7 +542,6 @@ Izvor: <a href="https://www.vatupdate.com/2026/03/14/ecj-c-167-26-ecj-cjeu-will-
 
 ### BT-73/BT-74 (obračunsko razdoblje) — razgraničenje troškova {#sec-bt-73bt-74}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | Scenarij | BT-2 | BT-73 | BT-74 | Račun za | Trošak primatelja | Prihod izdavatelja |
 |---|---|---|---|---|---|---|

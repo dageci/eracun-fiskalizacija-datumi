@@ -23,7 +23,7 @@ Svaki izvor odgovara na svoj dio pitanja, ali nijedan ne spaja cjelinu: *"za ova
 
 Rezultat: svaka softverska kuća implementira svoju pretpostavku, ulazni XML-ovi su nekonzistentni, a automatsko knjiženje ulaznih eRačuna zahtijeva ručnu provjeru svakog računa.
 
-Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaka sekcija koja sadrži autorovo tumačenje označena je badge-om <span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span> — dok službena potvrda ne stigne, sadržaj treba tretirati kao prijedlog, ne kao uputu.
+Ovaj dokument pokušava spojiti sva četiri izvora u konkretne primjere. Svaki naslov sekcije dobiva automatski **status badge** (Za pregled / U reviziji / Čeka PU / Potvrđeno) koji prikazuje trenutno stanje stručne revizije. Dok sadržaj nije eksplicitno potvrđen, treba ga tretirati kao prijedlog za raspravu, ne kao uputu.
 
 ---
 
@@ -173,7 +173,6 @@ flowchart TD
 
 ### Slučaj 1: Obračun po izdavanju (čl. 30 Zakona o PDV-u) {#sec-slucaj-1-obracun-u}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 > *"Oporezivi događaj i obveza obračuna PDV-a nastaju kada su dobra isporučena ili usluge obavljene."*
 > — Čl. 30, st. 1 Zakona o PDV-u
@@ -232,7 +231,6 @@ flowchart TD
 
 ### Slučaj 2: Obračun po naplaćenoj naknadi (čl. 125.i Zakona o PDV-u) {#sec-slucaj-2-obracun-zak}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 > *"Porezni obveznik koji primjenjuje postupak oporezivanja prema naplaćenim naknadama,*
 > *obvezu obračuna PDV-a ima u trenutku primitka plaćanja."*
@@ -294,7 +292,6 @@ flowchart TD
 
 ## 3. Mogući kodovi za BT-8 {#sec-moguci-kodovi-za-8}
 
-<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 | Kod | Značenje | Porezna obveza = | Kada se koristi |
 |:---:|----------|------------------|-----------------|
@@ -304,7 +301,6 @@ flowchart TD
 
 ### 3.1 BT-8=432 i HR-BT-15 — obračun po naplati u dva elementa {#sec-bt-8432-i}
 
-<div style="margin-top:-0.8rem;margin-bottom:1rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 Kod `432` signalizira obračun po naplaćenoj naknadi kroz EU normu (BT-8). Istovremeno, HR proširenje definira zaseban element za isti podatak (HR-BT-15). Oba nose istu informaciju — da izdavatelj obračunava PDV po naplati.
 

@@ -158,7 +158,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ## 4. HR-BT-15 specifičnost — potvrđena iz prakse {#sec-hr-bt-15}
 
-<div style="margin-top:-0.5rem;margin-bottom:0.5rem;"><span style="display:inline-block;background:#f39c12;color:white;font-size:0.72rem;font-weight:600;padding:0.15rem 0.55rem;border-radius:3px;cursor:help;" title="Ovo je autorovo tumačenje koje još nije službeno potvrđeno od Porezne uprave. Sadržaj treba tretirati kao prijedlog za raspravu, ne kao uputu.">Čeka potvrdu</span></div>
 
 **135 računa ima HR-BT-15 (obračun po naplati).**
 
