@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:05:13.784Z",
+  "last_updated": "2026-04-16T01:08:01.341Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -333,6 +333,33 @@
       "title": "[europska-usporedba] Zašto usporedba?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/23",
       "updated_at": "2026-04-16T00:59:53Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-korak-1-otvorite",
+      "issue_number": 141,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Korak 1: Otvorite repo i kliknite Watch",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/141",
+      "updated_at": "2026-04-16T01:07:54Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-korak-2-odaberite",
+      "issue_number": 142,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Korak 2: Odaberite razinu obavijesti",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/142",
+      "updated_at": "2026-04-16T01:07:56Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-preduvjet-besplatna-prijava",
+      "issue_number": 140,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Preduvjet: besplatna prijava na GitHub",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/140",
+      "updated_at": "2026-04-16T01:07:53Z"
     },
     {
       "stranica": "index",
@@ -1246,7 +1273,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 1,
+    "izvan_revizije": 4,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
