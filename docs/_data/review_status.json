@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:09:05.573Z",
+  "last_updated": "2026-04-16T01:09:23.931Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -821,6 +821,33 @@
       "updated_at": "2026-04-16T01:01:29Z"
     },
     {
+      "stranica": "napredak",
+      "sec_id": "sec-po-stanjima",
+      "issue_number": 176,
+      "status": "izvan-revizije",
+      "title": "[napredak] Raspored po stanjima",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/176",
+      "updated_at": "2026-04-16T01:09:19Z"
+    },
+    {
+      "stranica": "napredak",
+      "sec_id": "sec-po-stranicama",
+      "issue_number": 175,
+      "status": "izvan-revizije",
+      "title": "[napredak] Po stranicama",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/175",
+      "updated_at": "2026-04-16T01:09:17Z"
+    },
+    {
+      "stranica": "napredak",
+      "sec_id": "sec-ukupni-napredak",
+      "issue_number": 174,
+      "status": "izvan-revizije",
+      "title": "[napredak] Ukupni napredak",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/174",
+      "updated_at": "2026-04-16T01:09:15Z"
+    },
+    {
       "stranica": "pravila",
       "sec_id": "sec-brojcanik-racuna-i",
       "issue_number": 67,
@@ -1552,7 +1579,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 35,
+    "izvan_revizije": 38,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
