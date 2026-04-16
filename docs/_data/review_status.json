@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:08:49.023Z",
+  "last_updated": "2026-04-16T01:08:57.394Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -507,6 +507,15 @@
     },
     {
       "stranica": "github-vodic",
+      "sec_id": "sec-github-pojmovi",
+      "issue_number": 170,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] GitHub pojmovi na hrvatskom",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/170",
+      "updated_at": "2026-04-16T01:08:51Z"
+    },
+    {
+      "stranica": "github-vodic",
       "sec_id": "sec-kako-citati",
       "issue_number": 165,
       "status": "izvan-revizije",
@@ -516,12 +525,30 @@
     },
     {
       "stranica": "github-vodic",
+      "sec_id": "sec-kako-sudjelovati",
+      "issue_number": 168,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Kako sudjelovati?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/168",
+      "updated_at": "2026-04-16T01:08:47Z"
+    },
+    {
+      "stranica": "github-vodic",
       "sec_id": "sec-koliko-kosta",
       "issue_number": 159,
       "status": "izvan-revizije",
       "title": "[github-vodic] Koliko košta?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/159",
       "updated_at": "2026-04-16T01:08:30Z"
+    },
+    {
+      "stranica": "github-vodic",
+      "sec_id": "sec-na-githubu",
+      "issue_number": 167,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Na GitHubu",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/167",
+      "updated_at": "2026-04-16T01:08:45Z"
     },
     {
       "stranica": "github-vodic",
@@ -552,12 +579,30 @@
     },
     {
       "stranica": "github-vodic",
+      "sec_id": "sec-sto-je-markdown",
+      "issue_number": 171,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Što je Markdown?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/171",
+      "updated_at": "2026-04-16T01:08:53Z"
+    },
+    {
+      "stranica": "github-vodic",
       "sec_id": "sec-tko-jos-koristi",
       "issue_number": 160,
       "status": "izvan-revizije",
       "title": "[github-vodic] Tko još koristi GitHub za zakone, propise i dokumentaciju?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/160",
       "updated_at": "2026-04-16T01:08:32Z"
+    },
+    {
+      "stranica": "github-vodic",
+      "sec_id": "sec-tko-moze-sudjelovati",
+      "issue_number": 169,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Tko može sudjelovati?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/169",
+      "updated_at": "2026-04-16T01:08:49Z"
     },
     {
       "stranica": "github-vodic",
@@ -1489,7 +1534,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 28,
+    "izvan_revizije": 33,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
