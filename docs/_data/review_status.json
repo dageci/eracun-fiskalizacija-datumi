@@ -1,6 +1,15 @@
 {
-  "last_updated": "2026-04-16T01:11:22.360Z",
+  "last_updated": "2026-04-16T01:16:16.396Z",
   "segments": [
+    {
+      "stranica": "analiza-ulaznih",
+      "sec_id": "sec-analiza-1283-ulaznih",
+      "issue_number": 204,
+      "status": "ceka",
+      "title": "[analiza-ulaznih] Analiza 1.283 ulaznih eRačuna iz prakse",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/204",
+      "updated_at": "2026-04-16T01:16:05Z"
+    },
     {
       "stranica": "analiza-ulaznih",
       "sec_id": "sec-broj-stavki-po-racunu",
@@ -210,6 +219,15 @@
     },
     {
       "stranica": "europska-usporedba",
+      "sec_id": "sec-europska-usporedba-eracun-eu",
+      "issue_number": 205,
+      "status": "ceka",
+      "title": "[europska-usporedba] Europska usporedba — eRačun sustavi u EU",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/205",
+      "updated_at": "2026-04-16T01:16:07Z"
+    },
+    {
+      "stranica": "europska-usporedba",
       "sec_id": "sec-italija-fatturapa-sdi",
       "issue_number": 34,
       "status": "ceka",
@@ -360,6 +378,15 @@
       "title": "[github-obavijesti] \"Ja sam knjigovođa, zanima me samo kad se promijeni sadržaj dokumenta\"",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/148",
       "updated_at": "2026-04-16T01:08:08Z"
+    },
+    {
+      "stranica": "github-obavijesti",
+      "sec_id": "sec-kako-dobivati-obavijesti",
+      "issue_number": 206,
+      "status": "izvan-revizije",
+      "title": "[github-obavijesti] Kako dobivati obavijesti o promjenama na email",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/206",
+      "updated_at": "2026-04-16T01:16:10Z"
     },
     {
       "stranica": "github-obavijesti",
@@ -641,6 +668,15 @@
       "updated_at": "2026-04-16T01:08:38Z"
     },
     {
+      "stranica": "github-vodic",
+      "sec_id": "sec-zasto-github",
+      "issue_number": 207,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Zašto GitHub",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/207",
+      "updated_at": "2026-04-16T01:16:12Z"
+    },
+    {
       "stranica": "index",
       "sec_id": "sec-dokumentacija",
       "issue_number": 40,
@@ -828,6 +864,15 @@
       "title": "[naknadno-dospjeli-racuni] 2.2 IOS usklađenje — otkriven nefakturirani posao",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/198",
       "updated_at": "2026-04-16T01:11:09Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-izvori",
+      "issue_number": 203,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] Izvori",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/203",
+      "updated_at": "2026-04-16T01:11:18Z"
     },
     {
       "stranica": "naknadno-dospjeli-racuni",
@@ -1813,12 +1858,12 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 53,
+    "izvan_revizije": 55,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
     "ceka_pu": 0,
     "trazi_izmjenu": 0,
-    "ceka": 148
+    "ceka": 151
   }
 }
