@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:16:16.396Z",
+  "last_updated": "2026-04-16T01:16:25.251Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -687,6 +687,15 @@
     },
     {
       "stranica": "index",
+      "sec_id": "sec-eracun-hrvatska-datumi",
+      "issue_number": 208,
+      "status": "ceka",
+      "title": "[index] eRačun Hrvatska — Datumi i porezna obveza",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/208",
+      "updated_at": "2026-04-16T01:16:14Z"
+    },
+    {
+      "stranica": "index",
       "sec_id": "sec-konkretan-primjer-zasto",
       "issue_number": 39,
       "status": "ceka",
@@ -729,6 +738,15 @@
       "title": "[indikator-kopije] 4.2 Gdje postoji indikatorKopije",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/50",
       "updated_at": "2026-04-16T01:01:35Z"
+    },
+    {
+      "stranica": "indikator-kopije",
+      "sec_id": "sec-indikator-kopije-hr-b",
+      "issue_number": 209,
+      "status": "ceka",
+      "title": "[indikator-kopije] Indikator kopije (HR-BT-1) — ispravak nePDV podataka bez storna",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/209",
+      "updated_at": "2026-04-16T01:16:16Z"
     },
     {
       "stranica": "indikator-kopije",
@@ -876,6 +894,15 @@
     },
     {
       "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-naknadno-dospjeli-racuni-gr",
+      "issue_number": 210,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] Naknadno dospjeli računi — prijelazno razdoblje i granični slučajevi",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/210",
+      "updated_at": "2026-04-16T01:16:18Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
       "sec_id": "sec-naknadno-izdani-racuni",
       "issue_number": 196,
       "status": "ceka",
@@ -972,6 +999,15 @@
       "title": "[napredak] Kako se stanja mijenjaju",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/177",
       "updated_at": "2026-04-16T01:09:21Z"
+    },
+    {
+      "stranica": "napredak",
+      "sec_id": "sec-napredak-revizije-dokumentacije",
+      "issue_number": 211,
+      "status": "izvan-revizije",
+      "title": "[napredak] Napredak revizije dokumentacije",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/211",
+      "updated_at": "2026-04-16T01:16:20Z"
     },
     {
       "stranica": "napredak",
@@ -1858,12 +1894,12 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 55,
+    "izvan_revizije": 56,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
     "ceka_pu": 0,
     "trazi_izmjenu": 0,
-    "ceka": 151
+    "ceka": 154
   }
 }
