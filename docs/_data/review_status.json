@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:00:03.628Z",
+  "last_updated": "2026-04-16T01:00:11.761Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -192,12 +192,30 @@
     },
     {
       "stranica": "europska-usporedba",
+      "sec_id": "sec-detaljnije-o-kljucnim-zemljama",
+      "issue_number": 31,
+      "status": "ceka",
+      "title": "[europska-usporedba] Detaljnije o ključnim zemljama",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/31",
+      "updated_at": "2026-04-16T01:00:09Z"
+    },
+    {
+      "stranica": "europska-usporedba",
       "sec_id": "sec-izvjestavanje-o-naplati",
       "issue_number": 27,
       "status": "ceka",
       "title": "[europska-usporedba] Izvještavanje o naplati — samo Hrvatska i Španjolska",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/27",
       "updated_at": "2026-04-16T01:00:00Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-izvjestavanje-o-odbijanju",
+      "issue_number": 28,
+      "status": "ceka",
+      "title": "[europska-usporedba] Izvještavanje o odbijanju — samo Hrvatska",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/28",
+      "updated_at": "2026-04-16T01:00:02Z"
     },
     {
       "stranica": "europska-usporedba",
@@ -219,12 +237,30 @@
     },
     {
       "stranica": "europska-usporedba",
+      "sec_id": "sec-oba-smjera-izlazni",
+      "issue_number": 29,
+      "status": "ceka",
+      "title": "[europska-usporedba] Oba smjera (izlazni + ulazni) → porezna uprava",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/29",
+      "updated_at": "2026-04-16T01:00:04Z"
+    },
+    {
+      "stranica": "europska-usporedba",
       "sec_id": "sec-usporedna-tablica-svih",
       "issue_number": 25,
       "status": "ceka",
       "title": "[europska-usporedba] Usporedna tablica — svih 23 EU zemlje",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/25",
       "updated_at": "2026-04-16T00:59:56Z"
+    },
+    {
+      "stranica": "europska-usporedba",
+      "sec_id": "sec-zanimljive-specificnosti-po-zemljama",
+      "issue_number": 30,
+      "status": "ceka",
+      "title": "[europska-usporedba] Zanimljive specifičnosti po zemljama",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/30",
+      "updated_at": "2026-04-16T01:00:06Z"
     },
     {
       "stranica": "europska-usporedba",
