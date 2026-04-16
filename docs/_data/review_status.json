@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:08:57.394Z",
+  "last_updated": "2026-04-16T01:09:05.573Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -543,6 +543,15 @@
     },
     {
       "stranica": "github-vodic",
+      "sec_id": "sec-licenca",
+      "issue_number": 173,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Licenca",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/173",
+      "updated_at": "2026-04-16T01:08:57Z"
+    },
+    {
+      "stranica": "github-vodic",
       "sec_id": "sec-na-githubu",
       "issue_number": 167,
       "status": "izvan-revizije",
@@ -585,6 +594,15 @@
       "title": "[github-vodic] Što je Markdown?",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/171",
       "updated_at": "2026-04-16T01:08:53Z"
+    },
+    {
+      "stranica": "github-vodic",
+      "sec_id": "sec-sto-su-mermaid-dijagrami",
+      "issue_number": 172,
+      "status": "izvan-revizije",
+      "title": "[github-vodic] Što su Mermaid dijagrami?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/172",
+      "updated_at": "2026-04-16T01:08:55Z"
     },
     {
       "stranica": "github-vodic",
@@ -1534,7 +1552,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 33,
+    "izvan_revizije": 35,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
