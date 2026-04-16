@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:09:23.931Z",
+  "last_updated": "2026-04-16T01:09:44.257Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -822,6 +822,15 @@
     },
     {
       "stranica": "napredak",
+      "sec_id": "sec-kako-stanja",
+      "issue_number": 177,
+      "status": "izvan-revizije",
+      "title": "[napredak] Kako se stanja mijenjaju",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/177",
+      "updated_at": "2026-04-16T01:09:21Z"
+    },
+    {
+      "stranica": "napredak",
       "sec_id": "sec-po-stanjima",
       "issue_number": 176,
       "status": "izvan-revizije",
@@ -1575,11 +1584,92 @@
       "title": "[referenca] 8. Zakonski temelj",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/139",
       "updated_at": "2026-04-16T01:04:55Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-ako-nisam-siguran",
+      "issue_number": 184,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Što ako nisam siguran?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/184",
+      "updated_at": "2026-04-16T01:09:35Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-cilj-procesa",
+      "issue_number": 178,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 1. Što je cilj procesa?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/178",
+      "updated_at": "2026-04-16T01:09:23Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-issue-vs-discussion",
+      "issue_number": 181,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 4. Kada koristiti Issue, a kada Discussion?",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/181",
+      "updated_at": "2026-04-16T01:09:29Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-kako-zapoceti",
+      "issue_number": 185,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 5. Kako započeti reviziju jednog segmenta",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/185",
+      "updated_at": "2026-04-16T01:09:37Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-organizacija-github",
+      "issue_number": 179,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 2. Kako je sve organizirano u GitHubu",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/179",
+      "updated_at": "2026-04-16T01:09:25Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-pr-revizija",
+      "issue_number": 186,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 6. Kako sudjelovati u PR reviziji",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/186",
+      "updated_at": "2026-04-16T01:09:39Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-primjeri-discussion",
+      "issue_number": 183,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Primjeri kada koristiti **Discussion**",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/183",
+      "updated_at": "2026-04-16T01:09:34Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-primjeri-issue",
+      "issue_number": 182,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Primjeri kada koristiti **Issue**",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/182",
+      "updated_at": "2026-04-16T01:09:31Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-stanja-revizije",
+      "issue_number": 180,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] 3. Stanja revizije (Kanban stupci)",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/180",
+      "updated_at": "2026-04-16T01:09:27Z"
     }
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 38,
+    "izvan_revizije": 48,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
