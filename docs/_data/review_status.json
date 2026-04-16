@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:16:42.510Z",
+  "last_updated": "2026-04-16T01:16:50.531Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -1884,6 +1884,33 @@
     },
     {
       "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-korak-3-ostavite-u",
+      "issue_number": 220,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Korak 3: Ostavite komentar na Issue-u",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/220",
+      "updated_at": "2026-04-16T01:16:39Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-korak-4-rasprava",
+      "issue_number": 221,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Korak 4: Rasprava",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/221",
+      "updated_at": "2026-04-16T01:16:41Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-korak-5-izmjena",
+      "issue_number": 222,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Korak 5: Izmjena",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/222",
+      "updated_at": "2026-04-16T01:16:43Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
       "sec_id": "sec-novi-issue",
       "issue_number": 187,
       "status": "izvan-revizije",
@@ -1908,6 +1935,15 @@
       "title": "[vodic-za-reviziju] 6. Kako sudjelovati u PR reviziji",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/186",
       "updated_at": "2026-04-16T01:09:39Z"
+    },
+    {
+      "stranica": "vodic-za-reviziju",
+      "sec_id": "sec-pregled-promjene",
+      "issue_number": 223,
+      "status": "izvan-revizije",
+      "title": "[vodic-za-reviziju] Pregled promjene",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/223",
+      "updated_at": "2026-04-16T01:16:45Z"
     },
     {
       "stranica": "vodic-za-reviziju",
@@ -1966,7 +2002,7 @@
   ],
   "summary": {
     "total": 190,
-    "izvan_revizije": 59,
+    "izvan_revizije": 63,
     "za_reviziju": 145,
     "potvrdeno": 0,
     "u_reviziji": 0,
