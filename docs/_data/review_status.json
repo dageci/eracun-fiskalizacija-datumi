@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-16T01:11:14.704Z",
+  "last_updated": "2026-04-16T01:11:22.360Z",
   "segments": [
     {
       "stranica": "analiza-ulaznih",
@@ -849,6 +849,24 @@
     },
     {
       "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-ponasanje-racunovode-izdavatelj",
+      "issue_number": 200,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 3. Ponašanje računovođe — izdavatelj",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/200",
+      "updated_at": "2026-04-16T01:11:12Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-ponasanje-racunovode-primatelj",
+      "issue_number": 201,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 4. Ponašanje računovođe — primatelj",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/201",
+      "updated_at": "2026-04-16T01:11:14Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
       "sec_id": "sec-predujam-iz-2025-2026",
       "issue_number": 194,
       "status": "ceka",
@@ -873,6 +891,24 @@
       "title": "[naknadno-dospjeli-racuni] 2.1 Račun izdan mjesecima nakon isporuke",
       "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/197",
       "updated_at": "2026-04-16T01:11:07Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-sto-eracun-mijenja",
+      "issue_number": 202,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 5. Što eRačun mijenja",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/202",
+      "updated_at": "2026-04-16T01:11:16Z"
+    },
+    {
+      "stranica": "naknadno-dospjeli-racuni",
+      "sec_id": "sec-sudska-presuda-naknadno-izdavanje",
+      "issue_number": 199,
+      "status": "ceka",
+      "title": "[naknadno-dospjeli-racuni] 2.3 Sudska presuda — naknadno izdavanje",
+      "url": "https://github.com/dageci/eracun-fiskalizacija-datumi/issues/199",
+      "updated_at": "2026-04-16T01:11:10Z"
     },
     {
       "stranica": "naknadno-dospjeli-racuni",
@@ -1783,6 +1819,6 @@
     "u_reviziji": 0,
     "ceka_pu": 0,
     "trazi_izmjenu": 0,
-    "ceka": 145
+    "ceka": 148
   }
 }
