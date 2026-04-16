@@ -1,0 +1,148 @@
+name: Sync Project Board with Issue labels
+
+on:
+  issues:
+    types: [labeled, unlabeled]
+  workflow_dispatch:
+
+permissions:
+  issues: read
+  repository-projects: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync issue status to project board
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            if (!issue) {
+              core.info('No issue in payload (manual dispatch). Skipping.');
+              return;
+            }
+
+            const labels = issue.labels.map(l => l.name);
+            core.info(`Issue #${issue.number}: labels = ${labels.join(', ')}`);
+
+            // Map label → project status option name
+            const LABEL_MAP = {
+              'status:ceka':           '🟡 Za pregled',
+              'status:u-reviziji':     '🔵 U reviziji',
+              'status:ceka-pu':        '⏸️ Čeka PU',
+              'status:potvrdeno':      '🟢 Potvrđeno',
+              'status:trazi-izmjenu':  '⚠️ Traži izmjenu',
+              'status:izvan-revizije': '⚪ Izvan revizije',
+              'status:odbaceno':       '❌ Odbačeno',
+            };
+
+            // Find the status label
+            let targetStatus = null;
+            for (const label of labels) {
+              if (LABEL_MAP[label]) {
+                targetStatus = LABEL_MAP[label];
+                break;
+              }
+            }
+
+            if (!targetStatus) {
+              core.info('No status label found on this issue. Skipping.');
+              return;
+            }
+
+            core.info(`Target status: ${targetStatus}`);
+
+            // Get project info
+            const projectNumber = 3;
+            const owner = 'dageci';
+
+            const projectQuery = `
+              query($owner: String!, $number: Int!) {
+                user(login: $owner) {
+                  projectV2(number: $number) {
+                    id
+                    field(name: "Status") {
+                      ... on ProjectV2SingleSelectField {
+                        id
+                        options { id name }
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+
+            const projectData = await github.graphql(projectQuery, { owner, number: projectNumber });
+            const project = projectData.user.projectV2;
+            const fieldId = project.field.id;
+            const projectId = project.id;
+
+            const option = project.field.options.find(o => o.name === targetStatus);
+            if (!option) {
+              core.warning(`Option '${targetStatus}' not found in project.`);
+              return;
+            }
+
+            // Find the project item for this issue
+            const itemQuery = `
+              query($projectId: ID!, $cursor: String) {
+                node(id: $projectId) {
+                  ... on ProjectV2 {
+                    items(first: 100, after: $cursor) {
+                      pageInfo { hasNextPage endCursor }
+                      nodes {
+                        id
+                        content {
+                          ... on Issue { number }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+
+            let itemId = null;
+            let cursor = null;
+            while (!itemId) {
+              const itemData = await github.graphql(itemQuery, { projectId, cursor });
+              const items = itemData.node.items;
+              for (const node of items.nodes) {
+                if (node.content && node.content.number === issue.number) {
+                  itemId = node.id;
+                  break;
+                }
+              }
+              if (!items.pageInfo.hasNextPage) break;
+              cursor = items.pageInfo.endCursor;
+            }
+
+            if (!itemId) {
+              core.info(`Issue #${issue.number} not found in project. Skipping.`);
+              return;
+            }
+
+            // Update the status
+            const mutation = `
+              mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $optionId: String!) {
+                updateProjectV2ItemFieldValue(input: {
+                  projectId: $projectId
+                  itemId: $itemId
+                  fieldId: $fieldId
+                  value: { singleSelectOptionId: $optionId }
+                }) {
+                  projectV2Item { id }
+                }
+              }
+            `;
+
+            await github.graphql(mutation, {
+              projectId,
+              itemId,
+              fieldId,
+              optionId: option.id,
+            });
+
+            core.info(`Moved #${issue.number} to '${targetStatus}'`);
