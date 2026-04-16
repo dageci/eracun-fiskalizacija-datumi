@@ -32,6 +32,7 @@ AUTORSKE_SEKCIJE = {
     "github-vodic": "ALL",
     "github-obavijesti": "ALL",
     "vodic-za-reviziju": "ALL",
+    "napredak": "ALL",
 }
 
 # Stranice koje potpuno preskačemo

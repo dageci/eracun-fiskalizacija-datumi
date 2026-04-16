@@ -14,7 +14,7 @@ Ova stranica prikazuje stanje stručne revizije dokumentacije u realnom vremenu.
 
 ## Ukupni napredak {#sec-ukupni-napredak}
 
-Napredak se računa iz **145 segmenata za reviziju** (45 autorskih segmenata nije uključeno u postotak).
+Napredak se računa samo iz segmenata **za reviziju** (autorski sadržaj poput uvoda, vodiča i meta stranica nije uključen u postotak, ali je prikazan zasebno).
 
 <div style="max-width: 720px; margin: 1.5rem auto;">
   <div id="progress-bar-total" style="background:#ecf0f1; border-radius: 8px; height: 32px; overflow: hidden; display: flex;">
@@ -80,7 +80,7 @@ Detaljnije: [Vodič za reviziju](vodic-za-reviziju).
   }
 
   var s = data.summary || {};
-  var total = (s.za_reviziju || 145);
+  var total = (s.za_reviziju || 149);
 
   var pct = function(n) { return total > 0 ? Math.round(n / total * 100) : 0; };
 
@@ -141,7 +141,7 @@ Detaljnije: [Vodič za reviziju](vodic-za-reviziju).
     if (stranice[seg.stranica][st] !== undefined) stranice[seg.stranica][st]++;
   });
   // Default page list in case segments empty
-  var allPages = ['pravila','primjeri-izdavatelj','primjeri-primatelj','referenca','europska-usporedba','naknadno-dospjeli-racuni','prijedlozi-validator','indikator-kopije','analiza-ulaznih','index','vodic-za-reviziju','github-vodic','github-obavijesti'];
+  var allPages = ['pravila','primjeri-izdavatelj','primjeri-primatelj','referenca','europska-usporedba','naknadno-dospjeli-racuni','prijedlozi-validator','indikator-kopije','analiza-ulaznih','index','vodic-za-reviziju','github-vodic','github-obavijesti','napredak'];
   allPages.forEach(function(p) {
     if (!stranice[p]) stranice[p] = emptyBucket();
   });

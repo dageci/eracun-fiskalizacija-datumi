@@ -60,7 +60,45 @@ Svaki segment prolazi kroz jedno od sljedećih stanja:
 
 ---
 
-## 4. Kako započeti reviziju jednog segmenta {#sec-kako-zapoceti}
+## 4. Kada koristiti Issue, a kada Discussion? {#sec-issue-vs-discussion}
+
+GitHub nudi dva različita alata za komunikaciju: **Issues** i **Discussions**. Oba su dostupna u ovom projektu i imaju različite svrhe.
+
+| Kriterij | **Issues** | **Discussions** |
+|----------|-----------|-----------------|
+| **Vezano za** | Konkretan segment (H2 / H3 s ID-em `sec-xxx`) | Opću temu, pitanje, iskustvo |
+| **Životni ciklus** | Otvoren → U reviziji → Potvrđeno / Zatvoreno | Nema — rasprava teče dok god postoji interes |
+| **Automatizacija** | Ulazi u Kanban ploču, mijenja badge na stranici, broji se u dashboard | Nema automatskog praćenja statusa |
+| **Kada koristiti** | Traženje pregleda, ispravak, potvrda, prijedlog promjene jednog segmenta | Šira pitanja, iskustva iz prakse, prijedlozi za nove sekcije, "brain-storming" |
+| **Pretraga** | Filtrirati se može po oznakama (label) — stranica, status, tip | Filtrirati se može po kategorijama |
+| **Tko odgovara** | Urednik ili recenzent donosi odluku | Cijela zajednica diskutira |
+
+### Primjeri kada koristiti **Issue** {#sec-primjeri-issue}
+
+- *"Segment `sec-hr-bt-15` ima pogrešno tumačenje čl. 125.i — predlažem izmjenu..."*
+- *"Potvrđujemo ispravnost segmenta `sec-bt-7-vs-m`"*
+- *"Tablica u segmentu `sec-kada-se-koje` krivo prikazuje BT-9 za slučaj X"*
+- *"Nedostaje primjer za kombinaciju BT-7 + HR-BT-15 u predujmu"*
+
+### Primjeri kada koristiti **Discussion** {#sec-primjeri-discussion}
+
+- *"Kako drugi ERP-ovi implementiraju storno predujma?"*
+- *"Imamo li nešto za validaciju BT-25 kod storno dokumenata?"*
+- *"Iskustva s MER API-jem 2.3 — što kod vas radi, što ne radi?"*
+- *"Prijedlog za potpuno novu stranicu: specifičnosti za OPG-ove"*
+- *"Kako Porezna uprava službeno tumači prijelaz godine kod obračuna po naplati?"*
+
+### Što ako nisam siguran? {#sec-ako-nisam-siguran}
+
+Pravilo palca: **ako se tvoja napomena veže za konkretan naslov sekcije**, otvori Issue. **Ako se veže za širu temu ili više segmenata istovremeno**, otvori Discussion. Ako kasnije ispadne da trebaš drugo, moderator može prebaciti Discussion u Issue (ili obratno).
+
+Otvori ih ovdje:
+- **Issues:** [github.com/dageci/eracun-fiskalizacija-datumi/issues](https://github.com/dageci/eracun-fiskalizacija-datumi/issues)
+- **Discussions:** [github.com/dageci/eracun-fiskalizacija-datumi/discussions](https://github.com/dageci/eracun-fiskalizacija-datumi/discussions)
+
+---
+
+## 5. Kako započeti reviziju jednog segmenta {#sec-kako-zapoceti}
 
 ### Korak 1: Pronađite segment koji vas zanima
 
@@ -115,7 +153,7 @@ PR mora biti **odobren** od odgovornog recenzenta prije nego što se spoji u gla
 
 ---
 
-## 5. Kako sudjelovati u PR reviziji {#sec-pr-revizija}
+## 6. Kako sudjelovati u PR reviziji {#sec-pr-revizija}
 
 Ako ste označeni kao recenzent Pull Requesta:
 
@@ -136,7 +174,7 @@ Komentari se mogu ostaviti na konkretne linije diff-a — klik na broj linije �
 
 ---
 
-## 6. Kako otvoriti novi Issue (ako još ne postoji) {#sec-novi-issue}
+## 7. Kako otvoriti novi Issue (ako još ne postoji) {#sec-novi-issue}
 
 Većina Issueova je već automatski generirana za postojeće segmente. Ako uočite:
 
@@ -151,7 +189,7 @@ Odaberite template **"Revizija segmenta dokumentacije"** i ispunite polja.
 
 ---
 
-## 7. Sastanci radne skupine {#sec-sastanci}
+## 8. Sastanci radne skupine {#sec-sastanci}
 
 ### Organizacija
 
@@ -175,7 +213,7 @@ Periodično se organiziraju radni sastanci (uživo ili putem video poziva) na ko
 
 ---
 
-## 8. Kako se AI asistenti uključuju u proces {#sec-kako-ai}
+## 9. Kako se AI asistenti uključuju u proces {#sec-kako-ai}
 
 Za tehnički složenije izmjene — osobito kod Mermaid dijagrama, tablica, XML primjera ili HTML vizualizacija — sudionici mogu zatražiti pomoć autora koji se služi modernim **AI asistentima** (umjetna inteligencija specijalizirana za razvoj softvera i dokumentacije) za primjenu dogovorenih izmjena.
 
@@ -191,7 +229,7 @@ Ovaj pristup je posebno koristan kada izmjena zahvaća Mermaid dijagrame ili dru
 
 ---
 
-## 9. Česta pitanja {#sec-fap}
+## 10. Česta pitanja {#sec-fap}
 
 ### Trebam li biti programer da sudjelujem?
 
@@ -217,7 +255,7 @@ Otvorite novi Issue ili komentirajte postojeći. Odluke se mogu preispitati. Git
 
 ---
 
-## 10. Dodatni resursi {#sec-resursi}
+## 11. Dodatni resursi {#sec-resursi}
 
 - [Dashboard napretka revizije](napredak)
 - [Otvoreni Issueovi](https://github.com/dageci/eracun-fiskalizacija-datumi/issues)
